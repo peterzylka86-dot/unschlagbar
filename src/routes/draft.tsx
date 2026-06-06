@@ -16,8 +16,25 @@ const TIERS: { id: EraTier; label: string; sub: string }[] = [
   { id: "2000s",    label: "2000s",     sub: "post-Bosman" },
   { id: "90s",      label: "90s",       sub: "Lautern & Uerdingen" },
   { id: "70s-80s",  label: "70s-80s",   sub: "old guard" },
-  { id: "legends",  label: "Legends",   sub: "pre-Bundesliga" },
 ];
+
+// Derive a player's era from career_years string (uses the earliest year found).
+const TIER_YEAR_RANGES: Record<EraTier, [number, number]> = {
+  "70s-80s": [1900, 1987],
+  "90s":     [1988, 1999],
+  "2000s":   [2000, 2014],
+  "current": [2015, 2100],
+};
+function getPlayerStartYear(p: Player): number {
+  const m = p.career_years.match(/(19|20)\d{2}/g);
+  if (!m || !m.length) return 2000;
+  return Math.min(...m.map(Number));
+}
+function playerMatchesTier(p: Player, tier: EraTier): boolean {
+  const y = getPlayerStartYear(p);
+  const [lo, hi] = TIER_YEAR_RANGES[tier];
+  return y >= lo && y <= hi;
+}
 
 export const Route = createFileRoute("/draft")({
   head: () => ({ meta: [{ title: "Draft · UNSCHLAGBAR 34:0" }] }),
@@ -60,12 +77,13 @@ function DraftScreen() {
   const filledCount = totalSlots - emptySlots.length;
   const done = emptySlots.length === 0;
 
-  function clubHasCompatible(club: Club): boolean {
+  function clubHasCompatible(club: Club, forTier?: EraTier): boolean {
     const openSlots = slots.filter(s => !s.player);
     if (openSlots.length === 0) return false;
-    const clubPlayers = PLAYERS.filter(
+    let clubPlayers = PLAYERS.filter(
       p => p.club === club.id && !usedPlayers.has(`${p.club}:${p.name}`)
     );
+    if (forTier) clubPlayers = clubPlayers.filter(p => playerMatchesTier(p, forTier));
     if (config.draftMode === "position" && pickingForSlot) {
       return clubPlayers.some(p => isCompatible(pickingForSlot.position, p.position));
     }
@@ -74,11 +92,11 @@ function DraftScreen() {
 
   function pickRandomTier(): EraTier {
     const tiersWithFresh = TIERS.filter(t =>
-      CLUBS.some(c => c.era_tier === t.id && !usedClubs.has(c.id) && clubHasCompatible(c))
+      CLUBS.some(c => c.era_tier === t.id && !usedClubs.has(c.id) && clubHasCompatible(c, t.id))
     );
     const pool = tiersWithFresh.length
       ? tiersWithFresh
-      : TIERS.filter(t => CLUBS.some(c => c.era_tier === t.id && clubHasCompatible(c)));
+      : TIERS.filter(t => CLUBS.some(c => c.era_tier === t.id && clubHasCompatible(c, t.id)));
     if (!pool.length) return TIERS[0].id;
     return pool[Math.floor(Math.random() * pool.length)].id;
   }
@@ -88,10 +106,10 @@ function DraftScreen() {
     const activeTier = pickRandomTier();
     setTier(activeTier);
     const tierPool = CLUBS.filter(c => c.era_tier === activeTier);
-    const fresh = tierPool.filter(c => !usedClubs.has(c.id) && clubHasCompatible(c));
+    const fresh = tierPool.filter(c => !usedClubs.has(c.id) && clubHasCompatible(c, activeTier));
     const candidates = fresh.length
       ? fresh
-      : tierPool.filter(c => clubHasCompatible(c));
+      : tierPool.filter(c => clubHasCompatible(c, activeTier));
     if (!candidates.length) return;
     const pick = candidates[Math.floor(Math.random() * candidates.length)];
     const idx = tierPool.findIndex(c => c.id === pick.id);
@@ -115,6 +133,8 @@ function DraftScreen() {
   function playersForCurrentClub(): Player[] {
     if (!currentClub) return [];
     let pool = PLAYERS.filter(p => p.club === currentClub.id && !usedPlayers.has(`${p.club}:${p.name}`));
+    // Only show players whose career era matches the active tier (fixes 80s players appearing in 2000s, etc.)
+    pool = pool.filter(p => playerMatchesTier(p, tier));
     if (config.draftMode === "position" && pickingForSlot) {
       pool = pool.filter(p => isCompatible(pickingForSlot.position, p.position));
     } else if (config.draftMode === "squad") {
