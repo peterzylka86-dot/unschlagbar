@@ -100,6 +100,9 @@ function DraftScreen() {
     let pool = PLAYERS.filter(p => p.club === currentClub.id && !usedPlayers.has(`${p.club}:${p.name}`));
     if (config.draftMode === "position" && pickingForSlot) {
       pool = pool.filter(p => isCompatible(pickingForSlot.position, p.position));
+    } else if (config.draftMode === "squad") {
+      // hide players whose position has no open compatible slot
+      pool = pool.filter(p => slots.some(s => !s.player && isCompatible(s.position, p.position)));
     }
     return pool.slice().sort((a, b) => b.prime_rating - a.prime_rating);
   }
