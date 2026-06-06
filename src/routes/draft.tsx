@@ -326,26 +326,31 @@ function PitchView({ slots, showRatings, onSlotClick, highlightSlots }: {
   highlightSlots: string[];
 }) {
   return (
-    <div className="relative w-full rounded-2xl border border-pitch-line/30 bg-pitch-pattern overflow-hidden shadow-2xl" style={{ aspectRatio: "16/11" }}>
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full pointer-events-none">
-        <rect x="1" y="1" width="98" height="98" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
-        <line x1="0" y1="50" x2="100" y2="50" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
-        <circle cx="50" cy="50" r="9" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
-        <rect x="25" y="0" width="50" height="14" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
-        <rect x="25" y="86" width="50" height="14" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
-      </svg>
+    <div className="relative w-full" style={{ aspectRatio: "16/11" }}>
+      <div className="absolute inset-0 rounded-2xl border border-pitch-line/30 bg-pitch-pattern overflow-hidden shadow-2xl">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full pointer-events-none">
+          <rect x="1" y="1" width="98" height="98" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
+          <line x1="0" y1="50" x2="100" y2="50" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
+          <circle cx="50" cy="50" r="9" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
+          <rect x="25" y="0" width="50" height="14" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
+          <rect x="25" y="86" width="50" height="14" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
+        </svg>
+      </div>
       {slots.map(s => {
         const filled = !!s.player;
         const highlight = highlightSlots.includes(s.id);
         const club = filled ? CLUBS.find(c => c.id === s.player!.club) : null;
-        // For slots near the bottom edge (GK), render the name ABOVE the badge
-        // so the pitch container's overflow-hidden doesn't clip it.
-        const labelAbove = s.y >= 82;
+        // Stagger label sides so a slot directly below another doesn't overlap its label
+        // (was making the GK's name sit on top of the central CB's name).
+        const hasNeighborBelow = slots.some(o =>
+          o.id !== s.id && Math.abs(o.x - s.x) < 18 && o.y > s.y && o.y - s.y < 14
+        );
+        const labelAbove = hasNeighborBelow || s.y >= 86;
         return (
           <button
             key={s.id}
             onClick={() => onSlotClick(s)}
-            className="absolute -translate-x-1/2 -translate-y-1/2 group"
+            className="absolute -translate-x-1/2 -translate-y-1/2 group z-10"
             style={{ left: `${s.x}%`, top: `${s.y}%` }}
           >
             <motion.div
@@ -370,7 +375,7 @@ function PitchView({ slots, showRatings, onSlotClick, highlightSlots }: {
             </motion.div>
             {filled && (
               <div
-                className={`absolute left-1/2 -translate-x-1/2 px-1.5 py-0.5 rounded backdrop-blur-md bg-black/60 text-white text-[10px] whitespace-nowrap max-w-[120px] truncate border border-white/10 ${
+                className={`absolute left-1/2 -translate-x-1/2 px-1.5 py-0.5 rounded backdrop-blur-md bg-black/70 text-white text-[10px] whitespace-nowrap max-w-[120px] truncate border border-white/10 ${
                   labelAbove ? "bottom-full mb-1" : "top-full mt-1"
                 }`}
               >
