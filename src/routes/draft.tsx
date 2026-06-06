@@ -20,7 +20,7 @@ const TIERS: { id: EraTier; label: string; sub: string }[] = [
 ];
 
 export const Route = createFileRoute("/draft")({
-  head: () => ({ meta: [{ title: "Drafting — 34-0" }] }),
+  head: () => ({ meta: [{ title: "Draft · UNSCHLAGBAR 34:0" }] }),
   component: DraftScreen,
 });
 
@@ -169,8 +169,9 @@ function DraftScreen() {
   return (
     <div className="min-h-screen px-3 py-6 max-w-6xl mx-auto">
       <header className="flex items-center justify-between gap-3">
-        <Link to="/" className="font-display text-2xl">
-          34<span className="inline-block align-middle mx-0.5 w-4 h-1.5 bg-primary rounded-sm" />0
+        <Link to="/" className="brand-mark text-3xl inline-flex items-baseline gap-0.5 leading-none">
+          <span>34</span><span className="text-primary">:</span><span>0</span>
+          <span className="ml-2 text-[10px] tracking-[0.25em] text-warning/80 hidden sm:inline">UNSCHLAGBAR</span>
         </Link>
         <div className="flex items-center gap-2 text-xs">
           <span className="px-2 py-1 rounded bg-card border">{config.formation}</span>

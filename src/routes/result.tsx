@@ -9,7 +9,7 @@ const CLUBS = clubsData as Club[];
 
 export const Route = createFileRoute("/result")({
   validateSearch: (s: Record<string, unknown>) => ({ unbeaten: s.unbeaten === true || s.unbeaten === "true" }),
-  head: () => ({ meta: [{ title: "Result — 34-0" }] }),
+  head: () => ({ meta: [{ title: "Ergebnis · UNSCHLAGBAR 34:0" }] }),
   component: ResultScreen,
 });
 
@@ -30,7 +30,7 @@ function ResultScreen() {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-success/40 bg-success/10 text-success text-xs font-semibold tracking-widest uppercase">
             ★ Invincible ★
           </div>
-          <h1 className="mt-6 font-display text-7xl text-success">34-0</h1>
+          <h1 className="mt-6 brand-mark text-8xl text-success">34<span className="text-warning">:</span>0</h1>
           <p className="mt-4 text-xl">Your XI went unbeaten.</p>
         </>
       ) : (

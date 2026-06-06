@@ -10,7 +10,7 @@ import type { Club, MatchResult } from "@/lib/game-types";
 const CLUBS = clubsData as Club[];
 
 export const Route = createFileRoute("/season")({
-  head: () => ({ meta: [{ title: "Season — 34-0" }] }),
+  head: () => ({ meta: [{ title: "Saison · UNSCHLAGBAR 34:0" }] }),
   component: SeasonScreen,
 });
 
@@ -67,8 +67,8 @@ function SeasonScreen() {
       {/* Sticky header */}
       <div className="sticky top-0 z-20 backdrop-blur-md bg-background/75 border-b border-border/60">
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
-          <Link to="/" className="font-display text-2xl shrink-0">
-            34<span className="inline-block align-middle mx-0.5 w-4 h-1.5 bg-primary rounded-sm" />0
+          <Link to="/" className="brand-mark text-3xl inline-flex items-baseline gap-0.5 leading-none shrink-0">
+            <span>34</span><span className="text-primary">:</span><span>0</span>
           </Link>
           <div className="flex items-center gap-1.5 text-xs flex-wrap justify-end">
             <Stat label="OVR" value={String(ourRating)} />
