@@ -1,0 +1,468 @@
+[
+  {
+    "id": "realmadrid",
+    "name": "Real Madrid",
+    "short": "RMA",
+    "city": "Madrid",
+    "color": "#febe10",
+    "founded": 1902,
+    "strength": 93,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "barcelona",
+    "name": "FC Barcelona",
+    "short": "FCB",
+    "city": "Barcelona",
+    "color": "#a50044",
+    "founded": 1899,
+    "strength": 92,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "atletico",
+    "name": "Atlético Madrid",
+    "short": "ATM",
+    "city": "Madrid",
+    "color": "#cb3524",
+    "founded": 1903,
+    "strength": 87,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "sevilla",
+    "name": "Sevilla FC",
+    "short": "SEV",
+    "city": "Sevilla",
+    "color": "#d50000",
+    "founded": 1890,
+    "strength": 82,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "valencia",
+    "name": "Valencia CF",
+    "short": "VAL",
+    "city": "Valencia",
+    "color": "#ee7203",
+    "founded": 1919,
+    "strength": 80,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "villarreal",
+    "name": "Villarreal CF",
+    "short": "VIL",
+    "city": "Villarreal",
+    "color": "#ffe667",
+    "founded": 1923,
+    "strength": 80,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s"
+    ]
+  },
+  {
+    "id": "realsociedad",
+    "name": "Real Sociedad",
+    "short": "RSO",
+    "city": "San Sebastián",
+    "color": "#0067b1",
+    "founded": 1909,
+    "strength": 80,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "athletic",
+    "name": "Athletic Bilbao",
+    "short": "ATH",
+    "city": "Bilbao",
+    "color": "#ee2523",
+    "founded": 1898,
+    "strength": 79,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "betis",
+    "name": "Real Betis",
+    "short": "BET",
+    "city": "Sevilla",
+    "color": "#0bb363",
+    "founded": 1907,
+    "strength": 78,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "girona",
+    "name": "Girona FC",
+    "short": "GIR",
+    "city": "Girona",
+    "color": "#cd2534",
+    "founded": 1930,
+    "strength": 76,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "celta",
+    "name": "Celta Vigo",
+    "short": "CEL",
+    "city": "Vigo",
+    "color": "#8ac3ee",
+    "founded": 1923,
+    "strength": 75,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "rayo",
+    "name": "Rayo Vallecano",
+    "short": "RAY",
+    "city": "Madrid",
+    "color": "#e53027",
+    "founded": 1924,
+    "strength": 73,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "90s"
+    ]
+  },
+  {
+    "id": "osasuna",
+    "name": "CA Osasuna",
+    "short": "OSA",
+    "city": "Pamplona",
+    "color": "#d91a21",
+    "founded": 1920,
+    "strength": 73,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "getafe",
+    "name": "Getafe CF",
+    "short": "GET",
+    "city": "Getafe",
+    "color": "#005999",
+    "founded": 1983,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s"
+    ]
+  },
+  {
+    "id": "mallorca",
+    "name": "RCD Mallorca",
+    "short": "MAL",
+    "city": "Palma",
+    "color": "#a52a2a",
+    "founded": 1916,
+    "strength": 73,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "alaves",
+    "name": "Deportivo Alavés",
+    "short": "ALA",
+    "city": "Vitoria",
+    "color": "#0067b1",
+    "founded": 1921,
+    "strength": 71,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "90s"
+    ]
+  },
+  {
+    "id": "laspalmas",
+    "name": "UD Las Palmas",
+    "short": "LPA",
+    "city": "Las Palmas",
+    "color": "#ffd700",
+    "founded": 1949,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "leganes",
+    "name": "CD Leganés",
+    "short": "LEG",
+    "city": "Leganés",
+    "color": "#005bac",
+    "founded": 1928,
+    "strength": 69,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "valladolid",
+    "name": "Real Valladolid",
+    "short": "VLL",
+    "city": "Valladolid",
+    "color": "#7c1d8a",
+    "founded": 1928,
+    "strength": 69,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "90s"
+    ]
+  },
+  {
+    "id": "espanyol",
+    "name": "RCD Espanyol",
+    "short": "ESP",
+    "city": "Barcelona",
+    "color": "#0067b1",
+    "founded": 1900,
+    "strength": 72,
+    "era": "classic",
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "deportivo",
+    "name": "Deportivo La Coruña",
+    "short": "DEP",
+    "city": "A Coruña",
+    "color": "#0c5ca6",
+    "founded": 1906,
+    "strength": 77,
+    "era": "classic",
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "zaragoza",
+    "name": "Real Zaragoza",
+    "short": "ZAR",
+    "city": "Zaragoza",
+    "color": "#005bac",
+    "founded": 1932,
+    "strength": 75,
+    "era": "classic",
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "malaga",
+    "name": "Málaga CF",
+    "short": "MAG",
+    "city": "Málaga",
+    "color": "#0067b1",
+    "founded": 1904,
+    "strength": 75,
+    "era": "classic",
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "levante",
+    "name": "Levante UD",
+    "short": "LEV",
+    "city": "Valencia",
+    "color": "#a8224d",
+    "founded": 1909,
+    "strength": 70,
+    "era": "classic",
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "granada",
+    "name": "Granada CF",
+    "short": "GRA",
+    "city": "Granada",
+    "color": "#cb3524",
+    "founded": 1931,
+    "strength": 72,
+    "era": "classic",
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s"
+    ]
+  },
+  {
+    "id": "cadiz",
+    "name": "Cádiz CF",
+    "short": "CAD",
+    "city": "Cádiz",
+    "color": "#fff200",
+    "founded": 1910,
+    "strength": 69,
+    "era": "classic",
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "sportinggijon",
+    "name": "Sporting Gijón",
+    "short": "SPG",
+    "city": "Gijón",
+    "color": "#e60026",
+    "founded": 1905,
+    "strength": 72,
+    "era": "historic",
+    "era_tier": "90s",
+    "era_tiers": [
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "oviedo",
+    "name": "Real Oviedo",
+    "short": "OVI",
+    "city": "Oviedo",
+    "color": "#0033a0",
+    "founded": 1926,
+    "strength": 70,
+    "era": "historic",
+    "era_tier": "90s",
+    "era_tiers": [
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "hercules",
+    "name": "Hércules CF",
+    "short": "HER",
+    "city": "Alicante",
+    "color": "#0033a0",
+    "founded": 1922,
+    "strength": 69,
+    "era": "historic",
+    "era_tier": "70s-80s",
+    "era_tiers": [
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "burgos",
+    "name": "Burgos CF",
+    "short": "BUR",
+    "city": "Burgos",
+    "color": "#ffffff",
+    "founded": 1922,
+    "strength": 68,
+    "era": "historic",
+    "era_tier": "70s-80s",
+    "era_tiers": [
+      "70s-80s"
+    ]
+  }
+]
