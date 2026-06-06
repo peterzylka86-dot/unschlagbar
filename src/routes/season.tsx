@@ -87,6 +87,14 @@ function SeasonScreen() {
             <Stat label="GF" value={String(goalsFor)} />
             <Stat label="GA" value={String(goalsAgainst)} />
             <Stat label="MD" value={`${revealCount}/${matches.length}`} />
+            {!seasonOver && revealCount > 0 && (
+              <button
+                onClick={() => setRevealCount(matches.length)}
+                className="ml-1 px-2 py-1 rounded border border-warning/40 bg-warning/10 text-warning text-[10px] uppercase tracking-wider font-display hover:bg-warning/20"
+              >
+                Skip ⏭
+              </button>
+            )}
           </div>
         </div>
       </div>
