@@ -202,6 +202,14 @@ function DraftScreen() {
       return () => clearTimeout(t);
     }
   }, [assigningPlayer, compatibleSlotsForAssign.length]);
+  // auto-skip club if it has no compatible players (prevents stuck state)
+  const currentClubPlayers = currentClub ? playersForCurrentClub() : [];
+  useEffect(() => {
+    if (currentClub && !assigningPlayer && currentClubPlayers.length === 0) {
+      const t = setTimeout(() => { setCurrentClub(null); queueAutoSpin(); }, 900);
+      return () => clearTimeout(t);
+    }
+  }, [currentClub, assigningPlayer, currentClubPlayers.length]);
 
   return (
     <div className="min-h-screen px-3 py-6 max-w-6xl mx-auto">
