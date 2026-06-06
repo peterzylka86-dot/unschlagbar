@@ -12,7 +12,7 @@ const CLUBS = clubsData as Club[];
 const PLAYERS = playersData as Player[];
 
 const TIERS: { id: EraTier; label: string; sub: string }[] = [
-  { id: "current",  label: "Today",     sub: "2024/25" },
+  { id: "current",  label: "20s",       sub: "starting 2020s" },
   { id: "2000s",    label: "2000s",     sub: "post-Bosman" },
   { id: "90s",      label: "90s",       sub: "Lautern & Uerdingen" },
   { id: "70s-80s",  label: "70s-80s",   sub: "old guard" },
