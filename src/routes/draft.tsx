@@ -16,8 +16,25 @@ const TIERS: { id: EraTier; label: string; sub: string }[] = [
   { id: "2000s",    label: "2000s",     sub: "post-Bosman" },
   { id: "90s",      label: "90s",       sub: "Lautern & Uerdingen" },
   { id: "70s-80s",  label: "70s-80s",   sub: "old guard" },
-  { id: "legends",  label: "Legends",   sub: "pre-Bundesliga" },
 ];
+
+// Derive a player's era from career_years string (uses the earliest year found).
+const TIER_YEAR_RANGES: Record<EraTier, [number, number]> = {
+  "70s-80s": [1900, 1987],
+  "90s":     [1988, 1999],
+  "2000s":   [2000, 2014],
+  "current": [2015, 2100],
+};
+function getPlayerStartYear(p: Player): number {
+  const m = p.career_years.match(/(19|20)\d{2}/g);
+  if (!m || !m.length) return 2000;
+  return Math.min(...m.map(Number));
+}
+function playerMatchesTier(p: Player, tier: EraTier): boolean {
+  const y = getPlayerStartYear(p);
+  const [lo, hi] = TIER_YEAR_RANGES[tier];
+  return y >= lo && y <= hi;
+}
 
 export const Route = createFileRoute("/draft")({
   head: () => ({ meta: [{ title: "Draft · UNSCHLAGBAR 34:0" }] }),
