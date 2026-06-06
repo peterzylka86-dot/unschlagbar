@@ -19,7 +19,7 @@ export const FORMATIONS: Record<FormationKey, Formation> = {
     key: "4-3-3", label: "4-3-3",
     description: "Attacking with width. Three forwards create constant threat.",
     slots: build([
-      { pos: "GK",  positions: [[50, 92]] },
+      { pos: "GK",  positions: [[50, 90]] },
       { pos: "LB",  positions: [[12, 72]] },
       { pos: "CB",  positions: [[35, 76]] },
       { pos: "CB",  positions: [[65, 76]] },
@@ -36,7 +36,7 @@ export const FORMATIONS: Record<FormationKey, Formation> = {
     key: "4-4-2", label: "4-4-2",
     description: "Classic. Two strikers, two banks of four.",
     slots: build([
-      { pos: "GK",  positions: [[50, 92]] },
+      { pos: "GK",  positions: [[50, 90]] },
       { pos: "LB",  positions: [[12, 72]] },
       { pos: "CB",  positions: [[35, 76]] },
       { pos: "CB",  positions: [[65, 76]] },
@@ -53,7 +53,7 @@ export const FORMATIONS: Record<FormationKey, Formation> = {
     key: "4-2-3-1", label: "4-2-3-1",
     description: "Modern double pivot with a creative ten.",
     slots: build([
-      { pos: "GK",  positions: [[50, 92]] },
+      { pos: "GK",  positions: [[50, 90]] },
       { pos: "LB",  positions: [[12, 72]] },
       { pos: "CB",  positions: [[35, 76]] },
       { pos: "CB",  positions: [[65, 76]] },
@@ -70,7 +70,7 @@ export const FORMATIONS: Record<FormationKey, Formation> = {
     key: "4-5-1", label: "4-5-1",
     description: "Stacked midfield, one striker up top.",
     slots: build([
-      { pos: "GK",  positions: [[50, 92]] },
+      { pos: "GK",  positions: [[50, 90]] },
       { pos: "LB",  positions: [[12, 72]] },
       { pos: "CB",  positions: [[35, 76]] },
       { pos: "CB",  positions: [[65, 76]] },
@@ -87,7 +87,7 @@ export const FORMATIONS: Record<FormationKey, Formation> = {
     key: "3-4-3", label: "3-4-3",
     description: "Three at the back, wing-backs push high.",
     slots: build([
-      { pos: "GK",  positions: [[50, 92]] },
+      { pos: "GK",  positions: [[50, 90]] },
       { pos: "CB",  positions: [[22, 76]] },
       { pos: "CB",  positions: [[50, 78]] },
       { pos: "CB",  positions: [[78, 76]] },
@@ -104,7 +104,7 @@ export const FORMATIONS: Record<FormationKey, Formation> = {
     key: "3-5-2", label: "3-5-2",
     description: "Compact midfield, two strikers combine.",
     slots: build([
-      { pos: "GK",  positions: [[50, 92]] },
+      { pos: "GK",  positions: [[50, 90]] },
       { pos: "CB",  positions: [[22, 76]] },
       { pos: "CB",  positions: [[50, 78]] },
       { pos: "CB",  positions: [[78, 76]] },
@@ -121,7 +121,7 @@ export const FORMATIONS: Record<FormationKey, Formation> = {
     key: "5-4-1", label: "5-4-1",
     description: "Defensive lockdown, counter-attack lone striker.",
     slots: build([
-      { pos: "GK",  positions: [[50, 92]] },
+      { pos: "GK",  positions: [[50, 90]] },
       { pos: "LB",  positions: [[10, 70]] },
       { pos: "CB",  positions: [[30, 76]] },
       { pos: "CB",  positions: [[50, 78]] },
