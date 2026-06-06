@@ -59,7 +59,7 @@ function SeasonScreen() {
   }, [matches, revealCount]);
 
   const shown = matches.slice(0, revealCount);
-  const firstNonWinIdx = matches.findIndex(m => m.outcome !== "W");
+  const firstNonWinIdx = matches.findIndex(m => m.outcome === "L");
   const streakBroken = firstNonWinIdx !== -1 && revealCount > firstNonWinIdx;
   const wins = shown.filter(m => m.outcome === "W").length;
   const draws = shown.filter(m => m.outcome === "D").length;

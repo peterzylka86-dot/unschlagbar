@@ -30,7 +30,7 @@ function ResultScreen() {
   const draws = matches.filter(m => m.outcome === "D").length;
   const losses = matches.filter(m => m.outcome === "L").length;
   const points = wins * 3 + draws;
-  const firstLoss = matches.find(m => m.outcome !== "W");
+  const firstLoss = matches.find(m => m.outcome === "L");
 
   const { table, ourPosition } = useMemo(() => {
     if (!matches.length) return { table: [], ourPosition: 0 };
