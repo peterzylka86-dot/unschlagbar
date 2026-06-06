@@ -68,7 +68,8 @@ function DraftScreen() {
   const [autoSpinHint, setAutoSpinHint] = useState(false);
   const wheelRef = useRef<HTMLDivElement>(null);
 
-  const tierClubs = useMemo(() => CLUBS.filter(c => c.era_tier === tier), [tier]);
+  const clubInTier = (c: Club, t: EraTier) => (c.era_tiers ?? [c.era_tier]).includes(t);
+  const tierClubs = useMemo(() => CLUBS.filter(c => clubInTier(c, tier)), [tier]);
 
   const formation = FORMATIONS[config.formation];
   void formation;
