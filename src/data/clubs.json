@@ -162,7 +162,7 @@
     "founded": 1887,
     "strength": 80,
     "era": "classic",
-    "era_tier": "2000s"
+    "era_tier": "90s"
   },
   {
     "id": "schalke",
@@ -173,7 +173,7 @@
     "founded": 1904,
     "strength": 82,
     "era": "classic",
-    "era_tier": "2000s"
+    "era_tier": "00s"
   },
   {
     "id": "koln",
@@ -195,7 +195,7 @@
     "founded": 1892,
     "strength": 75,
     "era": "classic",
-    "era_tier": "2000s"
+    "era_tier": "00s"
   },
   {
     "id": "kaiserslautern",
@@ -206,7 +206,7 @@
     "founded": 1900,
     "strength": 78,
     "era": "classic",
-    "era_tier": "2000s"
+    "era_tier": "90s"
   },
   {
     "id": "bochum",
@@ -217,7 +217,7 @@
     "founded": 1938,
     "strength": 72,
     "era": "current",
-    "era_tier": "2000s"
+    "era_tier": "90s"
   },
   {
     "id": "heidenheim",
@@ -239,7 +239,7 @@
     "founded": 1898,
     "strength": 70,
     "era": "current",
-    "era_tier": "2000s"
+    "era_tier": "00s"
   },
   {
     "id": "1860",
@@ -250,7 +250,7 @@
     "founded": 1860,
     "strength": 74,
     "era": "classic",
-    "era_tier": "2000s"
+    "era_tier": "90s"
   },
   {
     "id": "nuernberg",
@@ -261,7 +261,7 @@
     "founded": 1900,
     "strength": 74,
     "era": "classic",
-    "era_tier": "2000s"
+    "era_tier": "00s"
   },
   {
     "id": "hannover",
@@ -272,7 +272,7 @@
     "founded": 1896,
     "strength": 72,
     "era": "classic",
-    "era_tier": "2000s"
+    "era_tier": "90s"
   },
   {
     "id": "karlsruhe",
@@ -283,7 +283,7 @@
     "founded": 1894,
     "strength": 74,
     "era": "classic",
-    "era_tier": "2000s"
+    "era_tier": "90s"
   },
   {
     "id": "uerdingen",
@@ -294,7 +294,7 @@
     "founded": 1905,
     "strength": 70,
     "era": "historic",
-    "era_tier": "2000s"
+    "era_tier": "90s"
   },
   {
     "id": "rotweissessen",
@@ -338,7 +338,7 @@
     "founded": 1965,
     "strength": 70,
     "era": "historic",
-    "era_tier": "2000s"
+    "era_tier": "90s"
   },
   {
     "id": "cottbus",
@@ -349,7 +349,7 @@
     "founded": 1963,
     "strength": 70,
     "era": "historic",
-    "era_tier": "2000s"
+    "era_tier": "00s"
   },
   {
     "id": "duisburg",
@@ -360,7 +360,7 @@
     "founded": 1902,
     "strength": 72,
     "era": "historic",
-    "era_tier": "2000s"
+    "era_tier": "90s"
   },
   {
     "id": "dynamodresden",
@@ -371,7 +371,7 @@
     "founded": 1953,
     "strength": 70,
     "era": "historic",
-    "era_tier": "2000s"
+    "era_tier": "90s"
   },
   {
     "id": "stpauli",
@@ -393,7 +393,7 @@
     "founded": 1895,
     "strength": 72,
     "era": "historic",
-    "era_tier": "2000s"
+    "era_tier": "90s"
   },
   {
     "id": "braunschweig",
@@ -415,7 +415,7 @@
     "founded": 1905,
     "strength": 70,
     "era": "historic",
-    "era_tier": "2000s"
+    "era_tier": "90s"
   },
   {
     "id": "meidericher",
@@ -470,7 +470,7 @@
     "founded": 1909,
     "strength": 66,
     "era": "historic",
-    "era_tier": "2000s"
+    "era_tier": "90s"
   },
   {
     "id": "ulm",
@@ -481,7 +481,7 @@
     "founded": 1846,
     "strength": 66,
     "era": "historic",
-    "era_tier": "2000s"
+    "era_tier": "90s"
   },
   {
     "id": "stpaderborn",
@@ -492,7 +492,7 @@
     "founded": 1907,
     "strength": 68,
     "era": "historic",
-    "era_tier": "2000s"
+    "era_tier": "00s"
   },
   {
     "id": "unterhaching",
@@ -503,7 +503,7 @@
     "founded": 1925,
     "strength": 66,
     "era": "historic",
-    "era_tier": "2000s"
+    "era_tier": "90s"
   },
   {
     "id": "furth",
@@ -514,7 +514,7 @@
     "founded": 1903,
     "strength": 68,
     "era": "historic",
-    "era_tier": "2000s"
+    "era_tier": "00s"
   },
   {
     "id": "ingolstadt",
@@ -525,7 +525,7 @@
     "founded": 2004,
     "strength": 68,
     "era": "historic",
-    "era_tier": "2000s"
+    "era_tier": "00s"
   },
   {
     "id": "sandhausen",
@@ -536,7 +536,7 @@
     "founded": 1916,
     "strength": 64,
     "era": "historic",
-    "era_tier": "2000s"
+    "era_tier": "00s"
   },
   {
     "id": "munich1860",
