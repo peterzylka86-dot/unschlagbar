@@ -591,9 +591,6 @@ function AssignPanel({ player, showRatings, compatible, onCancel }: {
           ? "Tap a glowing position on the pitch."
           : "No compatible slots — skipping…"}
       </p>
-      <button onClick={onCancel} className="mt-auto px-4 py-2 text-xs rounded-lg border hover:bg-background/50">
-        Skip player
-      </button>
     </motion.div>
   );
 }
