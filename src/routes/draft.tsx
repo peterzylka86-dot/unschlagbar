@@ -60,9 +60,18 @@ function DraftScreen() {
   const filledCount = totalSlots - emptySlots.length;
   const done = emptySlots.length === 0;
 
-  function spinClub(tierOverride?: EraTier) {
+  function pickRandomTier(): EraTier {
+    const tiersWithFresh = TIERS.filter(t =>
+      CLUBS.some(c => c.era_tier === t.id && !usedClubs.has(c.id))
+    );
+    const pool = tiersWithFresh.length ? tiersWithFresh : TIERS;
+    return pool[Math.floor(Math.random() * pool.length)].id;
+  }
+
+  function spinClub() {
     if (spinning) return;
-    const activeTier = tierOverride ?? tier;
+    const activeTier = pickRandomTier();
+    setTier(activeTier);
     const tierPool = CLUBS.filter(c => c.era_tier === activeTier);
     const fresh = tierPool.filter(c => !usedClubs.has(c.id));
     const candidates = fresh.length ? fresh : tierPool;
@@ -210,7 +219,6 @@ function DraftScreen() {
               autoSpinHint={autoSpinHint}
               tier={tier}
               tierClubs={tierClubs}
-              onTier={(t) => { if (!spinning) setTier(t); }}
               onSpin={() => spinClub()}
               pickingForSlot={pickingForSlot}
               draftMode={config.draftMode}
@@ -310,19 +318,19 @@ function PitchView({ slots, showRatings, onSlotClick, highlightSlots }: {
   );
 }
 
-function WheelPanel({ wheelRef, angle, spinning, autoSpinHint, tier, tierClubs, onTier, onSpin, pickingForSlot, draftMode, onCancelSlot }: {
+function WheelPanel({ wheelRef, angle, spinning, autoSpinHint, tier, tierClubs, onSpin, pickingForSlot, draftMode, onCancelSlot }: {
   wheelRef: React.RefObject<HTMLDivElement | null>;
   angle: number;
   spinning: boolean;
   autoSpinHint: boolean;
   tier: EraTier;
   tierClubs: Club[];
-  onTier: (t: EraTier) => void;
   onSpin: () => void;
   pickingForSlot: Slot | null;
   draftMode: "squad"|"position";
   onCancelSlot: () => void;
 }) {
+  const tierMeta = TIERS.find(t => t.id === tier);
   return (
     <div className="flex flex-col items-center text-center gap-3">
       {draftMode === "position" && pickingForSlot && (
@@ -335,27 +343,20 @@ function WheelPanel({ wheelRef, angle, spinning, autoSpinHint, tier, tierClubs, 
         </div>
       )}
 
-      {/* Tier chips */}
-      <div className="w-full flex flex-wrap gap-1 justify-center">
-        {TIERS.map(t => (
-          <button
-            key={t.id}
-            onClick={() => onTier(t.id)}
-            disabled={spinning}
-            className={`px-2.5 py-1 rounded-full text-[11px] font-display tracking-wide border transition ${
-              tier === t.id
-                ? "bg-primary text-primary-foreground border-primary shadow-[0_0_18px_-2px] shadow-primary/60"
-                : "border-border text-muted-foreground hover:border-foreground/40 hover:text-foreground"
-            } disabled:opacity-40`}
-            title={t.sub}
-          >
-            {t.label}
-          </button>
-        ))}
-      </div>
-      <div className="text-[11px] text-muted-foreground -mt-1">
-        {TIERS.find(t => t.id === tier)?.sub} · {tierClubs.length} clubs
-      </div>
+      {/* Random era reveal */}
+      <motion.div
+        key={tier}
+        initial={{ opacity: 0, y: -4 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex items-center gap-2"
+      >
+        <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Era</span>
+        <span className="px-2.5 py-1 rounded-full text-[11px] font-display tracking-wide bg-primary/15 text-primary border border-primary/40">
+          {tierMeta?.label}
+        </span>
+        <span className="text-[11px] text-muted-foreground">{tierMeta?.sub} · {tierClubs.length} clubs</span>
+      </motion.div>
+
 
       <div className="relative w-64 h-64 mt-1">
         {/* glow */}
