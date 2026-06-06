@@ -1,50 +1,111 @@
-## Goal
+# Multi-League Expansion
 
-Make positions strict (RB only fills RB, CB only CB, LB only LB — and same for every other position) and expand the player database so every club has enough coverage that the draft never gets stuck.
+Add three new leagues alongside Bundesliga, each with full historic player depth and a localized kickoff word.
 
-## 1. Strict position matching
+## 1. League model
 
-In `src/routes/draft.tsx`, simplify `isCompatible` to exact match only:
+New file `src/lib/leagues.ts`:
 
 ```ts
-function isCompatible(slotPos: Position, playerPos: Position): boolean {
-  return slotPos === playerPos;
+export type LeagueId = "bundesliga" | "laliga" | "seriea" | "swiss";
+
+export interface League {
+  id: LeagueId;
+  name: string;            // "La Liga"
+  country: string;         // "Spain"
+  matches: number;         // 34 / 38 / 38 / 36
+  brandMark: string;       // "34:0" / "38:0" / "36:0"
+  tagline: string;         // "UNSCHLAGBAR" / "INVENCIBLE" / "IMBATTIBILE" / "UNBESIEGT"
+  kickoffWord: string;     // "Anpfiff" / "¡Vamos!" / "Forza!" / "Hopp Schwiiz!"
+  clubsPerSeason: number;  // opponents drawn per run (e.g. 17 for 18-club leagues)
 }
 ```
 
-This affects:
-- Wheel filtering (`clubHasCompatible`, `spinClub`)
-- Tier validation (`tierClubs`)
-- Slot-targeting on assign
+Values:
+- Bundesliga — 34 games, "34:0", "UNSCHLAGBAR", "Anpfiff", 17 opponents (18 clubs)
+- La Liga — 38 games, "38:0", "INVENCIBLE", "¡Vamos!", 19 opponents (20 clubs)
+- Serie A — 38 games, "38:0", "IMBATTIBILE", "Forza!", 19 opponents
+- Swiss Super League — 36 games, "36:0", "UNBESIEGT", "Hopp Schwiiz!", 11 opponents played 3× + 1× variation, but simplest: 12 clubs × ~3 rounds. We'll generate 36 fixtures from the 11 opponents (each played roughly 3 times, home/away mix), matching real Swiss format.
 
-No other logic changes — the existing helpers already route through `isCompatible`.
+## 2. Data files
 
-## 2. Player database expansion
+Split clubs/players per league for clarity:
 
-Today's gaps (every club must have ≥1 of each of: GK, CB, RB, LB, CDM, CM, CAM, RW, LW, ST):
+```
+src/data/
+  bundesliga/clubs.json
+  bundesliga/players.json
+  laliga/clubs.json
+  laliga/players.json
+  seriea/clubs.json
+  seriea/players.json
+  swiss/clubs.json
+  swiss/players.json
+```
 
-- 55 of 56 clubs have at least one missing or thin (only 1) position
-- Worst offenders: smaller/historic clubs (uerdingen, rotweissessen, saarbruecken, tasmania, hansa, dynamodresden, duisburg, meidericher, bremerhaven, offenbach, aachen, wattenscheid, ulm, paderborn, unterhaching, fürth, ingolstadt, sandhausen, homburg, blauweiß 90, stuttgarter kickers, wuppertaler, tennis borussia, viktoria, vfb leipzig, braunschweig, bielefeld) — most have 13–20 players and several missing positions
-- Big clubs also have gaps split across eras (e.g. Frankfurt missing LB, Stuttgart missing RW)
+Move existing Bundesliga data into `bundesliga/`. Add a loader `src/lib/data.ts` that returns `{ clubs, players }` for a given `LeagueId`.
 
-### Expansion target
+### Coverage targets per new league
 
-- **Big multi-era clubs** (bayern, dortmund, leverkusen, frankfurt, stuttgart, gladbach, werder, hamburg, schalke, köln, kaiserslautern, hertha, nürnberg, bochum, 1860, hannover): bring each up to ~20 per active era_tier, ensuring all 10 positions covered per era.
-- **Single-era modern clubs** (leipzig, union, augsburg, mainz, hoffenheim, freiburg, wolfsburg, heidenheim, darmstadt, st pauli, paderborn, ingolstadt, fürth, sandhausen, cottbus, hansa, etc.): bring each to ~20 with all 10 positions.
-- **Small historic clubs** (uerdingen, rotweissessen, saarbrücken, tasmania, duisburg, meidericher, bremerhaven, offenbach, aachen, wattenscheid, ulm, unterhaching, homburg, blauweiß 90, stuttgarter kickers, wuppertaler, tennis borussia, viktoria, vfb leipzig, braunschweig, bielefeld, dynamodresden): bring each to ~15–20 with all 10 positions covered (real historical squad members from their notable era).
+Same shape as Bundesliga: every club covered across all 4 era tiers (current / 00s / 90s / 70s-80s), each era having all 10 positions, ~15–20 players per club per active era.
 
-All new entries use authentic players from the appropriate decade for that club's `era_tier`. Ratings stay in the existing 65–95 scale, consistent with current entries for that club tier.
+- **La Liga** — ~30 clubs across eras (Real Madrid, Barça, Atlético, Valencia, Sevilla, Bilbao, Real Sociedad, Villarreal, Betis, Deportivo, Zaragoza, Celta, Mallorca, Espanyol, Málaga, Getafe, Girona, Las Palmas, Rayo, Osasuna, Alavés, Valladolid, Granada, Levante, Cádiz, plus historic: Hércules, Burgos, Sporting Gijón, Salamanca, etc.). ~500–700 players.
+- **Serie A** — ~30 clubs (Juventus, Milan, Inter, Roma, Lazio, Napoli, Fiorentina, Atalanta, Torino, Bologna, Sampdoria, Genoa, Udinese, Parma, Verona, Lecce, Cagliari, Sassuolo, Empoli, Monza, Como, Venezia, plus historic: Foggia, Padova, Vicenza, Brescia, Reggina, Chievo, Ascoli, Avellino, etc.). ~500–700 players.
+- **Swiss Super League** — ~15 clubs (Basel, YB, Zürich, GC, Servette, Sion, Luzern, Lugano, St. Gallen, Lausanne, Winterthur, Yverdon, Thun, Aarau, NE Xamax). ~200–300 players.
 
-### Safety net
+All ratings use the existing 65–95 scale, authentic to each player's era.
 
-Even with expansion, keep one defensive guard in `spinClub`: if after filtering by tier + position there are zero compatible clubs left, surface a clear "no compatible clubs remaining — reroll required" state instead of silently spinning forever. (Current code already filters; this just makes the empty case explicit so the bug from earlier turns can't reoccur if a niche position runs out late in a draft.)
+## 3. Setup flow
 
-## 3. Out of scope
+Add a league picker as the first step in `src/routes/game.tsx`, above Formation:
 
+```
+League → Formation → Difficulty → Show Ratings → Draft Mode → Player Ratings → Start
+```
+
+Store `league: LeagueId` on `RunConfig` in `src/lib/store.ts`. Default to `"bundesliga"`.
+
+When league changes:
+- reset slots
+- reset rerolls
+- clear matches
+
+## 4. Wiring through the app
+
+- `src/routes/index.tsx` (landing) — keep "34:0" as default brand, but show all four league badges (34/38/38/36) as a teaser row.
+- `src/routes/game.tsx` — brand mark dynamic per selected league (`league.brandMark` + `league.tagline`).
+- `src/routes/draft.tsx` — uses `getLeagueData(league)` for clubs/players. The "Anpfiff" / "Start match" CTA copy uses `league.kickoffWord`. Same for the start-season button label.
+- `src/routes/season.tsx` — title shows `league.brandMark`; uses `league.matches` for total fixtures; uses `league.tagline` everywhere the word "UNSCHLAGBAR" appears.
+- `src/routes/result.tsx` — same: dynamic brand, tagline, match count; "unbeaten until you lose" rule unchanged.
+- `src/lib/sim.ts` — `simulateSeason` already takes opponents; pass full opponent list and let length drive the fixture count. For Swiss, build a 36-fixture schedule (each opponent ~3×, balanced home/away). For La Liga / Serie A, double round-robin with 19 opponents = 38 games (already matches existing logic).
+- `src/lib/store.ts` — add `league` to config; helper `getLeague(state.config.league)`.
+
+## 5. Localized labels (per league)
+
+| League | Brand | Tagline | Kickoff CTA | Season banner |
+|---|---|---|---|---|
+| Bundesliga | 34:0 | UNSCHLAGBAR | Anpfiff | "Unschlagbar" |
+| La Liga | 38:0 | INVENCIBLE | ¡Vamos! | "Invencible" |
+| Serie A | 38:0 | IMBATTIBILE | Forza! | "Imbattibile" |
+| Swiss SL | 36:0 | UNBESIEGT | Hopp Schwiiz! | "Unbesiegt" |
+
+All page `<head>` titles update to the active league's brand+tagline.
+
+## 6. Out of scope
+
+- No formation, draft, or match-engine logic changes
+- No UI redesign — picker reuses existing `OptionCard` component
 - Tier names stay: current / 00s / 90s / 70s-80s
-- No changes to UI, formation, or match logic
 
 ## Files touched
 
-- `src/routes/draft.tsx` — strict `isCompatible`, explicit empty-pool guard
-- `src/data/players.json` — large batch of additions (target ~+400–600 entries)
+- new: `src/lib/leagues.ts`, `src/lib/data.ts`
+- new: `src/data/{laliga,seriea,swiss}/clubs.json`, `src/data/{laliga,seriea,swiss}/players.json`
+- moved: `src/data/clubs.json`, `src/data/players.json` → `src/data/bundesliga/`
+- edited: `src/lib/game-types.ts` (add `league` to `RunConfig`)
+- edited: `src/lib/store.ts`, `src/lib/sim.ts`
+- edited: `src/routes/{index,game,draft,season,result}.tsx`
+
+## Build size note
+
+Player JSON for three new leagues with full historic depth will roughly triple the data payload (~40–50k lines total). Generation happens in a single batch; first run will take longer than usual.

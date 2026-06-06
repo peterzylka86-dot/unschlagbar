@@ -46,6 +46,7 @@ export type DraftMode = "squad"|"position";
 export type RatingMode = "career"|"prime";
 
 export interface RunConfig {
+  league: import("./leagues").LeagueId;
   formation: FormationKey;
   difficulty: Difficulty;
   showRatings: boolean;
