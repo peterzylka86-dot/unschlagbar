@@ -60,11 +60,26 @@ function DraftScreen() {
   const filledCount = totalSlots - emptySlots.length;
   const done = emptySlots.length === 0;
 
+  function clubHasCompatible(club: Club): boolean {
+    const openSlots = slots.filter(s => !s.player);
+    if (openSlots.length === 0) return false;
+    const clubPlayers = PLAYERS.filter(
+      p => p.club === club.id && !usedPlayers.has(`${p.club}:${p.name}`)
+    );
+    if (config.draftMode === "position" && pickingForSlot) {
+      return clubPlayers.some(p => isCompatible(pickingForSlot.position, p.position));
+    }
+    return clubPlayers.some(p => openSlots.some(s => isCompatible(s.position, p.position)));
+  }
+
   function pickRandomTier(): EraTier {
     const tiersWithFresh = TIERS.filter(t =>
-      CLUBS.some(c => c.era_tier === t.id && !usedClubs.has(c.id))
+      CLUBS.some(c => c.era_tier === t.id && !usedClubs.has(c.id) && clubHasCompatible(c))
     );
-    const pool = tiersWithFresh.length ? tiersWithFresh : TIERS;
+    const pool = tiersWithFresh.length
+      ? tiersWithFresh
+      : TIERS.filter(t => CLUBS.some(c => c.era_tier === t.id && clubHasCompatible(c)));
+    if (!pool.length) return TIERS[0].id;
     return pool[Math.floor(Math.random() * pool.length)].id;
   }
 
@@ -73,8 +88,10 @@ function DraftScreen() {
     const activeTier = pickRandomTier();
     setTier(activeTier);
     const tierPool = CLUBS.filter(c => c.era_tier === activeTier);
-    const fresh = tierPool.filter(c => !usedClubs.has(c.id));
-    const candidates = fresh.length ? fresh : tierPool;
+    const fresh = tierPool.filter(c => !usedClubs.has(c.id) && clubHasCompatible(c));
+    const candidates = fresh.length
+      ? fresh
+      : tierPool.filter(c => clubHasCompatible(c));
     if (!candidates.length) return;
     const pick = candidates[Math.floor(Math.random() * candidates.length)];
     const idx = tierPool.findIndex(c => c.id === pick.id);
