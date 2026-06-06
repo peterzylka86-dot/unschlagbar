@@ -26,15 +26,25 @@ function Landing() {
         {/* top retro stripe */}
         <div className="retro-stripes h-2 rounded-t-2xl" />
 
-        <div className="retro-card rounded-b-2xl bg-card/70 backdrop-blur-md px-8 py-12 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-warning/40 bg-warning/10 text-warning text-[10px] font-semibold tracking-[0.25em] uppercase">
-            <span className="w-1.5 h-1.5 rounded-full bg-warning animate-pulse" />
-            Saison · Tippspiel
+        <div className="retro-card rounded-b-2xl bg-card/70 backdrop-blur-md px-8 pt-10 pb-8 text-center">
+          <div className="flex items-center justify-center gap-2">
+            <span className="pixel-badge text-[11px]">SAISON 25/26</span>
+            <span className="px-2 py-0.5 text-[10px] tracking-[0.25em] uppercase text-warning border border-warning/40 rounded-sm bg-warning/5">
+              Manager-Modus
+            </span>
           </div>
 
-          <div className="mt-8 flex flex-col items-center gap-3">
+          <div className="mt-7 flex flex-col items-center gap-4">
             <BrandMark size="xl" to={undefined} />
             <WordMark className="text-[11px] sm:text-xs text-warning/90" />
+            {/* Anstoss-style CRT scoreboard */}
+            <div className="scoreboard scanlines rounded-sm mt-1 text-xl">
+              <span className="opacity-70">SPIELE</span>{" "}
+              <span>34</span>
+              <span className="mx-2 opacity-50">|</span>
+              <span className="opacity-70">NIEDERLAGEN</span>{" "}
+              <span>00</span>
+            </div>
           </div>
 
           <div className="mt-7 mx-auto w-24 h-px bg-warning/40" />
@@ -61,8 +71,22 @@ function Landing() {
             <Stat value="60+" label="Jahre" />
           </div>
 
+          {/* Anstoss-style ticker */}
+          <div className="ticker mt-8 rounded-sm">
+            <div className="ticker-track">
+              <span>TRANSFERFENSTER GEÖFFNET</span>
+              <span>RAHN TRIFFT AUS 20 METERN</span>
+              <span>UERDINGEN BEZWINGT DYNAMO 7:3</span>
+              <span>NETZER ÜBERNIMMT DAS MITTELFELD</span>
+              <span>BREITNER KEHRT ZURÜCK</span>
+              <span>EFFENBERG MIT GELB-ROT</span>
+              <span>KAHN HÄLT ALLES</span>
+              <span>BUNDESLIGA-LEGENDE GIBT COMEBACK</span>
+            </div>
+          </div>
+
           {/* bottom retro stripe */}
-          <div className="retro-stripes h-1.5 rounded mt-10 opacity-80" />
+          <div className="retro-stripes h-1.5 rounded mt-6 opacity-80" />
         </div>
       </div>
 
