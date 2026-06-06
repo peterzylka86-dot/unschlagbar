@@ -162,7 +162,7 @@
     "founded": 1887,
     "strength": 80,
     "era": "classic",
-    "era_tier": "current"
+    "era_tier": "2000s"
   },
   {
     "id": "schalke",
@@ -206,7 +206,7 @@
     "founded": 1900,
     "strength": 78,
     "era": "classic",
-    "era_tier": "90s"
+    "era_tier": "2000s"
   },
   {
     "id": "bochum",
@@ -250,7 +250,7 @@
     "founded": 1860,
     "strength": 74,
     "era": "classic",
-    "era_tier": "90s"
+    "era_tier": "2000s"
   },
   {
     "id": "nuernberg",
@@ -261,7 +261,7 @@
     "founded": 1900,
     "strength": 74,
     "era": "classic",
-    "era_tier": "90s"
+    "era_tier": "2000s"
   },
   {
     "id": "hannover",
@@ -294,7 +294,7 @@
     "founded": 1905,
     "strength": 70,
     "era": "historic",
-    "era_tier": "90s"
+    "era_tier": "2000s"
   },
   {
     "id": "rotweissessen",
@@ -338,7 +338,7 @@
     "founded": 1965,
     "strength": 70,
     "era": "historic",
-    "era_tier": "90s"
+    "era_tier": "2000s"
   },
   {
     "id": "cottbus",
@@ -349,7 +349,7 @@
     "founded": 1963,
     "strength": 70,
     "era": "historic",
-    "era_tier": "90s"
+    "era_tier": "2000s"
   },
   {
     "id": "duisburg",
@@ -360,7 +360,7 @@
     "founded": 1902,
     "strength": 72,
     "era": "historic",
-    "era_tier": "90s"
+    "era_tier": "2000s"
   },
   {
     "id": "dynamodresden",
@@ -371,7 +371,7 @@
     "founded": 1953,
     "strength": 70,
     "era": "historic",
-    "era_tier": "90s"
+    "era_tier": "2000s"
   },
   {
     "id": "stpauli",
@@ -393,7 +393,7 @@
     "founded": 1895,
     "strength": 72,
     "era": "historic",
-    "era_tier": "90s"
+    "era_tier": "2000s"
   },
   {
     "id": "braunschweig",
@@ -470,7 +470,7 @@
     "founded": 1909,
     "strength": 66,
     "era": "historic",
-    "era_tier": "90s"
+    "era_tier": "2000s"
   },
   {
     "id": "ulm",
@@ -481,7 +481,7 @@
     "founded": 1846,
     "strength": 66,
     "era": "historic",
-    "era_tier": "90s"
+    "era_tier": "2000s"
   },
   {
     "id": "stpaderborn",
@@ -503,7 +503,7 @@
     "founded": 1925,
     "strength": 66,
     "era": "historic",
-    "era_tier": "90s"
+    "era_tier": "2000s"
   },
   {
     "id": "furth",

@@ -1680,11 +1680,11 @@
     "club": "augsburg"
   },
   {
-    "position": "RW",
-    "prime_rating": 82,
+    "name": "André Hahn",
+    "position": "ST",
     "nationality": "Germany",
-    "name": "Andre Hahn",
-    "career_years": "2012-2014",
+    "career_years": "2013-2014, 2017-2024",
+    "prime_rating": 78,
     "club": "augsburg"
   },
   {
@@ -2288,14 +2288,6 @@
     "club": "schalke"
   },
   {
-    "position": "ST",
-    "name": "Raúl González",
-    "nationality": "Spain",
-    "career_years": "2010-2012",
-    "prime_rating": 89,
-    "club": "schalke"
-  },
-  {
     "nationality": "Belgium",
     "name": "Marc Wilmots",
     "position": "CAM",
@@ -2632,11 +2624,11 @@
     "club": "mainz"
   },
   {
-    "prime_rating": 82,
-    "name": "Adam Szalai",
+    "name": "Ádám Szalai",
     "position": "ST",
     "nationality": "Hungary",
-    "career_years": "2010-2013",
+    "career_years": "2010-2013, 2016-2017",
+    "prime_rating": 80,
     "club": "mainz"
   },
   {
@@ -7704,14 +7696,6 @@
     "club": "frankfurt"
   },
   {
-    "name": "Luka Jović",
-    "position": "ST",
-    "nationality": "Serbia",
-    "career_years": "2017-2019",
-    "prime_rating": 83,
-    "club": "frankfurt"
-  },
-  {
     "name": "Ante Rebić",
     "position": "RW",
     "nationality": "Croatia",
@@ -7816,14 +7800,6 @@
     "club": "stuttgart"
   },
   {
-    "name": "Mario Gomez",
-    "position": "ST",
-    "nationality": "Germany",
-    "career_years": "2003-2009, 2018-2020",
-    "prime_rating": 88,
-    "club": "stuttgart"
-  },
-  {
     "name": "Sami Khedira",
     "position": "CDM",
     "nationality": "Germany",
@@ -7853,14 +7829,6 @@
     "nationality": "Germany",
     "career_years": "1990-1996",
     "prime_rating": 79,
-    "club": "stuttgart"
-  },
-  {
-    "name": "Asgeir Sigurvinsson",
-    "position": "CAM",
-    "nationality": "Iceland",
-    "career_years": "1982-1990",
-    "prime_rating": 85,
     "club": "stuttgart"
   },
   {
@@ -7997,14 +7965,6 @@
     "nationality": "Croatia",
     "career_years": "2013-2015",
     "prime_rating": 84,
-    "club": "wolfsburg"
-  },
-  {
-    "name": "Ricardo Rodríguez",
-    "position": "LB",
-    "nationality": "Switzerland",
-    "career_years": "2012-2017",
-    "prime_rating": 83,
     "club": "wolfsburg"
   },
   {
@@ -8150,22 +8110,6 @@
     "career_years": "2017-Present",
     "prime_rating": 81,
     "club": "gladbach"
-  },
-  {
-    "name": "Vedad Ibišević",
-    "position": "ST",
-    "nationality": "Bosnia",
-    "career_years": "2007-2012",
-    "prime_rating": 85,
-    "club": "hoffenheim"
-  },
-  {
-    "name": "Sejad Salihović",
-    "position": "LB",
-    "nationality": "Bosnia",
-    "career_years": "2007-2014",
-    "prime_rating": 80,
-    "club": "hoffenheim"
   },
   {
     "name": "Anthony Modeste",
@@ -8376,14 +8320,6 @@
     "club": "mainz"
   },
   {
-    "name": "Ádám Szalai",
-    "position": "ST",
-    "nationality": "Hungary",
-    "career_years": "2010-2013, 2016-2017",
-    "prime_rating": 80,
-    "club": "mainz"
-  },
-  {
     "name": "Eric Maxim Choupo-Moting",
     "position": "ST",
     "nationality": "Cameroon",
@@ -8464,35 +8400,11 @@
     "club": "mainz"
   },
   {
-    "name": "Sascha Mölders",
-    "position": "ST",
-    "nationality": "Germany",
-    "career_years": "2011-2014",
-    "prime_rating": 78,
-    "club": "augsburg"
-  },
-  {
-    "name": "André Hahn",
-    "position": "ST",
-    "nationality": "Germany",
-    "career_years": "2013-2014, 2017-2024",
-    "prime_rating": 78,
-    "club": "augsburg"
-  },
-  {
     "name": "Halil Altıntop",
     "position": "CAM",
     "nationality": "Turkey",
     "career_years": "2011-2014",
     "prime_rating": 77,
-    "club": "augsburg"
-  },
-  {
-    "name": "Raúl Bobadilla",
-    "position": "ST",
-    "nationality": "Argentina",
-    "career_years": "2014-2017",
-    "prime_rating": 79,
     "club": "augsburg"
   },
   {
@@ -8533,14 +8445,6 @@
     "nationality": "Germany",
     "career_years": "2023-Present",
     "prime_rating": 79,
-    "club": "augsburg"
-  },
-  {
-    "name": "Ermedin Demirović",
-    "position": "ST",
-    "nationality": "Bosnia",
-    "career_years": "2022-2024",
-    "prime_rating": 80,
     "club": "augsburg"
   },
   {
@@ -8613,14 +8517,6 @@
     "nationality": "Portugal",
     "career_years": "2006-2010",
     "prime_rating": 81,
-    "club": "werder"
-  },
-  {
-    "name": "Aílton",
-    "position": "ST",
-    "nationality": "Brazil",
-    "career_years": "1998-2004",
-    "prime_rating": 87,
     "club": "werder"
   },
   {
@@ -8832,14 +8728,6 @@
     "club": "hamburg"
   },
   {
-    "name": "Daniel van Buyten",
-    "position": "CB",
-    "nationality": "Belgium",
-    "career_years": "2004-2006",
-    "prime_rating": 83,
-    "club": "hamburg"
-  },
-  {
     "name": "Nigel de Jong",
     "position": "CDM",
     "nationality": "Netherlands",
@@ -8973,14 +8861,6 @@
     "nationality": "Germany",
     "career_years": "1992-2001",
     "prime_rating": 81,
-    "club": "schalke"
-  },
-  {
-    "name": "Jiří Němec",
-    "position": "CDM",
-    "nationality": "Czechia",
-    "career_years": "1993-2001",
-    "prime_rating": 83,
     "club": "schalke"
   },
   {
@@ -9480,14 +9360,6 @@
     "club": "kaiserslautern"
   },
   {
-    "name": "Ciríaco Sforza",
-    "position": "CM",
-    "nationality": "Switzerland",
-    "career_years": "1995-1996, 2000-2002",
-    "prime_rating": 83,
-    "club": "kaiserslautern"
-  },
-  {
     "name": "Hany Ramzy",
     "position": "CB",
     "nationality": "Egypt",
@@ -9589,14 +9461,6 @@
     "nationality": "Czechia",
     "career_years": "2002-2007",
     "prime_rating": 80,
-    "club": "bochum"
-  },
-  {
-    "name": "Théofanis Gekas",
-    "position": "ST",
-    "nationality": "Greece",
-    "career_years": "2006-2007",
-    "prime_rating": 82,
     "club": "bochum"
   },
   {
@@ -9798,14 +9662,6 @@
     "career_years": "2021-Present",
     "prime_rating": 80,
     "club": "stpauli"
-  },
-  {
-    "name": "Jiří Štajner",
-    "position": "ST",
-    "nationality": "Czechia",
-    "career_years": "2003-2010",
-    "prime_rating": 81,
-    "club": "hannover"
   },
   {
     "name": "Mike Hanke",
@@ -10085,14 +9941,6 @@
     "nationality": "Germany",
     "career_years": "2014-2017",
     "prime_rating": 78,
-    "club": "darmstadt"
-  },
-  {
-    "name": "Aytaç Sulu",
-    "position": "CB",
-    "nationality": "Germany",
-    "career_years": "2014-2018",
-    "prime_rating": 80,
     "club": "darmstadt"
   },
   {
@@ -10398,5 +10246,221 @@
     "career_years": "2014-2015",
     "prime_rating": 75,
     "club": "stpaderborn"
+  },
+  {
+    "name": "Robert Glatzel",
+    "position": "ST",
+    "prime_rating": 78,
+    "career_years": "2022-2024",
+    "nationality": "Germany",
+    "club": "hamburg"
+  },
+  {
+    "name": "Sebastian Schonlau",
+    "position": "CB",
+    "prime_rating": 76,
+    "career_years": "2021-2024",
+    "nationality": "Germany",
+    "club": "hamburg"
+  },
+  {
+    "name": "Ludovit Reis",
+    "position": "CM",
+    "prime_rating": 76,
+    "career_years": "2022-2024",
+    "nationality": "Netherlands",
+    "club": "hamburg"
+  },
+  {
+    "name": "Jonas Meffert",
+    "position": "CDM",
+    "prime_rating": 75,
+    "career_years": "2021-2024",
+    "nationality": "Germany",
+    "club": "hamburg"
+  },
+  {
+    "name": "Daniel Heuer Fernandes",
+    "position": "GK",
+    "prime_rating": 76,
+    "career_years": "2020-2024",
+    "nationality": "Portugal",
+    "club": "hamburg"
+  },
+  {
+    "name": "Bakery Jatta",
+    "position": "RW",
+    "prime_rating": 75,
+    "career_years": "2016-2024",
+    "nationality": "Gambia",
+    "club": "hamburg"
+  },
+  {
+    "name": "Jonas Omlin",
+    "position": "GK",
+    "prime_rating": 78,
+    "career_years": "2023-2024",
+    "nationality": "Switzerland",
+    "club": "gladbach"
+  },
+  {
+    "name": "Ko Itakura",
+    "position": "CB",
+    "prime_rating": 79,
+    "career_years": "2022-2024",
+    "nationality": "Japan",
+    "club": "gladbach"
+  },
+  {
+    "name": "Tim Kleindienst",
+    "position": "ST",
+    "prime_rating": 80,
+    "career_years": "2024-present",
+    "nationality": "Germany",
+    "club": "gladbach"
+  },
+  {
+    "name": "Rocco Reitz",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "2022-2024",
+    "nationality": "Germany",
+    "club": "gladbach"
+  },
+  {
+    "name": "Mitchell Weiser",
+    "position": "RB",
+    "prime_rating": 78,
+    "career_years": "2021-2024",
+    "nationality": "Germany",
+    "club": "werder"
+  },
+  {
+    "name": "Niklas Stark",
+    "position": "CB",
+    "prime_rating": 76,
+    "career_years": "2022-2024",
+    "nationality": "Germany",
+    "club": "werder"
+  },
+  {
+    "name": "Stefan Krämer",
+    "position": "ST",
+    "prime_rating": 76,
+    "career_years": "1989-1993",
+    "nationality": "Germany",
+    "club": "uerdingen"
+  },
+  {
+    "name": "Brian Laudrup",
+    "position": "CAM",
+    "prime_rating": 85,
+    "career_years": "1990-1992",
+    "nationality": "Denmark",
+    "club": "uerdingen"
+  },
+  {
+    "name": "Wolfgang Schäfer",
+    "position": "CB",
+    "prime_rating": 74,
+    "career_years": "1988-1994",
+    "nationality": "Germany",
+    "club": "uerdingen"
+  },
+  {
+    "name": "Markus Kurth",
+    "position": "CDM",
+    "prime_rating": 73,
+    "career_years": "1992-1998",
+    "nationality": "Germany",
+    "club": "duisburg"
+  },
+  {
+    "name": "Jens Ramme",
+    "position": "GK",
+    "prime_rating": 74,
+    "career_years": "1990-1995",
+    "nationality": "Germany",
+    "club": "dynamodresden"
+  },
+  {
+    "name": "Sven Demandt",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1989-1992",
+    "nationality": "Germany",
+    "club": "fortunaduesseldorf"
+  },
+  {
+    "name": "Aníbal Matellán",
+    "position": "CB",
+    "prime_rating": 73,
+    "career_years": "2012-2014",
+    "nationality": "Argentina",
+    "club": "fortunaduesseldorf"
+  },
+  {
+    "name": "Manuel Prietl",
+    "position": "CDM",
+    "prime_rating": 74,
+    "career_years": "2017-2022",
+    "nationality": "Austria",
+    "club": "bielefeld"
+  },
+  {
+    "name": "Markus Miller",
+    "position": "GK",
+    "prime_rating": 74,
+    "career_years": "2007-2010",
+    "nationality": "Germany",
+    "club": "karlsruhe"
+  },
+  {
+    "name": "Klaus Fischer",
+    "position": "ST",
+    "prime_rating": 82,
+    "career_years": "1980-1984",
+    "nationality": "Germany",
+    "club": "aachen"
+  },
+  {
+    "name": "Jupp Martinelli",
+    "position": "CB",
+    "prime_rating": 74,
+    "career_years": "1975-1982",
+    "nationality": "Germany",
+    "club": "aachen"
+  },
+  {
+    "name": "Erwin Hoffmann",
+    "position": "CM",
+    "prime_rating": 73,
+    "career_years": "1978-1985",
+    "nationality": "Germany",
+    "club": "aachen"
+  },
+  {
+    "name": "Olaf Marschall",
+    "position": "ST",
+    "prime_rating": 78,
+    "career_years": "1991-1994",
+    "nationality": "Germany",
+    "club": "wattenscheid"
+  },
+  {
+    "name": "Manfred Schwabl",
+    "position": "CM",
+    "prime_rating": 76,
+    "career_years": "1991-1995",
+    "nationality": "Germany",
+    "club": "nuernberg"
+  },
+  {
+    "name": "Christian Wück",
+    "position": "ST",
+    "prime_rating": 74,
+    "career_years": "1991-1996",
+    "nationality": "Germany",
+    "club": "nuernberg"
   }
 ]
