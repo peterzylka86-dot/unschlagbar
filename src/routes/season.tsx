@@ -47,7 +47,16 @@ function SeasonScreen() {
   useEffect(() => {
     if (!matches.length) return;
     if (revealCount >= matches.length) return;
-    const t = setTimeout(() => setRevealCount(c => c + 1), 220);
+    // Pace the matchdays so they feel like a real season, not a flickr
+    const last = matches[revealCount - 1];
+    const base = 950;
+    // Linger longer on dramatic results so the user can read them
+    const extra = !last ? 200
+      : last.outcome === "L" ? 700
+      : last.outcome === "D" ? 450
+      : last.ourScore + last.theirScore >= 5 ? 250
+      : 0;
+    const t = setTimeout(() => setRevealCount(c => c + 1), base + extra);
     return () => clearTimeout(t);
   }, [matches, revealCount]);
 
