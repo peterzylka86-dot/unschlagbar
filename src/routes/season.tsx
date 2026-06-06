@@ -83,6 +83,13 @@ function SeasonScreen() {
       </div>
 
       <div className="px-4 max-w-5xl mx-auto">
+        {/* Live current matchday card */}
+        <AnimatePresence mode="wait">
+          {!seasonOver && revealCount > 0 && shown[shown.length - 1] && (
+            <LiveCard key={revealCount} match={shown[shown.length - 1]!} />
+          )}
+        </AnimatePresence>
+
         <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
           {matches.map((m, i) => {
             const isStreakBreaker = i === firstNonWinIdx;
