@@ -79,9 +79,15 @@ function DraftScreen() {
     const pick = candidates[Math.floor(Math.random() * candidates.length)];
     const idx = tierPool.findIndex(c => c.id === pick.id);
     const segAngle = 360 / tierPool.length;
-    const target = 360 * 6 + (360 - idx * segAngle - segAngle / 2);
+    // Pointer is at 3 o'clock (0°). Slice i midpoint in SVG (before rotation) sits at (i+0.5)*segAngle - 90.
+    // After rotating wheel by R° clockwise, midpoint lands at that + R. Solve for R ≡ 90 - (i+0.5)*seg (mod 360).
+    const desired = 90 - (idx + 0.5) * segAngle;
     setSpinning(true);
-    setAngle(prev => prev + target);
+    setAngle(prev => {
+      const current = ((prev % 360) + 360) % 360;
+      const delta = (((desired - current) % 360) + 360) % 360;
+      return prev + 360 * 6 + delta;
+    });
     setTimeout(() => {
       setSpinning(false);
       setCurrentClub(pick);
