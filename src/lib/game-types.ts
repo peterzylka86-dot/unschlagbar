@@ -12,6 +12,7 @@ export interface Club {
   strength: number;
   era: "current"|"classic"|"historic";
   era_tier: EraTier;
+  era_tiers?: EraTier[];
 }
 
 export interface Player {

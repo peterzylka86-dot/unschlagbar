@@ -68,7 +68,8 @@ function DraftScreen() {
   const [autoSpinHint, setAutoSpinHint] = useState(false);
   const wheelRef = useRef<HTMLDivElement>(null);
 
-  const tierClubs = useMemo(() => CLUBS.filter(c => c.era_tier === tier), [tier]);
+  const clubInTier = (c: Club, t: EraTier) => (c.era_tiers ?? [c.era_tier]).includes(t);
+  const tierClubs = useMemo(() => CLUBS.filter(c => clubInTier(c, tier)), [tier]);
 
   const formation = FORMATIONS[config.formation];
   void formation;
@@ -92,11 +93,11 @@ function DraftScreen() {
 
   function pickRandomTier(): EraTier {
     const tiersWithFresh = TIERS.filter(t =>
-      CLUBS.some(c => c.era_tier === t.id && !usedClubs.has(c.id) && clubHasCompatible(c, t.id))
+      CLUBS.some(c => clubInTier(c, t.id) && !usedClubs.has(c.id) && clubHasCompatible(c, t.id))
     );
     const pool = tiersWithFresh.length
       ? tiersWithFresh
-      : TIERS.filter(t => CLUBS.some(c => c.era_tier === t.id && clubHasCompatible(c, t.id)));
+      : TIERS.filter(t => CLUBS.some(c => clubInTier(c, t.id) && clubHasCompatible(c, t.id)));
     if (!pool.length) return TIERS[0].id;
     return pool[Math.floor(Math.random() * pool.length)].id;
   }
@@ -105,7 +106,7 @@ function DraftScreen() {
     if (spinning) return;
     const activeTier = pickRandomTier();
     setTier(activeTier);
-    const tierPool = CLUBS.filter(c => c.era_tier === activeTier);
+    const tierPool = CLUBS.filter(c => clubInTier(c, activeTier));
     const fresh = tierPool.filter(c => !usedClubs.has(c.id) && clubHasCompatible(c, activeTier));
     const candidates = fresh.length
       ? fresh
