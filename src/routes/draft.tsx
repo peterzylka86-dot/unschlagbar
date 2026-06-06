@@ -12,15 +12,17 @@ const CLUBS = clubsData as Club[];
 const PLAYERS = playersData as Player[];
 
 const TIERS: { id: EraTier; label: string; sub: string }[] = [
-  { id: "current",  label: "20s",       sub: "starting 2020s" },
-  { id: "2000s",    label: "90s & 00s", sub: "post-Bosman era" },
-  { id: "70s-80s",  label: "70s-80s",   sub: "old guard" },
+  { id: "current",  label: "20s",     sub: "starting 2020s" },
+  { id: "00s",      label: "00s",     sub: "noughties era" },
+  { id: "90s",      label: "90s",     sub: "post-Bosman" },
+  { id: "70s-80s",  label: "70s-80s", sub: "old guard" },
 ];
 
 // Derive a player's era from career_years string (uses the earliest year found).
 const TIER_YEAR_RANGES: Record<EraTier, [number, number]> = {
   "70s-80s": [1900, 1987],
-  "2000s":   [1988, 2014],
+  "90s":     [1988, 1999],
+  "00s":     [2000, 2014],
   "current": [2015, 2100],
 };
 function getPlayerStartYear(p: Player): number {
@@ -200,6 +202,14 @@ function DraftScreen() {
       return () => clearTimeout(t);
     }
   }, [assigningPlayer, compatibleSlotsForAssign.length]);
+  // auto-skip club if it has no compatible players (prevents stuck state)
+  const currentClubPlayers = currentClub ? playersForCurrentClub() : [];
+  useEffect(() => {
+    if (currentClub && !assigningPlayer && currentClubPlayers.length === 0) {
+      const t = setTimeout(() => { setCurrentClub(null); queueAutoSpin(); }, 900);
+      return () => clearTimeout(t);
+    }
+  }, [currentClub, assigningPlayer, currentClubPlayers.length]);
 
   return (
     <div className="min-h-screen px-3 py-6 max-w-6xl mx-auto">
@@ -551,7 +561,14 @@ function PlayerPicker({ club, players, mode, showRatings, targetSlot, onPick, on
             Reroll ({rerollsLeft})
           </button>
         )}
+        <button
+          onClick={onSkip}
+          className="flex-1 px-3 py-2 text-xs rounded-lg border border-border text-muted-foreground hover:bg-background/50"
+        >
+          Skip club
+        </button>
       </div>
+
     </motion.div>
   );
 }
