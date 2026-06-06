@@ -1,0 +1,247 @@
+[
+  {
+    "id": "basel",
+    "name": "FC Basel",
+    "short": "BAS",
+    "city": "Basel",
+    "color": "#c8102e",
+    "founded": 1893,
+    "strength": 82,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "youngboys",
+    "name": "BSC Young Boys",
+    "short": "YB",
+    "city": "Bern",
+    "color": "#fff100",
+    "founded": 1898,
+    "strength": 83,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "zurich",
+    "name": "FC Zürich",
+    "short": "FCZ",
+    "city": "Zürich",
+    "color": "#0d3b91",
+    "founded": 1896,
+    "strength": 76,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "grasshopper",
+    "name": "Grasshopper Club",
+    "short": "GC",
+    "city": "Zürich",
+    "color": "#0066b3",
+    "founded": 1886,
+    "strength": 75,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "servette",
+    "name": "Servette FC",
+    "short": "SER",
+    "city": "Genève",
+    "color": "#9b1b1f",
+    "founded": 1890,
+    "strength": 76,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "sion",
+    "name": "FC Sion",
+    "short": "SIO",
+    "city": "Sion",
+    "color": "#cf0030",
+    "founded": 1909,
+    "strength": 74,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "luzern",
+    "name": "FC Luzern",
+    "short": "LUZ",
+    "city": "Luzern",
+    "color": "#003a78",
+    "founded": 1901,
+    "strength": 74,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "lugano",
+    "name": "FC Lugano",
+    "short": "LUG",
+    "city": "Lugano",
+    "color": "#000000",
+    "founded": 1908,
+    "strength": 73,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "stgallen",
+    "name": "FC St. Gallen",
+    "short": "STG",
+    "city": "St. Gallen",
+    "color": "#1d6b3b",
+    "founded": 1879,
+    "strength": 75,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "lausanne",
+    "name": "FC Lausanne-Sport",
+    "short": "LSP",
+    "city": "Lausanne",
+    "color": "#0033a0",
+    "founded": 1896,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "winterthur",
+    "name": "FC Winterthur",
+    "short": "WIN",
+    "city": "Winterthur",
+    "color": "#cb002a",
+    "founded": 1896,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "yverdon",
+    "name": "Yverdon-Sport",
+    "short": "YS",
+    "city": "Yverdon",
+    "color": "#0050a0",
+    "founded": 1897,
+    "strength": 69,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "thun",
+    "name": "FC Thun",
+    "short": "THU",
+    "city": "Thun",
+    "color": "#cb002a",
+    "founded": 1898,
+    "strength": 71,
+    "era": "classic",
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "aarau",
+    "name": "FC Aarau",
+    "short": "AAR",
+    "city": "Aarau",
+    "color": "#000000",
+    "founded": 1902,
+    "strength": 70,
+    "era": "classic",
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "xamax",
+    "name": "Neuchâtel Xamax",
+    "short": "NEX",
+    "city": "Neuchâtel",
+    "color": "#e60026",
+    "founded": 1912,
+    "strength": 72,
+    "era": "historic",
+    "era_tier": "90s",
+    "era_tiers": [
+      "90s",
+      "70s-80s"
+    ]
+  }
+]

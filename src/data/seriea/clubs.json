@@ -1,0 +1,491 @@
+[
+  {
+    "id": "juventus",
+    "name": "Juventus FC",
+    "short": "JUV",
+    "city": "Torino",
+    "color": "#000000",
+    "founded": 1897,
+    "strength": 90,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "milan",
+    "name": "AC Milan",
+    "short": "MIL",
+    "city": "Milano",
+    "color": "#fb090b",
+    "founded": 1899,
+    "strength": 88,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "inter",
+    "name": "Inter Milan",
+    "short": "INT",
+    "city": "Milano",
+    "color": "#0066b3",
+    "founded": 1908,
+    "strength": 90,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "napoli",
+    "name": "SSC Napoli",
+    "short": "NAP",
+    "city": "Napoli",
+    "color": "#12a0d7",
+    "founded": 1926,
+    "strength": 88,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "roma",
+    "name": "AS Roma",
+    "short": "ROM",
+    "city": "Roma",
+    "color": "#8e1f2f",
+    "founded": 1927,
+    "strength": 84,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "lazio",
+    "name": "SS Lazio",
+    "short": "LAZ",
+    "city": "Roma",
+    "color": "#87ceeb",
+    "founded": 1900,
+    "strength": 82,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "atalanta",
+    "name": "Atalanta BC",
+    "short": "ATA",
+    "city": "Bergamo",
+    "color": "#1d4ea1",
+    "founded": 1907,
+    "strength": 85,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "fiorentina",
+    "name": "ACF Fiorentina",
+    "short": "FIO",
+    "city": "Firenze",
+    "color": "#4b2980",
+    "founded": 1926,
+    "strength": 80,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "bologna",
+    "name": "Bologna FC",
+    "short": "BOL",
+    "city": "Bologna",
+    "color": "#cd2027",
+    "founded": 1909,
+    "strength": 80,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "torino",
+    "name": "Torino FC",
+    "short": "TOR",
+    "city": "Torino",
+    "color": "#7b1f1f",
+    "founded": 1906,
+    "strength": 77,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "udinese",
+    "name": "Udinese",
+    "short": "UDI",
+    "city": "Udine",
+    "color": "#000000",
+    "founded": 1896,
+    "strength": 75,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "genoa",
+    "name": "Genoa CFC",
+    "short": "GEN",
+    "city": "Genova",
+    "color": "#ec1c24",
+    "founded": 1893,
+    "strength": 74,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "lecce",
+    "name": "US Lecce",
+    "short": "LEC",
+    "city": "Lecce",
+    "color": "#fff100",
+    "founded": 1908,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "verona",
+    "name": "Hellas Verona",
+    "short": "VER",
+    "city": "Verona",
+    "color": "#facb02",
+    "founded": 1903,
+    "strength": 73,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "cagliari",
+    "name": "Cagliari Calcio",
+    "short": "CAG",
+    "city": "Cagliari",
+    "color": "#a52a2a",
+    "founded": 1920,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "empoli",
+    "name": "Empoli FC",
+    "short": "EMP",
+    "city": "Empoli",
+    "color": "#0066b3",
+    "founded": 1920,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "monza",
+    "name": "AC Monza",
+    "short": "MON",
+    "city": "Monza",
+    "color": "#cd1224",
+    "founded": 1912,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "como",
+    "name": "Como 1907",
+    "short": "COM",
+    "city": "Como",
+    "color": "#003594",
+    "founded": 1907,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "venezia",
+    "name": "Venezia FC",
+    "short": "VEN",
+    "city": "Venezia",
+    "color": "#fc8403",
+    "founded": 1907,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "parma",
+    "name": "Parma Calcio",
+    "short": "PAR",
+    "city": "Parma",
+    "color": "#ffd700",
+    "founded": 1913,
+    "strength": 75,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "sampdoria",
+    "name": "UC Sampdoria",
+    "short": "SAM",
+    "city": "Genova",
+    "color": "#1b3580",
+    "founded": 1946,
+    "strength": 75,
+    "era": "classic",
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "sassuolo",
+    "name": "US Sassuolo",
+    "short": "SAS",
+    "city": "Sassuolo",
+    "color": "#00a651",
+    "founded": 1920,
+    "strength": 73,
+    "era": "classic",
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s"
+    ]
+  },
+  {
+    "id": "chievo",
+    "name": "Chievo Verona",
+    "short": "CHI",
+    "city": "Verona",
+    "color": "#ffd700",
+    "founded": 1929,
+    "strength": 72,
+    "era": "classic",
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s"
+    ]
+  },
+  {
+    "id": "palermo",
+    "name": "US Palermo",
+    "short": "PAL",
+    "city": "Palermo",
+    "color": "#ee82ee",
+    "founded": 1900,
+    "strength": 73,
+    "era": "classic",
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "brescia",
+    "name": "Brescia Calcio",
+    "short": "BRE",
+    "city": "Brescia",
+    "color": "#0c4da2",
+    "founded": 1911,
+    "strength": 71,
+    "era": "classic",
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "reggina",
+    "name": "Reggina",
+    "short": "RGG",
+    "city": "Reggio Calabria",
+    "color": "#9b1b30",
+    "founded": 1914,
+    "strength": 71,
+    "era": "classic",
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "foggia",
+    "name": "Foggia Calcio",
+    "short": "FOG",
+    "city": "Foggia",
+    "color": "#cb002a",
+    "founded": 1920,
+    "strength": 70,
+    "era": "historic",
+    "era_tier": "90s",
+    "era_tiers": [
+      "90s"
+    ]
+  },
+  {
+    "id": "padova",
+    "name": "Calcio Padova",
+    "short": "PAD",
+    "city": "Padova",
+    "color": "#cb002a",
+    "founded": 1910,
+    "strength": 68,
+    "era": "historic",
+    "era_tier": "90s",
+    "era_tiers": [
+      "90s"
+    ]
+  },
+  {
+    "id": "vicenza",
+    "name": "LR Vicenza",
+    "short": "VIC",
+    "city": "Vicenza",
+    "color": "#cb002a",
+    "founded": 1902,
+    "strength": 69,
+    "era": "historic",
+    "era_tier": "90s",
+    "era_tiers": [
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "ascoli",
+    "name": "Ascoli Calcio",
+    "short": "ASC",
+    "city": "Ascoli",
+    "color": "#000000",
+    "founded": 1898,
+    "strength": 70,
+    "era": "historic",
+    "era_tier": "70s-80s",
+    "era_tiers": [
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "avellino",
+    "name": "US Avellino",
+    "short": "AVE",
+    "city": "Avellino",
+    "color": "#0c8a3c",
+    "founded": 1912,
+    "strength": 69,
+    "era": "historic",
+    "era_tier": "70s-80s",
+    "era_tiers": [
+      "70s-80s"
+    ]
+  }
+]
