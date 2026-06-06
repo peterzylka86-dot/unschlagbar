@@ -8,7 +8,13 @@
     "founded": 1900,
     "strength": 92,
     "era": "current",
-    "era_tier": "current"
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
   },
   {
     "id": "dortmund",
@@ -19,7 +25,13 @@
     "founded": 1909,
     "strength": 85,
     "era": "current",
-    "era_tier": "current"
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
   },
   {
     "id": "leverkusen",
@@ -30,7 +42,12 @@
     "founded": 1904,
     "strength": 86,
     "era": "current",
-    "era_tier": "current"
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
   },
   {
     "id": "leipzig",
@@ -52,7 +69,13 @@
     "founded": 1899,
     "strength": 80,
     "era": "current",
-    "era_tier": "current"
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
   },
   {
     "id": "stuttgart",
@@ -63,7 +86,13 @@
     "founded": 1893,
     "strength": 82,
     "era": "current",
-    "era_tier": "current"
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
   },
   {
     "id": "wolfsburg",
@@ -74,7 +103,11 @@
     "founded": 1945,
     "strength": 78,
     "era": "current",
-    "era_tier": "current"
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s"
+    ]
   },
   {
     "id": "gladbach",
@@ -85,7 +118,13 @@
     "founded": 1900,
     "strength": 78,
     "era": "current",
-    "era_tier": "current"
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
   },
   {
     "id": "hoffenheim",
@@ -96,7 +135,11 @@
     "founded": 1899,
     "strength": 76,
     "era": "current",
-    "era_tier": "current"
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s"
+    ]
   },
   {
     "id": "freiburg",
@@ -107,7 +150,12 @@
     "founded": 1904,
     "strength": 77,
     "era": "current",
-    "era_tier": "current"
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
   },
   {
     "id": "mainz",
@@ -118,7 +166,11 @@
     "founded": 1905,
     "strength": 75,
     "era": "current",
-    "era_tier": "current"
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s"
+    ]
   },
   {
     "id": "augsburg",
@@ -140,7 +192,13 @@
     "founded": 1899,
     "strength": 76,
     "era": "current",
-    "era_tier": "current"
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
   },
   {
     "id": "union",
@@ -162,7 +220,12 @@
     "founded": 1887,
     "strength": 80,
     "era": "classic",
-    "era_tier": "90s"
+    "era_tier": "90s",
+    "era_tiers": [
+      "90s",
+      "00s",
+      "70s-80s"
+    ]
   },
   {
     "id": "schalke",
@@ -173,7 +236,12 @@
     "founded": 1904,
     "strength": 82,
     "era": "classic",
-    "era_tier": "00s"
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
   },
   {
     "id": "koln",
@@ -184,7 +252,13 @@
     "founded": 1948,
     "strength": 78,
     "era": "classic",
-    "era_tier": "current"
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
   },
   {
     "id": "hertha",
@@ -195,7 +269,12 @@
     "founded": 1892,
     "strength": 75,
     "era": "classic",
-    "era_tier": "00s"
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
   },
   {
     "id": "kaiserslautern",
@@ -206,7 +285,12 @@
     "founded": 1900,
     "strength": 78,
     "era": "classic",
-    "era_tier": "90s"
+    "era_tier": "90s",
+    "era_tiers": [
+      "90s",
+      "00s",
+      "70s-80s"
+    ]
   },
   {
     "id": "bochum",
@@ -217,7 +301,12 @@
     "founded": 1938,
     "strength": 72,
     "era": "current",
-    "era_tier": "90s"
+    "era_tier": "90s",
+    "era_tiers": [
+      "90s",
+      "00s",
+      "70s-80s"
+    ]
   },
   {
     "id": "heidenheim",
@@ -250,7 +339,12 @@
     "founded": 1860,
     "strength": 74,
     "era": "classic",
-    "era_tier": "90s"
+    "era_tier": "90s",
+    "era_tiers": [
+      "90s",
+      "00s",
+      "70s-80s"
+    ]
   },
   {
     "id": "nuernberg",
@@ -261,7 +355,12 @@
     "founded": 1900,
     "strength": 74,
     "era": "classic",
-    "era_tier": "00s"
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
   },
   {
     "id": "hannover",
@@ -272,7 +371,11 @@
     "founded": 1896,
     "strength": 72,
     "era": "classic",
-    "era_tier": "90s"
+    "era_tier": "90s",
+    "era_tiers": [
+      "90s",
+      "00s"
+    ]
   },
   {
     "id": "karlsruhe",
