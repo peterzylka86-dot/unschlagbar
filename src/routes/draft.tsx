@@ -144,6 +144,7 @@ function DraftScreen() {
   function skipAssign() {
     setAssigningPlayer(null);
     setCurrentClub(null);
+    queueAutoSpin();
   }
 
   function startReroll() {
