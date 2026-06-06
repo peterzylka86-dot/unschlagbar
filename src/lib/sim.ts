@@ -57,3 +57,74 @@ function poisson(lambda: number, seed: { v: number }): number {
   do { k++; p *= rand(seed); } while (p > L && k < 9);
   return k - 1;
 }
+
+export interface TableRow {
+  name: string;
+  short: string;
+  color: string;
+  played: number;
+  w: number;
+  d: number;
+  l: number;
+  gf: number;
+  ga: number;
+  pts: number;
+  isUs?: boolean;
+}
+
+// Estimates a final 18-team table: opponents derive points from their strength,
+// our row uses the actual simulated matches.
+export function computeLeagueTable(
+  matches: MatchResult[],
+  opponents: Club[],
+  ourRating: number,
+): { table: TableRow[]; ourPosition: number } {
+  const ourW = matches.filter(m => m.outcome === "W").length;
+  const ourD = matches.filter(m => m.outcome === "D").length;
+  const ourL = matches.filter(m => m.outcome === "L").length;
+  const ourGF = matches.reduce((a, m) => a + m.ourScore, 0);
+  const ourGA = matches.reduce((a, m) => a + m.theirScore, 0);
+
+  const us: TableRow = {
+    name: "Your XI",
+    short: "YOU",
+    color: "#facc15",
+    played: matches.length,
+    w: ourW, d: ourD, l: ourL,
+    gf: ourGF, ga: ourGA,
+    pts: ourW * 3 + ourD,
+    isUs: true,
+  };
+
+  // Seeded pseudo-random so the table is stable per render.
+  const seed = { v: (ourRating * 9301 + matches.length * 1337) | 0 || 42 };
+  const rows: TableRow[] = opponents.map(o => {
+    // base points from strength (70→26pts, 80→48pts, 92→74pts)
+    const base = Math.round((o.strength - 60) * 2.2);
+    const jitter = Math.round((rand(seed) - 0.5) * 10);
+    const pts = Math.max(8, Math.min(86, base + jitter));
+    // back out a plausible W/D/L for 34 games
+    const w = Math.max(0, Math.min(34, Math.round(pts / 3.1)));
+    const d = Math.max(0, Math.min(34 - w, pts - w * 3));
+    const l = 34 - w - d;
+    const gdBase = (o.strength - 75) * 1.6 + (rand(seed) - 0.5) * 12;
+    const gf = Math.max(15, Math.round(38 + (o.strength - 75) * 1.2 + (rand(seed) - 0.5) * 10));
+    const ga = Math.max(15, Math.round(gf - gdBase));
+    return {
+      name: o.name,
+      short: o.short,
+      color: o.color,
+      played: 34,
+      w, d, l, gf, ga, pts,
+    };
+  });
+
+  const table = [...rows, us].sort((a, b) => {
+    if (b.pts !== a.pts) return b.pts - a.pts;
+    const gdA = a.gf - a.ga, gdB = b.gf - b.ga;
+    if (gdB !== gdA) return gdB - gdA;
+    return b.gf - a.gf;
+  });
+  const ourPosition = table.findIndex(r => r.isUs) + 1;
+  return { table, ourPosition };
+}
