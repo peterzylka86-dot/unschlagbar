@@ -174,10 +174,12 @@ function DraftScreen() {
           <span className="ml-2 text-[10px] tracking-[0.25em] text-warning/80 hidden sm:inline">UNSCHLAGBAR</span>
         </Link>
         <div className="flex items-center gap-2 text-xs">
-          <span className="px-2 py-1 rounded bg-card border">{config.formation}</span>
-          <span className="px-2 py-1 rounded bg-card border tabular-nums">{filledCount}/{totalSlots}</span>
-          <span className="px-2 py-1 rounded bg-warning/10 text-warning border border-warning/30 tabular-nums">
-            {rerollsLeft} reroll{rerollsLeft === 1 ? "" : "s"}
+          <span className="pixel-badge text-[11px]">{config.formation}</span>
+          <span className="scoreboard rounded-sm text-sm tabular-nums">
+            <span className="opacity-60 text-[10px] mr-1">SQUAD</span>{String(filledCount).padStart(2,"0")}/{String(totalSlots).padStart(2,"0")}
+          </span>
+          <span className="scoreboard amber rounded-sm text-sm tabular-nums">
+            <span className="opacity-60 text-[10px] mr-1">RR</span>{String(rerollsLeft).padStart(2,"0")}
           </span>
         </div>
       </header>
