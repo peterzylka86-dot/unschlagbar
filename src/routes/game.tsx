@@ -5,7 +5,7 @@ import type { Difficulty, DraftMode, RatingMode } from "@/lib/game-types";
 
 export const Route = createFileRoute("/game")({
   validateSearch: (s: Record<string, unknown>) => ({ new: s.new === true || s.new === "true" }),
-  head: () => ({ meta: [{ title: "Setup Your Draft — 34-0" }] }),
+  head: () => ({ meta: [{ title: "Setup · UNSCHLAGBAR 34:0" }] }),
   component: GameSetup,
 });
 
@@ -18,9 +18,10 @@ function GameSetup() {
     <div className="min-h-screen px-4 py-10 max-w-3xl mx-auto">
       <header className="text-center">
         <Link to="/" className="inline-block">
-          <h1 className="font-display text-5xl">
-            34<span className="inline-block align-middle mx-1 w-7 h-2.5 bg-primary rounded-sm" />0
+          <h1 className="brand-mark text-5xl inline-flex items-baseline gap-1 leading-none">
+            <span>34</span><span className="text-primary">:</span><span>0</span>
           </h1>
+          <div className="text-[10px] tracking-[0.3em] text-warning/80 mt-1">UNSCHLAGBAR</div>
         </Link>
         <p className="mt-2 text-muted-foreground">Draft your greatest Bundesliga XI</p>
       </header>

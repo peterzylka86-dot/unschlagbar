@@ -34,48 +34,76 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-display: "Archivo Black", "Inter", system-ui, sans-serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Bebas Neue", "Archivo Black", "Inter", system-ui, sans-serif;
+  --font-sans: "Work Sans", "Inter", system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.625rem;
-  /* very dark green-black */
-  --background: oklch(0.16 0.03 150);
-  --foreground: oklch(0.97 0.01 150);
-  --card: oklch(0.20 0.025 150);
-  --card-foreground: oklch(0.97 0.01 150);
-  --popover: oklch(0.22 0.03 150);
-  --popover-foreground: oklch(0.97 0.01 150);
-  /* Bundesliga red */
-  --primary: oklch(0.60 0.22 25);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.28 0.04 150);
-  --secondary-foreground: oklch(0.97 0.01 150);
-  --muted: oklch(0.25 0.03 150);
-  --muted-foreground: oklch(0.70 0.03 150);
-  --accent: oklch(0.30 0.05 150);
-  --accent-foreground: oklch(0.97 0.01 150);
-  --destructive: oklch(0.60 0.24 25);
-  --destructive-foreground: oklch(0.99 0 0);
-  --success: oklch(0.72 0.18 155);
-  --success-foreground: oklch(0.15 0.05 150);
-  --warning: oklch(0.80 0.17 80);
-  --warning-foreground: oklch(0.15 0.05 80);
-  --pitch: oklch(0.42 0.10 145);
-  --pitch-line: oklch(0.95 0.01 150 / 0.7);
-  --border: oklch(0.30 0.03 150);
-  --input: oklch(0.30 0.03 150);
-  --ring: oklch(0.60 0.22 25);
+  --radius: 0.5rem;
+  /* deep matchday-programme brown-black */
+  --background: oklch(0.17 0.018 60);
+  --foreground: oklch(0.94 0.025 80);
+  --card: oklch(0.22 0.022 60);
+  --card-foreground: oklch(0.94 0.025 80);
+  --popover: oklch(0.24 0.025 60);
+  --popover-foreground: oklch(0.94 0.025 80);
+  /* vintage matchday red */
+  --primary: oklch(0.58 0.20 28);
+  --primary-foreground: oklch(0.98 0.02 80);
+  --secondary: oklch(0.30 0.04 70);
+  --secondary-foreground: oklch(0.94 0.025 80);
+  --muted: oklch(0.27 0.025 65);
+  --muted-foreground: oklch(0.70 0.04 75);
+  --accent: oklch(0.32 0.05 70);
+  --accent-foreground: oklch(0.94 0.025 80);
+  --destructive: oklch(0.58 0.22 28);
+  --destructive-foreground: oklch(0.98 0.02 80);
+  --success: oklch(0.70 0.16 150);
+  --success-foreground: oklch(0.16 0.04 150);
+  /* mustard gold */
+  --warning: oklch(0.80 0.16 78);
+  --warning-foreground: oklch(0.18 0.05 80);
+  --pitch: oklch(0.40 0.10 145);
+  --pitch-line: oklch(0.95 0.02 80 / 0.65);
+  --border: oklch(0.34 0.03 70);
+  --input: oklch(0.34 0.03 70);
+  --ring: oklch(0.58 0.20 28);
 }
 
 .dark { }
 
 @layer base {
-  html, body { background-color: var(--color-background); color: var(--color-foreground); font-family: var(--font-sans); }
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "tnum";
+  }
+  body {
+    background-image:
+      radial-gradient(circle at 18% 12%, color-mix(in oklab, var(--color-primary) 18%, transparent), transparent 55%),
+      radial-gradient(circle at 82% 88%, color-mix(in oklab, var(--color-warning) 14%, transparent), transparent 60%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.85  0 0 0 0 0.65  0 0 0 0.07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    background-attachment: fixed;
+  }
   * { border-color: var(--color-border); }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: 0.02em; }
 }
 
+@font-face {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/worksans/v19/QGYsz_wNahGAdqQ43Rh_fKDp.woff2") format("woff2");
+}
 @font-face {
   font-family: "Archivo Black";
   font-style: normal;
@@ -83,17 +111,46 @@
   font-display: swap;
   src: url("https://fonts.gstatic.com/s/archivoblack/v21/HTxqL289NzCGg4MzN6KJ7eW6CYyF.woff2") format("woff2");
 }
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400 800;
-  font-display: swap;
-  src: url("https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7SUc.woff2") format("woff2");
-}
 
 .bg-pitch-pattern {
   background:
-    repeating-linear-gradient(0deg, color-mix(in oklab, var(--color-pitch) 100%, black 6%) 0 40px, var(--color-pitch) 40px 80px);
+    repeating-linear-gradient(0deg, color-mix(in oklab, var(--color-pitch) 100%, black 8%) 0 36px, var(--color-pitch) 36px 72px);
 }
 
 .text-shadow-glow { text-shadow: 0 0 30px color-mix(in oklab, var(--color-primary) 50%, transparent); }
+
+/* Retro chrome/programme accents */
+.retro-stripes {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-primary) 0 14px,
+    oklch(0.18 0.02 60) 14px 18px,
+    var(--color-warning) 18px 32px,
+    oklch(0.18 0.02 60) 32px 36px
+  );
+}
+.retro-halftone {
+  background-image: radial-gradient(color-mix(in oklab, var(--color-warning) 35%, transparent) 1px, transparent 1.4px);
+  background-size: 6px 6px;
+}
+.retro-card {
+  position: relative;
+  border: 1px solid color-mix(in oklab, var(--color-warning) 30%, var(--color-border));
+  box-shadow:
+    0 1px 0 color-mix(in oklab, var(--color-warning) 22%, transparent) inset,
+    0 30px 70px -40px rgba(0,0,0,0.8);
+}
+.retro-card::before {
+  content: "";
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--color-warning) 10%, transparent), transparent 18%),
+    repeating-linear-gradient(0deg, transparent 0 3px, rgba(255,255,255,0.025) 3px 4px);
+  border-radius: inherit;
+}
+.brand-mark {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  line-height: 0.9;
+}
