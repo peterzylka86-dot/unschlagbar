@@ -18,24 +18,22 @@ function rand(seed: { v: number }) {
   return ((x >>> 0) % 10000) / 10000;
 }
 
-export function simulateSeason(opponents: Club[], ourRating: number, seedNum: number): MatchResult[] {
+export function simulateSeason(opponents: Club[], ourRating: number, seedNum: number, difficulty: "easy"|"normal"|"hard" = "normal"): MatchResult[] {
   const seed = { v: seedNum || 12345 };
   const matches: MatchResult[] = [];
-  // home + away vs each opponent
   const order: Array<{ opp: Club; home: boolean }> = [];
   opponents.forEach(o => order.push({ opp: o, home: true }));
   opponents.forEach(o => order.push({ opp: o, home: false }));
-  // shuffle
   for (let i = order.length - 1; i > 0; i--) {
     const j = Math.floor(rand(seed) * (i + 1));
     [order[i], order[j]] = [order[j], order[i]];
   }
+  const varianceMul = difficulty === "easy" ? 0.7 : difficulty === "hard" ? 1.3 : 1.0;
   order.forEach((m, idx) => {
-    const homeBoost = m.home ? 3 : -1;
+    const homeBoost = m.home ? 4 : -1;
     const diff = (ourRating + homeBoost) - m.opp.strength;
-    // base xG approx
-    const ourXG = Math.max(0.2, 1.2 + diff * 0.08 + (rand(seed) - 0.5) * 1.4);
-    const theirXG = Math.max(0.1, 1.1 - diff * 0.06 + (rand(seed) - 0.5) * 1.2);
+    const ourXG = Math.max(0.2, 1.2 + diff * 0.08 + (rand(seed) - 0.5) * 1.0 * varianceMul);
+    const theirXG = Math.max(0.1, 1.1 - diff * 0.06 + (rand(seed) - 0.5) * 0.9 * varianceMul);
     const ourScore = poisson(ourXG, seed);
     const theirScore = poisson(theirXG, seed);
     let outcome: "W"|"D"|"L" = "D";

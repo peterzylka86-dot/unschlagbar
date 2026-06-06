@@ -1,5 +1,7 @@
 export type Position = "GK"|"CB"|"RB"|"LB"|"CDM"|"CM"|"CAM"|"RW"|"LW"|"ST";
 
+export type EraTier = "current"|"2000s"|"90s"|"70s-80s"|"legends";
+
 export interface Club {
   id: string;
   name: string;
@@ -9,6 +11,7 @@ export interface Club {
   founded: number;
   strength: number;
   era: "current"|"classic"|"historic";
+  era_tier: EraTier;
 }
 
 export interface Player {
