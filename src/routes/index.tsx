@@ -17,19 +17,21 @@ export const Route = createFileRoute("/")({
 function Landing() {
   return (
     <div className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.08] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse at center, white 0%, transparent 60%)" }} />
+      <div className="absolute inset-0 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse 60% 50% at 50% 40%, color-mix(in oklab, var(--color-primary) 22%, transparent), transparent 70%)" }} />
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none"
+        style={{ backgroundImage: "repeating-linear-gradient(0deg, transparent 0 38px, rgba(255,255,255,0.18) 38px 39px)" }} />
       <div
-        className="relative w-full max-w-xl rounded-2xl border bg-card/40 backdrop-blur-sm px-8 py-12 text-center"
-        style={{ boxShadow: "0 30px 80px -30px rgba(220, 5, 21, 0.25)" }}
+        className="relative w-full max-w-xl rounded-2xl border bg-card/40 backdrop-blur-md px-8 py-12 text-center"
+        style={{ boxShadow: "0 40px 100px -30px rgba(220, 5, 21, 0.35)" }}
       >
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-warning/40 bg-warning/10 text-warning text-xs font-semibold tracking-widest uppercase">
           <span className="w-1.5 h-1.5 rounded-full bg-warning animate-pulse" />
           Bundesliga Draft Game
         </div>
 
-        <h1 className="mt-8 font-display text-7xl sm:text-8xl text-foreground leading-none">
-          34<span className="inline-block align-middle mx-1 w-10 h-3 sm:w-14 sm:h-4 bg-primary rounded-sm" />0
+        <h1 className="mt-8 font-display text-7xl sm:text-8xl text-foreground leading-none text-shadow-glow">
+          34<span className="inline-block align-middle mx-1 w-10 h-3 sm:w-14 sm:h-4 bg-primary rounded-sm shadow-[0_0_24px] shadow-primary/80" />0
         </h1>
 
         <p className="mt-8 text-lg text-foreground/85">
@@ -43,7 +45,7 @@ function Landing() {
         <Link
           to="/game"
           search={{ new: true }}
-          className="mt-8 inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-lg shadow-lg hover:brightness-110 transition"
+          className="mt-8 inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-lg shadow-[0_18px_40px_-10px] shadow-primary/70 hover:brightness-110 hover:-translate-y-0.5 transition"
         >
           Start New Run <span aria-hidden>→</span>
         </Link>
