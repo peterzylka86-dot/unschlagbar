@@ -67,7 +67,7 @@ function SeasonScreen() {
   const goalsFor = shown.reduce((a, m) => a + m.ourScore, 0);
   const goalsAgainst = shown.reduce((a, m) => a + m.theirScore, 0);
   const seasonOver = revealCount >= matches.length;
-  const isUnbeaten = seasonOver && losses === 0 && draws === 0;
+  const isUnbeaten = seasonOver && losses === 0;
 
   return (
     <div className="min-h-screen pb-16">
