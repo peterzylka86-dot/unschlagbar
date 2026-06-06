@@ -26,10 +26,10 @@ export const Route = createFileRoute("/draft")({
 
 function isCompatible(slotPos: Position, playerPos: Position): boolean {
   if (slotPos === playerPos) return true;
+  // Attackers are strict: ST, LW, RW only match themselves (no swapping a winger into striker).
   const buckets: Record<string, Position[]> = {
     DEF: ["CB","RB","LB"],
     MID: ["CDM","CM","CAM"],
-    ATT: ["LW","RW","ST"],
   };
   for (const list of Object.values(buckets)) {
     if (list.includes(slotPos) && list.includes(playerPos)) return true;
