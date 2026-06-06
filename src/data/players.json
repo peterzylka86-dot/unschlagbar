@@ -13238,5 +13238,29 @@
     "career_years": "1990-1995",
     "nationality": "GER",
     "club": "leipzigvfb"
+  },
+  {
+    "name": "Denis Linsmayer",
+    "position": "CAM",
+    "prime_rating": 72,
+    "career_years": "2017-2022",
+    "nationality": "Germany",
+    "club": "sandhausen"
+  },
+  {
+    "name": "Aleksandr Zhirov CAM",
+    "position": "CAM",
+    "prime_rating": 70,
+    "career_years": "2018-2020",
+    "nationality": "Russia",
+    "club": "sandhausen"
+  },
+  {
+    "name": "Philipp Foerster",
+    "position": "CAM",
+    "prime_rating": 74,
+    "career_years": "2017-2019",
+    "nationality": "Germany",
+    "club": "sandhausen"
   }
 ]
