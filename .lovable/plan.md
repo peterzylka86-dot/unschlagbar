@@ -1,73 +1,50 @@
-# Fix bugs + polish 34-0
+## Goal
 
-## 1. Auto-spin after each pick (draft bug)
+Make positions strict (RB only fills RB, CB only CB, LB only LB — and same for every other position) and expand the player database so every club has enough coverage that the draft never gets stuck.
 
-Right now: pick a player → `setCurrentClub(null)` drops you back to the wheel panel and you have to press **Spin** again. With 11 picks that's 11 extra clicks.
+## 1. Strict position matching
 
-Fix in `src/routes/draft.tsx`:
-- After `commitToSlot` / `positionFirstPickPlayer`, if there are still empty slots, automatically call `spinClub()` once the assign UI closes.
-- Brief 600 ms "Next club…" transition state so the wheel re-spin feels intentional, not jumpy.
-- Keep manual **Spin** only for the very first pick and for rerolls.
+In `src/routes/draft.tsx`, simplify `isCompatible` to exact match only:
 
-## 2. Season doesn't stop at gameday 5 anymore
+```ts
+function isCompatible(slotPos: Position, playerPos: Position): boolean {
+  return slotPos === playerPos;
+}
+```
 
-Right now `season.tsx` halts the reveal at the first non-win, so a loss on matchday 5 freezes the grid at 5/34 — that's what you saw.
+This affects:
+- Wheel filtering (`clubHasCompatible`, `spinClub`)
+- Tier validation (`tierClubs`)
+- Slot-targeting on assign
 
-Fix:
-- Always reveal all 34 matchdays (faster cadence ~220 ms).
-- Mark the first non-win as the **"streak broken"** card with a red flash + divider; matches after it render dimmer ("dead rubber") so it's clear the run ended but you still see the full season.
-- Header tally keeps counting through all 34 matches.
-- Result screen still uses `unbeaten = no losses && no draws` as before.
+No other logic changes — the existing helpers already route through `isCompatible`.
 
-Also rebalance `sim.ts` slightly so a strong squad doesn't randomly drop a match on MD 5:
-- Bump home advantage from +3 → +4.
-- Reduce variance term on `ourXG` (×1.4 → ×1.0) and `theirXG` (×1.2 → ×0.9).
-- Difficulty multiplier on variance: easy ×0.7, normal ×1.0, hard ×1.3 (currently unused).
+## 2. Player database expansion
 
-## 3. Regroup the 56-club wheel
+Today's gaps (every club must have ≥1 of each of: GK, CB, RB, LB, CDM, CM, CAM, RW, LW, ST):
 
-The single ALL-TIME wheel with 56 slices is too dense — slivers are unreadable and Uerdingen-tier teams feel random. Split into era tiers the user picks per spin.
+- 55 of 56 clubs have at least one missing or thin (only 1) position
+- Worst offenders: smaller/historic clubs (uerdingen, rotweissessen, saarbruecken, tasmania, hansa, dynamodresden, duisburg, meidericher, bremerhaven, offenbach, aachen, wattenscheid, ulm, paderborn, unterhaching, fürth, ingolstadt, sandhausen, homburg, blauweiß 90, stuttgarter kickers, wuppertaler, tennis borussia, viktoria, vfb leipzig, braunschweig, bielefeld) — most have 13–20 players and several missing positions
+- Big clubs also have gaps split across eras (e.g. Frankfurt missing LB, Stuttgart missing RW)
 
-Add an `era_tier` field to `src/data/clubs.json` (one-time script, no AI):
-- `current` — today's Bundesliga 18
-- `2000s` — Bundesliga staples 2000-2015 (Schalke pre-relegation, HSV, Hannover 96, Hertha, etc.)
-- `90s` — golden 90s clubs (Kaiserslautern champions, Uerdingen, Karlsruher SC, 1860 München, Bochum, Cottbus, Rostock, etc.)
-- `70s-80s` — Bundesliga old guard (Köln pre-2000s, Mönchengladbach Weisweiler era as historic entry, Eintracht Braunschweig, Fortuna Düsseldorf champion years, Saarbrücken, Offenbach Kickers, etc.)
-- `legends` — pre-Bundesliga / DDR-Oberliga survivors (Dynamo Dresden, Magdeburg, Carl Zeiss Jena, Rot-Weiss Essen, etc.)
+### Expansion target
 
-In the draft side panel, show 5 tier chips above the wheel. The wheel renders only the selected tier (≈10-15 slices each, very readable). User can switch tier between spins; default = `current`.
+- **Big multi-era clubs** (bayern, dortmund, leverkusen, frankfurt, stuttgart, gladbach, werder, hamburg, schalke, köln, kaiserslautern, hertha, nürnberg, bochum, 1860, hannover): bring each up to ~20 per active era_tier, ensuring all 10 positions covered per era.
+- **Single-era modern clubs** (leipzig, union, augsburg, mainz, hoffenheim, freiburg, wolfsburg, heidenheim, darmstadt, st pauli, paderborn, ingolstadt, fürth, sandhausen, cottbus, hansa, etc.): bring each to ~20 with all 10 positions.
+- **Small historic clubs** (uerdingen, rotweissessen, saarbrücken, tasmania, duisburg, meidericher, bremerhaven, offenbach, aachen, wattenscheid, ulm, unterhaching, homburg, blauweiß 90, stuttgarter kickers, wuppertaler, tennis borussia, viktoria, vfb leipzig, braunschweig, bielefeld, dynamodresden): bring each to ~15–20 with all 10 positions covered (real historical squad members from their notable era).
 
-## 4. UI polish
+All new entries use authentic players from the appropriate decade for that club's `era_tier`. Ratings stay in the existing 65–95 scale, consistent with current entries for that club tier.
 
-Keep the Bundesliga-red / dark-green identity, no theme change. Tighten the feel:
+### Safety net
 
-**Draft screen**
-- Wheel: thicker rim, conic-gradient backdrop glow that pulses faintly while idle, harder snap easing on landing (`[0.22, 1, 0.36, 1]`, 3.6 s) + a subtle "tick" scale bump on stop.
-- Selected-club reveal: scale-in card with the crest color as gradient background, slides over the wheel instead of replacing it abruptly.
-- Player list rows: hover lift + ring in club color, rating chip with subtle glow.
-- Pitch slots: drop shadow on filled slots, name label uses a small backdrop blur instead of solid black.
+Even with expansion, keep one defensive guard in `spinClub`: if after filtering by tier + position there are zero compatible clubs left, surface a clear "no compatible clubs remaining — reroll required" state instead of silently spinning forever. (Current code already filters; this just makes the empty case explicit so the bug from earlier turns can't reoccur if a niche position runs out late in a draft.)
 
-**Season screen**
-- Sticky header with the W/D/L/GF/GA counters that animate (count-up) as matches reveal.
-- Match cards reveal with a tiny stagger and a left-edge color bar (green/yellow/red).
-- When the streak breaks, full-width divider: *"Unbeaten run ended — Matchday X"*.
+## 3. Out of scope
 
-**Landing + result**
-- Same font stack, just add subtle radial primary glow behind the big "34-0" wordmark.
-- Result screen: confetti only on true unbeaten; otherwise a quiet "Try again" CTA.
+- Tier names stay: current / 00s / 90s / 70s-80s
+- No changes to UI, formation, or match logic
 
 ## Files touched
 
-- `src/data/clubs.json` — add `era_tier` to every club.
-- `src/lib/game-types.ts` — add `era_tier` union type.
-- `src/routes/draft.tsx` — tier selector, auto-spin chain, wheel polish.
-- `src/routes/season.tsx` — reveal all 34, streak-broken divider, sticky animated header.
-- `src/lib/sim.ts` — rebalance variance + home boost + difficulty hook.
-- `src/styles.css` — small additions (glow utility, count-up keyframe).
-- `src/routes/result.tsx`, `src/routes/index.tsx` — wordmark glow + result CTA tweak.
-
-## Out of scope
-
-- No new data generation / AI calls (era_tier assigned by hand in code).
-- No backend, no auth, no real crests.
-- Wheel stays SVG (no 3D).
+- `src/routes/draft.tsx` — strict `isCompatible`, explicit empty-pool guard
+- `src/data/players.json` — large batch of additions (target ~+400–600 entries)
