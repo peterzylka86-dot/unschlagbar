@@ -83,6 +83,13 @@ function SeasonScreen() {
       </div>
 
       <div className="px-4 max-w-5xl mx-auto">
+        {/* Live current matchday card */}
+        <AnimatePresence mode="wait">
+          {!seasonOver && revealCount > 0 && shown[shown.length - 1] && (
+            <LiveCard key={revealCount} match={shown[shown.length - 1]!} />
+          )}
+        </AnimatePresence>
+
         <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
           {matches.map((m, i) => {
             const isStreakBreaker = i === firstNonWinIdx;
@@ -129,6 +136,57 @@ function SeasonScreen() {
         )}
       </div>
     </div>
+  );
+}
+
+function LiveCard({ match }: { match: MatchResult }) {
+  const tone = match.outcome === "W" ? "from-success/30 via-success/10 border-success/50"
+    : match.outcome === "D" ? "from-warning/30 via-warning/10 border-warning/50"
+    : "from-destructive/40 via-destructive/15 border-destructive/60";
+  const badge = match.outcome === "W" ? "bg-success text-success-foreground"
+    : match.outcome === "D" ? "bg-warning text-warning-foreground"
+    : "bg-destructive text-destructive-foreground";
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.96, y: 16 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.98, y: -8 }}
+      transition={{ type: "spring", stiffness: 280, damping: 22 }}
+      className={`mt-4 relative overflow-hidden rounded-xl border-2 bg-gradient-to-br ${tone} px-4 py-3`}
+    >
+      {/* halftone stripes */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.07]"
+           style={{ background: "repeating-linear-gradient(45deg, currentColor 0 2px, transparent 2px 8px)" }} />
+      <div className="relative flex items-center gap-3">
+        <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+          MD {String(match.matchday).padStart(2, "0")} · {match.home ? "Heim" : "Auswärts"}
+        </div>
+        <motion.span
+          initial={{ scale: 0.6 }}
+          animate={{ scale: [0.6, 1.15, 1] }}
+          transition={{ duration: 0.4 }}
+          className={`ml-auto px-2 py-0.5 rounded text-[10px] font-display tracking-widest ${badge}`}
+        >
+          {match.outcome === "W" ? "SIEG" : match.outcome === "D" ? "REMIS" : "PLEITE"}
+        </motion.span>
+      </div>
+      <div className="relative mt-2 flex items-center gap-3">
+        <div className="flex-1 text-right">
+          <div className="text-xs text-muted-foreground">UNSCHLAGBAR</div>
+          <div className="font-display text-lg leading-none">Your XI</div>
+        </div>
+        <div className="scoreboard rounded-md px-4 py-2 text-3xl tabular-nums font-display tracking-wider shadow-[0_0_24px_-4px_rgba(0,0,0,0.6)]">
+          {match.ourScore} <span className="opacity-50">:</span> {match.theirScore}
+        </div>
+        <div className="flex-1 flex items-center gap-2 min-w-0">
+          <ClubBadge club={match.opponent} size={36} />
+          <div className="min-w-0">
+            <div className="text-xs text-muted-foreground truncate">{match.opponent.short}</div>
+            <div className="font-display text-lg leading-none truncate">{match.opponent.name}</div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
   );
 }
 
