@@ -60,9 +60,18 @@ function DraftScreen() {
   const filledCount = totalSlots - emptySlots.length;
   const done = emptySlots.length === 0;
 
-  function spinClub(tierOverride?: EraTier) {
+  function pickRandomTier(): EraTier {
+    const tiersWithFresh = TIERS.filter(t =>
+      CLUBS.some(c => c.era_tier === t.id && !usedClubs.has(c.id))
+    );
+    const pool = tiersWithFresh.length ? tiersWithFresh : TIERS;
+    return pool[Math.floor(Math.random() * pool.length)].id;
+  }
+
+  function spinClub() {
     if (spinning) return;
-    const activeTier = tierOverride ?? tier;
+    const activeTier = pickRandomTier();
+    setTier(activeTier);
     const tierPool = CLUBS.filter(c => c.era_tier === activeTier);
     const fresh = tierPool.filter(c => !usedClubs.has(c.id));
     const candidates = fresh.length ? fresh : tierPool;
