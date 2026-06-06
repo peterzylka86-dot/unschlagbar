@@ -219,7 +219,6 @@ function DraftScreen() {
               autoSpinHint={autoSpinHint}
               tier={tier}
               tierClubs={tierClubs}
-              onTier={(t) => { if (!spinning) setTier(t); }}
               onSpin={() => spinClub()}
               pickingForSlot={pickingForSlot}
               draftMode={config.draftMode}
