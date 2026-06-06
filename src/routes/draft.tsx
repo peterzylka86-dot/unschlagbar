@@ -552,22 +552,17 @@ function PlayerPicker({ club, players, mode, showRatings, targetSlot, onPick, on
           </button>
         ))}
       </div>
-      <div className="mt-3 flex gap-2">
-        {onReroll && (
+      {onReroll && (
+        <div className="mt-3 flex gap-2">
           <button
             onClick={onReroll}
             className="flex-1 px-3 py-2 text-xs rounded-lg border border-warning/40 text-warning hover:bg-warning/10"
           >
             Reroll ({rerollsLeft})
           </button>
-        )}
-        <button
-          onClick={onSkip}
-          className="flex-1 px-3 py-2 text-xs rounded-lg border border-border text-muted-foreground hover:bg-background/50"
-        >
-          Skip club
-        </button>
-      </div>
+        </div>
+      )}
+
 
     </motion.div>
   );
