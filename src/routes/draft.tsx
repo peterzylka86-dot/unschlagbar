@@ -561,7 +561,14 @@ function PlayerPicker({ club, players, mode, showRatings, targetSlot, onPick, on
             Reroll ({rerollsLeft})
           </button>
         )}
+        <button
+          onClick={onSkip}
+          className="flex-1 px-3 py-2 text-xs rounded-lg border border-border text-muted-foreground hover:bg-background/50"
+        >
+          Skip club
+        </button>
       </div>
+
     </motion.div>
   );
 }
