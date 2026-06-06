@@ -1,85 +1,73 @@
-# 34-0 — Bundesliga Draft Game
+# Fix bugs + polish 34-0
 
-Recreate 38-0.app for the Bundesliga: draft your greatest XI by spinning a wheel of clubs, picking players, then simulate an unbeaten 34-match season.
+## 1. Auto-spin after each pick (draft bug)
 
-## Scope
+Right now: pick a player → `setCurrentClub(null)` drops you back to the wheel panel and you have to press **Spin** again. With 11 picks that's 11 extra clicks.
 
-- Branded "34-0" (34 matchdays = 17 opponents × home/away).
-- All ~56 clubs that have ever played in the Bundesliga on the wheel.
-- AI-pre-generated player pool baked into a static JSON file (no runtime AI cost, instant gameplay).
-- Same core feel as 38-0: dark theme, big bold numerals, green pitch, neon accents.
+Fix in `src/routes/draft.tsx`:
+- After `commitToSlot` / `positionFirstPickPlayer`, if there are still empty slots, automatically call `spinClub()` once the assign UI closes.
+- Brief 600 ms "Next club…" transition state so the wheel re-spin feels intentional, not jumpy.
+- Keep manual **Spin** only for the very first pick and for rerolls.
 
-## Pages / Routes
+## 2. Season doesn't stop at gameday 5 anymore
 
-```
-src/routes/
-  index.tsx        Landing: "34-0", tagline, Start New Run, stat cards (clubs / players / seasons)
-  game.tsx         Setup screen: formation, difficulty, ratings on/off, draft mode, prime/career, Start Draft
-  draft.tsx        The draft itself: wheel of clubs, player picker, pitch with filled slots
-  season.tsx       34-match simulation, match-by-match with ratings vs opponent strength
-  result.tsx       Victory (unbeaten) or defeat screen + share text
-```
+Right now `season.tsx` halts the reveal at the first non-win, so a loss on matchday 5 freezes the grid at 5/34 — that's what you saw.
 
-## Player Data Pipeline (one-time, build-side)
+Fix:
+- Always reveal all 34 matchdays (faster cadence ~220 ms).
+- Mark the first non-win as the **"streak broken"** card with a red flash + divider; matches after it render dimmer ("dead rubber") so it's clear the run ended but you still see the full season.
+- Header tally keeps counting through all 34 matches.
+- Result screen still uses `unbeaten = no losses && no draws` as before.
 
-Use the bundled `ai-gateway` skill (Python script + LOVABLE_API_KEY) to pre-generate the dataset:
+Also rebalance `sim.ts` slightly so a strong squad doesn't randomly drop a match on MD 5:
+- Bump home advantage from +3 → +4.
+- Reduce variance term on `ourXG` (×1.4 → ×1.0) and `theirXG` (×1.2 → ×0.9).
+- Difficulty multiplier on variance: easy ×0.7, normal ×1.0, hard ×1.3 (currently unused).
 
-1. Hand-list the ~56 Bundesliga clubs (current 18 + historic: Kaiserslautern, 1860 Munich, Karlsruher SC, Uerdingen, Rot-Weiss Essen, Saarbrücken, Tasmania Berlin, Hansa Rostock, etc.).
-2. For each club, prompt Gemini 3 Flash with a JSON schema to return ~15-25 iconic players. Each player gets: name, primary position (GK/CB/RB/LB/CM/CDM/CAM/RW/LW/ST), prime rating (75-97), 1-3 career-season snapshots (year, club, rating).
-3. Save to `src/data/bundesliga-players.json` and `src/data/clubs.json`. The generator script lives in `scripts/generate-players.ts` and is run manually from the sandbox; the app only ever reads the JSON.
-4. Light manual QA pass on obvious greats (Müller, Beckenbauer, Lewandowski, Kahn, Matthäus, Sammer, etc.) to make sure ratings feel right.
+## 3. Regroup the 56-club wheel
 
-## Game Mechanics
+The single ALL-TIME wheel with 56 slices is too dense — slivers are unreadable and Uerdingen-tier teams feel random. Split into era tiers the user picks per spin.
 
-**Formations:** 4-3-3, 4-4-2, 4-2-3-1, 4-5-1, 3-4-3, 3-5-2, 5-4-1 (same set as 38-0).
+Add an `era_tier` field to `src/data/clubs.json` (one-time script, no AI):
+- `current` — today's Bundesliga 18
+- `2000s` — Bundesliga staples 2000-2015 (Schalke pre-relegation, HSV, Hannover 96, Hertha, etc.)
+- `90s` — golden 90s clubs (Kaiserslautern champions, Uerdingen, Karlsruher SC, 1860 München, Bochum, Cottbus, Rostock, etc.)
+- `70s-80s` — Bundesliga old guard (Köln pre-2000s, Mönchengladbach Weisweiler era as historic entry, Eintracht Braunschweig, Fortuna Düsseldorf champion years, Saarbrücken, Offenbach Kickers, etc.)
+- `legends` — pre-Bundesliga / DDR-Oberliga survivors (Dynamo Dresden, Magdeburg, Carl Zeiss Jena, Rot-Weiss Essen, etc.)
 
-**Draft modes:**
-- Squad First — spin the club wheel, pick any player from that club, choose their slot.
-- Position First — pick an empty slot, then spin for a club to fill it.
+In the draft side panel, show 5 tier chips above the wheel. The wheel renders only the selected tier (≈10-15 slices each, very readable). User can switch tier between spins; default = `current`.
 
-**Difficulty:** Easy (3 rerolls), Normal (1 reroll), Hard (0 rerolls + ratings hidden).
+## 4. UI polish
 
-**Ratings toggle:** show overalls or play blind. **Player ratings basis:** Career Seasons vs Prime Mode.
+Keep the Bundesliga-red / dark-green identity, no theme change. Tighten the feel:
 
-**Season simulation:**
-- Compute squad average using best XI per formation.
-- 34 matches against the 17 other clubs in the user's "league" (auto-generated bundle: a fixed slate of current Bundesliga rivals + a handful of historic giants to keep variety).
-- For each match: opponent strength + home/away modifier + random variance vs squad strength → win/draw/loss, plus a fake scoreline.
-- Lose or draw a single match → run ends with a defeat screen. Win all 34 → victory screen, "Invincible XI" share card.
+**Draft screen**
+- Wheel: thicker rim, conic-gradient backdrop glow that pulses faintly while idle, harder snap easing on landing (`[0.22, 1, 0.36, 1]`, 3.6 s) + a subtle "tick" scale bump on stop.
+- Selected-club reveal: scale-in card with the crest color as gradient background, slides over the wheel instead of replacing it abruptly.
+- Player list rows: hover lift + ring in club color, rating chip with subtle glow.
+- Pitch slots: drop shadow on filled slots, name label uses a small backdrop blur instead of solid black.
 
-## Visual Design (no design directions needed — cloning a defined style)
+**Season screen**
+- Sticky header with the W/D/L/GF/GA counters that animate (count-up) as matches reveal.
+- Match cards reveal with a tiny stagger and a left-edge color bar (green/yellow/red).
+- When the streak breaks, full-width divider: *"Unbeaten run ended — Matchday X"*.
 
-- Background: very dark green-black (`oklch` near `#0a1a0e`), subtle radial vignette.
-- Accent: Bundesliga red (`#d20515`) instead of 38-0's emerald, but keep an emerald success color for "unbeaten".
-- Display font: a bold condensed grotesk (Archivo Black or Bebek) for the "34-0" mark; body in Inter.
-- Pitch: classic green with white markings, player chips are circular with position label.
-- Wheel: SVG segmented wheel with club crests (use simple text/initials chip — no real crest assets to avoid licensing).
-- All colors flow through `src/styles.css` semantic tokens.
+**Landing + result**
+- Same font stack, just add subtle radial primary glow behind the big "34-0" wordmark.
+- Result screen: confetti only on true unbeaten; otherwise a quiet "Try again" CTA.
 
-## State / Persistence
+## Files touched
 
-- Run state held in a Zustand store (no backend needed). Persist last completed run to `localStorage` so a share link can reconstruct it.
-- No Lovable Cloud / auth required for v1.
+- `src/data/clubs.json` — add `era_tier` to every club.
+- `src/lib/game-types.ts` — add `era_tier` union type.
+- `src/routes/draft.tsx` — tier selector, auto-spin chain, wheel polish.
+- `src/routes/season.tsx` — reveal all 34, streak-broken divider, sticky animated header.
+- `src/lib/sim.ts` — rebalance variance + home boost + difficulty hook.
+- `src/styles.css` — small additions (glow utility, count-up keyframe).
+- `src/routes/result.tsx`, `src/routes/index.tsx` — wordmark glow + result CTA tweak.
 
-## Technical Notes
+## Out of scope
 
-- Pure client-side React + TanStack Router; no server functions for gameplay.
-- One server-side script (`scripts/generate-players.ts`) uses the AI gateway skill to seed `src/data/*.json`.
-- Wheel spin animation via Framer Motion (`rotate` + spring) — no canvas needed.
-- Match sim is synchronous JS with a small animated reveal per matchday.
-
-## Out of Scope (v1)
-
-- Real club crests / player photos (licensing).
-- Multiplayer / leaderboards.
-- Account system / saved runs across devices.
-- Historical season-accurate league tables.
-
-## Build Order
-
-1. Seed data: clubs list + AI-generated player JSON.
-2. Design tokens + landing page.
-3. Setup screen (formation, options).
-4. Draft screen with wheel + pitch.
-5. Season simulation + result screens.
-6. Polish: animations, share card, sound (optional).
+- No new data generation / AI calls (era_tier assigned by hand in code).
+- No backend, no auth, no real crests.
+- Wheel stays SVG (no 3D).
