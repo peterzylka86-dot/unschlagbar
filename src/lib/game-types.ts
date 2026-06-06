@@ -1,6 +1,6 @@
 export type Position = "GK"|"CB"|"RB"|"LB"|"CDM"|"CM"|"CAM"|"RW"|"LW"|"ST";
 
-export type EraTier = "current"|"2000s"|"90s"|"70s-80s";
+export type EraTier = "current"|"2000s"|"70s-80s";
 
 export interface Club {
   id: string;

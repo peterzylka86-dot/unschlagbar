@@ -13,16 +13,14 @@ const PLAYERS = playersData as Player[];
 
 const TIERS: { id: EraTier; label: string; sub: string }[] = [
   { id: "current",  label: "20s",       sub: "starting 2020s" },
-  { id: "2000s",    label: "2000s",     sub: "post-Bosman" },
-  { id: "90s",      label: "90s",       sub: "Lautern & Uerdingen" },
+  { id: "2000s",    label: "90s & 00s", sub: "post-Bosman era" },
   { id: "70s-80s",  label: "70s-80s",   sub: "old guard" },
 ];
 
 // Derive a player's era from career_years string (uses the earliest year found).
 const TIER_YEAR_RANGES: Record<EraTier, [number, number]> = {
   "70s-80s": [1900, 1987],
-  "90s":     [1988, 1999],
-  "2000s":   [2000, 2014],
+  "2000s":   [1988, 2014],
   "current": [2015, 2100],
 };
 function getPlayerStartYear(p: Player): number {
@@ -329,6 +327,9 @@ function PitchView({ slots, showRatings, onSlotClick, highlightSlots }: {
         const filled = !!s.player;
         const highlight = highlightSlots.includes(s.id);
         const club = filled ? CLUBS.find(c => c.id === s.player!.club) : null;
+        // For slots near the bottom edge (GK), render the name ABOVE the badge
+        // so the pitch container's overflow-hidden doesn't clip it.
+        const labelAbove = s.y >= 82;
         return (
           <button
             key={s.id}
@@ -357,7 +358,11 @@ function PitchView({ slots, showRatings, onSlotClick, highlightSlots }: {
               ) : s.position}
             </motion.div>
             {filled && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-1.5 py-0.5 rounded backdrop-blur-md bg-black/50 text-white text-[10px] whitespace-nowrap max-w-[120px] truncate border border-white/10">
+              <div
+                className={`absolute left-1/2 -translate-x-1/2 px-1.5 py-0.5 rounded backdrop-blur-md bg-black/60 text-white text-[10px] whitespace-nowrap max-w-[120px] truncate border border-white/10 ${
+                  labelAbove ? "bottom-full mb-1" : "top-full mt-1"
+                }`}
+              >
                 {s.player!.name.split(" ").slice(-1)[0]}
               </div>
             )}
