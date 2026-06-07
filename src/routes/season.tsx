@@ -9,7 +9,7 @@ import { LEAGUES } from "@/lib/leagues";
 import type { Club, MatchResult } from "@/lib/game-types";
 
 export const Route = createFileRoute("/season")({
-  head: () => ({ meta: [{ title: "Saison · UNSCHLAGBAR" }] }),
+  head: () => ({ meta: [{ title: "Season · UNSCHLAGBAR" }] }),
   component: SeasonScreen,
 });
 
@@ -83,8 +83,10 @@ function SeasonScreen() {
             <Stat label="W" value={String(wins)} color="success" />
             <Stat label="D" value={String(draws)} color="warning" />
             <Stat label="L" value={String(losses)} color="destructive" />
-            <Stat label="GF" value={String(goalsFor)} />
-            <Stat label="GA" value={String(goalsAgainst)} />
+            <span className="hidden sm:contents">
+              <Stat label="GF" value={String(goalsFor)} />
+              <Stat label="GA" value={String(goalsAgainst)} />
+            </span>
             <Stat label="MD" value={`${revealCount}/${matches.length}`} />
             {!seasonOver && revealCount > 0 && (
               <button
