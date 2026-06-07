@@ -42,6 +42,9 @@ export interface SeasonRecord {
   trophies: string[];
   /** ISO timestamp when this season ended. */
   endedAt: string;
+  /** Top scorer for the season — read on the recap screen. Optional so
+   *  pre-existing saves don't fail schema validation. */
+  topScorer?: { name: string; goals: number };
 }
 
 /** A rival manager snapshot — saved after the draft so the season knows

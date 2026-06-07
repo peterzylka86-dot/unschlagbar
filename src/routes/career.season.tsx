@@ -476,6 +476,15 @@ function PostSeasonCTA({
     const goalsAgainst = matches.reduce((a, m) => a + m.theirScore, 0);
     const trophies: string[] = [];
     if (isChampion) trophies.push("League Champion");
+    // Top scorer: count goal-event names across the whole season.
+    const goalCounts = new Map<string, number>();
+    matches.forEach((m) =>
+      m.scorers.forEach((s) => goalCounts.set(s.name, (goalCounts.get(s.name) ?? 0) + 1)),
+    );
+    let topScorer: { name: string; goals: number } | undefined;
+    goalCounts.forEach((g, name) => {
+      if (!topScorer || g > topScorer.goals) topScorer = { name, goals: g };
+    });
     career.recordSeason({
       season: career.currentSeason,
       leagueId: career.leagueId ?? "ucl",
@@ -491,6 +500,7 @@ function PostSeasonCTA({
       cupResult: "did-not-qualify", // updated by /career/cup if applicable
       relegated: isRelegated,
       trophies,
+      topScorer,
       endedAt: new Date().toISOString(),
     });
     career.setRelegated(isRelegated);
@@ -542,13 +552,13 @@ function PostSeasonCTA({
       <div className="text-xs text-muted-foreground mb-5">
         {isCupQualifier
           ? "🏆 Cup competition next — top 8 finishers compete in a knockout for the trophy."
-          : "Transfer window next: form events + squad rebuild for the next season."}
+          : "Season recap next: tactic view + shareable image of your super squad."}
       </div>
       <Link
-        to={isCupQualifier ? "/career/cup" : "/career/postseason"}
+        to={isCupQualifier ? "/career/cup" : "/career/recap"}
         className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-warning text-warning-foreground font-display text-base tracking-wide hover:brightness-110 transition"
       >
-        {isCupQualifier ? "Enter cup →" : "Transfer window →"}
+        {isCupQualifier ? "Enter cup →" : "Season recap →"}
       </Link>
     </div>
   );

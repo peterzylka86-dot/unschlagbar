@@ -19,12 +19,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useCareer } from "@/lib/career-store";
 import { getClubs } from "@/lib/data";
 import type { LeagueId } from "@/lib/leagues";
-import {
-  cupBracketSeeded,
-  pickScorer,
-  pickAssister,
-  type StandingsTable,
-} from "@/lib/career-core";
+import { cupBracketSeeded, pickScorer, pickAssister, type StandingsTable } from "@/lib/career-core";
 import type { Player } from "@/lib/game-types";
 
 export const Route = createFileRoute("/career/cup")({
@@ -73,13 +68,20 @@ function CareerCup() {
     const userGF = latest?.goalsFor ?? 0;
     const userGA = latest?.goalsAgainst ?? 0;
     const table: StandingsTable = {};
-    table["user"] = { Pts: userPts, GF: userGF, GA: userGA, W: latest?.wins ?? 0, D: latest?.draws ?? 0, L: latest?.losses ?? 0, P: 22 };
+    table["user"] = {
+      Pts: userPts,
+      GF: userGF,
+      GA: userGA,
+      W: latest?.wins ?? 0,
+      D: latest?.draws ?? 0,
+      L: latest?.losses ?? 0,
+      P: 22,
+    };
     // Rivals: use their squad-rating heuristic for points (matches the
     // computeLeagueTable approach in sim.ts).
-    career.rivals.forEach(r => {
-      const rating = r.squad.length > 0
-        ? r.squad.reduce((a, p) => a + p.prime_rating, 0) / r.squad.length
-        : 75;
+    career.rivals.forEach((r) => {
+      const rating =
+        r.squad.length > 0 ? r.squad.reduce((a, p) => a + p.prime_rating, 0) / r.squad.length : 75;
       const pts = Math.max(8, Math.round((rating - 60) * (22 / 15.5)));
       table[r.id] = { Pts: pts, GF: Math.round(pts * 1.3), GA: Math.round(pts * 0.9), P: 22 };
     });
@@ -106,38 +108,47 @@ function CareerCup() {
   if (career.squad.length === 0 || career.rivals.length === 0) {
     return (
       <div className="min-h-screen flex items-center justify-center text-muted-foreground">
-        No active career — head back to <Link to="/career" className="underline ml-1">/career</Link>
+        No active career — head back to{" "}
+        <Link to="/career" className="underline ml-1">
+          /career
+        </Link>
       </div>
     );
   }
 
   if (!state) {
-    return <div className="min-h-screen flex items-center justify-center text-muted-foreground">Drawing the bracket…</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center text-muted-foreground">
+        Drawing the bracket…
+      </div>
+    );
   }
 
   function nameOf(id: string): string {
     if (id === "user") return "Your XI";
-    const rival = career.rivals.find(r => r.id === id);
+    const rival = career.rivals.find((r) => r.id === id);
     if (!rival) return id;
-    const club = clubs.find(c => c.id === rival.foundingClubId);
+    const club = clubs.find((c) => c.id === rival.foundingClubId);
     return club?.name ?? rival.archetypeName;
   }
 
   function squadRatingOf(id: string): number {
     if (id === "user") return userRating;
-    const rival = career.rivals.find(r => r.id === id);
+    const rival = career.rivals.find((r) => r.id === id);
     if (!rival || rival.squad.length === 0) return 75;
     return rival.squad.reduce((a, p) => a + p.prime_rating, 0) / rival.squad.length;
   }
 
   // Simulate one cup match — used for both user matches and AI vs AI
-  function simulateMatch(homeId: string, awayId: string, round: "QF"|"SF"|"F"): CupMatch {
-    const seed = hashCode(`${career.startedAt}-${career.currentSeason}-${round}-${homeId}-${awayId}`);
+  function simulateMatch(homeId: string, awayId: string, round: "QF" | "SF" | "F"): CupMatch {
+    const seed = hashCode(
+      `${career.startedAt}-${career.currentSeason}-${round}-${homeId}-${awayId}`,
+    );
     const rand = mulberry32(seed);
     const homeRating = squadRatingOf(homeId);
     const awayRating = squadRatingOf(awayId);
     const homeBoost = 3;
-    const homeDiff = (homeRating + homeBoost) - awayRating;
+    const homeDiff = homeRating + homeBoost - awayRating;
     const homeXG = Math.max(0.2, 1.2 + homeDiff * 0.08 + (rand() - 0.5) * 0.9);
     const awayXG = Math.max(0.1, 1.1 - homeDiff * 0.06 + (rand() - 0.5) * 0.9);
     let homeScore = poisson(homeXG, rand);
@@ -170,8 +181,10 @@ function CareerCup() {
     const winnerId = homeScore > awayScore ? homeId : awayId;
     return {
       round,
-      homeId, awayId,
-      ourScore, theirScore,
+      homeId,
+      awayId,
+      ourScore,
+      theirScore,
       winnerId,
       scorers,
       isUserMatch: isUser,
@@ -181,40 +194,40 @@ function CareerCup() {
   function playRoundOfMatches() {
     if (!state) return;
     if (state.userOut) {
-      navigate({ to: "/career/postseason" });
+      navigate({ to: "/career/recap" });
       return;
     }
 
-    setState(prev => {
+    setState((prev) => {
       if (!prev) return prev;
       // Determine which round we're playing next
-      const playedQF = prev.matches.filter(m => m.round === "QF").length;
-      const playedSF = prev.matches.filter(m => m.round === "SF").length;
-      const playedF  = prev.matches.filter(m => m.round === "F").length;
+      const playedQF = prev.matches.filter((m) => m.round === "QF").length;
+      const playedSF = prev.matches.filter((m) => m.round === "SF").length;
+      const playedF = prev.matches.filter((m) => m.round === "F").length;
 
-      let newMatches: CupMatch[] = [...prev.matches];
+      const newMatches: CupMatch[] = [...prev.matches];
       let newReached = prev.userReached;
 
       if (playedQF < 4) {
         // Play all 4 QF ties
-        const qfMatches = prev.bracket.map(b => simulateMatch(b.home, b.away, "QF"));
+        const qfMatches = prev.bracket.map((b) => simulateMatch(b.home, b.away, "QF"));
         newMatches.push(...qfMatches);
-        const userQF = qfMatches.find(m => m.isUserMatch);
+        const userQF = qfMatches.find((m) => m.isUserMatch);
         if (userQF && userQF.winnerId === "user") newReached = "sf";
         else if (userQF) newReached = "eliminated";
       } else if (playedSF < 2) {
         // Pair QF winners 1v2 and 3v4
-        const qfWinners = newMatches.filter(m => m.round === "QF").map(m => m.winnerId);
+        const qfWinners = newMatches.filter((m) => m.round === "QF").map((m) => m.winnerId);
         const sfMatches: CupMatch[] = [
           simulateMatch(qfWinners[0], qfWinners[3], "SF"),
           simulateMatch(qfWinners[1], qfWinners[2], "SF"),
         ];
         newMatches.push(...sfMatches);
-        const userSF = sfMatches.find(m => m.isUserMatch);
+        const userSF = sfMatches.find((m) => m.isUserMatch);
         if (userSF && userSF.winnerId === "user") newReached = "final";
         else if (userSF) newReached = "eliminated";
       } else if (playedF < 1) {
-        const sfWinners = newMatches.filter(m => m.round === "SF").map(m => m.winnerId);
+        const sfWinners = newMatches.filter((m) => m.round === "SF").map((m) => m.winnerId);
         const finalMatch = simulateMatch(sfWinners[0], sfWinners[1], "F");
         newMatches.push(finalMatch);
         if (finalMatch.isUserMatch) {
@@ -225,22 +238,25 @@ function CareerCup() {
 
       return { ...prev, matches: newMatches, userReached: newReached };
     });
-    setShown(prev => prev + 1);
+    setShown((prev) => prev + 1);
   }
 
   const cupDone =
-    state.userOut ||
-    state.userReached === "eliminated" ||
-    state.userReached === "champion";
+    state.userOut || state.userReached === "eliminated" || state.userReached === "champion";
 
   return (
     <div className="min-h-screen px-4 py-8 max-w-3xl mx-auto">
       <header className="flex items-center justify-between gap-3">
-        <Link to="/career" className="text-[11px] text-muted-foreground hover:text-warning underline">
+        <Link
+          to="/career"
+          className="text-[11px] text-muted-foreground hover:text-warning underline"
+        >
           ← GOLAZO hub
         </Link>
         <div className="text-right">
-          <div className="font-display text-2xl text-warning">Cup · Season {career.currentSeason}</div>
+          <div className="font-display text-2xl text-warning">
+            Cup · Season {career.currentSeason}
+          </div>
           <div className="text-[10px] text-muted-foreground uppercase tracking-[0.2em]">
             Top-8 knockout
           </div>
@@ -257,9 +273,9 @@ function CareerCup() {
               onClick={playRoundOfMatches}
               className="mt-6 w-full px-4 py-3 rounded-md bg-warning text-warning-foreground font-display tracking-wide hover:brightness-110 transition"
             >
-              {state.matches.filter(m => m.round === "QF").length === 0
+              {state.matches.filter((m) => m.round === "QF").length === 0
                 ? "Play Quarter-Finals →"
-                : state.matches.filter(m => m.round === "SF").length === 0
+                : state.matches.filter((m) => m.round === "SF").length === 0
                   ? "Play Semi-Finals →"
                   : "Play Final →"}
             </button>
@@ -281,7 +297,7 @@ function CareerCup() {
 function mulberry32(seed: number): () => number {
   let s = seed >>> 0;
   return () => {
-    s = (s + 0x6D2B79F5) >>> 0;
+    s = (s + 0x6d2b79f5) >>> 0;
     let t = s;
     t = Math.imul(t ^ (t >>> 15), t | 1);
     t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
@@ -292,8 +308,12 @@ function mulberry32(seed: number): () => number {
 function poisson(lambda: number, rand: () => number): number {
   if (lambda <= 0) return 0;
   const L = Math.exp(-lambda);
-  let k = 0, p = 1;
-  while (p > L) { k++; p *= rand(); }
+  let k = 0,
+    p = 1;
+  while (p > L) {
+    k++;
+    p *= rand();
+  }
   return k - 1;
 }
 
@@ -311,14 +331,14 @@ function NotQualifiedCard() {
       <div className="text-3xl mb-2">🤝</div>
       <div className="font-display text-xl mb-2">Did not qualify</div>
       <p className="text-sm text-muted-foreground mb-5">
-        Top 8 finishers qualify for the cup. You'll need a higher league
-        finish next season to compete.
+        Top 8 finishers qualify for the cup. You'll need a higher league finish next season to
+        compete.
       </p>
       <Link
-        to="/career/postseason"
+        to="/career/recap"
         className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-warning text-warning-foreground font-display text-base tracking-wide hover:brightness-110 transition"
       >
-        Continue to transfer window →
+        Season recap →
       </Link>
     </div>
   );
@@ -331,23 +351,33 @@ function BracketView({ state, nameOf }: { state: CupState; nameOf: (id: string) 
         <BracketColumn
           title="Quarter-finals"
           matches={state.bracket.map((b, i) => {
-            const played = state.matches.find(m => m.round === "QF" && m.homeId === b.home && m.awayId === b.away);
+            const played = state.matches.find(
+              (m) => m.round === "QF" && m.homeId === b.home && m.awayId === b.away,
+            );
             return { home: b.home, away: b.away, match: played };
           })}
           nameOf={nameOf}
         />
         <BracketColumn
           title="Semi-finals"
-          matches={state.matches.filter(m => m.round === "SF").map(m => ({
-            home: m.homeId, away: m.awayId, match: m,
-          }))}
+          matches={state.matches
+            .filter((m) => m.round === "SF")
+            .map((m) => ({
+              home: m.homeId,
+              away: m.awayId,
+              match: m,
+            }))}
           nameOf={nameOf}
         />
         <BracketColumn
           title="Final"
-          matches={state.matches.filter(m => m.round === "F").map(m => ({
-            home: m.homeId, away: m.awayId, match: m,
-          }))}
+          matches={state.matches
+            .filter((m) => m.round === "F")
+            .map((m) => ({
+              home: m.homeId,
+              away: m.awayId,
+              match: m,
+            }))}
           nameOf={nameOf}
         />
       </div>
@@ -355,53 +385,109 @@ function BracketView({ state, nameOf }: { state: CupState; nameOf: (id: string) 
   );
 }
 
-function BracketColumn({ title, matches, nameOf }: {
+function BracketColumn({
+  title,
+  matches,
+  nameOf,
+}: {
   title: string;
   matches: Array<{ home: string; away: string; match?: CupMatch }>;
   nameOf: (id: string) => string;
 }) {
   return (
     <div>
-      <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">{title}</div>
+      <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">
+        {title}
+      </div>
       <div className="space-y-2">
         {matches.length === 0 ? (
           <div className="rounded-lg border border-dashed border-border p-3 text-center text-muted-foreground/60 text-xs">
             TBD
           </div>
-        ) : matches.map((m, i) => {
-          const isUserHome = m.home === "user";
-          const isUserAway = m.away === "user";
-          const isUserMatch = isUserHome || isUserAway;
-          const winnerId = m.match?.winnerId;
-          return (
-            <div key={i} className={`rounded-lg border p-2.5 ${isUserMatch ? "border-warning bg-warning/10" : "border-border bg-card/40"}`}>
-              <Row name={nameOf(m.home)} score={m.match?.ourScore !== undefined && isUserHome ? m.match.ourScore : m.match?.theirScore !== undefined && isUserAway ? m.match.theirScore : m.match ? m.match.ourScore : undefined} won={winnerId === m.home} isUser={isUserHome} />
-              <Row name={nameOf(m.away)} score={m.match?.theirScore !== undefined && isUserHome ? m.match.theirScore : m.match?.ourScore !== undefined && isUserAway ? m.match.ourScore : m.match ? m.match.theirScore : undefined} won={winnerId === m.away} isUser={isUserAway} />
-              {m.match?.scorers && m.match.scorers.length > 0 && (
-                <div className="text-[10px] text-muted-foreground truncate mt-1 pt-1 border-t border-border">
-                  ⚽ {m.match.scorers.map(s => s.assister ? `${s.name} (${s.assister})` : s.name).join(" · ")}
-                </div>
-              )}
-            </div>
-          );
-        })}
+        ) : (
+          matches.map((m, i) => {
+            const isUserHome = m.home === "user";
+            const isUserAway = m.away === "user";
+            const isUserMatch = isUserHome || isUserAway;
+            const winnerId = m.match?.winnerId;
+            return (
+              <div
+                key={i}
+                className={`rounded-lg border p-2.5 ${isUserMatch ? "border-warning bg-warning/10" : "border-border bg-card/40"}`}
+              >
+                <Row
+                  name={nameOf(m.home)}
+                  score={
+                    m.match?.ourScore !== undefined && isUserHome
+                      ? m.match.ourScore
+                      : m.match?.theirScore !== undefined && isUserAway
+                        ? m.match.theirScore
+                        : m.match
+                          ? m.match.ourScore
+                          : undefined
+                  }
+                  won={winnerId === m.home}
+                  isUser={isUserHome}
+                />
+                <Row
+                  name={nameOf(m.away)}
+                  score={
+                    m.match?.theirScore !== undefined && isUserHome
+                      ? m.match.theirScore
+                      : m.match?.ourScore !== undefined && isUserAway
+                        ? m.match.ourScore
+                        : m.match
+                          ? m.match.theirScore
+                          : undefined
+                  }
+                  won={winnerId === m.away}
+                  isUser={isUserAway}
+                />
+                {m.match?.scorers && m.match.scorers.length > 0 && (
+                  <div className="text-[10px] text-muted-foreground truncate mt-1 pt-1 border-t border-border">
+                    ⚽{" "}
+                    {m.match.scorers
+                      .map((s) => (s.assister ? `${s.name} (${s.assister})` : s.name))
+                      .join(" · ")}
+                  </div>
+                )}
+              </div>
+            );
+          })
+        )}
       </div>
     </div>
   );
 }
 
-function Row({ name, score, won, isUser }: {
-  name: string; score: number | undefined; won: boolean; isUser: boolean;
+function Row({
+  name,
+  score,
+  won,
+  isUser,
+}: {
+  name: string;
+  score: number | undefined;
+  won: boolean;
+  isUser: boolean;
 }) {
   return (
-    <div className={`flex items-center justify-between text-sm ${won ? "font-display" : "text-muted-foreground"} ${isUser ? "text-warning" : ""}`}>
+    <div
+      className={`flex items-center justify-between text-sm ${won ? "font-display" : "text-muted-foreground"} ${isUser ? "text-warning" : ""}`}
+    >
       <span className="truncate">{name}</span>
       <span className="ml-2 tabular-nums">{score === undefined ? "—" : score}</span>
     </div>
   );
 }
 
-function CupOutcome({ outcome, matches }: { outcome: "champion" | "eliminated"; matches: CupMatch[] }) {
+function CupOutcome({
+  outcome,
+  matches,
+}: {
+  outcome: "champion" | "eliminated";
+  matches: CupMatch[];
+}) {
   const career = useCareer();
   const lastMatch = matches[matches.length - 1];
 
@@ -409,20 +495,20 @@ function CupOutcome({ outcome, matches }: { outcome: "champion" | "eliminated"; 
   useEffect(() => {
     if (career.seasonHistory.length === 0) return;
     const last = career.seasonHistory[career.seasonHistory.length - 1];
-    if (last.season !== career.currentSeason) return;  // already a different season; bail
-    const cupResult = outcome === "champion"
-      ? "champion"
-      : lastMatch?.round === "F" ? "runner-up"
-        : lastMatch?.round === "SF" ? "semi-final"
-        : "quarter-final";
-    if (last.cupResult === cupResult) return;  // already recorded
+    if (last.season !== career.currentSeason) return; // already a different season; bail
+    const cupResult =
+      outcome === "champion"
+        ? "champion"
+        : lastMatch?.round === "F"
+          ? "runner-up"
+          : lastMatch?.round === "SF"
+            ? "semi-final"
+            : "quarter-final";
+    if (last.cupResult === cupResult) return; // already recorded
     const trophies = outcome === "champion" ? [...last.trophies, "Cup Winner"] : last.trophies;
     // Update the last record in place
     useCareer.setState({
-      seasonHistory: [
-        ...career.seasonHistory.slice(0, -1),
-        { ...last, cupResult, trophies },
-      ],
+      seasonHistory: [...career.seasonHistory.slice(0, -1), { ...last, cupResult, trophies }],
       trophies: career.trophies + (outcome === "champion" ? 1 : 0),
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -431,13 +517,22 @@ function CupOutcome({ outcome, matches }: { outcome: "champion" | "eliminated"; 
   return (
     <div className="mt-8 rounded-2xl border-2 border-warning bg-warning/10 p-6 text-center">
       <div className="text-4xl mb-2">
-        {outcome === "champion" ? "🏆" : lastMatch?.round === "F" ? "🥈" : lastMatch?.round === "SF" ? "🥉" : "👋"}
+        {outcome === "champion"
+          ? "🏆"
+          : lastMatch?.round === "F"
+            ? "🥈"
+            : lastMatch?.round === "SF"
+              ? "🥉"
+              : "👋"}
       </div>
       <div className="font-display text-2xl text-warning mb-2">
-        {outcome === "champion" ? "Cup Champions!" :
-         lastMatch?.round === "F" ? "Runner-up · lost the Final" :
-         lastMatch?.round === "SF" ? "Semi-final exit" :
-         "Quarter-final exit"}
+        {outcome === "champion"
+          ? "Cup Champions!"
+          : lastMatch?.round === "F"
+            ? "Runner-up · lost the Final"
+            : lastMatch?.round === "SF"
+              ? "Semi-final exit"
+              : "Quarter-final exit"}
       </div>
       <div className="text-xs text-muted-foreground mb-5">
         {outcome === "champion"
@@ -445,10 +540,10 @@ function CupOutcome({ outcome, matches }: { outcome: "champion" | "eliminated"; 
           : "Tough luck. Time to retool the squad for next season."}
       </div>
       <Link
-        to="/career/postseason"
+        to="/career/recap"
         className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-warning text-warning-foreground font-display text-base tracking-wide hover:brightness-110 transition"
       >
-        Continue to transfer window →
+        Season recap →
       </Link>
     </div>
   );
