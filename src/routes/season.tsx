@@ -2,7 +2,7 @@ import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useGame } from "@/lib/store";
-import { simulateSeason, squadRating } from "@/lib/sim";
+import { simulateSeason, simulateKnockout, squadRating } from "@/lib/sim";
 import { ClubBadge } from "@/components/ClubBadge";
 import { getClubs } from "@/lib/data";
 import { LEAGUES } from "@/lib/leagues";
@@ -25,10 +25,48 @@ function pickOpponents(clubs: Club[], count: number): Club[] {
   return ranked.slice(0, count);
 }
 
+/** For knockouts: pick opponents and seed them progressively harder per round. */
+function buildKnockoutOpponents(clubs: Club[], rounds: string[], seedNum: number): Club[] {
+  const pool = clubs.slice().sort((a, b) => b.strength - a.strength);
+  // Use a quick deterministic shuffle for group draw flavour
+  const rng = (s: { v: number }) => {
+    let x = s.v | 0;
+    x ^= x << 13; x ^= x >>> 17; x ^= x << 5;
+    s.v = x;
+    return ((x >>> 0) % 10000) / 10000;
+  };
+  const rs = { v: seedNum || 4242 };
+  // Bucket: weakest for early rounds, strongest for final
+  const buckets: Club[][] = [];
+  const n = rounds.length;
+  const chunk = Math.max(1, Math.floor(pool.length / Math.max(n, 1)));
+  for (let i = n - 1; i >= 0; i--) {
+    const start = (n - 1 - i) * chunk;
+    const end = i === 0 ? pool.length : start + chunk;
+    buckets.unshift(pool.slice(start, end));
+  }
+  // For groupKO, "Group" entries draw randomly from weaker bucket
+  const chosen: Club[] = [];
+  const used = new Set<string>();
+  for (let i = 0; i < n; i++) {
+    const isGroup = rounds[i] === "Group";
+    const bucket = isGroup ? (buckets[0] ?? pool) : (buckets[i] ?? pool);
+    const candidates = bucket.filter(c => !used.has(c.id));
+    const fallback = pool.filter(c => !used.has(c.id));
+    const list = candidates.length ? candidates : fallback;
+    if (!list.length) break;
+    const pick = list[Math.floor(rng(rs) * list.length)]!;
+    used.add(pick.id);
+    chosen.push(pick);
+  }
+  return chosen;
+}
+
 function SeasonScreen() {
   const { slots, matches, setMatches, config } = useGame();
   const navigate = useNavigate();
   const league = LEAGUES[config.league];
+  const isKO = league.kind !== "league";
   const CLUBS = useMemo(() => getClubs(config.league), [config.league]);
   const ourRating = useMemo(() => squadRating(slots), [slots]);
   const [revealCount, setRevealCount] = useState(0);
@@ -38,9 +76,16 @@ function SeasonScreen() {
       navigate({ to: "/" });
       return;
     }
-    const opponents = pickOpponents(CLUBS, league.opponentsCount);
     const seed = config.challengeSeed ?? Math.floor(Math.random() * 1e9);
-    const sim = simulateSeason(opponents, league.matches, ourRating, seed, config.difficulty);
+    let sim: MatchResult[];
+    if (isKO) {
+      const rounds = league.rounds ?? ["Final"];
+      const opps = buildKnockoutOpponents(CLUBS, rounds, seed);
+      sim = simulateKnockout(opps, rounds, ourRating, seed, config.difficulty);
+    } else {
+      const opponents = pickOpponents(CLUBS, league.opponentsCount);
+      sim = simulateSeason(opponents, league.matches, ourRating, seed, config.difficulty);
+    }
     setMatches(sim);
     setRevealCount(0);
   }, []); // eslint-disable-line
@@ -49,14 +94,14 @@ function SeasonScreen() {
     if (!matches.length) return;
     if (revealCount >= matches.length) return;
     const last = matches[revealCount - 1];
-    const base = 380;
+    const base = isKO ? 600 : 380;
     const extra = !last ? 120
-      : last.outcome === "L" ? 260
-      : last.outcome === "D" ? 160
-      : 0;
+      : last.outcome === "L" ? 320
+      : last.outcome === "D" ? 200
+      : isKO ? 180 : 0;
     const t = setTimeout(() => setRevealCount(c => c + 1), base + extra);
     return () => clearTimeout(t);
-  }, [matches, revealCount]);
+  }, [matches, revealCount, isKO]);
 
   const shown = matches.slice(0, revealCount);
   const firstNonWinIdx = matches.findIndex(m => m.outcome === "L");
@@ -88,7 +133,7 @@ function SeasonScreen() {
               <Stat label="GF" value={String(goalsFor)} />
               <Stat label="GA" value={String(goalsAgainst)} />
             </span>
-            <Stat label="MD" value={`${revealCount}/${matches.length}`} />
+            <Stat label={isKO ? "RD" : "MD"} value={`${revealCount}/${matches.length}`} />
             {!seasonOver && revealCount > 0 && (
               <button
                 onClick={() => setRevealCount(matches.length)}
@@ -108,21 +153,25 @@ function SeasonScreen() {
           )}
         </AnimatePresence>
 
-        <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
-          {matches.map((m, i) => {
-            const isStreakBreaker = i === firstNonWinIdx;
-            const afterStreak = firstNonWinIdx !== -1 && i > firstNonWinIdx;
-            return (
-              <MatchCard
-                key={i}
-                match={m}
-                revealed={i < revealCount}
-                isStreakBreaker={isStreakBreaker && i < revealCount}
-                dimmed={afterStreak && i < revealCount}
-              />
-            );
-          })}
-        </div>
+        {isKO ? (
+          <BracketView matches={matches} revealCount={revealCount} />
+        ) : (
+          <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            {matches.map((m, i) => {
+              const isStreakBreaker = i === firstNonWinIdx;
+              const afterStreak = firstNonWinIdx !== -1 && i > firstNonWinIdx;
+              return (
+                <MatchCard
+                  key={i}
+                  match={m}
+                  revealed={i < revealCount}
+                  isStreakBreaker={isStreakBreaker && i < revealCount}
+                  dimmed={afterStreak && i < revealCount}
+                />
+              );
+            })}
+          </div>
+        )}
 
         <AnimatePresence>
           {streakBroken && (
@@ -132,7 +181,9 @@ function SeasonScreen() {
               className="mt-6 px-4 py-3 rounded-xl border border-destructive/50 bg-destructive/10 text-center"
             >
               <div className="text-xs uppercase tracking-widest text-destructive font-display">
-                Unbeaten run ended · Matchday {matches[firstNonWinIdx]!.matchday}
+                {isKO
+                  ? `Eliminated · ${matches[firstNonWinIdx]!.round ?? `Match ${matches[firstNonWinIdx]!.matchday}`}`
+                  : `Unbeaten run ended · Matchday ${matches[firstNonWinIdx]!.matchday}`}
               </div>
             </motion.div>
           )}
@@ -167,6 +218,44 @@ function SeasonScreen() {
   );
 }
 
+function BracketView({ matches, revealCount }: { matches: MatchResult[]; revealCount: number }) {
+  // Group matches by round, preserving order
+  const groups: { round: string; items: { m: MatchResult; idx: number }[] }[] = [];
+  matches.forEach((m, idx) => {
+    const r = m.round ?? "Match";
+    const last = groups[groups.length - 1];
+    if (last && last.round === r) last.items.push({ m, idx });
+    else groups.push({ round: r, items: [{ m, idx }] });
+  });
+
+  return (
+    <div className="mt-6 space-y-5">
+      {groups.map((g) => {
+        const anyRevealed = g.items.some(it => it.idx < revealCount);
+        return (
+          <div key={g.round + g.items[0]!.idx} className={`rounded-xl border ${anyRevealed ? "border-warning/40 bg-warning/5" : "border-border bg-card/30"} p-3`}>
+            <div className="flex items-center justify-between mb-2">
+              <div className="text-[10px] uppercase tracking-[0.25em] text-warning/90 font-display">{g.round}</div>
+              <div className="text-[10px] text-muted-foreground">{g.items.length} match{g.items.length > 1 ? "es" : ""}</div>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+              {g.items.map(({ m, idx }) => (
+                <MatchCard
+                  key={idx}
+                  match={m}
+                  revealed={idx < revealCount}
+                  isStreakBreaker={!!m.eliminates && idx < revealCount}
+                  dimmed={false}
+                />
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 function LiveCard({ match, league }: { match: MatchResult; league: typeof LEAGUES[keyof typeof LEAGUES] }) {
   const tone = match.outcome === "W" ? "from-success/30 via-success/10 border-success/50"
     : match.outcome === "D" ? "from-warning/30 via-warning/10 border-warning/50"
@@ -186,7 +275,9 @@ function LiveCard({ match, league }: { match: MatchResult; league: typeof LEAGUE
            style={{ background: "repeating-linear-gradient(45deg, currentColor 0 2px, transparent 2px 8px)" }} />
       <div className="relative flex items-center gap-3">
         <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-          MD {String(match.matchday).padStart(2, "0")} · {match.home ? "Home" : "Away"}
+          {match.round
+            ? `${match.round} · ${match.home ? "Home" : "Away"}`
+            : `MD ${String(match.matchday).padStart(2, "0")} · ${match.home ? "Home" : "Away"}`}
         </div>
         <motion.span
           initial={{ scale: 0.6 }}
