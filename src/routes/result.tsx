@@ -70,28 +70,30 @@ function ResultScreen() {
             <h1 className="mt-6 brand-mark text-7xl text-warning">{league.brandMark.split(":")[0]}<span className="text-primary">:</span>{league.brandMark.split(":")[1]}</h1>
             <p className="mt-4 text-xl">Your XI lifted the trophy — {league.flag} {league.name}.</p>
           </>
-        ) : (() => {
-          const groupExit = eliminator?.round === "Group";
-          const groupMatches = matches.filter(m => m.round === "Group");
-          const groupPts = groupMatches.reduce((a, m) => a + (m.outcome === "W" ? 3 : m.outcome === "D" ? 1 : 0), 0);
-          return (
-            <>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-destructive/40 bg-destructive/10 text-destructive text-xs font-semibold tracking-widest uppercase">
-                {groupExit ? "Eliminated · Group Stage" : `Eliminated${eliminator?.round ? ` · ${eliminator.round}` : ""}`}
-              </div>
-              <h1 className="mt-6 font-display text-6xl">{wins}-{draws}-{losses}</h1>
-              {groupExit ? (
-                <p className="mt-4 text-muted-foreground">
-                  Crashed out in the group stage — {groupPts} {groupPts === 1 ? "pt" : "pts"} from {groupMatches.length} matches. No knockout football this year.
-                </p>
-              ) : eliminator && (
-                <p className="mt-4 text-muted-foreground">
-                  Knocked out {eliminator.home ? "vs" : "@"} {eliminator.opponent.name} ({eliminator.ourScore}-{eliminator.theirScore}).
-                </p>
-              )}
-            </>
-          );
-        })()
+        ) : (
+          (() => {
+            const groupExit = eliminator?.round === "Group";
+            const groupMatches = matches.filter(m => m.round === "Group");
+            const groupPts = groupMatches.reduce((a, m) => a + (m.outcome === "W" ? 3 : m.outcome === "D" ? 1 : 0), 0);
+            return (
+              <>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-destructive/40 bg-destructive/10 text-destructive text-xs font-semibold tracking-widest uppercase">
+                  {groupExit ? "Eliminated · Group Stage" : `Eliminated${eliminator?.round ? ` · ${eliminator.round}` : ""}`}
+                </div>
+                <h1 className="mt-6 font-display text-6xl">{wins}-{draws}-{losses}</h1>
+                {groupExit ? (
+                  <p className="mt-4 text-muted-foreground">
+                    Crashed out in the group stage — {groupPts} {groupPts === 1 ? "pt" : "pts"} from {groupMatches.length} matches. No knockout football this year.
+                  </p>
+                ) : eliminator ? (
+                  <p className="mt-4 text-muted-foreground">
+                    Knocked out {eliminator.home ? "vs" : "@"} {eliminator.opponent.name} ({eliminator.ourScore}-{eliminator.theirScore}).
+                  </p>
+                ) : null}
+              </>
+            );
+          })()
+        )
       ) : unbeaten ? (
         <>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-success/40 bg-success/10 text-success text-xs font-semibold tracking-widest uppercase">
