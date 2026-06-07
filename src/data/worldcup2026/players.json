@@ -33,7 +33,7 @@
   },
   {
     "name": "Amine Gouiri",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Algeria",
@@ -41,7 +41,7 @@
   },
   {
     "name": "Anis Hadj Moussa",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Algeria",
@@ -49,7 +49,7 @@
   },
   {
     "name": "Aïssa Mandi",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Algeria",
@@ -65,7 +65,7 @@
   },
   {
     "name": "Houssem Aouar",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Algeria",
@@ -73,7 +73,7 @@
   },
   {
     "name": "Nabil Bentaleb",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Algeria",
@@ -81,7 +81,7 @@
   },
   {
     "name": "Hicham Boudaoui",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Algeria",
@@ -97,7 +97,7 @@
   },
   {
     "name": "Jaouen Hadjam",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Algeria",
@@ -105,7 +105,7 @@
   },
   {
     "name": "Ramiz Zerrouki",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Algeria",
@@ -113,7 +113,7 @@
   },
   {
     "name": "Achref Abada",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Algeria",
@@ -121,7 +121,7 @@
   },
   {
     "name": "Adil Boulbina",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Algeria",
@@ -129,7 +129,7 @@
   },
   {
     "name": "Farès Ghedjemis",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Algeria",
@@ -153,7 +153,7 @@
   },
   {
     "name": "Mohamed Amine Tougai",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Algeria",
@@ -185,7 +185,7 @@
   },
   {
     "name": "Samir Chergui",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Algeria",
@@ -201,7 +201,7 @@
   },
   {
     "name": "Zineddine Belaïd",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Algeria",
@@ -233,7 +233,7 @@
   },
   {
     "name": "Giuliano Simeone",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Argentina",
@@ -241,7 +241,7 @@
   },
   {
     "name": "José Manuel López",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Argentina",
@@ -273,7 +273,7 @@
   },
   {
     "name": "Alexis Mac Allister",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Argentina",
@@ -281,7 +281,7 @@
   },
   {
     "name": "Enzo Fernández",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Argentina",
@@ -289,7 +289,7 @@
   },
   {
     "name": "Julián Alvarez",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Argentina",
@@ -313,7 +313,7 @@
   },
   {
     "name": "Lisandro Martínez",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Argentina",
@@ -321,7 +321,7 @@
   },
   {
     "name": "Nahuel Molina",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Argentina",
@@ -329,7 +329,7 @@
   },
   {
     "name": "Thiago Almada",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Argentina",
@@ -337,7 +337,7 @@
   },
   {
     "name": "Exequiel Palacios",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Argentina",
@@ -345,7 +345,7 @@
   },
   {
     "name": "Nicolás Otamendi",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Argentina",
@@ -353,7 +353,7 @@
   },
   {
     "name": "Rodrigo De Paul",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Argentina",
@@ -361,7 +361,7 @@
   },
   {
     "name": "Nicolás Tagliafico",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Argentina",
@@ -385,7 +385,7 @@
   },
   {
     "name": "Leandro Paredes",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Argentina",
@@ -457,7 +457,7 @@
   },
   {
     "name": "Kai Trewin",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Australia",
@@ -465,7 +465,7 @@
   },
   {
     "name": "Cristian Volpato",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Australia",
@@ -473,7 +473,7 @@
   },
   {
     "name": "Alessandro Circati",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Australia",
@@ -481,7 +481,7 @@
   },
   {
     "name": "Aziz Behich",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Australia",
@@ -489,7 +489,7 @@
   },
   {
     "name": "Cameron Burgess",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Australia",
@@ -497,7 +497,7 @@
   },
   {
     "name": "Cammy Devlin",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Australia",
@@ -505,7 +505,7 @@
   },
   {
     "name": "Connor Metcalfe",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Australia",
@@ -521,7 +521,7 @@
   },
   {
     "name": "Jason Geria",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Australia",
@@ -529,7 +529,7 @@
   },
   {
     "name": "Lucas Herrington",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Australia",
@@ -545,7 +545,7 @@
   },
   {
     "name": "Mohamed Touré",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Australia",
@@ -561,7 +561,7 @@
   },
   {
     "name": "Nishan Velupillay",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Australia",
@@ -585,7 +585,7 @@
   },
   {
     "name": "Paul Okon-Engstler",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Australia",
@@ -593,7 +593,7 @@
   },
   {
     "name": "Tete Yengi",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Australia",
@@ -609,7 +609,7 @@
   },
   {
     "name": "Awer Mabil",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Australia",
@@ -641,7 +641,7 @@
   },
   {
     "name": "Carney Chukwuemeka",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Austria",
@@ -657,7 +657,7 @@
   },
   {
     "name": "Nicolas Seiwald",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 83,
     "career_years": "2026",
     "nationality": "Austria",
@@ -665,7 +665,7 @@
   },
   {
     "name": "Xaver Schlager",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 83,
     "career_years": "2026",
     "nationality": "Austria",
@@ -673,7 +673,7 @@
   },
   {
     "name": "Marco Friedl",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Austria",
@@ -689,7 +689,7 @@
   },
   {
     "name": "Florian Grillitsch",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Austria",
@@ -705,7 +705,7 @@
   },
   {
     "name": "Philipp Lienhart",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Austria",
@@ -713,7 +713,7 @@
   },
   {
     "name": "Romano Schmid",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Austria",
@@ -721,7 +721,7 @@
   },
   {
     "name": "Marko Arnautović",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Austria",
@@ -729,7 +729,7 @@
   },
   {
     "name": "Stefan Posch",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Austria",
@@ -737,7 +737,7 @@
   },
   {
     "name": "Patrick Wimmer",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "Austria",
@@ -745,7 +745,7 @@
   },
   {
     "name": "Alexander Prass",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Austria",
@@ -769,7 +769,7 @@
   },
   {
     "name": "David Affengruber",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Austria",
@@ -801,7 +801,7 @@
   },
   {
     "name": "Phillipp Mwene",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Austria",
@@ -841,7 +841,7 @@
   },
   {
     "name": "Romelu Lukaku",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Belgium",
@@ -849,7 +849,7 @@
   },
   {
     "name": "Leandro Trossard",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Belgium",
@@ -873,7 +873,7 @@
   },
   {
     "name": "Amadou Onana",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Belgium",
@@ -881,7 +881,7 @@
   },
   {
     "name": "Axel Witsel",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Belgium",
@@ -897,7 +897,7 @@
   },
   {
     "name": "Diego Moreira",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Belgium",
@@ -913,7 +913,7 @@
   },
   {
     "name": "Joaquin Seys",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Belgium",
@@ -921,7 +921,7 @@
   },
   {
     "name": "Matias Fernandez-Pardo",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Belgium",
@@ -929,7 +929,7 @@
   },
   {
     "name": "Maxim De Cuyper",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Belgium",
@@ -945,7 +945,7 @@
   },
   {
     "name": "Nathan Ngoy",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Belgium",
@@ -953,7 +953,7 @@
   },
   {
     "name": "Nicolas Raskin",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Belgium",
@@ -977,7 +977,7 @@
   },
   {
     "name": "Charles De Ketelaere",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 83,
     "career_years": "2026",
     "nationality": "Belgium",
@@ -985,7 +985,7 @@
   },
   {
     "name": "Zeno Debast",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 83,
     "career_years": "2026",
     "nationality": "Belgium",
@@ -1001,7 +1001,7 @@
   },
   {
     "name": "Arthur Theate",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Belgium",
@@ -1009,7 +1009,7 @@
   },
   {
     "name": "Hans Vanaken",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Belgium",
@@ -1017,7 +1017,7 @@
   },
   {
     "name": "Timothy Castagne",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Belgium",
@@ -1041,7 +1041,7 @@
   },
   {
     "name": "Ermedin Demirović",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 83,
     "career_years": "2026",
     "nationality": "Bosnia and Herzegovina",
@@ -1057,7 +1057,7 @@
   },
   {
     "name": "Esmir Bajraktarević",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Bosnia and Herzegovina",
@@ -1081,7 +1081,7 @@
   },
   {
     "name": "Nidal Čelik",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Bosnia and Herzegovina",
@@ -1097,7 +1097,7 @@
   },
   {
     "name": "Tarik Muharemović",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Bosnia and Herzegovina",
@@ -1113,7 +1113,7 @@
   },
   {
     "name": "Amir Hadžiahmetović",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Bosnia and Herzegovina",
@@ -1121,7 +1121,7 @@
   },
   {
     "name": "Benjamin Tahirović",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Bosnia and Herzegovina",
@@ -1129,7 +1129,7 @@
   },
   {
     "name": "Dennis Hadžikadunić",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Bosnia and Herzegovina",
@@ -1137,7 +1137,7 @@
   },
   {
     "name": "Dženis Burnić",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Bosnia and Herzegovina",
@@ -1145,7 +1145,7 @@
   },
   {
     "name": "Ermin Mahmić",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Bosnia and Herzegovina",
@@ -1161,7 +1161,7 @@
   },
   {
     "name": "Ivan Šunjić",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Bosnia and Herzegovina",
@@ -1169,7 +1169,7 @@
   },
   {
     "name": "Jovo Lukić",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Bosnia and Herzegovina",
@@ -1177,7 +1177,7 @@
   },
   {
     "name": "Kerim Alajbegović",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Bosnia and Herzegovina",
@@ -1201,7 +1201,7 @@
   },
   {
     "name": "Nihad Mujakić",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Bosnia and Herzegovina",
@@ -1225,7 +1225,7 @@
   },
   {
     "name": "Stjepan Radeljić",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Bosnia and Herzegovina",
@@ -1241,7 +1241,7 @@
   },
   {
     "name": "Vinícius Júnior",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 92,
     "career_years": "2026",
     "nationality": "Brazil",
@@ -1281,7 +1281,7 @@
   },
   {
     "name": "Raphinha",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Brazil",
@@ -1305,7 +1305,7 @@
   },
   {
     "name": "Gabriel Magalhães",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Brazil",
@@ -1321,7 +1321,7 @@
   },
   {
     "name": "Rayan",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Brazil",
@@ -1329,7 +1329,7 @@
   },
   {
     "name": "Roger Ibañez",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Brazil",
@@ -1337,7 +1337,7 @@
   },
   {
     "name": "Bremer",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Brazil",
@@ -1345,7 +1345,7 @@
   },
   {
     "name": "Fabinho",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Brazil",
@@ -1353,7 +1353,7 @@
   },
   {
     "name": "Gabriel Martinelli",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Brazil",
@@ -1361,7 +1361,7 @@
   },
   {
     "name": "Alex Sandro",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Brazil",
@@ -1369,7 +1369,7 @@
   },
   {
     "name": "Bruno Guimarães",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Brazil",
@@ -1393,7 +1393,7 @@
   },
   {
     "name": "Lucas Paquetá",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Brazil",
@@ -1401,7 +1401,7 @@
   },
   {
     "name": "Léo Pereira",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Brazil",
@@ -1409,7 +1409,7 @@
   },
   {
     "name": "Endrick",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Brazil",
@@ -1425,7 +1425,7 @@
   },
   {
     "name": "Douglas Santos",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "Brazil",
@@ -1433,7 +1433,7 @@
   },
   {
     "name": "Luiz Henrique",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 67,
     "career_years": "2026",
     "nationality": "Brazil",
@@ -1457,7 +1457,7 @@
   },
   {
     "name": "Tajon Buchanan",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Canada",
@@ -1465,7 +1465,7 @@
   },
   {
     "name": "Tani Oluwaseyi",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Canada",
@@ -1481,7 +1481,7 @@
   },
   {
     "name": "Derek Cornelius",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Canada",
@@ -1521,7 +1521,7 @@
   },
   {
     "name": "Moïse Bombito",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Canada",
@@ -1529,7 +1529,7 @@
   },
   {
     "name": "Stephen Eustáquio",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Canada",
@@ -1537,7 +1537,7 @@
   },
   {
     "name": "Nathan Saliba",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Canada",
@@ -1545,7 +1545,7 @@
   },
   {
     "name": "Promise David",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Canada",
@@ -1553,7 +1553,7 @@
   },
   {
     "name": "Ismaël Koné",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Canada",
@@ -1561,7 +1561,7 @@
   },
   {
     "name": "Joel Waterman",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Canada",
@@ -1569,7 +1569,7 @@
   },
   {
     "name": "Jonathan Osorio",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Canada",
@@ -1585,7 +1585,7 @@
   },
   {
     "name": "Richie Laryea",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Canada",
@@ -1601,7 +1601,7 @@
   },
   {
     "name": "Ali Ahmed",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "Canada",
@@ -1609,7 +1609,7 @@
   },
   {
     "name": "Luc de Fougerolles",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Canada",
@@ -1617,7 +1617,7 @@
   },
   {
     "name": "Niko Sigur",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Canada",
@@ -1673,7 +1673,7 @@
   },
   {
     "name": "Steven Moreira",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Cape Verde",
@@ -1681,7 +1681,7 @@
   },
   {
     "name": "Jamiro Monteiro",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Cape Verde",
@@ -1689,7 +1689,7 @@
   },
   {
     "name": "João Paulo",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Cape Verde",
@@ -1697,7 +1697,7 @@
   },
   {
     "name": "Stopira",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Cape Verde",
@@ -1705,7 +1705,7 @@
   },
   {
     "name": "Nuno da Costa",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Cape Verde",
@@ -1729,7 +1729,7 @@
   },
   {
     "name": "Dailon Livramento",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Cape Verde",
@@ -1737,7 +1737,7 @@
   },
   {
     "name": "Deroy Duarte",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Cape Verde",
@@ -1745,7 +1745,7 @@
   },
   {
     "name": "Gilson Benchimol",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Cape Verde",
@@ -1761,7 +1761,7 @@
   },
   {
     "name": "Kelvin Pires",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Cape Verde",
@@ -1769,7 +1769,7 @@
   },
   {
     "name": "Laros Duarte",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Cape Verde",
@@ -1785,7 +1785,7 @@
   },
   {
     "name": "Roberto Lopes",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Cape Verde",
@@ -1809,7 +1809,7 @@
   },
   {
     "name": "Willy Semedo",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Cape Verde",
@@ -1825,7 +1825,7 @@
   },
   {
     "name": "Kevin Pina",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 67,
     "career_years": "2026",
     "nationality": "Cape Verde",
@@ -1833,7 +1833,7 @@
   },
   {
     "name": "Diney",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 65,
     "career_years": "2026",
     "nationality": "Cape Verde",
@@ -1841,7 +1841,7 @@
   },
   {
     "name": "Telmo Arcanjo",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 61,
     "career_years": "2026",
     "nationality": "Cape Verde",
@@ -1857,7 +1857,7 @@
   },
   {
     "name": "Luis Díaz",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Colombia",
@@ -1889,7 +1889,7 @@
   },
   {
     "name": "Jhon Arias",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Colombia",
@@ -1897,7 +1897,7 @@
   },
   {
     "name": "Jorge Carrascal",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Colombia",
@@ -1913,7 +1913,7 @@
   },
   {
     "name": "Andrés Gómez",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Colombia",
@@ -1929,7 +1929,7 @@
   },
   {
     "name": "Daniel Muñoz",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Colombia",
@@ -1945,7 +1945,7 @@
   },
   {
     "name": "Deiver Machado",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Colombia",
@@ -1953,7 +1953,7 @@
   },
   {
     "name": "Gustavo Puerta",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Colombia",
@@ -1961,7 +1961,7 @@
   },
   {
     "name": "Jaminton Campaz",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Colombia",
@@ -1969,7 +1969,7 @@
   },
   {
     "name": "Jhon Lucumí",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Colombia",
@@ -1977,7 +1977,7 @@
   },
   {
     "name": "Juan Fernando Quintero",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Colombia",
@@ -1985,7 +1985,7 @@
   },
   {
     "name": "Juan Portilla",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Colombia",
@@ -2009,7 +2009,7 @@
   },
   {
     "name": "Yerry Mina",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Colombia",
@@ -2025,7 +2025,7 @@
   },
   {
     "name": "Jefferson Lerma",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Colombia",
@@ -2033,7 +2033,7 @@
   },
   {
     "name": "Jhon Córdoba",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Colombia",
@@ -2041,7 +2041,7 @@
   },
   {
     "name": "Johan Mojica",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Colombia",
@@ -2097,7 +2097,7 @@
   },
   {
     "name": "Petar Sučić",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Croatia",
@@ -2105,7 +2105,7 @@
   },
   {
     "name": "Andrej Kramarić",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Croatia",
@@ -2113,7 +2113,7 @@
   },
   {
     "name": "Ante Budimir",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Croatia",
@@ -2153,7 +2153,7 @@
   },
   {
     "name": "Luka Vušković",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Croatia",
@@ -2161,7 +2161,7 @@
   },
   {
     "name": "Marco Pašalić",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Croatia",
@@ -2169,7 +2169,7 @@
   },
   {
     "name": "Marin Pongračić",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Croatia",
@@ -2177,7 +2177,7 @@
   },
   {
     "name": "Mario Pašalić",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Croatia",
@@ -2185,7 +2185,7 @@
   },
   {
     "name": "Martin Baturina",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Croatia",
@@ -2193,7 +2193,7 @@
   },
   {
     "name": "Nikola Moro",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Croatia",
@@ -2201,7 +2201,7 @@
   },
   {
     "name": "Petar Musa",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Croatia",
@@ -2217,7 +2217,7 @@
   },
   {
     "name": "Duje Ćaleta-Car",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Croatia",
@@ -2225,7 +2225,7 @@
   },
   {
     "name": "Josip Šutalo",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Croatia",
@@ -2233,7 +2233,7 @@
   },
   {
     "name": "Luka Sučić",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Croatia",
@@ -2241,7 +2241,7 @@
   },
   {
     "name": "Nikola Vlašić",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Croatia",
@@ -2257,7 +2257,7 @@
   },
   {
     "name": "Martin Erlić",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Croatia",
@@ -2297,7 +2297,7 @@
   },
   {
     "name": "Brandley Kuwas",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Curaçao",
@@ -2313,7 +2313,7 @@
   },
   {
     "name": "Gervane Kastaneer",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Curaçao",
@@ -2337,7 +2337,7 @@
   },
   {
     "name": "Jeremy Antonisse",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Curaçao",
@@ -2345,7 +2345,7 @@
   },
   {
     "name": "Joshua Brenet",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Curaçao",
@@ -2353,7 +2353,7 @@
   },
   {
     "name": "Juninho Bacuna",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Curaçao",
@@ -2361,7 +2361,7 @@
   },
   {
     "name": "Juriën Gaari",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Curaçao",
@@ -2369,7 +2369,7 @@
   },
   {
     "name": "Jürgen Locadia",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Curaçao",
@@ -2385,7 +2385,7 @@
   },
   {
     "name": "Kevin Felida",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Curaçao",
@@ -2393,7 +2393,7 @@
   },
   {
     "name": "Leandro Bacuna",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Curaçao",
@@ -2401,7 +2401,7 @@
   },
   {
     "name": "Livano Comenencia",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Curaçao",
@@ -2409,7 +2409,7 @@
   },
   {
     "name": "Riechedly Bazoer",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Curaçao",
@@ -2417,7 +2417,7 @@
   },
   {
     "name": "Roshon van Eijma",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Curaçao",
@@ -2433,7 +2433,7 @@
   },
   {
     "name": "Shurandy Sambo",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Curaçao",
@@ -2457,7 +2457,7 @@
   },
   {
     "name": "Tyrese Noslin",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Curaçao",
@@ -2489,7 +2489,7 @@
   },
   {
     "name": "Pavel Šulc",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Czech Republic",
@@ -2513,7 +2513,7 @@
   },
   {
     "name": "Adam Hložek",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Czech Republic",
@@ -2537,7 +2537,7 @@
   },
   {
     "name": "Vladimír Coufal",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Czech Republic",
@@ -2553,7 +2553,7 @@
   },
   {
     "name": "David Douděra",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Czech Republic",
@@ -2561,7 +2561,7 @@
   },
   {
     "name": "David Jurásek",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Czech Republic",
@@ -2569,7 +2569,7 @@
   },
   {
     "name": "David Zima",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Czech Republic",
@@ -2585,7 +2585,7 @@
   },
   {
     "name": "Hugo Sochůrek",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Czech Republic",
@@ -2593,7 +2593,7 @@
   },
   {
     "name": "Jan Kuchta",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Czech Republic",
@@ -2617,7 +2617,7 @@
   },
   {
     "name": "Lukáš Provod",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Czech Republic",
@@ -2625,7 +2625,7 @@
   },
   {
     "name": "Lukáš Červ",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Czech Republic",
@@ -2633,7 +2633,7 @@
   },
   {
     "name": "Michal Sadílek",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Czech Republic",
@@ -2641,7 +2641,7 @@
   },
   {
     "name": "Mojmír Chytil",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Czech Republic",
@@ -2657,7 +2657,7 @@
   },
   {
     "name": "Tomáš Holeš",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Czech Republic",
@@ -2673,7 +2673,7 @@
   },
   {
     "name": "Štěpán Chaloupek",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Czech Republic",
@@ -2697,7 +2697,7 @@
   },
   {
     "name": "Cédric Bakambu",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "DR Congo",
@@ -2721,7 +2721,7 @@
   },
   {
     "name": "Arthur Masuaku",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "DR Congo",
@@ -2729,7 +2729,7 @@
   },
   {
     "name": "Axel Tuanzebe",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "DR Congo",
@@ -2745,7 +2745,7 @@
   },
   {
     "name": "Aaron Tshibola",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "DR Congo",
@@ -2753,7 +2753,7 @@
   },
   {
     "name": "Brian Cipenga",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "DR Congo",
@@ -2761,7 +2761,7 @@
   },
   {
     "name": "Dylan Batubinsika",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "DR Congo",
@@ -2769,7 +2769,7 @@
   },
   {
     "name": "Edo Kayembe",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "DR Congo",
@@ -2785,7 +2785,7 @@
   },
   {
     "name": "Gaël Kakuta",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "DR Congo",
@@ -2793,7 +2793,7 @@
   },
   {
     "name": "Gédéon Kalulu",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "DR Congo",
@@ -2825,7 +2825,7 @@
   },
   {
     "name": "Meschak Elia",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "DR Congo",
@@ -2833,7 +2833,7 @@
   },
   {
     "name": "Nathanaël Mbuku",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "DR Congo",
@@ -2841,7 +2841,7 @@
   },
   {
     "name": "Noah Sadiki",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "DR Congo",
@@ -2865,7 +2865,7 @@
   },
   {
     "name": "Steve Kapuadi",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "DR Congo",
@@ -2873,7 +2873,7 @@
   },
   {
     "name": "Théo Bongonda",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "DR Congo",
@@ -2913,7 +2913,7 @@
   },
   {
     "name": "Pervis Estupiñán",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Ecuador",
@@ -2929,7 +2929,7 @@
   },
   {
     "name": "Félix Torres",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Ecuador",
@@ -2937,7 +2937,7 @@
   },
   {
     "name": "Gonzalo Plata",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Ecuador",
@@ -2945,7 +2945,7 @@
   },
   {
     "name": "Jeremy Arévalo",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Ecuador",
@@ -2961,7 +2961,7 @@
   },
   {
     "name": "Alan Franco",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Ecuador",
@@ -2969,7 +2969,7 @@
   },
   {
     "name": "Alan Minda",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Ecuador",
@@ -2977,7 +2977,7 @@
   },
   {
     "name": "Ángelo Preciado",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Ecuador",
@@ -2993,7 +2993,7 @@
   },
   {
     "name": "Joel Ordóñez",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Ecuador",
@@ -3001,7 +3001,7 @@
   },
   {
     "name": "Anthony Valencia",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Ecuador",
@@ -3009,7 +3009,7 @@
   },
   {
     "name": "Denil Castillo",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Ecuador",
@@ -3025,7 +3025,7 @@
   },
   {
     "name": "John Yeboah",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Ecuador",
@@ -3041,7 +3041,7 @@
   },
   {
     "name": "Jordy Caicedo",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Ecuador",
@@ -3057,7 +3057,7 @@
   },
   {
     "name": "Pedro Vite",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Ecuador",
@@ -3073,7 +3073,7 @@
   },
   {
     "name": "Jackson Porozo",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 68,
     "career_years": "2026",
     "nationality": "Ecuador",
@@ -3105,7 +3105,7 @@
   },
   {
     "name": "Hamza Abdelkarim",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Egypt",
@@ -3113,7 +3113,7 @@
   },
   {
     "name": "Omar Marmoush",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Egypt",
@@ -3161,7 +3161,7 @@
   },
   {
     "name": "Haissem Hassan",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Egypt",
@@ -3177,7 +3177,7 @@
   },
   {
     "name": "Hossam Abdelmaguid",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Egypt",
@@ -3185,7 +3185,7 @@
   },
   {
     "name": "Ibrahim Adel",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Egypt",
@@ -3193,7 +3193,7 @@
   },
   {
     "name": "Karim Hafez",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Egypt",
@@ -3201,7 +3201,7 @@
   },
   {
     "name": "Mahmoud Saber",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Egypt",
@@ -3209,7 +3209,7 @@
   },
   {
     "name": "Marwan Attia",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Egypt",
@@ -3225,7 +3225,7 @@
   },
   {
     "name": "Mohamed Hany",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Egypt",
@@ -3233,7 +3233,7 @@
   },
   {
     "name": "Mohanad Lasheen",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Egypt",
@@ -3249,7 +3249,7 @@
   },
   {
     "name": "Mostafa Ziko",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Egypt",
@@ -3265,7 +3265,7 @@
   },
   {
     "name": "Ramy Rabia",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Egypt",
@@ -3281,7 +3281,7 @@
   },
   {
     "name": "Yasser Ibrahim",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Egypt",
@@ -3321,7 +3321,7 @@
   },
   {
     "name": "Bukayo Saka",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "England",
@@ -3353,7 +3353,7 @@
   },
   {
     "name": "Marcus Rashford",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "England",
@@ -3361,7 +3361,7 @@
   },
   {
     "name": "Nico O'Reilly",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "England",
@@ -3377,7 +3377,7 @@
   },
   {
     "name": "Dan Burn",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "England",
@@ -3401,7 +3401,7 @@
   },
   {
     "name": "Djed Spence",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "England",
@@ -3409,7 +3409,7 @@
   },
   {
     "name": "Eberechi Eze",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "England",
@@ -3417,7 +3417,7 @@
   },
   {
     "name": "Elliot Anderson",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "England",
@@ -3425,7 +3425,7 @@
   },
   {
     "name": "Ezri Konsa",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "England",
@@ -3433,7 +3433,7 @@
   },
   {
     "name": "Ivan Toney",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "England",
@@ -3449,7 +3449,7 @@
   },
   {
     "name": "Kobbie Mainoo",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "England",
@@ -3457,7 +3457,7 @@
   },
   {
     "name": "Noni Madueke",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "England",
@@ -3465,7 +3465,7 @@
   },
   {
     "name": "Tino Livramento",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "England",
@@ -3481,7 +3481,7 @@
   },
   {
     "name": "Reece James",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "England",
@@ -3489,7 +3489,7 @@
   },
   {
     "name": "Jordan Henderson",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "England",
@@ -3537,7 +3537,7 @@
   },
   {
     "name": "Bradley Barcola",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "France",
@@ -3553,7 +3553,7 @@
   },
   {
     "name": "Désiré Doué",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "France",
@@ -3569,7 +3569,7 @@
   },
   {
     "name": "Maghnes Akliouche",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "France",
@@ -3585,7 +3585,7 @@
   },
   {
     "name": "Maxence Lacroix",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "France",
@@ -3609,7 +3609,7 @@
   },
   {
     "name": "Rayan Cherki",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "France",
@@ -3625,7 +3625,7 @@
   },
   {
     "name": "Dayot Upamecano",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "France",
@@ -3633,7 +3633,7 @@
   },
   {
     "name": "Ibrahima Konaté",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "France",
@@ -3641,7 +3641,7 @@
   },
   {
     "name": "William Saliba",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "France",
@@ -3657,7 +3657,7 @@
   },
   {
     "name": "Ousmane Dembélé",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "France",
@@ -3665,7 +3665,7 @@
   },
   {
     "name": "Théo Hernandez",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "France",
@@ -3673,7 +3673,7 @@
   },
   {
     "name": "Warren Zaïre-Emery",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "France",
@@ -3681,7 +3681,7 @@
   },
   {
     "name": "Adrien Rabiot",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "France",
@@ -3689,7 +3689,7 @@
   },
   {
     "name": "Marcus Thuram",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "France",
@@ -3697,7 +3697,7 @@
   },
   {
     "name": "Lucas Digne",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "France",
@@ -3761,7 +3761,7 @@
   },
   {
     "name": "Jamal Musiala",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Germany",
@@ -3769,7 +3769,7 @@
   },
   {
     "name": "Jonathan Tah",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Germany",
@@ -3777,7 +3777,7 @@
   },
   {
     "name": "Leon Goretzka",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Germany",
@@ -3785,7 +3785,7 @@
   },
   {
     "name": "Angelo Stiller",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Germany",
@@ -3793,7 +3793,7 @@
   },
   {
     "name": "Assan Ouédraogo",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Germany",
@@ -3809,7 +3809,7 @@
   },
   {
     "name": "Jamie Leweling",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Germany",
@@ -3825,7 +3825,7 @@
   },
   {
     "name": "Leroy Sané",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Germany",
@@ -3833,7 +3833,7 @@
   },
   {
     "name": "Nathaniel Brown",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Germany",
@@ -3841,7 +3841,7 @@
   },
   {
     "name": "Nick Woltemade",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Germany",
@@ -3849,7 +3849,7 @@
   },
   {
     "name": "Maximilian Beier",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Germany",
@@ -3857,7 +3857,7 @@
   },
   {
     "name": "Nico Schlotterbeck",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Germany",
@@ -3873,7 +3873,7 @@
   },
   {
     "name": "Waldemar Anton",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Germany",
@@ -3905,7 +3905,7 @@
   },
   {
     "name": "David Raum",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 83,
     "career_years": "2026",
     "nationality": "Germany",
@@ -3921,7 +3921,7 @@
   },
   {
     "name": "Nadiem Amiri",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Germany",
@@ -3953,7 +3953,7 @@
   },
   {
     "name": "Kamaldeen Sulemana",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Ghana",
@@ -3961,7 +3961,7 @@
   },
   {
     "name": "Ernest Nuamah",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Ghana",
@@ -3985,7 +3985,7 @@
   },
   {
     "name": "Kojo Peprah Oppong",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Ghana",
@@ -4009,7 +4009,7 @@
   },
   {
     "name": "Christopher Bonsu Baah",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "Ghana",
@@ -4017,7 +4017,7 @@
   },
   {
     "name": "Jonas Adjetey",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "Ghana",
@@ -4025,7 +4025,7 @@
   },
   {
     "name": "Jordan Ayew",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "Ghana",
@@ -4033,7 +4033,7 @@
   },
   {
     "name": "Abdul Rahman Baba",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Ghana",
@@ -4041,7 +4041,7 @@
   },
   {
     "name": "Elisha Owusu",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Ghana",
@@ -4049,7 +4049,7 @@
   },
   {
     "name": "Augustine Boakye",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Ghana",
@@ -4073,7 +4073,7 @@
   },
   {
     "name": "Caleb Yirenkyi",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Ghana",
@@ -4081,7 +4081,7 @@
   },
   {
     "name": "Derrick Luckassen",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Ghana",
@@ -4105,7 +4105,7 @@
   },
   {
     "name": "Kwasi Sibo",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Ghana",
@@ -4113,7 +4113,7 @@
   },
   {
     "name": "Marvin Senaya",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Ghana",
@@ -4121,7 +4121,7 @@
   },
   {
     "name": "Prince Kwabena Adu",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Ghana",
@@ -4129,7 +4129,7 @@
   },
   {
     "name": "Gideon Mensah",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 71,
     "career_years": "2026",
     "nationality": "Ghana",
@@ -4177,7 +4177,7 @@
   },
   {
     "name": "Jean-Kévin Duverne",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Haiti",
@@ -4185,7 +4185,7 @@
   },
   {
     "name": "Duckens Nazon",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Haiti",
@@ -4193,7 +4193,7 @@
   },
   {
     "name": "Hannes Delcroix",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "Haiti",
@@ -4209,7 +4209,7 @@
   },
   {
     "name": "Carl Sainté",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Haiti",
@@ -4217,7 +4217,7 @@
   },
   {
     "name": "Dominique Simon",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Haiti",
@@ -4225,7 +4225,7 @@
   },
   {
     "name": "Duke Lacroix",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Haiti",
@@ -4233,7 +4233,7 @@
   },
   {
     "name": "Frantzdy Pierrot",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Haiti",
@@ -4265,7 +4265,7 @@
   },
   {
     "name": "Lenny Joseph",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Haiti",
@@ -4273,7 +4273,7 @@
   },
   {
     "name": "Leverton Pierre",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Haiti",
@@ -4281,7 +4281,7 @@
   },
   {
     "name": "Louicius Deedson",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Haiti",
@@ -4289,7 +4289,7 @@
   },
   {
     "name": "Martin Expérience",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Haiti",
@@ -4313,7 +4313,7 @@
   },
   {
     "name": "Wilguens Paugain",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Haiti",
@@ -4321,7 +4321,7 @@
   },
   {
     "name": "Wilson Isidor",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Haiti",
@@ -4329,7 +4329,7 @@
   },
   {
     "name": "Woodensky Pierre",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Haiti",
@@ -4337,7 +4337,7 @@
   },
   {
     "name": "Yassin Fortuné",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Haiti",
@@ -4377,7 +4377,7 @@
   },
   {
     "name": "Mehdi Torabi",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "Iran",
@@ -4385,7 +4385,7 @@
   },
   {
     "name": "Rouzbeh Cheshmi",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "Iran",
@@ -4401,7 +4401,7 @@
   },
   {
     "name": "Shojae Khalilzadeh",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Iran",
@@ -4409,7 +4409,7 @@
   },
   {
     "name": "Ali Alipour",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Iran",
@@ -4417,7 +4417,7 @@
   },
   {
     "name": "Amirmohammad Razzaghinia",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Iran",
@@ -4425,7 +4425,7 @@
   },
   {
     "name": "Milad Mohammadi",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Iran",
@@ -4441,7 +4441,7 @@
   },
   {
     "name": "Saleh Hardani",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Iran",
@@ -4449,7 +4449,7 @@
   },
   {
     "name": "Saman Ghoddos",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Iran",
@@ -4457,7 +4457,7 @@
   },
   {
     "name": "Ali Nemati",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "Iran",
@@ -4473,7 +4473,7 @@
   },
   {
     "name": "Amirhossein Hosseinzadeh",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "Iran",
@@ -4489,7 +4489,7 @@
   },
   {
     "name": "Danial Eiri",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "Iran",
@@ -4513,7 +4513,7 @@
   },
   {
     "name": "Mehdi Ghayedi",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "Iran",
@@ -4529,7 +4529,7 @@
   },
   {
     "name": "Mohammad Mohebi",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "Iran",
@@ -4537,7 +4537,7 @@
   },
   {
     "name": "Shahriyar Moghanlou",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "Iran",
@@ -4545,7 +4545,7 @@
   },
   {
     "name": "Ramin Rezaeian",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Iran",
@@ -4601,7 +4601,7 @@
   },
   {
     "name": "Akam Hashim",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Iraq",
@@ -4609,7 +4609,7 @@
   },
   {
     "name": "Ali Al-Hamadi",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Iraq",
@@ -4617,7 +4617,7 @@
   },
   {
     "name": "Ali Jasim",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Iraq",
@@ -4633,7 +4633,7 @@
   },
   {
     "name": "Amir Al-Ammari",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Iraq",
@@ -4641,7 +4641,7 @@
   },
   {
     "name": "Aymen Hussein",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Iraq",
@@ -4657,7 +4657,7 @@
   },
   {
     "name": "Frans Putros",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Iraq",
@@ -4665,7 +4665,7 @@
   },
   {
     "name": "Hussein Ali",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Iraq",
@@ -4673,7 +4673,7 @@
   },
   {
     "name": "Ibrahim Bayesh",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Iraq",
@@ -4689,7 +4689,7 @@
   },
   {
     "name": "Kevin Yakob",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Iraq",
@@ -4697,7 +4697,7 @@
   },
   {
     "name": "Manaf Younis",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Iraq",
@@ -4705,7 +4705,7 @@
   },
   {
     "name": "Marko Farji",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Iraq",
@@ -4729,7 +4729,7 @@
   },
   {
     "name": "Mustafa Saadoon",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Iraq",
@@ -4737,7 +4737,7 @@
   },
   {
     "name": "Youssef Amyn",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Iraq",
@@ -4753,7 +4753,7 @@
   },
   {
     "name": "Zaid Tahseen",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Iraq",
@@ -4769,7 +4769,7 @@
   },
   {
     "name": "Amad Diallo",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Ivory Coast",
@@ -4801,7 +4801,7 @@
   },
   {
     "name": "Yan Diomande",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 83,
     "career_years": "2026",
     "nationality": "Ivory Coast",
@@ -4817,7 +4817,7 @@
   },
   {
     "name": "Odilon Kossounou",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Ivory Coast",
@@ -4825,7 +4825,7 @@
   },
   {
     "name": "Simon Adingra",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Ivory Coast",
@@ -4833,7 +4833,7 @@
   },
   {
     "name": "Wilfried Singo",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Ivory Coast",
@@ -4849,7 +4849,7 @@
   },
   {
     "name": "Elye Wahi",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Ivory Coast",
@@ -4857,7 +4857,7 @@
   },
   {
     "name": "Emmanuel Agbadou",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Ivory Coast",
@@ -4873,7 +4873,7 @@
   },
   {
     "name": "Ibrahim Sangaré",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Ivory Coast",
@@ -4881,7 +4881,7 @@
   },
   {
     "name": "Bazoumana Touré",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Ivory Coast",
@@ -4889,7 +4889,7 @@
   },
   {
     "name": "Guéla Doué",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Ivory Coast",
@@ -4905,7 +4905,7 @@
   },
   {
     "name": "Christ Inao Oulaï",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Ivory Coast",
@@ -4921,7 +4921,7 @@
   },
   {
     "name": "Ghislain Konan",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Ivory Coast",
@@ -4929,7 +4929,7 @@
   },
   {
     "name": "Jean Michaël Seri",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Ivory Coast",
@@ -4945,7 +4945,7 @@
   },
   {
     "name": "Oumar Diakité",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Ivory Coast",
@@ -4953,7 +4953,7 @@
   },
   {
     "name": "Parfait Guiagon",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Ivory Coast",
@@ -4993,7 +4993,7 @@
   },
   {
     "name": "Daichi Kamada",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 83,
     "career_years": "2026",
     "nationality": "Japan",
@@ -5009,7 +5009,7 @@
   },
   {
     "name": "Ritsu Dōan",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Japan",
@@ -5017,7 +5017,7 @@
   },
   {
     "name": "Takehiro Tomiyasu",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Japan",
@@ -5033,7 +5033,7 @@
   },
   {
     "name": "Tsuyoshi Watanabe",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Japan",
@@ -5049,7 +5049,7 @@
   },
   {
     "name": "Daizen Maeda",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Japan",
@@ -5057,7 +5057,7 @@
   },
   {
     "name": "Ayumu Seko",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Japan",
@@ -5065,7 +5065,7 @@
   },
   {
     "name": "Junnosuke Suzuki",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Japan",
@@ -5073,7 +5073,7 @@
   },
   {
     "name": "Junya Itō",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Japan",
@@ -5089,7 +5089,7 @@
   },
   {
     "name": "Keisuke Gotō",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Japan",
@@ -5105,7 +5105,7 @@
   },
   {
     "name": "Keito Nakamura",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Japan",
@@ -5113,7 +5113,7 @@
   },
   {
     "name": "Kento Shiogai",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Japan",
@@ -5137,7 +5137,7 @@
   },
   {
     "name": "Yuito Suzuki",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Japan",
@@ -5161,7 +5161,7 @@
   },
   {
     "name": "Yūto Nagatomo",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Japan",
@@ -5169,7 +5169,7 @@
   },
   {
     "name": "Shōgo Taniguchi",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "Japan",
@@ -5185,7 +5185,7 @@
   },
   {
     "name": "Ali Azaizeh",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Jordan",
@@ -5209,7 +5209,7 @@
   },
   {
     "name": "Ali Olwan",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Jordan",
@@ -5233,7 +5233,7 @@
   },
   {
     "name": "Husam Abu Dahab",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Jordan",
@@ -5249,7 +5249,7 @@
   },
   {
     "name": "Ihsan Haddad",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Jordan",
@@ -5265,7 +5265,7 @@
   },
   {
     "name": "Mo Abualnadi",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Jordan",
@@ -5273,7 +5273,7 @@
   },
   {
     "name": "Mohammad Abu Hashish",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Jordan",
@@ -5281,7 +5281,7 @@
   },
   {
     "name": "Mohammad Abu Zrayq",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Jordan",
@@ -5289,7 +5289,7 @@
   },
   {
     "name": "Mohammad Al-Dawoud",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Jordan",
@@ -5297,7 +5297,7 @@
   },
   {
     "name": "Mohannad Abu Taha",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Jordan",
@@ -5305,7 +5305,7 @@
   },
   {
     "name": "Nizar Al-Rashdan",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Jordan",
@@ -5313,7 +5313,7 @@
   },
   {
     "name": "Noor Al-Rawabdeh",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Jordan",
@@ -5329,7 +5329,7 @@
   },
   {
     "name": "Odeh Al-Fakhouri",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Jordan",
@@ -5353,7 +5353,7 @@
   },
   {
     "name": "Salim Obaid",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Jordan",
@@ -5361,7 +5361,7 @@
   },
   {
     "name": "Yazan Al-Arab",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Jordan",
@@ -5401,7 +5401,7 @@
   },
   {
     "name": "Raúl Jiménez",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Mexico",
@@ -5425,7 +5425,7 @@
   },
   {
     "name": "Johan Vásquez",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Mexico",
@@ -5441,7 +5441,7 @@
   },
   {
     "name": "Brian Gutiérrez",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Mexico",
@@ -5457,7 +5457,7 @@
   },
   {
     "name": "César Huerta",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Mexico",
@@ -5465,7 +5465,7 @@
   },
   {
     "name": "Gilberto Mora",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Mexico",
@@ -5481,7 +5481,7 @@
   },
   {
     "name": "Israel Reyes",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Mexico",
@@ -5489,7 +5489,7 @@
   },
   {
     "name": "Julián Quiñones",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Mexico",
@@ -5505,7 +5505,7 @@
   },
   {
     "name": "Érik Lira",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Mexico",
@@ -5513,7 +5513,7 @@
   },
   {
     "name": "Alexis Vega",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "Mexico",
@@ -5521,7 +5521,7 @@
   },
   {
     "name": "César Montes",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "Mexico",
@@ -5529,7 +5529,7 @@
   },
   {
     "name": "Luis Romo",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "Mexico",
@@ -5553,7 +5553,7 @@
   },
   {
     "name": "Jesús Gallardo",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Mexico",
@@ -5569,7 +5569,7 @@
   },
   {
     "name": "Roberto Alvarado",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Mexico",
@@ -5577,7 +5577,7 @@
   },
   {
     "name": "Luis Chávez",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 69,
     "career_years": "2026",
     "nationality": "Mexico",
@@ -5625,7 +5625,7 @@
   },
   {
     "name": "Nayef Aguerd",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Morocco",
@@ -5633,7 +5633,7 @@
   },
   {
     "name": "Anass Salah-Eddine",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Morocco",
@@ -5641,7 +5641,7 @@
   },
   {
     "name": "Ayoube Amaimouni",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Morocco",
@@ -5657,7 +5657,7 @@
   },
   {
     "name": "Bilal El Khannouss",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Morocco",
@@ -5665,7 +5665,7 @@
   },
   {
     "name": "Chadi Riad",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Morocco",
@@ -5673,7 +5673,7 @@
   },
   {
     "name": "Chemsdine Talbi",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Morocco",
@@ -5681,7 +5681,7 @@
   },
   {
     "name": "Gessime Yassine",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Morocco",
@@ -5689,7 +5689,7 @@
   },
   {
     "name": "Ismael Saibari",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Morocco",
@@ -5697,7 +5697,7 @@
   },
   {
     "name": "Issa Diop",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Morocco",
@@ -5721,7 +5721,7 @@
   },
   {
     "name": "Soufiane Rahimi",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Morocco",
@@ -5729,7 +5729,7 @@
   },
   {
     "name": "Youssef Belammari",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Morocco",
@@ -5737,7 +5737,7 @@
   },
   {
     "name": "Zakaria El Ouahdi",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Morocco",
@@ -5753,7 +5753,7 @@
   },
   {
     "name": "Sofyan Amrabat",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Morocco",
@@ -5761,7 +5761,7 @@
   },
   {
     "name": "Azzedine Ounahi",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Morocco",
@@ -5777,7 +5777,7 @@
   },
   {
     "name": "Ayoub El Kaabi",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Morocco",
@@ -5833,7 +5833,7 @@
   },
   {
     "name": "Ryan Gravenberch",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Netherlands",
@@ -5841,7 +5841,7 @@
   },
   {
     "name": "Jurriën Timber",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Netherlands",
@@ -5857,7 +5857,7 @@
   },
   {
     "name": "Brian Brobbey",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Netherlands",
@@ -5865,7 +5865,7 @@
   },
   {
     "name": "Crysencio Summerville",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Netherlands",
@@ -5873,7 +5873,7 @@
   },
   {
     "name": "Denzel Dumfries",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Netherlands",
@@ -5889,7 +5889,7 @@
   },
   {
     "name": "Guus Til",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Netherlands",
@@ -5897,7 +5897,7 @@
   },
   {
     "name": "Jan Paul van Hecke",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Netherlands",
@@ -5905,7 +5905,7 @@
   },
   {
     "name": "Jorrel Hato",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Netherlands",
@@ -5913,7 +5913,7 @@
   },
   {
     "name": "Justin Kluivert",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Netherlands",
@@ -5929,7 +5929,7 @@
   },
   {
     "name": "Micky van de Ven",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Netherlands",
@@ -5937,7 +5937,7 @@
   },
   {
     "name": "Quinten Timber",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Netherlands",
@@ -5953,7 +5953,7 @@
   },
   {
     "name": "Memphis Depay",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Netherlands",
@@ -5977,7 +5977,7 @@
   },
   {
     "name": "Wout Weghorst",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Netherlands",
@@ -5985,7 +5985,7 @@
   },
   {
     "name": "Marten de Roon",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Netherlands",
@@ -6025,7 +6025,7 @@
   },
   {
     "name": "Michael Boxall",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "New Zealand",
@@ -6057,7 +6057,7 @@
   },
   {
     "name": "Ben Waine",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "New Zealand",
@@ -6065,7 +6065,7 @@
   },
   {
     "name": "Callan Elliot",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "New Zealand",
@@ -6073,7 +6073,7 @@
   },
   {
     "name": "Callum McCowatt",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "New Zealand",
@@ -6081,7 +6081,7 @@
   },
   {
     "name": "Elijah Just",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "New Zealand",
@@ -6089,7 +6089,7 @@
   },
   {
     "name": "Francis de Vries",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "New Zealand",
@@ -6097,7 +6097,7 @@
   },
   {
     "name": "Jesse Randall",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "New Zealand",
@@ -6105,7 +6105,7 @@
   },
   {
     "name": "Joe Bell",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "New Zealand",
@@ -6121,7 +6121,7 @@
   },
   {
     "name": "Lachlan Bayliss",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "New Zealand",
@@ -6137,7 +6137,7 @@
   },
   {
     "name": "Matthew Garbett",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "New Zealand",
@@ -6161,7 +6161,7 @@
   },
   {
     "name": "Nando Pijnaker",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "New Zealand",
@@ -6169,7 +6169,7 @@
   },
   {
     "name": "Ryan Thomas",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "New Zealand",
@@ -6193,7 +6193,7 @@
   },
   {
     "name": "Tommy Smith",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "New Zealand",
@@ -6201,7 +6201,7 @@
   },
   {
     "name": "Tyler Bindon",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "New Zealand",
@@ -6225,7 +6225,7 @@
   },
   {
     "name": "Alexander Sørloth",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Norway",
@@ -6233,7 +6233,7 @@
   },
   {
     "name": "Julian Ryerson",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Norway",
@@ -6249,7 +6249,7 @@
   },
   {
     "name": "Fredrik Aursnes",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Norway",
@@ -6289,7 +6289,7 @@
   },
   {
     "name": "Henrik Falchener",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Norway",
@@ -6297,7 +6297,7 @@
   },
   {
     "name": "Jens Petter Hauge",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Norway",
@@ -6305,7 +6305,7 @@
   },
   {
     "name": "Kristian Thorstvedt",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Norway",
@@ -6313,7 +6313,7 @@
   },
   {
     "name": "Kristoffer Ajer",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Norway",
@@ -6321,7 +6321,7 @@
   },
   {
     "name": "Leo Østigård",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Norway",
@@ -6329,7 +6329,7 @@
   },
   {
     "name": "Marcus Holmgren Pedersen",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Norway",
@@ -6337,7 +6337,7 @@
   },
   {
     "name": "Morten Thorsby",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Norway",
@@ -6353,7 +6353,7 @@
   },
   {
     "name": "Patrick Berg",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Norway",
@@ -6361,7 +6361,7 @@
   },
   {
     "name": "Sander Berge",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Norway",
@@ -6393,7 +6393,7 @@
   },
   {
     "name": "Torbjørn Heggem",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Norway",
@@ -6409,7 +6409,7 @@
   },
   {
     "name": "Jørgen Strand Larsen",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Norway",
@@ -6457,7 +6457,7 @@
   },
   {
     "name": "José Córdoba",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "Panama",
@@ -6465,7 +6465,7 @@
   },
   {
     "name": "Adalberto Carrasquilla",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Panama",
@@ -6473,7 +6473,7 @@
   },
   {
     "name": "Alberto Quintero",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Panama",
@@ -6481,7 +6481,7 @@
   },
   {
     "name": "Andrés Andrade",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Panama",
@@ -6489,7 +6489,7 @@
   },
   {
     "name": "Aníbal Godoy",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Panama",
@@ -6505,7 +6505,7 @@
   },
   {
     "name": "Cecilio Waterman",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Panama",
@@ -6513,7 +6513,7 @@
   },
   {
     "name": "Cristian Martínez",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Panama",
@@ -6521,7 +6521,7 @@
   },
   {
     "name": "César Blackman",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Panama",
@@ -6545,7 +6545,7 @@
   },
   {
     "name": "Edgardo Fariña",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Panama",
@@ -6561,7 +6561,7 @@
   },
   {
     "name": "Fidel Escobar",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Panama",
@@ -6569,7 +6569,7 @@
   },
   {
     "name": "Jiovany Ramos",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Panama",
@@ -6585,7 +6585,7 @@
   },
   {
     "name": "José Fajardo",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Panama",
@@ -6601,7 +6601,7 @@
   },
   {
     "name": "Roderick Miller",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Panama",
@@ -6617,7 +6617,7 @@
   },
   {
     "name": "Yoel Bárcenas",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Panama",
@@ -6657,7 +6657,7 @@
   },
   {
     "name": "Júnior Alonso",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Paraguay",
@@ -6673,7 +6673,7 @@
   },
   {
     "name": "Damián Bobadilla",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Paraguay",
@@ -6681,7 +6681,7 @@
   },
   {
     "name": "Fabián Balbuena",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Paraguay",
@@ -6689,7 +6689,7 @@
   },
   {
     "name": "Julio Enciso",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Paraguay",
@@ -6697,7 +6697,7 @@
   },
   {
     "name": "Matías Galarza",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Paraguay",
@@ -6705,7 +6705,7 @@
   },
   {
     "name": "Miguel Almirón",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Paraguay",
@@ -6713,7 +6713,7 @@
   },
   {
     "name": "Andrés Cubas",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Paraguay",
@@ -6729,7 +6729,7 @@
   },
   {
     "name": "Gabriel Ávalos",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Paraguay",
@@ -6753,7 +6753,7 @@
   },
   {
     "name": "Alexandro Maidana",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "Paraguay",
@@ -6761,7 +6761,7 @@
   },
   {
     "name": "José Canale",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "Paraguay",
@@ -6769,7 +6769,7 @@
   },
   {
     "name": "Diego Gómez",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Paraguay",
@@ -6793,7 +6793,7 @@
   },
   {
     "name": "Gustavo Caballero",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Paraguay",
@@ -6809,7 +6809,7 @@
   },
   {
     "name": "Isidro Pitta",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Paraguay",
@@ -6817,7 +6817,7 @@
   },
   {
     "name": "Juan José Cáceres",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Paraguay",
@@ -6825,7 +6825,7 @@
   },
   {
     "name": "Álex Arce",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Paraguay",
@@ -6873,7 +6873,7 @@
   },
   {
     "name": "Matheus Nunes",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Portugal",
@@ -6881,7 +6881,7 @@
   },
   {
     "name": "Gonçalo Ramos",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Portugal",
@@ -6889,7 +6889,7 @@
   },
   {
     "name": "João Neves",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Portugal",
@@ -6897,7 +6897,7 @@
   },
   {
     "name": "Nuno Mendes",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Portugal",
@@ -6905,7 +6905,7 @@
   },
   {
     "name": "Rafael Leão",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Portugal",
@@ -6913,7 +6913,7 @@
   },
   {
     "name": "Renato Veiga",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Portugal",
@@ -6921,7 +6921,7 @@
   },
   {
     "name": "Vitinha",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Portugal",
@@ -6945,7 +6945,7 @@
   },
   {
     "name": "Francisco Conceição",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Portugal",
@@ -6953,7 +6953,7 @@
   },
   {
     "name": "Pedro Neto",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Portugal",
@@ -6961,7 +6961,7 @@
   },
   {
     "name": "Diogo Dalot",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Portugal",
@@ -6969,7 +6969,7 @@
   },
   {
     "name": "Tomás Araújo",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Portugal",
@@ -6985,7 +6985,7 @@
   },
   {
     "name": "Gonçalo Guedes",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 83,
     "career_years": "2026",
     "nationality": "Portugal",
@@ -7001,7 +7001,7 @@
   },
   {
     "name": "Nélson Semedo",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 83,
     "career_years": "2026",
     "nationality": "Portugal",
@@ -7017,7 +7017,7 @@
   },
   {
     "name": "Rúben Neves",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 83,
     "career_years": "2026",
     "nationality": "Portugal",
@@ -7033,7 +7033,7 @@
   },
   {
     "name": "Samú Costa",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Portugal",
@@ -7049,7 +7049,7 @@
   },
   {
     "name": "Akram Afif",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Qatar",
@@ -7065,7 +7065,7 @@
   },
   {
     "name": "Hassan Al-Haydos",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Qatar",
@@ -7113,7 +7113,7 @@
   },
   {
     "name": "Sultan Al-Brake",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "Qatar",
@@ -7121,7 +7121,7 @@
   },
   {
     "name": "Tahsin Jamshid",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "Qatar",
@@ -7137,7 +7137,7 @@
   },
   {
     "name": "Ahmed Al-Ganehi",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Qatar",
@@ -7145,7 +7145,7 @@
   },
   {
     "name": "Ahmed Alaaeldin",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Qatar",
@@ -7153,7 +7153,7 @@
   },
   {
     "name": "Ahmed Fathy",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Qatar",
@@ -7161,7 +7161,7 @@
   },
   {
     "name": "Al-Hashmi Al-Hussain",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Qatar",
@@ -7169,7 +7169,7 @@
   },
   {
     "name": "Assim Madibo",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Qatar",
@@ -7177,7 +7177,7 @@
   },
   {
     "name": "Ayoub Al-Oui",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Qatar",
@@ -7185,7 +7185,7 @@
   },
   {
     "name": "Homam Ahmed",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Qatar",
@@ -7201,7 +7201,7 @@
   },
   {
     "name": "Jassem Gaber",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Qatar",
@@ -7209,7 +7209,7 @@
   },
   {
     "name": "Lucas Mendes",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Qatar",
@@ -7233,7 +7233,7 @@
   },
   {
     "name": "Mohammed Muntari",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Qatar",
@@ -7241,7 +7241,7 @@
   },
   {
     "name": "Yusuf Abdurisag",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Qatar",
@@ -7273,7 +7273,7 @@
   },
   {
     "name": "Moteb Al-Harbi",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Saudi Arabia",
@@ -7297,7 +7297,7 @@
   },
   {
     "name": "Sultan Mandash",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Saudi Arabia",
@@ -7305,7 +7305,7 @@
   },
   {
     "name": "Abdulelah Al-Amri",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Saudi Arabia",
@@ -7313,7 +7313,7 @@
   },
   {
     "name": "Abdullah Al-Hamdan",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Saudi Arabia",
@@ -7321,7 +7321,7 @@
   },
   {
     "name": "Abdullah Al-Khaibari",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Saudi Arabia",
@@ -7345,7 +7345,7 @@
   },
   {
     "name": "Nawaf Boushal",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Saudi Arabia",
@@ -7353,7 +7353,7 @@
   },
   {
     "name": "Hassan Kadesh",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Saudi Arabia",
@@ -7361,7 +7361,7 @@
   },
   {
     "name": "Saleh Al-Shehri",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Saudi Arabia",
@@ -7377,7 +7377,7 @@
   },
   {
     "name": "Firas Al-Buraikan",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Saudi Arabia",
@@ -7385,7 +7385,7 @@
   },
   {
     "name": "Ziyad Al-Johani",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Saudi Arabia",
@@ -7393,7 +7393,7 @@
   },
   {
     "name": "Saud Abdulhamid",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Saudi Arabia",
@@ -7409,7 +7409,7 @@
   },
   {
     "name": "Jehad Thakri",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "Saudi Arabia",
@@ -7433,7 +7433,7 @@
   },
   {
     "name": "Musab Al-Juwayr",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "Saudi Arabia",
@@ -7441,7 +7441,7 @@
   },
   {
     "name": "Alaa Al-Hejji",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Saudi Arabia",
@@ -7481,7 +7481,7 @@
   },
   {
     "name": "Tyler Fletcher",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Scotland",
@@ -7489,7 +7489,7 @@
   },
   {
     "name": "Lewis Ferguson",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Scotland",
@@ -7505,7 +7505,7 @@
   },
   {
     "name": "John Souttar",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Scotland",
@@ -7513,7 +7513,7 @@
   },
   {
     "name": "Kieran Tierney",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Scotland",
@@ -7529,7 +7529,7 @@
   },
   {
     "name": "Aaron Hickey",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Scotland",
@@ -7553,7 +7553,7 @@
   },
   {
     "name": "Ryan Christie",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "Scotland",
@@ -7561,7 +7561,7 @@
   },
   {
     "name": "Nathan Patterson",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Scotland",
@@ -7569,7 +7569,7 @@
   },
   {
     "name": "Ross Stewart",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Scotland",
@@ -7577,7 +7577,7 @@
   },
   {
     "name": "Ché Adams",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Scotland",
@@ -7609,7 +7609,7 @@
   },
   {
     "name": "George Hirst",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Scotland",
@@ -7617,7 +7617,7 @@
   },
   {
     "name": "Grant Hanley",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Scotland",
@@ -7625,7 +7625,7 @@
   },
   {
     "name": "Jack Hendry",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Scotland",
@@ -7633,7 +7633,7 @@
   },
   {
     "name": "Kenny McLean",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Scotland",
@@ -7641,7 +7641,7 @@
   },
   {
     "name": "Lawrence Shankland",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Scotland",
@@ -7689,7 +7689,7 @@
   },
   {
     "name": "Nicolas Jackson",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Senegal",
@@ -7697,7 +7697,7 @@
   },
   {
     "name": "Ibrahim Mbaye",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Senegal",
@@ -7721,7 +7721,7 @@
   },
   {
     "name": "Pape Matar Sarr",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Senegal",
@@ -7737,7 +7737,7 @@
   },
   {
     "name": "Krépin Diatta",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Senegal",
@@ -7745,7 +7745,7 @@
   },
   {
     "name": "Lamine Camara",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Senegal",
@@ -7753,7 +7753,7 @@
   },
   {
     "name": "Moussa Niakhaté",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Senegal",
@@ -7761,7 +7761,7 @@
   },
   {
     "name": "Pape Gueye",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Senegal",
@@ -7769,7 +7769,7 @@
   },
   {
     "name": "El Hadji Malick Diouf",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Senegal",
@@ -7777,7 +7777,7 @@
   },
   {
     "name": "Ismail Jakobs",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Senegal",
@@ -7785,7 +7785,7 @@
   },
   {
     "name": "Pathé Ciss",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Senegal",
@@ -7817,7 +7817,7 @@
   },
   {
     "name": "Abdoulaye Seck",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "Senegal",
@@ -7825,7 +7825,7 @@
   },
   {
     "name": "Assane Diao",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "Senegal",
@@ -7833,7 +7833,7 @@
   },
   {
     "name": "Cherif Ndiaye",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "Senegal",
@@ -7865,7 +7865,7 @@
   },
   {
     "name": "Bamba Dieng",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Senegal",
@@ -7897,7 +7897,7 @@
   },
   {
     "name": "Aubrey Modiba",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "South Africa",
@@ -7905,7 +7905,7 @@
   },
   {
     "name": "Iqraam Rayners",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "South Africa",
@@ -7921,7 +7921,7 @@
   },
   {
     "name": "Khuliso Mudau",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "South Africa",
@@ -7929,7 +7929,7 @@
   },
   {
     "name": "Khulumani Ndamane",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "South Africa",
@@ -7953,7 +7953,7 @@
   },
   {
     "name": "Themba Zwane",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "South Africa",
@@ -7961,7 +7961,7 @@
   },
   {
     "name": "Bradley Cross",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "South Africa",
@@ -7969,7 +7969,7 @@
   },
   {
     "name": "Evidence Makgopa",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "South Africa",
@@ -7993,7 +7993,7 @@
   },
   {
     "name": "Oswin Appollis",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "South Africa",
@@ -8001,7 +8001,7 @@
   },
   {
     "name": "Relebohile Mofokeng",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "South Africa",
@@ -8017,7 +8017,7 @@
   },
   {
     "name": "Thalente Mbatha",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "South Africa",
@@ -8033,7 +8033,7 @@
   },
   {
     "name": "Ime Okon",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "South Africa",
@@ -8049,7 +8049,7 @@
   },
   {
     "name": "Samukele Kabini",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "South Africa",
@@ -8057,7 +8057,7 @@
   },
   {
     "name": "Sphephelo Sithole",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "South Africa",
@@ -8073,7 +8073,7 @@
   },
   {
     "name": "Thapelo Maseko",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "South Africa",
@@ -8105,7 +8105,7 @@
   },
   {
     "name": "Lee Jae-sung",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "South Korea",
@@ -8113,7 +8113,7 @@
   },
   {
     "name": "Yang Hyun-jun",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "South Korea",
@@ -8137,7 +8137,7 @@
   },
   {
     "name": "Son Heung-min",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "South Korea",
@@ -8145,7 +8145,7 @@
   },
   {
     "name": "Hwang Hee-chan",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "South Korea",
@@ -8153,7 +8153,7 @@
   },
   {
     "name": "Cho Gue-sung",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "South Korea",
@@ -8169,7 +8169,7 @@
   },
   {
     "name": "Kim Moon-hwan",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "South Korea",
@@ -8177,7 +8177,7 @@
   },
   {
     "name": "Paik Seung-ho",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "South Korea",
@@ -8193,7 +8193,7 @@
   },
   {
     "name": "Cho Wi-je",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "South Korea",
@@ -8217,7 +8217,7 @@
   },
   {
     "name": "Kim Tae-hyeon",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "South Korea",
@@ -8225,7 +8225,7 @@
   },
   {
     "name": "Bae Jun-ho",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "South Korea",
@@ -8233,7 +8233,7 @@
   },
   {
     "name": "Lee Dong-gyeong",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "South Korea",
@@ -8249,7 +8249,7 @@
   },
   {
     "name": "Lee Tae-seok",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "South Korea",
@@ -8265,7 +8265,7 @@
   },
   {
     "name": "Seol Young-woo",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 68,
     "career_years": "2026",
     "nationality": "South Korea",
@@ -8273,7 +8273,7 @@
   },
   {
     "name": "Lee Han-beom",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 62,
     "career_years": "2026",
     "nationality": "South Korea",
@@ -8281,7 +8281,7 @@
   },
   {
     "name": "Eom Ji-sung",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 60,
     "career_years": "2026",
     "nationality": "South Korea",
@@ -8329,7 +8329,7 @@
   },
   {
     "name": "Dani Olmo",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Spain",
@@ -8337,7 +8337,7 @@
   },
   {
     "name": "Eric García",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Spain",
@@ -8345,7 +8345,7 @@
   },
   {
     "name": "Ferran Torres",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Spain",
@@ -8353,7 +8353,7 @@
   },
   {
     "name": "Gavi",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Spain",
@@ -8369,7 +8369,7 @@
   },
   {
     "name": "Pau Cubarsí",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Spain",
@@ -8377,7 +8377,7 @@
   },
   {
     "name": "Pedri",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Spain",
@@ -8385,7 +8385,7 @@
   },
   {
     "name": "Aymeric Laporte",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Spain",
@@ -8401,7 +8401,7 @@
   },
   {
     "name": "Martín Zubimendi",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Spain",
@@ -8409,7 +8409,7 @@
   },
   {
     "name": "Mikel Merino",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Spain",
@@ -8425,7 +8425,7 @@
   },
   {
     "name": "Marcos Llorente",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Spain",
@@ -8449,7 +8449,7 @@
   },
   {
     "name": "Nico Williams",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Spain",
@@ -8465,7 +8465,7 @@
   },
   {
     "name": "Pedro Porro",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Spain",
@@ -8473,7 +8473,7 @@
   },
   {
     "name": "Víctor Muñoz",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 83,
     "career_years": "2026",
     "nationality": "Spain",
@@ -8489,7 +8489,7 @@
   },
   {
     "name": "Borja Iglesias",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Spain",
@@ -8505,7 +8505,7 @@
   },
   {
     "name": "Viktor Gyökeres",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Sweden",
@@ -8521,7 +8521,7 @@
   },
   {
     "name": "Anthony Elanga",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Sweden",
@@ -8545,7 +8545,7 @@
   },
   {
     "name": "Isak Hien",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Sweden",
@@ -8561,7 +8561,7 @@
   },
   {
     "name": "Eric Smith",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Sweden",
@@ -8569,7 +8569,7 @@
   },
   {
     "name": "Carl Starfelt",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Sweden",
@@ -8585,7 +8585,7 @@
   },
   {
     "name": "Mattias Svanberg",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "Sweden",
@@ -8593,7 +8593,7 @@
   },
   {
     "name": "Besfort Zeneli",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Sweden",
@@ -8601,7 +8601,7 @@
   },
   {
     "name": "Gabriel Gudmundsson",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Sweden",
@@ -8617,7 +8617,7 @@
   },
   {
     "name": "Hjalmar Ekdal",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Sweden",
@@ -8625,7 +8625,7 @@
   },
   {
     "name": "Jesper Karlström",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Sweden",
@@ -8633,7 +8633,7 @@
   },
   {
     "name": "Alexander Bernhardsson",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Sweden",
@@ -8649,7 +8649,7 @@
   },
   {
     "name": "Herman Johansson",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Sweden",
@@ -8665,7 +8665,7 @@
   },
   {
     "name": "Ken Sema",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Sweden",
@@ -8681,7 +8681,7 @@
   },
   {
     "name": "Taha Ali",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Sweden",
@@ -8753,7 +8753,7 @@
   },
   {
     "name": "Denis Zakaria",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 83,
     "career_years": "2026",
     "nationality": "Switzerland",
@@ -8761,7 +8761,7 @@
   },
   {
     "name": "Christian Fassnacht",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Switzerland",
@@ -8769,7 +8769,7 @@
   },
   {
     "name": "Aurèle Amenda",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Switzerland",
@@ -8777,7 +8777,7 @@
   },
   {
     "name": "Cedric Itten",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Switzerland",
@@ -8793,7 +8793,7 @@
   },
   {
     "name": "Djibril Sow",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Switzerland",
@@ -8801,7 +8801,7 @@
   },
   {
     "name": "Luca Jaquez",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Switzerland",
@@ -8809,7 +8809,7 @@
   },
   {
     "name": "Michel Aebischer",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Switzerland",
@@ -8817,7 +8817,7 @@
   },
   {
     "name": "Remo Freuler",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Switzerland",
@@ -8825,7 +8825,7 @@
   },
   {
     "name": "Rubén Vargas",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Switzerland",
@@ -8833,7 +8833,7 @@
   },
   {
     "name": "Eray Cömert",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Switzerland",
@@ -8841,7 +8841,7 @@
   },
   {
     "name": "Nico Elvedi",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Switzerland",
@@ -8873,7 +8873,7 @@
   },
   {
     "name": "Silvan Widmer",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Switzerland",
@@ -8881,7 +8881,7 @@
   },
   {
     "name": "Zeki Amdouni",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Switzerland",
@@ -8905,7 +8905,7 @@
   },
   {
     "name": "Fabian Rieder",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Switzerland",
@@ -8929,7 +8929,7 @@
   },
   {
     "name": "Rani Khedira",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Tunisia",
@@ -8937,7 +8937,7 @@
   },
   {
     "name": "Sebastian Tounekti",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Tunisia",
@@ -8953,7 +8953,7 @@
   },
   {
     "name": "Hannibal Mejbri",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Tunisia",
@@ -8969,7 +8969,7 @@
   },
   {
     "name": "Dylan Bronn",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Tunisia",
@@ -8977,7 +8977,7 @@
   },
   {
     "name": "Ismaël Gharbi",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Tunisia",
@@ -9001,7 +9001,7 @@
   },
   {
     "name": "Hadj Mahmoud",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 73,
     "career_years": "2026",
     "nationality": "Tunisia",
@@ -9009,7 +9009,7 @@
   },
   {
     "name": "Adem Arous",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Tunisia",
@@ -9017,7 +9017,7 @@
   },
   {
     "name": "Elias Achouri",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Tunisia",
@@ -9025,7 +9025,7 @@
   },
   {
     "name": "Elias Saad",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Tunisia",
@@ -9041,7 +9041,7 @@
   },
   {
     "name": "Hazem Mastouri",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Tunisia",
@@ -9049,7 +9049,7 @@
   },
   {
     "name": "Mohamed Amine Ben Hamida",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Tunisia",
@@ -9057,7 +9057,7 @@
   },
   {
     "name": "Mortadha Ben Ouanes",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Tunisia",
@@ -9081,7 +9081,7 @@
   },
   {
     "name": "Omar Rekik",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Tunisia",
@@ -9089,7 +9089,7 @@
   },
   {
     "name": "Raed Chikhaoui",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Tunisia",
@@ -9137,7 +9137,7 @@
   },
   {
     "name": "Kenan Yıldız",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Turkey",
@@ -9161,7 +9161,7 @@
   },
   {
     "name": "Deniz Gül",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 83,
     "career_years": "2026",
     "nationality": "Turkey",
@@ -9193,7 +9193,7 @@
   },
   {
     "name": "Barış Alper Yılmaz",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Turkey",
@@ -9201,7 +9201,7 @@
   },
   {
     "name": "Can Uzun",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Turkey",
@@ -9209,7 +9209,7 @@
   },
   {
     "name": "Eren Elmalı",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Turkey",
@@ -9217,7 +9217,7 @@
   },
   {
     "name": "Kaan Ayhan",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Turkey",
@@ -9241,7 +9241,7 @@
   },
   {
     "name": "Merih Demiral",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Turkey",
@@ -9257,7 +9257,7 @@
   },
   {
     "name": "Mert Müldür",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Turkey",
@@ -9265,7 +9265,7 @@
   },
   {
     "name": "Oğuz Aydın",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Turkey",
@@ -9273,7 +9273,7 @@
   },
   {
     "name": "Çağlar Söyüncü",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Turkey",
@@ -9281,7 +9281,7 @@
   },
   {
     "name": "İsmail Yüksek",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "Turkey",
@@ -9289,7 +9289,7 @@
   },
   {
     "name": "Orkun Kökçü",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Turkey",
@@ -9305,7 +9305,7 @@
   },
   {
     "name": "Ferdi Kadıoğlu",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Turkey",
@@ -9313,7 +9313,7 @@
   },
   {
     "name": "Samet Akaydin",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Turkey",
@@ -9321,7 +9321,7 @@
   },
   {
     "name": "İrfan Can Kahveci",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Turkey",
@@ -9353,7 +9353,7 @@
   },
   {
     "name": "Timothy Weah",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "United States",
@@ -9369,7 +9369,7 @@
   },
   {
     "name": "Folarin Balogun",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "United States",
@@ -9393,7 +9393,7 @@
   },
   {
     "name": "Auston Trusty",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 79,
     "career_years": "2026",
     "nationality": "United States",
@@ -9401,7 +9401,7 @@
   },
   {
     "name": "Alejandro Zendejas",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "United States",
@@ -9409,7 +9409,7 @@
   },
   {
     "name": "Antonee Robinson",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "United States",
@@ -9417,7 +9417,7 @@
   },
   {
     "name": "Brenden Aaronson",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "United States",
@@ -9425,7 +9425,7 @@
   },
   {
     "name": "Chris Richards",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "United States",
@@ -9433,7 +9433,7 @@
   },
   {
     "name": "Giovanni Reyna",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "United States",
@@ -9441,7 +9441,7 @@
   },
   {
     "name": "Joe Scally",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "United States",
@@ -9465,7 +9465,7 @@
   },
   {
     "name": "Tyler Adams",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "United States",
@@ -9473,7 +9473,7 @@
   },
   {
     "name": "Cristian Roldan",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "United States",
@@ -9489,7 +9489,7 @@
   },
   {
     "name": "Maximilian Arfsten",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 76,
     "career_years": "2026",
     "nationality": "United States",
@@ -9505,7 +9505,7 @@
   },
   {
     "name": "Sebastian Berhalter",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "United States",
@@ -9513,7 +9513,7 @@
   },
   {
     "name": "Mark McKenzie",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "United States",
@@ -9585,7 +9585,7 @@
   },
   {
     "name": "Manuel Ugarte",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Uruguay",
@@ -9593,7 +9593,7 @@
   },
   {
     "name": "Mathías Olivera",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Uruguay",
@@ -9601,7 +9601,7 @@
   },
   {
     "name": "Rodrigo Bentancur",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Uruguay",
@@ -9609,7 +9609,7 @@
   },
   {
     "name": "Maximiliano Araújo",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 83,
     "career_years": "2026",
     "nationality": "Uruguay",
@@ -9617,7 +9617,7 @@
   },
   {
     "name": "Brian Rodríguez",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Uruguay",
@@ -9625,7 +9625,7 @@
   },
   {
     "name": "Federico Viñas",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Uruguay",
@@ -9633,7 +9633,7 @@
   },
   {
     "name": "Joaquín Piquerez",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Uruguay",
@@ -9657,7 +9657,7 @@
   },
   {
     "name": "Rodrigo Zalazar",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Uruguay",
@@ -9665,7 +9665,7 @@
   },
   {
     "name": "Santiago Bueno",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Uruguay",
@@ -9681,7 +9681,7 @@
   },
   {
     "name": "Sebastián Cáceres",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Uruguay",
@@ -9689,7 +9689,7 @@
   },
   {
     "name": "Giorgian de Arrascaeta",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Uruguay",
@@ -9697,7 +9697,7 @@
   },
   {
     "name": "Guillermo Varela",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Uruguay",
@@ -9729,7 +9729,7 @@
   },
   {
     "name": "Agustín Canobbio",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "Uruguay",
@@ -9737,7 +9737,7 @@
   },
   {
     "name": "Facundo Pellistri",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 75,
     "career_years": "2026",
     "nationality": "Uruguay",
@@ -9785,7 +9785,7 @@
   },
   {
     "name": "Abbosbek Fayzullaev",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Uzbekistan",
@@ -9793,7 +9793,7 @@
   },
   {
     "name": "Abdulla Abdullaev",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Uzbekistan",
@@ -9809,7 +9809,7 @@
   },
   {
     "name": "Akmal Mozgovoy",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Uzbekistan",
@@ -9817,7 +9817,7 @@
   },
   {
     "name": "Avazbek Ulmasaliev",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Uzbekistan",
@@ -9825,7 +9825,7 @@
   },
   {
     "name": "Azizbek Amonov",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Uzbekistan",
@@ -9833,7 +9833,7 @@
   },
   {
     "name": "Azizjon Ganiev",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Uzbekistan",
@@ -9841,7 +9841,7 @@
   },
   {
     "name": "Bekhruz Karimov",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Uzbekistan",
@@ -9857,7 +9857,7 @@
   },
   {
     "name": "Dostonbek Khamdamov",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Uzbekistan",
@@ -9865,7 +9865,7 @@
   },
   {
     "name": "Eldor Shomurodov",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Uzbekistan",
@@ -9873,7 +9873,7 @@
   },
   {
     "name": "Farrukh Sayfiev",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Uzbekistan",
@@ -9897,7 +9897,7 @@
   },
   {
     "name": "Khojiakbar Alijonov",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Uzbekistan",
@@ -9905,7 +9905,7 @@
   },
   {
     "name": "Odiljon Hamrobekov",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Uzbekistan",
@@ -9913,7 +9913,7 @@
   },
   {
     "name": "Otabek Shukurov",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Uzbekistan",
@@ -9929,7 +9929,7 @@
   },
   {
     "name": "Sherzod Nasrullaev",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 72,
     "career_years": "2026",
     "nationality": "Uzbekistan",

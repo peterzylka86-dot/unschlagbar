@@ -121,6 +121,46 @@ describe("player name hygiene (regression)", () => {
   });
 });
 
+describe("World Cup squads — per-club position coverage (regression)", () => {
+  // User: "There are only GK,CB,CM and ST and once I have filled the
+  // slots, I can not fill RB,LB, CW,RW...You need to fix the database."
+  //
+  // WC source data classified players into broad buckets (GK/CB/CM/ST
+  // only). We redistributed CB → CB/LB/RB, CM → CM/CAM/CDM, and
+  // ST → ST/LW/RW per national squad so every nation has the full
+  // position range, NOT just the four broad buckets.
+  //
+  // Why scoped to WC: club leagues (UCL, La Liga, Bundesliga, Serie A,
+  // Swiss) have richer real position labels in the source data — some
+  // lower-tier clubs naturally lack wingers, and the wheel's auto-skip
+  // for dead-end clubs handles those gracefully. National squads have
+  // a single "club" each, so a gap is a hard block — hence the strict
+  // assertion below.
+  const REQUIRED = ["GK", "CB", "LB", "RB", "CM", "LW", "RW", "ST"] as const;
+  const WC_LEAGUES: LeagueId[] = ["worldcup", "worldcup2026"];
+  describe.each(WC_LEAGUES)("league %s", (league) => {
+    it("every nation with squad ≥11 has at least 1 player of each draft position", () => {
+      const players = getPlayers(league);
+      const byClub = new Map<string, typeof players>();
+      for (const p of players) {
+        const arr = byClub.get(p.club) ?? [];
+        arr.push(p);
+        byClub.set(p.club, arr);
+      }
+      const missing: string[] = [];
+      for (const [clubId, squad] of byClub) {
+        if (squad.length < 11) continue;
+        const positions = new Set(squad.map((p) => p.position));
+        const gaps = REQUIRED.filter((r) => !positions.has(r));
+        if (gaps.length > 0) {
+          missing.push(`${clubId} missing [${gaps.join(", ")}]`);
+        }
+      }
+      expect(missing).toEqual([]);
+    });
+  });
+});
+
 describe("playerSchema", () => {
   it("accepts a well-formed player", () => {
     const ok = _schemas.playerSchema.safeParse({
