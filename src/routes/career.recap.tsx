@@ -28,7 +28,7 @@ import type { LeagueId } from "@/lib/leagues";
 import { getCareerClubs } from "@/lib/data";
 import { FORMATIONS } from "@/lib/formations";
 import { playerFitsSlot } from "@/lib/draft-helpers";
-import { shareOrCopy } from "@/lib/share";
+import { shareOrCopy, shareImage } from "@/lib/share";
 import type { Player, Position } from "@/lib/game-types";
 
 // A star starts demanding a transfer when their season-form crosses this
@@ -121,11 +121,11 @@ function CareerRecap() {
         cacheBust: true,
         backgroundColor: "#0a0a0a",
       });
-      const link = document.createElement("a");
-      link.download = `golazo-season-${latest.season}-${(club?.short ?? "xi").toLowerCase()}.png`;
-      link.href = dataUrl;
-      link.click();
-      setStatus("Image saved");
+      const filename = `golazo-season-${latest.season}-${(club?.short ?? "xi").toLowerCase()}.png`;
+      const result = await shareImage(dataUrl, filename, shareText, "GOLAZO Career Recap");
+      setStatus(
+        result === "shared" ? "Shared!" : result === "downloaded" ? "Image saved" : "Image failed",
+      );
       setTimeout(() => setStatus(null), 2200);
     } catch {
       setStatus("Image failed");
@@ -256,7 +256,7 @@ function CareerRecap() {
           onClick={onShareImage}
           className="px-5 py-2.5 rounded-xl border border-foreground/20 hover:bg-card font-display tracking-wide"
         >
-          📸 Save image
+          📸 Share image
         </button>
       </div>
       {status && <div className="mt-3 text-center text-xs text-muted-foreground">{status}</div>}

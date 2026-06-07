@@ -7,7 +7,7 @@ import { getClubs } from "@/lib/data";
 import { LEAGUES } from "@/lib/leagues";
 import type { Club } from "@/lib/game-types";
 import { squadRating, computeLeagueTable } from "@/lib/sim";
-import { buildShareText, shareOrCopy } from "@/lib/share";
+import { buildShareText, shareOrCopy, shareImage, challengeUrl } from "@/lib/share";
 import { toPng } from "html-to-image";
 
 export const Route = createFileRoute("/result")({
@@ -333,11 +333,12 @@ function ShareBlock() {
         cacheBust: true,
         backgroundColor: "#0a0a0a",
       });
-      const link = document.createElement("a");
-      link.download = `unschlagbar-${config.league}.png`;
-      link.href = dataUrl;
-      link.click();
-      setStatus("Image saved");
+      const filename = `unschlagbar-${config.league}.png`;
+      const text = buildShareText(config, slots, matches, config.challengeSeed);
+      const result = await shareImage(dataUrl, filename, text, `${league.brandMark}`);
+      setStatus(
+        result === "shared" ? "Shared!" : result === "downloaded" ? "Image saved" : "Image failed",
+      );
       setTimeout(() => setStatus(null), 2200);
     } catch {
       setStatus("Image failed");
@@ -352,23 +353,55 @@ function ShareBlock() {
   const ga = matches.reduce((a, m) => a + m.theirScore, 0);
   const unbeaten = matches.length > 0 && losses === 0;
 
+  async function onChallengeFriend() {
+    // Build the URL with the EXACT same seed the user just played. Friend
+    // opens the link → same league, formation, difficulty, fixtures.
+    // They draft their own squad and we compare points. Asymmetric
+    // multiplayer with zero backend.
+    const seed = config.challengeSeed ?? Math.floor(Math.random() * 1e9);
+    const url = challengeUrl({
+      league: config.league,
+      formation: config.formation,
+      difficulty: config.difficulty,
+      ratingMode: config.ratingMode,
+      draftMode: config.draftMode,
+      showRatings: config.showRatings,
+      seed,
+    });
+    const userPts = wins * 3 + draws;
+    const inviteText = `Beat my ${league.name} run — same fixtures, your own XI.\n\nMy score: ${wins}W ${draws}D ${losses}L · ${userPts} pts · ${gf}:${ga} goals${unbeaten ? " 🏆 UNBEATEN" : ""}\n\n${url}`;
+    const r = await shareOrCopy(inviteText, "Beat my UNSCHLAGBAR run");
+    setStatus(r === "shared" ? "Challenge sent!" : "Link copied — paste anywhere");
+    setTimeout(() => setStatus(null), 2200);
+  }
+
   return (
     <div className="mt-10">
-      <div className="flex justify-center gap-2 flex-wrap">
-        <button
-          onClick={onShareText}
-          className="px-5 py-2.5 rounded-xl border border-warning/50 bg-warning/10 text-warning font-display tracking-wide hover:bg-warning/20"
-        >
-          📋 Share recap
-        </button>
+      <div className="flex flex-col items-stretch gap-2 max-w-md mx-auto">
+        {/* Primary: native share with image attached. The image IS the
+            challenge invite — recipient can tap to play. */}
         <button
           onClick={onShareImage}
-          className="px-5 py-2.5 rounded-xl border border-foreground/20 hover:bg-card font-display tracking-wide"
+          className="px-5 py-3 rounded-xl bg-primary text-primary-foreground font-display tracking-wide hover:brightness-110 transition shadow-[0_10px_30px_-10px] shadow-primary/60"
         >
-          🖼️ Save as image
+          📸 Share image
         </button>
+        <div className="grid grid-cols-2 gap-2">
+          <button
+            onClick={onChallengeFriend}
+            className="px-4 py-2.5 rounded-xl border border-warning/50 bg-warning/10 text-warning font-display tracking-wide hover:bg-warning/20 transition"
+          >
+            🎯 Challenge a friend
+          </button>
+          <button
+            onClick={onShareText}
+            className="px-4 py-2.5 rounded-xl border border-border hover:bg-card font-display tracking-wide transition"
+          >
+            📋 Copy recap
+          </button>
+        </div>
       </div>
-      {status && <div className="mt-2 text-xs text-warning">{status}</div>}
+      {status && <div className="mt-3 text-xs text-warning text-center">{status}</div>}
 
       {/* Offscreen share card used for PNG export */}
       <div className="fixed -left-[9999px] top-0 pointer-events-none" aria-hidden>

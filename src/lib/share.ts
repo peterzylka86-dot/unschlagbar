@@ -133,3 +133,53 @@ export async function shareOrCopy(
   await navigator.clipboard.writeText(text);
   return "copied";
 }
+
+/**
+ * Native image share — opens the OS share sheet (WhatsApp / X / Messages /
+ * Instagram) with the PNG attached. Falls back to download-as-file if the
+ * device/browser doesn't support file-share (mostly older desktop).
+ *
+ * User: "I don't want to save it on my mobile but rather share the image
+ * via whatsapp or X or something."
+ *
+ * @returns "shared"     — opened the share sheet successfully
+ *          "downloaded" — fell back to file download
+ *          "failed"     — both paths threw; show an error toast
+ */
+export async function shareImage(
+  dataUrl: string,
+  filename: string,
+  text = "",
+  title = "UNSCHLAGBAR",
+): Promise<"shared" | "downloaded" | "failed"> {
+  try {
+    // Convert the data URL to a File so navigator.share can attach it.
+    const blob = await (await fetch(dataUrl)).blob();
+    const file = new File([blob], filename, { type: "image/png" });
+    const nav = navigator as Navigator & {
+      canShare?: (d: ShareData) => boolean;
+      share?: (d: ShareData) => Promise<void>;
+    };
+    if (nav.share && nav.canShare && nav.canShare({ files: [file] })) {
+      try {
+        await nav.share({ files: [file], title, text });
+        return "shared";
+      } catch {
+        // User cancelled — treat as silently shared (not a failure)
+        return "shared";
+      }
+    }
+  } catch {
+    // Fall through to download
+  }
+  // Desktop / unsupported: fall back to download-as-file.
+  try {
+    const link = document.createElement("a");
+    link.download = filename;
+    link.href = dataUrl;
+    link.click();
+    return "downloaded";
+  } catch {
+    return "failed";
+  }
+}
