@@ -20,6 +20,12 @@ dist-ssr
 .wrangler/
 .dev.vars
 
+# FIFA dataset cache (downloaded raw CSVs for tools/ingest_*.py — too big for git)
+tools/.fifa_cache/
+
+# npm lockfile (Lovable uses bun; keeping both lockfiles in git causes drift)
+package-lock.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

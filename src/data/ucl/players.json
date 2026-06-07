@@ -8038,5 +8038,1933 @@
     "career_years": "2008-2014",
     "nationality": "GER",
     "club": "hamburg"
+  },
+  {
+    "name": "P. Pogba",
+    "position": "CAM",
+    "prime_rating": 88,
+    "nationality": "France",
+    "club": "manchesterunited",
+    "career_years": "2016-2022"
+  },
+  {
+    "name": "Ander Herrera",
+    "position": "CM",
+    "prime_rating": 84,
+    "nationality": "Spain",
+    "club": "manchesterunited",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "Y. Touré",
+    "position": "CAM",
+    "prime_rating": 84,
+    "nationality": "Ivory Coast",
+    "club": "manchestercity",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "A. Valencia",
+    "position": "RB",
+    "prime_rating": 83,
+    "nationality": "Ecuador",
+    "club": "manchesterunited",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "J. Henderson",
+    "position": "CDM",
+    "prime_rating": 86,
+    "nationality": "England",
+    "club": "liverpool",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "A. Kolarov",
+    "position": "CB",
+    "prime_rating": 80,
+    "nationality": "Serbia",
+    "club": "manchestercity",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Dembélé",
+    "position": "CM",
+    "prime_rating": 84,
+    "nationality": "Belgium",
+    "club": "tottenham",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Sánchez",
+    "position": "ST",
+    "prime_rating": 88,
+    "nationality": "Chile",
+    "club": "arsenal",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "Fernandinho",
+    "position": "CDM",
+    "prime_rating": 87,
+    "nationality": "Brazil",
+    "club": "manchestercity",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "J. Milner",
+    "position": "CDM",
+    "prime_rating": 81,
+    "nationality": "England",
+    "club": "liverpool",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "G. Wijnaldum",
+    "position": "CM",
+    "prime_rating": 85,
+    "nationality": "Netherlands",
+    "club": "liverpool",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "W. Rooney",
+    "position": "ST",
+    "prime_rating": 82,
+    "nationality": "England",
+    "club": "manchesterunited",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "H. Mkhitaryan",
+    "position": "CAM",
+    "prime_rating": 86,
+    "nationality": "Armenia",
+    "club": "manchesterunited",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Sissoko",
+    "position": "CDM",
+    "prime_rating": 80,
+    "nationality": "France",
+    "club": "tottenham",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "I. Gündoğan",
+    "position": "CAM",
+    "prime_rating": 85,
+    "nationality": "Germany",
+    "club": "manchestercity",
+    "career_years": "2016-2022"
+  },
+  {
+    "name": "K. Walker",
+    "position": "RB",
+    "prime_rating": 82,
+    "nationality": "England",
+    "club": "tottenham",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "N. Kanté",
+    "position": "CDM",
+    "prime_rating": 90,
+    "nationality": "France",
+    "club": "chelsea",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "A. Lallana",
+    "position": "CAM",
+    "prime_rating": 83,
+    "nationality": "England",
+    "club": "liverpool",
+    "career_years": "2016-2020"
+  },
+  {
+    "name": "E. Can",
+    "position": "CDM",
+    "prime_rating": 80,
+    "nationality": "Germany",
+    "club": "liverpool",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "Santi Cazorla",
+    "position": "CAM",
+    "prime_rating": 85,
+    "nationality": "Spain",
+    "club": "arsenal",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "K. De Bruyne",
+    "position": "CAM",
+    "prime_rating": 91,
+    "nationality": "Belgium",
+    "club": "manchestercity",
+    "career_years": "2017-2022"
+  },
+  {
+    "name": "N. Matić",
+    "position": "CDM",
+    "prime_rating": 84,
+    "nationality": "Serbia",
+    "club": "chelsea",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Ramsey",
+    "position": "CM",
+    "prime_rating": 83,
+    "nationality": "Wales",
+    "club": "arsenal",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "David Luiz",
+    "position": "CB",
+    "prime_rating": 84,
+    "nationality": "Brazil",
+    "club": "chelsea",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "Cesc Fàbregas",
+    "position": "CM",
+    "prime_rating": 86,
+    "nationality": "Spain",
+    "club": "chelsea",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "Z. Ibrahimović",
+    "position": "ST",
+    "prime_rating": 90,
+    "nationality": "Sweden",
+    "club": "manchesterunited",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "D. Rose",
+    "position": "LB",
+    "prime_rating": 81,
+    "nationality": "England",
+    "club": "tottenham",
+    "career_years": "2016-2021"
+  },
+  {
+    "name": "Azpilicueta",
+    "position": "RB",
+    "prime_rating": 86,
+    "nationality": "Spain",
+    "club": "chelsea",
+    "career_years": "2017-2022"
+  },
+  {
+    "name": "V. Wanyama",
+    "position": "CB",
+    "prime_rating": 81,
+    "nationality": "Kenya",
+    "club": "tottenham",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "E. Hazard",
+    "position": "CAM",
+    "prime_rating": 91,
+    "nationality": "Belgium",
+    "club": "chelsea",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "F. Delph",
+    "position": "LB",
+    "prime_rating": 79,
+    "nationality": "England",
+    "club": "manchestercity",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "D. Blind",
+    "position": "CDM",
+    "prime_rating": 81,
+    "nationality": "Netherlands",
+    "club": "manchesterunited",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "M. Debuchy",
+    "position": "RB",
+    "prime_rating": 79,
+    "nationality": "France",
+    "club": "arsenal",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "Marcos Alonso",
+    "position": "LB",
+    "prime_rating": 83,
+    "nationality": "Spain",
+    "club": "chelsea",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "M. Rojo",
+    "position": "CB",
+    "prime_rating": 83,
+    "nationality": "Argentina",
+    "club": "manchesterunited",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "D. Alli",
+    "position": "ST",
+    "prime_rating": 85,
+    "nationality": "England",
+    "club": "tottenham",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "E. Lamela",
+    "position": "CAM",
+    "prime_rating": 81,
+    "nationality": "Argentina",
+    "club": "tottenham",
+    "career_years": "2016-2021"
+  },
+  {
+    "name": "J. Vertonghen",
+    "position": "CB",
+    "prime_rating": 87,
+    "nationality": "Belgium",
+    "club": "tottenham",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "S. Agüero",
+    "position": "ST",
+    "prime_rating": 90,
+    "nationality": "Argentina",
+    "club": "manchestercity",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "P. Zabaleta",
+    "position": "CB",
+    "prime_rating": 80,
+    "nationality": "Argentina",
+    "club": "manchestercity",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "N. Clyne",
+    "position": "RB",
+    "prime_rating": 82,
+    "nationality": "England",
+    "club": "liverpool",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "C. Eriksen",
+    "position": "CAM",
+    "prime_rating": 88,
+    "nationality": "Denmark",
+    "club": "tottenham",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "A. Martial",
+    "position": "RW",
+    "prime_rating": 84,
+    "nationality": "France",
+    "club": "manchesterunited",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "Willian",
+    "position": "CM",
+    "prime_rating": 85,
+    "nationality": "Brazil",
+    "club": "chelsea",
+    "career_years": "2016-2020"
+  },
+  {
+    "name": "Coutinho",
+    "position": "CAM",
+    "prime_rating": 86,
+    "nationality": "Brazil",
+    "club": "liverpool",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Carrick",
+    "position": "CM",
+    "prime_rating": 82,
+    "nationality": "England",
+    "club": "manchesterunited",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "H. Kane",
+    "position": "ST",
+    "prime_rating": 90,
+    "nationality": "England",
+    "club": "tottenham",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "T. Alderweireld",
+    "position": "CB",
+    "prime_rating": 87,
+    "nationality": "Belgium",
+    "club": "tottenham",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "B. Sagna",
+    "position": "CB",
+    "prime_rating": 81,
+    "nationality": "France",
+    "club": "manchestercity",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "S. Mané",
+    "position": "LW",
+    "prime_rating": 90,
+    "nationality": "Senegal",
+    "club": "liverpool",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "L. Shaw",
+    "position": "LB",
+    "prime_rating": 84,
+    "nationality": "England",
+    "club": "manchesterunited",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Fellaini",
+    "position": "CB",
+    "prime_rating": 79,
+    "nationality": "Belgium",
+    "club": "manchesterunited",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "G. Xhaka",
+    "position": "CM",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "arsenal",
+    "career_years": "2016-2022"
+  },
+  {
+    "name": "M. Darmian",
+    "position": "RB",
+    "prime_rating": 80,
+    "nationality": "Italy",
+    "club": "manchesterunited",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "Lucas Pérez",
+    "position": "ST",
+    "prime_rating": 81,
+    "nationality": "Spain",
+    "club": "arsenal",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "Nacho Monreal",
+    "position": "LB",
+    "prime_rating": 80,
+    "nationality": "Spain",
+    "club": "arsenal",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "A. Oxlade-Chamberlain",
+    "position": "CM",
+    "prime_rating": 80,
+    "nationality": "England",
+    "club": "arsenal",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "Nolito",
+    "position": "CAM",
+    "prime_rating": 81,
+    "nationality": "Spain",
+    "club": "manchestercity",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "Juan Mata",
+    "position": "CAM",
+    "prime_rating": 85,
+    "nationality": "Spain",
+    "club": "manchesterunited",
+    "career_years": "2016-2022"
+  },
+  {
+    "name": "L. Sané",
+    "position": "LW",
+    "prime_rating": 86,
+    "nationality": "Germany",
+    "club": "manchestercity",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "K. Gibbs",
+    "position": "LB",
+    "prime_rating": 78,
+    "nationality": "England",
+    "club": "arsenal",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "T. Walcott",
+    "position": "CM",
+    "prime_rating": 81,
+    "nationality": "England",
+    "club": "arsenal",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "Héctor Bellerín",
+    "position": "RB",
+    "prime_rating": 80,
+    "nationality": "Spain",
+    "club": "arsenal",
+    "career_years": "2016-2021"
+  },
+  {
+    "name": "F. Coquelin",
+    "position": "CDM",
+    "prime_rating": 79,
+    "nationality": "France",
+    "club": "arsenal",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "Pedro",
+    "position": "CAM",
+    "prime_rating": 83,
+    "nationality": "Spain",
+    "club": "chelsea",
+    "career_years": "2016-2020"
+  },
+  {
+    "name": "D. Welbeck",
+    "position": "ST",
+    "prime_rating": 80,
+    "nationality": "England",
+    "club": "arsenal",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "J. Lingard",
+    "position": "CAM",
+    "prime_rating": 82,
+    "nationality": "England",
+    "club": "manchesterunited",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "E. Dier",
+    "position": "CB",
+    "prime_rating": 81,
+    "nationality": "England",
+    "club": "tottenham",
+    "career_years": "2017-2022"
+  },
+  {
+    "name": "R. Sterling",
+    "position": "LW",
+    "prime_rating": 88,
+    "nationality": "England",
+    "club": "manchestercity",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "H. Son",
+    "position": "CM",
+    "prime_rating": 89,
+    "nationality": "Korea Republic",
+    "club": "tottenham",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "S. Mustafi",
+    "position": "CB",
+    "prime_rating": 84,
+    "nationality": "Germany",
+    "club": "arsenal",
+    "career_years": "2016-2021"
+  },
+  {
+    "name": "O. Giroud",
+    "position": "ST",
+    "prime_rating": 83,
+    "nationality": "France",
+    "club": "arsenal",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Rashford",
+    "position": "CM",
+    "prime_rating": 85,
+    "nationality": "England",
+    "club": "manchesterunited",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "Gabriel Jesus",
+    "position": "ST",
+    "prime_rating": 83,
+    "nationality": "Brazil",
+    "club": "manchestercity",
+    "career_years": "2017-2022"
+  },
+  {
+    "name": "M. Özil",
+    "position": "CAM",
+    "prime_rating": 89,
+    "nationality": "Germany",
+    "club": "arsenal",
+    "career_years": "2016-2021"
+  },
+  {
+    "name": "Gabriel",
+    "position": "CB",
+    "prime_rating": 79,
+    "nationality": "Brazil",
+    "club": "arsenal",
+    "career_years": "2016-2022"
+  },
+  {
+    "name": "Fernando",
+    "position": "CB",
+    "prime_rating": 78,
+    "nationality": "Brazil",
+    "club": "manchestercity",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "B. Davies",
+    "position": "LB",
+    "prime_rating": 81,
+    "nationality": "Wales",
+    "club": "tottenham",
+    "career_years": "2017-2022"
+  },
+  {
+    "name": "V. Kompany",
+    "position": "CB",
+    "prime_rating": 86,
+    "nationality": "Belgium",
+    "club": "manchestercity",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "D. Sturridge",
+    "position": "ST",
+    "prime_rating": 83,
+    "nationality": "England",
+    "club": "liverpool",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "N. Otamendi",
+    "position": "CB",
+    "prime_rating": 85,
+    "nationality": "Argentina",
+    "club": "manchestercity",
+    "career_years": "2017-2020"
+  },
+  {
+    "name": "J. Matip",
+    "position": "CB",
+    "prime_rating": 83,
+    "nationality": "Cameroon",
+    "club": "liverpool",
+    "career_years": "2016-2022"
+  },
+  {
+    "name": "G. Clichy",
+    "position": "LB",
+    "prime_rating": 78,
+    "nationality": "France",
+    "club": "manchestercity",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "Lucas Leiva",
+    "position": "CDM",
+    "prime_rating": 80,
+    "nationality": "Brazil",
+    "club": "liverpool",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "D. Origi",
+    "position": "ST",
+    "prime_rating": 79,
+    "nationality": "Belgium",
+    "club": "liverpool",
+    "career_years": "2016-2020"
+  },
+  {
+    "name": "E. Bailly",
+    "position": "CB",
+    "prime_rating": 84,
+    "nationality": "Ivory Coast",
+    "club": "manchesterunited",
+    "career_years": "2017-2022"
+  },
+  {
+    "name": "P. Jones",
+    "position": "CB",
+    "prime_rating": 80,
+    "nationality": "England",
+    "club": "manchesterunited",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "L. Koscielny",
+    "position": "CB",
+    "prime_rating": 85,
+    "nationality": "France",
+    "club": "arsenal",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "K. Zouma",
+    "position": "CB",
+    "prime_rating": 81,
+    "nationality": "France",
+    "club": "chelsea",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "M. Batshuayi",
+    "position": "ST",
+    "prime_rating": 80,
+    "nationality": "Belgium",
+    "club": "chelsea",
+    "career_years": "2016-2020"
+  },
+  {
+    "name": "Jesús Navas",
+    "position": "CM",
+    "prime_rating": 79,
+    "nationality": "Spain",
+    "club": "manchestercity",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "C. Smalling",
+    "position": "CB",
+    "prime_rating": 83,
+    "nationality": "England",
+    "club": "manchesterunited",
+    "career_years": "2016-2021"
+  },
+  {
+    "name": "G. Cahill",
+    "position": "CB",
+    "prime_rating": 83,
+    "nationality": "England",
+    "club": "chelsea",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "J. Stones",
+    "position": "CB",
+    "prime_rating": 83,
+    "nationality": "England",
+    "club": "manchestercity",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "D. Lovren",
+    "position": "CB",
+    "prime_rating": 81,
+    "nationality": "Croatia",
+    "club": "liverpool",
+    "career_years": "2016-2020"
+  },
+  {
+    "name": "J. Terry",
+    "position": "CB",
+    "prime_rating": 81,
+    "nationality": "England",
+    "club": "chelsea",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "K. Wimmer",
+    "position": "CB",
+    "prime_rating": 78,
+    "nationality": "Austria",
+    "club": "tottenham",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "P. Mertesacker",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "Germany",
+    "club": "arsenal",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "De Gea",
+    "position": "GK",
+    "prime_rating": 91,
+    "nationality": "Spain",
+    "club": "manchesterunited",
+    "career_years": "2017-2022"
+  },
+  {
+    "name": "C. Bravo",
+    "position": "GK",
+    "prime_rating": 82,
+    "nationality": "Chile",
+    "club": "manchestercity",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "M. Vorm",
+    "position": "GK",
+    "prime_rating": 80,
+    "nationality": "Netherlands",
+    "club": "tottenham",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "T. Courtois",
+    "position": "GK",
+    "prime_rating": 89,
+    "nationality": "Belgium",
+    "club": "chelsea",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "H. Lloris",
+    "position": "GK",
+    "prime_rating": 88,
+    "nationality": "France",
+    "club": "tottenham",
+    "career_years": "2016-2022"
+  },
+  {
+    "name": "S. Mignolet",
+    "position": "GK",
+    "prime_rating": 80,
+    "nationality": "Belgium",
+    "club": "liverpool",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "W. Caballero",
+    "position": "GK",
+    "prime_rating": 79,
+    "nationality": "Argentina",
+    "club": "manchestercity",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Begović",
+    "position": "GK",
+    "prime_rating": 83,
+    "nationality": "Bosnia Herzegovina",
+    "club": "chelsea",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "P. Čech",
+    "position": "GK",
+    "prime_rating": 88,
+    "nationality": "Czech Republic",
+    "club": "arsenal",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "L. Karius",
+    "position": "GK",
+    "prime_rating": 82,
+    "nationality": "Germany",
+    "club": "liverpool",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "S. Romero",
+    "position": "GK",
+    "prime_rating": 80,
+    "nationality": "Argentina",
+    "club": "manchesterunited",
+    "career_years": "2016-2021"
+  },
+  {
+    "name": "D. Ospina",
+    "position": "GK",
+    "prime_rating": 79,
+    "nationality": "Colombia",
+    "club": "arsenal",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "A. Sánchez",
+    "position": "LW",
+    "prime_rating": 88,
+    "nationality": "Chile",
+    "club": "manchesterunited",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "K. Walker",
+    "position": "RB",
+    "prime_rating": 85,
+    "nationality": "England",
+    "club": "manchestercity",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "N. Matić",
+    "position": "CDM",
+    "prime_rating": 85,
+    "nationality": "Serbia",
+    "club": "manchesterunited",
+    "career_years": "2017-2022"
+  },
+  {
+    "name": "A. Young",
+    "position": "LB",
+    "prime_rating": 79,
+    "nationality": "England",
+    "club": "manchesterunited",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "M. Salah",
+    "position": "RW",
+    "prime_rating": 90,
+    "nationality": "Egypt",
+    "club": "liverpool",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "H. Mkhitaryan",
+    "position": "CAM",
+    "prime_rating": 84,
+    "nationality": "Armenia",
+    "club": "arsenal",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "Danilo",
+    "position": "RB",
+    "prime_rating": 79,
+    "nationality": "Brazil",
+    "club": "manchestercity",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "V. Moses",
+    "position": "RB",
+    "prime_rating": 80,
+    "nationality": "Nigeria",
+    "club": "chelsea",
+    "career_years": "2017-2021"
+  },
+  {
+    "name": "S. Aurier",
+    "position": "RB",
+    "prime_rating": 81,
+    "nationality": "Ivory Coast",
+    "club": "tottenham",
+    "career_years": "2017-2022"
+  },
+  {
+    "name": "J. Wilshere",
+    "position": "CAM",
+    "prime_rating": 81,
+    "nationality": "England",
+    "club": "arsenal",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Oxlade-Chamberlain",
+    "position": "CM",
+    "prime_rating": 81,
+    "nationality": "England",
+    "club": "liverpool",
+    "career_years": "2017-2022"
+  },
+  {
+    "name": "D. Zappacosta",
+    "position": "RB",
+    "prime_rating": 79,
+    "nationality": "Italy",
+    "club": "chelsea",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "K. Trippier",
+    "position": "RB",
+    "prime_rating": 81,
+    "nationality": "England",
+    "club": "tottenham",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "D. Drinkwater",
+    "position": "CM",
+    "prime_rating": 80,
+    "nationality": "England",
+    "club": "chelsea",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "P. Aubameyang",
+    "position": "ST",
+    "prime_rating": 88,
+    "nationality": "Gabon",
+    "club": "arsenal",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "A. Lacazette",
+    "position": "ST",
+    "prime_rating": 85,
+    "nationality": "France",
+    "club": "arsenal",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "Lucas",
+    "position": "RW",
+    "prime_rating": 82,
+    "nationality": "Brazil",
+    "club": "tottenham",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "V. van Dijk",
+    "position": "CB",
+    "prime_rating": 91,
+    "nationality": "Netherlands",
+    "club": "liverpool",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "R. Lukaku",
+    "position": "ST",
+    "prime_rating": 86,
+    "nationality": "Belgium",
+    "club": "manchesterunited",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "R. Barkley",
+    "position": "CAM",
+    "prime_rating": 80,
+    "nationality": "England",
+    "club": "chelsea",
+    "career_years": "2017-2022"
+  },
+  {
+    "name": "A. Robertson",
+    "position": "LB",
+    "prime_rating": 87,
+    "nationality": "Scotland",
+    "club": "liverpool",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "B. Mendy",
+    "position": "LB",
+    "prime_rating": 81,
+    "nationality": "France",
+    "club": "manchestercity",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "T. Bakayoko",
+    "position": "CDM",
+    "prime_rating": 80,
+    "nationality": "France",
+    "club": "chelsea",
+    "career_years": "2017-2021"
+  },
+  {
+    "name": "O. Giroud",
+    "position": "ST",
+    "prime_rating": 82,
+    "nationality": "France",
+    "club": "chelsea",
+    "career_years": "2017-2021"
+  },
+  {
+    "name": "S. Kolašinac",
+    "position": "CB",
+    "prime_rating": 81,
+    "nationality": "Bosnia Herzegovina",
+    "club": "arsenal",
+    "career_years": "2017-2021"
+  },
+  {
+    "name": "A. Laporte",
+    "position": "CB",
+    "prime_rating": 87,
+    "nationality": "France",
+    "club": "manchestercity",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "V. Lindelöf",
+    "position": "CB",
+    "prime_rating": 81,
+    "nationality": "Sweden",
+    "club": "manchesterunited",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "Morata",
+    "position": "ST",
+    "prime_rating": 84,
+    "nationality": "Spain",
+    "club": "chelsea",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Rüdiger",
+    "position": "CB",
+    "prime_rating": 83,
+    "nationality": "Germany",
+    "club": "chelsea",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "D. Sánchez",
+    "position": "CB",
+    "prime_rating": 83,
+    "nationality": "Colombia",
+    "club": "tottenham",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "A. Christensen",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "Denmark",
+    "club": "chelsea",
+    "career_years": "2017-2022"
+  },
+  {
+    "name": "W. Caballero",
+    "position": "GK",
+    "prime_rating": 79,
+    "nationality": "Argentina",
+    "club": "chelsea",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "Fabinho",
+    "position": "CDM",
+    "prime_rating": 87,
+    "nationality": "Brazil",
+    "club": "liverpool",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "Fred",
+    "position": "CM",
+    "prime_rating": 81,
+    "nationality": "Brazil",
+    "club": "manchesterunited",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "L. Torreira",
+    "position": "CDM",
+    "prime_rating": 82,
+    "nationality": "Uruguay",
+    "club": "arsenal",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "M. Kovačić",
+    "position": "CM",
+    "prime_rating": 84,
+    "nationality": "Croatia",
+    "club": "chelsea",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "Lucas Moura",
+    "position": "RW",
+    "prime_rating": 83,
+    "nationality": "Brazil",
+    "club": "tottenham",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "Jorginho",
+    "position": "CM",
+    "prime_rating": 85,
+    "nationality": "Italy",
+    "club": "chelsea",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "X. Shaqiri",
+    "position": "CAM",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "liverpool",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "N. Keïta",
+    "position": "CM",
+    "prime_rating": 83,
+    "nationality": "Guinea",
+    "club": "liverpool",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "T. Alexander-Arnold",
+    "position": "RB",
+    "prime_rating": 87,
+    "nationality": "England",
+    "club": "liverpool",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "R. Mahrez",
+    "position": "RW",
+    "prime_rating": 86,
+    "nationality": "Algeria",
+    "club": "manchestercity",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "Denis Suárez",
+    "position": "CAM",
+    "prime_rating": 79,
+    "nationality": "Spain",
+    "club": "arsenal",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "H. Winks",
+    "position": "CM",
+    "prime_rating": 80,
+    "nationality": "England",
+    "club": "tottenham",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "R. Loftus-Cheek",
+    "position": "CAM",
+    "prime_rating": 79,
+    "nationality": "England",
+    "club": "chelsea",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "G. Higuaín",
+    "position": "ST",
+    "prime_rating": 87,
+    "nationality": "Argentina",
+    "club": "chelsea",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "Sokratis",
+    "position": "CB",
+    "prime_rating": 84,
+    "nationality": "Greece",
+    "club": "arsenal",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "A. Iwobi",
+    "position": "CAM",
+    "prime_rating": 78,
+    "nationality": "Nigeria",
+    "club": "arsenal",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "J. Gomez",
+    "position": "CB",
+    "prime_rating": 83,
+    "nationality": "England",
+    "club": "liverpool",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "Alisson",
+    "position": "GK",
+    "prime_rating": 90,
+    "nationality": "Brazil",
+    "club": "liverpool",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "B. Leno",
+    "position": "GK",
+    "prime_rating": 85,
+    "nationality": "Germany",
+    "club": "arsenal",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "Kepa",
+    "position": "GK",
+    "prime_rating": 84,
+    "nationality": "Spain",
+    "club": "chelsea",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "João Cancelo",
+    "position": "RB",
+    "prime_rating": 86,
+    "nationality": "Portugal",
+    "club": "manchestercity",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "G. Lo Celso",
+    "position": "CAM",
+    "prime_rating": 82,
+    "nationality": "Argentina",
+    "club": "tottenham",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "O. Zinchenko",
+    "position": "CM",
+    "prime_rating": 80,
+    "nationality": "Ukraine",
+    "club": "manchestercity",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "12 O. Hargreaves",
+    "position": "CDM",
+    "prime_rating": 78,
+    "nationality": "England",
+    "club": "manchestercity",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "S. McTominay",
+    "position": "CDM",
+    "prime_rating": 80,
+    "nationality": "Scotland",
+    "club": "manchesterunited",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "T. Ndombele",
+    "position": "CAM",
+    "prime_rating": 82,
+    "nationality": "France",
+    "club": "tottenham",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "David Luiz",
+    "position": "CB",
+    "prime_rating": 81,
+    "nationality": "Brazil",
+    "club": "arsenal",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "Dani Ceballos",
+    "position": "CM",
+    "prime_rating": 81,
+    "nationality": "Spain",
+    "club": "arsenal",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "13 P. Scholes",
+    "position": "CAM",
+    "prime_rating": 80,
+    "nationality": "England",
+    "club": "manchesterunited",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "16 Mikel Arteta",
+    "position": "CM",
+    "prime_rating": 78,
+    "nationality": "Spain",
+    "club": "arsenal",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "Emerson",
+    "position": "LB",
+    "prime_rating": 79,
+    "nationality": "Italy",
+    "club": "chelsea",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "N. Pépé",
+    "position": "CAM",
+    "prime_rating": 82,
+    "nationality": "Ivory Coast",
+    "club": "arsenal",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "S. Bergwijn",
+    "position": "CAM",
+    "prime_rating": 83,
+    "nationality": "Netherlands",
+    "club": "tottenham",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "A. Wan-Bissaka",
+    "position": "RB",
+    "prime_rating": 83,
+    "nationality": "England",
+    "club": "manchesterunited",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "18 M. Carrick",
+    "position": "CM",
+    "prime_rating": 79,
+    "nationality": "England",
+    "club": "manchesterunited",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "O. Ighalo",
+    "position": "ST",
+    "prime_rating": 78,
+    "nationality": "Nigeria",
+    "club": "manchesterunited",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Mount",
+    "position": "CAM",
+    "prime_rating": 83,
+    "nationality": "England",
+    "club": "chelsea",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "14 R. Giggs",
+    "position": "CAM",
+    "prime_rating": 78,
+    "nationality": "Wales",
+    "club": "manchesterunited",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "J. Grealish",
+    "position": "CAM",
+    "prime_rating": 80,
+    "nationality": "England",
+    "club": "astonvilla",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "C. Pulisic",
+    "position": "CM",
+    "prime_rating": 82,
+    "nationality": "United States",
+    "club": "chelsea",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "H. Maguire",
+    "position": "CB",
+    "prime_rating": 84,
+    "nationality": "England",
+    "club": "manchesterunited",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Samatta",
+    "position": "ST",
+    "prime_rating": 78,
+    "nationality": "Tanzania",
+    "club": "astonvilla",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "T. Abraham",
+    "position": "ST",
+    "prime_rating": 79,
+    "nationality": "England",
+    "club": "chelsea",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "18 P. Mertesacker",
+    "position": "CB",
+    "prime_rating": 80,
+    "nationality": "Germany",
+    "club": "arsenal",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "Pepe Reina",
+    "position": "GK",
+    "prime_rating": 80,
+    "nationality": "Spain",
+    "club": "astonvilla",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "T. Heaton",
+    "position": "GK",
+    "prime_rating": 78,
+    "nationality": "England",
+    "club": "astonvilla",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "11 E. van der Sar",
+    "position": "GK",
+    "prime_rating": 83,
+    "nationality": "Netherlands",
+    "club": "manchesterunited",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "19 P. Čech",
+    "position": "GK",
+    "prime_rating": 81,
+    "nationality": "Czech Republic",
+    "club": "arsenal",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "G. Bale",
+    "position": "RW",
+    "prime_rating": 83,
+    "nationality": "Wales",
+    "club": "tottenham",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "Thiago",
+    "position": "CM",
+    "prime_rating": 86,
+    "nationality": "Spain",
+    "club": "liverpool",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "D. van de Beek",
+    "position": "CM",
+    "prime_rating": 83,
+    "nationality": "Netherlands",
+    "club": "manchesterunited",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "H. Ziyech",
+    "position": "CAM",
+    "prime_rating": 85,
+    "nationality": "Morocco",
+    "club": "chelsea",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "Diogo Jota",
+    "position": "ST",
+    "prime_rating": 82,
+    "nationality": "Portugal",
+    "club": "liverpool",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "P. Højbjerg",
+    "position": "CDM",
+    "prime_rating": 83,
+    "nationality": "Denmark",
+    "club": "tottenham",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "K. Havertz",
+    "position": "CAM",
+    "prime_rating": 85,
+    "nationality": "Germany",
+    "club": "chelsea",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "M. Doherty",
+    "position": "RB",
+    "prime_rating": 81,
+    "nationality": "Republic of Ireland",
+    "club": "tottenham",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "B. Chilwell",
+    "position": "LB",
+    "prime_rating": 82,
+    "nationality": "England",
+    "club": "chelsea",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Willian",
+    "position": "RW",
+    "prime_rating": 82,
+    "nationality": "Brazil",
+    "club": "arsenal",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "K. Tierney",
+    "position": "LB",
+    "prime_rating": 80,
+    "nationality": "Scotland",
+    "club": "arsenal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "T. Werner",
+    "position": "ST",
+    "prime_rating": 85,
+    "nationality": "Germany",
+    "club": "chelsea",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "Reguilón",
+    "position": "LB",
+    "prime_rating": 82,
+    "nationality": "Spain",
+    "club": "tottenham",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "R. Barkley",
+    "position": "CAM",
+    "prime_rating": 78,
+    "nationality": "England",
+    "club": "astonvilla",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "N. Aké",
+    "position": "CB",
+    "prime_rating": 79,
+    "nationality": "Netherlands",
+    "club": "manchestercity",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "P. Foden",
+    "position": "CAM",
+    "prime_rating": 84,
+    "nationality": "England",
+    "club": "manchestercity",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Ferran Torres",
+    "position": "CAM",
+    "prime_rating": 82,
+    "nationality": "Spain",
+    "club": "manchestercity",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 D. Lovren",
+    "position": "CB",
+    "prime_rating": 80,
+    "nationality": "Croatia",
+    "club": "liverpool",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "12 L. King",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "England",
+    "club": "tottenham",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "E. Martínez",
+    "position": "GK",
+    "prime_rating": 84,
+    "nationality": "Argentina",
+    "club": "astonvilla",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "D. Henderson",
+    "position": "GK",
+    "prime_rating": 80,
+    "nationality": "England",
+    "club": "manchesterunited",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "E. Mendy",
+    "position": "GK",
+    "prime_rating": 83,
+    "nationality": "Senegal",
+    "club": "chelsea",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Alex Telles",
+    "position": "LB",
+    "prime_rating": 82,
+    "nationality": "Brazil",
+    "club": "manchesterunited",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Cristiano Ronaldo",
+    "position": "ST",
+    "prime_rating": 91,
+    "nationality": "Portugal",
+    "club": "manchesterunited",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Saúl",
+    "position": "CM",
+    "prime_rating": 82,
+    "nationality": "Spain",
+    "club": "chelsea",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "T. Partey",
+    "position": "CM",
+    "prime_rating": 83,
+    "nationality": "Ghana",
+    "club": "arsenal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "J. McGinn",
+    "position": "CM",
+    "prime_rating": 78,
+    "nationality": "Scotland",
+    "club": "astonvilla",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "R. James",
+    "position": "RB",
+    "prime_rating": 81,
+    "nationality": "England",
+    "club": "chelsea",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "A. Young",
+    "position": "LB",
+    "prime_rating": 78,
+    "nationality": "England",
+    "club": "astonvilla",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "E. Cavani",
+    "position": "ST",
+    "prime_rating": 85,
+    "nationality": "Uruguay",
+    "club": "manchesterunited",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Ødegaard",
+    "position": "CAM",
+    "prime_rating": 82,
+    "nationality": "Norway",
+    "club": "arsenal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "R. Lukaku",
+    "position": "ST",
+    "prime_rating": 88,
+    "nationality": "Belgium",
+    "club": "chelsea",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "E. Buendía",
+    "position": "CAM",
+    "prime_rating": 79,
+    "nationality": "Argentina",
+    "club": "astonvilla",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "D. Ings",
+    "position": "ST",
+    "prime_rating": 81,
+    "nationality": "England",
+    "club": "astonvilla",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "B. Saka",
+    "position": "CM",
+    "prime_rating": 80,
+    "nationality": "England",
+    "club": "arsenal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 David Luiz",
+    "position": "CB",
+    "prime_rating": 79,
+    "nationality": "Brazil",
+    "club": "arsenal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Emerson",
+    "position": "RB",
+    "prime_rating": 79,
+    "nationality": "Brazil",
+    "club": "tottenham",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "J. Grealish",
+    "position": "CAM",
+    "prime_rating": 84,
+    "nationality": "England",
+    "club": "manchestercity",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Kenedy",
+    "position": "CM",
+    "prime_rating": 78,
+    "nationality": "Brazil",
+    "club": "chelsea",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "L. Bailey",
+    "position": "CM",
+    "prime_rating": 82,
+    "nationality": "Jamaica",
+    "club": "astonvilla",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "J. Sancho",
+    "position": "CAM",
+    "prime_rating": 87,
+    "nationality": "England",
+    "club": "manchesterunited",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Cash",
+    "position": "RB",
+    "prime_rating": 78,
+    "nationality": "England",
+    "club": "astonvilla",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "O. Watkins",
+    "position": "ST",
+    "prime_rating": 78,
+    "nationality": "England",
+    "club": "astonvilla",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Greenwood",
+    "position": "CAM",
+    "prime_rating": 78,
+    "nationality": "England",
+    "club": "manchesterunited",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "R. Varane",
+    "position": "CB",
+    "prime_rating": 86,
+    "nationality": "France",
+    "club": "manchesterunited",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "T. Mings",
+    "position": "CB",
+    "prime_rating": 78,
+    "nationality": "England",
+    "club": "astonvilla",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "C. Romero",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "Argentina",
+    "club": "tottenham",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "E. Konsa",
+    "position": "CB",
+    "prime_rating": 78,
+    "nationality": "England",
+    "club": "astonvilla",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "I. Konaté",
+    "position": "CB",
+    "prime_rating": 78,
+    "nationality": "France",
+    "club": "liverpool",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 S. Romero",
+    "position": "GK",
+    "prime_rating": 79,
+    "nationality": "Argentina",
+    "club": "manchesterunited",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "P. Gollini",
+    "position": "GK",
+    "prime_rating": 82,
+    "nationality": "Italy",
+    "club": "tottenham",
+    "career_years": "2021-2022"
   }
 ]
