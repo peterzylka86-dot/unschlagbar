@@ -83,13 +83,13 @@ function Landing() {
             search={{ new: true }}
             className="mt-9 inline-flex items-center gap-2 px-8 py-4 rounded-md bg-primary text-primary-foreground font-display text-xl tracking-[0.15em] uppercase shadow-[0_18px_40px_-10px] shadow-primary/70 hover:brightness-110 hover:-translate-y-0.5 transition border border-primary-foreground/10"
           >
-            Anpfiff <span aria-hidden>→</span>
+            Kick-off <span aria-hidden>→</span>
           </Link>
 
           <div className="mt-10 grid grid-cols-3 gap-2 text-center">
-            <Stat value="4" label="Ligen" />
-            <Stat value="90+" label="Vereine" />
-            <Stat value="60+" label="Jahre" />
+            <Stat value="7" label="Competitions" />
+            <Stat value="200+" label="Clubs" />
+            <Stat value="60+" label="Years" />
           </div>
 
           <div className="ticker mt-8 rounded-sm">
