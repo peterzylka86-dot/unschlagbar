@@ -27,10 +27,10 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { useCareer } from "@/lib/career-store";
-import { getCareerPlayers } from "@/lib/data";
-import { detectStarDemands, normalizeName } from "@/lib/career-core";
+import { getCareerClubs, getCareerPlayers } from "@/lib/data";
+import { detectStarDemands, normalizeName, simplifyPosition } from "@/lib/career-core";
 import { isPositionCompatible } from "@/lib/draft-helpers";
-import type { Player } from "@/lib/game-types";
+import type { Club, Player } from "@/lib/game-types";
 
 export const Route = createFileRoute("/career/postseason")({
   head: () => ({ meta: [{ title: "Transfer window · GOLAZO" }] }),
@@ -39,9 +39,9 @@ export const Route = createFileRoute("/career/postseason")({
 
 type Stage = "events" | "demands" | "rebuild" | "ready";
 
-/** When the user was relegated, they keep only their TOP 5 players and
- *  auto-draft replacements from a weaker pool. Encoded as the "Rebuild
- *  Season" flow — distinct UX from a normal transfer window. */
+/** When relegated, the squad culls down to the TOP N by rating — the rest
+ *  are force-sold and must be re-signed via spin in the rebuild stage.
+ *  Distinct cliff from a normal transfer window (1-3 cold players). */
 const RELEGATION_KEEP_TOP_N = 5;
 
 function PostSeason() {
@@ -49,7 +49,11 @@ function PostSeason() {
   const navigate = useNavigate();
 
   // All hooks unconditional (rules-of-hooks; see LEARNINGS.md L-1)
-  const allPlayers = useMemo(() => getCareerPlayers(), []);
+  const allPlayers = useMemo(
+    () => getCareerPlayers(career.foundingClubId),
+    [career.foundingClubId],
+  );
+  const allClubs = useMemo(() => getCareerClubs(career.foundingClubId), [career.foundingClubId]);
 
   // Build a {normalized name : form} map for star-demand detection
   const formMap = useMemo(() => {
@@ -68,42 +72,58 @@ function PostSeason() {
   }, [career.squad, formMap]);
 
   const coldPlayers = useMemo(() => {
-    return career.squad.filter((p) => {
+    const isFranchise = (p: Player) => `${p.club}:${p.name}` === career.franchisePlayerKey;
+    const naturallyCold = career.squad.filter((p) => {
+      if (isFranchise(p)) return false; // franchise is untouchable
       const key = `${p.club}:${normalizeName(p.name)}`;
       return (career.form[key] ?? 0) <= -2;
     });
-  }, [career.squad, career.form]);
+    // RELEGATION OVERRIDE: also force-sell the bottom (squad.length - KEEP_TOP_N)
+    // by rating. Same effective KEEP_TOP_N as the old "relegation rebuild"
+    // screen, but routes through the SAME spin-rebuild UX as a normal
+    // transfer — no /career/draft re-draft needed.
+    if (!career.relegatedLastSeason) return naturallyCold;
+    const sortedByRating = [...career.squad]
+      .filter((p) => !isFranchise(p))
+      .sort((a, b) => b.prime_rating - a.prime_rating);
+    const forced = sortedByRating.slice(RELEGATION_KEEP_TOP_N); // bottom N
+    const seen = new Set(naturallyCold.map((p) => normalizeName(p.name)));
+    const additional = forced.filter((p) => !seen.has(normalizeName(p.name)));
+    return [...naturallyCold, ...additional];
+  }, [career.squad, career.form, career.relegatedLastSeason, career.franchisePlayerKey]);
 
   const [stage, setStage] = useState<Stage>("events");
   const [decisionsByPlayer, setDecisionsByPlayer] = useState<Record<string, "keep" | "sell">>({});
-  const [replacementsNeeded, setReplacementsNeeded] = useState<number>(0);
   const [newSignings, setNewSignings] = useState<Player[]>([]);
-  const [searchQuery, setSearchQuery] = useState("");
+
+  // The players LEAVING the squad — the positions they vacate are what the
+  // user must replace via spin-rebuild. Drives the spin queue order +
+  // "need a [POSITION]" hint per replacement.
+  const departingPlayers = useMemo(() => {
+    const sold = career.squad.filter((p) => decisionsByPlayer[normalizeName(p.name)] === "sell");
+    const coldNames = new Set(coldPlayers.map((p) => normalizeName(p.name)));
+    const cold = career.squad.filter((p) => coldNames.has(normalizeName(p.name)));
+    const departureKey = career.pendingDeparture;
+    const departed = departureKey
+      ? career.squad.filter((p) => `${p.club}:${p.name}` === departureKey)
+      : [];
+    // Dedupe — a player could be both hot-sell and pending-departure
+    const seenKeys = new Set<string>();
+    const all = [...sold, ...cold, ...departed].filter((p) => {
+      const k = `${p.club}:${p.name}`;
+      if (seenKeys.has(k)) return false;
+      seenKeys.add(k);
+      return true;
+    });
+    return all;
+  }, [career.squad, decisionsByPlayer, coldPlayers, career.pendingDeparture]);
 
   // What positions does the user still need to fill? (After sells)
   // CRITICAL: this useMemo must be called unconditionally (rules-of-hooks).
   const remainingSquad = useMemo(() => {
-    const soldKeys = new Set<string>();
-    Object.entries(decisionsByPlayer).forEach(([nameKey, choice]) => {
-      if (choice === "sell") soldKeys.add(nameKey);
-    });
-    coldPlayers.forEach((p) => soldKeys.add(normalizeName(p.name)));
-    return career.squad.filter((p) => !soldKeys.has(normalizeName(p.name)));
-  }, [career.squad, decisionsByPlayer, coldPlayers]);
-
-  const searchResults = useMemo(() => {
-    const q = searchQuery.trim().toLowerCase();
-    if (q.length < 2) return [];
-    const usedKeys = new Set([
-      ...career.squad.map((p) => normalizeName(p.name)),
-      ...newSignings.map((p) => normalizeName(p.name)),
-    ]);
-    return allPlayers
-      .filter((p) => p.name.toLowerCase().includes(q))
-      .filter((p) => !usedKeys.has(normalizeName(p.name)))
-      .sort((a, b) => b.prime_rating - a.prime_rating)
-      .slice(0, 15);
-  }, [searchQuery, allPlayers, career.squad, newSignings]);
+    const departingKeys = new Set(departingPlayers.map((p) => `${p.club}:${p.name}`));
+    return career.squad.filter((p) => !departingKeys.has(`${p.club}:${p.name}`));
+  }, [career.squad, departingPlayers]);
 
   // Render guards — AFTER all hooks. See LEARNINGS.md L-1.
   if (career.squad.length === 0) {
@@ -117,90 +137,46 @@ function PostSeason() {
     );
   }
 
-  // Relegation override: if user was relegated last season, show the
-  // "Rebuild Season" UX instead of the normal transfer window.
-  if (career.relegatedLastSeason) {
-    return (
-      <RebuildSeasonCard
-        career={career}
-        onStart={() => {
-          // Keep top 5 by rating; the draft route will fill the other 6
-          const topN = [...career.squad]
-            .sort((a, b) => b.prime_rating - a.prime_rating)
-            .slice(0, RELEGATION_KEEP_TOP_N);
-          // Honor the end-of-season star-demand "let them go" choice:
-          // strip the departing player from the carried-over squad.
-          const carried = career.pendingDeparture
-            ? topN.filter((p) => `${p.club}:${p.name}` !== career.pendingDeparture)
-            : topN;
-          useCareer.setState({
-            squad: carried,
-            rivals: career.rivals.map((r) => ({ ...r, squad: [] })),
-            form: {},
-            relegatedLastSeason: false,
-            currentSeason: career.currentSeason + 1,
-            midSeasonSwapUsed: false, // fresh season → swap window resets
-            pendingDeparture: null, // consumed
-            starDemandResolved: false, // reset for next season's demand
-          });
-          navigate({ to: "/career/draft" });
-        }}
-      />
-    );
-  }
+  // (Relegation no longer redirects to a separate /career/draft re-draft.
+  // It flows through the SAME events → demands → rebuild → ready stages,
+  // with the bottom-N players auto-marked as "cold" forced-sells. See
+  // coldPlayers useMemo above.)
 
   function commitDecisions() {
-    let sellCount = 0;
-    Object.entries(decisionsByPlayer).forEach(([_, choice]) => {
-      if (choice === "sell") sellCount++;
-    });
-    setReplacementsNeeded(sellCount + coldPlayers.length);
-    setStage(sellCount + coldPlayers.length > 0 ? "rebuild" : "ready");
+    const needsRebuild = departingPlayers.length > 0;
+    setStage(needsRebuild ? "rebuild" : "ready");
   }
 
   function addSigning(p: Player) {
-    setNewSignings((prev) => [...prev, p]);
-    setSearchQuery("");
-    if (newSignings.length + 1 >= replacementsNeeded) {
-      setStage("ready");
-    }
+    setNewSignings((prev) => {
+      const next = [...prev, p];
+      if (next.length >= departingPlayers.length) {
+        setStage("ready");
+      }
+      return next;
+    });
   }
 
   function startNextSeason() {
-    // Build the new squad: keep non-sold non-cold players + new signings
-    const soldKeys = new Set<string>();
-    Object.entries(decisionsByPlayer).forEach(([nameKey, choice]) => {
-      if (choice === "sell") soldKeys.add(nameKey);
-    });
-    coldPlayers.forEach((p) => soldKeys.add(normalizeName(p.name)));
+    // Final squad: survivors (everyone NOT in departingPlayers) + new signings.
+    const newSquad = [...remainingSquad, ...newSignings];
 
-    const survivors = career.squad.filter((p) => !soldKeys.has(normalizeName(p.name)));
-    // Honor the end-of-season star-demand "let them go" choice (if any):
-    // strip the departing player from the survivors carrying into next season.
-    const afterDeparture = career.pendingDeparture
-      ? survivors.filter((p) => `${p.club}:${p.name}` !== career.pendingDeparture)
-      : survivors;
-    const newSquad = [...afterDeparture, ...newSignings];
-
-    // Reset rivals' squads (they re-draft from scratch next season too,
-    // following the same /career/draft flow). Clear form for a fresh slate.
-    const refreshedRivals = career.rivals.map((r) => ({ ...r, squad: [] }));
+    // AI rivals carry their squads forward and undergo a small auto-turnover
+    // (a couple of cheap swaps each) to keep the league dynamic without
+    // forcing the user through a /career/draft re-draft screen.
+    const refreshedRivals = autoTurnoverRivals(career.rivals, allPlayers, newSquad);
 
     useCareer.setState({
-      squad: [], // empty squad; the draft route will rebuild via commitDraft
+      squad: newSquad,
       rivals: refreshedRivals,
       form: {},
       currentSeason: career.currentSeason + 1,
       midSeasonSwapUsed: false, // fresh season → swap window resets
+      relegatedLastSeason: false, // consumed
       pendingDeparture: null, // consumed
       starDemandResolved: false, // reset for next season's demand
     });
-    // The user's saved-XI carry-over: store the surviving players as
-    // a "keep list" by setting them as initial squad before draft.
-    // For now, pre-fill the squad with survivors so the user only drafts
-    // (11 - survivors.length) new players in /career/draft.
-    useCareer.setState({ squad: newSquad });
-    navigate({ to: "/career/draft" });
+    navigate({ to: "/career/season" });
   }
 
   return (
@@ -248,6 +224,7 @@ function PostSeason() {
           <FormEventsCard
             hotPlayers={hotPlayers}
             coldPlayers={coldPlayers}
+            isRelegated={career.relegatedLastSeason}
             onContinue={() => setStage(hotPlayers.length > 0 ? "demands" : "rebuild")}
           />
         )}
@@ -267,13 +244,12 @@ function PostSeason() {
         )}
 
         {stage === "rebuild" && (
-          <RebuildCard
-            needed={replacementsNeeded}
-            signed={newSignings.length}
-            remainingSquad={remainingSquad}
-            search={searchQuery}
-            onSearch={setSearchQuery}
-            results={searchResults}
+          <SpinRebuildCard
+            departing={departingPlayers}
+            signings={newSignings}
+            allClubs={allClubs}
+            allPlayers={allPlayers}
+            currentSquad={remainingSquad}
             onPick={addSigning}
           />
         )}
@@ -291,22 +267,80 @@ function PostSeason() {
   );
 }
 
+// ─── AI rival rebuild (no /career/draft re-draft needed) ───────────────
+
+/**
+ * Each AI rival keeps the core of their squad and undergoes a couple of
+ * cheap swaps to simulate the offseason. Drops one weakest player, picks
+ * one mid-pool replacement of the same simplified bucket. Repeats twice.
+ *
+ * Kept INSIDE postseason (not /career/draft) so the user doesn't have to
+ * sit through a fresh snake draft just to watch AI rivals retool.
+ *
+ * If a rival's squad is empty (legacy save / fresh career), the function
+ * doesn't manufacture players — empty squads are tolerated by the season
+ * simulator (it falls back to a base strength).
+ */
+function autoTurnoverRivals<R extends { squad: Player[]; archetypeStyle?: string }>(
+  rivals: R[],
+  pool: Player[],
+  userSquad: Player[],
+): R[] {
+  const userKeys = new Set(userSquad.map((p) => `${p.club}:${p.name}`));
+  // Bucket pool by simplified position for cheap same-bucket replacement.
+  const byBucket: Record<string, Player[]> = { GK: [], DEF: [], MID: [], FWD: [] };
+  for (const p of pool) {
+    const bucket = simplifyPosition(p.position);
+    if (byBucket[bucket]) byBucket[bucket].push(p);
+  }
+  // Sort each bucket by rating desc — top candidates first
+  for (const b of Object.values(byBucket)) {
+    b.sort((a, b2) => b2.prime_rating - a.prime_rating);
+  }
+  return rivals.map((r, idx) => {
+    if (r.squad.length === 0) return r;
+    let squad = [...r.squad];
+    // Two cheap swaps per rival
+    for (let swap = 0; swap < 2; swap++) {
+      const weakest = [...squad].sort((a, b) => a.prime_rating - b.prime_rating)[0];
+      if (!weakest) break;
+      const bucket = simplifyPosition(weakest.position);
+      const taken = new Set([...squad.map((p) => `${p.club}:${p.name}`), ...userKeys]);
+      // Deterministic per-rival offset so different rivals pick different
+      // replacements from the same bucket.
+      const candidates = (byBucket[bucket] ?? []).filter((p) => !taken.has(`${p.club}:${p.name}`));
+      const replacement = candidates[(idx * 7 + swap) % Math.max(1, candidates.length)];
+      if (!replacement) break;
+      squad = squad
+        .filter((p) => `${p.club}:${p.name}` !== `${weakest.club}:${weakest.name}`)
+        .concat(replacement);
+    }
+    return { ...r, squad };
+  });
+}
+
 // ─── sub-components ─────────────────────────────────────────────────
 
 function FormEventsCard({
   hotPlayers,
   coldPlayers,
+  isRelegated,
   onContinue,
 }: {
   hotPlayers: Player[];
   coldPlayers: Player[];
+  isRelegated: boolean;
   onContinue: () => void;
 }) {
   return (
     <div className="rounded-2xl border border-border bg-card/40 p-5">
-      <div className="font-display text-xl mb-1">📰 Form events</div>
+      <div className="font-display text-xl mb-1">
+        {isRelegated ? "📉 Relegation rebuild" : "📰 Form events"}
+      </div>
       <div className="text-xs text-muted-foreground mb-4">
-        Players whose season form ended in +2 or -2 territory.
+        {isRelegated
+          ? `You were relegated. Top ${RELEGATION_KEEP_TOP_N} stay; everyone else is forced out and replaced via spin.`
+          : "Players whose season form ended in +2 or -2 territory."}
       </div>
 
       <div className="space-y-3">
@@ -446,151 +480,177 @@ function DemandsCard({
   );
 }
 
-function RebuildCard({
-  needed,
-  signed,
-  remainingSquad,
-  search,
-  onSearch,
-  results,
+/**
+ * SpinRebuildCard — same flavor as the mid-season swap window, but multi-
+ * step. For each player leaving (sold / cold / forced-by-relegation /
+ * pending-departure), the user spins a random club, then picks one
+ * compatible-position player from that club. No type-to-search. No skip
+ * — you commit to a replacement per slot.
+ *
+ * Matches the user spec: "Squad rebuild should not work as 'I select a
+ * player' but should be random...The player I want to sell needs to be
+ * replaced by the same position but it still a draw...random...and I
+ * need to make a pick."
+ */
+function SpinRebuildCard({
+  departing,
+  signings,
+  allClubs,
+  allPlayers,
+  currentSquad,
   onPick,
 }: {
-  needed: number;
-  signed: number;
-  remainingSquad: Player[];
-  search: string;
-  onSearch: (s: string) => void;
-  results: Player[];
+  departing: Player[];
+  signings: Player[];
+  allClubs: Club[];
+  allPlayers: Player[];
+  currentSquad: Player[];
   onPick: (p: Player) => void;
 }) {
-  return (
-    <div className="rounded-2xl border border-warning bg-warning/5 p-5">
-      <div className="font-display text-xl mb-1">🔄 Squad rebuild</div>
-      <div className="text-xs text-muted-foreground mb-4">
-        Sign <span className="font-display text-warning">{needed - signed}</span> player
-        {needed - signed === 1 ? "" : "s"} to refill empty slots.
-        <span className="block mt-1">
-          Survivors: <span className="text-warning">{remainingSquad.length}</span> · New signings:{" "}
-          <span className="text-warning">{signed}</span>
-        </span>
+  const [spinStage, setSpinStage] = useState<"prompt" | "spinning" | "picking">("prompt");
+  const [spunClub, setSpunClub] = useState<Club | null>(null);
+
+  const currentIdx = signings.length; // which departure we're filling next
+  const target = departing[currentIdx];
+
+  // Set of player keys already in any squad — keep replacements fresh.
+  const drafted = useMemo(() => {
+    const s = new Set<string>();
+    currentSquad.forEach((p) => s.add(`${p.club}:${p.name}`));
+    signings.forEach((p) => s.add(`${p.club}:${p.name}`));
+    return s;
+  }, [currentSquad, signings]);
+
+  if (!target) {
+    // All replacements done — Ready stage will render on next tick.
+    return (
+      <div className="rounded-2xl border border-warning bg-warning/5 p-5 text-center">
+        <div className="font-display text-xl text-warning">All slots filled</div>
+        <div className="text-xs text-muted-foreground mt-1">
+          Continuing to season {/* parent will switch stage */}…
+        </div>
       </div>
-      <input
-        type="text"
-        value={search}
-        onChange={(e) => onSearch(e.target.value)}
-        placeholder="Search for a player to sign…"
-        className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-warning transition"
-      />
-      {search.length >= 2 && results.length > 0 && (
-        <ul className="mt-2 divide-y divide-border rounded-xl border border-border bg-card/60 max-h-72 overflow-y-auto">
-          {results.map((p) => (
-            <li key={`${p.name}-${p.club}`}>
+    );
+  }
+
+  function spin() {
+    setSpinStage("spinning");
+    setTimeout(() => {
+      // Only land on clubs that have ≥1 undrafted player of compatible
+      // position. Same logic as the mid-season swap window — no dead-ends.
+      const eligible = allClubs.filter((c) =>
+        allPlayers.some(
+          (p) =>
+            p.club === c.id &&
+            !drafted.has(`${p.club}:${p.name}`) &&
+            isPositionCompatible(target.position, p.position),
+        ),
+      );
+      if (eligible.length === 0) {
+        // Genuinely no candidates left — fall through to "any position" pool.
+        const fallback = allClubs.filter((c) =>
+          allPlayers.some((p) => p.club === c.id && !drafted.has(`${p.club}:${p.name}`)),
+        );
+        const pick = fallback[Math.floor(Math.random() * fallback.length)];
+        setSpunClub(pick);
+        setSpinStage("picking");
+        return;
+      }
+      const pick = eligible[Math.floor(Math.random() * eligible.length)];
+      setSpunClub(pick);
+      setSpinStage("picking");
+    }, 700);
+  }
+
+  function pickPlayer(p: Player) {
+    onPick(p);
+    setSpunClub(null);
+    setSpinStage("prompt");
+  }
+
+  // PROMPT stage — show who's leaving and a Spin button
+  if (spinStage === "prompt") {
+    return (
+      <div className="rounded-2xl border border-warning bg-warning/5 p-5">
+        <div className="text-[10px] uppercase tracking-widest text-warning mb-1">
+          Replacement {currentIdx + 1} of {departing.length}
+        </div>
+        <div className="font-display text-xl">Find a new {target.position}</div>
+        <div className="text-xs text-muted-foreground mt-1">
+          <span className="line-through opacity-70">{target.name}</span> ({target.position} ·{" "}
+          {target.prime_rating}) is leaving. Spin the wheel — same position required.
+        </div>
+        <button
+          onClick={spin}
+          className="mt-4 w-full px-4 py-3 rounded-md bg-warning text-warning-foreground font-display tracking-wide hover:brightness-110 transition"
+        >
+          🎰 Spin for a {target.position}
+        </button>
+      </div>
+    );
+  }
+
+  if (spinStage === "spinning") {
+    return (
+      <div className="rounded-2xl border-2 border-warning bg-warning/10 p-8 text-center">
+        <div className="text-5xl animate-spin inline-block">🎰</div>
+        <div className="mt-3 text-sm text-muted-foreground">Drawing a {target.position}…</div>
+      </div>
+    );
+  }
+
+  // PICKING stage — wheel landed on spunClub, show compatible-position players
+  if (spinStage === "picking" && spunClub) {
+    const pool = allPlayers
+      .filter((p) => p.club === spunClub.id && !drafted.has(`${p.club}:${p.name}`))
+      .filter((p) => isPositionCompatible(target.position, p.position))
+      .sort((a, b) => b.prime_rating - a.prime_rating)
+      .slice(0, 12);
+    return (
+      <div className="rounded-2xl border-2 border-warning bg-warning/10 p-5">
+        <div className="text-center mb-4">
+          <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
+            Wheel landed on
+          </div>
+          <div className="font-display text-2xl text-warning">{spunClub.name}</div>
+          <div className="text-xs text-muted-foreground mt-1">
+            Pick your new {target.position} — you have to commit.
+          </div>
+        </div>
+        {pool.length === 0 ? (
+          <div className="text-sm text-muted-foreground py-4 text-center italic">
+            No compatible {target.position}s at {spunClub.name}.
+            <button
+              onClick={spin}
+              className="block mx-auto mt-3 px-4 py-2 rounded text-xs border border-warning/40 text-warning hover:bg-warning/10"
+            >
+              Spin again
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+            {pool.map((p) => (
               <button
-                onClick={() => onPick(p)}
-                className="w-full flex items-center justify-between gap-3 px-3 py-2 text-left hover:bg-warning/10 hover:text-warning transition"
+                key={`in-${p.name}-${p.club}`}
+                onClick={() => pickPlayer(p)}
+                className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-border bg-card text-sm text-left hover:border-warning hover:bg-warning/10 transition"
               >
                 <div className="min-w-0">
-                  <div className="text-sm font-medium truncate">{p.name}</div>
-                  <div className="text-[11px] text-muted-foreground truncate">
-                    {p.position} · {p.career_years} · {p.nationality}
+                  <div className="font-medium truncate">{p.name}</div>
+                  <div className="text-[10px] text-muted-foreground truncate">
+                    {p.position} · {p.career_years}
                   </div>
                 </div>
-                <span className="shrink-0 font-display text-base px-2 py-0.5 rounded bg-warning/10 text-warning border border-warning/30">
-                  {p.prime_rating}
-                </span>
+                <span className="shrink-0 font-display text-sm text-warning">{p.prime_rating}</span>
               </button>
-            </li>
-          ))}
-        </ul>
-      )}
-      {search.length >= 2 && results.length === 0 && (
-        <p className="mt-2 text-sm text-muted-foreground text-center py-4">
-          No matches. Try a different spelling.
-        </p>
-      )}
-    </div>
-  );
-}
-
-/**
- * Relegation rebuild — alternative UX when the user finished in the
- * bottom 2 of the league. Different vibe from a normal transfer window:
- *   - Keep only the top 5 players from your XI (by rating)
- *   - Auto-clear the rest of the squad
- *   - Next-season draft works as normal (you re-draft 6 new players;
- *     the wheel handles the pool)
- *   - No cup competition (you already lost league position)
- *
- * Matches the GOLAZO original "rebuild season" mechanic — relegation
- * has real consequences, not just a label.
- */
-function RebuildSeasonCard({
-  career,
-  onStart,
-}: {
-  career: ReturnType<typeof useCareer.getState>;
-  onStart: () => void;
-}) {
-  const top5 = [...career.squad]
-    .sort((a, b) => b.prime_rating - a.prime_rating)
-    .slice(0, RELEGATION_KEEP_TOP_N);
-  return (
-    <div className="min-h-screen px-4 py-8 max-w-2xl mx-auto">
-      <header className="text-center">
-        <Link
-          to="/career"
-          className="text-[11px] text-muted-foreground hover:text-warning underline"
-        >
-          ← GOLAZO hub
-        </Link>
-        <h1 className="mt-3 font-display text-3xl text-primary">📉 Rebuild Season</h1>
-        <p className="mt-2 text-sm text-muted-foreground max-w-md mx-auto">
-          You were relegated. Time to rebuild from a smaller core.
-        </p>
-      </header>
-
-      <div className="mt-8 rounded-2xl border-2 border-primary bg-primary/10 p-5">
-        <div className="font-display text-lg text-primary mb-1">The rules</div>
-        <ul className="text-sm space-y-1.5 text-foreground/85">
-          <li>
-            • You keep your <span className="text-primary">top {RELEGATION_KEEP_TOP_N}</span>{" "}
-            players (by rating)
-          </li>
-          <li>• The other 6 slots get re-drafted next season</li>
-          <li>• No cup competition — focus on getting back up</li>
-        </ul>
+            ))}
+          </div>
+        )}
       </div>
+    );
+  }
 
-      <div className="mt-6">
-        <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
-          Players you keep
-        </div>
-        <ul className="space-y-1.5">
-          {top5.map((p, i) => (
-            <li
-              key={`${p.name}-${i}`}
-              className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-warning/40 bg-warning/5"
-            >
-              <div className="min-w-0">
-                <div className="font-display text-sm truncate">{p.name}</div>
-                <div className="text-[11px] text-muted-foreground truncate">
-                  {p.position} · {p.career_years} · {p.nationality}
-                </div>
-              </div>
-              <span className="shrink-0 font-display text-base text-warning">{p.prime_rating}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <button
-        onClick={onStart}
-        className="mt-8 w-full px-4 py-4 rounded-md bg-primary text-primary-foreground font-display text-lg tracking-wide hover:brightness-110 transition"
-      >
-        Start Rebuild Season {career.currentSeason + 1} →
-      </button>
-    </div>
-  );
+  return null;
 }
 
 function ReadyCard({
