@@ -39,7 +39,8 @@ function SeasonScreen() {
       return;
     }
     const opponents = pickOpponents(CLUBS, league.opponentsCount);
-    const sim = simulateSeason(opponents, league.matches, ourRating, Math.floor(Math.random() * 1e9), config.difficulty);
+    const seed = config.challengeSeed ?? Math.floor(Math.random() * 1e9);
+    const sim = simulateSeason(opponents, league.matches, ourRating, seed, config.difficulty);
     setMatches(sim);
     setRevealCount(0);
   }, []); // eslint-disable-line
