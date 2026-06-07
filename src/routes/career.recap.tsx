@@ -28,14 +28,12 @@ import type { LeagueId } from "@/lib/leagues";
 import { getCareerClubs } from "@/lib/data";
 import { FORMATIONS } from "@/lib/formations";
 import { isPositionCompatible } from "@/lib/draft-helpers";
-import { normalizeName, simplifyPosition } from "@/lib/career-core";
 import { shareOrCopy } from "@/lib/share";
 import type { Player, Position } from "@/lib/game-types";
 
 // A star starts demanding a transfer when their season-form crosses this
 // threshold. Bumped from 2.0 → 2.5 after user feedback — at 2.0 every
 // season triggered a demand; at 2.5 it's a genuine outlier event.
-const STAR_DEMAND_THRESHOLD = 2.5;
 
 export const Route = createFileRoute("/career/recap")({
   head: () => ({ meta: [{ title: "Season Recap · GOLAZO" }] }),
@@ -55,87 +53,38 @@ function CareerRecap() {
     [clubs, latest, career.foundingClubId],
   );
 
-  // Demanding star: hottest-form non-franchise player ≥ +2.5. After-cup
-  // moment (user spec: "Lewandowski wanting out at the very bottom makes
-  // no sense...also it should come after the season is over including Cup").
-  const demandingStar = useMemo(() => {
-    if (career.starDemandResolved) return null;
-    const enriched = career.squad
-      .map((p) => ({
-        player: p,
-        formVal: career.form[`${p.club}:${normalizeName(p.name)}`] ?? 0,
-      }))
-      .filter((e) => e.formVal >= STAR_DEMAND_THRESHOLD)
-      .filter((e) => `${e.player.club}:${e.player.name}` !== career.franchisePlayerKey)
-      .sort((a, b) => b.formVal - a.formVal);
-    return enriched[0]?.player ?? null;
-  }, [career.squad, career.form, career.franchisePlayerKey, career.starDemandResolved]);
+  // Star-demand mechanic removed per user spec: "No demand or player
+  // leaving". The transfer window in /career/postseason now offers 2
+  // discretionary swaps instead of forced departures.
 
-  // Assign the current squad to formation slots — TWO-PASS strategy.
+  // Assign the current squad to formation slots — STRICT.
   //
-  // The recap is purely visual: it shouldn't place Benzema (ST) at LB
-  // just because the strict isPositionCompatible matrix says ST≠LW.
-  // User-reported regression (S2 relegation rebuild):
-  //   3 strikers + 1 CM + 1 GK in a 4-3-3 → strict pass placed only ONE
-  //   ST in the lone ST slot, then dumped the other two into LB/CB.
+  // User reported a striker landing in an LW slot and a CB landing in
+  // an LB slot. Earlier "fallback passes" relaxed the strict matrix to
+  // hide squad-vs-formation mismatches; better to make those mismatches
+  // VISIBLE by leaving the slot empty than to invent a placement that
+  // misrepresents the squad. The recap is truth: if 3 strikers in a
+  // 4-3-3 produce 2 empty defense slots, that's the honest picture.
   //
-  // Pass 1: strict (LB→LB, CM→CAM, etc.) — preserves real footy intent.
-  // Pass 2: forward-bucket promotion (ST→LW/RW, LW→ST, RW→ST) so a glut
-  //         of forwards lands in forward-band slots, never in defense.
-  // Pass 3: bucket-match by simplifyPosition (G/D/M/F → any G/D/M/F slot).
-  // Pass 4: anywhere — last resort for genuinely impossible setups.
+  // Match rule (single pass): isPositionCompatible only.
+  //   LB → LB only · RB → RB only · LW → LW only · RW → RW only
+  //   CB → CB only · GK → GK only · ST → ST only
+  //   CDM ↔ CM ↔ CAM (same family — same as real football)
   const assignedXI = useMemo(() => {
     if (!latest) return [] as Array<{ x: number; y: number; pos: Position; player: Player | null }>;
     const formation = FORMATIONS[latest.formation];
     const slots = formation.slots.map((s) => ({ ...s }));
     const assigned: Array<Player | null> = slots.map(() => null);
     const sorted = [...career.squad].sort((a, b) => b.prime_rating - a.prime_rating);
-
-    function tryPlace(
-      p: Player,
-      predicate: (slotPos: Position, playerPos: Position) => boolean,
-    ): boolean {
+    for (const p of sorted) {
       for (let i = 0; i < slots.length; i++) {
         if (assigned[i]) continue;
-        if (predicate(slots[i].position, p.position)) {
+        if (isPositionCompatible(slots[i].position, p.position)) {
           assigned[i] = p;
-          return true;
+          break;
         }
       }
-      return false;
     }
-
-    // Pass 1: strict same-family match
-    const unplacedAfterStrict: Player[] = [];
-    for (const p of sorted) {
-      if (!tryPlace(p, isPositionCompatible)) unplacedAfterStrict.push(p);
-    }
-
-    // Pass 2: forward-bucket — ST/LW/RW all count as forward slots when
-    // we've run out of strict family matches.
-    const FWDS: Position[] = ["ST", "LW", "RW"];
-    const unplacedAfterFwd: Player[] = [];
-    for (const p of unplacedAfterStrict) {
-      const placed = tryPlace(p, (slotPos, playerPos) => {
-        return FWDS.includes(slotPos) && FWDS.includes(playerPos);
-      });
-      if (!placed) unplacedAfterFwd.push(p);
-    }
-
-    // Pass 3: GK/DEF/MID/FWD bucket-match
-    const unplacedAfterBucket: Player[] = [];
-    for (const p of unplacedAfterFwd) {
-      const placed = tryPlace(p, (slotPos, playerPos) => {
-        return simplifyPosition(slotPos) === simplifyPosition(playerPos);
-      });
-      if (!placed) unplacedAfterBucket.push(p);
-    }
-
-    // Pass 4: anywhere (genuinely impossible squad — fall through)
-    for (const p of unplacedAfterBucket) {
-      tryPlace(p, () => true);
-    }
-
     return slots.map((s, i) => ({
       x: s.x,
       y: s.y,
@@ -312,111 +261,22 @@ function CareerRecap() {
       </div>
       {status && <div className="mt-3 text-center text-xs text-muted-foreground">{status}</div>}
 
-      {/* END-OF-SEASON STAR DEMAND — fires only when a non-franchise player
-          ended the season on form ≥ +2.5. Threshold tuned to make this
-          genuinely rare (not every-season noise). Gates the Continue button
-          until the user picks "Keep him" or "Let him go". */}
-      {demandingStar && (
-        <StarDemandCard
-          player={demandingStar}
-          onKeep={() => {
-            // New penalty (rerolls removed in GOLAZO per user spec): the
-            // resentful star starts next season on cold form (-1). The
-            // form-events stage of the NEXT season will pick this up
-            // and prompt the user again if it tips below -2.
-            const formKey = `${demandingStar.club}:${normalizeName(demandingStar.name)}`;
-            career.setForm(formKey, -1);
-            career.setPendingDeparture(null);
-            career.setStarDemandResolved(true);
-          }}
-          onLetGo={() => {
-            career.setPendingDeparture(`${demandingStar.club}:${demandingStar.name}`);
-            career.setStarDemandResolved(true);
-          }}
-        />
-      )}
-
-      {/* CONTINUE — disabled while a demand is unresolved */}
+      {/* CONTINUE — direct to transfer window (star demand mechanic removed) */}
       <div className="mt-8 text-center">
-        {demandingStar ? (
-          <button
-            disabled
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-warning/30 text-warning-foreground font-display text-base tracking-wide opacity-60 cursor-not-allowed"
-            title="Answer the star demand first"
-          >
-            Continue to transfer window →
-          </button>
-        ) : (
-          <Link
-            to="/career/postseason"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-warning text-warning-foreground font-display text-base tracking-wide hover:brightness-110 transition"
-          >
-            Continue to transfer window →
-          </Link>
-        )}
+        <Link
+          to="/career/postseason"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-warning text-warning-foreground font-display text-base tracking-wide hover:brightness-110 transition"
+        >
+          Continue to transfer window →
+        </Link>
       </div>
     </div>
   );
 }
 
-/**
- * End-of-season star demand card.
- *
- * Lives on /career/recap (not /career/season) so it fires AFTER the cup is
- * over and is shown alongside the recap visual context, not at the bottom
- * of a long match feed.
- */
-function StarDemandCard({
-  player,
-  onKeep,
-  onLetGo,
-}: {
-  player: Player;
-  onKeep: () => void;
-  onLetGo: () => void;
-}) {
-  return (
-    <div className="mt-8 rounded-2xl border-2 border-primary bg-primary/10 p-6">
-      <div className="text-center mb-4">
-        <div className="text-4xl mb-1">💬</div>
-        <div className="text-[11px] uppercase tracking-widest text-primary">Star demand</div>
-        <div className="font-display text-2xl text-warning mt-2">{player.name} wants out</div>
-        <p className="text-xs text-muted-foreground mt-2 max-w-md mx-auto">
-          After a hot season, your{" "}
-          <span className="text-warning">
-            {player.position} · {player.prime_rating}
-          </span>{" "}
-          rated {player.name} feels they've outgrown the squad. Convince them to stay or let them
-          walk.
-        </p>
-      </div>
-
-      <div className="grid sm:grid-cols-2 gap-3 mt-5">
-        <button
-          onClick={onKeep}
-          className="rounded-xl border-2 border-warning bg-warning/15 hover:bg-warning/25 p-4 text-left transition"
-        >
-          <div className="font-display text-warning text-lg mb-1">Keep him</div>
-          <div className="text-[11px] text-muted-foreground leading-relaxed">
-            He stays — but he's not happy. Starts next season on{" "}
-            <span className="text-primary">cold form (-1)</span>, so his output drops until you turn
-            it around.
-          </div>
-        </button>
-        <button
-          onClick={onLetGo}
-          className="rounded-xl border-2 border-primary/40 bg-primary/5 hover:bg-primary/15 p-4 text-left transition"
-        >
-          <div className="font-display text-primary text-lg mb-1">Let him go</div>
-          <div className="text-[11px] text-muted-foreground leading-relaxed">
-            He walks. The slot has to be re-signed via spin in the postseason rebuild — same as a
-            cold-form sell.
-          </div>
-        </button>
-      </div>
-    </div>
-  );
-}
+// (StarDemandCard removed — user spec: "No demand or player leaving".
+//  The /career/postseason transfer window now offers 2 discretionary
+//  swaps instead of forced departures.)
 
 // ─── helpers ─────────────────────────────────────────────────────────────
 

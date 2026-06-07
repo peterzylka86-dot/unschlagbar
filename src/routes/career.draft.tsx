@@ -606,6 +606,15 @@ function UserSlotBadge({ order, totalManagers }: { order: string[]; totalManager
   );
 }
 
+/**
+ * GOLAZO Career formations — user spec: only 4-3-3 and 4-4-2.
+ *
+ * The single-game mode still exposes the full FORMATIONS catalog, but
+ * Career mode is intentionally limited to the two classic shapes. Keeps
+ * the meta tight and avoids weird squad-vs-formation mismatches.
+ */
+const CAREER_FORMATIONS: Array<keyof typeof FORMATIONS> = ["4-3-3", "4-4-2"];
+
 function FormationPicker({
   current,
   onChange,
@@ -613,12 +622,11 @@ function FormationPicker({
   current: keyof typeof FORMATIONS;
   onChange: (f: keyof typeof FORMATIONS) => void;
 }) {
-  const keys = Object.keys(FORMATIONS) as Array<keyof typeof FORMATIONS>;
   return (
     <div className="mt-6 p-4 rounded-xl border border-warning/40 bg-warning/5">
       <div className="text-[10px] uppercase tracking-[0.2em] text-warning mb-2">Formation</div>
       <div className="flex flex-wrap gap-1.5">
-        {keys.map((k) => (
+        {CAREER_FORMATIONS.map((k) => (
           <button
             key={k}
             onClick={() => onChange(k)}
