@@ -357,15 +357,14 @@ function PostSeasonCTA({ ourPosition }: { ourPosition: number }) {
               : `Finished ${ourPosition}${ordinal(ourPosition)}`}
       </div>
       <div className="text-xs text-muted-foreground mb-5">
-        {isCupQualifier
-          ? "Cup competition + transfer window come next. (Post-season screen under construction.)"
-          : "Transfer window + rebuild come next. (Post-season screen under construction.)"}
+        Transfer window next: hot-form players demand moves, cold-form players auto-sell,
+        you fill any open slots.
       </div>
       <Link
-        to="/career"
+        to="/career/postseason"
         className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-warning text-warning-foreground font-display text-base tracking-wide hover:brightness-110 transition"
       >
-        Return to hub →
+        Transfer window →
       </Link>
     </div>
   );

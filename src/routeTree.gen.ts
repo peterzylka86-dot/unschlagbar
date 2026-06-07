@@ -16,6 +16,7 @@ import { Route as DraftRouteImport } from './routes/draft'
 import { Route as CareerRouteImport } from './routes/career'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CareerSeasonRouteImport } from './routes/career.season'
+import { Route as CareerPostseasonRouteImport } from './routes/career.postseason'
 import { Route as CareerFoundRouteImport } from './routes/career.found'
 import { Route as CareerDraftRouteImport } from './routes/career.draft'
 
@@ -54,6 +55,11 @@ const CareerSeasonRoute = CareerSeasonRouteImport.update({
   path: '/season',
   getParentRoute: () => CareerRoute,
 } as any)
+const CareerPostseasonRoute = CareerPostseasonRouteImport.update({
+  id: '/postseason',
+  path: '/postseason',
+  getParentRoute: () => CareerRoute,
+} as any)
 const CareerFoundRoute = CareerFoundRouteImport.update({
   id: '/found',
   path: '/found',
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/season': typeof SeasonRoute
   '/career/draft': typeof CareerDraftRoute
   '/career/found': typeof CareerFoundRoute
+  '/career/postseason': typeof CareerPostseasonRoute
   '/career/season': typeof CareerSeasonRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/season': typeof SeasonRoute
   '/career/draft': typeof CareerDraftRoute
   '/career/found': typeof CareerFoundRoute
+  '/career/postseason': typeof CareerPostseasonRoute
   '/career/season': typeof CareerSeasonRoute
 }
 export interface FileRoutesById {
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/season': typeof SeasonRoute
   '/career/draft': typeof CareerDraftRoute
   '/career/found': typeof CareerFoundRoute
+  '/career/postseason': typeof CareerPostseasonRoute
   '/career/season': typeof CareerSeasonRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/season'
     | '/career/draft'
     | '/career/found'
+    | '/career/postseason'
     | '/career/season'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/season'
     | '/career/draft'
     | '/career/found'
+    | '/career/postseason'
     | '/career/season'
   id:
     | '__root__'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/season'
     | '/career/draft'
     | '/career/found'
+    | '/career/postseason'
     | '/career/season'
   fileRoutesById: FileRoutesById
 }
@@ -195,6 +207,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CareerSeasonRouteImport
       parentRoute: typeof CareerRoute
     }
+    '/career/postseason': {
+      id: '/career/postseason'
+      path: '/postseason'
+      fullPath: '/career/postseason'
+      preLoaderRoute: typeof CareerPostseasonRouteImport
+      parentRoute: typeof CareerRoute
+    }
     '/career/found': {
       id: '/career/found'
       path: '/found'
@@ -215,12 +234,14 @@ declare module '@tanstack/react-router' {
 interface CareerRouteChildren {
   CareerDraftRoute: typeof CareerDraftRoute
   CareerFoundRoute: typeof CareerFoundRoute
+  CareerPostseasonRoute: typeof CareerPostseasonRoute
   CareerSeasonRoute: typeof CareerSeasonRoute
 }
 
 const CareerRouteChildren: CareerRouteChildren = {
   CareerDraftRoute: CareerDraftRoute,
   CareerFoundRoute: CareerFoundRoute,
+  CareerPostseasonRoute: CareerPostseasonRoute,
   CareerSeasonRoute: CareerSeasonRoute,
 }
 

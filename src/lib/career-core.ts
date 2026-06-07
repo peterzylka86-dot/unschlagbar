@@ -421,13 +421,17 @@ export function cupBracketSeeded(
 
 /** Identify players whose form has crossed into "I want a transfer" territory.
  *  Default threshold is FORM_MAX (2.0) — only the genuinely hottest players
- *  demand moves. */
-export function detectStarDemands(
-  squad: CareerPlayer[] | null | undefined,
+ *  demand moves.
+ *
+ *  Generic over the player shape so callers passing a richer `Player`
+ *  type get `Player[]` back, not `CareerPlayer[]` — fixes type-narrowing
+ *  when consumers need the full player record. */
+export function detectStarDemands<T extends CareerPlayer>(
+  squad: T[] | null | undefined,
   playerStats: Record<string, PlayerStat>,
   threshold: number = FORM_MAX,
-): CareerPlayer[] {
-  const result: CareerPlayer[] = [];
+): T[] {
+  const result: T[] = [];
   (squad ?? []).forEach(p => {
     const stat = playerStats[normalizeName(p.name)];
     if (stat && stat.form >= threshold) result.push(p);
