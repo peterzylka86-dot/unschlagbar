@@ -117,7 +117,7 @@ function GameSetup() {
       </Section>
 
       <Section label="Draft Mode">
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
           <OptionCard
             active={config.draftMode === "squad"}
             color="success"
@@ -131,6 +131,13 @@ function GameSetup() {
             title="Position First"
             sub="Pick a slot, then spin for a club to fill it"
             onClick={() => setConfig({ draftMode: "position" as DraftMode })}
+          />
+          <OptionCard
+            active={config.draftMode === "quick"}
+            color="warning"
+            title="Quick ⚡"
+            sub="Two players per club — for the impatient"
+            onClick={() => setConfig({ draftMode: "quick" as DraftMode })}
           />
         </div>
       </Section>
