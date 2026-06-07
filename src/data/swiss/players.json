@@ -3814,5 +3814,13 @@
     "career_years": "1996-1998",
     "nationality": "Switzerland",
     "club": "yverdon"
+  },
+  {
+    "name": "Yann Sommer",
+    "position": "GK",
+    "prime_rating": 84,
+    "career_years": "2008-2010",
+    "nationality": "Switzerland",
+    "club": "grasshopper"
   }
 ]
