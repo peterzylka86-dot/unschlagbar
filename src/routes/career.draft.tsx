@@ -43,7 +43,10 @@ export const Route = createFileRoute("/career/draft")({
   component: CareerDraft,
 });
 
-const AI_RIVALS_COUNT = 5;
+// 12-manager league (user + 11 AI rivals) — matches the GOLAZO league sizing
+// we fixed yesterday (was capped at 8 by the archetype-slice bug; the
+// buildAIManagers fix recycles archetypes when n > pool, so 11 works).
+const AI_RIVALS_COUNT = 11;
 const SQUAD_SIZE = 11;
 // 4-3-3 default for now — could read from career config later
 const FORMATION_NEED: FormationNeed = { G: 1, D: 4, M: 3, F: 3 };
@@ -359,7 +362,7 @@ function CareerDraft() {
       </div>
 
       {draftDone ? (
-        <SeasonReadyCard userManager={userManager} />
+        <SeasonReadyCard userManager={userManager} allManagers={draft.managers} />
       ) : (
         <div className="mt-6 grid md:grid-cols-[1fr_320px] gap-6">
           {/* Left: user pick area */}
@@ -637,8 +640,33 @@ function AIRivalCard({ manager, onClock }: { manager: Manager; onClock: boolean 
   );
 }
 
-function SeasonReadyCard({ userManager }: { userManager: Manager }) {
+function SeasonReadyCard({ userManager, allManagers }: {
+  userManager: Manager;
+  allManagers: Manager[];
+}) {
+  const career = useCareer();
   const avg = userManager.squad.reduce((a, p) => a + p.prime_rating, 0) / Math.max(1, userManager.squad.length);
+
+  // Commit the draft result to the career store once on mount of this card.
+  // Idempotent: if rivals are already saved, no-op.
+  useEffect(() => {
+    if (career.rivals.length > 0) return;
+    const rivals = allManagers
+      .filter(m => !m.isUser)
+      .map(m => ({
+        id: m.id,
+        name: m.name,
+        badge: m.badge,
+        color: m.color,
+        archetypeName: m.archetypeName,
+        archetypeStyle: m.archetypeStyle,
+        foundingClubId: m.foundingClubId,
+        squad: m.squad,
+      }));
+    career.commitDraft(userManager.squad, rivals);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="mt-10 rounded-2xl border-2 border-warning bg-warning/10 p-6 text-center">
       <div className="text-4xl mb-2">⚽</div>
@@ -647,14 +675,13 @@ function SeasonReadyCard({ userManager }: { userManager: Manager }) {
         Your XI is locked. Average rating: <span className="text-warning font-display">{avg.toFixed(1)}</span>
       </div>
       <div className="text-xs text-muted-foreground mb-5">
-        Next step: simulate your first season. The season-flow screen is under construction —
-        for now, your draft picks are saved.
+        12-manager league. 22 matchdays. Top 8 qualify for the cup. Bottom 2 relegate.
       </div>
       <Link
-        to="/career"
+        to="/career/season"
         className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-warning text-warning-foreground font-display text-base tracking-wide hover:brightness-110 transition"
       >
-        Return to hub →
+        Start Season {career.currentSeason} →
       </Link>
     </div>
   );

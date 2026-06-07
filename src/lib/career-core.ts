@@ -61,8 +61,8 @@ export type StandingsTable = Record<string, StandingsRow>;
 export interface Archetype {
   name: string;
   style: string;
-  /** One-line flavor describing their draft personality. */
-  description: string;
+  /** Optional one-line flavor describing their draft personality (used by UI). */
+  description?: string;
 }
 
 /** The canonical archetype set ported from GOLAZO. Each rival picks

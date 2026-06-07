@@ -21,6 +21,19 @@ import type { Player } from "./game-types";
 /** Bump this when a non-backwards-compat change to CareerState ships. */
 export const CAREER_SCHEMA_VERSION = 1;
 
+/** A rival manager snapshot — saved after the draft so the season knows
+ *  who the user is playing against and what each rival's squad looks like. */
+export interface RivalManagerSave {
+  id: string;
+  name: string;
+  badge: string;
+  color: string;
+  archetypeName: string;
+  archetypeStyle: string;
+  foundingClubId: string;
+  squad: Player[];
+}
+
 export interface CareerState {
   /** Schema version of the persisted save. */
   schemaVersion: number;
@@ -34,6 +47,10 @@ export interface CareerState {
   currentSeason: number;
   /** The user's permanent squad — survives season boundaries. */
   squad: Player[];
+  /** The 11 AI rivals you face this season. Saved post-draft. */
+  rivals: RivalManagerSave[];
+  /** Per-player form, indexed by composite key `${club}:${name}`. */
+  form: Record<string, number>;
   /** Total trophies won so far (league titles + cups + UCLs etc.). */
   trophies: number;
 }
@@ -45,6 +62,8 @@ const initialCareerState: CareerState = {
   leagueId: null,
   currentSeason: 1,
   squad: [],
+  rivals: [],
+  form: {},
   trophies: 0,
 };
 
@@ -57,6 +76,10 @@ interface CareerStore extends CareerState {
   abandonCareer: () => void;
   /** Append a player to the permanent squad. */
   addToSquad: (player: Player) => void;
+  /** Save the draft result (user squad + AI rivals) atomically. */
+  commitDraft: (userSquad: Player[], rivals: RivalManagerSave[]) => void;
+  /** Update form value for a player (clamped externally). */
+  setForm: (playerKey: string, value: number) => void;
 }
 
 export const useCareer = create<CareerStore>()(
@@ -73,6 +96,8 @@ export const useCareer = create<CareerStore>()(
         leagueId,
         currentSeason: 1,
         squad: [],
+        rivals: [],
+        form: {},
         trophies: 0,
       }),
 
@@ -80,6 +105,15 @@ export const useCareer = create<CareerStore>()(
 
       addToSquad: (player) => set(state => ({
         squad: [...state.squad, player],
+      })),
+
+      commitDraft: (userSquad, rivals) => set({
+        squad: userSquad,
+        rivals,
+      }),
+
+      setForm: (playerKey, value) => set(state => ({
+        form: { ...state.form, [playerKey]: value },
       })),
     }),
     {
@@ -93,6 +127,8 @@ export const useCareer = create<CareerStore>()(
         leagueId: state.leagueId,
         currentSeason: state.currentSeason,
         squad: state.squad,
+        rivals: state.rivals,
+        form: state.form,
         trophies: state.trophies,
       }),
     },
