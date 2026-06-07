@@ -40,6 +40,11 @@ export const Route = createFileRoute("/career/postseason")({
 
 type Stage = "events" | "demands" | "rebuild" | "ready";
 
+/** When the user was relegated, they keep only their TOP 5 players and
+ *  auto-draft replacements from a weaker pool. Encoded as the "Rebuild
+ *  Season" flow — distinct UX from a normal transfer window. */
+const RELEGATION_KEEP_TOP_N = 5;
+
 function PostSeason() {
   const career = useCareer();
   const navigate = useNavigate();
@@ -109,6 +114,28 @@ function PostSeason() {
         No active career — head back to <Link to="/career" className="underline ml-1">/career</Link>
       </div>
     );
+  }
+
+  // Relegation override: if user was relegated last season, show the
+  // "Rebuild Season" UX instead of the normal transfer window.
+  if (career.relegatedLastSeason) {
+    return <RebuildSeasonCard
+      career={career}
+      onStart={() => {
+        // Keep top 5 by rating; the draft route will fill the other 6
+        const topN = [...career.squad]
+          .sort((a, b) => b.prime_rating - a.prime_rating)
+          .slice(0, RELEGATION_KEEP_TOP_N);
+        useCareer.setState({
+          squad: topN,
+          rivals: career.rivals.map(r => ({ ...r, squad: [] })),
+          form: {},
+          relegatedLastSeason: false,
+          currentSeason: career.currentSeason + 1,
+        });
+        navigate({ to: "/career/draft" });
+      }}
+    />;
   }
 
   function commitDecisions() {
@@ -415,6 +442,73 @@ function RebuildCard({ needed, signed, remainingSquad, search, onSearch, results
           No matches. Try a different spelling.
         </p>
       )}
+    </div>
+  );
+}
+
+/**
+ * Relegation rebuild — alternative UX when the user finished in the
+ * bottom 2 of the league. Different vibe from a normal transfer window:
+ *   - Keep only the top 5 players from your XI (by rating)
+ *   - Auto-clear the rest of the squad
+ *   - Next-season draft works as normal (you re-draft 6 new players;
+ *     the wheel handles the pool)
+ *   - No cup competition (you already lost league position)
+ *
+ * Matches the GOLAZO original "rebuild season" mechanic — relegation
+ * has real consequences, not just a label.
+ */
+function RebuildSeasonCard({ career, onStart }: {
+  career: ReturnType<typeof useCareer.getState>;
+  onStart: () => void;
+}) {
+  const top5 = [...career.squad]
+    .sort((a, b) => b.prime_rating - a.prime_rating)
+    .slice(0, RELEGATION_KEEP_TOP_N);
+  return (
+    <div className="min-h-screen px-4 py-8 max-w-2xl mx-auto">
+      <header className="text-center">
+        <Link to="/career" className="text-[11px] text-muted-foreground hover:text-warning underline">
+          ← GOLAZO hub
+        </Link>
+        <h1 className="mt-3 font-display text-3xl text-primary">📉 Rebuild Season</h1>
+        <p className="mt-2 text-sm text-muted-foreground max-w-md mx-auto">
+          You were relegated. Time to rebuild from a smaller core.
+        </p>
+      </header>
+
+      <div className="mt-8 rounded-2xl border-2 border-primary bg-primary/10 p-5">
+        <div className="font-display text-lg text-primary mb-1">The rules</div>
+        <ul className="text-sm space-y-1.5 text-foreground/85">
+          <li>• You keep your <span className="text-primary">top {RELEGATION_KEEP_TOP_N}</span> players (by rating)</li>
+          <li>• The other 6 slots get re-drafted next season</li>
+          <li>• No cup competition — focus on getting back up</li>
+        </ul>
+      </div>
+
+      <div className="mt-6">
+        <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Players you keep</div>
+        <ul className="space-y-1.5">
+          {top5.map((p, i) => (
+            <li key={`${p.name}-${i}`} className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-warning/40 bg-warning/5">
+              <div className="min-w-0">
+                <div className="font-display text-sm truncate">{p.name}</div>
+                <div className="text-[11px] text-muted-foreground truncate">
+                  {p.position} · {p.career_years} · {p.nationality}
+                </div>
+              </div>
+              <span className="shrink-0 font-display text-base text-warning">{p.prime_rating}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <button
+        onClick={onStart}
+        className="mt-8 w-full px-4 py-4 rounded-md bg-primary text-primary-foreground font-display text-lg tracking-wide hover:brightness-110 transition"
+      >
+        Start Rebuild Season {career.currentSeason + 1} →
+      </button>
     </div>
   );
 }

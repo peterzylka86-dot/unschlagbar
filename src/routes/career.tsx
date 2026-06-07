@@ -56,6 +56,18 @@ function CareerHub() {
       </header>
 
       <div className="mt-10 space-y-4">
+        {career.seasonHistory.length > 0 && (
+          <Link
+            to="/career/history"
+            className="block p-4 rounded-xl border border-warning/40 bg-warning/5 hover:bg-warning/10 transition text-center"
+          >
+            <span className="text-warning font-display text-sm">🏆 Hall of Fame</span>
+            <span className="text-muted-foreground text-xs ml-2">
+              · {career.seasonHistory.length} season{career.seasonHistory.length === 1 ? "" : "s"} · {career.trophies} {career.trophies === 1 ? "trophy" : "trophies"}
+            </span>
+          </Link>
+        )}
+
         {hasActive && club ? (
           <ActiveCareerCard
             clubName={club.name}
