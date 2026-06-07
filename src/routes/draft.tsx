@@ -207,17 +207,20 @@ function DraftScreen() {
     <div className="min-h-screen px-3 py-6 max-w-6xl mx-auto">
       <header className="flex items-center justify-between gap-3">
         <Link to="/" className="brand-mark text-3xl inline-flex items-baseline gap-0.5 leading-none">
-          <span>34</span><span className="text-primary">:</span><span>0</span>
-          <span className="ml-2 text-[10px] tracking-[0.25em] text-warning/80 hidden sm:inline">UNSCHLAGBAR</span>
+          <span>{league.brandMark.split(":")[0]}</span><span className="text-primary">:</span><span>{league.brandMark.split(":")[1]}</span>
+          <span className="ml-2 text-[10px] tracking-[0.25em] text-warning/80 hidden sm:inline">{league.tagline}</span>
+          <span className="ml-2 text-base leading-none" aria-hidden>{league.flag}</span>
         </Link>
         <div className="flex items-center gap-2 text-xs">
           <span className="pixel-badge text-[11px]">{config.formation}</span>
           <span className="scoreboard rounded-sm text-sm tabular-nums">
             <span className="opacity-60 text-[10px] mr-1">SQUAD</span>{String(filledCount).padStart(2,"0")}/{String(totalSlots).padStart(2,"0")}
           </span>
-          <span className="scoreboard amber rounded-sm text-sm tabular-nums">
-            <span className="opacity-60 text-[10px] mr-1">RR</span>{String(rerollsLeft).padStart(2,"0")}
-          </span>
+          {rerollsLeft > 0 && (
+            <span className="scoreboard amber rounded-sm text-sm tabular-nums">
+              <span className="opacity-60 text-[10px] mr-1">RR</span>{String(rerollsLeft).padStart(2,"0")}
+            </span>
+          )}
         </div>
       </header>
 
