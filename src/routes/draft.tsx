@@ -258,16 +258,29 @@ function DraftScreen() {
       return () => clearTimeout(t);
     }
   }, [assigningPlayer, compatibleSlotsForAssign.length]);
-  // auto-skip club if it has no compatible players (prevents stuck state)
+  // Auto-skip club if it has no compatible players (prevents stuck state).
+  // User now ALSO has a manual "🎰 Spin again" button in the empty-pool
+  // state of PlayerPicker — this background timer is a belt-and-suspenders
+  // fallback so the wheel re-spins even if the user doesn't click.
+  // queueAutoSpin is no-op in position mode (by design), so for that mode
+  // we trigger spinClub() directly.
   const currentClubPlayers = currentClub ? playersForCurrentClub() : [];
   useEffect(() => {
     if (currentClub && !assigningPlayer && currentClubPlayers.length === 0) {
       const t = setTimeout(() => {
         setCurrentClub(null);
-        queueAutoSpin();
+        if (config.draftMode === "position") {
+          // No squad-mode auto-spin loop in position mode — kick it once
+          // so the wheel keeps moving instead of dumping the user back on
+          // a blank wheel.
+          spinClub();
+        } else {
+          queueAutoSpin();
+        }
       }, 900);
       return () => clearTimeout(t);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentClub, assigningPlayer, currentClubPlayers.length]);
 
   return (
@@ -724,7 +737,6 @@ function PlayerPicker({
   rerollsLeft: number;
   onSkip: () => void;
 }) {
-  void onSkip;
   const [quickPicks, setQuickPicks] = useState<Player[]>([]);
   const [showAll, setShowAll] = useState(false);
   const isQuick = mode === "quick";
@@ -806,32 +818,60 @@ function PlayerPicker({
       )}
       <div className="mt-2 -mx-1 px-1 overflow-y-auto max-h-[380px] flex flex-col gap-1.5">
         {players.length === 0 && (
-          <p className="text-sm text-muted-foreground py-6 text-center">
-            No matching players from this club.
-          </p>
+          <div className="py-6 text-center">
+            <div className="text-3xl mb-2">🎲</div>
+            <p className="text-sm text-muted-foreground mb-1">
+              No matching players from this club.
+            </p>
+            <p className="text-[11px] text-muted-foreground/70 mb-4">
+              Spin again — the wheel will land on a different club.
+            </p>
+            <button
+              onClick={onSkip}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-warning text-warning-foreground font-display text-sm tracking-wide hover:brightness-110 transition"
+            >
+              🎰 Spin again
+            </button>
+          </div>
         )}
         {visible.map((p) => {
           const selected =
             isQuick && quickPicks.some((qp) => qp.name === p.name && qp.club === p.club);
+          // Selected uses SUCCESS-green (distinct from the always-yellow
+          // rating chip). Previously selected was yellow-on-yellow which
+          // made the state hard to read against the yellow rating badge.
           return (
             <button
               key={p.name}
               onClick={() => togglePick(p)}
-              className={`flex items-center justify-between gap-2 px-3 py-2 rounded-lg border hover:bg-background hover:-translate-y-0.5 transition text-left group ${
-                selected ? "bg-warning/15 border-warning" : "bg-background/50 border-border"
+              className={`flex items-center justify-between gap-2 px-3 py-2 rounded-lg border-2 hover:-translate-y-0.5 transition text-left group ${
+                selected
+                  ? "bg-success/15 border-success ring-2 ring-success/40"
+                  : "bg-background/50 border-border hover:bg-background hover:border-warning/60"
               }`}
               style={{ ["--club" as string]: club.color }}
             >
-              <div className="min-w-0">
-                <div className="text-sm font-medium truncate group-hover:text-warning">
-                  {p.name}
-                </div>
-                <div className="text-[11px] text-muted-foreground truncate">
-                  {p.position} · {p.career_years} · {p.nationality}
+              <div className="min-w-0 flex items-center gap-2">
+                {selected && (
+                  <span className="shrink-0 text-success font-display" aria-label="picked">
+                    ✓
+                  </span>
+                )}
+                <div className="min-w-0">
+                  <div
+                    className={`text-sm font-medium truncate ${
+                      selected ? "text-success" : "group-hover:text-warning"
+                    }`}
+                  >
+                    {p.name}
+                  </div>
+                  <div className="text-[11px] text-muted-foreground truncate">
+                    {p.position} · {p.career_years} · {p.nationality}
+                  </div>
                 </div>
               </div>
               {showRatings && (
-                <span className="font-display text-xl px-2 py-0.5 rounded bg-warning/10 text-warning border border-warning/30 shadow-[0_0_12px_-4px] shadow-warning/60">
+                <span className="shrink-0 font-display text-xl px-2 py-0.5 rounded bg-warning/10 text-warning border border-warning/30">
                   {p.prime_rating}
                 </span>
               )}
@@ -847,14 +887,27 @@ function PlayerPicker({
           </button>
         )}
       </div>
-      {onReroll && (
+      {/* Action row — Spin again is always available so the user can
+          escape a dead-end club. Reroll (if rerolls remain) is shown
+          alongside but only when there ARE players to pick from. */}
+      {players.length > 0 && (
         <div className="mt-3 flex gap-2">
           <button
-            onClick={onReroll}
-            className="flex-1 px-3 py-2 text-xs rounded-lg border border-warning/40 text-warning hover:bg-warning/10"
+            onClick={onSkip}
+            className="flex-1 px-3 py-2 text-xs rounded-lg border border-border bg-card/40 text-muted-foreground hover:text-warning hover:border-warning/40 transition"
+            title="Spin again — pick a different club"
           >
-            Reroll ({rerollsLeft})
+            🎰 Spin again
           </button>
+          {onReroll && (
+            <button
+              onClick={onReroll}
+              className="flex-1 px-3 py-2 text-xs rounded-lg border border-warning/40 text-warning hover:bg-warning/10"
+              title="Use one of your rerolls"
+            >
+              Reroll ({rerollsLeft})
+            </button>
+          )}
         </div>
       )}
     </motion.div>
