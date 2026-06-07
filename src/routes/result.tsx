@@ -182,3 +182,104 @@ function ResultScreen() {
     </div>
   );
 }
+
+function ShareBlock() {
+  const { slots, matches, config } = useGame();
+  const league = LEAGUES[config.league];
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [status, setStatus] = useState<string | null>(null);
+
+  async function onShareText() {
+    const text = buildShareText(config, slots, matches, config.challengeSeed);
+    const r = await shareOrCopy(text, `${league.brandMark} ${league.tagline}`);
+    setStatus(r === "shared" ? "Shared!" : "Copied to clipboard");
+    setTimeout(() => setStatus(null), 2200);
+  }
+  async function onShareImage() {
+    if (!cardRef.current) return;
+    try {
+      const dataUrl = await toPng(cardRef.current, { pixelRatio: 2, cacheBust: true, backgroundColor: "#0a0a0a" });
+      const link = document.createElement("a");
+      link.download = `unschlagbar-${config.league}.png`;
+      link.href = dataUrl;
+      link.click();
+      setStatus("Image saved");
+      setTimeout(() => setStatus(null), 2200);
+    } catch {
+      setStatus("Image failed");
+      setTimeout(() => setStatus(null), 2200);
+    }
+  }
+
+  const wins = matches.filter(m => m.outcome === "W").length;
+  const draws = matches.filter(m => m.outcome === "D").length;
+  const losses = matches.filter(m => m.outcome === "L").length;
+  const gf = matches.reduce((a, m) => a + m.ourScore, 0);
+  const ga = matches.reduce((a, m) => a + m.theirScore, 0);
+  const unbeaten = matches.length > 0 && losses === 0;
+
+  return (
+    <div className="mt-10">
+      <div className="flex justify-center gap-2 flex-wrap">
+        <button
+          onClick={onShareText}
+          className="px-5 py-2.5 rounded-xl border border-warning/50 bg-warning/10 text-warning font-display tracking-wide hover:bg-warning/20"
+        >
+          📋 Share recap
+        </button>
+        <button
+          onClick={onShareImage}
+          className="px-5 py-2.5 rounded-xl border border-foreground/20 hover:bg-card font-display tracking-wide"
+        >
+          🖼️ Save as image
+        </button>
+      </div>
+      {status && (
+        <div className="mt-2 text-xs text-warning">{status}</div>
+      )}
+
+      {/* Offscreen share card used for PNG export */}
+      <div className="fixed -left-[9999px] top-0 pointer-events-none" aria-hidden>
+        <div
+          ref={cardRef}
+          className="w-[640px] p-8 bg-background text-foreground"
+          style={{ background: "linear-gradient(135deg, #0a0a0a, #1a0a14)" }}
+        >
+          <div className="flex items-baseline justify-between">
+            <div className="brand-mark text-5xl text-warning leading-none">
+              {league.brandMark.split(":")[0]}<span className="text-primary">:</span>{league.brandMark.split(":")[1]}
+            </div>
+            <div className="text-right">
+              <div className="text-[10px] tracking-[0.3em] text-warning/80">{league.tagline}</div>
+              <div className="text-xs text-muted-foreground">{league.flag} {league.name}</div>
+            </div>
+          </div>
+          <div className="mt-6 grid grid-cols-2 gap-1.5">
+            {slots.map(s => (
+              <div key={s.id} className="flex items-center gap-2 px-2 py-1.5 rounded border border-white/10 bg-white/5 text-sm">
+                <span className="font-mono text-[10px] text-warning w-8">{s.position}</span>
+                <span className="truncate">{s.player?.name ?? "—"}</span>
+              </div>
+            ))}
+          </div>
+          {matches.length > 0 && (
+            <div className="mt-6 flex items-center justify-between px-3 py-2 rounded border border-warning/40 bg-warning/10">
+              <div className="font-display text-2xl">
+                <span className="text-success">{wins}</span>
+                <span className="text-muted-foreground mx-1">·</span>
+                <span className="text-warning">{draws}</span>
+                <span className="text-muted-foreground mx-1">·</span>
+                <span className="text-destructive">{losses}</span>
+              </div>
+              <div className="font-display text-xl tabular-nums">{gf}:{ga}</div>
+              {unbeaten && (
+                <div className="text-xs font-display tracking-widest text-warning">★ {league.unbeatenLabel} ★</div>
+              )}
+            </div>
+          )}
+          <div className="mt-4 text-[10px] text-muted-foreground text-center">unschlagbar.lovable.app</div>
+        </div>
+      </div>
+    </div>
+  );
+}
