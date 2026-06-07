@@ -207,7 +207,7 @@ function SeasonScreen() {
         </AnimatePresence>
 
         {isKO ? (
-          <BracketView matches={matches} revealCount={revealCount} allRounds={league.rounds ?? []} />)
+          <BracketView matches={matches} revealCount={revealCount} allRounds={league.rounds ?? []} />
         ) : (
           <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
             {matches.map((m, i) => {
@@ -271,15 +271,45 @@ function SeasonScreen() {
   );
 }
 
-function BracketView({ matches, revealCount }: { matches: MatchResult[]; revealCount: number }) {
-  // Group matches by round, preserving order
-  const groups: { round: string; items: { m: MatchResult; idx: number }[] }[] = [];
+function BracketView({ matches, revealCount, allRounds }: { matches: MatchResult[]; revealCount: number; allRounds: string[] }) {
+  // Group played matches by round, preserving order
+  const groups: { round: string; items: { m: MatchResult; idx: number }[]; played: boolean }[] = [];
   matches.forEach((m, idx) => {
     const r = m.round ?? "Match";
     const last = groups[groups.length - 1];
     if (last && last.round === r) last.items.push({ m, idx });
-    else groups.push({ round: r, items: [{ m, idx }] });
+    else groups.push({ round: r, items: [{ m, idx }], played: true });
   });
+
+  // Append ghost rounds for any rounds in the bracket that were never reached
+  const playedRoundsCount: Record<string, number> = {};
+  matches.forEach(m => { const r = m.round ?? "Match"; playedRoundsCount[r] = (playedRoundsCount[r] ?? 0) + 1; });
+  const expectedCount: Record<string, number> = {};
+  allRounds.forEach(r => { expectedCount[r] = (expectedCount[r] ?? 0) + 1; });
+  // Find first round in allRounds that wasn't fully played, render rest as ghosts
+  const seenInAll: Record<string, number> = {};
+  const ghostRounds: { round: string; slots: number }[] = [];
+  let cutoff = false;
+  for (const r of allRounds) {
+    seenInAll[r] = (seenInAll[r] ?? 0) + 1;
+    if (cutoff) {
+      const last = ghostRounds[ghostRounds.length - 1];
+      if (last && last.round === r) last.slots += 1;
+      else ghostRounds.push({ round: r, slots: 1 });
+      continue;
+    }
+    if ((playedRoundsCount[r] ?? 0) < (expectedCount[r] ?? 0)) {
+      // Once we encounter an under-played round, mark cutoff for any later rounds
+      // (this round itself: if partially played it stays in `groups`; everything AFTER becomes ghost)
+      // We only add ghost entries for rounds that come AFTER any played match.
+      const lastPlayedRoundIdx = groups.length - 1;
+      const currentRoundAlreadyShown = lastPlayedRoundIdx >= 0 && groups[lastPlayedRoundIdx]!.round === r;
+      if (!currentRoundAlreadyShown && (playedRoundsCount[r] ?? 0) === 0) {
+        ghostRounds.push({ round: r, slots: expectedCount[r] ?? 1 });
+      }
+      cutoff = true;
+    }
+  }
 
   return (
     <div className="mt-6 space-y-5">
@@ -305,6 +335,24 @@ function BracketView({ matches, revealCount }: { matches: MatchResult[]; revealC
           </div>
         );
       })}
+      {ghostRounds.map((g, gi) => (
+        <div key={`ghost-${gi}-${g.round}`} className="rounded-xl border border-dashed border-muted-foreground/20 bg-card/10 p-3 opacity-60">
+          <div className="flex items-center justify-between mb-2">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground font-display">{g.round}</div>
+            <div className="text-[10px] text-destructive/80 uppercase tracking-widest">Not reached</div>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            {Array.from({ length: g.slots }).map((_, i) => (
+              <div key={i} className="flex items-center gap-3 p-3 rounded-lg border border-dashed border-muted-foreground/20 bg-card/20">
+                <div className="w-7 text-[11px] text-muted-foreground font-mono pl-1">—</div>
+                <div className="w-8 h-8 rounded-full border border-dashed border-muted-foreground/30" />
+                <div className="flex-1 text-xs text-muted-foreground italic">Eliminated in group stage</div>
+                <div className="font-display text-lg tabular-nums text-muted-foreground">— —</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
