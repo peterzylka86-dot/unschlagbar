@@ -6,6 +6,7 @@ import { FORMATIONS } from "@/lib/formations";
 import { ClubBadge } from "@/components/ClubBadge";
 import { getClubs, getPlayers } from "@/lib/data";
 import { LEAGUES } from "@/lib/leagues";
+import { placeFoundingPlayer } from "@/lib/draft-helpers";
 import type { Club, Player, Position, Slot, EraTier, DraftMode } from "@/lib/game-types";
 
 const TIERS: { id: EraTier; label: string; sub: string }[] = [
@@ -61,16 +62,31 @@ function DraftScreen() {
 
   // Apply the founding player (if any) on mount: pre-assign to a compatible
   // slot, mark used, then clear from config so a refresh doesn't double-apply.
+  //
+  // We use a ref guard + useGame.getState() (instead of closure-captured
+  // values) to be robust against React StrictMode's double-mount in dev
+  // and against any stale-closure issues — the LOGIC of placement is
+  // covered by draft-helpers.test.ts so we just need the React glue to
+  // be reliable. Reading via getState() guarantees we see the live store
+  // state at effect-run time, not the snapshot from first render.
+  const foundingPlacedRef = useRef(false);
   useEffect(() => {
-    const fp = config.foundingPlayer;
+    if (foundingPlacedRef.current) return;
+    foundingPlacedRef.current = true;
+
+    const state = useGame.getState();
+    const fp = state.config.foundingPlayer;
     if (!fp) return;
-    const target = slots.find(s => !s.player && isCompatible(s.position, fp.position));
-    if (!target) return;  // no compatible slot — likely formation lacks this position
-    assignPlayer(target.id, fp);
-    setUsedPlayers(prev => new Set(prev).add(`${fp.club}:${fp.name}`));
-    setUsedClubs(prev => new Set(prev).add(fp.club));
-    setConfig({ foundingPlayer: undefined });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const result = placeFoundingPlayer(state.slots, fp, isCompatible);
+    if (!result.placedSlotId) {
+      // No compatible slot — clear so we don't keep retrying on re-mount.
+      state.setConfig({ foundingPlayer: undefined });
+      return;
+    }
+    state.assignPlayer(result.placedSlotId, fp);
+    setUsedPlayers(prev => new Set(prev).add(result.placedPlayerKey!));
+    setUsedClubs(prev => new Set(prev).add(result.placedClubId!));
+    state.setConfig({ foundingPlayer: undefined });
   }, []);
 
   const clubInTier = (c: Club, t: EraTier) => (c.era_tiers ?? [c.era_tier]).includes(t);
