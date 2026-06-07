@@ -313,8 +313,9 @@ function PositionPrompt() {
   );
 }
 
-function PitchView({ slots, showRatings, onSlotClick, highlightSlots }: {
+function PitchView({ slots, clubs, showRatings, onSlotClick, highlightSlots }: {
   slots: Slot[];
+  clubs: Club[];
   showRatings: boolean;
   onSlotClick: (s: Slot) => void;
   highlightSlots: string[];
@@ -333,7 +334,8 @@ function PitchView({ slots, showRatings, onSlotClick, highlightSlots }: {
       {slots.map(s => {
         const filled = !!s.player;
         const highlight = highlightSlots.includes(s.id);
-        const club = filled ? CLUBS.find(c => c.id === s.player!.club) : null;
+        const club = filled ? clubs.find(c => c.id === s.player!.club) : null;
+
         // Stagger label sides so a slot directly below another doesn't overlap its label
         // (was making the GK's name sit on top of the central CB's name).
         const hasNeighborBelow = slots.some(o =>
