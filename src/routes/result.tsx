@@ -291,8 +291,12 @@ function ResultScreen() {
       <div className="mt-10 flex justify-center gap-3 flex-wrap">
         <button
           onClick={() => {
+            // Same league + formation, fresh squad. Go straight to the
+            // wheel — skip the mode/setup screen since config is unchanged.
+            // User: 'when I click "new run" I'd expect to be back in
+            // selecting the team [via the wheel], not selecting the modus.'
             reset();
-            navigate({ to: "/game", search: { new: true } });
+            navigate({ to: "/draft" });
           }}
           className="px-6 py-3 rounded-xl bg-primary text-primary-foreground font-display tracking-wide hover:brightness-110"
         >
