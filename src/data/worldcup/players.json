@@ -1,0 +1,1498 @@
+[
+  {
+    "name": "Alisson Becker",
+    "position": "GK",
+    "prime_rating": 91,
+    "career_years": "2018-2026",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Cláudio Taffarel",
+    "position": "GK",
+    "prime_rating": 87,
+    "career_years": "1988-1998",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Cafu",
+    "position": "RB",
+    "prime_rating": 91,
+    "career_years": "1990-2006",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Roberto Carlos",
+    "position": "LB",
+    "prime_rating": 91,
+    "career_years": "1992-2006",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Thiago Silva",
+    "position": "CB",
+    "prime_rating": 89,
+    "career_years": "2008-2022",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Lúcio",
+    "position": "CB",
+    "prime_rating": 88,
+    "career_years": "2000-2011",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Casemiro",
+    "position": "CDM",
+    "prime_rating": 89,
+    "career_years": "2011-2026",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Gilberto Silva",
+    "position": "CDM",
+    "prime_rating": 87,
+    "career_years": "2001-2010",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Ronaldinho",
+    "position": "CAM",
+    "prime_rating": 94,
+    "career_years": "1999-2013",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Kaká",
+    "position": "CAM",
+    "prime_rating": 92,
+    "career_years": "2002-2016",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Zico",
+    "position": "CAM",
+    "prime_rating": 94,
+    "career_years": "1971-1986",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Pelé",
+    "position": "ST",
+    "prime_rating": 97,
+    "career_years": "1957-1971",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Ronaldo Nazário",
+    "position": "ST",
+    "prime_rating": 95,
+    "career_years": "1994-2011",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Romário",
+    "position": "ST",
+    "prime_rating": 93,
+    "career_years": "1987-2005",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Rivaldo",
+    "position": "CAM",
+    "prime_rating": 91,
+    "career_years": "1993-2003",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Vinícius Júnior",
+    "position": "LW",
+    "prime_rating": 91,
+    "career_years": "2019-2026",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Neymar Jr.",
+    "position": "LW",
+    "prime_rating": 93,
+    "career_years": "2010-2026",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Sócrates",
+    "position": "CM",
+    "prime_rating": 91,
+    "career_years": "1979-1986",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Carlos Alberto",
+    "position": "RB",
+    "prime_rating": 90,
+    "career_years": "1964-1977",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Garrincha",
+    "position": "RW",
+    "prime_rating": 94,
+    "career_years": "1955-1966",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Manuel Neuer",
+    "position": "GK",
+    "prime_rating": 93,
+    "career_years": "2009-2026",
+    "nationality": "Germany",
+    "club": "germany"
+  },
+  {
+    "name": "Sepp Maier",
+    "position": "GK",
+    "prime_rating": 90,
+    "career_years": "1966-1979",
+    "nationality": "Germany",
+    "club": "germany"
+  },
+  {
+    "name": "Franz Beckenbauer",
+    "position": "CB",
+    "prime_rating": 96,
+    "career_years": "1965-1977",
+    "nationality": "Germany",
+    "club": "germany"
+  },
+  {
+    "name": "Mats Hummels",
+    "position": "CB",
+    "prime_rating": 89,
+    "career_years": "2010-2024",
+    "nationality": "Germany",
+    "club": "germany"
+  },
+  {
+    "name": "Jérôme Boateng",
+    "position": "CB",
+    "prime_rating": 87,
+    "career_years": "2009-2021",
+    "nationality": "Germany",
+    "club": "germany"
+  },
+  {
+    "name": "Philipp Lahm",
+    "position": "RB",
+    "prime_rating": 92,
+    "career_years": "2004-2014",
+    "nationality": "Germany",
+    "club": "germany"
+  },
+  {
+    "name": "Andreas Brehme",
+    "position": "LB",
+    "prime_rating": 87,
+    "career_years": "1984-1994",
+    "nationality": "Germany",
+    "club": "germany"
+  },
+  {
+    "name": "Lothar Matthäus",
+    "position": "CM",
+    "prime_rating": 93,
+    "career_years": "1980-2000",
+    "nationality": "Germany",
+    "club": "germany"
+  },
+  {
+    "name": "Bastian Schweinsteiger",
+    "position": "CDM",
+    "prime_rating": 89,
+    "career_years": "2004-2016",
+    "nationality": "Germany",
+    "club": "germany"
+  },
+  {
+    "name": "Toni Kroos",
+    "position": "CM",
+    "prime_rating": 91,
+    "career_years": "2010-2024",
+    "nationality": "Germany",
+    "club": "germany"
+  },
+  {
+    "name": "Mesut Özil",
+    "position": "CAM",
+    "prime_rating": 88,
+    "career_years": "2009-2018",
+    "nationality": "Germany",
+    "club": "germany"
+  },
+  {
+    "name": "Thomas Müller",
+    "position": "CAM",
+    "prime_rating": 90,
+    "career_years": "2010-2024",
+    "nationality": "Germany",
+    "club": "germany"
+  },
+  {
+    "name": "Michael Ballack",
+    "position": "CAM",
+    "prime_rating": 90,
+    "career_years": "1999-2010",
+    "nationality": "Germany",
+    "club": "germany"
+  },
+  {
+    "name": "Gerd Müller",
+    "position": "ST",
+    "prime_rating": 95,
+    "career_years": "1966-1974",
+    "nationality": "Germany",
+    "club": "germany"
+  },
+  {
+    "name": "Miroslav Klose",
+    "position": "ST",
+    "prime_rating": 90,
+    "career_years": "2001-2014",
+    "nationality": "Germany",
+    "club": "germany"
+  },
+  {
+    "name": "Karl-Heinz Rummenigge",
+    "position": "ST",
+    "prime_rating": 91,
+    "career_years": "1976-1986",
+    "nationality": "Germany",
+    "club": "germany"
+  },
+  {
+    "name": "Jürgen Klinsmann",
+    "position": "ST",
+    "prime_rating": 88,
+    "career_years": "1987-1998",
+    "nationality": "Germany",
+    "club": "germany"
+  },
+  {
+    "name": "Emiliano Martínez",
+    "position": "GK",
+    "prime_rating": 89,
+    "career_years": "2021-2026",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Sergio Romero",
+    "position": "GK",
+    "prime_rating": 84,
+    "career_years": "2009-2018",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Daniel Passarella",
+    "position": "CB",
+    "prime_rating": 90,
+    "career_years": "1976-1986",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Roberto Ayala",
+    "position": "CB",
+    "prime_rating": 88,
+    "career_years": "1994-2007",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Cristian Romero",
+    "position": "CB",
+    "prime_rating": 87,
+    "career_years": "2021-2026",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Nicolás Otamendi",
+    "position": "CB",
+    "prime_rating": 85,
+    "career_years": "2009-2026",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Javier Zanetti",
+    "position": "RB",
+    "prime_rating": 90,
+    "career_years": "1994-2011",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Javier Mascherano",
+    "position": "CDM",
+    "prime_rating": 89,
+    "career_years": "2003-2018",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Fernando Redondo",
+    "position": "CDM",
+    "prime_rating": 91,
+    "career_years": "1992-1999",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Juan Sebastián Verón",
+    "position": "CM",
+    "prime_rating": 87,
+    "career_years": "1996-2010",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Rodrigo De Paul",
+    "position": "CM",
+    "prime_rating": 86,
+    "career_years": "2018-2026",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Diego Maradona",
+    "position": "CAM",
+    "prime_rating": 97,
+    "career_years": "1977-1994",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Juan Román Riquelme",
+    "position": "CAM",
+    "prime_rating": 90,
+    "career_years": "1997-2008",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Ángel Di María",
+    "position": "RW",
+    "prime_rating": 88,
+    "career_years": "2008-2026",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Lionel Messi",
+    "position": "RW",
+    "prime_rating": 97,
+    "career_years": "2005-2026",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Mario Kempes",
+    "position": "ST",
+    "prime_rating": 90,
+    "career_years": "1976-1986",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Gabriel Batistuta",
+    "position": "ST",
+    "prime_rating": 92,
+    "career_years": "1991-2002",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Sergio Agüero",
+    "position": "ST",
+    "prime_rating": 90,
+    "career_years": "2006-2021",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Julián Álvarez",
+    "position": "ST",
+    "prime_rating": 88,
+    "career_years": "2021-2026",
+    "nationality": "Argentina",
+    "club": "argentina"
+  },
+  {
+    "name": "Hugo Lloris",
+    "position": "GK",
+    "prime_rating": 89,
+    "career_years": "2008-2022",
+    "nationality": "France",
+    "club": "france"
+  },
+  {
+    "name": "Fabien Barthez",
+    "position": "GK",
+    "prime_rating": 88,
+    "career_years": "1994-2006",
+    "nationality": "France",
+    "club": "france"
+  },
+  {
+    "name": "Lilian Thuram",
+    "position": "CB",
+    "prime_rating": 90,
+    "career_years": "1994-2008",
+    "nationality": "France",
+    "club": "france"
+  },
+  {
+    "name": "Marcel Desailly",
+    "position": "CB",
+    "prime_rating": 90,
+    "career_years": "1993-2004",
+    "nationality": "France",
+    "club": "france"
+  },
+  {
+    "name": "Laurent Blanc",
+    "position": "CB",
+    "prime_rating": 87,
+    "career_years": "1989-2000",
+    "nationality": "France",
+    "club": "france"
+  },
+  {
+    "name": "Raphaël Varane",
+    "position": "CB",
+    "prime_rating": 89,
+    "career_years": "2013-2022",
+    "nationality": "France",
+    "club": "france"
+  },
+  {
+    "name": "Bixente Lizarazu",
+    "position": "LB",
+    "prime_rating": 88,
+    "career_years": "1992-2004",
+    "nationality": "France",
+    "club": "france"
+  },
+  {
+    "name": "Patrick Vieira",
+    "position": "CDM",
+    "prime_rating": 90,
+    "career_years": "1997-2010",
+    "nationality": "France",
+    "club": "france"
+  },
+  {
+    "name": "Didier Deschamps",
+    "position": "CDM",
+    "prime_rating": 88,
+    "career_years": "1989-2000",
+    "nationality": "France",
+    "club": "france"
+  },
+  {
+    "name": "Paul Pogba",
+    "position": "CM",
+    "prime_rating": 88,
+    "career_years": "2013-2022",
+    "nationality": "France",
+    "club": "france"
+  },
+  {
+    "name": "Zinedine Zidane",
+    "position": "CAM",
+    "prime_rating": 96,
+    "career_years": "1994-2006",
+    "nationality": "France",
+    "club": "france"
+  },
+  {
+    "name": "Michel Platini",
+    "position": "CAM",
+    "prime_rating": 95,
+    "career_years": "1976-1987",
+    "nationality": "France",
+    "club": "france"
+  },
+  {
+    "name": "Antoine Griezmann",
+    "position": "CAM",
+    "prime_rating": 90,
+    "career_years": "2014-2026",
+    "nationality": "France",
+    "club": "france"
+  },
+  {
+    "name": "Thierry Henry",
+    "position": "ST",
+    "prime_rating": 94,
+    "career_years": "1997-2010",
+    "nationality": "France",
+    "club": "france"
+  },
+  {
+    "name": "Kylian Mbappé",
+    "position": "LW",
+    "prime_rating": 94,
+    "career_years": "2017-2026",
+    "nationality": "France",
+    "club": "france"
+  },
+  {
+    "name": "Just Fontaine",
+    "position": "ST",
+    "prime_rating": 90,
+    "career_years": "1953-1960",
+    "nationality": "France",
+    "club": "france"
+  },
+  {
+    "name": "David Trezeguet",
+    "position": "ST",
+    "prime_rating": 87,
+    "career_years": "1998-2008",
+    "nationality": "France",
+    "club": "france"
+  },
+  {
+    "name": "N'Golo Kanté",
+    "position": "CDM",
+    "prime_rating": 89,
+    "career_years": "2016-2026",
+    "nationality": "France",
+    "club": "france"
+  },
+  {
+    "name": "Gianluigi Buffon",
+    "position": "GK",
+    "prime_rating": 94,
+    "career_years": "1997-2018",
+    "nationality": "Italy",
+    "club": "italy"
+  },
+  {
+    "name": "Dino Zoff",
+    "position": "GK",
+    "prime_rating": 92,
+    "career_years": "1968-1983",
+    "nationality": "Italy",
+    "club": "italy"
+  },
+  {
+    "name": "Paolo Maldini",
+    "position": "LB",
+    "prime_rating": 94,
+    "career_years": "1988-2002",
+    "nationality": "Italy",
+    "club": "italy"
+  },
+  {
+    "name": "Franco Baresi",
+    "position": "CB",
+    "prime_rating": 94,
+    "career_years": "1982-1994",
+    "nationality": "Italy",
+    "club": "italy"
+  },
+  {
+    "name": "Fabio Cannavaro",
+    "position": "CB",
+    "prime_rating": 91,
+    "career_years": "1997-2010",
+    "nationality": "Italy",
+    "club": "italy"
+  },
+  {
+    "name": "Alessandro Nesta",
+    "position": "CB",
+    "prime_rating": 90,
+    "career_years": "1996-2006",
+    "nationality": "Italy",
+    "club": "italy"
+  },
+  {
+    "name": "Gaetano Scirea",
+    "position": "CB",
+    "prime_rating": 90,
+    "career_years": "1975-1986",
+    "nationality": "Italy",
+    "club": "italy"
+  },
+  {
+    "name": "Andrea Pirlo",
+    "position": "CM",
+    "prime_rating": 92,
+    "career_years": "2002-2015",
+    "nationality": "Italy",
+    "club": "italy"
+  },
+  {
+    "name": "Marco Tardelli",
+    "position": "CM",
+    "prime_rating": 87,
+    "career_years": "1976-1985",
+    "nationality": "Italy",
+    "club": "italy"
+  },
+  {
+    "name": "Roberto Baggio",
+    "position": "CAM",
+    "prime_rating": 94,
+    "career_years": "1988-2004",
+    "nationality": "Italy",
+    "club": "italy"
+  },
+  {
+    "name": "Francesco Totti",
+    "position": "CAM",
+    "prime_rating": 92,
+    "career_years": "1998-2006",
+    "nationality": "Italy",
+    "club": "italy"
+  },
+  {
+    "name": "Alessandro Del Piero",
+    "position": "CAM",
+    "prime_rating": 91,
+    "career_years": "1995-2008",
+    "nationality": "Italy",
+    "club": "italy"
+  },
+  {
+    "name": "Paolo Rossi",
+    "position": "ST",
+    "prime_rating": 90,
+    "career_years": "1977-1986",
+    "nationality": "Italy",
+    "club": "italy"
+  },
+  {
+    "name": "Christian Vieri",
+    "position": "ST",
+    "prime_rating": 88,
+    "career_years": "1997-2005",
+    "nationality": "Italy",
+    "club": "italy"
+  },
+  {
+    "name": "Filippo Inzaghi",
+    "position": "ST",
+    "prime_rating": 86,
+    "career_years": "1997-2007",
+    "nationality": "Italy",
+    "club": "italy"
+  },
+  {
+    "name": "Iker Casillas",
+    "position": "GK",
+    "prime_rating": 93,
+    "career_years": "2000-2014",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Sergio Ramos",
+    "position": "CB",
+    "prime_rating": 91,
+    "career_years": "2005-2021",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Carles Puyol",
+    "position": "CB",
+    "prime_rating": 90,
+    "career_years": "2000-2010",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Gerard Piqué",
+    "position": "CB",
+    "prime_rating": 89,
+    "career_years": "2009-2018",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Jordi Alba",
+    "position": "LB",
+    "prime_rating": 87,
+    "career_years": "2011-2022",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Sergio Busquets",
+    "position": "CDM",
+    "prime_rating": 90,
+    "career_years": "2009-2022",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Xavi Hernández",
+    "position": "CM",
+    "prime_rating": 94,
+    "career_years": "2000-2014",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Andrés Iniesta",
+    "position": "CAM",
+    "prime_rating": 94,
+    "career_years": "2006-2018",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Xabi Alonso",
+    "position": "CM",
+    "prime_rating": 88,
+    "career_years": "2003-2014",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "David Silva",
+    "position": "CAM",
+    "prime_rating": 90,
+    "career_years": "2006-2018",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Fernando Torres",
+    "position": "ST",
+    "prime_rating": 90,
+    "career_years": "2003-2014",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "David Villa",
+    "position": "ST",
+    "prime_rating": 90,
+    "career_years": "2005-2017",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Raúl González",
+    "position": "ST",
+    "prime_rating": 88,
+    "career_years": "1996-2006",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Pedri",
+    "position": "CM",
+    "prime_rating": 87,
+    "career_years": "2020-2026",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Edwin van der Sar",
+    "position": "GK",
+    "prime_rating": 90,
+    "career_years": "1995-2008",
+    "nationality": "Netherlands",
+    "club": "netherlands"
+  },
+  {
+    "name": "Virgil van Dijk",
+    "position": "CB",
+    "prime_rating": 92,
+    "career_years": "2015-2026",
+    "nationality": "Netherlands",
+    "club": "netherlands"
+  },
+  {
+    "name": "Ronald Koeman",
+    "position": "CB",
+    "prime_rating": 89,
+    "career_years": "1983-1994",
+    "nationality": "Netherlands",
+    "club": "netherlands"
+  },
+  {
+    "name": "Frank Rijkaard",
+    "position": "CDM",
+    "prime_rating": 90,
+    "career_years": "1981-1994",
+    "nationality": "Netherlands",
+    "club": "netherlands"
+  },
+  {
+    "name": "Ruud Krol",
+    "position": "LB",
+    "prime_rating": 87,
+    "career_years": "1969-1983",
+    "nationality": "Netherlands",
+    "club": "netherlands"
+  },
+  {
+    "name": "Johan Neeskens",
+    "position": "CM",
+    "prime_rating": 90,
+    "career_years": "1970-1981",
+    "nationality": "Netherlands",
+    "club": "netherlands"
+  },
+  {
+    "name": "Wesley Sneijder",
+    "position": "CAM",
+    "prime_rating": 89,
+    "career_years": "2003-2018",
+    "nationality": "Netherlands",
+    "club": "netherlands"
+  },
+  {
+    "name": "Frenkie de Jong",
+    "position": "CM",
+    "prime_rating": 88,
+    "career_years": "2018-2026",
+    "nationality": "Netherlands",
+    "club": "netherlands"
+  },
+  {
+    "name": "Johan Cruyff",
+    "position": "CAM",
+    "prime_rating": 97,
+    "career_years": "1966-1977",
+    "nationality": "Netherlands",
+    "club": "netherlands"
+  },
+  {
+    "name": "Dennis Bergkamp",
+    "position": "CAM",
+    "prime_rating": 91,
+    "career_years": "1990-2000",
+    "nationality": "Netherlands",
+    "club": "netherlands"
+  },
+  {
+    "name": "Ruud Gullit",
+    "position": "CAM",
+    "prime_rating": 92,
+    "career_years": "1981-1994",
+    "nationality": "Netherlands",
+    "club": "netherlands"
+  },
+  {
+    "name": "Arjen Robben",
+    "position": "RW",
+    "prime_rating": 91,
+    "career_years": "2003-2017",
+    "nationality": "Netherlands",
+    "club": "netherlands"
+  },
+  {
+    "name": "Marco van Basten",
+    "position": "ST",
+    "prime_rating": 94,
+    "career_years": "1983-1992",
+    "nationality": "Netherlands",
+    "club": "netherlands"
+  },
+  {
+    "name": "Robin van Persie",
+    "position": "ST",
+    "prime_rating": 89,
+    "career_years": "2005-2017",
+    "nationality": "Netherlands",
+    "club": "netherlands"
+  },
+  {
+    "name": "Ruud van Nistelrooy",
+    "position": "ST",
+    "prime_rating": 89,
+    "career_years": "1998-2011",
+    "nationality": "Netherlands",
+    "club": "netherlands"
+  },
+  {
+    "name": "Gordon Banks",
+    "position": "GK",
+    "prime_rating": 92,
+    "career_years": "1963-1972",
+    "nationality": "England",
+    "club": "england"
+  },
+  {
+    "name": "Peter Shilton",
+    "position": "GK",
+    "prime_rating": 90,
+    "career_years": "1970-1990",
+    "nationality": "England",
+    "club": "england"
+  },
+  {
+    "name": "Jordan Pickford",
+    "position": "GK",
+    "prime_rating": 85,
+    "career_years": "2017-2026",
+    "nationality": "England",
+    "club": "england"
+  },
+  {
+    "name": "Bobby Moore",
+    "position": "CB",
+    "prime_rating": 94,
+    "career_years": "1962-1973",
+    "nationality": "England",
+    "club": "england"
+  },
+  {
+    "name": "John Terry",
+    "position": "CB",
+    "prime_rating": 89,
+    "career_years": "2003-2012",
+    "nationality": "England",
+    "club": "england"
+  },
+  {
+    "name": "Rio Ferdinand",
+    "position": "CB",
+    "prime_rating": 90,
+    "career_years": "1997-2011",
+    "nationality": "England",
+    "club": "england"
+  },
+  {
+    "name": "Ashley Cole",
+    "position": "LB",
+    "prime_rating": 89,
+    "career_years": "2001-2014",
+    "nationality": "England",
+    "club": "england"
+  },
+  {
+    "name": "Bryan Robson",
+    "position": "CM",
+    "prime_rating": 89,
+    "career_years": "1979-1991",
+    "nationality": "England",
+    "club": "england"
+  },
+  {
+    "name": "Steven Gerrard",
+    "position": "CM",
+    "prime_rating": 91,
+    "career_years": "2000-2014",
+    "nationality": "England",
+    "club": "england"
+  },
+  {
+    "name": "Frank Lampard",
+    "position": "CM",
+    "prime_rating": 90,
+    "career_years": "1999-2014",
+    "nationality": "England",
+    "club": "england"
+  },
+  {
+    "name": "Paul Gascoigne",
+    "position": "CAM",
+    "prime_rating": 90,
+    "career_years": "1988-1998",
+    "nationality": "England",
+    "club": "england"
+  },
+  {
+    "name": "Jude Bellingham",
+    "position": "CAM",
+    "prime_rating": 90,
+    "career_years": "2020-2026",
+    "nationality": "England",
+    "club": "england"
+  },
+  {
+    "name": "Bobby Charlton",
+    "position": "CAM",
+    "prime_rating": 94,
+    "career_years": "1958-1970",
+    "nationality": "England",
+    "club": "england"
+  },
+  {
+    "name": "Wayne Rooney",
+    "position": "ST",
+    "prime_rating": 91,
+    "career_years": "2003-2018",
+    "nationality": "England",
+    "club": "england"
+  },
+  {
+    "name": "Harry Kane",
+    "position": "ST",
+    "prime_rating": 90,
+    "career_years": "2015-2026",
+    "nationality": "England",
+    "club": "england"
+  },
+  {
+    "name": "Gary Lineker",
+    "position": "ST",
+    "prime_rating": 88,
+    "career_years": "1984-1992",
+    "nationality": "England",
+    "club": "england"
+  },
+  {
+    "name": "Diogo Costa",
+    "position": "GK",
+    "prime_rating": 86,
+    "career_years": "2021-2026",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Rui Patrício",
+    "position": "GK",
+    "prime_rating": 86,
+    "career_years": "2010-2022",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Pepe",
+    "position": "CB",
+    "prime_rating": 89,
+    "career_years": "2007-2024",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Rúben Dias",
+    "position": "CB",
+    "prime_rating": 90,
+    "career_years": "2018-2026",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Fernando Couto",
+    "position": "CB",
+    "prime_rating": 85,
+    "career_years": "1990-2004",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "João Cancelo",
+    "position": "LB",
+    "prime_rating": 87,
+    "career_years": "2016-2026",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Bruno Fernandes",
+    "position": "CAM",
+    "prime_rating": 89,
+    "career_years": "2017-2026",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Luís Figo",
+    "position": "RW",
+    "prime_rating": 93,
+    "career_years": "1991-2006",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Rui Costa",
+    "position": "CAM",
+    "prime_rating": 89,
+    "career_years": "1993-2004",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Deco",
+    "position": "CAM",
+    "prime_rating": 87,
+    "career_years": "2003-2010",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Bernardo Silva",
+    "position": "CAM",
+    "prime_rating": 89,
+    "career_years": "2015-2026",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Cristiano Ronaldo",
+    "position": "ST",
+    "prime_rating": 96,
+    "career_years": "2003-2026",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Eusébio",
+    "position": "ST",
+    "prime_rating": 94,
+    "career_years": "1961-1973",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Pauleta",
+    "position": "ST",
+    "prime_rating": 86,
+    "career_years": "1997-2006",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Rafael Leão",
+    "position": "LW",
+    "prime_rating": 87,
+    "career_years": "2019-2026",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Fernando Muslera",
+    "position": "GK",
+    "prime_rating": 86,
+    "career_years": "2009-2022",
+    "nationality": "Uruguay",
+    "club": "uruguay"
+  },
+  {
+    "name": "Diego Godín",
+    "position": "CB",
+    "prime_rating": 90,
+    "career_years": "2005-2022",
+    "nationality": "Uruguay",
+    "club": "uruguay"
+  },
+  {
+    "name": "José Nasazzi",
+    "position": "CB",
+    "prime_rating": 88,
+    "career_years": "1924-1932",
+    "nationality": "Uruguay",
+    "club": "uruguay"
+  },
+  {
+    "name": "Paolo Montero",
+    "position": "CB",
+    "prime_rating": 84,
+    "career_years": "1991-2005",
+    "nationality": "Uruguay",
+    "club": "uruguay"
+  },
+  {
+    "name": "Diego Lugano",
+    "position": "CB",
+    "prime_rating": 84,
+    "career_years": "2003-2014",
+    "nationality": "Uruguay",
+    "club": "uruguay"
+  },
+  {
+    "name": "Federico Valverde",
+    "position": "CM",
+    "prime_rating": 89,
+    "career_years": "2017-2026",
+    "nationality": "Uruguay",
+    "club": "uruguay"
+  },
+  {
+    "name": "Álvaro Recoba",
+    "position": "CAM",
+    "prime_rating": 85,
+    "career_years": "1995-2007",
+    "nationality": "Uruguay",
+    "club": "uruguay"
+  },
+  {
+    "name": "Enzo Francescoli",
+    "position": "CAM",
+    "prime_rating": 88,
+    "career_years": "1982-1997",
+    "nationality": "Uruguay",
+    "club": "uruguay"
+  },
+  {
+    "name": "Luis Suárez",
+    "position": "ST",
+    "prime_rating": 92,
+    "career_years": "2007-2024",
+    "nationality": "Uruguay",
+    "club": "uruguay"
+  },
+  {
+    "name": "Edinson Cavani",
+    "position": "ST",
+    "prime_rating": 89,
+    "career_years": "2008-2024",
+    "nationality": "Uruguay",
+    "club": "uruguay"
+  },
+  {
+    "name": "Diego Forlán",
+    "position": "ST",
+    "prime_rating": 88,
+    "career_years": "2002-2014",
+    "nationality": "Uruguay",
+    "club": "uruguay"
+  },
+  {
+    "name": "Darwin Núñez",
+    "position": "ST",
+    "prime_rating": 86,
+    "career_years": "2020-2026",
+    "nationality": "Uruguay",
+    "club": "uruguay"
+  },
+  {
+    "name": "Thibaut Courtois",
+    "position": "GK",
+    "prime_rating": 91,
+    "career_years": "2011-2026",
+    "nationality": "Belgium",
+    "club": "belgium"
+  },
+  {
+    "name": "Jean-Marie Pfaff",
+    "position": "GK",
+    "prime_rating": 86,
+    "career_years": "1976-1990",
+    "nationality": "Belgium",
+    "club": "belgium"
+  },
+  {
+    "name": "Vincent Kompany",
+    "position": "CB",
+    "prime_rating": 89,
+    "career_years": "2004-2019",
+    "nationality": "Belgium",
+    "club": "belgium"
+  },
+  {
+    "name": "Toby Alderweireld",
+    "position": "CB",
+    "prime_rating": 87,
+    "career_years": "2009-2022",
+    "nationality": "Belgium",
+    "club": "belgium"
+  },
+  {
+    "name": "Jan Vertonghen",
+    "position": "CB",
+    "prime_rating": 87,
+    "career_years": "2007-2026",
+    "nationality": "Belgium",
+    "club": "belgium"
+  },
+  {
+    "name": "Eric Gerets",
+    "position": "RB",
+    "prime_rating": 84,
+    "career_years": "1975-1991",
+    "nationality": "Belgium",
+    "club": "belgium"
+  },
+  {
+    "name": "Axel Witsel",
+    "position": "CDM",
+    "prime_rating": 85,
+    "career_years": "2008-2024",
+    "nationality": "Belgium",
+    "club": "belgium"
+  },
+  {
+    "name": "Kevin De Bruyne",
+    "position": "CAM",
+    "prime_rating": 94,
+    "career_years": "2010-2026",
+    "nationality": "Belgium",
+    "club": "belgium"
+  },
+  {
+    "name": "Eden Hazard",
+    "position": "LW",
+    "prime_rating": 92,
+    "career_years": "2008-2022",
+    "nationality": "Belgium",
+    "club": "belgium"
+  },
+  {
+    "name": "Enzo Scifo",
+    "position": "CAM",
+    "prime_rating": 87,
+    "career_years": "1984-1998",
+    "nationality": "Belgium",
+    "club": "belgium"
+  },
+  {
+    "name": "Romelu Lukaku",
+    "position": "ST",
+    "prime_rating": 88,
+    "career_years": "2010-2026",
+    "nationality": "Belgium",
+    "club": "belgium"
+  },
+  {
+    "name": "Paul Van Himst",
+    "position": "ST",
+    "prime_rating": 88,
+    "career_years": "1960-1974",
+    "nationality": "Belgium",
+    "club": "belgium"
+  },
+  {
+    "name": "Dominik Livaković",
+    "position": "GK",
+    "prime_rating": 85,
+    "career_years": "2017-2026",
+    "nationality": "Croatia",
+    "club": "croatia"
+  },
+  {
+    "name": "Slaven Bilić",
+    "position": "CB",
+    "prime_rating": 84,
+    "career_years": "1992-2000",
+    "nationality": "Croatia",
+    "club": "croatia"
+  },
+  {
+    "name": "Igor Štimac",
+    "position": "CB",
+    "prime_rating": 83,
+    "career_years": "1991-2002",
+    "nationality": "Croatia",
+    "club": "croatia"
+  },
+  {
+    "name": "Dejan Lovren",
+    "position": "CB",
+    "prime_rating": 83,
+    "career_years": "2009-2022",
+    "nationality": "Croatia",
+    "club": "croatia"
+  },
+  {
+    "name": "Joško Gvardiol",
+    "position": "CB",
+    "prime_rating": 87,
+    "career_years": "2021-2026",
+    "nationality": "Croatia",
+    "club": "croatia"
+  },
+  {
+    "name": "Robert Jarni",
+    "position": "LB",
+    "prime_rating": 84,
+    "career_years": "1990-2002",
+    "nationality": "Croatia",
+    "club": "croatia"
+  },
+  {
+    "name": "Luka Modrić",
+    "position": "CM",
+    "prime_rating": 92,
+    "career_years": "2006-2026",
+    "nationality": "Croatia",
+    "club": "croatia"
+  },
+  {
+    "name": "Ivan Rakitić",
+    "position": "CM",
+    "prime_rating": 87,
+    "career_years": "2007-2020",
+    "nationality": "Croatia",
+    "club": "croatia"
+  },
+  {
+    "name": "Mateo Kovačić",
+    "position": "CM",
+    "prime_rating": 85,
+    "career_years": "2013-2026",
+    "nationality": "Croatia",
+    "club": "croatia"
+  },
+  {
+    "name": "Zvonimir Boban",
+    "position": "CAM",
+    "prime_rating": 87,
+    "career_years": "1988-1999",
+    "nationality": "Croatia",
+    "club": "croatia"
+  },
+  {
+    "name": "Robert Prosinečki",
+    "position": "CAM",
+    "prime_rating": 87,
+    "career_years": "1989-2000",
+    "nationality": "Croatia",
+    "club": "croatia"
+  },
+  {
+    "name": "Davor Šuker",
+    "position": "ST",
+    "prime_rating": 89,
+    "career_years": "1990-2002",
+    "nationality": "Croatia",
+    "club": "croatia"
+  },
+  {
+    "name": "Mario Mandžukić",
+    "position": "ST",
+    "prime_rating": 86,
+    "career_years": "2007-2018",
+    "nationality": "Croatia",
+    "club": "croatia"
+  },
+  {
+    "name": "Andrej Kramarić",
+    "position": "ST",
+    "prime_rating": 84,
+    "career_years": "2014-2026",
+    "nationality": "Croatia",
+    "club": "croatia"
+  }
+]

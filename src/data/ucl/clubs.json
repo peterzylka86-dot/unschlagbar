@@ -1,0 +1,313 @@
+[
+  {
+    "id": "realmadrid",
+    "name": "Real Madrid",
+    "short": "RMA",
+    "city": "Madrid",
+    "color": "#febe10",
+    "founded": 1902,
+    "strength": 94,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "manchestercity",
+    "name": "Manchester City",
+    "short": "MCI",
+    "city": "Manchester",
+    "color": "#6cabdd",
+    "founded": 1880,
+    "strength": 93,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "bayern",
+    "name": "Bayern München",
+    "short": "FCB",
+    "city": "Munich",
+    "color": "#dc052d",
+    "founded": 1900,
+    "strength": 92,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "barcelona",
+    "name": "FC Barcelona",
+    "short": "BAR",
+    "city": "Barcelona",
+    "color": "#a50044",
+    "founded": 1899,
+    "strength": 92,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "psg",
+    "name": "Paris Saint-Germain",
+    "short": "PSG",
+    "city": "Paris",
+    "color": "#004170",
+    "founded": 1970,
+    "strength": 90,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s"
+    ]
+  },
+  {
+    "id": "liverpool",
+    "name": "Liverpool FC",
+    "short": "LIV",
+    "city": "Liverpool",
+    "color": "#c8102e",
+    "founded": 1892,
+    "strength": 91,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "inter",
+    "name": "Inter Milan",
+    "short": "INT",
+    "city": "Milan",
+    "color": "#0066b2",
+    "founded": 1908,
+    "strength": 89,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "milan",
+    "name": "AC Milan",
+    "short": "MIL",
+    "city": "Milan",
+    "color": "#fb090b",
+    "founded": 1899,
+    "strength": 88,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "juventus",
+    "name": "Juventus",
+    "short": "JUV",
+    "city": "Turin",
+    "color": "#000000",
+    "founded": 1897,
+    "strength": 88,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "dortmund",
+    "name": "Borussia Dortmund",
+    "short": "BVB",
+    "city": "Dortmund",
+    "color": "#fde100",
+    "founded": 1909,
+    "strength": 87,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "chelsea",
+    "name": "Chelsea FC",
+    "short": "CHE",
+    "city": "London",
+    "color": "#034694",
+    "founded": 1905,
+    "strength": 86,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s"
+    ]
+  },
+  {
+    "id": "atletico",
+    "name": "Atlético Madrid",
+    "short": "ATM",
+    "city": "Madrid",
+    "color": "#cb3524",
+    "founded": 1903,
+    "strength": 88,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "ajax",
+    "name": "AFC Ajax",
+    "short": "AJA",
+    "city": "Amsterdam",
+    "color": "#d2122e",
+    "founded": 1900,
+    "strength": 86,
+    "era": "classic",
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "porto",
+    "name": "FC Porto",
+    "short": "POR",
+    "city": "Porto",
+    "color": "#00428c",
+    "founded": 1893,
+    "strength": 85,
+    "era": "classic",
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "rosenborg",
+    "name": "Rosenborg BK",
+    "short": "RBK",
+    "city": "Trondheim",
+    "color": "#000000",
+    "founded": 1917,
+    "strength": 78,
+    "era": "classic",
+    "era_tier": "90s",
+    "era_tiers": [
+      "90s",
+      "00s"
+    ]
+  },
+  {
+    "id": "steaua",
+    "name": "Steaua București",
+    "short": "STE",
+    "city": "Bucharest",
+    "color": "#ce1126",
+    "founded": 1947,
+    "strength": 80,
+    "era": "historic",
+    "era_tier": "70s-80s",
+    "era_tiers": [
+      "70s-80s",
+      "90s"
+    ]
+  },
+  {
+    "id": "crvenazvezda",
+    "name": "Crvena Zvezda",
+    "short": "CZV",
+    "city": "Belgrade",
+    "color": "#ed1c24",
+    "founded": 1945,
+    "strength": 80,
+    "era": "historic",
+    "era_tier": "90s",
+    "era_tiers": [
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "nottinghamforest",
+    "name": "Nottingham Forest",
+    "short": "NFO",
+    "city": "Nottingham",
+    "color": "#dd0000",
+    "founded": 1865,
+    "strength": 80,
+    "era": "historic",
+    "era_tier": "70s-80s",
+    "era_tiers": [
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "psv",
+    "name": "PSV Eindhoven",
+    "short": "PSV",
+    "city": "Eindhoven",
+    "color": "#e62020",
+    "founded": 1913,
+    "strength": 82,
+    "era": "classic",
+    "era_tier": "00s",
+    "era_tiers": [
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "marseille",
+    "name": "Olympique Marseille",
+    "short": "OM",
+    "city": "Marseille",
+    "color": "#009ddc",
+    "founded": 1899,
+    "strength": 82,
+    "era": "classic",
+    "era_tier": "90s",
+    "era_tiers": [
+      "90s",
+      "00s"
+    ]
+  }
+]

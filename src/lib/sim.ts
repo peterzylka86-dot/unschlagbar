@@ -71,6 +71,85 @@ function poisson(lambda: number, seed: { v: number }): number {
   return k - 1;
 }
 
+/**
+ * Simulate a knockout (or group+KO) competition.
+ * - For pure knockout: rounds is e.g. ["R16","QF","SF","F"]. One match per round.
+ * - For groupKO: rounds starts with N "Group" entries (3 group matches) then KO rounds.
+ * Opponents must be passed in match order. Stops simulating after an elimination
+ * (KO loss or failure to advance from group).
+ */
+export function simulateKnockout(
+  opponents: Club[],
+  rounds: string[],
+  ourRating: number,
+  seedNum: number,
+  difficulty: "easy"|"normal"|"hard" = "normal",
+): MatchResult[] {
+  const seed = { v: seedNum || 12345 };
+  const varianceMul = difficulty === "easy" ? 0.7 : difficulty === "hard" ? 1.3 : 1.0;
+  const results: MatchResult[] = [];
+
+  const total = Math.min(opponents.length, rounds.length);
+  let groupPts = 0;
+  let groupGames = 0;
+  let eliminated = false;
+
+  for (let i = 0; i < total; i++) {
+    if (eliminated) break;
+    const opp = opponents[i]!;
+    const round = rounds[i]!;
+    const isGroup = round === "Group";
+    // Knockouts get a small "neutral venue" bias; group plays normal home/away cycle.
+    const home = isGroup ? (i % 2 === 0) : true;
+    const homeBoost = home ? 2 : -1;
+    const diff = (ourRating + homeBoost) - opp.strength;
+    const ourXG = Math.max(0.2, 1.15 + diff * 0.08 + (rand(seed) - 0.5) * 1.0 * varianceMul);
+    const theirXG = Math.max(0.1, 1.05 - diff * 0.06 + (rand(seed) - 0.5) * 0.9 * varianceMul);
+    let ourScore = poisson(ourXG, seed);
+    let theirScore = poisson(theirXG, seed);
+
+    // In knockouts a draw forces extra-time + pens — settle with a coin-flip nudge.
+    if (!isGroup && ourScore === theirScore) {
+      // bias slightly by rating
+      const edge = 0.5 + Math.max(-0.2, Math.min(0.2, diff * 0.01));
+      if (rand(seed) < edge) ourScore += 1;
+      else theirScore += 1;
+    }
+
+    const outcome: "W"|"D"|"L" =
+      ourScore > theirScore ? "W" : ourScore < theirScore ? "L" : "D";
+
+    let eliminates = false;
+    if (isGroup) {
+      groupPts += outcome === "W" ? 3 : outcome === "D" ? 1 : 0;
+      groupGames += 1;
+      // Last group game: check advancement (≥4 pts).
+      const nextIsKO = i + 1 < rounds.length && rounds[i + 1] !== "Group";
+      if (nextIsKO && groupPts < 4) {
+        eliminates = true;
+        eliminated = true;
+      }
+    } else if (outcome === "L") {
+      eliminates = true;
+      eliminated = true;
+    }
+
+    results.push({
+      matchday: i + 1,
+      opponent: opp,
+      home,
+      ourScore,
+      theirScore,
+      outcome,
+      round,
+      eliminates,
+    });
+  }
+  // touch unused var to satisfy linter
+  void groupGames;
+  return results;
+}
+
 export interface TableRow {
   name: string;
   short: string;

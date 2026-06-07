@@ -27,6 +27,7 @@ function ResultScreen() {
   const { slots, matches, reset, config } = useGame();
   const navigate = useNavigate();
   const league = LEAGUES[config.league];
+  const isKO = league.kind !== "league";
   const CLUBS = useMemo(() => getClubs(config.league), [config.league]);
   const rating = squadRating(slots);
   const wins = matches.filter(m => m.outcome === "W").length;
@@ -34,9 +35,12 @@ function ResultScreen() {
   const losses = matches.filter(m => m.outcome === "L").length;
   const points = wins * 3 + draws;
   const firstLoss = matches.find(m => m.outcome === "L");
+  const eliminator = matches.find(m => m.eliminates);
+  const reachedFinal = matches.some(m => m.round === "Final");
+  const wonFinal = matches.some(m => m.round === "Final" && m.outcome === "W");
 
   const { table, ourPosition } = useMemo(() => {
-    if (!matches.length) return { table: [], ourPosition: 0 };
+    if (isKO || !matches.length) return { table: [], ourPosition: 0 };
     const seen = new Set<string>();
     const opps: Club[] = [];
     for (const m of matches) {
@@ -46,7 +50,7 @@ function ResultScreen() {
       }
     }
     return computeLeagueTable(matches, opps, rating, league.matches);
-  }, [matches, rating, league.matches]);
+  }, [matches, rating, league.matches, isKO]);
 
 
   const positionTone =
@@ -57,7 +61,29 @@ function ResultScreen() {
 
   return (
     <div className="min-h-screen px-4 py-12 max-w-3xl mx-auto text-center">
-      {unbeaten ? (
+      {isKO ? (
+        wonFinal ? (
+          <>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-warning/40 bg-warning/10 text-warning text-xs font-semibold tracking-widest uppercase">
+              🏆 {league.unbeatenLabel}
+            </div>
+            <h1 className="mt-6 brand-mark text-7xl text-warning">{league.brandMark.split(":")[0]}<span className="text-primary">:</span>{league.brandMark.split(":")[1]}</h1>
+            <p className="mt-4 text-xl">Your XI lifted the trophy — {league.flag} {league.name}.</p>
+          </>
+        ) : (
+          <>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-destructive/40 bg-destructive/10 text-destructive text-xs font-semibold tracking-widest uppercase">
+              Eliminated{eliminator?.round ? ` · ${eliminator.round}` : ""}
+            </div>
+            <h1 className="mt-6 font-display text-6xl">{wins}-{draws}-{losses}</h1>
+            {eliminator && (
+              <p className="mt-4 text-muted-foreground">
+                Knocked out {eliminator.home ? "vs" : "@"} {eliminator.opponent.name} ({eliminator.ourScore}-{eliminator.theirScore}).
+              </p>
+            )}
+          </>
+        )
+      ) : unbeaten ? (
         <>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-success/40 bg-success/10 text-success text-xs font-semibold tracking-widest uppercase">
             ★ {league.unbeatenLabel} ★
@@ -79,8 +105,38 @@ function ResultScreen() {
         </>
       )}
 
-      {/* Final position scoreboard */}
-      {ourPosition > 0 && (
+      {/* KO recap strip */}
+      {isKO && matches.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-2 text-left"
+        >
+          {matches.map((m, i) => {
+            const tone = m.outcome === "W" ? "border-success/40 bg-success/5"
+              : m.outcome === "D" ? "border-warning/40 bg-warning/5"
+              : "border-destructive/40 bg-destructive/5";
+            return (
+              <div key={i} className={`rounded-lg border p-2 ${tone}`}>
+                <div className="text-[9px] uppercase tracking-widest text-warning/80">{m.round}</div>
+                <div className="text-xs truncate mt-0.5">{m.home ? "vs" : "@"} {m.opponent.short}</div>
+                <div className="font-display text-base tabular-nums">{m.ourScore}-{m.theirScore}</div>
+              </div>
+            );
+          })}
+          {!reachedFinal && (
+            <div className="rounded-lg border border-dashed border-muted-foreground/30 p-2 text-muted-foreground">
+              <div className="text-[9px] uppercase tracking-widest">Final</div>
+              <div className="text-xs">—</div>
+              <div className="font-display text-base">—</div>
+            </div>
+          )}
+        </motion.div>
+      )}
+
+      {/* Final position scoreboard (league only) */}
+      {!isKO && ourPosition > 0 && (
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
