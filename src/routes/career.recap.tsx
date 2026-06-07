@@ -320,13 +320,17 @@ function CareerRecap() {
         <StarDemandCard
           player={demandingStar}
           onKeep={() => {
-            career.setRerollsNextSeason(1);
+            // New penalty (rerolls removed in GOLAZO per user spec): the
+            // resentful star starts next season on cold form (-1). The
+            // form-events stage of the NEXT season will pick this up
+            // and prompt the user again if it tips below -2.
+            const formKey = `${demandingStar.club}:${normalizeName(demandingStar.name)}`;
+            career.setForm(formKey, -1);
             career.setPendingDeparture(null);
             career.setStarDemandResolved(true);
           }}
           onLetGo={() => {
             career.setPendingDeparture(`${demandingStar.club}:${demandingStar.name}`);
-            career.setRerollsNextSeason(3);
             career.setStarDemandResolved(true);
           }}
         />
@@ -394,9 +398,9 @@ function StarDemandCard({
         >
           <div className="font-display text-warning text-lg mb-1">Keep him</div>
           <div className="text-[11px] text-muted-foreground leading-relaxed">
-            He stays. Cost: next draft starts with only{" "}
-            <span className="text-warning">1 reroll</span> (instead of 3) — you'll be stuck with
-            what the wheel gives you.
+            He stays — but he's not happy. Starts next season on{" "}
+            <span className="text-primary">cold form (-1)</span>, so his output drops until you turn
+            it around.
           </div>
         </button>
         <button
@@ -405,8 +409,8 @@ function StarDemandCard({
         >
           <div className="font-display text-primary text-lg mb-1">Let him go</div>
           <div className="text-[11px] text-muted-foreground leading-relaxed">
-            He walks. You keep all <span className="text-warning">3 rerolls</span> for next draft,
-            but the slot has to be re-drafted.
+            He walks. The slot has to be re-signed via spin in the postseason rebuild — same as a
+            cold-form sell.
           </div>
         </button>
       </div>

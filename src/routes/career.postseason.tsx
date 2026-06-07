@@ -25,7 +25,7 @@
  * /career/draft for the next season.
  */
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useCareer } from "@/lib/career-store";
 import { getCareerClubs, getCareerPlayers } from "@/lib/data";
 import {
@@ -130,6 +130,16 @@ function PostSeason() {
     return career.squad.filter((p) => !departingKeys.has(`${p.club}:${p.name}`));
   }, [career.squad, departingPlayers]);
 
+  // Belt-and-suspenders: if we land in the rebuild stage and there's
+  // genuinely nothing to rebuild, auto-advance to ready. Catches any
+  // edge case where the user enters rebuild then a state change wipes
+  // departingPlayers (e.g. "keep" after "sell" toggle).
+  useEffect(() => {
+    if (stage === "rebuild" && departingPlayers.length === 0) {
+      setStage("ready");
+    }
+  }, [stage, departingPlayers.length]);
+
   // Render guards — AFTER all hooks. See LEARNINGS.md L-1.
   if (career.squad.length === 0) {
     return (
@@ -230,7 +240,16 @@ function PostSeason() {
             hotPlayers={hotPlayers}
             coldPlayers={coldPlayers}
             isRelegated={career.relegatedLastSeason}
-            onContinue={() => setStage(hotPlayers.length > 0 ? "demands" : "rebuild")}
+            onContinue={() => {
+              // BUG FIX: previously we always jumped to "rebuild" when no
+              // hot players, but if nothing was leaving (no cold, no
+              // pending departure) the rebuild stage stuck at "All slots
+              // filled" with no advance. Skip straight to "ready" when
+              // nobody's leaving.
+              if (hotPlayers.length > 0) setStage("demands");
+              else if (departingPlayers.length > 0) setStage("rebuild");
+              else setStage("ready");
+            }}
           />
         )}
 

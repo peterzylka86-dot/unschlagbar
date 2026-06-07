@@ -276,56 +276,68 @@ export function computeLeagueTable(
     isUs: true,
   };
 
-  // CRITICAL: the RNG seed MUST NOT depend on matches.length. The earlier
-  // version was `(ourRating * 9301 + matches.length * 1337)` — every
-  // matchday the user revealed, every opponent's projected fullPts
-  // RE-RANDOMIZED. Real Madrid could project for 60 pts at MD5 and 75
-  // pts at MD6 → after scaling, Madrid would leap past the user in one
-  // matchday even when the user GAINED points. The user reported exactly
-  // this: "had 5 points on Real Madrid…drew the next game…suddenly
-  // Madrid was ahead of me."
+  // Per-matchday W/D/L SEQUENCE per opponent (not a smooth pts scaling).
   //
-  // Seed is now stable across matchdays — same career, same league,
-  // same projected end-of-season stats whether you're at MD3 or MD22.
+  // User reported: "opponents sometimes did 2 points which is not possible
+  // as they can only make 0, 1 or 3 points." The old approach scaled fullPts
+  // proportionally, which could yield a +2 gain in one matchday — impossible
+  // in real football (W=3, D=1, L=0 are the only outcomes).
+  //
+  // Now: each opponent gets a deterministic 22-match sequence of W/D/L
+  // outcomes drawn from a strength-derived (winRate, drawRate, lossRate)
+  // distribution. Live stats = count over their first `userPlayed` results.
+  // Per-matchday gain is therefore ALWAYS 0, 1, or 3.
+  //
+  // Seed excludes matches.length so the 22-match sequence is identical at
+  // MD3 and MD22 — same career, same projected season.
   const seed = { v: (ourRating * 9301) | 0 || 42 };
-  const maxPts = matchesPerTeam * 3;
   const userPlayed = matches.length;
   const ratio = Math.max(0, Math.min(1, userPlayed / matchesPerTeam));
 
   const rows: TableRow[] = opponents.map((o) => {
-    const base = Math.round((o.strength - 60) * (matchesPerTeam / 15.5));
-    const jitter = Math.round((rand(seed) - 0.5) * 10);
-    const fullPts = Math.max(8, Math.min(maxPts - 8, base + jitter));
-    const fullW = Math.max(0, Math.min(matchesPerTeam, Math.round(fullPts / 3.1)));
+    const expectedPts = Math.max(0, (o.strength - 60) * (matchesPerTeam / 15.5));
+    const ptsPerMatch = Math.min(3, expectedPts / matchesPerTeam);
+    let drawRate = 0.25;
+    let winRate = Math.max(0, (ptsPerMatch - drawRate) / 3);
+    if (winRate === 0) drawRate = Math.min(1, ptsPerMatch);
+    if (winRate + drawRate > 1) {
+      winRate = Math.min(1, winRate);
+      drawRate = Math.max(0, 1 - winRate);
+    }
+    // Small per-opponent jitter for variety run-to-run, doesn't break
+    // seed-stability (rand(seed) consumes deterministically per opponent).
+    const wAdj = Math.max(0, Math.min(1, winRate + (rand(seed) - 0.5) * 0.06));
+    const dAdj = Math.max(0, Math.min(1 - wAdj, drawRate + (rand(seed) - 0.5) * 0.04));
+
+    // Pre-generate the matchesPerTeam-long sequence
+    const seq: Array<"W" | "D" | "L"> = [];
+    for (let i = 0; i < matchesPerTeam; i++) {
+      const r = rand(seed);
+      if (r < wAdj) seq.push("W");
+      else if (r < wAdj + dAdj) seq.push("D");
+      else seq.push("L");
+    }
+
+    const slice = seq.slice(0, userPlayed);
+    const w = slice.filter((x) => x === "W").length;
+    const d = slice.filter((x) => x === "D").length;
+    const l = slice.filter((x) => x === "L").length;
+    const pts = w * 3 + d;
+
+    // GF/GA still scaled proportionally (not in scope for this fix).
     const gdBase = (o.strength - 75) * 1.6 + (rand(seed) - 0.5) * 12;
     const fullGF = Math.max(
       15,
       Math.round(matchesPerTeam * 1.12 + (o.strength - 75) * 1.2 + (rand(seed) - 0.5) * 10),
     );
     const fullGA = Math.max(15, Math.round(fullGF - gdBase));
-
-    // Smooth points scaling: target_pts ≈ fullPts * ratio. Then derive
-    // a CONSISTENT (W, D, L) such that W*3 + D == pts and W+D+L == played.
-    // Previously we rounded W and D independently — meant a high-fullW
-    // opponent could "gain" a full win (+3 pts) in one user matchday
-    // while the user only gained 1 (a draw). With this approach the
-    // opponent's pts grow smoothly at ~fullPts/matchesPerTeam per matchday.
-    const played = Math.round(matchesPerTeam * ratio);
-    const targetPts = Math.min(played * 3, Math.round(fullPts * ratio));
-    let w = Math.max(0, Math.min(played, Math.round(fullW * ratio)));
-    while (w * 3 > targetPts) w--;
-    let d = targetPts - w * 3;
-    if (w + d > played) d = played - w;
-    const l = Math.max(0, played - w - d);
-    const pts = w * 3 + d;
-
     const gf = Math.round(fullGF * ratio);
     const ga = Math.round(fullGA * ratio);
     return {
       name: o.name,
       short: o.short,
       color: o.color,
-      played,
+      played: userPlayed,
       w,
       d,
       l,

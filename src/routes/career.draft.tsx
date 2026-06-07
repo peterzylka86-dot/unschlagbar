@@ -333,21 +333,32 @@ function CareerDraft() {
   function userSpin() {
     setDraft((prev) => {
       if (!prev) return prev;
-      const userManager = prev.managers.find((m) => m.isUser)!;
-      const need = computeNeed(userManager.squad, career.formation);
-      // Find a club whose pool contains at least one needed-position player
-      const eligibleClubs = allClubs.filter((c) => {
-        return allPlayers.some((p) => {
-          if (p.club !== c.id) return false;
-          if (prev.usedPlayerKeys.has(playerKey(p))) return false;
-          const bucket = simplifyPosition(p.position) as SimplePosition;
-          if (bucket === "GK" && !need.has("GK")) return false;
-          if (bucket === "DEF" && !need.has("DEF")) return false;
-          if (bucket === "MID" && !need.has("MID")) return false;
-          if (bucket === "FWD" && !need.has("FWD")) return false;
-          return true;
-        });
-      });
+      const userMgr = prev.managers.find((m) => m.isUser)!;
+      // Use the same slot-level open-position logic as the pick pool —
+      // an eligible club must have a player whose position can fill at
+      // least one OPEN slot in the user's formation. LB/RB/LW/RW are
+      // strict; CDM/CM/CAM share a family.
+      const formation = FORMATIONS[career.formation];
+      const slotPositions = formation.slots.map((s) => s.position);
+      const filled: boolean[] = slotPositions.map(() => false);
+      for (const p of userMgr.squad) {
+        for (let i = 0; i < slotPositions.length; i++) {
+          if (filled[i]) continue;
+          if (isPositionCompatible(slotPositions[i], p.position)) {
+            filled[i] = true;
+            break;
+          }
+        }
+      }
+      const openSlotPositions = slotPositions.filter((_, i) => !filled[i]);
+      const eligibleClubs = allClubs.filter((c) =>
+        allPlayers.some(
+          (p) =>
+            p.club === c.id &&
+            !prev.usedPlayerKeys.has(playerKey(p)) &&
+            openSlotPositions.some((sp) => isPositionCompatible(sp, p.position)),
+        ),
+      );
       if (eligibleClubs.length === 0) return prev;
       const chosen = eligibleClubs[Math.floor(Math.random() * eligibleClubs.length)];
       return { ...prev, currentClubId: chosen.id };
@@ -368,21 +379,39 @@ function CareerDraft() {
   // What can the user pick from right now? Always computed.
   const userPickContext = useMemo(() => {
     if (!draft || !userManager || !isUserTurn) return null;
-    const need = computeNeed(userManager.squad, career.formation);
+
+    // SLOT-LEVEL need: track which specific formation positions remain.
+    // User spec: "respect lw and rw positions as well as rb and lb."
+    // The 4-bucket simplifyPosition allowed a CB to fill an LB slot —
+    // that's wrong in real football. Walking through the formation's
+    // slot list and greedily matching squad members to compatible slots
+    // tells us exactly which Position values are still open. The pool
+    // filter then admits a player iff some open slot is isPositionCompatible
+    // with them. CDM↔CM↔CAM stays flexible (same family); LB/RB/LW/RW/CB
+    // each in their own family stays strict.
+    const formation = FORMATIONS[career.formation];
+    const slotPositions = formation.slots.map((s) => s.position);
+    const filled: boolean[] = slotPositions.map(() => false);
+    for (const p of userManager.squad) {
+      for (let i = 0; i < slotPositions.length; i++) {
+        if (filled[i]) continue;
+        if (isPositionCompatible(slotPositions[i], p.position)) {
+          filled[i] = true;
+          break;
+        }
+      }
+    }
+    const openSlotPositions = slotPositions.filter((_, i) => !filled[i]);
+    const matchesOpenSlot = (playerPos: Position): boolean =>
+      openSlotPositions.some((slotPos) => isPositionCompatible(slotPos, playerPos));
+
     const isFirstPick = userManager.squad.length === 0;
     if (isFirstPick) {
       // Pool is the founding club, no need to spin
       const pool = allPlayers
         .filter((p) => p.club === career.foundingClubId)
         .filter((p) => !draft.usedPlayerKeys.has(playerKey(p)))
-        .filter((p) => {
-          const bucket = simplifyPosition(p.position) as SimplePosition;
-          if (bucket === "GK" && !need.has("GK")) return false;
-          if (bucket === "DEF" && !need.has("DEF")) return false;
-          if (bucket === "MID" && !need.has("MID")) return false;
-          if (bucket === "FWD" && !need.has("FWD")) return false;
-          return true;
-        })
+        .filter((p) => matchesOpenSlot(p.position))
         .sort((a, b) => b.prime_rating - a.prime_rating)
         .slice(0, 16);
       return { mode: "founding" as const, pool, club: userClub };
@@ -392,18 +421,20 @@ function CareerDraft() {
     const pool = allPlayers
       .filter((p) => p.club === draft.currentClubId)
       .filter((p) => !draft.usedPlayerKeys.has(playerKey(p)))
-      .filter((p) => {
-        const bucket = simplifyPosition(p.position) as SimplePosition;
-        if (bucket === "GK" && !need.has("GK")) return false;
-        if (bucket === "DEF" && !need.has("DEF")) return false;
-        if (bucket === "MID" && !need.has("MID")) return false;
-        if (bucket === "FWD" && !need.has("FWD")) return false;
-        return true;
-      })
+      .filter((p) => matchesOpenSlot(p.position))
       .sort((a, b) => b.prime_rating - a.prime_rating)
       .slice(0, 12);
     return { mode: "picking" as const, pool, club };
-  }, [draft, userManager, isUserTurn, allPlayers, allClubs, career.foundingClubId, userClub]);
+  }, [
+    draft,
+    userManager,
+    isUserTurn,
+    allPlayers,
+    allClubs,
+    career.foundingClubId,
+    career.formation,
+    userClub,
+  ]);
 
   // ─── Render guards (after all hooks have been called) ─────────────────
   if (!career.foundingClubId || !career.leagueId) return null;
@@ -430,18 +461,8 @@ function CareerDraft() {
             Season {career.currentSeason} · Round {Math.min(draft.currentRound, SQUAD_SIZE)} /{" "}
             {SQUAD_SIZE}
           </div>
-          <div
-            className={`text-[10px] uppercase tracking-[0.2em] mt-0.5 ${
-              career.rerollsNextSeason === 0
-                ? "text-muted-foreground/50"
-                : career.rerollsNextSeason === 1
-                  ? "text-primary"
-                  : "text-warning"
-            }`}
-            title="Rerolls let you re-spin the wheel when it lands on a club you don't want"
-          >
-            🔄 {career.rerollsNextSeason} reroll{career.rerollsNextSeason === 1 ? "" : "s"} left
-          </div>
+          {/* Rerolls / re-spin removed from GOLAZO Career per user spec:
+              the wheel result is what you get. No second chances. */}
         </div>
       </header>
 
@@ -486,13 +507,6 @@ function CareerDraft() {
                 club={userPickContext.club!}
                 pool={userPickContext.pool}
                 onPick={userPickPlayer}
-                onSkip={() => {
-                  // A re-spin costs 1 reroll from the season's budget.
-                  if (career.rerollsNextSeason <= 0) return;
-                  career.setRerollsNextSeason(career.rerollsNextSeason - 1);
-                  userSpin();
-                }}
-                rerollsLeft={career.rerollsNextSeason}
               />
             )}
             {!isUserTurn && (
@@ -710,46 +724,23 @@ function UserPickFromClub({
   club,
   pool,
   onPick,
-  onSkip,
-  rerollsLeft,
 }: {
   club: Club;
   pool: Player[];
   onPick: (p: Player) => void;
-  onSkip: () => void;
-  rerollsLeft: number;
 }) {
-  const canReroll = rerollsLeft > 0;
+  // Re-spin removed per user spec: in GOLAZO, the wheel result sticks.
+  // If a club has no eligible-position players for this round, the
+  // auto-spin loop above will land somewhere else.
   return (
     <div className="rounded-2xl border border-warning bg-card/40 p-5">
-      <div className="flex items-center justify-between mb-3">
-        <div>
-          <div className="text-[10px] uppercase tracking-[0.2em] text-warning">Wheel landed on</div>
-          <div className="font-display text-xl">{club.name}</div>
-        </div>
-        <button
-          onClick={onSkip}
-          disabled={!canReroll}
-          title={
-            canReroll
-              ? `Re-spin uses 1 reroll (${rerollsLeft} left)`
-              : "Out of rerolls — pick from this club"
-          }
-          className={`text-xs underline transition ${
-            canReroll
-              ? "text-muted-foreground hover:text-warning"
-              : "text-muted-foreground/40 cursor-not-allowed no-underline"
-          }`}
-        >
-          Re-spin ({rerollsLeft} left) →
-        </button>
+      <div className="mb-3">
+        <div className="text-[10px] uppercase tracking-[0.2em] text-warning">Wheel landed on</div>
+        <div className="font-display text-xl">{club.name}</div>
       </div>
       {pool.length === 0 ? (
         <div className="text-sm text-muted-foreground py-4 text-center">
-          No eligible players left at this club.{" "}
-          {canReroll
-            ? "Try a re-spin."
-            : "You must pick from elsewhere — but you're out of rerolls."}
+          No eligible players left at this club — the wheel will roll again automatically.
         </div>
       ) : (
         <PlayerGrid pool={pool} onPick={onPick} />
@@ -1029,10 +1020,7 @@ function SeasonReadyCard({
         squad: m.squad,
       }));
     career.commitDraft(userManager.squad, rivals);
-    // Reset rerolls back to the default 3 — next season's end-of-season
-    // star demand will decide whether to reduce them again. Doing it here
-    // means the budget is fresh by the time the next draft starts.
-    career.setRerollsNextSeason(3);
+    // Rerolls / re-spin mechanic was removed from GOLAZO — no reset needed.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
