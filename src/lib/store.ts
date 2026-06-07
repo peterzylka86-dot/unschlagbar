@@ -16,6 +16,7 @@ interface GameState {
 }
 
 const defaultConfig: RunConfig = {
+  league: "bundesliga",
   formation: "4-3-3",
   difficulty: "normal",
   showRatings: true,

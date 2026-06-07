@@ -3,7 +3,6 @@ import type { Club, MatchResult, Slot } from "./game-types";
 export function squadRating(slots: Slot[]): number {
   const rated = slots.filter(s => s.player);
   if (!rated.length) return 0;
-  // weight rated players, penalise empty slots
   const sum = rated.reduce((acc, s) => acc + (s.player?.prime_rating ?? 0), 0);
   const filled = rated.length;
   const penalty = (slots.length - filled) * 60;
@@ -11,22 +10,36 @@ export function squadRating(slots: Slot[]): number {
 }
 
 function rand(seed: { v: number }) {
-  // xorshift
   let x = seed.v | 0;
   x ^= x << 13; x ^= x >>> 17; x ^= x << 5;
   seed.v = x;
   return ((x >>> 0) % 10000) / 10000;
 }
 
-export function simulateSeason(opponents: Club[], ourRating: number, seedNum: number, difficulty: "easy"|"normal"|"hard" = "normal"): MatchResult[] {
+export function simulateSeason(
+  opponents: Club[],
+  totalMatches: number,
+  ourRating: number,
+  seedNum: number,
+  difficulty: "easy"|"normal"|"hard" = "normal",
+): MatchResult[] {
   const seed = { v: seedNum || 12345 };
   const matches: MatchResult[] = [];
   const order: Array<{ opp: Club; home: boolean }> = [];
-  opponents.forEach(o => order.push({ opp: o, home: true }));
-  opponents.forEach(o => order.push({ opp: o, home: false }));
-  for (let i = order.length - 1; i > 0; i--) {
-    const j = Math.floor(rand(seed) * (i + 1));
-    [order[i], order[j]] = [order[j], order[i]];
+  if (opponents.length === 0) return matches;
+  // build a fixture list of exactly totalMatches, cycling opponents and alternating home/away per pass
+  let i = 0;
+  while (order.length < totalMatches) {
+    const opp = opponents[i % opponents.length];
+    const round = Math.floor(i / opponents.length);
+    const home = ((i % opponents.length) + round) % 2 === 0;
+    order.push({ opp, home });
+    i++;
+  }
+  // shuffle
+  for (let k = order.length - 1; k > 0; k--) {
+    const j = Math.floor(rand(seed) * (k + 1));
+    [order[k], order[j]] = [order[j], order[k]];
   }
   const varianceMul = difficulty === "easy" ? 0.7 : difficulty === "hard" ? 1.3 : 1.0;
   order.forEach((m, idx) => {
@@ -72,12 +85,11 @@ export interface TableRow {
   isUs?: boolean;
 }
 
-// Estimates a final 18-team table: opponents derive points from their strength,
-// our row uses the actual simulated matches.
 export function computeLeagueTable(
   matches: MatchResult[],
   opponents: Club[],
   ourRating: number,
+  matchesPerTeam: number = 34,
 ): { table: TableRow[]; ourPosition: number } {
   const ourW = matches.filter(m => m.outcome === "W").length;
   const ourD = matches.filter(m => m.outcome === "D").length;
@@ -96,25 +108,23 @@ export function computeLeagueTable(
     isUs: true,
   };
 
-  // Seeded pseudo-random so the table is stable per render.
   const seed = { v: (ourRating * 9301 + matches.length * 1337) | 0 || 42 };
+  const maxPts = matchesPerTeam * 3;
   const rows: TableRow[] = opponents.map(o => {
-    // base points from strength (70→26pts, 80→48pts, 92→74pts)
-    const base = Math.round((o.strength - 60) * 2.2);
+    const base = Math.round((o.strength - 60) * (matchesPerTeam / 15.5));
     const jitter = Math.round((rand(seed) - 0.5) * 10);
-    const pts = Math.max(8, Math.min(86, base + jitter));
-    // back out a plausible W/D/L for 34 games
-    const w = Math.max(0, Math.min(34, Math.round(pts / 3.1)));
-    const d = Math.max(0, Math.min(34 - w, pts - w * 3));
-    const l = 34 - w - d;
+    const pts = Math.max(8, Math.min(maxPts - 8, base + jitter));
+    const w = Math.max(0, Math.min(matchesPerTeam, Math.round(pts / 3.1)));
+    const d = Math.max(0, Math.min(matchesPerTeam - w, pts - w * 3));
+    const l = matchesPerTeam - w - d;
     const gdBase = (o.strength - 75) * 1.6 + (rand(seed) - 0.5) * 12;
-    const gf = Math.max(15, Math.round(38 + (o.strength - 75) * 1.2 + (rand(seed) - 0.5) * 10));
+    const gf = Math.max(15, Math.round(matchesPerTeam * 1.12 + (o.strength - 75) * 1.2 + (rand(seed) - 0.5) * 10));
     const ga = Math.max(15, Math.round(gf - gdBase));
     return {
       name: o.name,
       short: o.short,
       color: o.color,
-      played: 34,
+      played: matchesPerTeam,
       w, d, l, gf, ga, pts,
     };
   });
