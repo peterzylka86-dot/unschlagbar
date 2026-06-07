@@ -5,6 +5,7 @@ export type LeagueId =
   | "swiss"
   | "ucl"
   | "worldcup"
+  | "womenscup"
   | "womens";
 
 export type CompetitionKind = "league" | "knockout" | "groupKO";
@@ -199,6 +200,29 @@ export const LEAGUES: Record<LeagueId, League> = {
     fixtureRounds: 2,
     kind: "league",
     formatLabel: "League · 30 matches",
+  },
+  womenscup: {
+    id: "womenscup",
+    name: "Women's World Cup",
+    country: "World",
+    flag: "🏆",
+    matches: 7,
+    brandMark: "7:0",
+    tagline: "UNAUFHALTSAM",
+    kickoffWord: "Kick-off!",
+    seasonWord: "Tournament",
+    matchesWord: "Matches",
+    defeatsWord: "Defeats",
+    drawWord: "DRAW",
+    winWord: "WIN",
+    lossWord: "OUT",
+    tableTitle: "Road to Glory",
+    unbeatenLabel: "World Champions",
+    opponentsCount: 7,
+    fixtureRounds: 1,
+    kind: "groupKO",
+    rounds: ["Group", "Group", "Group", "Round of 16", "Quarter-Final", "Semi-Final", "Final"],
+    formatLabel: "Group + KO · 7 matches",
   },
 };
 

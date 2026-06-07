@@ -1,0 +1,578 @@
+[
+  {
+    "id": "argentina",
+    "name": "Argentina",
+    "short": "ARG",
+    "city": "Buenos Aires",
+    "color": "#75aadb",
+    "founded": 1903,
+    "strength": 80,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "australia",
+    "name": "Australia",
+    "short": "AUS",
+    "city": "Canberra",
+    "color": "#00843d",
+    "founded": 1961,
+    "strength": 88,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "brazil",
+    "name": "Brazil",
+    "short": "BRA",
+    "city": "Brasília",
+    "color": "#009b3a",
+    "founded": 1914,
+    "strength": 88,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "cameroon",
+    "name": "Cameroon",
+    "short": "CAM",
+    "city": "Yaoundé",
+    "color": "#007a5e",
+    "founded": 1959,
+    "strength": 78,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "canada",
+    "name": "Canada",
+    "short": "CAN",
+    "city": "Ottawa",
+    "color": "#ff0000",
+    "founded": 1912,
+    "strength": 86,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "chile",
+    "name": "Chile",
+    "short": "CHI",
+    "city": "Santiago",
+    "color": "#d52b1e",
+    "founded": 1895,
+    "strength": 76,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "china",
+    "name": "China",
+    "short": "CHI",
+    "city": "Beijing",
+    "color": "#de2910",
+    "founded": 1924,
+    "strength": 83,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "chinesetaipei",
+    "name": "Chinese Taipei",
+    "short": "CHI",
+    "city": "—",
+    "color": "#666666",
+    "founded": 1950,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "colombia",
+    "name": "Colombia",
+    "short": "COL",
+    "city": "Bogotá",
+    "color": "#fcd116",
+    "founded": 1924,
+    "strength": 78,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "costarica",
+    "name": "Costa Rica",
+    "short": "COS",
+    "city": "San José",
+    "color": "#002b7f",
+    "founded": 1921,
+    "strength": 75,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "denmark",
+    "name": "Denmark",
+    "short": "DEN",
+    "city": "Copenhagen",
+    "color": "#c8102e",
+    "founded": 1889,
+    "strength": 82,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "ecuador",
+    "name": "Ecuador",
+    "short": "ECU",
+    "city": "Quito",
+    "color": "#fcd116",
+    "founded": 1925,
+    "strength": 73,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "england",
+    "name": "England",
+    "short": "ENG",
+    "city": "London",
+    "color": "#ce1124",
+    "founded": 1863,
+    "strength": 90,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "equatorialguinea",
+    "name": "Equatorial Guinea",
+    "short": "EQU",
+    "city": "Malabo",
+    "color": "#3e9a00",
+    "founded": 1976,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "france",
+    "name": "France",
+    "short": "FRA",
+    "city": "Paris",
+    "color": "#0055a4",
+    "founded": 1919,
+    "strength": 90,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "germany",
+    "name": "Germany",
+    "short": "GER",
+    "city": "Berlin",
+    "color": "#000000",
+    "founded": 1900,
+    "strength": 92,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "ghana",
+    "name": "Ghana",
+    "short": "GHA",
+    "city": "Accra",
+    "color": "#006b3f",
+    "founded": 1957,
+    "strength": 78,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "italy",
+    "name": "Italy",
+    "short": "ITA",
+    "city": "Rome",
+    "color": "#008c45",
+    "founded": 1898,
+    "strength": 82,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "ivorycoast",
+    "name": "Ivory Coast",
+    "short": "IVO",
+    "city": "Yamoussoukro",
+    "color": "#f77f00",
+    "founded": 1960,
+    "strength": 76,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "jamaica",
+    "name": "Jamaica",
+    "short": "JAM",
+    "city": "Kingston",
+    "color": "#fed100",
+    "founded": 1910,
+    "strength": 74,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "japan",
+    "name": "Japan",
+    "short": "JAP",
+    "city": "Tokyo",
+    "color": "#bc002d",
+    "founded": 1921,
+    "strength": 88,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "mexico",
+    "name": "Mexico",
+    "short": "MEX",
+    "city": "Mexico City",
+    "color": "#006847",
+    "founded": 1927,
+    "strength": 78,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "netherlands",
+    "name": "Netherlands",
+    "short": "NET",
+    "city": "Amsterdam",
+    "color": "#ff5b00",
+    "founded": 1889,
+    "strength": 90,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "newzealand",
+    "name": "New Zealand",
+    "short": "NEW",
+    "city": "Wellington",
+    "color": "#000000",
+    "founded": 1891,
+    "strength": 76,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "nigeria",
+    "name": "Nigeria",
+    "short": "NIG",
+    "city": "Abuja",
+    "color": "#008751",
+    "founded": 1945,
+    "strength": 84,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "northkorea",
+    "name": "North Korea",
+    "short": "NOR",
+    "city": "Pyongyang",
+    "color": "#ed1c27",
+    "founded": 1945,
+    "strength": 82,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "norway",
+    "name": "Norway",
+    "short": "NOR",
+    "city": "Oslo",
+    "color": "#ba0c2f",
+    "founded": 1902,
+    "strength": 86,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "russia",
+    "name": "Russia",
+    "short": "RUS",
+    "city": "Moscow",
+    "color": "#d52b1e",
+    "founded": 1912,
+    "strength": 78,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "scotland",
+    "name": "Scotland",
+    "short": "SCO",
+    "city": "Glasgow",
+    "color": "#0065bd",
+    "founded": 1873,
+    "strength": 77,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "southafrica",
+    "name": "South Africa",
+    "short": "SOU",
+    "city": "Johannesburg",
+    "color": "#007749",
+    "founded": 1991,
+    "strength": 78,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "southkorea",
+    "name": "South Korea",
+    "short": "SOU",
+    "city": "Seoul",
+    "color": "#cd2e3a",
+    "founded": 1928,
+    "strength": 80,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "spain",
+    "name": "Spain",
+    "short": "SPA",
+    "city": "Madrid",
+    "color": "#aa151b",
+    "founded": 1909,
+    "strength": 92,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "sweden",
+    "name": "Sweden",
+    "short": "SWE",
+    "city": "Stockholm",
+    "color": "#005f9f",
+    "founded": 1904,
+    "strength": 88,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "switzerland",
+    "name": "Switzerland",
+    "short": "SWI",
+    "city": "Bern",
+    "color": "#ff0000",
+    "founded": 1895,
+    "strength": 80,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "thailand",
+    "name": "Thailand",
+    "short": "THA",
+    "city": "Bangkok",
+    "color": "#a51931",
+    "founded": 1916,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "unitedstates",
+    "name": "United States",
+    "short": "UNI",
+    "city": "Washington",
+    "color": "#bf0a30",
+    "founded": 1913,
+    "strength": 95,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  }
+]
