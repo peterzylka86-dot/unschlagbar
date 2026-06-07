@@ -19,7 +19,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useCareer } from "@/lib/career-store";
 import { LEAGUES } from "@/lib/leagues";
 import type { LeagueId } from "@/lib/leagues";
-import { getClubs } from "@/lib/data";
+import { getClubs, getPlayers } from "@/lib/data";
 import { simulateSeason, squadRating, computeLeagueTable } from "@/lib/sim";
 import {
   computeFormDelta,
@@ -37,6 +37,9 @@ export const Route = createFileRoute("/career/season")({
 });
 
 const MATCHES_PER_SEASON = 22;
+// Mid-season swap window opens AFTER this many matchdays have been played.
+// At MATCHES_PER_SEASON=22, that's after MD11 — halfway through.
+const MID_SEASON_GATE = Math.floor(MATCHES_PER_SEASON / 2);
 
 interface MatchWithScorers extends MatchResult {
   scorers: { name: string; assister?: string }[];
@@ -219,8 +222,14 @@ function CareerSeason() {
         <ScoreboardStat label="OVR" value={Math.round(userRating)} accent="text-warning" />
       </div>
 
-      {/* Action row */}
-      {!seasonDone && (
+      {/* Mid-season swap window — gates progression until used or skipped.
+          Triggers exactly once per season, after MD11. */}
+      {!seasonDone && shown >= MID_SEASON_GATE && !career.midSeasonSwapUsed && (
+        <MidSeasonSwapCard />
+      )}
+
+      {/* Action row — hidden while the mid-season swap window is open */}
+      {!seasonDone && !(shown >= MID_SEASON_GATE && !career.midSeasonSwapUsed) && (
         <div className="mt-6 flex gap-2">
           <button
             onClick={playNext}
@@ -561,6 +570,203 @@ function SquadForm({ squad, form }: { squad: Player[]; form: Record<string, numb
       )}
     </div>
   );
+}
+
+/**
+ * Mid-season swap window — appears exactly once per season after MD11.
+ *
+ * Rule: ONE swap, or skip. No escape hatch — once you accept the spin,
+ * you must commit to a swap (you can't bail back out). The franchise
+ * player can never be swapped out.
+ *
+ * Flow: prompt → spinning → picking-in (player to bring in) → picking-out
+ * (squad member to send out, franchise excluded) → done (sets midSeasonSwapUsed).
+ */
+function MidSeasonSwapCard() {
+  const career = useCareer();
+  const leagueId = (career.leagueId ?? "ucl") as LeagueId;
+  const allPlayers = useMemo(() => getPlayers(leagueId), [leagueId]);
+  const allClubs = useMemo(() => getClubs(leagueId), [leagueId]);
+
+  const [stage, setStage] = useState<"prompt" | "spinning" | "picking-in" | "picking-out">(
+    "prompt",
+  );
+  const [spunClub, setSpunClub] = useState<Club | null>(null);
+  const [incoming, setIncoming] = useState<Player | null>(null);
+
+  // Set of every player already in a squad (user + all rivals). They're
+  // off-limits — we don't tempt the user with players that aren't free.
+  const drafted = useMemo(() => {
+    const set = new Set<string>();
+    career.squad.forEach((p) => set.add(`${p.club}:${p.name}`));
+    career.rivals.forEach((r) => r.squad.forEach((p) => set.add(`${p.club}:${p.name}`)));
+    return set;
+  }, [career.squad, career.rivals]);
+
+  function spin() {
+    setStage("spinning");
+    // 700ms delay for tension; then random club with at least 1 free player.
+    setTimeout(() => {
+      const eligibleClubs = allClubs.filter((c) =>
+        allPlayers.some((p) => p.club === c.id && !drafted.has(`${p.club}:${p.name}`)),
+      );
+      if (eligibleClubs.length === 0) {
+        // Edge case: no clubs have free players. Skip the swap.
+        career.setMidSeasonSwapUsed(true);
+        return;
+      }
+      const pick = eligibleClubs[Math.floor(Math.random() * eligibleClubs.length)];
+      setSpunClub(pick);
+      setStage("picking-in");
+    }, 700);
+  }
+
+  function pickIncoming(p: Player) {
+    setIncoming(p);
+    setStage("picking-out");
+  }
+
+  function commitSwap(outIndex: number) {
+    if (!incoming) return;
+    career.swapSquadPlayer(outIndex, incoming);
+    career.setMidSeasonSwapUsed(true);
+  }
+
+  function skip() {
+    career.setMidSeasonSwapUsed(true);
+  }
+
+  // Stage 1: offer card
+  if (stage === "prompt") {
+    return (
+      <div className="mt-6 rounded-2xl border-2 border-warning bg-warning/10 p-5 text-center">
+        <div className="text-3xl mb-1">🔄</div>
+        <div className="font-display text-xl text-warning mb-1">Mid-Season Window</div>
+        <p className="text-xs text-muted-foreground max-w-sm mx-auto mb-4">
+          Halfway through the season. ONE swap available — spin for a player and commit to a swap,
+          or pass and keep your squad. No going back once you spin.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-2 justify-center">
+          <button
+            onClick={spin}
+            className="px-5 py-2.5 rounded-md bg-warning text-warning-foreground font-display tracking-wide hover:brightness-110 transition"
+          >
+            🎰 Spin for a swap
+          </button>
+          <button
+            onClick={skip}
+            className="px-5 py-2.5 rounded-md border border-muted-foreground/40 text-muted-foreground text-sm hover:bg-muted/30 transition"
+          >
+            Skip — keep my squad
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // Stage 2: spinning UI
+  if (stage === "spinning") {
+    return (
+      <div className="mt-6 rounded-2xl border-2 border-warning bg-warning/10 p-8 text-center">
+        <div className="text-5xl animate-spin inline-block">🎰</div>
+        <div className="mt-3 text-sm text-muted-foreground">Spinning…</div>
+      </div>
+    );
+  }
+
+  // Stage 3: pick incoming player from spun club
+  if (stage === "picking-in" && spunClub) {
+    const pool = allPlayers
+      .filter((p) => p.club === spunClub.id && !drafted.has(`${p.club}:${p.name}`))
+      .sort((a, b) => b.prime_rating - a.prime_rating)
+      .slice(0, 12); // top-12 by rating to keep the grid scannable
+    return (
+      <div className="mt-6 rounded-2xl border-2 border-warning bg-warning/10 p-5">
+        <div className="text-center mb-4">
+          <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
+            Wheel landed on
+          </div>
+          <div className="font-display text-2xl text-warning">{spunClub.name}</div>
+          <div className="text-xs text-muted-foreground mt-1">
+            Pick the player you want — you'll commit to a swap next.
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+          {pool.map((p) => (
+            <button
+              key={`in-${p.name}`}
+              onClick={() => pickIncoming(p)}
+              className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-border bg-card text-sm text-left hover:border-warning hover:bg-warning/10 transition"
+            >
+              <div className="min-w-0">
+                <div className="font-medium truncate">{p.name}</div>
+                <div className="text-[10px] text-muted-foreground truncate">
+                  {p.position} · {p.career_years}
+                </div>
+              </div>
+              <span className="shrink-0 font-display text-sm text-warning">{p.prime_rating}</span>
+            </button>
+          ))}
+        </div>
+        {pool.length === 0 && (
+          <p className="text-sm text-muted-foreground italic text-center py-4">
+            No free players at {spunClub.name}. Skipping…
+          </p>
+        )}
+      </div>
+    );
+  }
+
+  // Stage 4: pick which squad member to swap OUT (franchise excluded)
+  if (stage === "picking-out" && incoming) {
+    return (
+      <div className="mt-6 rounded-2xl border-2 border-warning bg-warning/10 p-5">
+        <div className="text-center mb-4">
+          <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
+            Incoming
+          </div>
+          <div className="font-display text-xl text-warning">
+            {incoming.name} <span className="opacity-70">· {incoming.position}</span>
+          </div>
+          <div className="text-xs text-muted-foreground mt-1">
+            Who goes out? Tap a player to swap. ⭐ Franchise can't be removed.
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+          {career.squad.map((p, i) => {
+            const key = `${p.club}:${p.name}`;
+            const isFranchise = key === career.franchisePlayerKey;
+            return (
+              <button
+                key={`out-${i}-${p.name}`}
+                disabled={isFranchise}
+                onClick={() => commitSwap(i)}
+                className={`flex items-center justify-between gap-2 px-3 py-2 rounded-lg border text-sm text-left transition ${
+                  isFranchise
+                    ? "border-warning/40 bg-warning/5 opacity-60 cursor-not-allowed"
+                    : "border-border bg-card hover:border-primary hover:bg-primary/10"
+                }`}
+              >
+                <div className="min-w-0">
+                  <div className="font-medium truncate flex items-center gap-1">
+                    {isFranchise && <span>⭐</span>}
+                    <span className="truncate">{p.name}</span>
+                  </div>
+                  <div className="text-[10px] text-muted-foreground truncate">
+                    {p.position} · {p.career_years}
+                    {isFranchise && <span className="text-warning ml-1">· Franchise</span>}
+                  </div>
+                </div>
+                <span className="shrink-0 font-display text-sm text-warning">{p.prime_rating}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+
+  return null;
 }
 
 function ordinal(n: number): string {

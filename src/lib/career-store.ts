@@ -19,7 +19,7 @@ import { persist, createJSONStorage } from "zustand/middleware";
 import type { Player, FormationKey } from "./game-types";
 
 /** Bump this when a non-backwards-compat change to CareerState ships. */
-export const CAREER_SCHEMA_VERSION = 2;
+export const CAREER_SCHEMA_VERSION = 3;
 
 /** Snapshot of a completed season — written to seasonHistory at the moment
  *  the season is finalized. Used by /career/history (Hall of Fame). */
@@ -28,7 +28,7 @@ export interface SeasonRecord {
   leagueId: string;
   foundingClubId: string;
   formation: FormationKey;
-  finalPosition: number;          // 1 = champion, 12 = bottom
+  finalPosition: number; // 1 = champion, 12 = bottom
   totalLeagueClubs: number;
   wins: number;
   draws: number;
@@ -36,12 +36,7 @@ export interface SeasonRecord {
   goalsFor: number;
   goalsAgainst: number;
   /** Outcome in the cup competition (only meaningful if user qualified). */
-  cupResult:
-    | "champion"
-    | "runner-up"
-    | "semi-final"
-    | "quarter-final"
-    | "did-not-qualify";
+  cupResult: "champion" | "runner-up" | "semi-final" | "quarter-final" | "did-not-qualify";
   relegated: boolean;
   /** List of trophy names earned this season (e.g. 'League Champion'). */
   trophies: string[];
@@ -87,6 +82,18 @@ export interface CareerState {
   seasonHistory: SeasonRecord[];
   /** True if the user was relegated last season → next season is a rebuild. */
   relegatedLastSeason: boolean;
+  /** Composite key `${club}:${name}` of the founding-pick player — can never
+   *  be sold, swapped, or removed. Set on the user's first draft pick. */
+  franchisePlayerKey: string | null;
+  /** True after the mid-season swap window has been used or skipped this
+   *  season. Reset to false at the start of each new season. */
+  midSeasonSwapUsed: boolean;
+  /** Rerolls available in the NEXT draft (defaults to 3). Reduced to 1 if
+   *  the user chose to keep a demanding star at the end of last season. */
+  rerollsNextSeason: number;
+  /** Composite key of the star demanding to leave at season end. The player
+   *  is removed from the squad at the start of the next draft. */
+  pendingDeparture: string | null;
 }
 
 const initialCareerState: CareerState = {
@@ -102,6 +109,10 @@ const initialCareerState: CareerState = {
   trophies: 0,
   seasonHistory: [],
   relegatedLastSeason: false,
+  franchisePlayerKey: null,
+  midSeasonSwapUsed: false,
+  rerollsNextSeason: 3,
+  pendingDeparture: null,
 };
 
 interface CareerStore extends CareerState {
@@ -123,6 +134,17 @@ interface CareerStore extends CareerState {
   recordSeason: (record: SeasonRecord) => void;
   /** Mark whether the just-finished season ended in relegation. */
   setRelegated: (flag: boolean) => void;
+  /** Lock in the franchise player — called once when the founding pick is made. */
+  setFranchisePlayer: (playerKey: string) => void;
+  /** Replace squad player at index N with a new player. Use for swap windows.
+   *  Refuses to operate on the franchise player (no-op). */
+  swapSquadPlayer: (oldIndex: number, newPlayer: Player) => void;
+  /** Mark the mid-season swap window as resolved (used or skipped). */
+  setMidSeasonSwapUsed: (flag: boolean) => void;
+  /** Set the reroll budget available in the next draft (default 3). */
+  setRerollsNextSeason: (n: number) => void;
+  /** Mark a star as departing — they're removed from squad at next draft start. */
+  setPendingDeparture: (playerKey: string | null) => void;
 }
 
 export const useCareer = create<CareerStore>()(
@@ -132,44 +154,73 @@ export const useCareer = create<CareerStore>()(
 
       hasActiveCareer: () => get().foundingClubId !== null,
 
-      startCareer: (foundingClubId, leagueId) => set({
-        schemaVersion: CAREER_SCHEMA_VERSION,
-        startedAt: new Date().toISOString(),
-        foundingClubId,
-        leagueId,
-        formation: "4-3-3",
-        currentSeason: 1,
-        squad: [],
-        rivals: [],
-        form: {},
-        trophies: 0,
-        seasonHistory: [],
-        relegatedLastSeason: false,
-      }),
+      startCareer: (foundingClubId, leagueId) =>
+        set({
+          schemaVersion: CAREER_SCHEMA_VERSION,
+          startedAt: new Date().toISOString(),
+          foundingClubId,
+          leagueId,
+          formation: "4-3-3",
+          currentSeason: 1,
+          squad: [],
+          rivals: [],
+          form: {},
+          trophies: 0,
+          seasonHistory: [],
+          relegatedLastSeason: false,
+          franchisePlayerKey: null,
+          midSeasonSwapUsed: false,
+          rerollsNextSeason: 3,
+          pendingDeparture: null,
+        }),
 
       abandonCareer: () => set({ ...initialCareerState }),
 
-      addToSquad: (player) => set(state => ({
-        squad: [...state.squad, player],
-      })),
+      addToSquad: (player) =>
+        set((state) => ({
+          squad: [...state.squad, player],
+        })),
 
-      commitDraft: (userSquad, rivals) => set({
-        squad: userSquad,
-        rivals,
-      }),
+      commitDraft: (userSquad, rivals) =>
+        set({
+          squad: userSquad,
+          rivals,
+        }),
 
-      setForm: (playerKey, value) => set(state => ({
-        form: { ...state.form, [playerKey]: value },
-      })),
+      setForm: (playerKey, value) =>
+        set((state) => ({
+          form: { ...state.form, [playerKey]: value },
+        })),
 
       setFormation: (formation) => set({ formation }),
 
-      recordSeason: (record) => set(state => ({
-        seasonHistory: [...state.seasonHistory, record],
-        trophies: state.trophies + record.trophies.length,
-      })),
+      recordSeason: (record) =>
+        set((state) => ({
+          seasonHistory: [...state.seasonHistory, record],
+          trophies: state.trophies + record.trophies.length,
+        })),
 
       setRelegated: (flag) => set({ relegatedLastSeason: flag }),
+
+      setFranchisePlayer: (playerKey) => set({ franchisePlayerKey: playerKey }),
+
+      swapSquadPlayer: (oldIndex, newPlayer) =>
+        set((state) => {
+          const target = state.squad[oldIndex];
+          if (!target) return state;
+          const targetKey = `${target.club}:${target.name}`;
+          // Hard rule: franchise player is untouchable.
+          if (targetKey === state.franchisePlayerKey) return state;
+          return {
+            squad: state.squad.map((p, i) => (i === oldIndex ? newPlayer : p)),
+          };
+        }),
+
+      setMidSeasonSwapUsed: (flag) => set({ midSeasonSwapUsed: flag }),
+
+      setRerollsNextSeason: (n) => set({ rerollsNextSeason: Math.max(0, n) }),
+
+      setPendingDeparture: (playerKey) => set({ pendingDeparture: playerKey }),
     }),
     {
       name: "unschlagbar:career:v1",
@@ -188,6 +239,10 @@ export const useCareer = create<CareerStore>()(
         trophies: state.trophies,
         seasonHistory: state.seasonHistory,
         relegatedLastSeason: state.relegatedLastSeason,
+        franchisePlayerKey: state.franchisePlayerKey,
+        midSeasonSwapUsed: state.midSeasonSwapUsed,
+        rerollsNextSeason: state.rerollsNextSeason,
+        pendingDeparture: state.pendingDeparture,
       }),
     },
   ),

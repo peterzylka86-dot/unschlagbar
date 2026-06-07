@@ -70,7 +70,7 @@ function PostSeason() {
   }, [career.squad, formMap]);
 
   const coldPlayers = useMemo(() => {
-    return career.squad.filter(p => {
+    return career.squad.filter((p) => {
       const key = `${p.club}:${normalizeName(p.name)}`;
       return (career.form[key] ?? 0) <= -2;
     });
@@ -89,20 +89,20 @@ function PostSeason() {
     Object.entries(decisionsByPlayer).forEach(([nameKey, choice]) => {
       if (choice === "sell") soldKeys.add(nameKey);
     });
-    coldPlayers.forEach(p => soldKeys.add(normalizeName(p.name)));
-    return career.squad.filter(p => !soldKeys.has(normalizeName(p.name)));
+    coldPlayers.forEach((p) => soldKeys.add(normalizeName(p.name)));
+    return career.squad.filter((p) => !soldKeys.has(normalizeName(p.name)));
   }, [career.squad, decisionsByPlayer, coldPlayers]);
 
   const searchResults = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
     if (q.length < 2) return [];
     const usedKeys = new Set([
-      ...career.squad.map(p => normalizeName(p.name)),
-      ...newSignings.map(p => normalizeName(p.name)),
+      ...career.squad.map((p) => normalizeName(p.name)),
+      ...newSignings.map((p) => normalizeName(p.name)),
     ]);
     return allPlayers
-      .filter(p => p.name.toLowerCase().includes(q))
-      .filter(p => !usedKeys.has(normalizeName(p.name)))
+      .filter((p) => p.name.toLowerCase().includes(q))
+      .filter((p) => !usedKeys.has(normalizeName(p.name)))
       .sort((a, b) => b.prime_rating - a.prime_rating)
       .slice(0, 15);
   }, [searchQuery, allPlayers, career.squad, newSignings]);
@@ -111,7 +111,10 @@ function PostSeason() {
   if (career.squad.length === 0) {
     return (
       <div className="min-h-screen flex items-center justify-center text-muted-foreground">
-        No active career — head back to <Link to="/career" className="underline ml-1">/career</Link>
+        No active career — head back to{" "}
+        <Link to="/career" className="underline ml-1">
+          /career
+        </Link>
       </div>
     );
   }
@@ -119,23 +122,26 @@ function PostSeason() {
   // Relegation override: if user was relegated last season, show the
   // "Rebuild Season" UX instead of the normal transfer window.
   if (career.relegatedLastSeason) {
-    return <RebuildSeasonCard
-      career={career}
-      onStart={() => {
-        // Keep top 5 by rating; the draft route will fill the other 6
-        const topN = [...career.squad]
-          .sort((a, b) => b.prime_rating - a.prime_rating)
-          .slice(0, RELEGATION_KEEP_TOP_N);
-        useCareer.setState({
-          squad: topN,
-          rivals: career.rivals.map(r => ({ ...r, squad: [] })),
-          form: {},
-          relegatedLastSeason: false,
-          currentSeason: career.currentSeason + 1,
-        });
-        navigate({ to: "/career/draft" });
-      }}
-    />;
+    return (
+      <RebuildSeasonCard
+        career={career}
+        onStart={() => {
+          // Keep top 5 by rating; the draft route will fill the other 6
+          const topN = [...career.squad]
+            .sort((a, b) => b.prime_rating - a.prime_rating)
+            .slice(0, RELEGATION_KEEP_TOP_N);
+          useCareer.setState({
+            squad: topN,
+            rivals: career.rivals.map((r) => ({ ...r, squad: [] })),
+            form: {},
+            relegatedLastSeason: false,
+            currentSeason: career.currentSeason + 1,
+            midSeasonSwapUsed: false, // fresh season → swap window resets
+          });
+          navigate({ to: "/career/draft" });
+        }}
+      />
+    );
   }
 
   function commitDecisions() {
@@ -148,7 +154,7 @@ function PostSeason() {
   }
 
   function addSigning(p: Player) {
-    setNewSignings(prev => [...prev, p]);
+    setNewSignings((prev) => [...prev, p]);
     setSearchQuery("");
     if (newSignings.length + 1 >= replacementsNeeded) {
       setStage("ready");
@@ -161,20 +167,21 @@ function PostSeason() {
     Object.entries(decisionsByPlayer).forEach(([nameKey, choice]) => {
       if (choice === "sell") soldKeys.add(nameKey);
     });
-    coldPlayers.forEach(p => soldKeys.add(normalizeName(p.name)));
+    coldPlayers.forEach((p) => soldKeys.add(normalizeName(p.name)));
 
-    const survivors = career.squad.filter(p => !soldKeys.has(normalizeName(p.name)));
+    const survivors = career.squad.filter((p) => !soldKeys.has(normalizeName(p.name)));
     const newSquad = [...survivors, ...newSignings];
 
     // Reset rivals' squads (they re-draft from scratch next season too,
     // following the same /career/draft flow). Clear form for a fresh slate.
-    const refreshedRivals = career.rivals.map(r => ({ ...r, squad: [] }));
+    const refreshedRivals = career.rivals.map((r) => ({ ...r, squad: [] }));
 
     useCareer.setState({
-      squad: [],  // empty squad; the draft route will rebuild via commitDraft
+      squad: [], // empty squad; the draft route will rebuild via commitDraft
       rivals: refreshedRivals,
       form: {},
       currentSeason: career.currentSeason + 1,
+      midSeasonSwapUsed: false, // fresh season → swap window resets
     });
     // The user's saved-XI carry-over: store the surviving players as
     // a "keep list" by setting them as initial squad before draft.
@@ -187,7 +194,10 @@ function PostSeason() {
   return (
     <div className="min-h-screen px-4 py-8 max-w-3xl mx-auto">
       <header className="flex items-center justify-between gap-3">
-        <Link to="/career" className="text-[11px] text-muted-foreground hover:text-warning underline">
+        <Link
+          to="/career"
+          className="text-[11px] text-muted-foreground hover:text-warning underline"
+        >
           ← GOLAZO hub
         </Link>
         <div className="text-right">
@@ -202,13 +212,18 @@ function PostSeason() {
       <div className="mt-6 flex gap-1 text-[10px] uppercase tracking-[0.18em]">
         {(["events", "demands", "rebuild", "ready"] as Stage[]).map((s, idx) => {
           const isCurrent = s === stage;
-          const isPast = (["events","demands","rebuild","ready"].indexOf(stage)) > idx;
+          const isPast = ["events", "demands", "rebuild", "ready"].indexOf(stage) > idx;
           return (
-            <div key={s} className={`flex-1 py-2 px-2 text-center rounded ${
-              isCurrent ? "bg-warning text-warning-foreground" :
-              isPast ? "bg-warning/20 text-warning/70" :
-              "bg-card text-muted-foreground"
-            }`}>
+            <div
+              key={s}
+              className={`flex-1 py-2 px-2 text-center rounded ${
+                isCurrent
+                  ? "bg-warning text-warning-foreground"
+                  : isPast
+                    ? "bg-warning/20 text-warning/70"
+                    : "bg-card text-muted-foreground"
+              }`}
+            >
               {idx + 1}. {s}
             </div>
           );
@@ -229,9 +244,13 @@ function PostSeason() {
           <DemandsCard
             hotPlayers={hotPlayers}
             decisions={decisionsByPlayer}
-            onDecide={(name, choice) => setDecisionsByPlayer(prev => ({ ...prev, [normalizeName(name)]: choice }))}
+            onDecide={(name, choice) =>
+              setDecisionsByPlayer((prev) => ({ ...prev, [normalizeName(name)]: choice }))
+            }
             onContinue={commitDecisions}
-            canContinue={hotPlayers.every(p => decisionsByPlayer[normalizeName(p.name)] !== undefined)}
+            canContinue={hotPlayers.every(
+              (p) => decisionsByPlayer[normalizeName(p.name)] !== undefined,
+            )}
           />
         )}
 
@@ -262,8 +281,14 @@ function PostSeason() {
 
 // ─── sub-components ─────────────────────────────────────────────────
 
-function FormEventsCard({ hotPlayers, coldPlayers, onContinue }: {
-  hotPlayers: Player[]; coldPlayers: Player[]; onContinue: () => void;
+function FormEventsCard({
+  hotPlayers,
+  coldPlayers,
+  onContinue,
+}: {
+  hotPlayers: Player[];
+  coldPlayers: Player[];
+  onContinue: () => void;
 }) {
   return (
     <div className="rounded-2xl border border-border bg-card/40 p-5">
@@ -275,10 +300,15 @@ function FormEventsCard({ hotPlayers, coldPlayers, onContinue }: {
       <div className="space-y-3">
         {hotPlayers.length > 0 ? (
           <div>
-            <div className="text-[10px] uppercase tracking-[0.2em] text-warning mb-1">🔥 Hot form</div>
+            <div className="text-[10px] uppercase tracking-[0.2em] text-warning mb-1">
+              🔥 Hot form
+            </div>
             <ul className="space-y-1">
-              {hotPlayers.map(p => (
-                <li key={p.name} className="flex items-center justify-between gap-2 px-3 py-1.5 rounded bg-warning/10 border border-warning/30 text-sm">
+              {hotPlayers.map((p) => (
+                <li
+                  key={p.name}
+                  className="flex items-center justify-between gap-2 px-3 py-1.5 rounded bg-warning/10 border border-warning/30 text-sm"
+                >
                   <span>
                     <span className="font-display">{p.name}</span>
                     <span className="text-xs text-muted-foreground ml-2">{p.position}</span>
@@ -292,10 +322,15 @@ function FormEventsCard({ hotPlayers, coldPlayers, onContinue }: {
 
         {coldPlayers.length > 0 ? (
           <div>
-            <div className="text-[10px] uppercase tracking-[0.2em] text-primary mb-1">❄️ Cold form</div>
+            <div className="text-[10px] uppercase tracking-[0.2em] text-primary mb-1">
+              ❄️ Cold form
+            </div>
             <ul className="space-y-1">
-              {coldPlayers.map(p => (
-                <li key={p.name} className="flex items-center justify-between gap-2 px-3 py-1.5 rounded bg-primary/10 border border-primary/30 text-sm">
+              {coldPlayers.map((p) => (
+                <li
+                  key={p.name}
+                  className="flex items-center justify-between gap-2 px-3 py-1.5 rounded bg-primary/10 border border-primary/30 text-sm"
+                >
                   <span>
                     <span className="font-display">{p.name}</span>
                     <span className="text-xs text-muted-foreground ml-2">{p.position}</span>
@@ -324,7 +359,13 @@ function FormEventsCard({ hotPlayers, coldPlayers, onContinue }: {
   );
 }
 
-function DemandsCard({ hotPlayers, decisions, onDecide, onContinue, canContinue }: {
+function DemandsCard({
+  hotPlayers,
+  decisions,
+  onDecide,
+  onContinue,
+  canContinue,
+}: {
   hotPlayers: Player[];
   decisions: Record<string, "keep" | "sell">;
   onDecide: (name: string, choice: "keep" | "sell") => void;
@@ -338,11 +379,14 @@ function DemandsCard({ hotPlayers, decisions, onDecide, onContinue, canContinue 
         These players are on fire. Keep them (re-sign at full OVR) or sell to free a slot.
       </div>
       <ul className="space-y-2">
-        {hotPlayers.map(p => {
+        {hotPlayers.map((p) => {
           const key = normalizeName(p.name);
           const choice = decisions[key];
           return (
-            <li key={p.name} className="flex items-center justify-between gap-2 p-3 rounded border border-warning/40 bg-card/30">
+            <li
+              key={p.name}
+              className="flex items-center justify-between gap-2 p-3 rounded border border-warning/40 bg-card/30"
+            >
               <div className="min-w-0">
                 <div className="font-display text-sm truncate">{p.name}</div>
                 <div className="text-[11px] text-muted-foreground">
@@ -390,7 +434,15 @@ function DemandsCard({ hotPlayers, decisions, onDecide, onContinue, canContinue 
   );
 }
 
-function RebuildCard({ needed, signed, remainingSquad, search, onSearch, results, onPick }: {
+function RebuildCard({
+  needed,
+  signed,
+  remainingSquad,
+  search,
+  onSearch,
+  results,
+  onPick,
+}: {
   needed: number;
   signed: number;
   remainingSquad: Player[];
@@ -403,9 +455,11 @@ function RebuildCard({ needed, signed, remainingSquad, search, onSearch, results
     <div className="rounded-2xl border border-warning bg-warning/5 p-5">
       <div className="font-display text-xl mb-1">🔄 Squad rebuild</div>
       <div className="text-xs text-muted-foreground mb-4">
-        Sign <span className="font-display text-warning">{needed - signed}</span> player{needed - signed === 1 ? "" : "s"} to refill empty slots.
+        Sign <span className="font-display text-warning">{needed - signed}</span> player
+        {needed - signed === 1 ? "" : "s"} to refill empty slots.
         <span className="block mt-1">
-          Survivors: <span className="text-warning">{remainingSquad.length}</span> · New signings: <span className="text-warning">{signed}</span>
+          Survivors: <span className="text-warning">{remainingSquad.length}</span> · New signings:{" "}
+          <span className="text-warning">{signed}</span>
         </span>
       </div>
       <input
@@ -417,7 +471,7 @@ function RebuildCard({ needed, signed, remainingSquad, search, onSearch, results
       />
       {search.length >= 2 && results.length > 0 && (
         <ul className="mt-2 divide-y divide-border rounded-xl border border-border bg-card/60 max-h-72 overflow-y-auto">
-          {results.map(p => (
+          {results.map((p) => (
             <li key={`${p.name}-${p.club}`}>
               <button
                 onClick={() => onPick(p)}
@@ -458,7 +512,10 @@ function RebuildCard({ needed, signed, remainingSquad, search, onSearch, results
  * Matches the GOLAZO original "rebuild season" mechanic — relegation
  * has real consequences, not just a label.
  */
-function RebuildSeasonCard({ career, onStart }: {
+function RebuildSeasonCard({
+  career,
+  onStart,
+}: {
   career: ReturnType<typeof useCareer.getState>;
   onStart: () => void;
 }) {
@@ -468,7 +525,10 @@ function RebuildSeasonCard({ career, onStart }: {
   return (
     <div className="min-h-screen px-4 py-8 max-w-2xl mx-auto">
       <header className="text-center">
-        <Link to="/career" className="text-[11px] text-muted-foreground hover:text-warning underline">
+        <Link
+          to="/career"
+          className="text-[11px] text-muted-foreground hover:text-warning underline"
+        >
           ← GOLAZO hub
         </Link>
         <h1 className="mt-3 font-display text-3xl text-primary">📉 Rebuild Season</h1>
@@ -480,17 +540,25 @@ function RebuildSeasonCard({ career, onStart }: {
       <div className="mt-8 rounded-2xl border-2 border-primary bg-primary/10 p-5">
         <div className="font-display text-lg text-primary mb-1">The rules</div>
         <ul className="text-sm space-y-1.5 text-foreground/85">
-          <li>• You keep your <span className="text-primary">top {RELEGATION_KEEP_TOP_N}</span> players (by rating)</li>
+          <li>
+            • You keep your <span className="text-primary">top {RELEGATION_KEEP_TOP_N}</span>{" "}
+            players (by rating)
+          </li>
           <li>• The other 6 slots get re-drafted next season</li>
           <li>• No cup competition — focus on getting back up</li>
         </ul>
       </div>
 
       <div className="mt-6">
-        <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Players you keep</div>
+        <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
+          Players you keep
+        </div>
         <ul className="space-y-1.5">
           {top5.map((p, i) => (
-            <li key={`${p.name}-${i}`} className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-warning/40 bg-warning/5">
+            <li
+              key={`${p.name}-${i}`}
+              className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-warning/40 bg-warning/5"
+            >
               <div className="min-w-0">
                 <div className="font-display text-sm truncate">{p.name}</div>
                 <div className="text-[11px] text-muted-foreground truncate">
@@ -513,7 +581,12 @@ function RebuildSeasonCard({ career, onStart }: {
   );
 }
 
-function ReadyCard({ survivorsCount, signingsCount, nextSeason, onStart }: {
+function ReadyCard({
+  survivorsCount,
+  signingsCount,
+  nextSeason,
+  onStart,
+}: {
   survivorsCount: number;
   signingsCount: number;
   nextSeason: number;
@@ -524,11 +597,12 @@ function ReadyCard({ survivorsCount, signingsCount, nextSeason, onStart }: {
       <div className="text-4xl mb-2">⚽</div>
       <div className="font-display text-2xl text-warning mb-2">Ready for Season {nextSeason}</div>
       <div className="text-sm text-muted-foreground mb-1">
-        Squad: <span className="text-warning font-display">{survivorsCount + signingsCount}/11</span>
+        Squad:{" "}
+        <span className="text-warning font-display">{survivorsCount + signingsCount}/11</span>
       </div>
       <div className="text-xs text-muted-foreground mb-5">
-        {survivorsCount} survivors · {signingsCount} new signings.
-        The wheel will fill any remaining slots from your league pool.
+        {survivorsCount} survivors · {signingsCount} new signings. The wheel will fill any remaining
+        slots from your league pool.
       </div>
       <button
         onClick={onStart}

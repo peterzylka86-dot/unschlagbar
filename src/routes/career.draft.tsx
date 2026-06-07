@@ -53,20 +53,20 @@ const SQUAD_SIZE = 11;
 // loop + position-aware spin filtering both honor whatever formation the
 // user picked at the top of the draft.
 const FORMATION_NEEDS: Record<string, FormationNeed> = {
-  "4-3-3":   { G: 1, D: 4, M: 3, F: 3 },
-  "4-4-2":   { G: 1, D: 4, M: 4, F: 2 },
-  "4-2-3-1": { G: 1, D: 4, M: 5, F: 1 },   // 2 CDM + 1 CAM = 3 MID + 2 wide MIDs
-  "4-5-1":   { G: 1, D: 4, M: 5, F: 1 },
-  "3-4-3":   { G: 1, D: 3, M: 4, F: 3 },
-  "3-5-2":   { G: 1, D: 3, M: 5, F: 2 },
-  "5-4-1":   { G: 1, D: 5, M: 4, F: 1 },
+  "4-3-3": { G: 1, D: 4, M: 3, F: 3 },
+  "4-4-2": { G: 1, D: 4, M: 4, F: 2 },
+  "4-2-3-1": { G: 1, D: 4, M: 5, F: 1 }, // 2 CDM + 1 CAM = 3 MID + 2 wide MIDs
+  "4-5-1": { G: 1, D: 4, M: 5, F: 1 },
+  "3-4-3": { G: 1, D: 3, M: 4, F: 3 },
+  "3-5-2": { G: 1, D: 3, M: 5, F: 2 },
+  "5-4-1": { G: 1, D: 5, M: 4, F: 1 },
 };
 
 // Simple Mulberry32 seeded RNG so the same career produces the same draft
 function mulberry32(seed: number): () => number {
   let s = seed >>> 0;
   return () => {
-    s = (s + 0x6D2B79F5) >>> 0;
+    s = (s + 0x6d2b79f5) >>> 0;
     let t = s;
     t = Math.imul(t ^ (t >>> 15), t | 1);
     t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
@@ -88,11 +88,11 @@ interface Manager {
 
 interface DraftSnapshot {
   managers: Manager[];
-  draftOrder: string[];      // round-1 manager id sequence
+  draftOrder: string[]; // round-1 manager id sequence
   currentRound: number;
   currentPickInRound: number;
   usedPlayerKeys: Set<string>;
-  currentClubId: string | null;   // when user's spin lands on a club
+  currentClubId: string | null; // when user's spin lands on a club
 }
 
 function playerKey(p: Player): string {
@@ -121,7 +121,7 @@ function CareerDraft() {
   const allClubs = useMemo(() => getClubs(leagueId), [leagueId]);
   const allPlayers = useMemo(() => getPlayers(leagueId), [leagueId]);
   const userClub = useMemo(
-    () => allClubs.find(c => c.id === career.foundingClubId) ?? null,
+    () => allClubs.find((c) => c.id === career.foundingClubId) ?? null,
     [allClubs, career.foundingClubId],
   );
 
@@ -135,15 +135,15 @@ function CareerDraft() {
 
     // Build AI rivals from the league's clubs (excluding the user's founding)
     const otherClubs = allClubs
-      .filter(c => c.id !== career.foundingClubId)
+      .filter((c) => c.id !== career.foundingClubId)
       .sort((a, b) => b.strength - a.strength)
-      .slice(0, AI_RIVALS_COUNT * 3);  // top pool to pick from
+      .slice(0, AI_RIVALS_COUNT * 3); // top pool to pick from
     const archetypes = DEFAULT_ARCHETYPES;
     const ais = buildAIManagers(
       AI_RIVALS_COUNT,
       userClub?.name ?? "",
       archetypes,
-      otherClubs.map(c => ({
+      otherClubs.map((c) => ({
         name: c.name,
         letter: c.short.slice(0, 3),
         bg: c.color,
@@ -154,7 +154,7 @@ function CareerDraft() {
 
     // Map back to club ids (buildAIManagers uses name only)
     const aiManagers: Manager[] = ais.map((ai, i) => {
-      const club = allClubs.find(c => c.name === ai.foundingClub);
+      const club = allClubs.find((c) => c.name === ai.foundingClub);
       return {
         id: ai.id,
         name: ai.archName,
@@ -182,7 +182,7 @@ function CareerDraft() {
 
     // Random draft order — user slot is random within the order
     const allManagers = [userManager, ...aiManagers];
-    const order = [...allManagers].sort(() => rand() - 0.5).map(m => m.id);
+    const order = [...allManagers].sort(() => rand() - 0.5).map((m) => m.id);
 
     setDraft({
       managers: allManagers,
@@ -200,9 +200,9 @@ function CareerDraft() {
     if (draft.currentRound > SQUAD_SIZE) return;
     const onClockId = snakePickerId(draft.draftOrder, draft.currentRound, draft.currentPickInRound);
     if (!onClockId) return;
-    const onClock = draft.managers.find(m => m.id === onClockId);
+    const onClock = draft.managers.find((m) => m.id === onClockId);
     if (!onClock) return;
-    if (onClock.isUser) return;  // wait for user input
+    if (onClock.isUser) return; // wait for user input
 
     // AI pick — run via setTimeout so the UI breathes between AI turns
     const timer = setTimeout(() => processAIPick(onClock), 350);
@@ -216,12 +216,12 @@ function CareerDraft() {
   // it's already founding-club-only.
   useEffect(() => {
     if (!draft) return;
-    if (draft.currentClubId !== null) return;  // already landed on a club
+    if (draft.currentClubId !== null) return; // already landed on a club
     const onClockId = snakePickerId(draft.draftOrder, draft.currentRound, draft.currentPickInRound);
-    if (onClockId !== "user") return;          // not the user's turn
-    const user = draft.managers.find(m => m.isUser);
+    if (onClockId !== "user") return; // not the user's turn
+    const user = draft.managers.find((m) => m.isUser);
     if (!user) return;
-    if (user.squad.length === 0) return;       // founding pick — pool is fixed
+    if (user.squad.length === 0) return; // founding pick — pool is fixed
     // Short delay so user sees the previous pick result before next spin
     const timer = setTimeout(() => userSpin(), 250);
     return () => clearTimeout(timer);
@@ -229,7 +229,7 @@ function CareerDraft() {
   }, [draft]);
 
   function processAIPick(ai: Manager) {
-    setDraft(prev => {
+    setDraft((prev) => {
       if (!prev) return prev;
       const isFirstPick = ai.squad.length === 0;
       const need = computeNeed(ai.squad, career.formation);
@@ -238,13 +238,13 @@ function CareerDraft() {
       let candidatePool: Player[];
       if (isFirstPick) {
         candidatePool = allPlayers.filter(
-          p => p.club === ai.foundingClubId && !prev.usedPlayerKeys.has(playerKey(p)),
+          (p) => p.club === ai.foundingClubId && !prev.usedPlayerKeys.has(playerKey(p)),
         );
       } else {
-        candidatePool = allPlayers.filter(p => !prev.usedPlayerKeys.has(playerKey(p)));
+        candidatePool = allPlayers.filter((p) => !prev.usedPlayerKeys.has(playerKey(p)));
       }
       // Position need filter — only pick a player who fills an open slot
-      candidatePool = candidatePool.filter(p => {
+      candidatePool = candidatePool.filter((p) => {
         const bucket = simplifyPosition(p.position) as SimplePosition;
         // Map 4-bucket need to 10-position acceptability
         if (bucket === "GK" && !need.has("GK")) return false;
@@ -266,8 +266,8 @@ function CareerDraft() {
       });
       const pick = candidatePool[0];
 
-      const newManagers = prev.managers.map(m =>
-        m.id === ai.id ? { ...m, squad: [...m.squad, pick] } : m
+      const newManagers = prev.managers.map((m) =>
+        m.id === ai.id ? { ...m, squad: [...m.squad, pick] } : m,
       );
       const newUsed = new Set(prev.usedPlayerKeys);
       newUsed.add(playerKey(pick));
@@ -276,13 +276,20 @@ function CareerDraft() {
   }
 
   function userPickPlayer(p: Player) {
-    setDraft(prev => {
+    setDraft((prev) => {
       if (!prev) return prev;
-      const newManagers = prev.managers.map(m =>
-        m.isUser ? { ...m, squad: [...m.squad, p] } : m
+      const userMgr = prev.managers.find((m) => m.isUser);
+      const isFoundingPick = userMgr ? userMgr.squad.length === 0 : false;
+      const newManagers = prev.managers.map((m) =>
+        m.isUser ? { ...m, squad: [...m.squad, p] } : m,
       );
       const newUsed = new Set(prev.usedPlayerKeys);
       newUsed.add(playerKey(p));
+      // First pick of the user's career = franchise player. Locked forever:
+      // can't be swapped mid-season or sold in the postseason window.
+      if (isFoundingPick && !career.franchisePlayerKey) {
+        career.setFranchisePlayer(`${p.club}:${p.name}`);
+      }
       return advance({
         ...prev,
         managers: newManagers,
@@ -293,13 +300,13 @@ function CareerDraft() {
   }
 
   function userSpin() {
-    setDraft(prev => {
+    setDraft((prev) => {
       if (!prev) return prev;
-      const userManager = prev.managers.find(m => m.isUser)!;
+      const userManager = prev.managers.find((m) => m.isUser)!;
       const need = computeNeed(userManager.squad, career.formation);
       // Find a club whose pool contains at least one needed-position player
-      const eligibleClubs = allClubs.filter(c => {
-        return allPlayers.some(p => {
+      const eligibleClubs = allClubs.filter((c) => {
+        return allPlayers.some((p) => {
           if (p.club !== c.id) return false;
           if (prev.usedPlayerKeys.has(playerKey(p))) return false;
           const bucket = simplifyPosition(p.position) as SimplePosition;
@@ -319,9 +326,11 @@ function CareerDraft() {
   // ─── DERIVED VALUES — these must compute even when draft is null, so the
   // useMemo below is ALWAYS called (rules-of-hooks). The branches inside
   // gracefully handle missing state. ────────────────────────────────────
-  const userManager = draft?.managers.find(m => m.isUser) ?? null;
-  const aiManagers = draft?.managers.filter(m => !m.isUser) ?? [];
-  const onClockId = draft ? snakePickerId(draft.draftOrder, draft.currentRound, draft.currentPickInRound) : null;
+  const userManager = draft?.managers.find((m) => m.isUser) ?? null;
+  const aiManagers = draft?.managers.filter((m) => !m.isUser) ?? [];
+  const onClockId = draft
+    ? snakePickerId(draft.draftOrder, draft.currentRound, draft.currentPickInRound)
+    : null;
   const isUserTurn = onClockId === "user";
   const draftDone = draft ? draft.currentRound > SQUAD_SIZE : false;
 
@@ -333,9 +342,9 @@ function CareerDraft() {
     if (isFirstPick) {
       // Pool is the founding club, no need to spin
       const pool = allPlayers
-        .filter(p => p.club === career.foundingClubId)
-        .filter(p => !draft.usedPlayerKeys.has(playerKey(p)))
-        .filter(p => {
+        .filter((p) => p.club === career.foundingClubId)
+        .filter((p) => !draft.usedPlayerKeys.has(playerKey(p)))
+        .filter((p) => {
           const bucket = simplifyPosition(p.position) as SimplePosition;
           if (bucket === "GK" && !need.has("GK")) return false;
           if (bucket === "DEF" && !need.has("DEF")) return false;
@@ -348,11 +357,11 @@ function CareerDraft() {
       return { mode: "founding" as const, pool, club: userClub };
     }
     if (!draft.currentClubId) return { mode: "needs-spin" as const };
-    const club = allClubs.find(c => c.id === draft.currentClubId);
+    const club = allClubs.find((c) => c.id === draft.currentClubId);
     const pool = allPlayers
-      .filter(p => p.club === draft.currentClubId)
-      .filter(p => !draft.usedPlayerKeys.has(playerKey(p)))
-      .filter(p => {
+      .filter((p) => p.club === draft.currentClubId)
+      .filter((p) => !draft.usedPlayerKeys.has(playerKey(p)))
+      .filter((p) => {
         const bucket = simplifyPosition(p.position) as SimplePosition;
         if (bucket === "GK" && !need.has("GK")) return false;
         if (bucket === "DEF" && !need.has("DEF")) return false;
@@ -378,23 +387,24 @@ function CareerDraft() {
   return (
     <div className="min-h-screen px-4 py-8 max-w-5xl mx-auto">
       <header className="flex items-center justify-between gap-3">
-        <Link to="/career" className="text-[11px] text-muted-foreground hover:text-warning underline">
+        <Link
+          to="/career"
+          className="text-[11px] text-muted-foreground hover:text-warning underline"
+        >
           ← GOLAZO hub
         </Link>
         <div className="text-right">
           <div className="font-display text-2xl text-warning">Draft</div>
           <div className="text-[10px] text-muted-foreground uppercase tracking-[0.2em]">
-            Season {career.currentSeason} · Round {Math.min(draft.currentRound, SQUAD_SIZE)} / {SQUAD_SIZE}
+            Season {career.currentSeason} · Round {Math.min(draft.currentRound, SQUAD_SIZE)} /{" "}
+            {SQUAD_SIZE}
           </div>
         </div>
       </header>
 
       {/* Formation picker — only when no picks made yet (locking after first pick prevents broken squads) */}
       {userManager.squad.length === 0 && (
-        <FormationPicker
-          current={career.formation}
-          onChange={career.setFormation}
-        />
+        <FormationPicker current={career.formation} onChange={career.setFormation} />
       )}
 
       {/* Snake-order strip */}
@@ -432,9 +442,7 @@ function CareerDraft() {
               />
             )}
             {!isUserTurn && (
-              <AIPickingIndicator
-                manager={draft.managers.find(m => m.id === onClockId)}
-              />
+              <AIPickingIndicator manager={draft.managers.find((m) => m.id === onClockId)} />
             )}
 
             <TacticalPitch userManager={userManager} formationKey={career.formation} />
@@ -443,13 +451,11 @@ function CareerDraft() {
 
           {/* Right: AI rivals */}
           <aside className="space-y-2">
-            <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Rivals</div>
-            {aiManagers.map(m => (
-              <AIRivalCard
-                key={m.id}
-                manager={m}
-                onClock={onClockId === m.id}
-              />
+            <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
+              Rivals
+            </div>
+            {aiManagers.map((m) => (
+              <AIRivalCard key={m.id} manager={m} onClock={onClockId === m.id} />
             ))}
           </aside>
         </div>
@@ -469,7 +475,7 @@ function hashString(s: string): number {
 function computeNeed(squad: Player[], formation: string = "4-3-3"): Set<SimplePosition> {
   const formationNeed = FORMATION_NEEDS[formation] ?? FORMATION_NEEDS["4-3-3"];
   const counts: Record<SimplePosition, number> = { GK: 0, DEF: 0, MID: 0, FWD: 0 };
-  squad.forEach(p => {
+  squad.forEach((p) => {
     const bucket = simplifyPosition(p.position) as SimplePosition;
     counts[bucket]++;
   });
@@ -501,7 +507,10 @@ function advance(d: DraftSnapshot): DraftSnapshot {
  * 7 formations, displayed as chip-buttons. Updates career.formation in
  * the store; the AI rival loop + need-calc both read from that.
  */
-function FormationPicker({ current, onChange }: {
+function FormationPicker({
+  current,
+  onChange,
+}: {
   current: keyof typeof FORMATIONS;
   onChange: (f: keyof typeof FORMATIONS) => void;
 }) {
@@ -510,7 +519,7 @@ function FormationPicker({ current, onChange }: {
     <div className="mt-6 p-4 rounded-xl border border-warning/40 bg-warning/5">
       <div className="text-[10px] uppercase tracking-[0.2em] text-warning mb-2">Formation</div>
       <div className="flex flex-wrap gap-1.5">
-        {keys.map(k => (
+        {keys.map((k) => (
           <button
             key={k}
             onClick={() => onChange(k)}
@@ -531,7 +540,12 @@ function FormationPicker({ current, onChange }: {
   );
 }
 
-function SnakeOrderStrip({ order, managers, round, pickInRound }: {
+function SnakeOrderStrip({
+  order,
+  managers,
+  round,
+  pickInRound,
+}: {
   order: string[];
   managers: Manager[];
   round: number;
@@ -543,7 +557,7 @@ function SnakeOrderStrip({ order, managers, round, pickInRound }: {
   return (
     <div className="flex gap-1 overflow-x-auto pb-1">
       {effectiveOrder.map((id, idx) => {
-        const m = managers.find(mm => mm.id === id);
+        const m = managers.find((mm) => mm.id === id);
         if (!m) return null;
         const isOnClock = id === onClockId;
         const hasPicked = idx + 1 < pickInRound;
@@ -551,14 +565,20 @@ function SnakeOrderStrip({ order, managers, round, pickInRound }: {
           <div
             key={id}
             className={`px-2 py-1.5 rounded text-center min-w-[60px] border ${
-              isOnClock ? "border-warning bg-warning/20 text-warning" :
-              hasPicked ? "border-border bg-card/40 text-muted-foreground opacity-50" :
-              "border-border bg-card text-foreground"
+              isOnClock
+                ? "border-warning bg-warning/20 text-warning"
+                : hasPicked
+                  ? "border-border bg-card/40 text-muted-foreground opacity-50"
+                  : "border-border bg-card text-foreground"
             }`}
             style={{ borderTopColor: m.color, borderTopWidth: 3 }}
           >
-            <div className="text-[9px] uppercase tracking-wider">{m.isUser ? "YOU" : m.archetypeName.split(" ")[0]}</div>
-            <div className="text-[9px] mt-0.5 opacity-70">{m.squad.length}/{SQUAD_SIZE}</div>
+            <div className="text-[9px] uppercase tracking-wider">
+              {m.isUser ? "YOU" : m.archetypeName.split(" ")[0]}
+            </div>
+            <div className="text-[9px] mt-0.5 opacity-70">
+              {m.squad.length}/{SQUAD_SIZE}
+            </div>
           </div>
         );
       })}
@@ -566,17 +586,24 @@ function SnakeOrderStrip({ order, managers, round, pickInRound }: {
   );
 }
 
-function UserFoundingPick({ club, pool, onPick }: {
+function UserFoundingPick({
+  club,
+  pool,
+  onPick,
+}: {
   club: Club;
   pool: Player[];
   onPick: (p: Player) => void;
 }) {
   return (
     <div className="rounded-2xl border-2 border-warning bg-warning/10 p-5">
-      <div className="text-xs uppercase tracking-[0.2em] text-warning mb-1">⚡ Your founding pick</div>
+      <div className="text-xs uppercase tracking-[0.2em] text-warning mb-1">
+        ⚡ Your founding pick
+      </div>
       <div className="font-display text-xl">Pick any legend from {club.name}</div>
       <div className="text-xs text-muted-foreground mt-1">
-        This is your career's anchor. Choose wisely — your founding club's legends are how it all starts.
+        This is your career's anchor. Choose wisely — your founding club's legends are how it all
+        starts.
       </div>
       <PlayerGrid pool={pool} onPick={onPick} />
     </div>
@@ -594,7 +621,12 @@ function UserNeedsSpin({ onSpin: _onSpin }: { onSpin: () => void }) {
   );
 }
 
-function UserPickFromClub({ club, pool, onPick, onSkip }: {
+function UserPickFromClub({
+  club,
+  pool,
+  onPick,
+  onSkip,
+}: {
   club: Club;
   pool: Player[];
   onPick: (p: Player) => void;
@@ -628,7 +660,7 @@ function UserPickFromClub({ club, pool, onPick, onSkip }: {
 function PlayerGrid({ pool, onPick }: { pool: Player[]; onPick: (p: Player) => void }) {
   return (
     <div className="mt-3 space-y-1.5 max-h-[420px] overflow-y-auto">
-      {pool.map(p => (
+      {pool.map((p) => (
         <button
           key={`${p.club}-${p.name}-${p.position}`}
           onClick={() => onPick(p)}
@@ -653,7 +685,9 @@ function AIPickingIndicator({ manager }: { manager: Manager | undefined }) {
   if (!manager) return null;
   return (
     <div className="rounded-2xl border border-border bg-card/40 p-6 text-center animate-pulse">
-      <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">On the clock</div>
+      <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+        On the clock
+      </div>
       <div className="font-display text-lg text-foreground mt-1">
         <span style={{ color: manager.color }}>{manager.badge}</span> {manager.archetypeName}
       </div>
@@ -671,16 +705,19 @@ function AIPickingIndicator({ manager }: { manager: Manager | undefined }) {
  * with position label. Helps the user see "what do I still need to fill"
  * at a glance.
  */
-function TacticalPitch({ userManager, formationKey }: {
+function TacticalPitch({
+  userManager,
+  formationKey,
+}: {
   userManager: Manager;
   formationKey: keyof typeof FORMATIONS;
 }) {
   const formation = FORMATIONS[formationKey];
-  const SLOTS = formation.slots.map(s => ({
+  const SLOTS = formation.slots.map((s) => ({
     pos: s.position,
     x: s.x,
     y: s.y,
-    family: simplifyPosition(s.position) as "GK"|"DEF"|"MID"|"FWD",
+    family: simplifyPosition(s.position) as "GK" | "DEF" | "MID" | "FWD",
   }));
 
   // Match user's squad against the slot template, greedy first-fit by family
@@ -689,7 +726,7 @@ function TacticalPitch({ userManager, formationKey }: {
   // Sort squad by rating desc so the strongest fills the slot first
   const sortedSquad = [...userManager.squad].sort((a, b) => b.prime_rating - a.prime_rating);
   for (const p of sortedSquad) {
-    const playerFamily = simplifyPosition(p.position) as "GK"|"DEF"|"MID"|"FWD";
+    const playerFamily = simplifyPosition(p.position) as "GK" | "DEF" | "MID" | "FWD";
     for (let i = 0; i < SLOTS.length; i++) {
       if (used.has(i)) continue;
       if (SLOTS[i].family !== playerFamily) continue;
@@ -704,14 +741,63 @@ function TacticalPitch({ userManager, formationKey }: {
       <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
         Your XI ({userManager.squad.length}/{SQUAD_SIZE}) · 4-3-3
       </div>
-      <div className="relative w-full mx-auto rounded-2xl border border-pitch-line/30 bg-pitch-pattern overflow-hidden"
-           style={{ aspectRatio: "16/11", maxWidth: 540 }}>
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full pointer-events-none">
-          <rect x="1" y="1" width="98" height="98" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
-          <line x1="0" y1="50" x2="100" y2="50" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
-          <circle cx="50" cy="50" r="9" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
-          <rect x="25" y="0" width="50" height="14" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
-          <rect x="25" y="86" width="50" height="14" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
+      <div
+        className="relative w-full mx-auto rounded-2xl border border-pitch-line/30 bg-pitch-pattern overflow-hidden"
+        style={{ aspectRatio: "16/11", maxWidth: 540 }}
+      >
+        <svg
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+          className="absolute inset-0 w-full h-full pointer-events-none"
+        >
+          <rect
+            x="1"
+            y="1"
+            width="98"
+            height="98"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.3"
+            className="text-pitch-line"
+          />
+          <line
+            x1="0"
+            y1="50"
+            x2="100"
+            y2="50"
+            stroke="currentColor"
+            strokeWidth="0.3"
+            className="text-pitch-line"
+          />
+          <circle
+            cx="50"
+            cy="50"
+            r="9"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.3"
+            className="text-pitch-line"
+          />
+          <rect
+            x="25"
+            y="0"
+            width="50"
+            height="14"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.3"
+            className="text-pitch-line"
+          />
+          <rect
+            x="25"
+            y="86"
+            width="50"
+            height="14"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.3"
+            className="text-pitch-line"
+          />
         </svg>
         {SLOTS.map((slot, i) => {
           const player = assigned[i];
@@ -745,29 +831,41 @@ function TacticalPitch({ userManager, formationKey }: {
 }
 
 function UserSquadList({ userManager }: { userManager: Manager }) {
+  const franchiseKey = useCareer((s) => s.franchisePlayerKey);
   return (
     <div className="mt-6">
       <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
         Your squad ({userManager.squad.length}/{SQUAD_SIZE})
       </div>
       {userManager.squad.length === 0 ? (
-        <div className="text-sm text-muted-foreground italic">No picks yet — make your founding choice above.</div>
+        <div className="text-sm text-muted-foreground italic">
+          No picks yet — make your founding choice above.
+        </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-          {userManager.squad.map((p, i) => (
-            <div
-              key={`${p.name}-${i}`}
-              className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-border bg-card text-sm"
-            >
-              <div className="min-w-0">
-                <div className="font-medium truncate">{p.name}</div>
-                <div className="text-[10px] text-muted-foreground truncate">
-                  {p.position} · {p.career_years}
+          {userManager.squad.map((p, i) => {
+            const isFranchise = `${p.club}:${p.name}` === franchiseKey;
+            return (
+              <div
+                key={`${p.name}-${i}`}
+                className={`flex items-center justify-between gap-2 px-3 py-2 rounded-lg border text-sm ${
+                  isFranchise ? "border-warning bg-warning/10" : "border-border bg-card"
+                }`}
+              >
+                <div className="min-w-0">
+                  <div className="font-medium truncate flex items-center gap-1">
+                    {isFranchise && <span title="Franchise player — untouchable">⭐</span>}
+                    <span className="truncate">{p.name}</span>
+                  </div>
+                  <div className="text-[10px] text-muted-foreground truncate">
+                    {p.position} · {p.career_years}
+                    {isFranchise && <span className="text-warning ml-1">· Franchise</span>}
+                  </div>
                 </div>
+                <span className="shrink-0 font-display text-sm text-warning">{p.prime_rating}</span>
               </div>
-              <span className="shrink-0 font-display text-sm text-warning">{p.prime_rating}</span>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
     </div>
@@ -785,10 +883,12 @@ function AIRivalCard({ manager, onClock }: { manager: Manager; onClock: boolean 
     >
       <div className="flex items-center justify-between">
         <div className="font-display text-sm">{manager.archetypeName}</div>
-        <span className="text-[10px] text-muted-foreground">{manager.squad.length}/{SQUAD_SIZE}</span>
+        <span className="text-[10px] text-muted-foreground">
+          {manager.squad.length}/{SQUAD_SIZE}
+        </span>
       </div>
       <div className="text-[10px] text-muted-foreground mt-0.5 truncate">
-        {DEFAULT_ARCHETYPES.find(a => a.style === manager.archetypeStyle)?.description ?? ""}
+        {DEFAULT_ARCHETYPES.find((a) => a.style === manager.archetypeStyle)?.description ?? ""}
       </div>
       {lastPick && (
         <div className="text-[10px] mt-1.5 text-warning truncate">
@@ -799,20 +899,25 @@ function AIRivalCard({ manager, onClock }: { manager: Manager; onClock: boolean 
   );
 }
 
-function SeasonReadyCard({ userManager, allManagers }: {
+function SeasonReadyCard({
+  userManager,
+  allManagers,
+}: {
   userManager: Manager;
   allManagers: Manager[];
 }) {
   const career = useCareer();
-  const avg = userManager.squad.reduce((a, p) => a + p.prime_rating, 0) / Math.max(1, userManager.squad.length);
+  const avg =
+    userManager.squad.reduce((a, p) => a + p.prime_rating, 0) /
+    Math.max(1, userManager.squad.length);
 
   // Commit the draft result to the career store once on mount of this card.
   // Idempotent: if rivals are already saved, no-op.
   useEffect(() => {
     if (career.rivals.length > 0) return;
     const rivals = allManagers
-      .filter(m => !m.isUser)
-      .map(m => ({
+      .filter((m) => !m.isUser)
+      .map((m) => ({
         id: m.id,
         name: m.name,
         badge: m.badge,
@@ -831,7 +936,8 @@ function SeasonReadyCard({ userManager, allManagers }: {
       <div className="text-4xl mb-2">⚽</div>
       <div className="font-display text-3xl text-warning mb-2">Squad ready</div>
       <div className="text-sm text-muted-foreground mb-1">
-        Your XI is locked. Average rating: <span className="text-warning font-display">{avg.toFixed(1)}</span>
+        Your XI is locked. Average rating:{" "}
+        <span className="text-warning font-display">{avg.toFixed(1)}</span>
       </div>
       <div className="text-xs text-muted-foreground mb-5">
         12-manager league. 22 matchdays. Top 8 qualify for the cup. Bottom 2 relegate.
