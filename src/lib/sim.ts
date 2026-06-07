@@ -1,7 +1,7 @@
 import type { Club, MatchResult, Slot } from "./game-types";
 
 export function squadRating(slots: Slot[]): number {
-  const rated = slots.filter(s => s.player);
+  const rated = slots.filter((s) => s.player);
   if (!rated.length) return 0;
   const sum = rated.reduce((acc, s) => acc + (s.player?.prime_rating ?? 0), 0);
   const filled = rated.length;
@@ -11,7 +11,9 @@ export function squadRating(slots: Slot[]): number {
 
 function rand(seed: { v: number }) {
   let x = seed.v | 0;
-  x ^= x << 13; x ^= x >>> 17; x ^= x << 5;
+  x ^= x << 13;
+  x ^= x >>> 17;
+  x ^= x << 5;
   seed.v = x;
   return ((x >>> 0) % 10000) / 10000;
 }
@@ -21,7 +23,7 @@ export function simulateSeason(
   totalMatches: number,
   ourRating: number,
   seedNum: number,
-  difficulty: "easy"|"normal"|"hard" = "normal",
+  difficulty: "easy" | "normal" | "hard" = "normal",
 ): MatchResult[] {
   const seed = { v: seedNum || 12345 };
   const matches: MatchResult[] = [];
@@ -44,12 +46,12 @@ export function simulateSeason(
   const varianceMul = difficulty === "easy" ? 0.7 : difficulty === "hard" ? 1.3 : 1.0;
   order.forEach((m, idx) => {
     const homeBoost = m.home ? 4 : -1;
-    const diff = (ourRating + homeBoost) - m.opp.strength;
+    const diff = ourRating + homeBoost - m.opp.strength;
     const ourXG = Math.max(0.2, 1.2 + diff * 0.08 + (rand(seed) - 0.5) * 1.0 * varianceMul);
     const theirXG = Math.max(0.1, 1.1 - diff * 0.06 + (rand(seed) - 0.5) * 0.9 * varianceMul);
     const ourScore = poisson(ourXG, seed);
     const theirScore = poisson(theirXG, seed);
-    let outcome: "W"|"D"|"L" = "D";
+    let outcome: "W" | "D" | "L" = "D";
     if (ourScore > theirScore) outcome = "W";
     else if (ourScore < theirScore) outcome = "L";
     matches.push({
@@ -66,8 +68,12 @@ export function simulateSeason(
 
 function poisson(lambda: number, seed: { v: number }): number {
   const L = Math.exp(-lambda);
-  let k = 0, p = 1;
-  do { k++; p *= rand(seed); } while (p > L && k < 9);
+  let k = 0,
+    p = 1;
+  do {
+    k++;
+    p *= rand(seed);
+  } while (p > L && k < 9);
   return k - 1;
 }
 
@@ -84,7 +90,7 @@ export function simulateKnockout(
   rounds: string[],
   ourRating: number,
   seedNum: number,
-  difficulty: "easy"|"normal"|"hard" = "normal",
+  difficulty: "easy" | "normal" | "hard" = "normal",
 ): MatchResult[] {
   const seed = { v: seedNum || 12345 };
   const varianceMul = difficulty === "easy" ? 0.7 : difficulty === "hard" ? 1.3 : 1.0;
@@ -140,13 +146,13 @@ export function simulateKnockout(
     }
 
     const homeBoost = home ? 3 : -1;
-    const diff = (ourRating + homeBoost) - opp.strength;
+    const diff = ourRating + homeBoost - opp.strength;
     const ourXG = Math.max(0.2, 1.15 + diff * 0.08 + (rand(seed) - 0.5) * 1.0 * varianceMul);
     const theirXG = Math.max(0.1, 1.05 - diff * 0.06 + (rand(seed) - 0.5) * 0.9 * varianceMul);
     const ourScore = poisson(ourXG, seed);
     const theirScore = poisson(theirXG, seed);
 
-    const outcome: "W"|"D"|"L" =
+    const outcome: "W" | "D" | "L" =
       ourScore > theirScore ? "W" : ourScore < theirScore ? "L" : "D";
 
     let eliminates = false;
@@ -250,9 +256,9 @@ export function computeLeagueTable(
   ourRating: number,
   matchesPerTeam: number = 34,
 ): { table: TableRow[]; ourPosition: number } {
-  const ourW = matches.filter(m => m.outcome === "W").length;
-  const ourD = matches.filter(m => m.outcome === "D").length;
-  const ourL = matches.filter(m => m.outcome === "L").length;
+  const ourW = matches.filter((m) => m.outcome === "W").length;
+  const ourD = matches.filter((m) => m.outcome === "D").length;
+  const ourL = matches.filter((m) => m.outcome === "L").length;
   const ourGF = matches.reduce((a, m) => a + m.ourScore, 0);
   const ourGA = matches.reduce((a, m) => a + m.theirScore, 0);
 
@@ -261,39 +267,67 @@ export function computeLeagueTable(
     short: "YOU",
     color: "#facc15",
     played: matches.length,
-    w: ourW, d: ourD, l: ourL,
-    gf: ourGF, ga: ourGA,
+    w: ourW,
+    d: ourD,
+    l: ourL,
+    gf: ourGF,
+    ga: ourGA,
     pts: ourW * 3 + ourD,
     isUs: true,
   };
 
   const seed = { v: (ourRating * 9301 + matches.length * 1337) | 0 || 42 };
   const maxPts = matchesPerTeam * 3;
-  const rows: TableRow[] = opponents.map(o => {
+  // LIVE-TABLE FIX: when the user has played fewer than matchesPerTeam,
+  // scale the opponent's projected end-of-season stats so they look like
+  // they've played the SAME matchday as the user. Otherwise the table
+  // shows opponents at P=22 while the user is at P=3 — visually wrong
+  // and breaks ourPosition (the user looks artificially bottom-of-table).
+  const userPlayed = matches.length;
+  const ratio = Math.max(0, Math.min(1, userPlayed / matchesPerTeam));
+  const rows: TableRow[] = opponents.map((o) => {
     const base = Math.round((o.strength - 60) * (matchesPerTeam / 15.5));
     const jitter = Math.round((rand(seed) - 0.5) * 10);
-    const pts = Math.max(8, Math.min(maxPts - 8, base + jitter));
-    const w = Math.max(0, Math.min(matchesPerTeam, Math.round(pts / 3.1)));
-    const d = Math.max(0, Math.min(matchesPerTeam - w, pts - w * 3));
-    const l = matchesPerTeam - w - d;
+    const fullPts = Math.max(8, Math.min(maxPts - 8, base + jitter));
+    const fullW = Math.max(0, Math.min(matchesPerTeam, Math.round(fullPts / 3.1)));
+    const fullD = Math.max(0, Math.min(matchesPerTeam - fullW, fullPts - fullW * 3));
+    const fullL = matchesPerTeam - fullW - fullD;
     const gdBase = (o.strength - 75) * 1.6 + (rand(seed) - 0.5) * 12;
-    const gf = Math.max(15, Math.round(matchesPerTeam * 1.12 + (o.strength - 75) * 1.2 + (rand(seed) - 0.5) * 10));
-    const ga = Math.max(15, Math.round(gf - gdBase));
+    const fullGF = Math.max(
+      15,
+      Math.round(matchesPerTeam * 1.12 + (o.strength - 75) * 1.2 + (rand(seed) - 0.5) * 10),
+    );
+    const fullGA = Math.max(15, Math.round(fullGF - gdBase));
+
+    // Scale down to current matchday — preserve sum invariant w + d + l = played.
+    const played = Math.round(matchesPerTeam * ratio);
+    const w = Math.round(fullW * ratio);
+    const d = Math.round(fullD * ratio);
+    const l = Math.max(0, played - w - d);
+    const pts = w * 3 + d;
+    const gf = Math.round(fullGF * ratio);
+    const ga = Math.round(fullGA * ratio);
     return {
       name: o.name,
       short: o.short,
       color: o.color,
-      played: matchesPerTeam,
-      w, d, l, gf, ga, pts,
+      played,
+      w,
+      d,
+      l,
+      gf,
+      ga,
+      pts,
     };
   });
 
   const table = [...rows, us].sort((a, b) => {
     if (b.pts !== a.pts) return b.pts - a.pts;
-    const gdA = a.gf - a.ga, gdB = b.gf - b.ga;
+    const gdA = a.gf - a.ga,
+      gdB = b.gf - b.ga;
     if (gdB !== gdA) return gdB - gdA;
     return b.gf - a.gf;
   });
-  const ourPosition = table.findIndex(r => r.isUs) + 1;
+  const ourPosition = table.findIndex((r) => r.isUs) + 1;
   return { table, ourPosition };
 }

@@ -226,6 +226,47 @@ describe("computeLeagueTable", () => {
     expect(us.played).toBe(matches.length);
   });
 
+  // LIVE-TABLE bug: previously opponents reported P=matchesPerTeam (full season)
+  // even when the user had only played a handful of MDs. That made the live
+  // mid-season table show "FCB 22 played · You 3 played" — visually wrong,
+  // and pushed the user to bottom even when they were leading.
+  it("scales opponent.played to user's matches.length (mid-season)", () => {
+    const matches = simulateSeason(opponents, 22, 85, 100).slice(0, 5);
+    const { table } = computeLeagueTable(matches, opponents, 85, 22);
+    // user shows 5 matches played
+    const us = table.find(r => r.isUs)!;
+    expect(us.played).toBe(5);
+    // all opponents should also show ~5 played (rounded), not 22
+    const others = table.filter(r => !r.isUs);
+    others.forEach(o => {
+      expect(o.played).toBeLessThanOrEqual(6);
+      expect(o.played).toBeGreaterThanOrEqual(4);
+      expect(o.w + o.d + o.l).toBe(o.played);
+      expect(o.pts).toBe(o.w * 3 + o.d);
+    });
+  });
+
+  it("at 0 matchdays played, every opponent reports played=0", () => {
+    const { table } = computeLeagueTable([], opponents, 85, 22);
+    const others = table.filter(r => !r.isUs);
+    others.forEach(o => {
+      expect(o.played).toBe(0);
+      expect(o.w).toBe(0);
+      expect(o.d).toBe(0);
+      expect(o.l).toBe(0);
+      expect(o.pts).toBe(0);
+    });
+  });
+
+  it("at full season, opponent.played === matchesPerTeam (unchanged behavior)", () => {
+    const matches = simulateSeason(opponents, 20, 85, 100);
+    const { table } = computeLeagueTable(matches, opponents, 85, 20);
+    const others = table.filter(r => !r.isUs);
+    others.forEach(o => {
+      expect(o.played).toBe(20);
+    });
+  });
+
   it("sorted by points DESC, then goal difference, then goals-for", () => {
     const matches = simulateSeason(opponents, 20, 85, 100);
     const { table } = computeLeagueTable(matches, opponents, 85, 20);

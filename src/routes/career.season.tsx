@@ -21,6 +21,7 @@ import { LEAGUES } from "@/lib/leagues";
 import type { LeagueId } from "@/lib/leagues";
 import { getClubs, getPlayers } from "@/lib/data";
 import { simulateSeason, squadRating, computeLeagueTable } from "@/lib/sim";
+import { isPositionCompatible } from "@/lib/draft-helpers";
 import {
   computeFormDelta,
   clampForm,
@@ -247,13 +248,8 @@ function CareerSeason() {
         </div>
       )}
 
-      {/* Live league table — updates after every matchday */}
-      {shown > 0 && <LiveTable table={table} matchday={shown} totalMatchdays={matches.length} />}
-
-      {/* Squad form — 🔥 on a run, ❄️ cold streak */}
-      {shown > 0 && <SquadForm squad={career.squad} form={liveForm} />}
-
-      {/* Match feed (newest first) */}
+      {/* Match feed (newest first) — surfaces immediately so the player
+          sees the result of the click they just made. Table + form below. */}
       <div className="mt-6">
         <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
           Match feed
@@ -271,6 +267,12 @@ function CareerSeason() {
           </p>
         )}
       </div>
+
+      {/* Squad form — 🔥 on a run, ❄️ cold streak */}
+      {shown > 0 && <SquadForm squad={career.squad} form={liveForm} />}
+
+      {/* Live league table — updates after every matchday */}
+      {shown > 0 && <LiveTable table={table} matchday={shown} totalMatchdays={matches.length} />}
 
       {/* End-of-season — next-step CTA (final table already shown live above) */}
       {seasonDone && (
@@ -450,21 +452,6 @@ function PostSeasonCTA({
   const isRelegated = ourPosition >= 11;
   const isChampion = ourPosition === 1;
 
-  // Find the demanding star: hottest-form player ≥ +2.0, excluding the
-  // franchise (untouchable). Only one demand per season — the loudest voice.
-  const STAR_DEMAND_THRESHOLD = 2.0;
-  const demandingStar = useMemo(() => {
-    const enriched = career.squad
-      .map((p) => ({
-        player: p,
-        formVal: liveForm[`${p.club}:${normalizeName(p.name)}`] ?? 0,
-      }))
-      .filter((e) => e.formVal >= STAR_DEMAND_THRESHOLD)
-      .filter((e) => `${e.player.club}:${e.player.name}` !== career.franchisePlayerKey)
-      .sort((a, b) => b.formVal - a.formVal);
-    return enriched[0]?.player ?? null;
-  }, [career.squad, liveForm, career.franchisePlayerKey]);
-
   // Record this season into career.seasonHistory exactly once.
   useEffect(() => {
     const alreadyRecorded = career.seasonHistory.some((s) => s.season === career.currentSeason);
@@ -507,28 +494,7 @@ function PostSeasonCTA({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   void userRating;
-
-  // Gate: if a star is demanding AND the user hasn't answered yet,
-  // show the demand card instead of the next-step CTA.
-  if (demandingStar && !career.starDemandResolved) {
-    return (
-      <StarDemandCard
-        player={demandingStar}
-        onKeep={() => {
-          // Penalty: next draft starts with 1 reroll instead of 3.
-          career.setRerollsNextSeason(1);
-          career.setPendingDeparture(null);
-          career.setStarDemandResolved(true);
-        }}
-        onLetGo={() => {
-          // Player leaves at the start of next draft. Rerolls untouched.
-          career.setPendingDeparture(`${demandingStar.club}:${demandingStar.name}`);
-          career.setRerollsNextSeason(3);
-          career.setStarDemandResolved(true);
-        }}
-      />
-    );
-  }
+  void liveForm;
 
   return (
     <div className="mt-8 rounded-2xl border-2 border-warning bg-warning/10 p-6 text-center">
@@ -730,10 +696,17 @@ function MidSeasonSwapCard() {
     );
   }
 
-  // Stage 3: pick incoming player from spun club
+  // Stage 3: pick incoming player from spun club.
+  // Filter to positions the user can actually swap into — non-franchise
+  // squad slots whose position is compatible. Avoids dead-end UX where
+  // the user picks a GK but their GK is the franchise player.
   if (stage === "picking-in" && spunClub) {
+    const swappableSquadPositions = career.squad
+      .filter((p) => `${p.club}:${p.name}` !== career.franchisePlayerKey)
+      .map((p) => p.position);
     const pool = allPlayers
       .filter((p) => p.club === spunClub.id && !drafted.has(`${p.club}:${p.name}`))
+      .filter((p) => swappableSquadPositions.some((sp) => isPositionCompatible(sp, p.position)))
       .sort((a, b) => b.prime_rating - a.prime_rating)
       .slice(0, 12); // top-12 by rating to keep the grid scannable
     return (
@@ -785,22 +758,36 @@ function MidSeasonSwapCard() {
             {incoming.name} <span className="opacity-70">· {incoming.position}</span>
           </div>
           <div className="text-xs text-muted-foreground mt-1">
-            Who goes out? Tap a player to swap. ⭐ Franchise can't be removed.
+            Who goes out? Same position only — ⭐ Franchise can't be removed.
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
           {career.squad.map((p, i) => {
             const key = `${p.club}:${p.name}`;
             const isFranchise = key === career.franchisePlayerKey;
+            // POSITION-RESTRICTED SWAP: only allow swap with compatible
+            // positions. A CM can replace a CM/CDM/CAM; an LW can't take
+            // a GK's slot. Uses the existing isPositionCompatible helper.
+            const samePosition = isPositionCompatible(p.position, incoming.position);
+            const disabled = isFranchise || !samePosition;
             return (
               <button
                 key={`out-${i}-${p.name}`}
-                disabled={isFranchise}
+                disabled={disabled}
                 onClick={() => commitSwap(i)}
+                title={
+                  isFranchise
+                    ? "Franchise player — untouchable"
+                    : !samePosition
+                      ? `Position mismatch — ${incoming.position} can't replace ${p.position}`
+                      : undefined
+                }
                 className={`flex items-center justify-between gap-2 px-3 py-2 rounded-lg border text-sm text-left transition ${
                   isFranchise
                     ? "border-warning/40 bg-warning/5 opacity-60 cursor-not-allowed"
-                    : "border-border bg-card hover:border-primary hover:bg-primary/10"
+                    : !samePosition
+                      ? "border-border bg-card opacity-40 cursor-not-allowed"
+                      : "border-border bg-card hover:border-primary hover:bg-primary/10"
                 }`}
               >
                 <div className="min-w-0">
@@ -811,6 +798,9 @@ function MidSeasonSwapCard() {
                   <div className="text-[10px] text-muted-foreground truncate">
                     {p.position} · {p.career_years}
                     {isFranchise && <span className="text-warning ml-1">· Franchise</span>}
+                    {!isFranchise && !samePosition && (
+                      <span className="text-muted-foreground/60 ml-1">· position mismatch</span>
+                    )}
                   </div>
                 </div>
                 <span className="shrink-0 font-display text-sm text-warning">{p.prime_rating}</span>
@@ -823,70 +813,6 @@ function MidSeasonSwapCard() {
   }
 
   return null;
-}
-
-/**
- * End-of-season star demand card.
- *
- * If a non-franchise player ended the season on form ≥ +2, they demand
- * to leave. User has a binary choice:
- *
- *   KEEP HIM  → next draft starts with 1 reroll (of 3). The star stays.
- *   LET HIM GO → next draft keeps all 3 rerolls. The star departs at the
- *                start of the next draft (removed by /career/postseason).
- *
- * One demand max per season. Franchise player never triggers a demand.
- */
-function StarDemandCard({
-  player,
-  onKeep,
-  onLetGo,
-}: {
-  player: Player;
-  onKeep: () => void;
-  onLetGo: () => void;
-}) {
-  return (
-    <div className="mt-8 rounded-2xl border-2 border-primary bg-primary/10 p-6">
-      <div className="text-center mb-4">
-        <div className="text-4xl mb-1">💬</div>
-        <div className="text-[11px] uppercase tracking-widest text-primary">Star demand</div>
-        <div className="font-display text-2xl text-warning mt-2">{player.name} wants out</div>
-        <p className="text-xs text-muted-foreground mt-2 max-w-md mx-auto">
-          After a hot season, your{" "}
-          <span className="text-warning">
-            {player.position} · {player.prime_rating}
-          </span>{" "}
-          rated {player.name} feels they've outgrown the squad. Convince them to stay or let them
-          walk.
-        </p>
-      </div>
-
-      <div className="grid sm:grid-cols-2 gap-3 mt-5">
-        <button
-          onClick={onKeep}
-          className="rounded-xl border-2 border-warning bg-warning/15 hover:bg-warning/25 p-4 text-left transition"
-        >
-          <div className="font-display text-warning text-lg mb-1">Keep him</div>
-          <div className="text-[11px] text-muted-foreground leading-relaxed">
-            He stays. Cost: next draft starts with only{" "}
-            <span className="text-warning">1 reroll</span> (instead of 3) — you'll be stuck with
-            what the wheel gives you.
-          </div>
-        </button>
-        <button
-          onClick={onLetGo}
-          className="rounded-xl border-2 border-primary/40 bg-primary/5 hover:bg-primary/15 p-4 text-left transition"
-        >
-          <div className="font-display text-primary text-lg mb-1">Let him go</div>
-          <div className="text-[11px] text-muted-foreground leading-relaxed">
-            He walks. You keep all <span className="text-warning">3 rerolls</span> for next draft,
-            but the slot has to be re-drafted.
-          </div>
-        </button>
-      </div>
-    </div>
-  );
 }
 
 function ordinal(n: number): string {
