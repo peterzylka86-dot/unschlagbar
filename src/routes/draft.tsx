@@ -4,12 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useGame } from "@/lib/store";
 import { FORMATIONS } from "@/lib/formations";
 import { ClubBadge } from "@/components/ClubBadge";
-import clubsData from "@/data/clubs.json";
-import playersData from "@/data/players.json";
+import { getClubs, getPlayers } from "@/lib/data";
+import { LEAGUES } from "@/lib/leagues";
 import type { Club, Player, Position, Slot, EraTier } from "@/lib/game-types";
-
-const CLUBS = clubsData as Club[];
-const PLAYERS = playersData as Player[];
 
 const TIERS: { id: EraTier; label: string; sub: string }[] = [
   { id: "current",  label: "20s",     sub: "starting 2020s" },

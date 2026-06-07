@@ -1,15 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import clubsData from "@/data/clubs.json";
-import playersData from "@/data/players.json";
 import { BrandMark, WordMark } from "@/components/BrandMark";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "UNSCHLAGBAR · 34:0 — Retro Football Draft" },
-      { name: "description", content: "Spin the wheel, draft a perfect XI from six decades of German football, and chase the unbeaten season. A retro fan project." },
+      { name: "description", content: "Pick your league, draft a perfect XI from six decades of football, and chase the unbeaten season. A retro fan project." },
       { property: "og:title", content: "UNSCHLAGBAR · 34:0" },
-      { property: "og:description", content: "Draft your XI, simulate a perfect season. Can you go 34:0?" },
+      { property: "og:description", content: "Draft your XI, simulate a perfect season. Can you go unbeaten?" },
     ],
   }),
   component: Landing,
@@ -18,12 +16,10 @@ export const Route = createFileRoute("/")({
 function Landing() {
   return (
     <div className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
-      {/* faint pitch lines backdrop */}
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none"
         style={{ backgroundImage: "repeating-linear-gradient(0deg, transparent 0 42px, rgba(255,240,200,0.5) 42px 43px)" }} />
 
       <div className="relative w-full max-w-xl">
-        {/* top retro stripe */}
         <div className="retro-stripes h-2 rounded-t-2xl" />
 
         <div className="retro-card rounded-b-2xl bg-card/70 backdrop-blur-md px-8 pt-10 pb-8 text-center">
@@ -37,7 +33,6 @@ function Landing() {
           <div className="mt-7 flex flex-col items-center gap-4">
             <BrandMark size="xl" to={undefined} />
             <WordMark className="text-[11px] sm:text-xs text-warning/90" />
-            {/* Anstoss-style CRT scoreboard */}
             <div className="scoreboard scanlines rounded-sm mt-1 text-xl">
               <span className="opacity-70">SPIELE</span>{" "}
               <span>34</span>
@@ -50,11 +45,11 @@ function Landing() {
           <div className="mt-7 mx-auto w-24 h-px bg-warning/40" />
 
           <p className="mt-6 text-base sm:text-lg text-foreground/85 font-light">
-            Draft a perfect XI from six decades of <span className="text-warning">retro German football</span>.<br />
-            Spin the wheel. Pick your players.
+            Pick your league. Draft a perfect XI from <span className="text-warning">six decades of football</span>.<br />
+            Spin the wheel. Chase the unbeaten season.
           </p>
           <p className="mt-2 text-sm text-muted-foreground italic">
-            Can you go unbeaten — 34 matches, zero defeats?
+            🇩🇪 Bundesliga · 🇪🇸 La Liga · 🇮🇹 Serie A · 🇨🇭 Super League
           </p>
 
           <Link
@@ -66,26 +61,24 @@ function Landing() {
           </Link>
 
           <div className="mt-10 grid grid-cols-3 gap-2 text-center">
-            <Stat value={String(clubsData.length)} label="Vereine" />
-            <Stat value={`${Math.floor(playersData.length / 50) * 50}+`} label="Spieler" />
+            <Stat value="4" label="Ligen" />
+            <Stat value="90+" label="Vereine" />
             <Stat value="60+" label="Jahre" />
           </div>
 
-          {/* Anstoss-style ticker */}
           <div className="ticker mt-8 rounded-sm">
             <div className="ticker-track">
               <span>TRANSFERFENSTER GEÖFFNET</span>
               <span>RAHN TRIFFT AUS 20 METERN</span>
-              <span>UERDINGEN BEZWINGT DYNAMO 7:3</span>
-              <span>NETZER ÜBERNIMMT DAS MITTELFELD</span>
-              <span>BREITNER KEHRT ZURÜCK</span>
+              <span>BARÇA HOLT REKORDSIEG</span>
+              <span>JUVE DOMINIERT TURIN</span>
+              <span>YOUNG BOYS BLEIBEN OBEN</span>
               <span>EFFENBERG MIT GELB-ROT</span>
               <span>KAHN HÄLT ALLES</span>
-              <span>BUNDESLIGA-LEGENDE GIBT COMEBACK</span>
+              <span>LEGENDE GIBT COMEBACK</span>
             </div>
           </div>
 
-          {/* bottom retro stripe */}
           <div className="retro-stripes h-1.5 rounded mt-6 opacity-80" />
         </div>
       </div>
@@ -93,7 +86,7 @@ function Landing() {
       <footer className="absolute bottom-5 left-0 right-0 text-center text-[11px] text-muted-foreground px-4">
         Inspired by{" "}
         <a href="https://82-0.com" className="underline hover:text-warning" target="_blank" rel="noreferrer">82-0.com</a>
-        {" "}· A fun fan project — not affiliated with the Bundesliga, DFL, or any club shown.
+        {" "}· A fun fan project — not affiliated with any league or club shown.
       </footer>
     </div>
   );
