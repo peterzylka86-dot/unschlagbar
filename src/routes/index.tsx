@@ -43,6 +43,9 @@ function Landing() {
       draftMode: payload.draftMode,
       showRatings: payload.showRatings,
       challengeSeed: payload.seed,
+      // Carry the challenger's score (if present) into store so /result
+      // can render the comparison + "send your score back" CTA.
+      challengerScore: payload.challenger,
     });
     reset();
     navigate({ to: "/game", search: { new: true } });

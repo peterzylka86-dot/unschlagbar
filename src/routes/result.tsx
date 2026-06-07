@@ -367,16 +367,77 @@ function ShareBlock() {
       draftMode: config.draftMode,
       showRatings: config.showRatings,
       seed,
+      // Embed THIS user's score so the receiver sees what to beat.
+      challenger: {
+        wins,
+        draws,
+        losses,
+        goalsFor: gf,
+        goalsAgainst: ga,
+      },
     });
     const userPts = wins * 3 + draws;
-    const inviteText = `Beat my ${league.name} run — same fixtures, your own XI.\n\nMy score: ${wins}W ${draws}D ${losses}L · ${userPts} pts · ${gf}:${ga} goals${unbeaten ? " 🏆 UNBEATEN" : ""}\n\n${url}`;
+    const verb = config.challengerScore ? "Returning fire — your turn." : "Beat my run.";
+    const inviteText = `${verb}\n\n${league.name} · ${wins}W ${draws}D ${losses}L · ${userPts} pts · ${gf}:${ga} goals${unbeaten ? " 🏆 UNBEATEN" : ""}\n\n${url}`;
     const r = await shareOrCopy(inviteText, "Beat my UNSCHLAGBAR run");
     setStatus(r === "shared" ? "Challenge sent!" : "Link copied — paste anywhere");
     setTimeout(() => setStatus(null), 2200);
   }
 
+  const userPts = wins * 3 + draws;
+  const them = config.challengerScore;
+  const themPts = them ? them.wins * 3 + them.draws : null;
+  const youWon = themPts !== null && userPts > themPts;
+  const youLost = themPts !== null && userPts < themPts;
+  const tied = themPts !== null && userPts === themPts;
+
   return (
     <div className="mt-10">
+      {/* Head-to-head comparison panel — appears only when the URL carried
+          a challenger's score. This is the async multiplayer payoff:
+          "you 55 vs them 52 — you win this one." */}
+      {them && themPts !== null && (
+        <div
+          className={`mb-6 max-w-md mx-auto p-5 rounded-2xl border-2 text-center ${
+            youWon
+              ? "border-success bg-success/10"
+              : youLost
+                ? "border-primary bg-primary/10"
+                : "border-warning bg-warning/10"
+          }`}
+        >
+          <div className="text-[10px] uppercase tracking-[0.25em] mb-2 opacity-80">
+            🎯 Head-to-head
+          </div>
+          <div className="grid grid-cols-3 items-center gap-2">
+            <div>
+              <div className="font-display text-3xl tabular-nums">{userPts}</div>
+              <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-0.5">
+                You
+              </div>
+            </div>
+            <div className="font-display text-base text-muted-foreground">vs</div>
+            <div>
+              <div className="font-display text-3xl tabular-nums opacity-70">{themPts}</div>
+              <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-0.5">
+                {them.name ?? "Friend"}
+              </div>
+            </div>
+          </div>
+          <div
+            className={`mt-3 font-display text-sm ${
+              youWon ? "text-success" : youLost ? "text-primary" : "text-warning"
+            }`}
+          >
+            {youWon
+              ? `🏆 You win by ${userPts - themPts} pt${userPts - themPts === 1 ? "" : "s"}!`
+              : youLost
+                ? `Lost by ${themPts - userPts} pt${themPts - userPts === 1 ? "" : "s"} — return fire ↩`
+                : `Tied at ${userPts} pts — split decision`}
+          </div>
+        </div>
+      )}
+
       <div className="flex flex-col items-stretch gap-2 max-w-md mx-auto">
         {/* Primary: native share with image attached. The image IS the
             challenge invite — recipient can tap to play. */}
@@ -391,7 +452,7 @@ function ShareBlock() {
             onClick={onChallengeFriend}
             className="px-4 py-2.5 rounded-xl border border-warning/50 bg-warning/10 text-warning font-display tracking-wide hover:bg-warning/20 transition"
           >
-            🎯 Challenge a friend
+            {them ? "↩ Return fire" : "🎯 Challenge a friend"}
           </button>
           <button
             onClick={onShareText}

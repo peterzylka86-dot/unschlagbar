@@ -12,6 +12,18 @@ export interface ChallengePayload {
   draftMode: RunConfig["draftMode"];
   showRatings: boolean;
   seed: number;
+  /** Optional challenger context — present when this URL is the SECOND
+   *  hop of a ping-pong match. Lets the receiver see "@from played this:
+   *  17W 3D 2L · 54 pts. Beat them." and the result screen can compare. */
+  challenger?: {
+    /** Display name, optional. "Anonymous" if absent. */
+    name?: string;
+    wins: number;
+    draws: number;
+    losses: number;
+    goalsFor: number;
+    goalsAgainst: number;
+  };
 }
 
 // URL-safe base64

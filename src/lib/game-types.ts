@@ -60,6 +60,17 @@ export interface RunConfig {
   draftMode: DraftMode;
   ratingMode: RatingMode;
   challengeSeed?: number;
+  /** Challenger's score that came in via the URL — used to show "you vs
+   *  them" on the result screen + the landing banner ("beat their 54 pts").
+   *  Cleared after the result has been compared. */
+  challengerScore?: {
+    name?: string;
+    wins: number;
+    draws: number;
+    losses: number;
+    goalsFor: number;
+    goalsAgainst: number;
+  };
   /** Optional: a specific player the user wants to start with. Pre-assigned
    *  to a compatible slot on /draft mount; the wheel handles the rest. */
   foundingPlayer?: Player;

@@ -85,6 +85,31 @@ function GameSetup() {
         <p className="mt-2 text-muted-foreground">Draft your greatest {league.name} XI</p>
       </header>
 
+      {/* Challenge-from-friend banner — shows when the user opened a
+          shared URL that carries the challenger's score. Path B of the
+          async-multiplayer roadmap: see what to beat before you spin. */}
+      {config.challengerScore && (
+        <div className="mt-6 p-4 rounded-xl border-2 border-primary/60 bg-primary/10 text-center">
+          <div className="text-[10px] uppercase tracking-[0.25em] text-primary mb-1">
+            🎯 Challenge accepted
+          </div>
+          <div className="font-display text-base text-foreground">
+            {config.challengerScore.name ?? "Your friend"} played this — beat their{" "}
+            <span className="text-primary font-display">
+              {config.challengerScore.wins * 3 + config.challengerScore.draws} pts
+            </span>
+            <span className="text-muted-foreground">
+              {" "}
+              ({config.challengerScore.wins}W {config.challengerScore.draws}D{" "}
+              {config.challengerScore.losses}L)
+            </span>
+          </div>
+          <div className="text-[11px] text-muted-foreground mt-1">
+            Same league · same formation · same fixtures. Draft your own XI.
+          </div>
+        </div>
+      )}
+
       {/* Quick-start escape hatch — newcomers can skip the 7-section form */}
       <div className="mt-6 p-4 rounded-xl border border-warning/40 bg-warning/10 flex items-center justify-between gap-3">
         <div className="min-w-0">
