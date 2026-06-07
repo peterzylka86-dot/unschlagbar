@@ -113,6 +113,9 @@ function Landing() {
         Inspired by{" "}
         <a href="https://82-0.com" className="underline hover:text-warning" target="_blank" rel="noreferrer">82-0.com</a>
         {" "}· A fun fan project — not affiliated with any league or club shown.
+        <br />
+        Want a multi-season career?{" "}
+        <a href="https://golazo.app" className="underline hover:text-warning" target="_blank" rel="noreferrer">Try GOLAZO →</a>
       </footer>
     </div>
   );
