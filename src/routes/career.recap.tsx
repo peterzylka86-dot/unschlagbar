@@ -28,7 +28,7 @@ import type { LeagueId } from "@/lib/leagues";
 import { getCareerClubs } from "@/lib/data";
 import { FORMATIONS } from "@/lib/formations";
 import { isPositionCompatible } from "@/lib/draft-helpers";
-import { normalizeName } from "@/lib/career-core";
+import { normalizeName, simplifyPosition } from "@/lib/career-core";
 import { shareOrCopy } from "@/lib/share";
 import type { Player, Position } from "@/lib/game-types";
 
@@ -71,30 +71,71 @@ function CareerRecap() {
     return enriched[0]?.player ?? null;
   }, [career.squad, career.form, career.franchisePlayerKey, career.starDemandResolved]);
 
-  // Assign the current squad to formation slots — same logic the draft uses.
+  // Assign the current squad to formation slots — TWO-PASS strategy.
+  //
+  // The recap is purely visual: it shouldn't place Benzema (ST) at LB
+  // just because the strict isPositionCompatible matrix says ST≠LW.
+  // User-reported regression (S2 relegation rebuild):
+  //   3 strikers + 1 CM + 1 GK in a 4-3-3 → strict pass placed only ONE
+  //   ST in the lone ST slot, then dumped the other two into LB/CB.
+  //
+  // Pass 1: strict (LB→LB, CM→CAM, etc.) — preserves real footy intent.
+  // Pass 2: forward-bucket promotion (ST→LW/RW, LW→ST, RW→ST) so a glut
+  //         of forwards lands in forward-band slots, never in defense.
+  // Pass 3: bucket-match by simplifyPosition (G/D/M/F → any G/D/M/F slot).
+  // Pass 4: anywhere — last resort for genuinely impossible setups.
   const assignedXI = useMemo(() => {
     if (!latest) return [] as Array<{ x: number; y: number; pos: Position; player: Player | null }>;
     const formation = FORMATIONS[latest.formation];
     const slots = formation.slots.map((s) => ({ ...s }));
     const assigned: Array<Player | null> = slots.map(() => null);
     const sorted = [...career.squad].sort((a, b) => b.prime_rating - a.prime_rating);
-    // Greedy: each player goes to the best-fit empty slot
-    for (const p of sorted) {
+
+    function tryPlace(
+      p: Player,
+      predicate: (slotPos: Position, playerPos: Position) => boolean,
+    ): boolean {
       for (let i = 0; i < slots.length; i++) {
         if (assigned[i]) continue;
-        if (isPositionCompatible(slots[i].position, p.position)) {
+        if (predicate(slots[i].position, p.position)) {
           assigned[i] = p;
-          break;
+          return true;
         }
       }
+      return false;
     }
-    // Fallback: any unfilled slot gets any unplaced player
-    const placedNames = new Set(assigned.filter(Boolean).map((p) => p!.name));
-    const unplaced = career.squad.filter((p) => !placedNames.has(p.name));
-    for (let i = 0; i < slots.length; i++) {
-      if (assigned[i]) continue;
-      assigned[i] = unplaced.shift() ?? null;
+
+    // Pass 1: strict same-family match
+    const unplacedAfterStrict: Player[] = [];
+    for (const p of sorted) {
+      if (!tryPlace(p, isPositionCompatible)) unplacedAfterStrict.push(p);
     }
+
+    // Pass 2: forward-bucket — ST/LW/RW all count as forward slots when
+    // we've run out of strict family matches.
+    const FWDS: Position[] = ["ST", "LW", "RW"];
+    const unplacedAfterFwd: Player[] = [];
+    for (const p of unplacedAfterStrict) {
+      const placed = tryPlace(p, (slotPos, playerPos) => {
+        return FWDS.includes(slotPos) && FWDS.includes(playerPos);
+      });
+      if (!placed) unplacedAfterFwd.push(p);
+    }
+
+    // Pass 3: GK/DEF/MID/FWD bucket-match
+    const unplacedAfterBucket: Player[] = [];
+    for (const p of unplacedAfterFwd) {
+      const placed = tryPlace(p, (slotPos, playerPos) => {
+        return simplifyPosition(slotPos) === simplifyPosition(playerPos);
+      });
+      if (!placed) unplacedAfterBucket.push(p);
+    }
+
+    // Pass 4: anywhere (genuinely impossible squad — fall through)
+    for (const p of unplacedAfterBucket) {
+      tryPlace(p, () => true);
+    }
+
     return slots.map((s, i) => ({
       x: s.x,
       y: s.y,
