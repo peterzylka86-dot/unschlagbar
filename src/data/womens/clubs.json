@@ -1,0 +1,226 @@
+[
+  {
+    "id": "barcelonafem",
+    "name": "FC Barcelona",
+    "short": "BAR",
+    "city": "Barcelona",
+    "color": "#a50044",
+    "founded": 1988,
+    "strength": 94,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "lyonfem",
+    "name": "Olympique Lyonnais",
+    "short": "OL",
+    "city": "Lyon",
+    "color": "#003e7e",
+    "founded": 2004,
+    "strength": 92,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "chelseafem",
+    "name": "Chelsea FC",
+    "short": "CHE",
+    "city": "London",
+    "color": "#034694",
+    "founded": 1992,
+    "strength": 91,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "arsenalfem",
+    "name": "Arsenal WFC",
+    "short": "ARS",
+    "city": "London",
+    "color": "#ef0107",
+    "founded": 1987,
+    "strength": 89,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "bayernfem",
+    "name": "Bayern München",
+    "short": "FCB",
+    "city": "Munich",
+    "color": "#dc052d",
+    "founded": 1970,
+    "strength": 89,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "wolfsburgfem",
+    "name": "VfL Wolfsburg",
+    "short": "WOB",
+    "city": "Wolfsburg",
+    "color": "#65b32e",
+    "founded": 2003,
+    "strength": 88,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "psgfem",
+    "name": "Paris Saint-Germain",
+    "short": "PSG",
+    "city": "Paris",
+    "color": "#004170",
+    "founded": 1971,
+    "strength": 87,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "realmadridfem",
+    "name": "Real Madrid",
+    "short": "RMA",
+    "city": "Madrid",
+    "color": "#febe10",
+    "founded": 2020,
+    "strength": 86,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "manchestercityfem",
+    "name": "Manchester City",
+    "short": "MCI",
+    "city": "Manchester",
+    "color": "#6cabdd",
+    "founded": 1988,
+    "strength": 86,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "manchesterunitedfem",
+    "name": "Manchester United",
+    "short": "MUN",
+    "city": "Manchester",
+    "color": "#da291c",
+    "founded": 2018,
+    "strength": 84,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "juventusfem",
+    "name": "Juventus",
+    "short": "JUV",
+    "city": "Turin",
+    "color": "#000000",
+    "founded": 2017,
+    "strength": 85,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "romafem",
+    "name": "AS Roma",
+    "short": "ROM",
+    "city": "Rome",
+    "color": "#8e1f2f",
+    "founded": 2018,
+    "strength": 84,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "kchiefs",
+    "name": "Kansas City Current",
+    "short": "KCC",
+    "city": "Kansas City",
+    "color": "#92d3da",
+    "founded": 2020,
+    "strength": 83,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "portland",
+    "name": "Portland Thorns",
+    "short": "POR",
+    "city": "Portland",
+    "color": "#900028",
+    "founded": 2012,
+    "strength": 84,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "orlando",
+    "name": "Orlando Pride",
+    "short": "ORL",
+    "city": "Orlando",
+    "color": "#7d3f98",
+    "founded": 2015,
+    "strength": 83,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "ngsuper",
+    "name": "NJ/NY Gotham FC",
+    "short": "GFC",
+    "city": "Harrison",
+    "color": "#152743",
+    "founded": 2007,
+    "strength": 83,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  }
+]

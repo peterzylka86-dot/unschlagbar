@@ -1,0 +1,195 @@
+[
+  {
+    "id": "brazil",
+    "name": "Brazil",
+    "short": "BRA",
+    "city": "Rio de Janeiro",
+    "color": "#fedf00",
+    "founded": 1914,
+    "strength": 94,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "germany",
+    "name": "Germany",
+    "short": "GER",
+    "city": "Frankfurt",
+    "color": "#000000",
+    "founded": 1900,
+    "strength": 92,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "argentina",
+    "name": "Argentina",
+    "short": "ARG",
+    "city": "Buenos Aires",
+    "color": "#75aadb",
+    "founded": 1893,
+    "strength": 93,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "france",
+    "name": "France",
+    "short": "FRA",
+    "city": "Paris",
+    "color": "#0055a4",
+    "founded": 1904,
+    "strength": 93,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "italy",
+    "name": "Italy",
+    "short": "ITA",
+    "city": "Rome",
+    "color": "#0066cc",
+    "founded": 1898,
+    "strength": 90,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "spain",
+    "name": "Spain",
+    "short": "ESP",
+    "city": "Madrid",
+    "color": "#aa151b",
+    "founded": 1913,
+    "strength": 91,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "netherlands",
+    "name": "Netherlands",
+    "short": "NED",
+    "city": "Amsterdam",
+    "color": "#ff6600",
+    "founded": 1889,
+    "strength": 90,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "england",
+    "name": "England",
+    "short": "ENG",
+    "city": "London",
+    "color": "#ce1124",
+    "founded": 1863,
+    "strength": 89,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "portugal",
+    "name": "Portugal",
+    "short": "POR",
+    "city": "Lisbon",
+    "color": "#006600",
+    "founded": 1914,
+    "strength": 89,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s"
+    ]
+  },
+  {
+    "id": "uruguay",
+    "name": "Uruguay",
+    "short": "URU",
+    "city": "Montevideo",
+    "color": "#5cbcec",
+    "founded": 1900,
+    "strength": 87,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
+    ]
+  },
+  {
+    "id": "belgium",
+    "name": "Belgium",
+    "short": "BEL",
+    "city": "Brussels",
+    "color": "#ed2939",
+    "founded": 1895,
+    "strength": 87,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "croatia",
+    "name": "Croatia",
+    "short": "CRO",
+    "city": "Zagreb",
+    "color": "#ff0000",
+    "founded": 1912,
+    "strength": 86,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "90s"
+    ]
+  }
+]
