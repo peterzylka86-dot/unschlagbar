@@ -2,7 +2,50 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useGame } from "@/lib/store";
 import { FORMATIONS, FORMATION_KEYS } from "@/lib/formations";
 import { LEAGUES, LEAGUE_IDS } from "@/lib/leagues";
+import type { CompetitionKind } from "@/lib/leagues";
 import type { Difficulty, DraftMode, RatingMode } from "@/lib/game-types";
+
+/**
+ * Group competitions by time commitment so the user picks "how long
+ * do I have" first, "which league specifically" second.
+ *
+ * Order matters: top group is the lowest-commitment entry point (best
+ * for first-time visitors and lunch-break sessions). Full Season sits
+ * at the bottom because it's the deepest experience.
+ */
+const COMPETITION_GROUPS: {
+  id: string;
+  title: string;
+  icon: string;
+  timeHint: string;
+  accent: string;
+  kinds: CompetitionKind[];
+}[] = [
+  {
+    id: "quick",
+    title: "Quick",
+    icon: "⚡",
+    timeHint: "5–10 min · knockout",
+    accent: "text-warning",
+    kinds: ["knockout"],
+  },
+  {
+    id: "tournament",
+    title: "Tournament",
+    icon: "🏆",
+    timeHint: "15–20 min · group + KO",
+    accent: "text-primary",
+    kinds: ["groupKO"],
+  },
+  {
+    id: "season",
+    title: "Full Season",
+    icon: "📅",
+    timeHint: "20–30 min · full league",
+    accent: "text-success",
+    kinds: ["league"],
+  },
+];
 
 export const Route = createFileRoute("/game")({
   validateSearch: (s: Record<string, unknown>) => ({ new: s.new === true || s.new === "true" }),
@@ -29,26 +72,49 @@ function GameSetup() {
       </header>
 
       <Section label="Competition">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
-          {LEAGUE_IDS.map(id => {
-            const l = LEAGUES[id];
-            const kindTone = l.kind === "knockout" ? "text-warning"
-              : l.kind === "groupKO" ? "text-primary"
-              : "text-muted-foreground";
+        <div className="space-y-5">
+          {COMPETITION_GROUPS.map(group => {
+            const ids = LEAGUE_IDS.filter(id => group.kinds.includes(LEAGUES[id].kind));
+            if (ids.length === 0) return null;
             return (
-              <button
-                key={id}
-                onClick={() => setConfig({ league: id })}
-                className={`p-3 rounded-xl border text-left transition ${
-                  config.league === id
-                    ? "border-primary bg-primary/10 text-primary"
-                    : "border-border bg-card hover:border-foreground/30"
-                }`}
-              >
-                <div className="text-2xl leading-none">{l.flag}</div>
-                <div className="mt-1.5 font-display text-sm">{l.name}</div>
-                <div className={`text-[10px] ${config.league === id ? "opacity-80" : kindTone}`}>{l.formatLabel}</div>
-              </button>
+              <div key={group.id}>
+                <div className="flex items-baseline justify-between mb-2 px-0.5">
+                  <h3 className={`font-display text-sm tracking-wide ${group.accent}`}>
+                    <span className="mr-1.5">{group.icon}</span>{group.title}
+                  </h3>
+                  <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                    {group.timeHint}
+                  </span>
+                </div>
+                <div className={`grid gap-2 ${
+                  ids.length === 1
+                    ? "grid-cols-1"
+                    : ids.length === 2
+                      ? "grid-cols-2"
+                      : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
+                }`}>
+                  {ids.map(id => {
+                    const l = LEAGUES[id];
+                    return (
+                      <button
+                        key={id}
+                        onClick={() => setConfig({ league: id })}
+                        className={`p-3 rounded-xl border text-left transition ${
+                          config.league === id
+                            ? "border-primary bg-primary/10 text-primary"
+                            : "border-border bg-card hover:border-foreground/30"
+                        }`}
+                      >
+                        <div className="text-2xl leading-none">{l.flag}</div>
+                        <div className="mt-1.5 font-display text-sm">{l.name}</div>
+                        <div className={`text-[10px] ${config.league === id ? "opacity-80" : "text-muted-foreground"}`}>
+                          {l.formatLabel}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             );
           })}
         </div>

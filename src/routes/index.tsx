@@ -75,6 +75,7 @@ function Landing() {
             Spin the wheel. Chase the unbeaten season.
           </p>
           <p className="mt-2 text-sm text-muted-foreground italic">
+            🏆 Champions League · 🌍 World Cup · ♀ Women's Elite<br />
             🇩🇪 Bundesliga · 🇪🇸 La Liga · 🇮🇹 Serie A · 🇨🇭 Super League
           </p>
 
