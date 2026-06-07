@@ -184,7 +184,7 @@
     "club": "leipzig"
   },
   {
-    "career_years": "2015-2024",
+    "career_years": "2015-2025",
     "name": "Péter Gulácsi",
     "nationality": "Hungary",
     "prime_rating": 86,
@@ -704,7 +704,7 @@
     "club": "dortmund"
   },
   {
-    "career_years": "1998-2004, 2007-2011",
+    "career_years": "1998-2011",
     "prime_rating": 87,
     "position": "LB",
     "name": "Dedê",
@@ -2328,7 +2328,7 @@
     "club": "schalke"
   },
   {
-    "name": "Olaf Thon (CM)",
+    "name": "Olaf Thon",
     "nationality": "Germany",
     "position": "CM",
     "career_years": "1983-1988, 1995-2001",
@@ -6009,7 +6009,7 @@
   },
   {
     "position": "ST",
-    "name": "Steffen Baumgart (Legend)",
+    "name": "Steffen Baumgart",
     "career_years": "2019-2020",
     "prime_rating": 74,
     "nationality": "Germany",
@@ -9305,7 +9305,7 @@
   },
   {
     "name": "Andreas Buck",
-    "position": "RM",
+    "position": "CM",
     "nationality": "Germany",
     "career_years": "1995-1999",
     "prime_rating": 80,
@@ -10105,7 +10105,7 @@
   },
   {
     "name": "Andreas Lambertz",
-    "position": "LM",
+    "position": "CM",
     "nationality": "Germany",
     "career_years": "2007-2018",
     "prime_rating": 78,
@@ -10888,27 +10888,11 @@
     "prime_rating": 80
   },
   {
-    "name": "Franck Ribery",
-    "position": "LW",
-    "prime_rating": 90,
-    "career_years": "2007-2019",
-    "nationality": "FRA",
-    "club": "bayern"
-  },
-  {
     "name": "Marcel Schmelzer",
     "position": "LB",
     "prime_rating": 80,
     "career_years": "2008-2022",
     "nationality": "GER",
-    "club": "dortmund"
-  },
-  {
-    "name": "Dede",
-    "position": "LB",
-    "prime_rating": 80,
-    "career_years": "1998-2011",
-    "nationality": "BRA",
     "club": "dortmund"
   },
   {
@@ -10950,14 +10934,6 @@
     "career_years": "2012-2013",
     "nationality": "ESP",
     "club": "leverkusen"
-  },
-  {
-    "name": "Peter Gulacsi",
-    "position": "GK",
-    "prime_rating": 82,
-    "career_years": "2015-2025",
-    "nationality": "HUN",
-    "club": "leipzig"
   },
   {
     "name": "Janis Blaswich",

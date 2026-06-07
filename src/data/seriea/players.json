@@ -1056,14 +1056,6 @@
     "club": "milan"
   },
   {
-    "name": "Daniele Massaro 80",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1986-1989",
-    "nationality": "Italy",
-    "club": "milan"
-  },
-  {
     "name": "Yann Sommer",
     "position": "GK",
     "prime_rating": 85,
@@ -1476,14 +1468,6 @@
     "position": "GK",
     "prime_rating": 86,
     "career_years": "1969-1983",
-    "nationality": "Italy",
-    "club": "inter"
-  },
-  {
-    "name": "Walter Zenga 80",
-    "position": "GK",
-    "prime_rating": 90,
-    "career_years": "1982-1989",
     "nationality": "Italy",
     "club": "inter"
   },
@@ -1928,14 +1912,6 @@
     "club": "napoli"
   },
   {
-    "name": "Salvatore Bagni 80",
-    "position": "CM",
-    "prime_rating": 83,
-    "career_years": "1984-1988",
-    "nationality": "Italy",
-    "club": "napoli"
-  },
-  {
     "name": "Diego Maradona",
     "position": "CAM",
     "prime_rating": 97,
@@ -1944,23 +1920,7 @@
     "club": "napoli"
   },
   {
-    "name": "Careca 80",
-    "position": "ST",
-    "prime_rating": 90,
-    "career_years": "1987-1989",
-    "nationality": "Brazil",
-    "club": "napoli"
-  },
-  {
-    "name": "Bruno Giordano 80",
-    "position": "ST",
-    "prime_rating": 85,
-    "career_years": "1985-1989",
-    "nationality": "Italy",
-    "club": "napoli"
-  },
-  {
-    "name": "Salvatore Bagni 80b",
+    "name": "Salvatore Bagni",
     "position": "CDM",
     "prime_rating": 83,
     "career_years": "1984-1987",
@@ -1988,14 +1948,6 @@
     "position": "ST",
     "prime_rating": 84,
     "career_years": "1975-1979",
-    "nationality": "Italy",
-    "club": "napoli"
-  },
-  {
-    "name": "Andrea Carnevale 80",
-    "position": "ST",
-    "prime_rating": 83,
-    "career_years": "1986-1989",
     "nationality": "Italy",
     "club": "napoli"
   },
@@ -2272,27 +2224,11 @@
     "club": "roma"
   },
   {
-    "name": "Aldair 90",
-    "position": "CB",
-    "prime_rating": 86,
-    "career_years": "1990-1999",
-    "nationality": "Brazil",
-    "club": "roma"
-  },
-  {
     "name": "Sinisa Mihajlović",
     "position": "CB",
     "prime_rating": 83,
     "career_years": "1992-1994",
     "nationality": "Yugoslavia",
-    "club": "roma"
-  },
-  {
-    "name": "Cafu 90",
-    "position": "RB",
-    "prime_rating": 87,
-    "career_years": "1997-1999",
-    "nationality": "Brazil",
     "club": "roma"
   },
   {
@@ -2320,22 +2256,6 @@
     "club": "roma"
   },
   {
-    "name": "Marco Delvecchio 90",
-    "position": "ST",
-    "prime_rating": 83,
-    "career_years": "1995-1999",
-    "nationality": "Italy",
-    "club": "roma"
-  },
-  {
-    "name": "Damiano Tommasi 90",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1996-1999",
-    "nationality": "Italy",
-    "club": "roma"
-  },
-  {
     "name": "Francesco Statuto",
     "position": "LB",
     "prime_rating": 80,
@@ -2348,14 +2268,6 @@
     "position": "GK",
     "prime_rating": 87,
     "career_years": "1977-1990",
-    "nationality": "Italy",
-    "club": "roma"
-  },
-  {
-    "name": "Giuseppe Giannini 80",
-    "position": "CAM",
-    "prime_rating": 87,
-    "career_years": "1981-1989",
     "nationality": "Italy",
     "club": "roma"
   },
@@ -2768,7 +2680,7 @@
     "club": "lazio"
   },
   {
-    "name": "Pavel Nedvěd 90",
+    "name": "Pavel Nedvěd",
     "position": "CAM",
     "prime_rating": 89,
     "career_years": "1996-1999",
@@ -4528,14 +4440,6 @@
     "club": "genoa"
   },
   {
-    "name": "Stefano Eranio",
-    "position": "RW",
-    "prime_rating": 80,
-    "career_years": "1985-1989",
-    "nationality": "Italy",
-    "club": "genoa"
-  },
-  {
     "name": "Mario Faccenda",
     "position": "CB",
     "prime_rating": 78,
@@ -4789,14 +4693,6 @@
     "prime_rating": 75,
     "career_years": "2024-2026",
     "nationality": "Colombia",
-    "club": "verona"
-  },
-  {
-    "name": "Pawel Dawidowicz",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "2019-2024",
-    "nationality": "Poland",
     "club": "verona"
   },
   {
@@ -5299,7 +5195,7 @@
     "name": "Tonetto",
     "position": "RB",
     "prime_rating": 78,
-    "career_years": "2004-2006",
+    "career_years": "1998-2006",
     "nationality": "Italy",
     "club": "empoli"
   },
@@ -5324,14 +5220,6 @@
     "position": "CM",
     "prime_rating": 80,
     "career_years": "1995-1998",
-    "nationality": "Italy",
-    "club": "empoli"
-  },
-  {
-    "name": "Tonetto",
-    "position": "RB",
-    "prime_rating": 78,
-    "career_years": "1998-2000",
     "nationality": "Italy",
     "club": "empoli"
   },
@@ -6128,14 +6016,6 @@
     "club": "chievo"
   },
   {
-    "name": "Stefano Sorrentino",
-    "position": "GK",
-    "prime_rating": 83,
-    "career_years": "2003-2010",
-    "nationality": "Italy",
-    "club": "chievo"
-  },
-  {
     "name": "Bernardo Corradi",
     "position": "ST",
     "prime_rating": 83,
@@ -6333,14 +6213,6 @@
     "prime_rating": 87,
     "career_years": "1992-1994",
     "nationality": "Romania",
-    "club": "brescia"
-  },
-  {
-    "name": "Andrea Pirlo",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1995-1998",
-    "nationality": "Italy",
     "club": "brescia"
   },
   {
@@ -6652,14 +6524,6 @@
     "position": "CM",
     "prime_rating": 78,
     "career_years": "1993-1998",
-    "nationality": "Italy",
-    "club": "vicenza"
-  },
-  {
-    "name": "Maurizio Iorio",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1990-1995",
     "nationality": "Italy",
     "club": "vicenza"
   },

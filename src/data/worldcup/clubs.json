@@ -53,7 +53,7 @@
     "id": "colombia",
     "name": "Colombia",
     "short": "COL",
-    "city": "Bogot\u00e1",
+    "city": "Bogotá",
     "color": "#fcd116",
     "founded": 1924,
     "strength": 86,
@@ -112,7 +112,7 @@
     "id": "paraguay",
     "name": "Paraguay",
     "short": "PAR",
-    "city": "Asunci\u00f3n",
+    "city": "Asunción",
     "color": "#d52b1e",
     "founded": 1906,
     "strength": 76,
@@ -300,7 +300,7 @@
     "id": "switzerland",
     "name": "Switzerland",
     "short": "SUI",
-    "city": "Z\u00fcrich",
+    "city": "Zürich",
     "color": "#dc291e",
     "founded": 1895,
     "strength": 82,
@@ -459,7 +459,7 @@
     "id": "costarica",
     "name": "Costa Rica",
     "short": "CRC",
-    "city": "San Jos\u00e9",
+    "city": "San José",
     "color": "#002b7f",
     "founded": 1921,
     "strength": 76,
@@ -587,7 +587,7 @@
     "id": "cameroon",
     "name": "Cameroon",
     "short": "CMR",
-    "city": "Yaound\u00e9",
+    "city": "Yaoundé",
     "color": "#007a5e",
     "founded": 1959,
     "strength": 80,
@@ -667,6 +667,22 @@
     "era_tier": "current",
     "era_tiers": [
       "current"
+    ]
+  },
+  {
+    "id": "tunisia",
+    "name": "Tunisia",
+    "short": "TUN",
+    "city": "Tunis",
+    "color": "#e70013",
+    "founded": 1960,
+    "strength": 78,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s"
     ]
   }
 ]

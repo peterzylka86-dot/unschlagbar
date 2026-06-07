@@ -1546,7 +1546,7 @@
   {
     "name": "Andoni Zubizarreta",
     "position": "GK",
-    "prime_rating": 85,
+    "prime_rating": 88,
     "career_years": "1985-1998",
     "nationality": "Spain",
     "club": "spain"
@@ -4460,14 +4460,6 @@
     "position": "ST",
     "prime_rating": 84,
     "career_years": "2016-2026",
-    "nationality": "Morocco",
-    "club": "morocco"
-  },
-  {
-    "name": "Hakim Ziyech",
-    "position": "CAM",
-    "prime_rating": 85,
-    "career_years": "2015-2026",
     "nationality": "Morocco",
     "club": "morocco"
   },
@@ -8000,10 +7992,10 @@
     "club": "denmark"
   },
   {
-    "name": "Olaf Thon (CM)",
+    "name": "Olaf Thon",
     "nationality": "Germany",
     "position": "CM",
-    "career_years": "1983-1988, 1995-2001",
+    "career_years": "1983-2001",
     "prime_rating": 88,
     "club": "germany"
   },
@@ -9145,7 +9137,7 @@
   },
   {
     "name": "Andreas Buck",
-    "position": "RM",
+    "position": "CM",
     "nationality": "Germany",
     "career_years": "1995-1999",
     "prime_rating": 80,
@@ -9166,14 +9158,6 @@
     "career_years": "1996-2002",
     "prime_rating": 81,
     "club": "brazil"
-  },
-  {
-    "name": "Olaf Thon",
-    "position": "CM",
-    "nationality": "Germany",
-    "career_years": "1988-1994",
-    "prime_rating": 85,
-    "club": "germany"
   },
   {
     "name": "Gerry Ehrmann",
@@ -11456,14 +11440,6 @@
     "club": "italy"
   },
   {
-    "name": "Roberto Carlos 90",
-    "position": "LB",
-    "prime_rating": 91,
-    "career_years": "1996-1999",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
     "name": "Steve McManaman",
     "position": "CM",
     "prime_rating": 85,
@@ -11816,14 +11792,6 @@
     "club": "netherlands"
   },
   {
-    "name": "Luís Figo 90s",
-    "position": "RW",
-    "prime_rating": 91,
-    "career_years": "1995-2000",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
     "name": "Salvador Sadurní",
     "position": "GK",
     "prime_rating": 83,
@@ -11836,14 +11804,6 @@
     "position": "GK",
     "prime_rating": 84,
     "career_years": "1981-1988",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "Andoni Zubizarreta 80s",
-    "position": "GK",
-    "prime_rating": 88,
-    "career_years": "1986-1989",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -11955,7 +11915,7 @@
     "name": "Robin Le Normand",
     "position": "CB",
     "prime_rating": 85,
-    "career_years": "2024-2026",
+    "career_years": "2017-2026",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -12384,7 +12344,7 @@
     "club": "spain"
   },
   {
-    "name": "Jesús Navas 00s",
+    "name": "Jesús Navas",
     "position": "RW",
     "prime_rating": 86,
     "career_years": "2003-2013",
@@ -12440,7 +12400,7 @@
     "club": "spain"
   },
   {
-    "name": "Daniel Alves 00s",
+    "name": "Daniel Alves",
     "position": "RB",
     "prime_rating": 87,
     "career_years": "2003-2008",
@@ -13076,14 +13036,6 @@
     "position": "GK",
     "prime_rating": 84,
     "career_years": "2019-2026",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "Robin Le Normand 0",
-    "position": "CB",
-    "prime_rating": 83,
-    "career_years": "2017-2024",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -14680,22 +14632,6 @@
     "club": "argentina"
   },
   {
-    "name": "Tamudo 90",
-    "position": "ST",
-    "prime_rating": 84,
-    "career_years": "1996-1999",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "Pochettino 90",
-    "position": "CB",
-    "prime_rating": 82,
-    "career_years": "1994-1999",
-    "nationality": "Argentina",
-    "club": "argentina"
-  },
-  {
     "name": "Cisneros",
     "position": "ST",
     "prime_rating": 80,
@@ -14872,14 +14808,6 @@
     "club": "brazil"
   },
   {
-    "name": "Mauro Silva 90",
-    "position": "CDM",
-    "prime_rating": 89,
-    "career_years": "1992-1998",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
     "name": "Fran",
     "position": "LW",
     "prime_rating": 87,
@@ -14910,14 +14838,6 @@
     "career_years": "1993-1998",
     "nationality": "Brazil",
     "club": "brazil"
-  },
-  {
-    "name": "Naybet 90",
-    "position": "CB",
-    "prime_rating": 85,
-    "career_years": "1996-1999",
-    "nationality": "Morocco",
-    "club": "morocco"
   },
   {
     "name": "Claudio Barragán",
@@ -16080,14 +16000,6 @@
     "club": "italy"
   },
   {
-    "name": "Daniele Massaro 80",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1986-1989",
-    "nationality": "Italy",
-    "club": "italy"
-  },
-  {
     "name": "Alessandro Bastoni",
     "position": "CB",
     "prime_rating": 87,
@@ -16316,14 +16228,6 @@
     "position": "GK",
     "prime_rating": 86,
     "career_years": "1969-1983",
-    "nationality": "Italy",
-    "club": "italy"
-  },
-  {
-    "name": "Walter Zenga 80",
-    "position": "GK",
-    "prime_rating": 90,
-    "career_years": "1982-1989",
     "nationality": "Italy",
     "club": "italy"
   },
@@ -16640,31 +16544,7 @@
     "club": "italy"
   },
   {
-    "name": "Salvatore Bagni 80",
-    "position": "CM",
-    "prime_rating": 83,
-    "career_years": "1984-1988",
-    "nationality": "Italy",
-    "club": "italy"
-  },
-  {
-    "name": "Careca 80",
-    "position": "ST",
-    "prime_rating": 90,
-    "career_years": "1987-1989",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "Bruno Giordano 80",
-    "position": "ST",
-    "prime_rating": 85,
-    "career_years": "1985-1989",
-    "nationality": "Italy",
-    "club": "italy"
-  },
-  {
-    "name": "Salvatore Bagni 80b",
+    "name": "Salvatore Bagni",
     "position": "CDM",
     "prime_rating": 83,
     "career_years": "1984-1987",
@@ -16692,14 +16572,6 @@
     "position": "ST",
     "prime_rating": 84,
     "career_years": "1975-1979",
-    "nationality": "Italy",
-    "club": "italy"
-  },
-  {
-    "name": "Andrea Carnevale 80",
-    "position": "ST",
-    "prime_rating": 83,
-    "career_years": "1986-1989",
     "nationality": "Italy",
     "club": "italy"
   },
@@ -16888,22 +16760,6 @@
     "club": "italy"
   },
   {
-    "name": "Aldair 90",
-    "position": "CB",
-    "prime_rating": 86,
-    "career_years": "1990-1999",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "Cafu 90",
-    "position": "RB",
-    "prime_rating": 87,
-    "career_years": "1997-1999",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
     "name": "Vincenzo Scifo",
     "position": "CAM",
     "prime_rating": 85,
@@ -16920,22 +16776,6 @@
     "club": "argentina"
   },
   {
-    "name": "Marco Delvecchio 90",
-    "position": "ST",
-    "prime_rating": 83,
-    "career_years": "1995-1999",
-    "nationality": "Italy",
-    "club": "italy"
-  },
-  {
-    "name": "Damiano Tommasi 90",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1996-1999",
-    "nationality": "Italy",
-    "club": "italy"
-  },
-  {
     "name": "Francesco Statuto",
     "position": "LB",
     "prime_rating": 80,
@@ -16948,14 +16788,6 @@
     "position": "GK",
     "prime_rating": 87,
     "career_years": "1977-1990",
-    "nationality": "Italy",
-    "club": "italy"
-  },
-  {
-    "name": "Giuseppe Giannini 80",
-    "position": "CAM",
-    "prime_rating": 87,
-    "career_years": "1981-1989",
     "nationality": "Italy",
     "club": "italy"
   },
@@ -19646,14 +19478,6 @@
     "career_years": "2007-2009",
     "nationality": "France",
     "club": "france"
-  },
-  {
-    "name": "Mehmet Yılmaz",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "2005-2008",
-    "nationality": "Turkey",
-    "club": "turkey"
   },
   {
     "name": "Stephane Grichting",

@@ -131,7 +131,7 @@
     "name": "Pascal Zuberbühler",
     "position": "GK",
     "prime_rating": 84,
-    "career_years": "2003-2006",
+    "career_years": "1992-2006",
     "nationality": "Switzerland",
     "club": "basel"
   },
@@ -155,7 +155,7 @@
     "name": "Murat Yakin",
     "position": "CB",
     "prime_rating": 82,
-    "career_years": "2002-2007",
+    "career_years": "1992-2007",
     "nationality": "Switzerland",
     "club": "basel"
   },
@@ -272,26 +272,10 @@
     "club": "basel"
   },
   {
-    "name": "Pascal Zuberbühler",
-    "position": "GK",
-    "prime_rating": 82,
-    "career_years": "1992-1995",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
     "name": "Marco Walker",
     "position": "CB",
     "prime_rating": 78,
     "career_years": "1996-2002",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Murat Yakin",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "1992-1999",
     "nationality": "Switzerland",
     "club": "basel"
   },
@@ -1160,14 +1144,6 @@
     "club": "zurich"
   },
   {
-    "name": "Karl Grob",
-    "position": "GK",
-    "prime_rating": 83,
-    "career_years": "1972-1980",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
     "name": "Hansjörg Pfister",
     "position": "LB",
     "prime_rating": 78,
@@ -1346,8 +1322,8 @@
   {
     "name": "Heinz Hermann",
     "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1989-1992",
+    "prime_rating": 83,
+    "career_years": "1980-1992",
     "nationality": "Switzerland",
     "club": "grasshopper"
   },
@@ -1356,14 +1332,6 @@
     "position": "GK",
     "prime_rating": 81,
     "career_years": "1975-1984",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Heinz Hermann",
-    "position": "CM",
-    "prime_rating": 83,
-    "career_years": "1980-1984",
     "nationality": "Switzerland",
     "club": "grasshopper"
   },
@@ -1754,8 +1722,8 @@
   {
     "name": "Reto Ziegler",
     "position": "CB",
-    "prime_rating": 78,
-    "career_years": "2018-2024",
+    "prime_rating": 81,
+    "career_years": "2009-2024",
     "nationality": "Switzerland",
     "club": "sion"
   },
@@ -1837,14 +1805,6 @@
     "prime_rating": 80,
     "career_years": "2005-2008",
     "nationality": "Serbia",
-    "club": "sion"
-  },
-  {
-    "name": "Reto Ziegler",
-    "position": "CB",
-    "prime_rating": 81,
-    "career_years": "2009-2013",
-    "nationality": "Switzerland",
     "club": "sion"
   },
   {
@@ -2034,14 +1994,6 @@
   {
     "name": "Lars Villiger",
     "position": "CDM",
-    "prime_rating": 75,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Pius Dorn",
-    "position": "LB",
     "prime_rating": 75,
     "career_years": "2023-2026",
     "nationality": "Switzerland",
@@ -2611,7 +2563,7 @@
     "name": "Heribert Bruchez",
     "position": "LB",
     "prime_rating": 78,
-    "career_years": "1990-1996",
+    "career_years": "1985-1996",
     "nationality": "Switzerland",
     "club": "stgallen"
   },
@@ -2620,14 +2572,6 @@
     "position": "RW",
     "prime_rating": 78,
     "career_years": "1996-1999",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "Marc Zellweger",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1995-1999",
     "nationality": "Switzerland",
     "club": "stgallen"
   },
@@ -2676,14 +2620,6 @@
     "position": "CB",
     "prime_rating": 78,
     "career_years": "1986-1990",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "Heribert Bruchez",
-    "position": "LB",
-    "prime_rating": 78,
-    "career_years": "1985-1990",
     "nationality": "Switzerland",
     "club": "stgallen"
   },
@@ -3363,7 +3299,7 @@
     "name": "Heinz Hermann",
     "position": "CM",
     "prime_rating": 82,
-    "career_years": "1989-1992",
+    "career_years": "1980-1992",
     "nationality": "Switzerland",
     "club": "xamax"
   },
@@ -3386,16 +3322,16 @@
   {
     "name": "Andy Egli",
     "position": "CB",
-    "prime_rating": 80,
-    "career_years": "1988-1990",
+    "prime_rating": 81,
+    "career_years": "1984-1990",
     "nationality": "Switzerland",
     "club": "xamax"
   },
   {
     "name": "Karl Engel",
     "position": "GK",
-    "prime_rating": 81,
-    "career_years": "1989-1991",
+    "prime_rating": 82,
+    "career_years": "1980-1991",
     "nationality": "Switzerland",
     "club": "xamax"
   },
@@ -3410,8 +3346,8 @@
   {
     "name": "Robert Lüthi",
     "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1989-1992",
+    "prime_rating": 82,
+    "career_years": "1984-1992",
     "nationality": "Switzerland",
     "club": "xamax"
   },
@@ -3426,32 +3362,8 @@
   {
     "name": "Beat Sutter",
     "position": "RW",
-    "prime_rating": 80,
-    "career_years": "1990-1993",
-    "nationality": "Switzerland",
-    "club": "xamax"
-  },
-  {
-    "name": "Karl Engel",
-    "position": "GK",
-    "prime_rating": 82,
-    "career_years": "1980-1986",
-    "nationality": "Switzerland",
-    "club": "xamax"
-  },
-  {
-    "name": "Heinz Hermann",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1980-1984",
-    "nationality": "Switzerland",
-    "club": "xamax"
-  },
-  {
-    "name": "Robert Lüthi",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1984-1988",
+    "prime_rating": 81,
+    "career_years": "1986-1993",
     "nationality": "Switzerland",
     "club": "xamax"
   },
@@ -3472,14 +3384,6 @@
     "club": "xamax"
   },
   {
-    "name": "Beat Sutter",
-    "position": "RW",
-    "prime_rating": 81,
-    "career_years": "1986-1989",
-    "nationality": "Switzerland",
-    "club": "xamax"
-  },
-  {
     "name": "Charly In-Albon",
     "position": "LB",
     "prime_rating": 78,
@@ -3492,14 +3396,6 @@
     "position": "RB",
     "prime_rating": 78,
     "career_years": "1980-1988",
-    "nationality": "Switzerland",
-    "club": "xamax"
-  },
-  {
-    "name": "Andy Egli",
-    "position": "CB",
-    "prime_rating": 81,
-    "career_years": "1984-1988",
     "nationality": "Switzerland",
     "club": "xamax"
   },
@@ -3526,5 +3422,13 @@
     "career_years": "1981-1983",
     "nationality": "Switzerland",
     "club": "xamax"
+  },
+  {
+    "name": "Stéphane Grichting",
+    "position": "CB",
+    "prime_rating": 80,
+    "career_years": "2002-2005",
+    "nationality": "Switzerland",
+    "club": "grasshopper"
   }
 ]

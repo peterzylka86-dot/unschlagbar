@@ -962,7 +962,7 @@
   {
     "name": "Walter Zenga",
     "position": "GK",
-    "prime_rating": 89,
+    "prime_rating": 90,
     "career_years": "1982-1994",
     "nationality": "Italy",
     "club": "inter"
@@ -1804,14 +1804,6 @@
     "position": "ST",
     "prime_rating": 87,
     "career_years": "1991-1998",
-    "nationality": "England",
-    "club": "arsenal"
-  },
-  {
-    "name": "Bukayo Saka",
-    "position": "RW",
-    "prime_rating": 89,
-    "career_years": "2019-2026",
     "nationality": "England",
     "club": "arsenal"
   },
@@ -4080,14 +4072,6 @@
     "club": "realmadrid"
   },
   {
-    "name": "Roberto Carlos 90",
-    "position": "LB",
-    "prime_rating": 91,
-    "career_years": "1996-1999",
-    "nationality": "Brazil",
-    "club": "realmadrid"
-  },
-  {
     "name": "Fernando Redondo",
     "position": "CDM",
     "prime_rating": 91,
@@ -4792,7 +4776,7 @@
     "club": "barcelona"
   },
   {
-    "name": "Luís Figo 90s",
+    "name": "Luís Figo",
     "position": "RW",
     "prime_rating": 91,
     "career_years": "1995-2000",
@@ -4812,14 +4796,6 @@
     "position": "GK",
     "prime_rating": 84,
     "career_years": "1981-1988",
-    "nationality": "Spain",
-    "club": "barcelona"
-  },
-  {
-    "name": "Andoni Zubizarreta 80s",
-    "position": "GK",
-    "prime_rating": 88,
-    "career_years": "1986-1989",
     "nationality": "Spain",
     "club": "barcelona"
   },
@@ -5272,14 +5248,6 @@
     "club": "inter"
   },
   {
-    "name": "Walter Zenga 80",
-    "position": "GK",
-    "prime_rating": 90,
-    "career_years": "1982-1989",
-    "nationality": "Italy",
-    "club": "inter"
-  },
-  {
     "name": "Giuseppe Baresi",
     "position": "CDM",
     "prime_rating": 84,
@@ -5692,14 +5660,6 @@
     "position": "ST",
     "prime_rating": 84,
     "career_years": "1984-1988",
-    "nationality": "Italy",
-    "club": "milan"
-  },
-  {
-    "name": "Daniele Massaro 80",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1986-1989",
     "nationality": "Italy",
     "club": "milan"
   },
@@ -7256,31 +7216,7 @@
     "club": "napoli"
   },
   {
-    "name": "Salvatore Bagni 80",
-    "position": "CM",
-    "prime_rating": 83,
-    "career_years": "1984-1988",
-    "nationality": "Italy",
-    "club": "napoli"
-  },
-  {
-    "name": "Careca 80",
-    "position": "ST",
-    "prime_rating": 90,
-    "career_years": "1987-1989",
-    "nationality": "Brazil",
-    "club": "napoli"
-  },
-  {
-    "name": "Bruno Giordano 80",
-    "position": "ST",
-    "prime_rating": 85,
-    "career_years": "1985-1989",
-    "nationality": "Italy",
-    "club": "napoli"
-  },
-  {
-    "name": "Salvatore Bagni 80b",
+    "name": "Salvatore Bagni",
     "position": "CDM",
     "prime_rating": 83,
     "career_years": "1984-1987",
@@ -7308,14 +7244,6 @@
     "position": "ST",
     "prime_rating": 84,
     "career_years": "1975-1979",
-    "nationality": "Italy",
-    "club": "napoli"
-  },
-  {
-    "name": "Andrea Carnevale 80",
-    "position": "ST",
-    "prime_rating": 83,
-    "career_years": "1986-1989",
     "nationality": "Italy",
     "club": "napoli"
   },
@@ -8405,7 +8333,7 @@
     "prime_rating": 82,
     "nationality": "England",
     "club": "manchesterunited",
-    "career_years": "2016-2017"
+    "career_years": "2016-2022"
   },
   {
     "name": "H. Kane",
@@ -8797,7 +8725,7 @@
     "prime_rating": 81,
     "nationality": "Croatia",
     "club": "liverpool",
-    "career_years": "2016-2020"
+    "career_years": "2016-2022"
   },
   {
     "name": "J. Terry",
@@ -8821,7 +8749,7 @@
     "prime_rating": 82,
     "nationality": "Germany",
     "club": "arsenal",
-    "career_years": "2016-2017"
+    "career_years": "2016-2022"
   },
   {
     "name": "De Gea",
@@ -8893,7 +8821,7 @@
     "prime_rating": 88,
     "nationality": "Czech Republic",
     "club": "arsenal",
-    "career_years": "2016-2018"
+    "career_years": "2016-2022"
   },
   {
     "name": "L. Karius",
@@ -8909,7 +8837,7 @@
     "prime_rating": 80,
     "nationality": "Argentina",
     "club": "manchesterunited",
-    "career_years": "2016-2021"
+    "career_years": "2016-2022"
   },
   {
     "name": "D. Ospina",
@@ -9360,7 +9288,7 @@
     "career_years": "2020-2022"
   },
   {
-    "name": "12 O. Hargreaves",
+    "name": "O. Hargreaves",
     "position": "CDM",
     "prime_rating": 78,
     "nationality": "England",
@@ -9389,7 +9317,7 @@
     "prime_rating": 81,
     "nationality": "Brazil",
     "club": "arsenal",
-    "career_years": "2019-2021"
+    "career_years": "2019-2022"
   },
   {
     "name": "Dani Ceballos",
@@ -9400,7 +9328,7 @@
     "career_years": "2019-2021"
   },
   {
-    "name": "13 P. Scholes",
+    "name": "P. Scholes",
     "position": "CAM",
     "prime_rating": 80,
     "nationality": "England",
@@ -9408,7 +9336,7 @@
     "career_years": "2019-2022"
   },
   {
-    "name": "16 Mikel Arteta",
+    "name": "Mikel Arteta",
     "position": "CM",
     "prime_rating": 78,
     "nationality": "Spain",
@@ -9448,14 +9376,6 @@
     "career_years": "2020-2022"
   },
   {
-    "name": "18 M. Carrick",
-    "position": "CM",
-    "prime_rating": 79,
-    "nationality": "England",
-    "club": "manchesterunited",
-    "career_years": "2019-2022"
-  },
-  {
     "name": "O. Ighalo",
     "position": "ST",
     "prime_rating": 78,
@@ -9472,7 +9392,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "14 R. Giggs",
+    "name": "R. Giggs",
     "position": "CAM",
     "prime_rating": 78,
     "nationality": "Wales",
@@ -9520,14 +9440,6 @@
     "career_years": "2019-2021"
   },
   {
-    "name": "18 P. Mertesacker",
-    "position": "CB",
-    "prime_rating": 80,
-    "nationality": "Germany",
-    "club": "arsenal",
-    "career_years": "2019-2022"
-  },
-  {
     "name": "Pepe Reina",
     "position": "GK",
     "prime_rating": 80,
@@ -9544,19 +9456,11 @@
     "career_years": "2019-2021"
   },
   {
-    "name": "11 E. van der Sar",
+    "name": "E. van der Sar",
     "position": "GK",
     "prime_rating": 83,
     "nationality": "Netherlands",
     "club": "manchesterunited",
-    "career_years": "2019-2022"
-  },
-  {
-    "name": "19 P. Čech",
-    "position": "GK",
-    "prime_rating": 81,
-    "nationality": "Czech Republic",
-    "club": "arsenal",
     "career_years": "2019-2022"
   },
   {
@@ -9696,15 +9600,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "20 D. Lovren",
-    "position": "CB",
-    "prime_rating": 80,
-    "nationality": "Croatia",
-    "club": "liverpool",
-    "career_years": "2020-2022"
-  },
-  {
-    "name": "12 L. King",
+    "name": "L. King",
     "position": "CB",
     "prime_rating": 82,
     "nationality": "England",
@@ -9840,14 +9736,6 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 David Luiz",
-    "position": "CB",
-    "prime_rating": 79,
-    "nationality": "Brazil",
-    "club": "arsenal",
-    "career_years": "2021-2022"
-  },
-  {
     "name": "Emerson",
     "position": "RB",
     "prime_rating": 79,
@@ -9949,14 +9837,6 @@
     "prime_rating": 78,
     "nationality": "France",
     "club": "liverpool",
-    "career_years": "2021-2022"
-  },
-  {
-    "name": "21 S. Romero",
-    "position": "GK",
-    "prime_rating": 79,
-    "nationality": "Argentina",
-    "club": "manchesterunited",
     "career_years": "2021-2022"
   },
   {
@@ -10937,7 +10817,7 @@
   },
   {
     "name": "Ze Roberto",
-    "position": "LM",
+    "position": "CM",
     "prime_rating": 85,
     "career_years": "1998-2002",
     "nationality": "Brazil",
@@ -11160,7 +11040,7 @@
     "club": "steaua"
   },
   {
-    "name": "Lăcătuș (return)",
+    "name": "Lăcătuș",
     "position": "RW",
     "prime_rating": 82,
     "career_years": "1996-2000",
