@@ -16,10 +16,38 @@
  */
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import type { Player } from "./game-types";
+import type { Player, FormationKey } from "./game-types";
 
 /** Bump this when a non-backwards-compat change to CareerState ships. */
-export const CAREER_SCHEMA_VERSION = 1;
+export const CAREER_SCHEMA_VERSION = 2;
+
+/** Snapshot of a completed season — written to seasonHistory at the moment
+ *  the season is finalized. Used by /career/history (Hall of Fame). */
+export interface SeasonRecord {
+  season: number;
+  leagueId: string;
+  foundingClubId: string;
+  formation: FormationKey;
+  finalPosition: number;          // 1 = champion, 12 = bottom
+  totalLeagueClubs: number;
+  wins: number;
+  draws: number;
+  losses: number;
+  goalsFor: number;
+  goalsAgainst: number;
+  /** Outcome in the cup competition (only meaningful if user qualified). */
+  cupResult:
+    | "champion"
+    | "runner-up"
+    | "semi-final"
+    | "quarter-final"
+    | "did-not-qualify";
+  relegated: boolean;
+  /** List of trophy names earned this season (e.g. 'League Champion'). */
+  trophies: string[];
+  /** ISO timestamp when this season ended. */
+  endedAt: string;
+}
 
 /** A rival manager snapshot — saved after the draft so the season knows
  *  who the user is playing against and what each rival's squad looks like. */
@@ -43,6 +71,8 @@ export interface CareerState {
   foundingClubId: string | null;
   /** Which league we're playing in (e.g. 'laliga' if Real Madrid is founding). */
   leagueId: string | null;
+  /** Preferred formation — toggleable at the start of any draft. */
+  formation: FormationKey;
   /** 1-indexed current season number. */
   currentSeason: number;
   /** The user's permanent squad — survives season boundaries. */
@@ -53,6 +83,10 @@ export interface CareerState {
   form: Record<string, number>;
   /** Total trophies won so far (league titles + cups + UCLs etc.). */
   trophies: number;
+  /** Append-only log of completed seasons — surface in Hall of Fame. */
+  seasonHistory: SeasonRecord[];
+  /** True if the user was relegated last season → next season is a rebuild. */
+  relegatedLastSeason: boolean;
 }
 
 const initialCareerState: CareerState = {
@@ -60,11 +94,14 @@ const initialCareerState: CareerState = {
   startedAt: null,
   foundingClubId: null,
   leagueId: null,
+  formation: "4-3-3",
   currentSeason: 1,
   squad: [],
   rivals: [],
   form: {},
   trophies: 0,
+  seasonHistory: [],
+  relegatedLastSeason: false,
 };
 
 interface CareerStore extends CareerState {
@@ -80,6 +117,12 @@ interface CareerStore extends CareerState {
   commitDraft: (userSquad: Player[], rivals: RivalManagerSave[]) => void;
   /** Update form value for a player (clamped externally). */
   setForm: (playerKey: string, value: number) => void;
+  /** Persist the user's preferred formation. */
+  setFormation: (formation: FormationKey) => void;
+  /** Append a completed season to the Hall-of-Fame log. */
+  recordSeason: (record: SeasonRecord) => void;
+  /** Mark whether the just-finished season ended in relegation. */
+  setRelegated: (flag: boolean) => void;
 }
 
 export const useCareer = create<CareerStore>()(
@@ -94,11 +137,14 @@ export const useCareer = create<CareerStore>()(
         startedAt: new Date().toISOString(),
         foundingClubId,
         leagueId,
+        formation: "4-3-3",
         currentSeason: 1,
         squad: [],
         rivals: [],
         form: {},
         trophies: 0,
+        seasonHistory: [],
+        relegatedLastSeason: false,
       }),
 
       abandonCareer: () => set({ ...initialCareerState }),
@@ -115,6 +161,15 @@ export const useCareer = create<CareerStore>()(
       setForm: (playerKey, value) => set(state => ({
         form: { ...state.form, [playerKey]: value },
       })),
+
+      setFormation: (formation) => set({ formation }),
+
+      recordSeason: (record) => set(state => ({
+        seasonHistory: [...state.seasonHistory, record],
+        trophies: state.trophies + record.trophies.length,
+      })),
+
+      setRelegated: (flag) => set({ relegatedLastSeason: flag }),
     }),
     {
       name: "unschlagbar:career:v1",
@@ -125,11 +180,14 @@ export const useCareer = create<CareerStore>()(
         startedAt: state.startedAt,
         foundingClubId: state.foundingClubId,
         leagueId: state.leagueId,
+        formation: state.formation,
         currentSeason: state.currentSeason,
         squad: state.squad,
         rivals: state.rivals,
         form: state.form,
         trophies: state.trophies,
+        seasonHistory: state.seasonHistory,
+        relegatedLastSeason: state.relegatedLastSeason,
       }),
     },
   ),

@@ -48,8 +48,19 @@ export const Route = createFileRoute("/career/draft")({
 // buildAIManagers fix recycles archetypes when n > pool, so 11 works).
 const AI_RIVALS_COUNT = 11;
 const SQUAD_SIZE = 11;
-// 4-3-3 default for now — could read from career config later
-const FORMATION_NEED: FormationNeed = { G: 1, D: 4, M: 3, F: 3 };
+
+// Formation → 4-bucket need table. Read by computeNeed() so the AI rival
+// loop + position-aware spin filtering both honor whatever formation the
+// user picked at the top of the draft.
+const FORMATION_NEEDS: Record<string, FormationNeed> = {
+  "4-3-3":   { G: 1, D: 4, M: 3, F: 3 },
+  "4-4-2":   { G: 1, D: 4, M: 4, F: 2 },
+  "4-2-3-1": { G: 1, D: 4, M: 5, F: 1 },   // 2 CDM + 1 CAM = 3 MID + 2 wide MIDs
+  "4-5-1":   { G: 1, D: 4, M: 5, F: 1 },
+  "3-4-3":   { G: 1, D: 3, M: 4, F: 3 },
+  "3-5-2":   { G: 1, D: 3, M: 5, F: 2 },
+  "5-4-1":   { G: 1, D: 5, M: 4, F: 1 },
+};
 
 // Simple Mulberry32 seeded RNG so the same career produces the same draft
 function mulberry32(seed: number): () => number {
@@ -221,7 +232,7 @@ function CareerDraft() {
     setDraft(prev => {
       if (!prev) return prev;
       const isFirstPick = ai.squad.length === 0;
-      const need = computeNeed(ai.squad);
+      const need = computeNeed(ai.squad, career.formation);
 
       // Founding-club restriction: round 1 only
       let candidatePool: Player[];
@@ -285,7 +296,7 @@ function CareerDraft() {
     setDraft(prev => {
       if (!prev) return prev;
       const userManager = prev.managers.find(m => m.isUser)!;
-      const need = computeNeed(userManager.squad);
+      const need = computeNeed(userManager.squad, career.formation);
       // Find a club whose pool contains at least one needed-position player
       const eligibleClubs = allClubs.filter(c => {
         return allPlayers.some(p => {
@@ -317,7 +328,7 @@ function CareerDraft() {
   // What can the user pick from right now? Always computed.
   const userPickContext = useMemo(() => {
     if (!draft || !userManager || !isUserTurn) return null;
-    const need = computeNeed(userManager.squad);
+    const need = computeNeed(userManager.squad, career.formation);
     const isFirstPick = userManager.squad.length === 0;
     if (isFirstPick) {
       // Pool is the founding club, no need to spin
@@ -378,6 +389,14 @@ function CareerDraft() {
         </div>
       </header>
 
+      {/* Formation picker — only when no picks made yet (locking after first pick prevents broken squads) */}
+      {userManager.squad.length === 0 && (
+        <FormationPicker
+          current={career.formation}
+          onChange={career.setFormation}
+        />
+      )}
+
       {/* Snake-order strip */}
       <div className="mt-6">
         <SnakeOrderStrip
@@ -418,7 +437,7 @@ function CareerDraft() {
               />
             )}
 
-            <TacticalPitch userManager={userManager} />
+            <TacticalPitch userManager={userManager} formationKey={career.formation} />
             <UserSquadList userManager={userManager} />
           </div>
 
@@ -447,18 +466,18 @@ function hashString(s: string): number {
   return Math.abs(h);
 }
 
-function computeNeed(squad: Player[]): Set<SimplePosition> {
-  // Convert squad of unschlagbar Player[] to position-needs against FORMATION_NEED
+function computeNeed(squad: Player[], formation: string = "4-3-3"): Set<SimplePosition> {
+  const formationNeed = FORMATION_NEEDS[formation] ?? FORMATION_NEEDS["4-3-3"];
   const counts: Record<SimplePosition, number> = { GK: 0, DEF: 0, MID: 0, FWD: 0 };
   squad.forEach(p => {
     const bucket = simplifyPosition(p.position) as SimplePosition;
     counts[bucket]++;
   });
   const need = new Set<SimplePosition>();
-  if (counts.GK < FORMATION_NEED.G) need.add("GK");
-  if (counts.DEF < FORMATION_NEED.D) need.add("DEF");
-  if (counts.MID < FORMATION_NEED.M) need.add("MID");
-  if (counts.FWD < FORMATION_NEED.F) need.add("FWD");
+  if (counts.GK < formationNeed.G) need.add("GK");
+  if (counts.DEF < formationNeed.D) need.add("DEF");
+  if (counts.MID < formationNeed.M) need.add("MID");
+  if (counts.FWD < formationNeed.F) need.add("FWD");
   return need;
 }
 
@@ -473,6 +492,44 @@ function advance(d: DraftSnapshot): DraftSnapshot {
 }
 
 // ─── sub-components ──────────────────────────────────────────────────────
+
+/**
+ * Pre-draft formation picker. Visible only when squad is empty (locking
+ * after the first pick prevents 4-3-3 → 5-4-1 mid-draft, which would
+ * leave the user with a wrong-shape squad).
+ *
+ * 7 formations, displayed as chip-buttons. Updates career.formation in
+ * the store; the AI rival loop + need-calc both read from that.
+ */
+function FormationPicker({ current, onChange }: {
+  current: keyof typeof FORMATIONS;
+  onChange: (f: keyof typeof FORMATIONS) => void;
+}) {
+  const keys = Object.keys(FORMATIONS) as Array<keyof typeof FORMATIONS>;
+  return (
+    <div className="mt-6 p-4 rounded-xl border border-warning/40 bg-warning/5">
+      <div className="text-[10px] uppercase tracking-[0.2em] text-warning mb-2">Formation</div>
+      <div className="flex flex-wrap gap-1.5">
+        {keys.map(k => (
+          <button
+            key={k}
+            onClick={() => onChange(k)}
+            className={`px-3 py-1.5 rounded-md font-display text-sm tracking-wide transition ${
+              current === k
+                ? "bg-warning text-warning-foreground"
+                : "border border-border bg-card hover:border-warning"
+            }`}
+          >
+            {k}
+          </button>
+        ))}
+      </div>
+      <p className="mt-2 text-[11px] text-muted-foreground">
+        {FORMATIONS[current].description} · Lock-in once you make your founding pick.
+      </p>
+    </div>
+  );
+}
 
 function SnakeOrderStrip({ order, managers, round, pickInRound }: {
   order: string[];
@@ -606,27 +663,25 @@ function AIPickingIndicator({ manager }: { manager: Manager | undefined }) {
 }
 
 /**
- * Tactical pitch view for the user's current draft state. Shows the 4-3-3
- * formation with filled slots (player initials + rating) vs empty slots
- * (position label). Helps the user see "what do I still need to fill" at
- * a glance — feedback flagged this would help drafting decisions.
+ * Tactical pitch view for the user's current draft state. Reads the
+ * formation from FORMATIONS table so the pitch reflects the user's
+ * chosen shape (4-3-3 / 4-4-2 / 3-5-2 / etc.).
+ *
+ * Filled slots = yellow circle with OVR + last name. Empty slots = gray
+ * with position label. Helps the user see "what do I still need to fill"
+ * at a glance.
  */
-function TacticalPitch({ userManager }: { userManager: Manager }) {
-  // 4-3-3 slot positions (matches FORMATIONS["4-3-3"] in formations.ts).
-  // Order: GK, LB, CB, CB, RB, CM, CM, CM, LW, ST, RW
-  const SLOTS: Array<{ pos: string; x: number; y: number; family: "GK"|"DEF"|"MID"|"FWD" }> = [
-    { pos: "GK",  x: 50, y: 90, family: "GK" },
-    { pos: "LB",  x: 12, y: 72, family: "DEF" },
-    { pos: "CB",  x: 35, y: 76, family: "DEF" },
-    { pos: "CB",  x: 65, y: 76, family: "DEF" },
-    { pos: "RB",  x: 88, y: 72, family: "DEF" },
-    { pos: "CM",  x: 25, y: 52, family: "MID" },
-    { pos: "CM",  x: 50, y: 56, family: "MID" },
-    { pos: "CM",  x: 75, y: 52, family: "MID" },
-    { pos: "LW",  x: 15, y: 22, family: "FWD" },
-    { pos: "ST",  x: 50, y: 16, family: "FWD" },
-    { pos: "RW",  x: 85, y: 22, family: "FWD" },
-  ];
+function TacticalPitch({ userManager, formationKey }: {
+  userManager: Manager;
+  formationKey: keyof typeof FORMATIONS;
+}) {
+  const formation = FORMATIONS[formationKey];
+  const SLOTS = formation.slots.map(s => ({
+    pos: s.position,
+    x: s.x,
+    y: s.y,
+    family: simplifyPosition(s.position) as "GK"|"DEF"|"MID"|"FWD",
+  }));
 
   // Match user's squad against the slot template, greedy first-fit by family
   const assigned: Array<Player | null> = SLOTS.map(() => null);
