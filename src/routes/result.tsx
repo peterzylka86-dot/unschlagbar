@@ -26,7 +26,7 @@ function ordinal(n: number) {
 
 function ResultScreen() {
   const { unbeaten } = Route.useSearch();
-  const { slots, matches, reset, config } = useGame();
+  const { slots, matches, resetForNewRun, config } = useGame();
   const navigate = useNavigate();
   const league = LEAGUES[config.league];
   const isKO = league.kind !== "league";
@@ -293,9 +293,10 @@ function ResultScreen() {
           onClick={() => {
             // Same league + formation, fresh squad. Go straight to the
             // wheel — skip the mode/setup screen since config is unchanged.
-            // User: 'when I click "new run" I'd expect to be back in
-            // selecting the team [via the wheel], not selecting the modus.'
-            reset();
+            // resetForNewRun() also wipes challengeSeed/challengerScore/
+            // foundingPlayer so the next run gets fresh fixtures + no
+            // stale H2H panel from a finished challenge.
+            resetForNewRun();
             navigate({ to: "/draft" });
           }}
           className="px-6 py-3 rounded-xl bg-primary text-primary-foreground font-display tracking-wide hover:brightness-110"

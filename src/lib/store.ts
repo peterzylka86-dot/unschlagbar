@@ -9,6 +9,7 @@ interface GameState {
   matches: MatchResult[];
   setConfig: (patch: Partial<RunConfig>) => void;
   reset: () => void;
+  resetForNewRun: () => void;
   setSlots: (slots: Slot[]) => void;
   assignPlayer: (slotId: string, player: Player) => void;
   setMatches: (m: MatchResult[]) => void;
@@ -45,17 +46,27 @@ export const useGame = create<GameState>((set, get) => ({
         rerollsLeft: patch.difficulty ? rerollsFor(patch.difficulty) : state.rerollsLeft,
       };
     }),
+  // reset() — wipe in-progress run state (slots, matches, rerolls) but
+  // PRESERVE config in full. Used after applying a new config (e.g.
+  // landing's challenge-URL decode flow does setConfig → reset → nav).
+  // If reset() also cleared config fields it would erase the challenge
+  // context the user just opened.
   reset: () =>
     set((state) => ({
       slots: FORMATIONS[state.config.formation].slots.map((s) => ({ ...s })),
       rerollsLeft: rerollsFor(state.config.difficulty),
       matches: [],
-      // Single-run scoped fields — must clear so a fresh "New Run" isn't
-      // contaminated by stale state from a finished challenge:
-      //   - challengeSeed → otherwise next run replays same fixtures
-      //   - challengerScore → otherwise H2H panel shows stale comparison
-      //   - foundingPlayer → otherwise the next run pre-assigns someone
-      //                      the user didn't pick this time
+    })),
+  // resetForNewRun() — same as reset() PLUS wipe the config fields that
+  // are scoped to a single run (challengeSeed / challengerScore /
+  // foundingPlayer). Used by /result's "New Run" button so the next run
+  // starts genuinely fresh — new fixtures, no stale H2H panel, no
+  // surprise pre-assigned founding player.
+  resetForNewRun: () =>
+    set((state) => ({
+      slots: FORMATIONS[state.config.formation].slots.map((s) => ({ ...s })),
+      rerollsLeft: rerollsFor(state.config.difficulty),
+      matches: [],
       config: {
         ...state.config,
         challengeSeed: undefined,
