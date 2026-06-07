@@ -72,11 +72,12 @@ function poisson(lambda: number, seed: { v: number }): number {
 }
 
 /**
- * Simulate a knockout (or group+KO) competition.
- * - For pure knockout: rounds is e.g. ["R16","QF","SF","F"]. One match per round.
- * - For groupKO: rounds starts with N "Group" entries (3 group matches) then KO rounds.
- * Opponents must be passed in match order. Stops simulating after an elimination
- * (KO loss or failure to advance from group).
+ * Simulate a knockout (or group+KO) competition with proper two-legged ties.
+ * - `rounds[i]` is the round label of match i (e.g. "Group", "Round of 16", "Final").
+ * - Consecutive matches in a non-group round vs the SAME opponent are treated as
+ *   legs of one tie; aggregate score decides advancement, draw -> rating-biased
+ *   coinflip (penalties). Group stage uses a points threshold (>= 7 points from 6
+ *   matches, or >= 4 points from 3 matches).
  */
 export function simulateKnockout(
   opponents: Club[],
@@ -91,47 +92,128 @@ export function simulateKnockout(
 
   const total = Math.min(opponents.length, rounds.length);
   let groupPts = 0;
-  let groupGames = 0;
+  let groupMatches = 0;
   let eliminated = false;
+
+  // Tie tracking for two-legged knockouts
+  let tieOurGoals = 0;
+  let tieTheirGoals = 0;
+  let tieStartIdx = -1;
+  let tieOppId: string | null = null;
+  let tieRound: string | null = null;
+  let tieLegCount = 0;
 
   for (let i = 0; i < total; i++) {
     if (eliminated) break;
     const opp = opponents[i]!;
     const round = rounds[i]!;
     const isGroup = round === "Group";
-    // Knockouts get a small "neutral venue" bias; group plays normal home/away cycle.
-    const home = isGroup ? (i % 2 === 0) : true;
-    const homeBoost = home ? 2 : -1;
+    const next = i + 1 < total ? { opp: opponents[i + 1]!, round: rounds[i + 1]! } : null;
+
+    // Detect tie state for KO rounds
+    const sameTieAsPrev = !isGroup && tieOppId === opp.id && tieRound === round;
+    if (!sameTieAsPrev && !isGroup) {
+      tieOurGoals = 0;
+      tieTheirGoals = 0;
+      tieStartIdx = i;
+      tieOppId = opp.id;
+      tieRound = round;
+      tieLegCount = 0;
+    }
+    if (isGroup) {
+      tieOppId = null;
+      tieRound = null;
+      tieLegCount = 0;
+    }
+
+    // Determine home/away for this match
+    let home: boolean;
+    if (isGroup) {
+      // Group: alternate home/away per opponent pairing (idx pairs)
+      home = i % 2 === 0;
+    } else if (sameTieAsPrev) {
+      // 2nd leg flips venue
+      home = false;
+    } else {
+      // 1st leg of a KO tie: home, unless it's the final (single leg, treat as neutral-home)
+      home = true;
+    }
+
+    const homeBoost = home ? 3 : -1;
     const diff = (ourRating + homeBoost) - opp.strength;
     const ourXG = Math.max(0.2, 1.15 + diff * 0.08 + (rand(seed) - 0.5) * 1.0 * varianceMul);
     const theirXG = Math.max(0.1, 1.05 - diff * 0.06 + (rand(seed) - 0.5) * 0.9 * varianceMul);
-    let ourScore = poisson(ourXG, seed);
-    let theirScore = poisson(theirXG, seed);
-
-    // In knockouts a draw forces extra-time + pens — settle with a coin-flip nudge.
-    if (!isGroup && ourScore === theirScore) {
-      // bias slightly by rating
-      const edge = 0.5 + Math.max(-0.2, Math.min(0.2, diff * 0.01));
-      if (rand(seed) < edge) ourScore += 1;
-      else theirScore += 1;
-    }
+    const ourScore = poisson(ourXG, seed);
+    const theirScore = poisson(theirXG, seed);
 
     const outcome: "W"|"D"|"L" =
       ourScore > theirScore ? "W" : ourScore < theirScore ? "L" : "D";
 
     let eliminates = false;
+
     if (isGroup) {
       groupPts += outcome === "W" ? 3 : outcome === "D" ? 1 : 0;
-      groupGames += 1;
-      // Last group game: check advancement (≥4 pts).
-      const nextIsKO = i + 1 < rounds.length && rounds[i + 1] !== "Group";
-      if (nextIsKO && groupPts < 4) {
-        eliminates = true;
-        eliminated = true;
+      groupMatches += 1;
+      const nextIsKO = next && next.round !== "Group";
+      const endOfGroup = !next || nextIsKO;
+      if (endOfGroup) {
+        const threshold = groupMatches >= 6 ? 7 : 4; // 6-match group needs 7+ pts, 3-match group needs 4+
+        if (groupPts < threshold) {
+          eliminates = true;
+          eliminated = true;
+        }
       }
-    } else if (outcome === "L") {
-      eliminates = true;
-      eliminated = true;
+    } else {
+      // Aggregate tie tracking
+      tieOurGoals += ourScore;
+      tieTheirGoals += theirScore;
+      tieLegCount += 1;
+      const tieEnds = !next || next.opp.id !== opp.id || next.round !== round;
+      if (tieEnds) {
+        // Resolve tie
+        let weAdvance: boolean;
+        if (tieOurGoals > tieTheirGoals) weAdvance = true;
+        else if (tieOurGoals < tieTheirGoals) weAdvance = false;
+        else {
+          // Drawn on aggregate after final leg → ET + pens (rating-biased coin flip)
+          const edge = 0.5 + Math.max(-0.2, Math.min(0.2, diff * 0.01));
+          weAdvance = rand(seed) < edge;
+        }
+        if (!weAdvance) {
+          eliminates = true;
+          eliminated = true;
+        }
+        // For single-leg ties (e.g. Final) the per-match outcome may have been a draw;
+        // when penalties decide, retroactively bump the score so W/D/L reflects the outcome.
+        if (tieLegCount === 1 && ourScore === theirScore) {
+          if (weAdvance) {
+            // mark as a win on penalties — bump our score by 1 visually
+            results.push({
+              matchday: i + 1,
+              opponent: opp,
+              home,
+              ourScore: ourScore + 1,
+              theirScore,
+              outcome: "W",
+              round,
+              eliminates,
+            });
+            continue;
+          } else {
+            results.push({
+              matchday: i + 1,
+              opponent: opp,
+              home,
+              ourScore,
+              theirScore: theirScore + 1,
+              outcome: "L",
+              round,
+              eliminates,
+            });
+            continue;
+          }
+        }
+      }
     }
 
     results.push({
@@ -145,8 +227,6 @@ export function simulateKnockout(
       eliminates,
     });
   }
-  // touch unused var to satisfy linter
-  void groupGames;
   return results;
 }
 
