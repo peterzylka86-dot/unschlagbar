@@ -53,6 +53,9 @@ export interface RunConfig {
   draftMode: DraftMode;
   ratingMode: RatingMode;
   challengeSeed?: number;
+  /** Optional: a specific player the user wants to start with. Pre-assigned
+   *  to a compatible slot on /draft mount; the wheel handles the rest. */
+  foundingPlayer?: Player;
 }
 
 export interface MatchResult {

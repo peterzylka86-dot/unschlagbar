@@ -43,7 +43,7 @@ function isCompatible(slotPos: Position, playerPos: Position): boolean {
 }
 
 function DraftScreen() {
-  const { config, slots, rerollsLeft, assignPlayer, consumeReroll } = useGame();
+  const { config, slots, rerollsLeft, assignPlayer, consumeReroll, setConfig } = useGame();
   const league = LEAGUES[config.league];
   const CLUBS = useMemo(() => getClubs(config.league), [config.league]);
   const PLAYERS = useMemo(() => getPlayers(config.league), [config.league]);
@@ -58,6 +58,20 @@ function DraftScreen() {
   const [tier, setTier] = useState<EraTier>("current");
   const [autoSpinHint, setAutoSpinHint] = useState(false);
   const wheelRef = useRef<HTMLDivElement>(null);
+
+  // Apply the founding player (if any) on mount: pre-assign to a compatible
+  // slot, mark used, then clear from config so a refresh doesn't double-apply.
+  useEffect(() => {
+    const fp = config.foundingPlayer;
+    if (!fp) return;
+    const target = slots.find(s => !s.player && isCompatible(s.position, fp.position));
+    if (!target) return;  // no compatible slot — likely formation lacks this position
+    assignPlayer(target.id, fp);
+    setUsedPlayers(prev => new Set(prev).add(`${fp.club}:${fp.name}`));
+    setUsedClubs(prev => new Set(prev).add(fp.club));
+    setConfig({ foundingPlayer: undefined });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const clubInTier = (c: Club, t: EraTier) => (c.era_tiers ?? [c.era_tier]).includes(t);
   const tierClubs = useMemo(() => CLUBS.filter(c => clubInTier(c, tier)), [tier]);

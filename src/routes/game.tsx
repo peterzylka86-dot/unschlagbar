@@ -2,8 +2,10 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useGame } from "@/lib/store";
 import { FORMATIONS, FORMATION_KEYS } from "@/lib/formations";
 import { LEAGUES, LEAGUE_IDS } from "@/lib/leagues";
+import { getPlayers, getClubs } from "@/lib/data";
+import { useMemo, useState } from "react";
 import type { CompetitionKind } from "@/lib/leagues";
-import type { Difficulty, DraftMode, RatingMode } from "@/lib/game-types";
+import type { Difficulty, DraftMode, RatingMode, Player } from "@/lib/game-types";
 
 /**
  * Group competitions by time commitment so the user picks "how long
@@ -211,6 +213,15 @@ function GameSetup() {
         </div>
       </Section>
 
+      <Section label="Founding Player (Optional)">
+        <FoundingPlayerPicker
+          league={config.league}
+          current={config.foundingPlayer}
+          onPick={(p) => setConfig({ foundingPlayer: p })}
+          onClear={() => setConfig({ foundingPlayer: undefined })}
+        />
+      </Section>
+
       <Section label="Player Ratings">
         <div className="grid grid-cols-2 gap-2">
           <OptionCard
@@ -261,6 +272,106 @@ function Chip({ active, children, onClick }: { active: boolean; children: React.
     >
       {children}
     </button>
+  );
+}
+
+/**
+ * FoundingPlayerPicker — optional search input that lets the user name
+ * ONE specific player they want to anchor their XI around (e.g. "give me
+ * Dariusz Wosz from VfL Bochum"). On /draft mount the player gets
+ * auto-assigned to a compatible slot before the wheel takes over.
+ */
+function FoundingPlayerPicker({ league, current, onPick, onClear }: {
+  league: import("@/lib/leagues").LeagueId;
+  current: Player | undefined;
+  onPick: (p: Player) => void;
+  onClear: () => void;
+}) {
+  const [query, setQuery] = useState("");
+  const players = useMemo(() => getPlayers(league), [league]);
+  const clubs = useMemo(() => getClubs(league), [league]);
+  const clubName = (id: string) =>
+    clubs.find(c => c.id === id)?.short ?? id;
+
+  const results = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (q.length < 2) return [];
+    return players
+      .filter(p => p.name.toLowerCase().includes(q))
+      .sort((a, b) => b.prime_rating - a.prime_rating)
+      .slice(0, 25);
+  }, [players, query]);
+
+  if (current) {
+    return (
+      <div
+        className="flex items-center justify-between p-4 rounded-xl border bg-warning/10 border-warning"
+      >
+        <div className="min-w-0">
+          <div className="font-display text-lg text-warning truncate">
+            ⚡ {current.name}
+          </div>
+          <div className="text-xs text-muted-foreground mt-0.5 truncate">
+            {current.position} · {clubName(current.club)} · {current.career_years} · OVR {current.prime_rating}
+          </div>
+          <div className="text-[10px] text-warning/80 mt-1.5 uppercase tracking-[0.18em]">
+            will be pre-assigned in your XI
+          </div>
+        </div>
+        <button
+          onClick={() => { onClear(); setQuery(""); }}
+          className="shrink-0 ml-3 w-8 h-8 rounded-full border border-warning/50 text-warning hover:bg-warning/20 transition"
+          aria-label="Clear founding player"
+        >
+          ×
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-2">
+      <p className="text-xs text-muted-foreground">
+        Start your XI with one specific player you've already got in mind. The wheel handles the rest 10. Leave blank for pure random.
+      </p>
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder="Search by name — e.g. Dariusz Wosz, Maldini, Cruyff…"
+        className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-warning transition"
+      />
+      {query.length >= 2 && (
+        <div className="rounded-xl border border-border bg-card/60 max-h-72 overflow-y-auto">
+          {results.length === 0 ? (
+            <p className="px-4 py-6 text-sm text-muted-foreground text-center">
+              No match in this league. Try a different spelling or pick another league first.
+            </p>
+          ) : (
+            <ul className="divide-y divide-border">
+              {results.map((p, i) => (
+                <li key={`${p.name}-${p.club}-${i}`}>
+                  <button
+                    onClick={() => { onPick(p); setQuery(""); }}
+                    className="w-full px-4 py-2.5 text-left hover:bg-warning/10 hover:text-warning transition flex items-center justify-between gap-3"
+                  >
+                    <div className="min-w-0">
+                      <div className="text-sm font-medium truncate">{p.name}</div>
+                      <div className="text-[11px] text-muted-foreground truncate">
+                        {p.position} · {clubName(p.club)} · {p.career_years}
+                      </div>
+                    </div>
+                    <span className="shrink-0 font-display text-base px-2 py-0.5 rounded bg-warning/10 text-warning border border-warning/30">
+                      {p.prime_rating}
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
+    </div>
   );
 }
 
