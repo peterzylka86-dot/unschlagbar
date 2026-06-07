@@ -210,13 +210,23 @@ function CareerSeason() {
         <div className="text-right">
           <div className="font-display text-2xl text-warning">Season {career.currentSeason}</div>
           <div className="text-[10px] text-muted-foreground uppercase tracking-[0.2em]">
-            Played {shown} / {matches.length}
+            Matchday {shown} of {matches.length}
           </div>
         </div>
       </header>
 
+      {/* Season progress bar — visual matchday timeline (more readable than raw "3/22") */}
+      <div className="mt-4">
+        <div className="h-2 rounded-full bg-card/60 overflow-hidden border border-border/60">
+          <div
+            className="h-full bg-gradient-to-r from-warning/80 to-warning transition-all duration-500 ease-out"
+            style={{ width: `${(shown / matches.length) * 100}%` }}
+          />
+        </div>
+      </div>
+
       {/* Scoreboard */}
-      <div className="mt-6 grid grid-cols-4 gap-2 text-center">
+      <div className="mt-5 grid grid-cols-4 gap-2 text-center">
         <ScoreboardStat label="W" value={wins} accent="text-success" />
         <ScoreboardStat label="D" value={draws} accent="text-muted-foreground" />
         <ScoreboardStat label="L" value={losses} accent="text-primary" />
@@ -330,32 +340,47 @@ function ScoreboardStat({
 }
 
 function MatchRow({ match }: { match: MatchWithScorers }) {
-  const outcomeColor =
+  // Color the entire left edge by outcome for instant scannability —
+  // user can run their eye down the match feed and see W/D/L pattern.
+  const outcomeAccent =
+    match.outcome === "W"
+      ? "border-l-success bg-success/[0.04]"
+      : match.outcome === "L"
+        ? "border-l-primary bg-primary/[0.04]"
+        : "border-l-muted-foreground/40";
+  const outcomeText =
     match.outcome === "W"
       ? "text-success"
       : match.outcome === "L"
         ? "text-primary"
         : "text-muted-foreground";
   return (
-    <div className="flex items-center gap-3 py-2.5 px-3 rounded-lg border border-border bg-card/40 mb-1.5">
-      <div className="w-10 shrink-0 text-[11px] text-muted-foreground font-mono">
+    <div
+      className={`flex items-center gap-3 py-2.5 px-3 rounded-lg border border-border border-l-4 ${outcomeAccent} mb-1.5`}
+    >
+      <div className="w-10 shrink-0 text-[10px] text-muted-foreground font-mono uppercase tracking-wider">
         MD {String(match.matchday).padStart(2, "0")}
       </div>
-      <div className={`font-display text-base shrink-0 w-7 text-center ${outcomeColor}`}>
+      <div className={`font-display text-lg shrink-0 w-7 text-center ${outcomeText}`}>
         {match.outcome}
       </div>
       <div className="flex-1 min-w-0">
-        <div className="font-display text-sm truncate">
-          {match.home ? "vs" : "@"} {match.opponent.name}{" "}
-          <span className="font-display text-warning">
-            {match.ourScore}-{match.theirScore}
+        <div className="flex items-baseline gap-2">
+          <span className="text-[11px] text-muted-foreground uppercase tracking-wider">
+            {match.home ? "vs" : "@"}
+          </span>
+          <span className="font-display text-sm truncate flex-1">{match.opponent.name}</span>
+          <span className="font-display text-base tabular-nums shrink-0">
+            <span className={outcomeText}>{match.ourScore}</span>
+            <span className="opacity-50 mx-0.5">–</span>
+            <span className="text-muted-foreground">{match.theirScore}</span>
           </span>
         </div>
         {match.scorers.length > 0 && (
           <div className="text-[11px] text-muted-foreground truncate mt-0.5">
             ⚽{" "}
             {match.scorers
-              .map((s, i) => (s.assister ? `${s.name} (${s.assister})` : s.name))
+              .map((s) => (s.assister ? `${s.name} (${s.assister})` : s.name))
               .join(" · ")}
           </div>
         )}

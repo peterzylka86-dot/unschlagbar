@@ -461,10 +461,25 @@ function CareerDraft() {
             Season {career.currentSeason} · Round {Math.min(draft.currentRound, SQUAD_SIZE)} /{" "}
             {SQUAD_SIZE}
           </div>
-          {/* Rerolls / re-spin removed from GOLAZO Career per user spec:
-              the wheel result is what you get. No second chances. */}
         </div>
       </header>
+
+      {/* Squad progress bar — your XI fills left-to-right as you draft. */}
+      <div className="mt-4">
+        <div className="flex items-baseline justify-between text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-1.5">
+          <span>Your XI</span>
+          <span className="tabular-nums">
+            <span className="text-warning font-display">{userManager.squad.length}</span>
+            <span className="opacity-60">/{SQUAD_SIZE}</span>
+          </span>
+        </div>
+        <div className="h-2 rounded-full bg-card/60 overflow-hidden border border-border/60">
+          <div
+            className="h-full bg-gradient-to-r from-warning/80 to-warning transition-all duration-500 ease-out"
+            style={{ width: `${(userManager.squad.length / SQUAD_SIZE) * 100}%` }}
+          />
+        </div>
+      </div>
 
       {/* Draft slot reveal — the snake order is reshuffled every season so
           the user's draft slot is genuinely random. Show prominently so
