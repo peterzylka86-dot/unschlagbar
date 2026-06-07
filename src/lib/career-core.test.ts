@@ -29,6 +29,7 @@ import {
   eraFromCareerYears,
   fromPlayer,
   scorePlayerByArchetype,
+  pickSpinClub,
   DEFAULT_ARCHETYPES,
   type CareerPlayer,
   type Archetype,
@@ -639,6 +640,70 @@ describe("cupBracketSeeded", () => {
     expect(qualifiers[1]).toBe("user");
     // 2v7 pairing: user vs ai7
     expect(qf[1]).toEqual({ home: "user", away: "ai7" });
+  });
+});
+
+describe("pickSpinClub", () => {
+  const clubs = [
+    { id: "bayern" },
+    { id: "realmadrid" },
+    { id: "barcelona" },
+    { id: "inter" },
+    { id: "milan" },
+    { id: "psg" },
+  ];
+
+  it("returns null when eligible is empty", () => {
+    expect(pickSpinClub([], [], seededRand(1))).toBeNull();
+  });
+
+  it("picks from the full pool when no recent history", () => {
+    const seen = new Set<string>();
+    const rng = seededRand(42);
+    for (let i = 0; i < 50; i++) {
+      const pick = pickSpinClub(clubs, [], rng);
+      if (pick) seen.add(pick.id);
+    }
+    // Across 50 spins with no exclusion, expect to see most of the pool.
+    expect(seen.size).toBeGreaterThanOrEqual(4);
+  });
+
+  it("excludes recently-spun clubs (regression: 'always same club')", () => {
+    // User reported the spin landing on the same club repeatedly. Anti-
+    // repeat guarantees: with at least 1 fresh club available, the result
+    // is NEVER from the recently-spun set.
+    for (let seed = 1; seed <= 100; seed++) {
+      const recentlySpun = ["bayern", "realmadrid", "barcelona"];
+      const pick = pickSpinClub(clubs, recentlySpun, seededRand(seed));
+      expect(pick).not.toBeNull();
+      expect(recentlySpun).not.toContain(pick!.id);
+    }
+  });
+
+  it("falls back to recently-spun when ALL eligible are recent", () => {
+    // Edge case: every eligible club is in the recent set. The function
+    // must still return something — falling back to the full pool — so
+    // the spin never deadlocks.
+    const recentlySpun = clubs.map((c) => c.id);
+    const pick = pickSpinClub(clubs, recentlySpun, seededRand(7));
+    expect(pick).not.toBeNull();
+    expect(clubs.map((c) => c.id)).toContain(pick!.id);
+  });
+
+  it("variance check: 10 consecutive spins yield at least 5 distinct clubs", () => {
+    // Simulating the postseason rebuild: 10 sequential replacements,
+    // each spin tracks the previous picks in `recent` (depth 5).
+    const recent: string[] = [];
+    const seenAcrossSpins = new Set<string>();
+    const rng = seededRand(2026);
+    for (let i = 0; i < 10; i++) {
+      const pick = pickSpinClub(clubs, recent, rng);
+      expect(pick).not.toBeNull();
+      seenAcrossSpins.add(pick!.id);
+      recent.unshift(pick!.id);
+      if (recent.length > 5) recent.pop();
+    }
+    expect(seenAcrossSpins.size).toBeGreaterThanOrEqual(5);
   });
 });
 

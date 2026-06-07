@@ -69,13 +69,21 @@ export interface Archetype {
  *  according to their style — Galáctico chases OVR, Pragmatist fills gaps,
  *  Romantic loves South Americans, etc. */
 export const DEFAULT_ARCHETYPES: Archetype[] = [
-  { name: "Galáctico",    style: "galactico",  description: "Chases the highest OVR. Pure star-power." },
-  { name: "Pragmatist",   style: "pragmatist", description: "Fills positional gaps first." },
-  { name: "Romantic",     style: "romantic",   description: "Loves Brazilians, Argentinians, South Americans." },
-  { name: "Hipster",      style: "hipster",    description: "Quirky picks — 80s legends, deep cuts." },
-  { name: "Brick Wall",   style: "brickwall",  description: "Defense first. CBs and GKs over flair." },
-  { name: "Goal Machine", style: "goals",      description: "Forwards, forwards, forwards." },
-  { name: "Old-School",   style: "oldschool",  description: "Pre-2000 legends only when possible." },
+  {
+    name: "Galáctico",
+    style: "galactico",
+    description: "Chases the highest OVR. Pure star-power.",
+  },
+  { name: "Pragmatist", style: "pragmatist", description: "Fills positional gaps first." },
+  {
+    name: "Romantic",
+    style: "romantic",
+    description: "Loves Brazilians, Argentinians, South Americans.",
+  },
+  { name: "Hipster", style: "hipster", description: "Quirky picks — 80s legends, deep cuts." },
+  { name: "Brick Wall", style: "brickwall", description: "Defense first. CBs and GKs over flair." },
+  { name: "Goal Machine", style: "goals", description: "Forwards, forwards, forwards." },
+  { name: "Old-School", style: "oldschool", description: "Pre-2000 legends only when possible." },
 ];
 
 /** Minimal founding-club shape — id-less since the GOLAZO version keyed on
@@ -214,7 +222,9 @@ export function generateFixtures(
   // home games gets the home slot. Prevents the slot-0 team going all-home
   // then all-away (the naive circle-method bug).
   const homeCount: Record<string, number> = {};
-  clubIds.forEach(id => { homeCount[id] = 0; });
+  clubIds.forEach((id) => {
+    homeCount[id] = 0;
+  });
 
   for (let r = 0; r < rounds; r++) {
     const matches: Fixture[] = [];
@@ -223,22 +233,25 @@ export function generateFixtures(
       const b = teams[teams.length - 1 - i];
       if (a === "__BYE__" || b === "__BYE__") continue;
       let home: string, away: string;
-      if (homeCount[a] <= homeCount[b]) { home = a; away = b; }
-      else { home = b; away = a; }
+      if (homeCount[a] <= homeCount[b]) {
+        home = a;
+        away = b;
+      } else {
+        home = b;
+        away = a;
+      }
       homeCount[home]++;
       matches.push({ home, away });
     }
     firstHalf.push(matches);
     teams.splice(1, 0, teams.pop()!);
   }
-  const secondHalf: Fixture[][] = firstHalf.map(md =>
-    md.map(m => ({ home: m.away, away: m.home })),
+  const secondHalf: Fixture[][] = firstHalf.map((md) =>
+    md.map((m) => ({ home: m.away, away: m.home })),
   );
   const all = [...firstHalf, ...secondHalf];
 
-  const shuffleSource = options.shuffle === false
-    ? null
-    : (options.rand ?? Math.random);
+  const shuffleSource = options.shuffle === false ? null : (options.rand ?? Math.random);
   if (shuffleSource) {
     for (let i = all.length - 1; i > 0; i--) {
       const j = Math.floor(shuffleSource() * (i + 1));
@@ -258,7 +271,7 @@ export function snakePickerId(
   if (!round1Order || round1Order.length === 0) return null;
   const r = round - 1;
   const idxInRound = (pickInRound - 1) % round1Order.length;
-  const order = (r % 2 === 0) ? round1Order : [...round1Order].reverse();
+  const order = r % 2 === 0 ? round1Order : [...round1Order].reverse();
   return order[idxInRound];
 }
 
@@ -271,7 +284,7 @@ export function positionsNeeded(
   formation: FormationNeed,
 ): Set<SimplePosition> {
   const counts: Record<SimplePosition, number> = { GK: 0, DEF: 0, MID: 0, FWD: 0 };
-  (squad ?? []).forEach(p => {
+  (squad ?? []).forEach((p) => {
     const bucket = simplifyPosition(p.position);
     counts[bucket]++;
   });
@@ -286,10 +299,16 @@ export function positionsNeeded(
 // ─── Match: scorer + assister ───────────────────────────────────────────────
 
 export const SCORER_WEIGHT: Record<SimplePosition, number> = {
-  FWD: 4, MID: 1.6, DEF: 0.18, GK: 0.02,
+  FWD: 4,
+  MID: 1.6,
+  DEF: 0.18,
+  GK: 0.02,
 };
 export const ASSIST_WEIGHT: Record<SimplePosition, number> = {
-  MID: 3.5, FWD: 2.0, DEF: 0.6, GK: 0.05,
+  MID: 3.5,
+  FWD: 2.0,
+  DEF: 0.6,
+  GK: 0.05,
 };
 
 /** Pick a goal scorer from the XI, weighted heavily toward forwards. Form
@@ -301,12 +320,16 @@ export function pickScorer(
   chemMap?: Record<string, number>,
 ): CareerPlayer | null {
   const chem = chemMap ?? computeChemistry(xi);
-  return weightedPick(xi, p => {
-    const base = SCORER_WEIGHT[simplifyPosition(p.position)] ?? 0;
-    const form = formMap ? (formMap[normalizeName(p.name)] ?? 0) : 0;
-    const c = chem[normalizeName(p.name)] ?? 0;
-    return base * (1 + form * 0.25) * (1 + c * 0.15);
-  }, rand);
+  return weightedPick(
+    xi,
+    (p) => {
+      const base = SCORER_WEIGHT[simplifyPosition(p.position)] ?? 0;
+      const form = formMap ? (formMap[normalizeName(p.name)] ?? 0) : 0;
+      const c = chem[normalizeName(p.name)] ?? 0;
+      return base * (1 + form * 0.25) * (1 + c * 0.15);
+    },
+    rand,
+  );
 }
 
 /** Pick an assister, biased toward midfielders. Returns null ~28% of the
@@ -318,9 +341,9 @@ export function pickAssister(
   unassistedProb: number = 0.28,
 ): CareerPlayer | null {
   if (rand() < unassistedProb) return null;
-  const others = xi.filter(p => p !== scorer);
+  const others = xi.filter((p) => p !== scorer);
   if (others.length === 0) return null;
-  return weightedPick(others, p => ASSIST_WEIGHT[simplifyPosition(p.position)] ?? 0, rand);
+  return weightedPick(others, (p) => ASSIST_WEIGHT[simplifyPosition(p.position)] ?? 0, rand);
 }
 
 // ─── Form: between-match deltas ─────────────────────────────────────────────
@@ -345,7 +368,7 @@ export function computeFormDelta(
 ): number {
   const bucket = simplifyPosition(player.position);
   let delta = 0;
-  const heavyLoss = (ctx.ga - ctx.gf) >= 3;
+  const heavyLoss = ctx.ga - ctx.gf >= 3;
   const cleanSheet = ctx.ga === 0;
   const concededLots = ctx.ga >= 3;
   if (ctx.wasInvolved) delta += 1;
@@ -369,10 +392,7 @@ export type FormCrossingDirection = "hot" | "cold";
 /** Detect whether a form change crossed the hot/cold threshold. Used by the
  *  post-season screen to surface "Mbappé hits a purple patch" / "VVD in a
  *  slump" events. */
-export function crossedFormThreshold(
-  prevForm: Form,
-  newForm: Form,
-): FormCrossingDirection | null {
+export function crossedFormThreshold(prevForm: Form, newForm: Form): FormCrossingDirection | null {
   if (prevForm < FORM_HOT_THRESHOLD && newForm >= FORM_HOT_THRESHOLD) return "hot";
   if (prevForm > FORM_COLD_THRESHOLD && newForm <= FORM_COLD_THRESHOLD) return "cold";
   return null;
@@ -384,7 +404,7 @@ export function crossedFormThreshold(
 export function sortStandings(table: StandingsTable): [string, StandingsRow][] {
   return Object.entries(table).sort((a, b) => {
     if (b[1].Pts !== a[1].Pts) return b[1].Pts - a[1].Pts;
-    return (b[1].GF - b[1].GA) - (a[1].GF - a[1].GA);
+    return b[1].GF - b[1].GA - (a[1].GF - a[1].GA);
   });
 }
 
@@ -432,7 +452,7 @@ export function detectStarDemands<T extends CareerPlayer>(
   threshold: number = FORM_MAX,
 ): T[] {
   const result: T[] = [];
-  (squad ?? []).forEach(p => {
+  (squad ?? []).forEach((p) => {
     const stat = playerStats[normalizeName(p.name)];
     if (stat && stat.form >= threshold) result.push(p);
   });
@@ -465,6 +485,33 @@ export function detectRelegation(
   return { relegatedIds, userRelegated: relegatedIds.includes(userId) };
 }
 
+/**
+ * Pick a random eligible club for the postseason spin-rebuild,
+ * AVOIDING any club whose id is in `recentlySpunIds`. Falls back to the
+ * full eligible pool if every eligible club has been seen recently.
+ *
+ * Why this exists: with vanilla `Math.random()`, small eligible pools
+ * can land on the same club two or three spins in a row, which feels
+ * deterministic to a player even when it isn't. The exclusion of recent
+ * spins guarantees variety — exactly what the user spec demanded:
+ * "the spin always brings me players from the same club...it needs to
+ * be random."
+ *
+ * Pure + RNG-injectable so it's unit-testable. The UI passes Math.random
+ * but tests pass a seeded Mulberry32 to assert distribution.
+ */
+export function pickSpinClub<T extends { id: string }>(
+  eligible: T[],
+  recentlySpunIds: string[],
+  rng: () => number = Math.random,
+): T | null {
+  if (eligible.length === 0) return null;
+  const recent = new Set(recentlySpunIds);
+  const fresh = eligible.filter((c) => !recent.has(c.id));
+  const pool = fresh.length > 0 ? fresh : eligible;
+  return pool[Math.floor(rng() * pool.length)];
+}
+
 // ─── AI rivals — archetype-driven managers ──────────────────────────────────
 
 /** Build n AI rival managers, each with a founding club + archetype.
@@ -488,7 +535,8 @@ export function buildAIManagers(
   const archs: Archetype[] = [];
   for (let i = 0; i < n; i++) archs.push(shuffledArchs[i % shuffledArchs.length]);
   // Founding clubs — unique per manager (exclude the user's)
-  const availClubs = clubs.filter(c => c.name !== excludeClub)
+  const availClubs = clubs
+    .filter((c) => c.name !== excludeClub)
     .sort(() => rand() - 0.5)
     .slice(0, n);
   const count = Math.min(n, availClubs.length);
@@ -524,7 +572,7 @@ export function scorePlayerByArchetype(
   archetypeStyle: string,
   positionalNeed: Set<SimplePosition>,
 ): number {
-  let score = player.prime_rating;  // every archetype loves quality
+  let score = player.prime_rating; // every archetype loves quality
   const pos = simplifyPosition(player.position);
   const fillsNeed = positionalNeed.has(pos);
 
@@ -588,12 +636,10 @@ export const CHEM_TRIO_PLUS = 1.0;
 /** Detect chemistry groups in a squad. Players sharing the same (club, era)
  *  bucket form a group; the group's bonus is 0.5 for a duo, 1.0 for trio+.
  *  Returns a map: normalized player name → chemistry bonus. */
-export function computeChemistry(
-  squad: CareerPlayer[] | null | undefined,
-): Record<string, number> {
+export function computeChemistry(squad: CareerPlayer[] | null | undefined): Record<string, number> {
   if (!squad || squad.length === 0) return {};
   const buckets: Record<string, CareerPlayer[]> = {};
-  squad.forEach(p => {
+  squad.forEach((p) => {
     const club = p.club ?? "";
     const era = p.era ?? "";
     if (!club || !era) return;
@@ -602,10 +648,10 @@ export function computeChemistry(
     buckets[key].push(p);
   });
   const chem: Record<string, number> = {};
-  Object.values(buckets).forEach(group => {
+  Object.values(buckets).forEach((group) => {
     if (group.length < 2) return;
     const bonus = group.length >= 3 ? CHEM_TRIO_PLUS : CHEM_DUO;
-    group.forEach(p => {
+    group.forEach((p) => {
       const k = normalizeName(p.name);
       chem[k] = Math.max(chem[k] ?? 0, bonus);
     });
@@ -621,12 +667,10 @@ export interface ChemistryGroup {
 }
 
 /** Group the chemistry into a display-ready shape sorted by group size desc. */
-export function chemistryGroups(
-  squad: CareerPlayer[] | null | undefined,
-): ChemistryGroup[] {
+export function chemistryGroups(squad: CareerPlayer[] | null | undefined): ChemistryGroup[] {
   if (!squad || squad.length === 0) return [];
   const buckets: Record<string, { club: string; era: string; players: CareerPlayer[] }> = {};
-  squad.forEach(p => {
+  squad.forEach((p) => {
     const club = p.club ?? "";
     const era = p.era ?? "";
     if (!club || !era) return;
@@ -635,8 +679,8 @@ export function chemistryGroups(
     buckets[key].players.push(p);
   });
   return Object.values(buckets)
-    .filter(g => g.players.length >= 2)
-    .map(g => ({ ...g, bonus: g.players.length >= 3 ? CHEM_TRIO_PLUS : CHEM_DUO }))
+    .filter((g) => g.players.length >= 2)
+    .map((g) => ({ ...g, bonus: g.players.length >= 3 ? CHEM_TRIO_PLUS : CHEM_DUO }))
     .sort((a, b) => b.players.length - a.players.length);
 }
 

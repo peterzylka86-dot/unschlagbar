@@ -28,7 +28,12 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { useCareer } from "@/lib/career-store";
 import { getCareerClubs, getCareerPlayers } from "@/lib/data";
-import { detectStarDemands, normalizeName, simplifyPosition } from "@/lib/career-core";
+import {
+  detectStarDemands,
+  normalizeName,
+  pickSpinClub,
+  simplifyPosition,
+} from "@/lib/career-core";
 import { isPositionCompatible } from "@/lib/draft-helpers";
 import type { Club, Player } from "@/lib/game-types";
 
@@ -509,6 +514,11 @@ function SpinRebuildCard({
 }) {
   const [spinStage, setSpinStage] = useState<"prompt" | "spinning" | "picking">("prompt");
   const [spunClub, setSpunClub] = useState<Club | null>(null);
+  // Remember the last few clubs the wheel landed on so the next spin can
+  // AVOID them. Without this, vanilla Math.random can repeat the same
+  // club two-three spins in a row, which feels broken even when it isn't.
+  const [recentClubIds, setRecentClubIds] = useState<string[]>([]);
+  const RECENT_HISTORY = 5;
 
   const currentIdx = signings.length; // which departure we're filling next
   const target = departing[currentIdx];
@@ -546,18 +556,21 @@ function SpinRebuildCard({
             isPositionCompatible(target.position, p.position),
         ),
       );
-      if (eligible.length === 0) {
-        // Genuinely no candidates left — fall through to "any position" pool.
+      // pickSpinClub avoids any club in recentClubIds when possible — fixes
+      // user-reported bug: "the spin always brings me players from the
+      // same club...it needs to be random."
+      let pick = pickSpinClub(eligible, recentClubIds);
+      if (!pick) {
+        // Fall through: NO compatible-position candidates left. Open up to
+        // any-position pool so the user can still complete the rebuild.
         const fallback = allClubs.filter((c) =>
           allPlayers.some((p) => p.club === c.id && !drafted.has(`${p.club}:${p.name}`)),
         );
-        const pick = fallback[Math.floor(Math.random() * fallback.length)];
-        setSpunClub(pick);
-        setSpinStage("picking");
-        return;
+        pick = pickSpinClub(fallback, recentClubIds);
       }
-      const pick = eligible[Math.floor(Math.random() * eligible.length)];
+      if (!pick) return; // No clubs at all — extremely unlikely, bail.
       setSpunClub(pick);
+      setRecentClubIds((prev) => [pick.id, ...prev].slice(0, RECENT_HISTORY));
       setSpinStage("picking");
     }, 700);
   }
