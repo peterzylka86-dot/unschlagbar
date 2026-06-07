@@ -129,8 +129,8 @@ function DraftScreen() {
     pool = pool.filter(p => playerMatchesTier(p, tier));
     if (config.draftMode === "position" && pickingForSlot) {
       pool = pool.filter(p => isCompatible(pickingForSlot.position, p.position));
-    } else if (config.draftMode === "squad") {
-      // hide players whose position has no open compatible slot
+    } else {
+      // squad / quick: hide players whose position has no open compatible slot
       pool = pool.filter(p => slots.some(s => !s.player && isCompatible(s.position, p.position)));
     }
     return pool.slice().sort((a, b) => b.prime_rating - a.prime_rating);
@@ -158,9 +158,35 @@ function DraftScreen() {
     // position-first waits for user to click next slot, no auto-spin
   }
 
+  function quickAssignTwo(players: Player[]) {
+    // assign each player to the first open compatible slot; skip if none
+    const open = slots.filter(s => !s.player);
+    const taken = new Set<string>();
+    const used: string[] = [];
+    for (const p of players) {
+      const slot = open.find(s => !taken.has(s.id) && isCompatible(s.position, p.position));
+      if (!slot) continue;
+      taken.add(slot.id);
+      assignPlayer(slot.id, p);
+      used.push(`${p.club}:${p.name}`);
+    }
+    if (used.length) setUsedPlayers(prev => {
+      const next = new Set(prev);
+      for (const k of used) next.add(k);
+      return next;
+    });
+    setCurrentClub(null);
+    // auto-spin if any slots still open
+    const remaining = open.length - taken.size;
+    if (remaining > 0) {
+      setAutoSpinHint(true);
+      setTimeout(() => { setAutoSpinHint(false); spinClub(); }, 700);
+    }
+  }
+
   function queueAutoSpin() {
-    // auto-spin in squad-first mode if more slots remain
-    if (config.draftMode !== "squad") return;
+    // auto-spin in squad/quick mode if more slots remain
+    if (config.draftMode === "position") return;
     const remaining = slots.filter(s => !s.player).length - 1; // we just filled one (state not yet flushed)
     if (remaining <= 0) return;
     setAutoSpinHint(true);
@@ -611,14 +637,6 @@ function AssignPanel({ player, club, showRatings, compatible, onCancel }: {
           ? "Tap a glowing position on the pitch."
           : "No compatible slots — skipping…"}
       </p>
-      {compatible.length > 0 && (
-        <button
-          onClick={onCancel}
-          className="mt-3 text-xs text-muted-foreground underline self-center hover:text-foreground"
-        >
-          discard player
-        </button>
-      )}
     </motion.div>
   );
 }
