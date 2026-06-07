@@ -6,7 +6,7 @@ import { FORMATIONS } from "@/lib/formations";
 import { ClubBadge } from "@/components/ClubBadge";
 import { getClubs, getPlayers } from "@/lib/data";
 import { LEAGUES } from "@/lib/leagues";
-import type { Club, Player, Position, Slot, EraTier } from "@/lib/game-types";
+import type { Club, Player, Position, Slot, EraTier, DraftMode } from "@/lib/game-types";
 
 const TIERS: { id: EraTier; label: string; sub: string }[] = [
   { id: "current",  label: "20s",     sub: "starting 2020s" },
@@ -289,6 +289,7 @@ function DraftScreen() {
               showRatings={config.showRatings}
               targetSlot={pickingForSlot}
               onPick={(p) => config.draftMode === "squad" ? handleSquadFirstPickPlayer(p) : positionFirstPickPlayer(p)}
+              onQuickPick={quickAssignTwo}
               onReroll={rerollsLeft > 0 ? () => { startReroll(); spinClub(); } : undefined}
               rerollsLeft={rerollsLeft}
               onSkip={() => { setCurrentClub(null); queueAutoSpin(); }}
@@ -424,7 +425,7 @@ function WheelPanel({ wheelRef, angle, spinning, autoSpinHint, tier, tierClubs, 
   tierClubs: Club[];
   onSpin: () => void;
   pickingForSlot: Slot | null;
-  draftMode: "squad"|"position";
+  draftMode: DraftMode;
   onCancelSlot: () => void;
 }) {
   const tierMeta = TIERS.find(t => t.id === tier);
@@ -524,17 +525,35 @@ function Wheel({ clubs }: { clubs: Club[] }) {
   );
 }
 
-function PlayerPicker({ club, players, mode, showRatings, targetSlot, onPick, onReroll, rerollsLeft, onSkip }: {
+function PlayerPicker({ club, players, mode, showRatings, targetSlot, onPick, onQuickPick, onReroll, rerollsLeft, onSkip }: {
   club: Club;
   players: Player[];
-  mode: "squad"|"position";
+  mode: DraftMode;
   showRatings: boolean;
   targetSlot: Slot | null;
   onPick: (p: Player) => void;
+  onQuickPick: (players: Player[]) => void;
   onReroll?: () => void;
   rerollsLeft: number;
   onSkip: () => void;
 }) {
+  void onSkip;
+  const [quickPicks, setQuickPicks] = useState<Player[]>([]);
+  const isQuick = mode === "quick";
+  function togglePick(p: Player) {
+    if (!isQuick) { onPick(p); return; }
+    const key = `${p.club}:${p.name}`;
+    const exists = quickPicks.find(qp => `${qp.club}:${qp.name}` === key);
+    let next: Player[];
+    if (exists) next = quickPicks.filter(qp => `${qp.club}:${qp.name}` !== key);
+    else if (quickPicks.length < 2) next = [...quickPicks, p];
+    else next = [quickPicks[1], p]; // replace oldest
+    setQuickPicks(next);
+    if (next.length === 2) {
+      setQuickPicks([]);
+      onQuickPick(next);
+    }
+  }
   return (
     <motion.div
       initial={{ opacity: 0, y: 8, scale: 0.98 }}
@@ -557,32 +576,44 @@ function PlayerPicker({ club, players, mode, showRatings, targetSlot, onPick, on
           Filtered for <span className="text-warning font-display">{targetSlot.position}</span>
         </div>
       )}
+      {isQuick && (
+        <div className="mt-3 text-xs text-warning font-display tracking-wide">
+          Quick draft · pick {2 - quickPicks.length} more
+        </div>
+      )}
       <div className="mt-3 -mx-1 px-1 overflow-y-auto max-h-[380px] flex flex-col gap-1.5">
         {players.length === 0 && (
           <p className="text-sm text-muted-foreground py-6 text-center">
             No matching players from this club.
           </p>
         )}
-        {players.map(p => (
-          <button
-            key={p.name}
-            onClick={() => onPick(p)}
-            className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg bg-background/50 border border-border hover:bg-background hover:-translate-y-0.5 transition text-left group"
-            style={{ ["--club" as string]: club.color }}
-          >
-            <div className="min-w-0">
-              <div className="text-sm font-medium truncate group-hover:text-warning">{p.name}</div>
-              <div className="text-[11px] text-muted-foreground truncate">
-                {p.position} · {p.career_years} · {p.nationality}
+        {players.map(p => {
+          const selected = isQuick && quickPicks.some(qp => qp.name === p.name && qp.club === p.club);
+          return (
+            <button
+              key={p.name}
+              onClick={() => togglePick(p)}
+              className={`flex items-center justify-between gap-2 px-3 py-2 rounded-lg border hover:bg-background hover:-translate-y-0.5 transition text-left group ${
+                selected
+                  ? "bg-warning/15 border-warning"
+                  : "bg-background/50 border-border"
+              }`}
+              style={{ ["--club" as string]: club.color }}
+            >
+              <div className="min-w-0">
+                <div className="text-sm font-medium truncate group-hover:text-warning">{p.name}</div>
+                <div className="text-[11px] text-muted-foreground truncate">
+                  {p.position} · {p.career_years} · {p.nationality}
+                </div>
               </div>
-            </div>
-            {showRatings && (
-              <span className="font-display text-xl px-2 py-0.5 rounded bg-warning/10 text-warning border border-warning/30 shadow-[0_0_12px_-4px] shadow-warning/60">
-                {p.prime_rating}
-              </span>
-            )}
-          </button>
-        ))}
+              {showRatings && (
+                <span className="font-display text-xl px-2 py-0.5 rounded bg-warning/10 text-warning border border-warning/30 shadow-[0_0_12px_-4px] shadow-warning/60">
+                  {p.prime_rating}
+                </span>
+              )}
+            </button>
+          );
+        })}
       </div>
       {onReroll && (
         <div className="mt-3 flex gap-2">
@@ -594,8 +625,6 @@ function PlayerPicker({ club, players, mode, showRatings, targetSlot, onPick, on
           </button>
         </div>
       )}
-
-
     </motion.div>
   );
 }
