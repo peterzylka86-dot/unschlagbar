@@ -28,8 +28,14 @@ import type { LeagueId } from "@/lib/leagues";
 import { getClubs } from "@/lib/data";
 import { FORMATIONS } from "@/lib/formations";
 import { isPositionCompatible } from "@/lib/draft-helpers";
+import { normalizeName } from "@/lib/career-core";
 import { shareOrCopy } from "@/lib/share";
 import type { Player, Position } from "@/lib/game-types";
+
+// A star starts demanding a transfer when their season-form crosses this
+// threshold. Bumped from 2.0 → 2.5 after user feedback — at 2.0 every
+// season triggered a demand; at 2.5 it's a genuine outlier event.
+const STAR_DEMAND_THRESHOLD = 2.5;
 
 export const Route = createFileRoute("/career/recap")({
   head: () => ({ meta: [{ title: "Season Recap · GOLAZO" }] }),
@@ -48,6 +54,22 @@ function CareerRecap() {
     () => clubs.find((c) => c.id === (latest?.foundingClubId ?? career.foundingClubId)) ?? null,
     [clubs, latest, career.foundingClubId],
   );
+
+  // Demanding star: hottest-form non-franchise player ≥ +2.5. After-cup
+  // moment (user spec: "Lewandowski wanting out at the very bottom makes
+  // no sense...also it should come after the season is over including Cup").
+  const demandingStar = useMemo(() => {
+    if (career.starDemandResolved) return null;
+    const enriched = career.squad
+      .map((p) => ({
+        player: p,
+        formVal: career.form[`${p.club}:${normalizeName(p.name)}`] ?? 0,
+      }))
+      .filter((e) => e.formVal >= STAR_DEMAND_THRESHOLD)
+      .filter((e) => `${e.player.club}:${e.player.name}` !== career.franchisePlayerKey)
+      .sort((a, b) => b.formVal - a.formVal);
+    return enriched[0]?.player ?? null;
+  }, [career.squad, career.form, career.franchisePlayerKey, career.starDemandResolved]);
 
   // Assign the current squad to formation slots — same logic the draft uses.
   const assignedXI = useMemo(() => {
@@ -249,14 +271,103 @@ function CareerRecap() {
       </div>
       {status && <div className="mt-3 text-center text-xs text-muted-foreground">{status}</div>}
 
-      {/* CONTINUE */}
+      {/* END-OF-SEASON STAR DEMAND — fires only when a non-franchise player
+          ended the season on form ≥ +2.5. Threshold tuned to make this
+          genuinely rare (not every-season noise). Gates the Continue button
+          until the user picks "Keep him" or "Let him go". */}
+      {demandingStar && (
+        <StarDemandCard
+          player={demandingStar}
+          onKeep={() => {
+            career.setRerollsNextSeason(1);
+            career.setPendingDeparture(null);
+            career.setStarDemandResolved(true);
+          }}
+          onLetGo={() => {
+            career.setPendingDeparture(`${demandingStar.club}:${demandingStar.name}`);
+            career.setRerollsNextSeason(3);
+            career.setStarDemandResolved(true);
+          }}
+        />
+      )}
+
+      {/* CONTINUE — disabled while a demand is unresolved */}
       <div className="mt-8 text-center">
-        <Link
-          to="/career/postseason"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-warning text-warning-foreground font-display text-base tracking-wide hover:brightness-110 transition"
+        {demandingStar ? (
+          <button
+            disabled
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-warning/30 text-warning-foreground font-display text-base tracking-wide opacity-60 cursor-not-allowed"
+            title="Answer the star demand first"
+          >
+            Continue to transfer window →
+          </button>
+        ) : (
+          <Link
+            to="/career/postseason"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-warning text-warning-foreground font-display text-base tracking-wide hover:brightness-110 transition"
+          >
+            Continue to transfer window →
+          </Link>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * End-of-season star demand card.
+ *
+ * Lives on /career/recap (not /career/season) so it fires AFTER the cup is
+ * over and is shown alongside the recap visual context, not at the bottom
+ * of a long match feed.
+ */
+function StarDemandCard({
+  player,
+  onKeep,
+  onLetGo,
+}: {
+  player: Player;
+  onKeep: () => void;
+  onLetGo: () => void;
+}) {
+  return (
+    <div className="mt-8 rounded-2xl border-2 border-primary bg-primary/10 p-6">
+      <div className="text-center mb-4">
+        <div className="text-4xl mb-1">💬</div>
+        <div className="text-[11px] uppercase tracking-widest text-primary">Star demand</div>
+        <div className="font-display text-2xl text-warning mt-2">{player.name} wants out</div>
+        <p className="text-xs text-muted-foreground mt-2 max-w-md mx-auto">
+          After a hot season, your{" "}
+          <span className="text-warning">
+            {player.position} · {player.prime_rating}
+          </span>{" "}
+          rated {player.name} feels they've outgrown the squad. Convince them to stay or let them
+          walk.
+        </p>
+      </div>
+
+      <div className="grid sm:grid-cols-2 gap-3 mt-5">
+        <button
+          onClick={onKeep}
+          className="rounded-xl border-2 border-warning bg-warning/15 hover:bg-warning/25 p-4 text-left transition"
         >
-          Continue to transfer window →
-        </Link>
+          <div className="font-display text-warning text-lg mb-1">Keep him</div>
+          <div className="text-[11px] text-muted-foreground leading-relaxed">
+            He stays. Cost: next draft starts with only{" "}
+            <span className="text-warning">1 reroll</span> (instead of 3) — you'll be stuck with
+            what the wheel gives you.
+          </div>
+        </button>
+        <button
+          onClick={onLetGo}
+          className="rounded-xl border-2 border-primary/40 bg-primary/5 hover:bg-primary/15 p-4 text-left transition"
+        >
+          <div className="font-display text-primary text-lg mb-1">Let him go</div>
+          <div className="text-[11px] text-muted-foreground leading-relaxed">
+            He walks. You keep all <span className="text-warning">3 rerolls</span> for next draft,
+            but the slot has to be re-drafted.
+          </div>
+        </button>
       </div>
     </div>
   );

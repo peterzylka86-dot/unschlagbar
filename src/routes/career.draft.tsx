@@ -168,6 +168,11 @@ function CareerDraft() {
       };
     });
 
+    // SEASON 2+ CARRY-OVER: the user's squad survives between seasons.
+    // career.squad holds whatever survived the postseason transfer window
+    // (survivors + signings - pendingDeparture). Pre-fill the draft state
+    // with that squad — the user only picks replacements for empty slots.
+    // (Season 1: career.squad is [] so this is a no-op.)
     const userManager: Manager = {
       id: "user",
       name: "You",
@@ -177,8 +182,11 @@ function CareerDraft() {
       archetypeName: "You",
       foundingClubId: career.foundingClubId!,
       isUser: true,
-      squad: [],
+      squad: [...career.squad],
     };
+
+    // Carry-overs go into the used-keys set so AI rivals can't draft them.
+    const usedKeys = new Set<string>(career.squad.map(playerKey));
 
     // Random draft order — user slot is random within the order
     const allManagers = [userManager, ...aiManagers];
@@ -189,7 +197,7 @@ function CareerDraft() {
       draftOrder: order,
       currentRound: 1,
       currentPickInRound: 1,
-      usedPlayerKeys: new Set(),
+      usedPlayerKeys: usedKeys,
       currentClubId: null,
     });
   }, [draft, allClubs, allPlayers, career, userClub]);
@@ -202,6 +210,17 @@ function CareerDraft() {
     if (!onClockId) return;
     const onClock = draft.managers.find((m) => m.id === onClockId);
     if (!onClock) return;
+
+    // CARRY-OVER AUTO-PASS: if user is on clock at round R but their squad
+    // already covers that round (squad.length >= R from carry-overs), skip
+    // their turn. After 11 rounds the user ends with min(11, carry + picks).
+    if (onClock.isUser && onClock.squad.length >= draft.currentRound) {
+      const timer = setTimeout(() => {
+        setDraft((prev) => (prev ? advance({ ...prev, currentClubId: null }) : prev));
+      }, 200);
+      return () => clearTimeout(timer);
+    }
+
     if (onClock.isUser) return; // wait for user input
 
     // AI pick — run via setTimeout so the UI breathes between AI turns
