@@ -220,7 +220,12 @@ function CareerSeason() {
       {seasonDone && (
         <>
           <FinalTable table={table} />
-          <PostSeasonCTA ourPosition={ourPosition} />
+          <PostSeasonCTA
+            ourPosition={ourPosition}
+            matches={matches}
+            userRating={userRating}
+            opponents={opponents}
+          />
         </>
       )}
     </div>
@@ -338,10 +343,45 @@ function FinalTable({ table }: { table: ReturnType<typeof computeLeagueTable>["t
   );
 }
 
-function PostSeasonCTA({ ourPosition }: { ourPosition: number }) {
+function PostSeasonCTA({ ourPosition, matches, userRating, opponents }: {
+  ourPosition: number;
+  matches: MatchWithScorers[];
+  userRating: number;
+  opponents: import("@/lib/game-types").Club[];
+}) {
+  const career = useCareer();
   const isCupQualifier = ourPosition <= 8;
   const isRelegated = ourPosition >= 11;
   const isChampion = ourPosition === 1;
+
+  // Record this season into career.seasonHistory exactly once.
+  useEffect(() => {
+    const alreadyRecorded = career.seasonHistory.some(s => s.season === career.currentSeason);
+    if (alreadyRecorded) return;
+    const wins = matches.filter(m => m.outcome === "W").length;
+    const draws = matches.filter(m => m.outcome === "D").length;
+    const losses = matches.filter(m => m.outcome === "L").length;
+    const goalsFor = matches.reduce((a, m) => a + m.ourScore, 0);
+    const goalsAgainst = matches.reduce((a, m) => a + m.theirScore, 0);
+    const trophies: string[] = [];
+    if (isChampion) trophies.push("League Champion");
+    career.recordSeason({
+      season: career.currentSeason,
+      leagueId: career.leagueId ?? "ucl",
+      foundingClubId: career.foundingClubId ?? "",
+      formation: career.formation,
+      finalPosition: ourPosition,
+      totalLeagueClubs: opponents.length + 1,
+      wins, draws, losses, goalsFor, goalsAgainst,
+      cupResult: "did-not-qualify",  // updated by /career/cup if applicable
+      relegated: isRelegated,
+      trophies,
+      endedAt: new Date().toISOString(),
+    });
+    career.setRelegated(isRelegated);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  void userRating;
   return (
     <div className="mt-8 rounded-2xl border-2 border-warning bg-warning/10 p-6 text-center">
       <div className="text-4xl mb-2">
@@ -357,14 +397,15 @@ function PostSeasonCTA({ ourPosition }: { ourPosition: number }) {
               : `Finished ${ourPosition}${ordinal(ourPosition)}`}
       </div>
       <div className="text-xs text-muted-foreground mb-5">
-        Transfer window next: hot-form players demand moves, cold-form players auto-sell,
-        you fill any open slots.
+        {isCupQualifier
+          ? "🏆 Cup competition next — top 8 finishers compete in a knockout for the trophy."
+          : "Transfer window next: form events + squad rebuild for the next season."}
       </div>
       <Link
-        to="/career/postseason"
+        to={isCupQualifier ? "/career/cup" : "/career/postseason"}
         className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-warning text-warning-foreground font-display text-base tracking-wide hover:brightness-110 transition"
       >
-        Transfer window →
+        {isCupQualifier ? "Enter cup →" : "Transfer window →"}
       </Link>
     </div>
   );
