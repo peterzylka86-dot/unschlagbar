@@ -13,7 +13,9 @@ import { Route as SeasonRouteImport } from './routes/season'
 import { Route as ResultRouteImport } from './routes/result'
 import { Route as GameRouteImport } from './routes/game'
 import { Route as DraftRouteImport } from './routes/draft'
+import { Route as CareerRouteImport } from './routes/career'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CareerFoundRouteImport } from './routes/career.found'
 
 const SeasonRoute = SeasonRouteImport.update({
   id: '/season',
@@ -35,44 +37,83 @@ const DraftRoute = DraftRouteImport.update({
   path: '/draft',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CareerRoute = CareerRouteImport.update({
+  id: '/career',
+  path: '/career',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CareerFoundRoute = CareerFoundRouteImport.update({
+  id: '/found',
+  path: '/found',
+  getParentRoute: () => CareerRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/career': typeof CareerRouteWithChildren
   '/draft': typeof DraftRoute
   '/game': typeof GameRoute
   '/result': typeof ResultRoute
   '/season': typeof SeasonRoute
+  '/career/found': typeof CareerFoundRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/career': typeof CareerRouteWithChildren
   '/draft': typeof DraftRoute
   '/game': typeof GameRoute
   '/result': typeof ResultRoute
   '/season': typeof SeasonRoute
+  '/career/found': typeof CareerFoundRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/career': typeof CareerRouteWithChildren
   '/draft': typeof DraftRoute
   '/game': typeof GameRoute
   '/result': typeof ResultRoute
   '/season': typeof SeasonRoute
+  '/career/found': typeof CareerFoundRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/draft' | '/game' | '/result' | '/season'
+  fullPaths:
+    | '/'
+    | '/career'
+    | '/draft'
+    | '/game'
+    | '/result'
+    | '/season'
+    | '/career/found'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/draft' | '/game' | '/result' | '/season'
-  id: '__root__' | '/' | '/draft' | '/game' | '/result' | '/season'
+  to:
+    | '/'
+    | '/career'
+    | '/draft'
+    | '/game'
+    | '/result'
+    | '/season'
+    | '/career/found'
+  id:
+    | '__root__'
+    | '/'
+    | '/career'
+    | '/draft'
+    | '/game'
+    | '/result'
+    | '/season'
+    | '/career/found'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CareerRoute: typeof CareerRouteWithChildren
   DraftRoute: typeof DraftRoute
   GameRoute: typeof GameRoute
   ResultRoute: typeof ResultRoute
@@ -109,6 +150,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DraftRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/career': {
+      id: '/career'
+      path: '/career'
+      fullPath: '/career'
+      preLoaderRoute: typeof CareerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -116,11 +164,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/career/found': {
+      id: '/career/found'
+      path: '/found'
+      fullPath: '/career/found'
+      preLoaderRoute: typeof CareerFoundRouteImport
+      parentRoute: typeof CareerRoute
+    }
   }
 }
 
+interface CareerRouteChildren {
+  CareerFoundRoute: typeof CareerFoundRoute
+}
+
+const CareerRouteChildren: CareerRouteChildren = {
+  CareerFoundRoute: CareerFoundRoute,
+}
+
+const CareerRouteWithChildren =
+  CareerRoute._addFileChildren(CareerRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CareerRoute: CareerRouteWithChildren,
   DraftRoute: DraftRoute,
   GameRoute: GameRoute,
   ResultRoute: ResultRoute,
