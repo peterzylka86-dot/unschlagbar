@@ -62,4 +62,8 @@ export interface MatchResult {
   ourScore: number;
   theirScore: number;
   outcome: "W"|"D"|"L";
+  /** Knockout/group round label, e.g. "Group", "Quarter-Final", "Final". */
+  round?: string;
+  /** True if this match eliminates us (knockout loss / group failure). */
+  eliminates?: boolean;
 }
