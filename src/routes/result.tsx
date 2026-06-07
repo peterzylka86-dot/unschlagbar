@@ -58,10 +58,10 @@ function ResultScreen() {
       {unbeaten ? (
         <>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-success/40 bg-success/10 text-success text-xs font-semibold tracking-widest uppercase">
-            ★ Invincible ★
+            ★ {league.unbeatenLabel} ★
           </div>
-          <h1 className="mt-6 brand-mark text-8xl text-success">34<span className="text-warning">:</span>0</h1>
-          <p className="mt-4 text-xl">Your XI went unbeaten.</p>
+          <h1 className="mt-6 brand-mark text-8xl text-success">{league.brandMark.split(":")[0]}<span className="text-warning">:</span>{league.brandMark.split(":")[1]}</h1>
+          <p className="mt-4 text-xl">Your XI went unbeaten — {league.flag} {league.name}.</p>
         </>
       ) : (
         <>
@@ -108,7 +108,7 @@ function ResultScreen() {
           className="mt-8 text-left rounded-xl border bg-card/40 overflow-hidden"
         >
           <div className="px-3 py-2 border-b text-[10px] uppercase tracking-[0.2em] text-muted-foreground bg-background/50">
-            Abschlusstabelle
+            {league.tableTitle}
           </div>
           <div className="divide-y divide-border/50">
             {table.map((row, i) => {
