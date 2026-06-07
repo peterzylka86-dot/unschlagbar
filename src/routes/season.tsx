@@ -4,19 +4,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useGame } from "@/lib/store";
 import { simulateSeason, squadRating } from "@/lib/sim";
 import { ClubBadge } from "@/components/ClubBadge";
-import clubsData from "@/data/clubs.json";
+import { getClubs } from "@/lib/data";
+import { LEAGUES } from "@/lib/leagues";
 import type { Club, MatchResult } from "@/lib/game-types";
 
-const CLUBS = clubsData as Club[];
-
 export const Route = createFileRoute("/season")({
-  head: () => ({ meta: [{ title: "Saison · UNSCHLAGBAR 34:0" }] }),
+  head: () => ({ meta: [{ title: "Saison · UNSCHLAGBAR" }] }),
   component: SeasonScreen,
 });
 
-function pickOpponents(): Club[] {
-  // 17 opponents: prefer current Bundesliga, top by strength
-  const ranked = CLUBS
+function pickOpponents(clubs: Club[], count: number): Club[] {
+  const ranked = clubs
     .slice()
     .sort((a, b) => {
       const era = (e: string) => e === "current" ? 0 : e === "classic" ? 1 : 2;
@@ -24,12 +22,14 @@ function pickOpponents(): Club[] {
       if (ea !== eb) return ea - eb;
       return b.strength - a.strength;
     });
-  return ranked.slice(0, 17);
+  return ranked.slice(0, count);
 }
 
 function SeasonScreen() {
   const { slots, matches, setMatches, config } = useGame();
   const navigate = useNavigate();
+  const league = LEAGUES[config.league];
+  const CLUBS = useMemo(() => getClubs(config.league), [config.league]);
   const ourRating = useMemo(() => squadRating(slots), [slots]);
   const [revealCount, setRevealCount] = useState(0);
 
@@ -38,8 +38,8 @@ function SeasonScreen() {
       navigate({ to: "/" });
       return;
     }
-    const opponents = pickOpponents();
-    const sim = simulateSeason(opponents, ourRating, Math.floor(Math.random() * 1e9), config.difficulty);
+    const opponents = pickOpponents(CLUBS, league.opponentsCount);
+    const sim = simulateSeason(opponents, league.matches, ourRating, Math.floor(Math.random() * 1e9), config.difficulty);
     setMatches(sim);
     setRevealCount(0);
   }, []); // eslint-disable-line
@@ -47,7 +47,6 @@ function SeasonScreen() {
   useEffect(() => {
     if (!matches.length) return;
     if (revealCount >= matches.length) return;
-    // Snappy cadence; only linger briefly on draws/losses for a beat of drama
     const last = matches[revealCount - 1];
     const base = 380;
     const extra = !last ? 120
@@ -69,13 +68,15 @@ function SeasonScreen() {
   const seasonOver = revealCount >= matches.length;
   const isUnbeaten = seasonOver && losses === 0;
 
+  const [brandA, brandB] = league.brandMark.split(":");
+
   return (
     <div className="min-h-screen pb-16">
-      {/* Sticky header */}
       <div className="sticky top-0 z-20 backdrop-blur-md bg-background/75 border-b border-border/60">
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
           <Link to="/" className="brand-mark text-3xl inline-flex items-baseline gap-0.5 leading-none shrink-0">
-            <span>34</span><span className="text-primary">:</span><span>0</span>
+            <span>{brandA}</span><span className="text-primary">:</span><span>{brandB}</span>
+            <span className="ml-2 text-[10px] tracking-[0.25em] text-warning/80 hidden sm:inline">{league.flag} {league.name}</span>
           </Link>
           <div className="flex items-center gap-1.5 text-xs flex-wrap justify-end">
             <Stat label="OVR" value={String(ourRating)} />
@@ -98,10 +99,9 @@ function SeasonScreen() {
       </div>
 
       <div className="px-4 max-w-5xl mx-auto">
-        {/* Live current matchday card */}
         <AnimatePresence mode="wait">
           {!seasonOver && revealCount > 0 && shown[shown.length - 1] && (
-            <LiveCard key={revealCount} match={shown[shown.length - 1]!} />
+            <LiveCard key={revealCount} match={shown[shown.length - 1]!} league={league} />
           )}
         </AnimatePresence>
 
@@ -154,7 +154,7 @@ function SeasonScreen() {
   );
 }
 
-function LiveCard({ match }: { match: MatchResult }) {
+function LiveCard({ match, league }: { match: MatchResult; league: typeof LEAGUES[keyof typeof LEAGUES] }) {
   const tone = match.outcome === "W" ? "from-success/30 via-success/10 border-success/50"
     : match.outcome === "D" ? "from-warning/30 via-warning/10 border-warning/50"
     : "from-destructive/40 via-destructive/15 border-destructive/60";
@@ -169,12 +169,11 @@ function LiveCard({ match }: { match: MatchResult }) {
       transition={{ type: "spring", stiffness: 280, damping: 22 }}
       className={`mt-4 relative overflow-hidden rounded-xl border-2 bg-gradient-to-br ${tone} px-4 py-3`}
     >
-      {/* halftone stripes */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.07]"
            style={{ background: "repeating-linear-gradient(45deg, currentColor 0 2px, transparent 2px 8px)" }} />
       <div className="relative flex items-center gap-3">
         <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-          MD {String(match.matchday).padStart(2, "0")} · {match.home ? "Heim" : "Auswärts"}
+          MD {String(match.matchday).padStart(2, "0")} · {match.home ? "Home" : "Away"}
         </div>
         <motion.span
           initial={{ scale: 0.6 }}
@@ -182,12 +181,12 @@ function LiveCard({ match }: { match: MatchResult }) {
           transition={{ duration: 0.4 }}
           className={`ml-auto px-2 py-0.5 rounded text-[10px] font-display tracking-widest ${badge}`}
         >
-          {match.outcome === "W" ? "SIEG" : match.outcome === "D" ? "REMIS" : "PLEITE"}
+          {match.outcome === "W" ? league.winWord : match.outcome === "D" ? league.drawWord : league.lossWord}
         </motion.span>
       </div>
       <div className="relative mt-2 flex items-center gap-3">
         <div className="flex-1 text-right">
-          <div className="text-xs text-muted-foreground">UNSCHLAGBAR</div>
+          <div className="text-xs text-muted-foreground">{league.tagline}</div>
           <div className="font-display text-lg leading-none">Your XI</div>
         </div>
         <div className="scoreboard rounded-md px-4 py-2 text-3xl tabular-nums font-display tracking-wider shadow-[0_0_24px_-4px_rgba(0,0,0,0.6)]">

@@ -1,17 +1,19 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useGame } from "@/lib/store";
 import { FORMATIONS, FORMATION_KEYS } from "@/lib/formations";
+import { LEAGUES, LEAGUE_IDS } from "@/lib/leagues";
 import type { Difficulty, DraftMode, RatingMode } from "@/lib/game-types";
 
 export const Route = createFileRoute("/game")({
   validateSearch: (s: Record<string, unknown>) => ({ new: s.new === true || s.new === "true" }),
-  head: () => ({ meta: [{ title: "Setup · UNSCHLAGBAR 34:0" }] }),
+  head: () => ({ meta: [{ title: "Setup · UNSCHLAGBAR" }] }),
   component: GameSetup,
 });
 
 function GameSetup() {
   const { config, setConfig, reset, slots } = useGame();
   const formation = FORMATIONS[config.formation];
+  const league = LEAGUES[config.league];
   const navigate = useNavigate();
 
   return (
@@ -19,12 +21,35 @@ function GameSetup() {
       <header className="text-center">
         <Link to="/" className="inline-block">
           <h1 className="brand-mark text-5xl inline-flex items-baseline gap-1 leading-none">
-            <span>34</span><span className="text-primary">:</span><span>0</span>
+            <span>{league.brandMark.split(":")[0]}</span><span className="text-primary">:</span><span>{league.brandMark.split(":")[1]}</span>
           </h1>
-          <div className="text-[10px] tracking-[0.3em] text-warning/80 mt-1">UNSCHLAGBAR</div>
+          <div className="text-[10px] tracking-[0.3em] text-warning/80 mt-1">{league.tagline}</div>
         </Link>
-        <p className="mt-2 text-muted-foreground">Draft your greatest Bundesliga XI</p>
+        <p className="mt-2 text-muted-foreground">Draft your greatest {league.name} XI</p>
       </header>
+
+      <Section label="League">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+          {LEAGUE_IDS.map(id => {
+            const l = LEAGUES[id];
+            return (
+              <button
+                key={id}
+                onClick={() => setConfig({ league: id })}
+                className={`p-3 rounded-xl border text-left transition ${
+                  config.league === id
+                    ? "border-primary bg-primary/10 text-primary"
+                    : "border-border bg-card hover:border-foreground/30"
+                }`}
+              >
+                <div className="text-2xl leading-none">{l.flag}</div>
+                <div className="mt-1.5 font-display text-sm">{l.name}</div>
+                <div className="text-[10px] text-muted-foreground">{l.matches}:0 to glory</div>
+              </button>
+            );
+          })}
+        </div>
+      </Section>
 
       <Section label="Formation">
         <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
@@ -40,6 +65,7 @@ function GameSetup() {
         </div>
         <p className="mt-3 text-sm text-muted-foreground text-center">{formation.description}</p>
       </Section>
+
 
       <Section label="">
         <Pitch slots={slots} />
@@ -132,7 +158,7 @@ function GameSetup() {
         onClick={() => { reset(); navigate({ to: "/draft" }); }}
         className="mt-10 w-full py-4 rounded-xl bg-success text-success-foreground font-display text-xl tracking-wide hover:brightness-110 transition"
       >
-        Start Draft →
+        {league.kickoffWord} →
       </button>
     </div>
   );

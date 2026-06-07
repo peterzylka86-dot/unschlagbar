@@ -3,15 +3,14 @@ import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { useGame } from "@/lib/store";
 import { ClubBadge } from "@/components/ClubBadge";
-import clubsData from "@/data/clubs.json";
+import { getClubs } from "@/lib/data";
+import { LEAGUES } from "@/lib/leagues";
 import type { Club } from "@/lib/game-types";
 import { squadRating, computeLeagueTable } from "@/lib/sim";
 
-const CLUBS = clubsData as Club[];
-
 export const Route = createFileRoute("/result")({
   validateSearch: (s: Record<string, unknown>) => ({ unbeaten: s.unbeaten === true || s.unbeaten === "true" }),
-  head: () => ({ meta: [{ title: "Ergebnis · UNSCHLAGBAR 34:0" }] }),
+  head: () => ({ meta: [{ title: "Result · UNSCHLAGBAR" }] }),
   component: ResultScreen,
 });
 
@@ -23,8 +22,10 @@ function ordinal(n: number) {
 
 function ResultScreen() {
   const { unbeaten } = Route.useSearch();
-  const { slots, matches, reset } = useGame();
+  const { slots, matches, reset, config } = useGame();
   const navigate = useNavigate();
+  const league = LEAGUES[config.league];
+  const CLUBS = useMemo(() => getClubs(config.league), [config.league]);
   const rating = squadRating(slots);
   const wins = matches.filter(m => m.outcome === "W").length;
   const draws = matches.filter(m => m.outcome === "D").length;
@@ -34,7 +35,6 @@ function ResultScreen() {
 
   const { table, ourPosition } = useMemo(() => {
     if (!matches.length) return { table: [], ourPosition: 0 };
-    // unique opponents in order of first appearance
     const seen = new Set<string>();
     const opps: Club[] = [];
     for (const m of matches) {
@@ -43,8 +43,9 @@ function ResultScreen() {
         opps.push(m.opponent);
       }
     }
-    return computeLeagueTable(matches, opps, rating);
-  }, [matches, rating]);
+    return computeLeagueTable(matches, opps, rating, league.matches);
+  }, [matches, rating, league.matches]);
+
 
   const positionTone =
     ourPosition === 1 ? "text-warning"
@@ -57,10 +58,10 @@ function ResultScreen() {
       {unbeaten ? (
         <>
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-success/40 bg-success/10 text-success text-xs font-semibold tracking-widest uppercase">
-            ★ Invincible ★
+            ★ {league.unbeatenLabel} ★
           </div>
-          <h1 className="mt-6 brand-mark text-8xl text-success">34<span className="text-warning">:</span>0</h1>
-          <p className="mt-4 text-xl">Your XI went unbeaten.</p>
+          <h1 className="mt-6 brand-mark text-8xl text-success">{league.brandMark.split(":")[0]}<span className="text-warning">:</span>{league.brandMark.split(":")[1]}</h1>
+          <p className="mt-4 text-xl">Your XI went unbeaten — {league.flag} {league.name}.</p>
         </>
       ) : (
         <>
@@ -107,7 +108,7 @@ function ResultScreen() {
           className="mt-8 text-left rounded-xl border bg-card/40 overflow-hidden"
         >
           <div className="px-3 py-2 border-b text-[10px] uppercase tracking-[0.2em] text-muted-foreground bg-background/50">
-            Abschlusstabelle
+            {league.tableTitle}
           </div>
           <div className="divide-y divide-border/50">
             {table.map((row, i) => {

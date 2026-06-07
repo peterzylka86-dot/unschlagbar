@@ -4,12 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useGame } from "@/lib/store";
 import { FORMATIONS } from "@/lib/formations";
 import { ClubBadge } from "@/components/ClubBadge";
-import clubsData from "@/data/clubs.json";
-import playersData from "@/data/players.json";
+import { getClubs, getPlayers } from "@/lib/data";
+import { LEAGUES } from "@/lib/leagues";
 import type { Club, Player, Position, Slot, EraTier } from "@/lib/game-types";
-
-const CLUBS = clubsData as Club[];
-const PLAYERS = playersData as Player[];
 
 const TIERS: { id: EraTier; label: string; sub: string }[] = [
   { id: "current",  label: "20s",     sub: "starting 2020s" },
@@ -37,17 +34,19 @@ function playerMatchesTier(p: Player, tier: EraTier): boolean {
 }
 
 export const Route = createFileRoute("/draft")({
-  head: () => ({ meta: [{ title: "Draft · UNSCHLAGBAR 34:0" }] }),
+  head: () => ({ meta: [{ title: "Draft · UNSCHLAGBAR" }] }),
   component: DraftScreen,
 });
 
 function isCompatible(slotPos: Position, playerPos: Position): boolean {
-  // Strict: every position only matches itself. RB plays RB, CB plays CB, etc.
   return slotPos === playerPos;
 }
 
 function DraftScreen() {
   const { config, slots, rerollsLeft, assignPlayer, consumeReroll } = useGame();
+  const league = LEAGUES[config.league];
+  const CLUBS = useMemo(() => getClubs(config.league), [config.league]);
+  const PLAYERS = useMemo(() => getPlayers(config.league), [config.league]);
   const navigate = useNavigate();
   const [spinning, setSpinning] = useState(false);
   const [angle, setAngle] = useState(0);
@@ -226,6 +225,7 @@ function DraftScreen() {
         {/* Pitch */}
         <PitchView
           slots={slots}
+          clubs={CLUBS}
           showRatings={config.showRatings}
           highlightSlots={compatibleSlotsForAssign.map(s => s.id)}
           onSlotClick={(s) => {
@@ -240,7 +240,8 @@ function DraftScreen() {
         {/* Side panel */}
         <aside className="rounded-2xl border bg-card/40 backdrop-blur-sm p-4 flex flex-col gap-3 min-h-[460px] shadow-[0_30px_80px_-40px_rgba(220,5,21,0.4)]">
           {done ? (
-            <DonePanel onContinue={() => navigate({ to: "/season" })} />
+            <DonePanel matches={league.matches} kickoff={league.kickoffWord} onContinue={() => navigate({ to: "/season" })} />
+
           ) : assigningPlayer ? (
             <AssignPanel
               player={assigningPlayer}
@@ -282,7 +283,7 @@ function DraftScreen() {
   );
 }
 
-function DonePanel({ onContinue }: { onContinue: () => void }) {
+function DonePanel({ onContinue, matches, kickoff }: { onContinue: () => void; matches: number; kickoff: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -291,16 +292,17 @@ function DonePanel({ onContinue }: { onContinue: () => void }) {
     >
       <div className="text-5xl">⚽</div>
       <h2 className="font-display text-3xl">Squad set.</h2>
-      <p className="text-muted-foreground">34 matches stand between you and immortality.</p>
+      <p className="text-muted-foreground">{matches} matches stand between you and immortality.</p>
       <button
         onClick={onContinue}
         className="px-7 py-3 rounded-xl bg-primary text-primary-foreground font-display tracking-wide hover:brightness-110 shadow-[0_10px_30px_-10px] shadow-primary/60"
       >
-        Play Season →
+        {kickoff} →
       </button>
     </motion.div>
   );
 }
+
 
 function PositionPrompt() {
   return (
@@ -311,8 +313,9 @@ function PositionPrompt() {
   );
 }
 
-function PitchView({ slots, showRatings, onSlotClick, highlightSlots }: {
+function PitchView({ slots, clubs, showRatings, onSlotClick, highlightSlots }: {
   slots: Slot[];
+  clubs: Club[];
   showRatings: boolean;
   onSlotClick: (s: Slot) => void;
   highlightSlots: string[];
@@ -331,7 +334,8 @@ function PitchView({ slots, showRatings, onSlotClick, highlightSlots }: {
       {slots.map(s => {
         const filled = !!s.player;
         const highlight = highlightSlots.includes(s.id);
-        const club = filled ? CLUBS.find(c => c.id === s.player!.club) : null;
+        const club = filled ? clubs.find(c => c.id === s.player!.club) : null;
+
         // Stagger label sides so a slot directly below another doesn't overlap its label
         // (was making the GK's name sit on top of the central CB's name).
         const hasNeighborBelow = slots.some(o =>
