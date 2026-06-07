@@ -1,111 +1,72 @@
-# Multi-League Expansion
+## Scope (this round)
 
-Add three new leagues alongside Bundesliga, each with full historic player depth and a localized kickoff word.
+Polish + sharing bundle. New formats (CL / WC / Women's) deferred to a later round.
 
-## 1. League model
+1. Remove the discard/skip-player button from the draft
+2. Quick Draft mode (2-at-once)
+3. Share team & result (text first, image card next)
+4. Async "challenge a friend" link (no backend)
 
-New file `src/lib/leagues.ts`:
+---
 
-```ts
-export type LeagueId = "bundesliga" | "laliga" | "seriea" | "swiss";
+## 1. Remove discard button
 
-export interface League {
-  id: LeagueId;
-  name: string;            // "La Liga"
-  country: string;         // "Spain"
-  matches: number;         // 34 / 38 / 38 / 36
-  brandMark: string;       // "34:0" / "38:0" / "36:0"
-  tagline: string;         // "UNSCHLAGBAR" / "INVENCIBLE" / "IMBATTIBILE" / "UNBESIEGT"
-  kickoffWord: string;     // "Anpfiff" / "¡Vamos!" / "Forza!" / "Hopp Schwiiz!"
-  clubsPerSeason: number;  // opponents drawn per run (e.g. 17 for 18-club leagues)
-}
-```
+`src/routes/draft.tsx` line ~619 still renders a "discard player" button in the `AssignPanel` footer. Remove the button and its handler wiring. Keep the internal `skipAssign()` function — it's still used for auto-skip when no compatible slot exists (lines 190–197) and as the `onCancel` for non-user-driven flows.
 
-Values:
-- Bundesliga — 34 games, "34:0", "UNSCHLAGBAR", "Anpfiff", 17 opponents (18 clubs)
-- La Liga — 38 games, "38:0", "INVENCIBLE", "¡Vamos!", 19 opponents (20 clubs)
-- Serie A — 38 games, "38:0", "IMBATTIBILE", "Forza!", 19 opponents
-- Swiss Super League — 36 games, "36:0", "UNBESIEGT", "Hopp Schwiiz!", 11 opponents played 3× + 1× variation, but simplest: 12 clubs × ~3 rounds. We'll generate 36 fixtures from the 11 opponents (each played roughly 3 times, home/away mix), matching real Swiss format.
+## 2. Quick Draft mode (2-at-once)
 
-## 2. Data files
+A speed variant of `draftMode`. Add `"quick"` to the `DraftMode` union in `src/lib/game-types.ts` (currently `"squad" | "position"`).
 
-Split clubs/players per league for clarity:
+Behavior: each wheel spin lands on a club and the user picks **two** players from that club's tier-filtered list in one panel, assigning them to the two best-matching open slots automatically (GK→GK, defenders to back line, etc.). Falls back to one player if only one compatible remains.
+
+UI: add the option to the draft-mode picker in `src/routes/game.tsx` with label "Quick" and sub "2 players per club — for the impatient". In `draft.tsx`, `AssignPanel` gets a `quickMode` branch that renders a 2-pick grid instead of single-select.
+
+Reroll cost: 1 reroll covers both picks.
+
+## 3. Share team & result
+
+### 3a. Text recap (ships first)
+New helper `src/lib/share.ts` exporting `buildShareText(league, slots, matches?)`:
 
 ```
-src/data/
-  bundesliga/clubs.json
-  bundesliga/players.json
-  laliga/clubs.json
-  laliga/players.json
-  seriea/clubs.json
-  seriea/players.json
-  swiss/clubs.json
-  swiss/players.json
+38:0 INVENCIBLE — La Liga 🇪🇸
+GK Casillas · CB Ramos · CB Puyol ...
+Result: 36W 2D 0L · 112:14 · 1st place 🏆
+Play: https://unschlagbar.lovable.app/?challenge=<seed>
 ```
 
-Move existing Bundesliga data into `bundesliga/`. Add a loader `src/lib/data.ts` that returns `{ clubs, players }` for a given `LeagueId`.
+Add a "Share" button on `season.tsx` and `result.tsx`. Uses `navigator.share` when available, falls back to `navigator.clipboard.writeText` + toast.
 
-### Coverage targets per new league
+### 3b. Image card
+Add a `<ShareCard />` component (hidden, rendered offscreen) showing brand mark, squad list on a pitch silhouette, league badge, and (on results) the W/D/L + GF:GA + table position. Use `html-to-image` (`bun add html-to-image`) to convert to PNG on demand. Button: "Save as image" — triggers download; on mobile, attaches to `navigator.share` as a file when supported.
 
-Same shape as Bundesliga: every club covered across all 4 era tiers (current / 00s / 90s / 70s-80s), each era having all 10 positions, ~15–20 players per club per active era.
+## 4. Async challenge link
 
-- **La Liga** — ~30 clubs across eras (Real Madrid, Barça, Atlético, Valencia, Sevilla, Bilbao, Real Sociedad, Villarreal, Betis, Deportivo, Zaragoza, Celta, Mallorca, Espanyol, Málaga, Getafe, Girona, Las Palmas, Rayo, Osasuna, Alavés, Valladolid, Granada, Levante, Cádiz, plus historic: Hércules, Burgos, Sporting Gijón, Salamanca, etc.). ~500–700 players.
-- **Serie A** — ~30 clubs (Juventus, Milan, Inter, Roma, Lazio, Napoli, Fiorentina, Atalanta, Torino, Bologna, Sampdoria, Genoa, Udinese, Parma, Verona, Lecce, Cagliari, Sassuolo, Empoli, Monza, Como, Venezia, plus historic: Foggia, Padova, Vicenza, Brescia, Reggina, Chievo, Ascoli, Avellino, etc.). ~500–700 players.
-- **Swiss Super League** — ~15 clubs (Basel, YB, Zürich, GC, Servette, Sion, Luzern, Lugano, St. Gallen, Lausanne, Winterthur, Yverdon, Thun, Aarau, NE Xamax). ~200–300 players.
+Encode the run config + simulation seed into a URL: `/?challenge=<base64({league, formation, difficulty, ratingMode, seed})>`.
 
-All ratings use the existing 65–95 scale, authentic to each player's era.
+- On `index.tsx`, detect `?challenge=` via `validateSearch`; if present, prefill `useGame.config`, store the seed, and route straight to `/game` with the picker pre-selected.
+- Persist the seed in the store (new field `challengeSeed?: number`) and feed it into `simulateSeason` so both players get the same fixtures and opponent variance.
+- On `result.tsx`, after a challenge run, show "Friend's record: —" placeholder + a "Copy result to send back" button that produces a text recap including the seed; pasting the friend's recap (later round) compares. v1: just round-trip the recap via copy/paste, no parsing.
 
-## 3. Setup flow
+No accounts, no backend. Just URL state + clipboard.
 
-Add a league picker as the first step in `src/routes/game.tsx`, above Formation:
-
-```
-League → Formation → Difficulty → Show Ratings → Draft Mode → Player Ratings → Start
-```
-
-Store `league: LeagueId` on `RunConfig` in `src/lib/store.ts`. Default to `"bundesliga"`.
-
-When league changes:
-- reset slots
-- reset rerolls
-- clear matches
-
-## 4. Wiring through the app
-
-- `src/routes/index.tsx` (landing) — keep "34:0" as default brand, but show all four league badges (34/38/38/36) as a teaser row.
-- `src/routes/game.tsx` — brand mark dynamic per selected league (`league.brandMark` + `league.tagline`).
-- `src/routes/draft.tsx` — uses `getLeagueData(league)` for clubs/players. The "Anpfiff" / "Start match" CTA copy uses `league.kickoffWord`. Same for the start-season button label.
-- `src/routes/season.tsx` — title shows `league.brandMark`; uses `league.matches` for total fixtures; uses `league.tagline` everywhere the word "UNSCHLAGBAR" appears.
-- `src/routes/result.tsx` — same: dynamic brand, tagline, match count; "unbeaten until you lose" rule unchanged.
-- `src/lib/sim.ts` — `simulateSeason` already takes opponents; pass full opponent list and let length drive the fixture count. For Swiss, build a 36-fixture schedule (each opponent ~3×, balanced home/away). For La Liga / Serie A, double round-robin with 19 opponents = 38 games (already matches existing logic).
-- `src/lib/store.ts` — add `league` to config; helper `getLeague(state.config.league)`.
-
-## 5. Localized labels (per league)
-
-| League | Brand | Tagline | Kickoff CTA | Season banner |
-|---|---|---|---|---|
-| Bundesliga | 34:0 | UNSCHLAGBAR | Anpfiff | "Unschlagbar" |
-| La Liga | 38:0 | INVENCIBLE | ¡Vamos! | "Invencible" |
-| Serie A | 38:0 | IMBATTIBILE | Forza! | "Imbattibile" |
-| Swiss SL | 36:0 | UNBESIEGT | Hopp Schwiiz! | "Unbesiegt" |
-
-All page `<head>` titles update to the active league's brand+tagline.
-
-## 6. Out of scope
-
-- No formation, draft, or match-engine logic changes
-- No UI redesign — picker reuses existing `OptionCard` component
-- Tier names stay: current / 00s / 90s / 70s-80s
+---
 
 ## Files touched
 
-- new: `src/lib/leagues.ts`, `src/lib/data.ts`
-- new: `src/data/{laliga,seriea,swiss}/clubs.json`, `src/data/{laliga,seriea,swiss}/players.json`
-- moved: `src/data/clubs.json`, `src/data/players.json` → `src/data/bundesliga/`
-- edited: `src/lib/game-types.ts` (add `league` to `RunConfig`)
-- edited: `src/lib/store.ts`, `src/lib/sim.ts`
-- edited: `src/routes/{index,game,draft,season,result}.tsx`
+- `src/routes/draft.tsx` — remove discard button; quick-mode branch in `AssignPanel`
+- `src/routes/game.tsx` — add Quick draft-mode option
+- `src/routes/index.tsx` — `validateSearch` for `?challenge=`, prefill store, redirect
+- `src/routes/season.tsx`, `src/routes/result.tsx` — Share button + ShareCard mount
+- `src/lib/game-types.ts` — `DraftMode` adds `"quick"`; `RunConfig` adds `challengeSeed?`
+- `src/lib/store.ts` — persist `challengeSeed`
+- `src/lib/sim.ts` — accept explicit seed override (already takes `seedNum`, just thread through)
+- new `src/lib/share.ts` — text builder + base64 challenge codec
+- new `src/components/ShareCard.tsx` — printable card
+- `bun add html-to-image`
 
-## Build size note
+## Out of scope (next rounds)
 
-Player JSON for three new leagues with full historic depth will roughly triple the data payload (~40–50k lines total). Generation happens in a single batch; first run will take longer than usual.
+- Champions League / World Cup / Women's editions and their datasets
+- Real-time multiplayer / Lovable Cloud / accounts
+- Friend-recap parsing & head-to-head comparison view
