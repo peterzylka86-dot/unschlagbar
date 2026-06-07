@@ -28,10 +28,13 @@ function GameSetup() {
         <p className="mt-2 text-muted-foreground">Draft your greatest {league.name} XI</p>
       </header>
 
-      <Section label="League">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+      <Section label="Competition">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
           {LEAGUE_IDS.map(id => {
             const l = LEAGUES[id];
+            const kindTone = l.kind === "knockout" ? "text-warning"
+              : l.kind === "groupKO" ? "text-primary"
+              : "text-muted-foreground";
             return (
               <button
                 key={id}
@@ -44,7 +47,7 @@ function GameSetup() {
               >
                 <div className="text-2xl leading-none">{l.flag}</div>
                 <div className="mt-1.5 font-display text-sm">{l.name}</div>
-                <div className="text-[10px] text-muted-foreground">{l.matches}:0 to glory</div>
+                <div className={`text-[10px] ${config.league === id ? "opacity-80" : kindTone}`}>{l.formatLabel}</div>
               </button>
             );
           })}
