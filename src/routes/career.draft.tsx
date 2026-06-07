@@ -199,6 +199,24 @@ function CareerDraft() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [draft]);
 
+  // Auto-spin on user's turn (rounds 2+) — no manual click required.
+  // User feedback: "I don't need to spin every time...but rather just land
+  // on the club that I picked." Founding pick (round 1) doesn't need spin;
+  // it's already founding-club-only.
+  useEffect(() => {
+    if (!draft) return;
+    if (draft.currentClubId !== null) return;  // already landed on a club
+    const onClockId = snakePickerId(draft.draftOrder, draft.currentRound, draft.currentPickInRound);
+    if (onClockId !== "user") return;          // not the user's turn
+    const user = draft.managers.find(m => m.isUser);
+    if (!user) return;
+    if (user.squad.length === 0) return;       // founding pick — pool is fixed
+    // Short delay so user sees the previous pick result before next spin
+    const timer = setTimeout(() => userSpin(), 250);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [draft]);
+
   function processAIPick(ai: Manager) {
     setDraft(prev => {
       if (!prev) return prev;
@@ -400,6 +418,7 @@ function CareerDraft() {
               />
             )}
 
+            <TacticalPitch userManager={userManager} />
             <UserSquadList userManager={userManager} />
           </div>
 
@@ -507,21 +526,13 @@ function UserFoundingPick({ club, pool, onPick }: {
   );
 }
 
-function UserNeedsSpin({ onSpin }: { onSpin: () => void }) {
+function UserNeedsSpin({ onSpin: _onSpin }: { onSpin: () => void }) {
+  // Auto-spin fires from a useEffect at the top of the page — this is a
+  // transient state shown for ~250ms while the spin computes.
   return (
-    <div className="rounded-2xl border border-warning bg-warning/5 p-6 text-center">
+    <div className="rounded-2xl border border-warning bg-warning/5 p-6 text-center animate-pulse">
       <div className="text-3xl mb-2">🎯</div>
-      <div className="font-display text-xl text-warning mb-2">Your turn — spin the wheel</div>
-      <div className="text-xs text-muted-foreground mb-4">
-        The wheel lands on a random club from {LEAGUES.bundesliga.name && "this league"}.
-        You pick any of their available legends.
-      </div>
-      <button
-        onClick={onSpin}
-        className="px-6 py-3 rounded-md bg-warning text-warning-foreground font-display text-lg tracking-wide hover:brightness-110 transition"
-      >
-        Spin →
-      </button>
+      <div className="font-display text-xl text-warning">Spinning the wheel…</div>
     </div>
   );
 }
@@ -590,6 +601,90 @@ function AIPickingIndicator({ manager }: { manager: Manager | undefined }) {
         <span style={{ color: manager.color }}>{manager.badge}</span> {manager.archetypeName}
       </div>
       <div className="text-xs text-muted-foreground mt-1">…picking…</div>
+    </div>
+  );
+}
+
+/**
+ * Tactical pitch view for the user's current draft state. Shows the 4-3-3
+ * formation with filled slots (player initials + rating) vs empty slots
+ * (position label). Helps the user see "what do I still need to fill" at
+ * a glance — feedback flagged this would help drafting decisions.
+ */
+function TacticalPitch({ userManager }: { userManager: Manager }) {
+  // 4-3-3 slot positions (matches FORMATIONS["4-3-3"] in formations.ts).
+  // Order: GK, LB, CB, CB, RB, CM, CM, CM, LW, ST, RW
+  const SLOTS: Array<{ pos: string; x: number; y: number; family: "GK"|"DEF"|"MID"|"FWD" }> = [
+    { pos: "GK",  x: 50, y: 90, family: "GK" },
+    { pos: "LB",  x: 12, y: 72, family: "DEF" },
+    { pos: "CB",  x: 35, y: 76, family: "DEF" },
+    { pos: "CB",  x: 65, y: 76, family: "DEF" },
+    { pos: "RB",  x: 88, y: 72, family: "DEF" },
+    { pos: "CM",  x: 25, y: 52, family: "MID" },
+    { pos: "CM",  x: 50, y: 56, family: "MID" },
+    { pos: "CM",  x: 75, y: 52, family: "MID" },
+    { pos: "LW",  x: 15, y: 22, family: "FWD" },
+    { pos: "ST",  x: 50, y: 16, family: "FWD" },
+    { pos: "RW",  x: 85, y: 22, family: "FWD" },
+  ];
+
+  // Match user's squad against the slot template, greedy first-fit by family
+  const assigned: Array<Player | null> = SLOTS.map(() => null);
+  const used = new Set<number>();
+  // Sort squad by rating desc so the strongest fills the slot first
+  const sortedSquad = [...userManager.squad].sort((a, b) => b.prime_rating - a.prime_rating);
+  for (const p of sortedSquad) {
+    const playerFamily = simplifyPosition(p.position) as "GK"|"DEF"|"MID"|"FWD";
+    for (let i = 0; i < SLOTS.length; i++) {
+      if (used.has(i)) continue;
+      if (SLOTS[i].family !== playerFamily) continue;
+      assigned[i] = p;
+      used.add(i);
+      break;
+    }
+  }
+
+  return (
+    <div className="mt-6">
+      <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
+        Your XI ({userManager.squad.length}/{SQUAD_SIZE}) · 4-3-3
+      </div>
+      <div className="relative w-full mx-auto rounded-2xl border border-pitch-line/30 bg-pitch-pattern overflow-hidden"
+           style={{ aspectRatio: "16/11", maxWidth: 540 }}>
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full pointer-events-none">
+          <rect x="1" y="1" width="98" height="98" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
+          <line x1="0" y1="50" x2="100" y2="50" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
+          <circle cx="50" cy="50" r="9" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
+          <rect x="25" y="0" width="50" height="14" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
+          <rect x="25" y="86" width="50" height="14" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
+        </svg>
+        {SLOTS.map((slot, i) => {
+          const player = assigned[i];
+          const lastName = player ? player.name.split(" ").slice(-1)[0] : null;
+          return (
+            <div
+              key={`${slot.pos}-${i}`}
+              className="absolute -translate-x-1/2 -translate-y-1/2"
+              style={{ left: `${slot.x}%`, top: `${slot.y}%` }}
+            >
+              <div
+                className={`w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-[10px] font-bold border-2 transition ${
+                  player
+                    ? "bg-warning text-warning-foreground border-warning-foreground/30 shadow-[0_4px_12px_-2px] shadow-warning/40"
+                    : "bg-card border-border text-muted-foreground"
+                }`}
+              >
+                {player ? player.prime_rating : slot.pos}
+              </div>
+              {lastName && (
+                <div className="absolute left-1/2 -translate-x-1/2 top-full mt-0.5 px-1 py-0.5 rounded text-[9px] bg-black/70 text-white whitespace-nowrap max-w-[80px] truncate border border-white/10">
+                  {lastName}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
