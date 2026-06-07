@@ -276,22 +276,27 @@ export function computeLeagueTable(
     isUs: true,
   };
 
-  const seed = { v: (ourRating * 9301 + matches.length * 1337) | 0 || 42 };
+  // CRITICAL: the RNG seed MUST NOT depend on matches.length. The earlier
+  // version was `(ourRating * 9301 + matches.length * 1337)` — every
+  // matchday the user revealed, every opponent's projected fullPts
+  // RE-RANDOMIZED. Real Madrid could project for 60 pts at MD5 and 75
+  // pts at MD6 → after scaling, Madrid would leap past the user in one
+  // matchday even when the user GAINED points. The user reported exactly
+  // this: "had 5 points on Real Madrid…drew the next game…suddenly
+  // Madrid was ahead of me."
+  //
+  // Seed is now stable across matchdays — same career, same league,
+  // same projected end-of-season stats whether you're at MD3 or MD22.
+  const seed = { v: (ourRating * 9301) | 0 || 42 };
   const maxPts = matchesPerTeam * 3;
-  // LIVE-TABLE FIX: when the user has played fewer than matchesPerTeam,
-  // scale the opponent's projected end-of-season stats so they look like
-  // they've played the SAME matchday as the user. Otherwise the table
-  // shows opponents at P=22 while the user is at P=3 — visually wrong
-  // and breaks ourPosition (the user looks artificially bottom-of-table).
   const userPlayed = matches.length;
   const ratio = Math.max(0, Math.min(1, userPlayed / matchesPerTeam));
+
   const rows: TableRow[] = opponents.map((o) => {
     const base = Math.round((o.strength - 60) * (matchesPerTeam / 15.5));
     const jitter = Math.round((rand(seed) - 0.5) * 10);
     const fullPts = Math.max(8, Math.min(maxPts - 8, base + jitter));
     const fullW = Math.max(0, Math.min(matchesPerTeam, Math.round(fullPts / 3.1)));
-    const fullD = Math.max(0, Math.min(matchesPerTeam - fullW, fullPts - fullW * 3));
-    const fullL = matchesPerTeam - fullW - fullD;
     const gdBase = (o.strength - 75) * 1.6 + (rand(seed) - 0.5) * 12;
     const fullGF = Math.max(
       15,
@@ -299,12 +304,21 @@ export function computeLeagueTable(
     );
     const fullGA = Math.max(15, Math.round(fullGF - gdBase));
 
-    // Scale down to current matchday — preserve sum invariant w + d + l = played.
+    // Smooth points scaling: target_pts ≈ fullPts * ratio. Then derive
+    // a CONSISTENT (W, D, L) such that W*3 + D == pts and W+D+L == played.
+    // Previously we rounded W and D independently — meant a high-fullW
+    // opponent could "gain" a full win (+3 pts) in one user matchday
+    // while the user only gained 1 (a draw). With this approach the
+    // opponent's pts grow smoothly at ~fullPts/matchesPerTeam per matchday.
     const played = Math.round(matchesPerTeam * ratio);
-    const w = Math.round(fullW * ratio);
-    const d = Math.round(fullD * ratio);
+    const targetPts = Math.min(played * 3, Math.round(fullPts * ratio));
+    let w = Math.max(0, Math.min(played, Math.round(fullW * ratio)));
+    while (w * 3 > targetPts) w--;
+    let d = targetPts - w * 3;
+    if (w + d > played) d = played - w;
     const l = Math.max(0, played - w - d);
     const pts = w * 3 + d;
+
     const gf = Math.round(fullGF * ratio);
     const ga = Math.round(fullGA * ratio);
     return {

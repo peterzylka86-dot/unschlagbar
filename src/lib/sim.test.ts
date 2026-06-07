@@ -253,6 +253,76 @@ describe("computeLeagueTable", () => {
     });
   });
 
+  // Regression: user reported "had 5 points on Real Madrid, drew the next
+  // game, suddenly Madrid was ahead of me." Root cause: RNG seed included
+  // matches.length, so Madrid's projected fullPts re-randomized every
+  // matchday. After scaling, Madrid's LIVE pts could DROP or LEAP between
+  // matchdays. Per-opponent pts must be monotonically non-decreasing as
+  // the user reveals more matches.
+  it("regression: opponent pts grows monotonically as user reveals matchdays", () => {
+    const opps = Array.from({ length: 11 }, (_, i) => mockClub(75 + i, i));
+    const fullSeason = simulateSeason(opps, 22, 85, 999);
+    const ptsHistory: Record<string, number[]> = {};
+    for (let md = 0; md <= 22; md++) {
+      const partial = fullSeason.slice(0, md);
+      const { table } = computeLeagueTable(partial, opps, 85, 22);
+      table
+        .filter((r) => !r.isUs)
+        .forEach((r) => {
+          if (!ptsHistory[r.name]) ptsHistory[r.name] = [];
+          ptsHistory[r.name].push(r.pts);
+        });
+    }
+    // Every opponent's pts sequence must be non-decreasing (allows flat
+    // matchdays — they "drew" — but never a drop).
+    Object.entries(ptsHistory).forEach(([name, hist]) => {
+      for (let i = 1; i < hist.length; i++) {
+        if (hist[i] < hist[i - 1]) {
+          throw new Error(`${name} pts dropped from ${hist[i - 1]} → ${hist[i]} at MD${i}`);
+        }
+      }
+    });
+  });
+
+  it("regression: opponent pts grows by at most 3 per matchday (no rounding leaps)", () => {
+    // Even with a stable seed, the per-matchday gain must be realistic.
+    // A real team can only earn 0, 1, or 3 pts per match.
+    const opps = Array.from({ length: 11 }, (_, i) => mockClub(75 + i, i));
+    const fullSeason = simulateSeason(opps, 22, 85, 999);
+    for (let md = 1; md <= 22; md++) {
+      const prev = computeLeagueTable(fullSeason.slice(0, md - 1), opps, 85, 22).table;
+      const curr = computeLeagueTable(fullSeason.slice(0, md), opps, 85, 22).table;
+      curr
+        .filter((r) => !r.isUs)
+        .forEach((row) => {
+          const before = prev.find((r) => r.name === row.name)?.pts ?? 0;
+          const gain = row.pts - before;
+          if (gain < 0 || gain > 3) {
+            throw new Error(`${row.name} gained ${gain} pts at MD${md} (must be 0-3)`);
+          }
+        });
+    }
+  });
+
+  it("regression: stable seed — same league rebuilt at different MDs gives same projection", () => {
+    // Compute at MD3 and MD17. Each opponent's *final-projected* pts
+    // should be inferrable as pts/ratio = same constant ± rounding.
+    const opps = Array.from({ length: 11 }, (_, i) => mockClub(75 + i, i));
+    const matches = simulateSeason(opps, 22, 85, 999);
+    const t3 = computeLeagueTable(matches.slice(0, 3), opps, 85, 22).table;
+    const t17 = computeLeagueTable(matches.slice(0, 17), opps, 85, 22).table;
+    // For each opponent, projected fullPts must match within rounding.
+    t3
+      .filter((r) => !r.isUs)
+      .forEach((r3) => {
+        const r17 = t17.find((r) => r.name === r3.name)!;
+        const projected3 = r3.pts * (22 / 3);
+        const projected17 = r17.pts * (22 / 17);
+        // Should agree within ~7 pts (rounding noise across 14 matchdays)
+        expect(Math.abs(projected3 - projected17)).toBeLessThan(8);
+      });
+  });
+
   it("at full season, opponent.played === matchesPerTeam (unchanged behavior)", () => {
     const matches = simulateSeason(opponents, 20, 85, 100);
     const { table } = computeLeagueTable(matches, opponents, 85, 20);
