@@ -47,6 +47,32 @@ export function isPositionCompatible(slotPos: Position, playerPos: Position): bo
   return POSITION_FAMILIES.some((family) => family.includes(slotPos) && family.includes(playerPos));
 }
 
+/**
+ * Multi-position eligibility — does this player fit this slot?
+ *
+ * Mbappé (primary LW, alt [ST]) fits LW slots AND ST slots — both are
+ * roles he plays at the highest level. Sørloth (primary ST, no alts)
+ * fits ST slots only.
+ *
+ * Rule: slot accepts player iff isPositionCompatible(slot, primary) OR
+ *       isPositionCompatible(slot, any alt).
+ *
+ * Same family-aware check at the core: CDM ↔ CM ↔ CAM stays
+ * interchangeable, side-specific positions (LB/RB/LW/RW/CB/GK/ST) are
+ * each their own family. So an alt of "CM" still also covers CDM and CAM
+ * slots via the family, but an alt of "LW" doesn't bleed into RW.
+ */
+export function playerFitsSlot(
+  slotPos: Position,
+  player: { position: Position; altPositions?: Position[] | undefined },
+): boolean {
+  if (isPositionCompatible(slotPos, player.position)) return true;
+  if (player.altPositions) {
+    return player.altPositions.some((alt) => isPositionCompatible(slotPos, alt));
+  }
+  return false;
+}
+
 /** Result of attempting to place a founding player. */
 export interface PlaceFoundingResult {
   /** New slots array (or the same reference if nothing was placed). */
@@ -77,6 +103,9 @@ export interface PlaceFoundingResult {
 export function placeFoundingPlayer(
   slots: Slot[],
   foundingPlayer: Player | undefined,
+  // Kept for test injection. Default delegates to playerFitsSlot so a
+  // versatile founding pick (Mbappé LW+ST) lands in the FIRST compatible
+  // slot considering BOTH primary and alt positions.
   isCompatible: (slotPos: Position, playerPos: Position) => boolean = isPositionCompatible,
 ): PlaceFoundingResult {
   if (!foundingPlayer) {
@@ -87,9 +116,11 @@ export function placeFoundingPlayer(
       placedClubId: null,
     };
   }
-  const idx = slots.findIndex(
-    (s) => !s.player && isCompatible(s.position, foundingPlayer.position),
-  );
+  const idx = slots.findIndex((s) => {
+    if (s.player) return false;
+    if (isCompatible(s.position, foundingPlayer.position)) return true;
+    return (foundingPlayer.altPositions ?? []).some((alt) => isCompatible(s.position, alt));
+  });
   if (idx === -1) {
     return {
       slots,

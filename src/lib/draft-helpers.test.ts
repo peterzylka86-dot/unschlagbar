@@ -10,6 +10,7 @@ import {
   placeFoundingPlayer,
   isPositionMatch,
   isPositionCompatible,
+  playerFitsSlot,
   POSITION_FAMILIES,
 } from "./draft-helpers";
 import type { Player, Position, Slot } from "./game-types";
@@ -26,6 +27,23 @@ function mockPlayer(name: string, position: Position, club = "test"): Player {
     career_years: "2010-2020",
     nationality: "Test",
     club,
+  };
+}
+
+/** Versatile-player factory used by playerFitsSlot tests. */
+function mockVersatile(
+  position: Position,
+  altPositions?: Position[],
+  name = "Test Player",
+): Player {
+  return {
+    name,
+    position,
+    ...(altPositions ? { altPositions } : {}),
+    prime_rating: 90,
+    career_years: "2020-2026",
+    nationality: "Test",
+    club: "test",
   };
 }
 
@@ -84,6 +102,61 @@ describe("isPositionCompatible (family-aware)", () => {
       const familyCount = POSITION_FAMILIES.filter((f) => f.includes(p)).length;
       expect(familyCount).toBe(1);
     }
+  });
+});
+
+describe("playerFitsSlot (multi-position)", () => {
+  // User: "Mbappe for example can play LW and ST. Sorloth is only ST."
+  // playerFitsSlot considers a player's primary + altPositions when
+  // deciding slot eligibility.
+
+  it("specialist with no alts matches only their primary family (Sørloth)", () => {
+    const sorloth = mockVersatile("ST", undefined, "Sørloth");
+    expect(playerFitsSlot("ST", sorloth)).toBe(true);
+    expect(playerFitsSlot("LW", sorloth)).toBe(false);
+    expect(playerFitsSlot("RW", sorloth)).toBe(false);
+    expect(playerFitsSlot("CB", sorloth)).toBe(false);
+    expect(playerFitsSlot("GK", sorloth)).toBe(false);
+  });
+
+  it("versatile player fits primary OR any alt (Mbappé LW+[ST])", () => {
+    const mbappe = mockVersatile("LW", ["ST"], "Mbappé");
+    expect(playerFitsSlot("LW", mbappe)).toBe(true);
+    expect(playerFitsSlot("ST", mbappe)).toBe(true);
+    expect(playerFitsSlot("RW", mbappe)).toBe(false); // not in his alts
+    expect(playerFitsSlot("CB", mbappe)).toBe(false);
+  });
+
+  it("multiple alts work (Messi RW+[CAM,ST])", () => {
+    const messi = mockVersatile("RW", ["CAM", "ST"], "Messi");
+    expect(playerFitsSlot("RW", messi)).toBe(true);
+    expect(playerFitsSlot("CAM", messi)).toBe(true);
+    expect(playerFitsSlot("ST", messi)).toBe(true);
+    // CAM is in family with CM/CDM — so playerFitsSlot("CM", messi) → true
+    expect(playerFitsSlot("CM", messi)).toBe(true);
+    expect(playerFitsSlot("LW", messi)).toBe(false);
+    expect(playerFitsSlot("GK", messi)).toBe(false);
+  });
+
+  it("alt position respects the family rule (CAM alt accepts CM slot)", () => {
+    const bellingham = mockVersatile("CAM", ["CM"], "Bellingham");
+    expect(playerFitsSlot("CAM", bellingham)).toBe(true);
+    expect(playerFitsSlot("CM", bellingham)).toBe(true);
+    expect(playerFitsSlot("CDM", bellingham)).toBe(true);
+    expect(playerFitsSlot("ST", bellingham)).toBe(false);
+  });
+
+  it("empty altPositions array behaves identically to undefined", () => {
+    const a = mockVersatile("ST", undefined);
+    const b = mockVersatile("ST", []);
+    expect(playerFitsSlot("ST", a)).toBe(playerFitsSlot("ST", b));
+    expect(playerFitsSlot("LW", a)).toBe(playerFitsSlot("LW", b));
+  });
+
+  it("symmetric NOT required — slot-vs-player is directional", () => {
+    const player = mockVersatile("CM");
+    expect(playerFitsSlot("CAM", player)).toBe(true); // CM family member
+    expect(playerFitsSlot("ST", player)).toBe(false);
   });
 });
 

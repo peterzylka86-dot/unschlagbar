@@ -27,7 +27,7 @@ import { LEAGUES } from "@/lib/leagues";
 import type { LeagueId } from "@/lib/leagues";
 import { getCareerClubs } from "@/lib/data";
 import { FORMATIONS } from "@/lib/formations";
-import { isPositionCompatible } from "@/lib/draft-helpers";
+import { playerFitsSlot } from "@/lib/draft-helpers";
 import { shareOrCopy } from "@/lib/share";
 import type { Player, Position } from "@/lib/game-types";
 
@@ -79,7 +79,7 @@ function CareerRecap() {
     for (const p of sorted) {
       for (let i = 0; i < slots.length; i++) {
         if (assigned[i]) continue;
-        if (isPositionCompatible(slots[i].position, p.position)) {
+        if (playerFitsSlot(slots[i].position, p)) {
           assigned[i] = p;
           break;
         }

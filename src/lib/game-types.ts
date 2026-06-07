@@ -17,7 +17,14 @@ export interface Club {
 
 export interface Player {
   name: string;
+  /** Primary position — used by the recap tactic view and as the default
+   *  identifier ("ST · 95"). */
   position: Position;
+  /** Other positions this player can fill. Mbappé might be LW with [ST]
+   *  alts; Bellingham CAM with [CM]; Hakimi RB with [RWB,RM] etc.
+   *  Slot eligibility (drafting + swap windows) is primary ∪ altPositions.
+   *  Omit/empty for specialists (Sørloth = ST only, no alts). */
+  altPositions?: Position[];
   prime_rating: number;
   career_years: string;
   nationality: string;

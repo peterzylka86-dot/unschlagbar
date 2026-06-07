@@ -30,6 +30,7 @@ const VALID_POSITIONS = ["GK", "CB", "LB", "RB", "CDM", "CM", "CAM", "LW", "RW",
 const playerSchema = z.object({
   name: z.string().min(1),
   position: z.enum(VALID_POSITIONS),
+  altPositions: z.array(z.enum(VALID_POSITIONS)).optional(),
   prime_rating: z.number().int().min(40).max(99),
   career_years: z.string().min(1),
   nationality: z.string().min(1),

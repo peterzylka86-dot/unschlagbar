@@ -589,7 +589,10 @@
     "prime_rating": 96,
     "career_years": "1982-1994",
     "nationality": "Argentina",
-    "club": "argentina"
+    "club": "argentina",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Lionel Messi",
@@ -597,7 +600,11 @@
     "prime_rating": 96,
     "career_years": "2006-2022",
     "nationality": "Argentina",
-    "club": "argentina"
+    "club": "argentina",
+    "altPositions": [
+      "CAM",
+      "ST"
+    ]
   },
   {
     "name": "Gabriel Batistuta",
@@ -661,7 +668,10 @@
     "prime_rating": 88,
     "career_years": "2006-2018",
     "nationality": "Argentina",
-    "club": "argentina"
+    "club": "argentina",
+    "altPositions": [
+      "CB"
+    ]
   },
   {
     "name": "Ángel Di María",
@@ -673,7 +683,7 @@
   },
   {
     "name": "Lautaro Martínez",
-    "position": "RW",
+    "position": "ST",
     "prime_rating": 87,
     "career_years": "2022",
     "nationality": "Argentina",
@@ -705,7 +715,7 @@
   },
   {
     "name": "Nicolás Otamendi",
-    "position": "LB",
+    "position": "CB",
     "prime_rating": 85,
     "career_years": "2010-2022",
     "nationality": "Argentina",
@@ -721,7 +731,7 @@
   },
   {
     "name": "Nicolás Tagliafico",
-    "position": "RB",
+    "position": "LB",
     "prime_rating": 84,
     "career_years": "2018-2022",
     "nationality": "Argentina",
@@ -729,11 +739,14 @@
   },
   {
     "name": "Rodrigo De Paul",
-    "position": "CDM",
+    "position": "CM",
     "prime_rating": 85,
     "career_years": "2022",
     "nationality": "Argentina",
-    "club": "argentina"
+    "club": "argentina",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Éver Banega",
@@ -745,7 +758,7 @@
   },
   {
     "name": "Cristian Romero",
-    "position": "LB",
+    "position": "CB",
     "prime_rating": 85,
     "career_years": "2022",
     "nationality": "Argentina",
@@ -1121,11 +1134,14 @@
   },
   {
     "name": "Mario Kempes",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 92,
     "career_years": "1974-1982",
     "nationality": "Argentina",
-    "club": "argentina"
+    "club": "argentina",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Nahuel Guzmán",
@@ -1193,11 +1209,14 @@
   },
   {
     "name": "Enzo Fernández",
-    "position": "CAM",
+    "position": "CM",
     "prime_rating": 78,
     "career_years": "2022",
     "nationality": "Argentina",
-    "club": "argentina"
+    "club": "argentina",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Exequiel Palacios",
@@ -1229,7 +1248,10 @@
     "prime_rating": 78,
     "career_years": "2022",
     "nationality": "Argentina",
-    "club": "argentina"
+    "club": "argentina",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Martín Demichelis",
@@ -1473,11 +1495,14 @@
   },
   {
     "name": "Alexis Mac Allister",
-    "position": "CDM",
+    "position": "CM",
     "prime_rating": 76,
     "career_years": "2022",
     "nationality": "Argentina",
-    "club": "argentina"
+    "club": "argentina",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Clemente Rodríguez",
@@ -4817,19 +4842,25 @@
   },
   {
     "name": "Eden Hazard",
-    "position": "CM",
+    "position": "LW",
     "prime_rating": 91,
     "career_years": "2014-2022",
     "nationality": "Belgium",
-    "club": "belgium"
+    "club": "belgium",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Kevin De Bruyne",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 91,
     "career_years": "2014-2022",
     "nationality": "Belgium",
-    "club": "belgium"
+    "club": "belgium",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Thibaut Courtois",
@@ -4889,7 +4920,7 @@
   },
   {
     "name": "Amadou Onana",
-    "position": "CAM",
+    "position": "CDM",
     "prime_rating": 85,
     "career_years": "2022",
     "nationality": "Belgium",
@@ -4933,7 +4964,10 @@
     "prime_rating": 84,
     "career_years": "2018-2022",
     "nationality": "Belgium",
-    "club": "belgium"
+    "club": "belgium",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Thorgan Hazard",
@@ -5089,11 +5123,14 @@
   },
   {
     "name": "Leandro Trossard",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 79,
     "career_years": "2022",
     "nationality": "Belgium",
-    "club": "belgium"
+    "club": "belgium",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Lorenzo Staelens",
@@ -5261,7 +5298,10 @@
     "prime_rating": 77,
     "career_years": "2022",
     "nationality": "Belgium",
-    "club": "belgium"
+    "club": "belgium",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Leo Clijsters",
@@ -7053,15 +7093,21 @@
     "prime_rating": 96,
     "career_years": "1958-1970",
     "nationality": "Brazil",
-    "club": "brazil"
+    "club": "brazil",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Ronaldo",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 96,
     "career_years": "1994-2006",
     "nationality": "Brazil",
-    "club": "brazil"
+    "club": "brazil",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Garrincha",
@@ -7077,11 +7123,14 @@
     "prime_rating": 93,
     "career_years": "2014-2022",
     "nationality": "Brazil",
-    "club": "brazil"
+    "club": "brazil",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Romário",
-    "position": "RW",
+    "position": "ST",
     "prime_rating": 93,
     "career_years": "1990-1994",
     "nationality": "Brazil",
@@ -7093,7 +7142,10 @@
     "prime_rating": 93,
     "career_years": "2002-2006",
     "nationality": "Brazil",
-    "club": "brazil"
+    "club": "brazil",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Rivaldo",
@@ -7101,7 +7153,11 @@
     "prime_rating": 92,
     "career_years": "1998-2002",
     "nationality": "Brazil",
-    "club": "brazil"
+    "club": "brazil",
+    "altPositions": [
+      "LW",
+      "ST"
+    ]
   },
   {
     "name": "Alisson",
@@ -7153,7 +7209,7 @@
   },
   {
     "name": "Marquinhos",
-    "position": "LB",
+    "position": "CB",
     "prime_rating": 88,
     "career_years": "2018-2022",
     "nationality": "Brazil",
@@ -7161,7 +7217,7 @@
   },
   {
     "name": "Pepe",
-    "position": "RB",
+    "position": "CB",
     "prime_rating": 86,
     "career_years": "1958-1962",
     "nationality": "Brazil",
@@ -7457,11 +7513,14 @@
   },
   {
     "name": "Raphinha",
-    "position": "LW",
+    "position": "RW",
     "prime_rating": 83,
     "career_years": "2022",
     "nationality": "Brazil",
-    "club": "brazil"
+    "club": "brazil",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Renato Augusto",
@@ -7533,7 +7592,10 @@
     "prime_rating": 82,
     "career_years": "2022",
     "nationality": "Brazil",
-    "club": "brazil"
+    "club": "brazil",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Luiz Gustavo",
@@ -7569,11 +7631,14 @@
   },
   {
     "name": "Bruno Guimarães",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 81,
     "career_years": "2022",
     "nationality": "Brazil",
-    "club": "brazil"
+    "club": "brazil",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Carlos José Castilho",
@@ -7593,19 +7658,25 @@
   },
   {
     "name": "Danilo",
-    "position": "CAM",
+    "position": "RB",
     "prime_rating": 81,
     "career_years": "1950",
     "nationality": "Brazil",
-    "club": "brazil"
+    "club": "brazil",
+    "altPositions": [
+      "CB"
+    ]
   },
   {
     "name": "Danilo",
-    "position": "LB",
+    "position": "RB",
     "prime_rating": 81,
     "career_years": "2018-2022",
     "nationality": "Brazil",
-    "club": "brazil"
+    "club": "brazil",
+    "altPositions": [
+      "CB"
+    ]
   },
   {
     "name": "Fred",
@@ -7665,11 +7736,15 @@
   },
   {
     "name": "Rodrygo",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 81,
     "career_years": "2022",
     "nationality": "Brazil",
-    "club": "brazil"
+    "club": "brazil",
+    "altPositions": [
+      "ST",
+      "LW"
+    ]
   },
   {
     "name": "Éverton Ribeiro",
@@ -7997,7 +8072,10 @@
     "prime_rating": 91,
     "career_years": "2022",
     "nationality": "Brazil",
-    "club": "brazil"
+    "club": "brazil",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Zé Sérgio",
@@ -10529,11 +10607,14 @@
   },
   {
     "name": "Hristo Stoichkov",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 94,
     "career_years": "1994-1998",
     "nationality": "Bulgaria",
-    "club": "bulgaria"
+    "club": "bulgaria",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Ilian Iliev",
@@ -13537,11 +13618,14 @@
   },
   {
     "name": "James Rodríguez",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 87,
     "career_years": "2014-2018",
     "nationality": "Colombia",
-    "club": "colombia"
+    "club": "colombia",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Luis Antonio Moreno",
@@ -13617,7 +13701,7 @@
   },
   {
     "name": "Davinson Sánchez",
-    "position": "LB",
+    "position": "CB",
     "prime_rating": 83,
     "career_years": "2018",
     "nationality": "Colombia",
@@ -15205,7 +15289,10 @@
     "prime_rating": 92,
     "career_years": "2006-2022",
     "nationality": "Croatia",
-    "club": "croatia"
+    "club": "croatia",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Ivan Rakitić",
@@ -15229,7 +15316,10 @@
     "prime_rating": 87,
     "career_years": "2014-2022",
     "nationality": "Croatia",
-    "club": "croatia"
+    "club": "croatia",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Mario Mandžukić",
@@ -15249,11 +15339,14 @@
   },
   {
     "name": "Mateo Kovačić",
-    "position": "CDM",
+    "position": "CM",
     "prime_rating": 84,
     "career_years": "2014-2022",
     "nationality": "Croatia",
-    "club": "croatia"
+    "club": "croatia",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Andrej Kramarić",
@@ -15313,11 +15406,14 @@
   },
   {
     "name": "Joško Gvardiol",
-    "position": "RB",
+    "position": "CB",
     "prime_rating": 81,
     "career_years": "2022",
     "nationality": "Croatia",
-    "club": "croatia"
+    "club": "croatia",
+    "altPositions": [
+      "LB"
+    ]
   },
   {
     "name": "Mario Pašalić",
@@ -17153,11 +17249,14 @@
   },
   {
     "name": "Christian Eriksen",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 88,
     "career_years": "2010-2022",
     "nationality": "Denmark",
-    "club": "denmark"
+    "club": "denmark",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "John Eriksen",
@@ -17177,11 +17276,14 @@
   },
   {
     "name": "Pierre-Emile Højbjerg",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 83,
     "career_years": "2022",
     "nationality": "Denmark",
-    "club": "denmark"
+    "club": "denmark",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Simon Kjær",
@@ -18653,7 +18755,10 @@
     "prime_rating": 91,
     "career_years": "2018",
     "nationality": "Egypt",
-    "club": "egypt"
+    "club": "egypt",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Trézéguet",
@@ -19173,7 +19278,10 @@
     "prime_rating": 94,
     "career_years": "1958-1970",
     "nationality": "England",
-    "club": "england"
+    "club": "england",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Bobby Moore",
@@ -19209,7 +19317,7 @@
   },
   {
     "name": "Trent Alexander-Arnold",
-    "position": "LB",
+    "position": "RB",
     "prime_rating": 87,
     "career_years": "2018-2022",
     "nationality": "England",
@@ -19269,15 +19377,22 @@
     "prime_rating": 87,
     "career_years": "2022",
     "nationality": "England",
-    "club": "england"
+    "club": "england",
+    "altPositions": [
+      "RW",
+      "CM"
+    ]
   },
   {
     "name": "Declan Rice",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 84,
     "career_years": "2022",
     "nationality": "England",
-    "club": "england"
+    "club": "england",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Harry Maguire",
@@ -19301,7 +19416,10 @@
     "prime_rating": 90,
     "career_years": "2022",
     "nationality": "England",
-    "club": "england"
+    "club": "england",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Kieran Trippier",
@@ -19377,7 +19495,7 @@
   },
   {
     "name": "John Stones",
-    "position": "LB",
+    "position": "CB",
     "prime_rating": 83,
     "career_years": "2018-2022",
     "nationality": "England",
@@ -19421,7 +19539,10 @@
     "prime_rating": 88,
     "career_years": "2022",
     "nationality": "England",
-    "club": "england"
+    "club": "england",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Gary Bailey",
@@ -19481,11 +19602,14 @@
   },
   {
     "name": "Wayne Rooney",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 91,
     "career_years": "2006-2014",
     "nationality": "England",
-    "club": "england"
+    "club": "england",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Alex Oxlade-Chamberlain",
@@ -19565,7 +19689,11 @@
     "prime_rating": 92,
     "career_years": "2006-2014",
     "nationality": "England",
-    "club": "england"
+    "club": "england",
+    "altPositions": [
+      "CAM",
+      "CDM"
+    ]
   },
   {
     "name": "Theo Walcott",
@@ -19609,11 +19737,14 @@
   },
   {
     "name": "Paul Scholes",
-    "position": "CDM",
+    "position": "CM",
     "prime_rating": 80,
     "career_years": "1998-2002",
     "nationality": "England",
-    "club": "england"
+    "club": "england",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Phil Jagielka",
@@ -19757,7 +19888,10 @@
     "prime_rating": 91,
     "career_years": "2006-2014",
     "nationality": "England",
-    "club": "england"
+    "club": "england",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Fraser Forster",
@@ -19873,7 +20007,7 @@
   },
   {
     "name": "Gary Lineker",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 91,
     "career_years": "1986-1990",
     "nationality": "England",
@@ -20373,7 +20507,10 @@
     "prime_rating": 90,
     "career_years": "1990",
     "nationality": "England",
-    "club": "england"
+    "club": "england",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Paul Ince",
@@ -21165,15 +21302,21 @@
     "prime_rating": 95,
     "career_years": "1998-2006",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Kylian Mbappé",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 95,
     "career_years": "2018-2022",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Michel Platini",
@@ -21181,23 +21324,32 @@
     "prime_rating": 95,
     "career_years": "1978-1986",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Thierry Henry",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 94,
     "career_years": "1998-2010",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Karim Benzema",
-    "position": "RW",
+    "position": "ST",
     "prime_rating": 91,
     "career_years": "2014-2022",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Patrick Vieira",
@@ -21205,15 +21357,21 @@
     "prime_rating": 91,
     "career_years": "1998-2006",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Lilian Thuram",
-    "position": "RB",
+    "position": "CB",
     "prime_rating": 90,
     "career_years": "1998-2006",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "RB"
+    ]
   },
   {
     "name": "Marcel Desailly",
@@ -21221,7 +21379,10 @@
     "prime_rating": 91,
     "career_years": "1998-2002",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "N'Golo Kanté",
@@ -21229,7 +21390,10 @@
     "prime_rating": 89,
     "career_years": "2018",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Roger Courtois",
@@ -21245,7 +21409,10 @@
     "prime_rating": 91,
     "career_years": "2014-2022",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Claude Makélélé",
@@ -21393,11 +21560,14 @@
   },
   {
     "name": "Jules Koundé",
-    "position": "LB",
+    "position": "RB",
     "prime_rating": 84,
     "career_years": "2022",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "CB"
+    ]
   },
   {
     "name": "Lucas Digne",
@@ -21421,7 +21591,10 @@
     "prime_rating": 86,
     "career_years": "2018-2022",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Adrien Rabiot",
@@ -21509,7 +21682,10 @@
     "prime_rating": 82,
     "career_years": "2022",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Dayot Upamecano",
@@ -21673,7 +21849,7 @@
   },
   {
     "name": "William Saliba",
-    "position": "RB",
+    "position": "CB",
     "prime_rating": 80,
     "career_years": "2022",
     "nationality": "France",
@@ -21705,11 +21881,14 @@
   },
   {
     "name": "Eduardo Camavinga",
-    "position": "CAM",
+    "position": "CM",
     "prime_rating": 79,
     "career_years": "2022",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Eliaquim Mangala",
@@ -23221,7 +23400,10 @@
     "prime_rating": 93,
     "career_years": "1994-1998",
     "nationality": "Germany",
-    "club": "germany"
+    "club": "germany",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Oliver Kahn",
@@ -23265,11 +23447,14 @@
   },
   {
     "name": "Toni Kroos",
-    "position": "CAM",
+    "position": "CM",
     "prime_rating": 91,
     "career_years": "2010-2018",
     "nationality": "Germany",
-    "club": "germany"
+    "club": "germany",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Joshua Kimmich",
@@ -23277,7 +23462,11 @@
     "prime_rating": 89,
     "career_years": "2018-2022",
     "nationality": "Germany",
-    "club": "germany"
+    "club": "germany",
+    "altPositions": [
+      "CM",
+      "RB"
+    ]
   },
   {
     "name": "Jérôme Boateng",
@@ -23301,7 +23490,11 @@
     "prime_rating": 89,
     "career_years": "2010-2022",
     "nationality": "Germany",
-    "club": "germany"
+    "club": "germany",
+    "altPositions": [
+      "RW",
+      "ST"
+    ]
   },
   {
     "name": "Marco Reus",
@@ -23313,7 +23506,7 @@
   },
   {
     "name": "Antonio Rüdiger",
-    "position": "RB",
+    "position": "CB",
     "prime_rating": 87,
     "career_years": "2018-2022",
     "nationality": "Germany",
@@ -23329,11 +23522,14 @@
   },
   {
     "name": "Leroy Sané",
-    "position": "CAM",
+    "position": "RW",
     "prime_rating": 86,
     "career_years": "2022",
     "nationality": "Germany",
-    "club": "germany"
+    "club": "germany",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Timo Werner",
@@ -23345,11 +23541,14 @@
   },
   {
     "name": "Kai Havertz",
-    "position": "CAM",
+    "position": "ST",
     "prime_rating": 86,
     "career_years": "2022",
     "nationality": "Germany",
-    "club": "germany"
+    "club": "germany",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Niklas Süle",
@@ -23361,11 +23560,14 @@
   },
   {
     "name": "Serge Gnabry",
-    "position": "LW",
+    "position": "RW",
     "prime_rating": 85,
     "career_years": "2022",
     "nationality": "Germany",
-    "club": "germany"
+    "club": "germany",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "İlkay Gündoğan",
@@ -23497,11 +23699,14 @@
   },
   {
     "name": "Bastian Schweinsteiger",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 91,
     "career_years": "2006-2014",
     "nationality": "Germany",
-    "club": "germany"
+    "club": "germany",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Christoph Kramer",
@@ -23521,11 +23726,15 @@
   },
   {
     "name": "Jamal Musiala",
-    "position": "CDM",
+    "position": "CAM",
     "prime_rating": 81,
     "career_years": "2022",
     "nationality": "Germany",
-    "club": "germany"
+    "club": "germany",
+    "altPositions": [
+      "LW",
+      "CM"
+    ]
   },
   {
     "name": "Jonas Hector",
@@ -23633,7 +23842,7 @@
   },
   {
     "name": "Miroslav Klose",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 90,
     "career_years": "2002-2014",
     "nationality": "Germany",
@@ -23645,7 +23854,11 @@
     "prime_rating": 92,
     "career_years": "2006-2014",
     "nationality": "Germany",
-    "club": "germany"
+    "club": "germany",
+    "altPositions": [
+      "LB",
+      "CDM"
+    ]
   },
   {
     "name": "Thilo Kehrer",
@@ -24481,7 +24694,7 @@
   },
   {
     "name": "Thomas Partey",
-    "position": "CAM",
+    "position": "CDM",
     "prime_rating": 84,
     "career_years": "2022",
     "nationality": "Ghana",
@@ -24545,11 +24758,14 @@
   },
   {
     "name": "Mohammed Kudus",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 77,
     "career_years": "2022",
     "nationality": "Ghana",
-    "club": "ghana"
+    "club": "ghana",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Mohammed Salisu",
@@ -26969,7 +27185,7 @@
   },
   {
     "name": "Sándor Kocsis",
-    "position": "RW",
+    "position": "ST",
     "prime_rating": 75,
     "career_years": "1954",
     "nationality": "Hungary",
@@ -28069,19 +28285,25 @@
     "prime_rating": 94,
     "career_years": "1990-2002",
     "nationality": "Italy",
-    "club": "italy"
+    "club": "italy",
+    "altPositions": [
+      "CB"
+    ]
   },
   {
     "name": "Andrea Pirlo",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 92,
     "career_years": "2006-2014",
     "nationality": "Italy",
-    "club": "italy"
+    "club": "italy",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Fabio Cannavaro",
-    "position": "LB",
+    "position": "CB",
     "prime_rating": 92,
     "career_years": "1998-2010",
     "nationality": "Italy",
@@ -28129,11 +28351,14 @@
   },
   {
     "name": "Marco Verratti",
-    "position": "CAM",
+    "position": "CM",
     "prime_rating": 87,
     "career_years": "2014",
     "nationality": "Italy",
-    "club": "italy"
+    "club": "italy",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Andrea Barzagli",
@@ -28309,7 +28534,10 @@
     "prime_rating": 92,
     "career_years": "2002-2006",
     "nationality": "Italy",
-    "club": "italy"
+    "club": "italy",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Gabriel Paletta",
@@ -28397,7 +28625,10 @@
     "prime_rating": 95,
     "career_years": "1990-1998",
     "nationality": "Italy",
-    "club": "italy"
+    "club": "italy",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Tarcisio Burgnich",
@@ -30017,7 +30248,7 @@
   },
   {
     "name": "Filippo Inzaghi",
-    "position": "RW",
+    "position": "ST",
     "prime_rating": 88,
     "career_years": "1998-2006",
     "nationality": "Italy",
@@ -30077,7 +30308,10 @@
     "prime_rating": 91,
     "career_years": "1998-2006",
     "nationality": "Italy",
-    "club": "italy"
+    "club": "italy",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Luigi De Agostini",
@@ -30737,7 +30971,7 @@
   },
   {
     "name": "Daichi Kamada",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 80,
     "career_years": "2022",
     "nationality": "Japan",
@@ -30817,7 +31051,7 @@
   },
   {
     "name": "Wataru Endo",
-    "position": "LB",
+    "position": "CDM",
     "prime_rating": 78,
     "career_years": "2018-2022",
     "nationality": "Japan",
@@ -31097,11 +31331,14 @@
   },
   {
     "name": "Takefusa Kubo",
-    "position": "CAM",
+    "position": "RW",
     "prime_rating": 75,
     "career_years": "2022",
     "nationality": "Japan",
-    "club": "japan"
+    "club": "japan",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Yoichi Doi",
@@ -31145,7 +31382,7 @@
   },
   {
     "name": "Kaoru Mitoma",
-    "position": "CDM",
+    "position": "LW",
     "prime_rating": 74,
     "career_years": "2022",
     "nationality": "Japan",
@@ -31665,7 +31902,7 @@
   },
   {
     "name": "Raúl Jiménez",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 84,
     "career_years": "2014-2022",
     "nationality": "Mexico",
@@ -31717,7 +31954,10 @@
     "prime_rating": 83,
     "career_years": "2018-2022",
     "nationality": "Mexico",
-    "club": "mexico"
+    "club": "mexico",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Héctor Herrera",
@@ -31809,7 +32049,7 @@
   },
   {
     "name": "Edson Álvarez",
-    "position": "LB",
+    "position": "CDM",
     "prime_rating": 80,
     "career_years": "2018-2022",
     "nationality": "Mexico",
@@ -33725,7 +33965,10 @@
     "prime_rating": 84,
     "career_years": "2018-2022",
     "nationality": "Morocco",
-    "club": "morocco"
+    "club": "morocco",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Achraf Hakimi",
@@ -34669,7 +34912,10 @@
     "prime_rating": 96,
     "career_years": "1974",
     "nationality": "Netherlands",
-    "club": "netherlands"
+    "club": "netherlands",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Marco van Basten",
@@ -34685,7 +34931,10 @@
     "prime_rating": 93,
     "career_years": "1990",
     "nationality": "Netherlands",
-    "club": "netherlands"
+    "club": "netherlands",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Dennis Bergkamp",
@@ -34693,7 +34942,10 @@
     "prime_rating": 92,
     "career_years": "1994-1998",
     "nationality": "Netherlands",
-    "club": "netherlands"
+    "club": "netherlands",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Virgil van Dijk",
@@ -34709,7 +34961,10 @@
     "prime_rating": 91,
     "career_years": "2006-2014",
     "nationality": "Netherlands",
-    "club": "netherlands"
+    "club": "netherlands",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Frank Rijkaard",
@@ -34745,7 +35000,7 @@
   },
   {
     "name": "Robin van Persie",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 91,
     "career_years": "2006-2014",
     "nationality": "Netherlands",
@@ -34777,11 +35032,14 @@
   },
   {
     "name": "Frenkie de Jong",
-    "position": "CAM",
+    "position": "CM",
     "prime_rating": 88,
     "career_years": "2022",
     "nationality": "Netherlands",
-    "club": "netherlands"
+    "club": "netherlands",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Marc Overmars",
@@ -34809,11 +35067,14 @@
   },
   {
     "name": "Memphis Depay",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 85,
     "career_years": "2014-2022",
     "nationality": "Netherlands",
-    "club": "netherlands"
+    "club": "netherlands",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Stefan de Vrij",
@@ -34825,11 +35086,15 @@
   },
   {
     "name": "Cody Gakpo",
-    "position": "RW",
+    "position": "LW",
     "prime_rating": 83,
     "career_years": "2022",
     "nationality": "Netherlands",
-    "club": "netherlands"
+    "club": "netherlands",
+    "altPositions": [
+      "ST",
+      "CAM"
+    ]
   },
   {
     "name": "Daley Blind",
@@ -34865,7 +35130,7 @@
   },
   {
     "name": "Denzel Dumfries",
-    "position": "LB",
+    "position": "RB",
     "prime_rating": 82,
     "career_years": "2022",
     "nationality": "Netherlands",
@@ -34945,11 +35210,14 @@
   },
   {
     "name": "Nathan Aké",
-    "position": "LB",
+    "position": "CB",
     "prime_rating": 80,
     "career_years": "2022",
     "nationality": "Netherlands",
-    "club": "netherlands"
+    "club": "netherlands",
+    "altPositions": [
+      "LB"
+    ]
   },
   {
     "name": "Teun Koopmeiners",
@@ -36001,11 +36269,14 @@
   },
   {
     "name": "Xavi Simons",
-    "position": "CDM",
+    "position": "CAM",
     "prime_rating": 73,
     "career_years": "2022",
     "nationality": "Netherlands",
-    "club": "netherlands"
+    "club": "netherlands",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Mauk Weber",
@@ -40321,11 +40592,14 @@
   },
   {
     "name": "Zbigniew Boniek",
-    "position": "CAM",
+    "position": "ST",
     "prime_rating": 79,
     "career_years": "1978-1986",
     "nationality": "Poland",
-    "club": "poland"
+    "club": "poland",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Łukasz Teodorczyk",
@@ -41505,11 +41779,15 @@
   },
   {
     "name": "Cristiano Ronaldo",
-    "position": "RW",
+    "position": "ST",
     "prime_rating": 95,
     "career_years": "2006-2022",
     "nationality": "Portugal",
-    "club": "portugal"
+    "club": "portugal",
+    "altPositions": [
+      "LW",
+      "RW"
+    ]
   },
   {
     "name": "Eusébio",
@@ -41533,7 +41811,10 @@
     "prime_rating": 89,
     "career_years": "2006-2010",
     "nationality": "Portugal",
-    "club": "portugal"
+    "club": "portugal",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Bernardo Silva",
@@ -41541,7 +41822,11 @@
     "prime_rating": 88,
     "career_years": "2018-2022",
     "nationality": "Portugal",
-    "club": "portugal"
+    "club": "portugal",
+    "altPositions": [
+      "RW",
+      "CM"
+    ]
   },
   {
     "name": "Bruno Fernandes",
@@ -41549,19 +41834,25 @@
     "prime_rating": 88,
     "career_years": "2018-2022",
     "nationality": "Portugal",
-    "club": "portugal"
+    "club": "portugal",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "João Cancelo",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 88,
     "career_years": "2022",
     "nationality": "Portugal",
-    "club": "portugal"
+    "club": "portugal",
+    "altPositions": [
+      "LB"
+    ]
   },
   {
     "name": "Pepe",
-    "position": "RB",
+    "position": "CB",
     "prime_rating": 86,
     "career_years": "2010-2022",
     "nationality": "Portugal",
@@ -41569,7 +41860,7 @@
   },
   {
     "name": "Rúben Dias",
-    "position": "LB",
+    "position": "CB",
     "prime_rating": 87,
     "career_years": "2018-2022",
     "nationality": "Portugal",
@@ -41633,11 +41924,14 @@
   },
   {
     "name": "Rafael Leão",
-    "position": "RW",
+    "position": "LW",
     "prime_rating": 84,
     "career_years": "2022",
     "nationality": "Portugal",
-    "club": "portugal"
+    "club": "portugal",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Raphaël Guerreiro",
@@ -41897,7 +42191,7 @@
   },
   {
     "name": "Nuno Mendes",
-    "position": "RB",
+    "position": "LB",
     "prime_rating": 80,
     "career_years": "2022",
     "nationality": "Portugal",
@@ -42017,11 +42311,14 @@
   },
   {
     "name": "Vitinha",
-    "position": "CDM",
+    "position": "CM",
     "prime_rating": 79,
     "career_years": "2022",
     "nationality": "Portugal",
-    "club": "portugal"
+    "club": "portugal",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Álvaro",
@@ -46501,7 +46798,11 @@
     "prime_rating": 91,
     "career_years": "2018",
     "nationality": "Senegal",
-    "club": "senegal"
+    "club": "senegal",
+    "altPositions": [
+      "ST",
+      "RW"
+    ]
   },
   {
     "name": "Kalidou Koulibaly",
@@ -46521,7 +46822,7 @@
   },
   {
     "name": "Idrissa Gueye",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 84,
     "career_years": "2018-2022",
     "nationality": "Senegal",
@@ -46977,7 +47278,7 @@
   },
   {
     "name": "Nicolas Jackson",
-    "position": "RW",
+    "position": "ST",
     "prime_rating": 70,
     "career_years": "2022",
     "nationality": "Senegal",
@@ -48313,11 +48614,14 @@
   },
   {
     "name": "Heung-min Son",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 89,
     "career_years": "2014-2022",
     "nationality": "South Korea",
-    "club": "southkorea"
+    "club": "southkorea",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Myung-bo Hong",
@@ -50601,11 +50905,14 @@
   },
   {
     "name": "Alfredo Di Stéfano",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 94,
     "career_years": "1962",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Ferenc Puskás",
@@ -50621,7 +50928,10 @@
     "prime_rating": 93,
     "career_years": "2006-2018",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Iker Casillas",
@@ -50649,7 +50959,7 @@
   },
   {
     "name": "Luis Suárez",
-    "position": "RW",
+    "position": "ST",
     "prime_rating": 92,
     "career_years": "1962-1966",
     "nationality": "Spain",
@@ -50697,7 +51007,7 @@
   },
   {
     "name": "Aymeric Laporte",
-    "position": "LB",
+    "position": "CB",
     "prime_rating": 87,
     "career_years": "2022",
     "nationality": "Spain",
@@ -50721,19 +51031,25 @@
   },
   {
     "name": "Rodri",
-    "position": "RB",
+    "position": "CDM",
     "prime_rating": 87,
     "career_years": "1962",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Rodri",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 87,
     "career_years": "2022",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Cesc Fàbregas",
@@ -50797,7 +51113,10 @@
     "prime_rating": 93,
     "career_years": "2002-2014",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Francisco José Carrasco",
@@ -50853,7 +51172,10 @@
     "prime_rating": 85,
     "career_years": "2022",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Santi Cazorla",
@@ -50921,7 +51243,7 @@
   },
   {
     "name": "Álvaro Morata",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 85,
     "career_years": "2022",
     "nationality": "Spain",
@@ -51069,31 +51391,43 @@
     "prime_rating": 83,
     "career_years": "2006-2014",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Dani Olmo",
-    "position": "LW",
+    "position": "CAM",
     "prime_rating": 82,
     "career_years": "2022",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "David Villa",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 90,
     "career_years": "2006-2014",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Ferran Torres",
-    "position": "RW",
+    "position": "LW",
     "prime_rating": 82,
     "career_years": "2022",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Víctor Valdés",
@@ -51129,7 +51463,7 @@
   },
   {
     "name": "Fernando Torres",
-    "position": "RW",
+    "position": "ST",
     "prime_rating": 90,
     "career_years": "2006-2014",
     "nationality": "Spain",
@@ -51165,7 +51499,10 @@
     "prime_rating": 92,
     "career_years": "1998-2006",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Javier de Pedro",
@@ -51217,11 +51554,14 @@
   },
   {
     "name": "Gavi",
-    "position": "CAM",
+    "position": "CM",
     "prime_rating": 79,
     "career_years": "2022",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "José Santamaría",
@@ -57553,7 +57893,7 @@
   },
   {
     "name": "Edinson Cavani",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 89,
     "career_years": "2010-2022",
     "nationality": "Uruguay",
@@ -57609,7 +57949,7 @@
   },
   {
     "name": "José Giménez",
-    "position": "LB",
+    "position": "CB",
     "prime_rating": 85,
     "career_years": "2014-2022",
     "nationality": "Uruguay",
@@ -57625,11 +57965,15 @@
   },
   {
     "name": "Federico Valverde",
-    "position": "CAM",
+    "position": "CM",
     "prime_rating": 84,
     "career_years": "2022",
     "nationality": "Uruguay",
-    "club": "uruguay"
+    "club": "uruguay",
+    "altPositions": [
+      "RW",
+      "CDM"
+    ]
   },
   {
     "name": "José Gómez",
@@ -57641,7 +57985,7 @@
   },
   {
     "name": "Ronald Araújo",
-    "position": "RB",
+    "position": "CB",
     "prime_rating": 83,
     "career_years": "2022",
     "nationality": "Uruguay",
@@ -57657,7 +58001,7 @@
   },
   {
     "name": "Darwin Núñez",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 82,
     "career_years": "2022",
     "nationality": "Uruguay",
@@ -59405,7 +59749,10 @@
     "prime_rating": 90,
     "career_years": "1990-1998",
     "nationality": "United States",
-    "club": "usa"
+    "club": "usa",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Juergen Sommer",
@@ -59417,11 +59764,15 @@
   },
   {
     "name": "Christian Pulisic",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 82,
     "career_years": "2022",
     "nationality": "United States",
-    "club": "usa"
+    "club": "usa",
+    "altPositions": [
+      "RW",
+      "CAM"
+    ]
   },
   {
     "name": "John Brooks",
@@ -59441,11 +59792,14 @@
   },
   {
     "name": "Weston McKennie",
-    "position": "CAM",
+    "position": "CM",
     "prime_rating": 80,
     "career_years": "2022",
     "nationality": "United States",
-    "club": "usa"
+    "club": "usa",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Brian McBride",
@@ -59673,11 +60027,14 @@
   },
   {
     "name": "Sergiño Dest",
-    "position": "LB",
+    "position": "RB",
     "prime_rating": 77,
     "career_years": "2022",
     "nationality": "United States",
-    "club": "usa"
+    "club": "usa",
+    "altPositions": [
+      "LB"
+    ]
   },
   {
     "name": "Timothy Chandler",
@@ -60529,7 +60886,7 @@
   },
   {
     "name": "Tim Ream",
-    "position": "RB",
+    "position": "CB",
     "prime_rating": 71,
     "career_years": "2022",
     "nationality": "United States",
@@ -61181,7 +61538,10 @@
     "prime_rating": 96,
     "career_years": "1966-1974",
     "nationality": "West Germany",
-    "club": "westgermany"
+    "club": "westgermany",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Gerd Müller",
@@ -61197,11 +61557,14 @@
     "prime_rating": 93,
     "career_years": "1982-1990",
     "nationality": "West Germany",
-    "club": "westgermany"
+    "club": "westgermany",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Jürgen Klinsmann",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 92,
     "career_years": "1990",
     "nationality": "West Germany",

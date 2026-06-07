@@ -150,7 +150,13 @@ describe("World Cup squads — per-club position coverage (regression)", () => {
       const missing: string[] = [];
       for (const [clubId, squad] of byClub) {
         if (squad.length < 11) continue;
-        const positions = new Set(squad.map((p) => p.position));
+        // A player covers their primary AND any altPositions. Mbappé
+        // (LW + [ST]) counts for both LW and ST coverage.
+        const positions = new Set<string>();
+        for (const p of squad) {
+          positions.add(p.position);
+          for (const alt of p.altPositions ?? []) positions.add(alt);
+        }
         const gaps = REQUIRED.filter((r) => !positions.has(r));
         if (gaps.length > 0) {
           missing.push(`${clubId} missing [${gaps.join(", ")}]`);

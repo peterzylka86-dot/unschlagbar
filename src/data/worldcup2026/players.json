@@ -209,11 +209,15 @@
   },
   {
     "name": "Lionel Messi",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 97,
     "career_years": "2026",
     "nationality": "Argentina",
-    "club": "argentina"
+    "club": "argentina",
+    "altPositions": [
+      "CAM",
+      "ST"
+    ]
   },
   {
     "name": "Emiliano Martínez",
@@ -233,11 +237,14 @@
   },
   {
     "name": "Giuliano Simeone",
-    "position": "LW",
+    "position": "RW",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Argentina",
-    "club": "argentina"
+    "club": "argentina",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "José Manuel López",
@@ -273,19 +280,25 @@
   },
   {
     "name": "Alexis Mac Allister",
-    "position": "CAM",
+    "position": "CM",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Argentina",
-    "club": "argentina"
+    "club": "argentina",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Enzo Fernández",
-    "position": "CDM",
+    "position": "CM",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Argentina",
-    "club": "argentina"
+    "club": "argentina",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Julián Alvarez",
@@ -345,7 +358,7 @@
   },
   {
     "name": "Nicolás Otamendi",
-    "position": "LB",
+    "position": "CB",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Argentina",
@@ -353,15 +366,18 @@
   },
   {
     "name": "Rodrigo De Paul",
-    "position": "CDM",
+    "position": "CM",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Argentina",
-    "club": "argentina"
+    "club": "argentina",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Nicolás Tagliafico",
-    "position": "RB",
+    "position": "LB",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Argentina",
@@ -817,11 +833,14 @@
   },
   {
     "name": "Kevin De Bruyne",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 94,
     "career_years": "2026",
     "nationality": "Belgium",
-    "club": "belgium"
+    "club": "belgium",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Thibaut Courtois",
@@ -833,15 +852,18 @@
   },
   {
     "name": "Jérémy Doku",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Belgium",
-    "club": "belgium"
+    "club": "belgium",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Romelu Lukaku",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Belgium",
@@ -849,11 +871,14 @@
   },
   {
     "name": "Leandro Trossard",
-    "position": "RW",
+    "position": "LW",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Belgium",
-    "club": "belgium"
+    "club": "belgium",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Alexis Saelemaekers",
@@ -873,7 +898,7 @@
   },
   {
     "name": "Amadou Onana",
-    "position": "CAM",
+    "position": "CDM",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Belgium",
@@ -973,7 +998,10 @@
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Belgium",
-    "club": "belgium"
+    "club": "belgium",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Charles De Ketelaere",
@@ -1233,11 +1261,14 @@
   },
   {
     "name": "Neymar",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 94,
     "career_years": "2026",
     "nationality": "Brazil",
-    "club": "brazil"
+    "club": "brazil",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Vinícius Júnior",
@@ -1245,7 +1276,10 @@
     "prime_rating": 92,
     "career_years": "2026",
     "nationality": "Brazil",
-    "club": "brazil"
+    "club": "brazil",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Alisson",
@@ -1265,7 +1299,7 @@
   },
   {
     "name": "Casemiro",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Brazil",
@@ -1285,7 +1319,10 @@
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Brazil",
-    "club": "brazil"
+    "club": "brazil",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Danilo Luiz",
@@ -1373,7 +1410,10 @@
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Brazil",
-    "club": "brazil"
+    "club": "brazil",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Matheus Cunha",
@@ -1397,7 +1437,10 @@
     "prime_rating": 82,
     "career_years": "2026",
     "nationality": "Brazil",
-    "club": "brazil"
+    "club": "brazil",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Léo Pereira",
@@ -1861,15 +1904,21 @@
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Colombia",
-    "club": "colombia"
+    "club": "colombia",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "James Rodríguez",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Colombia",
-    "club": "colombia"
+    "club": "colombia",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Richard Ríos",
@@ -2061,7 +2110,10 @@
     "prime_rating": 92,
     "career_years": "2026",
     "nationality": "Croatia",
-    "club": "croatia"
+    "club": "croatia",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Joško Gvardiol",
@@ -2069,7 +2121,10 @@
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Croatia",
-    "club": "croatia"
+    "club": "croatia",
+    "altPositions": [
+      "LB"
+    ]
   },
   {
     "name": "Mateo Kovačić",
@@ -2077,7 +2132,10 @@
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Croatia",
-    "club": "croatia"
+    "club": "croatia",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Josip Stanišić",
@@ -2089,11 +2147,14 @@
   },
   {
     "name": "Ivan Perišić",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Croatia",
-    "club": "croatia"
+    "club": "croatia",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Petar Sučić",
@@ -3097,11 +3158,14 @@
   },
   {
     "name": "Mohamed Salah",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 93,
     "career_years": "2026",
     "nationality": "Egypt",
-    "club": "egypt"
+    "club": "egypt",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Hamza Abdelkarim",
@@ -3313,19 +3377,25 @@
   },
   {
     "name": "Jude Bellingham",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 91,
     "career_years": "2026",
     "nationality": "England",
-    "club": "england"
+    "club": "england",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Bukayo Saka",
-    "position": "LW",
+    "position": "RW",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "England",
-    "club": "england"
+    "club": "england",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "James Trafford",
@@ -3393,11 +3463,14 @@
   },
   {
     "name": "Declan Rice",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "England",
-    "club": "england"
+    "club": "england",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Djed Spence",
@@ -3513,27 +3586,36 @@
   },
   {
     "name": "Kylian Mbappé",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 95,
     "career_years": "2026",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "N'Golo Kanté",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 90,
     "career_years": "2026",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Aurélien Tchouaméni",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Bradley Barcola",
@@ -3541,7 +3623,10 @@
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Brice Samba",
@@ -3561,11 +3646,14 @@
   },
   {
     "name": "Jules Koundé",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "CB"
+    ]
   },
   {
     "name": "Maghnes Akliouche",
@@ -3625,7 +3713,7 @@
   },
   {
     "name": "Dayot Upamecano",
-    "position": "RB",
+    "position": "CB",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "France",
@@ -3641,7 +3729,7 @@
   },
   {
     "name": "William Saliba",
-    "position": "RB",
+    "position": "CB",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "France",
@@ -3657,11 +3745,14 @@
   },
   {
     "name": "Ousmane Dembélé",
-    "position": "LW",
+    "position": "RW",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "France",
-    "club": "france"
+    "club": "france",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Théo Hernandez",
@@ -3729,19 +3820,27 @@
   },
   {
     "name": "Florian Wirtz",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 90,
     "career_years": "2026",
     "nationality": "Germany",
-    "club": "germany"
+    "club": "germany",
+    "altPositions": [
+      "LW",
+      "CM"
+    ]
   },
   {
     "name": "Joshua Kimmich",
-    "position": "CB",
+    "position": "CDM",
     "prime_rating": 90,
     "career_years": "2026",
     "nationality": "Germany",
-    "club": "germany"
+    "club": "germany",
+    "altPositions": [
+      "CM",
+      "RB"
+    ]
   },
   {
     "name": "Antonio Rüdiger",
@@ -3765,11 +3864,15 @@
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Germany",
-    "club": "germany"
+    "club": "germany",
+    "altPositions": [
+      "LW",
+      "CM"
+    ]
   },
   {
     "name": "Jonathan Tah",
-    "position": "LB",
+    "position": "CB",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Germany",
@@ -3821,15 +3924,21 @@
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Germany",
-    "club": "germany"
+    "club": "germany",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Leroy Sané",
-    "position": "CDM",
+    "position": "RW",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Germany",
-    "club": "germany"
+    "club": "germany",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Nathaniel Brown",
@@ -3857,7 +3966,7 @@
   },
   {
     "name": "Nico Schlotterbeck",
-    "position": "LB",
+    "position": "CB",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Germany",
@@ -3945,7 +4054,7 @@
   },
   {
     "name": "Thomas Partey",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Ghana",
@@ -4977,7 +5086,7 @@
   },
   {
     "name": "Wataru Endo",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Japan",
@@ -4985,11 +5094,14 @@
   },
   {
     "name": "Takefusa Kubo",
-    "position": "CM",
+    "position": "RW",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Japan",
-    "club": "japan"
+    "club": "japan",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Daichi Kamada",
@@ -5401,7 +5513,7 @@
   },
   {
     "name": "Raúl Jiménez",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Mexico",
@@ -5417,7 +5529,7 @@
   },
   {
     "name": "Edson Álvarez",
-    "position": "CB",
+    "position": "CDM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Mexico",
@@ -5585,15 +5697,18 @@
   },
   {
     "name": "Brahim Díaz",
-    "position": "ST",
+    "position": "CAM",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Morocco",
-    "club": "morocco"
+    "club": "morocco",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Achraf Hakimi",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Morocco",
@@ -5753,7 +5868,7 @@
   },
   {
     "name": "Sofyan Amrabat",
-    "position": "CAM",
+    "position": "CDM",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Morocco",
@@ -5805,7 +5920,10 @@
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Netherlands",
-    "club": "netherlands"
+    "club": "netherlands",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Nathan Aké",
@@ -5813,7 +5931,10 @@
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Netherlands",
-    "club": "netherlands"
+    "club": "netherlands",
+    "altPositions": [
+      "LB"
+    ]
   },
   {
     "name": "Tijjani Reijnders",
@@ -5821,15 +5942,22 @@
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Netherlands",
-    "club": "netherlands"
+    "club": "netherlands",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Cody Gakpo",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Netherlands",
-    "club": "netherlands"
+    "club": "netherlands",
+    "altPositions": [
+      "ST",
+      "CAM"
+    ]
   },
   {
     "name": "Ryan Gravenberch",
@@ -5953,11 +6081,14 @@
   },
   {
     "name": "Memphis Depay",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Netherlands",
-    "club": "netherlands"
+    "club": "netherlands",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Teun Koopmeiners",
@@ -6217,15 +6348,18 @@
   },
   {
     "name": "Martin Ødegaard",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Norway",
-    "club": "norway"
+    "club": "norway",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Alexander Sørloth",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Norway",
@@ -6233,7 +6367,7 @@
   },
   {
     "name": "Julian Ryerson",
-    "position": "RW",
+    "position": "RB",
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "Norway",
@@ -6257,11 +6391,14 @@
   },
   {
     "name": "Antonio Nusa",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 83,
     "career_years": "2026",
     "nationality": "Norway",
-    "club": "norway"
+    "club": "norway",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "David Møller Wolfe",
@@ -6409,11 +6546,14 @@
   },
   {
     "name": "Jørgen Strand Larsen",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Norway",
-    "club": "norway"
+    "club": "norway",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "José Luis Rodríguez",
@@ -6837,15 +6977,23 @@
     "prime_rating": 97,
     "career_years": "2026",
     "nationality": "Portugal",
-    "club": "portugal"
+    "club": "portugal",
+    "altPositions": [
+      "LW",
+      "RW"
+    ]
   },
   {
     "name": "Bernardo Silva",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 90,
     "career_years": "2026",
     "nationality": "Portugal",
-    "club": "portugal"
+    "club": "portugal",
+    "altPositions": [
+      "RW",
+      "CM"
+    ]
   },
   {
     "name": "Rúben Dias",
@@ -6857,19 +7005,25 @@
   },
   {
     "name": "Bruno Fernandes",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Portugal",
-    "club": "portugal"
+    "club": "portugal",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "João Cancelo",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Portugal",
-    "club": "portugal"
+    "club": "portugal",
+    "altPositions": [
+      "LB"
+    ]
   },
   {
     "name": "Matheus Nunes",
@@ -6889,11 +7043,14 @@
   },
   {
     "name": "João Neves",
-    "position": "CDM",
+    "position": "CM",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Portugal",
-    "club": "portugal"
+    "club": "portugal",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Nuno Mendes",
@@ -6905,11 +7062,14 @@
   },
   {
     "name": "Rafael Leão",
-    "position": "RW",
+    "position": "LW",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Portugal",
-    "club": "portugal"
+    "club": "portugal",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Renato Veiga",
@@ -6921,11 +7081,14 @@
   },
   {
     "name": "Vitinha",
-    "position": "CAM",
+    "position": "CM",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Portugal",
-    "club": "portugal"
+    "club": "portugal",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Diogo Costa",
@@ -7665,11 +7828,15 @@
   },
   {
     "name": "Sadio Mané",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 91,
     "career_years": "2026",
     "nationality": "Senegal",
-    "club": "senegal"
+    "club": "senegal",
+    "altPositions": [
+      "ST",
+      "RW"
+    ]
   },
   {
     "name": "Kalidou Koulibaly",
@@ -7689,7 +7856,7 @@
   },
   {
     "name": "Nicolas Jackson",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Senegal",
@@ -7713,7 +7880,7 @@
   },
   {
     "name": "Idrissa Gueye",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Senegal",
@@ -8145,11 +8312,14 @@
   },
   {
     "name": "Hwang Hee-chan",
-    "position": "CAM",
+    "position": "ST",
     "prime_rating": 77,
     "career_years": "2026",
     "nationality": "South Korea",
-    "club": "southkorea"
+    "club": "southkorea",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Cho Gue-sung",
@@ -8289,11 +8459,14 @@
   },
   {
     "name": "Rodri",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 93,
     "career_years": "2026",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Fabián Ruiz",
@@ -8301,11 +8474,14 @@
     "prime_rating": 90,
     "career_years": "2026",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Lamine Yamal",
-    "position": "ST",
+    "position": "RW",
     "prime_rating": 90,
     "career_years": "2026",
     "nationality": "Spain",
@@ -8313,7 +8489,7 @@
   },
   {
     "name": "Marc Cucurella",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 90,
     "career_years": "2026",
     "nationality": "Spain",
@@ -8321,7 +8497,7 @@
   },
   {
     "name": "Marc Pubill",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 90,
     "career_years": "2026",
     "nationality": "Spain",
@@ -8329,11 +8505,14 @@
   },
   {
     "name": "Dani Olmo",
-    "position": "LW",
+    "position": "CAM",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Eric García",
@@ -8345,19 +8524,25 @@
   },
   {
     "name": "Ferran Torres",
-    "position": "RW",
+    "position": "LW",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Gavi",
-    "position": "CAM",
+    "position": "CM",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Joan Garcia",
@@ -8377,15 +8562,18 @@
   },
   {
     "name": "Pedri",
-    "position": "CDM",
+    "position": "CM",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Aymeric Laporte",
-    "position": "LB",
+    "position": "CB",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Spain",
@@ -8433,11 +8621,14 @@
   },
   {
     "name": "Mikel Oyarzabal",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Spain",
-    "club": "spain"
+    "club": "spain",
+    "altPositions": [
+      "ST"
+    ]
   },
   {
     "name": "Álex Baena",
@@ -9329,11 +9520,15 @@
   },
   {
     "name": "Christian Pulisic",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 86,
     "career_years": "2026",
     "nationality": "United States",
-    "club": "unitedstates"
+    "club": "unitedstates",
+    "altPositions": [
+      "RW",
+      "CAM"
+    ]
   },
   {
     "name": "Weston McKennie",
@@ -9341,7 +9536,10 @@
     "prime_rating": 85,
     "career_years": "2026",
     "nationality": "United States",
-    "club": "unitedstates"
+    "club": "unitedstates",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Malik Tillman",
@@ -9369,7 +9567,7 @@
   },
   {
     "name": "Folarin Balogun",
-    "position": "RW",
+    "position": "ST",
     "prime_rating": 81,
     "career_years": "2026",
     "nationality": "United States",
@@ -9385,11 +9583,14 @@
   },
   {
     "name": "Sergiño Dest",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "United States",
-    "club": "unitedstates"
+    "club": "unitedstates",
+    "altPositions": [
+      "LB"
+    ]
   },
   {
     "name": "Auston Trusty",
@@ -9537,7 +9738,7 @@
   },
   {
     "name": "Emiliano Martínez",
-    "position": "CM",
+    "position": "GK",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Uruguay",
@@ -9549,7 +9750,11 @@
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Uruguay",
-    "club": "uruguay"
+    "club": "uruguay",
+    "altPositions": [
+      "RW",
+      "CDM"
+    ]
   },
   {
     "name": "Ronald Araújo",

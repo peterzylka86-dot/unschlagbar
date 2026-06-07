@@ -20,7 +20,7 @@ import { useMemo, useState } from "react";
 import { useCareer } from "@/lib/career-store";
 import { getCareerClubs, getCareerPlayers } from "@/lib/data";
 import { pickSpinClub, simplifyPosition } from "@/lib/career-core";
-import { isPositionCompatible } from "@/lib/draft-helpers";
+import { playerFitsSlot } from "@/lib/draft-helpers";
 import type { Club, Player } from "@/lib/game-types";
 
 export const Route = createFileRoute("/career/postseason")({
@@ -85,7 +85,7 @@ function PostSeason() {
           (p) =>
             p.club === c.id &&
             !draftedKeys.has(`${p.club}:${p.name}`) &&
-            isPositionCompatible(target.position, p.position),
+            playerFitsSlot(target.position, p),
         ),
       );
       const picked = pickSpinClub(eligible, recentClubIds);
@@ -402,7 +402,7 @@ function PickInCard({
       (p) =>
         p.club === spunClub.id &&
         !drafted.has(`${p.club}:${p.name}`) &&
-        isPositionCompatible(target.position, p.position),
+        playerFitsSlot(target.position, p),
     )
     .sort((a, b) => b.prime_rating - a.prime_rating)
     .slice(0, 12);

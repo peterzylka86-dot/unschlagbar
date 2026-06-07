@@ -24,7 +24,7 @@ import { LEAGUES } from "@/lib/leagues";
 import type { LeagueId } from "@/lib/leagues";
 import { getCareerClubs, getCareerPlayers } from "@/lib/data";
 import { FORMATIONS } from "@/lib/formations";
-import { isPositionCompatible } from "@/lib/draft-helpers";
+import { isPositionCompatible, playerFitsSlot } from "@/lib/draft-helpers";
 import {
   buildAIManagers,
   snakePickerId,
@@ -344,7 +344,7 @@ function CareerDraft() {
       for (const p of userMgr.squad) {
         for (let i = 0; i < slotPositions.length; i++) {
           if (filled[i]) continue;
-          if (isPositionCompatible(slotPositions[i], p.position)) {
+          if (playerFitsSlot(slotPositions[i], p)) {
             filled[i] = true;
             break;
           }
@@ -356,7 +356,7 @@ function CareerDraft() {
           (p) =>
             p.club === c.id &&
             !prev.usedPlayerKeys.has(playerKey(p)) &&
-            openSlotPositions.some((sp) => isPositionCompatible(sp, p.position)),
+            openSlotPositions.some((sp) => playerFitsSlot(sp, p)),
         ),
       );
       if (eligibleClubs.length === 0) return prev;
@@ -395,15 +395,17 @@ function CareerDraft() {
     for (const p of userManager.squad) {
       for (let i = 0; i < slotPositions.length; i++) {
         if (filled[i]) continue;
-        if (isPositionCompatible(slotPositions[i], p.position)) {
+        if (playerFitsSlot(slotPositions[i], p)) {
           filled[i] = true;
           break;
         }
       }
     }
     const openSlotPositions = slotPositions.filter((_, i) => !filled[i]);
-    const matchesOpenSlot = (playerPos: Position): boolean =>
-      openSlotPositions.some((slotPos) => isPositionCompatible(slotPos, playerPos));
+    // matchesOpenSlot considers the candidate player's primary + alt
+    // positions. Mbappé (LW+[ST]) shows up for both LW and ST slots.
+    const matchesOpenSlot = (p: Player): boolean =>
+      openSlotPositions.some((slotPos) => playerFitsSlot(slotPos, p));
 
     const isFirstPick = userManager.squad.length === 0;
     if (isFirstPick) {
@@ -411,7 +413,7 @@ function CareerDraft() {
       const pool = allPlayers
         .filter((p) => p.club === career.foundingClubId)
         .filter((p) => !draft.usedPlayerKeys.has(playerKey(p)))
-        .filter((p) => matchesOpenSlot(p.position))
+        .filter((p) => matchesOpenSlot(p))
         .sort((a, b) => b.prime_rating - a.prime_rating)
         .slice(0, 16);
       return { mode: "founding" as const, pool, club: userClub };
@@ -421,7 +423,7 @@ function CareerDraft() {
     const pool = allPlayers
       .filter((p) => p.club === draft.currentClubId)
       .filter((p) => !draft.usedPlayerKeys.has(playerKey(p)))
-      .filter((p) => matchesOpenSlot(p.position))
+      .filter((p) => matchesOpenSlot(p))
       .sort((a, b) => b.prime_rating - a.prime_rating)
       .slice(0, 12);
     return { mode: "picking" as const, pool, club };

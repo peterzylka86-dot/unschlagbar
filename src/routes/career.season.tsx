@@ -21,7 +21,7 @@ import { LEAGUES } from "@/lib/leagues";
 import type { LeagueId } from "@/lib/leagues";
 import { getCareerClubs, getCareerPlayers } from "@/lib/data";
 import { simulateSeason, squadRating, computeLeagueTable } from "@/lib/sim";
-import { isPositionCompatible } from "@/lib/draft-helpers";
+import { isPositionCompatible, playerFitsSlot } from "@/lib/draft-helpers";
 import {
   computeFormDelta,
   clampForm,
@@ -731,7 +731,7 @@ function MidSeasonSwapCard() {
       .map((p) => p.position);
     const pool = allPlayers
       .filter((p) => p.club === spunClub.id && !drafted.has(`${p.club}:${p.name}`))
-      .filter((p) => swappableSquadPositions.some((sp) => isPositionCompatible(sp, p.position)))
+      .filter((p) => swappableSquadPositions.some((sp) => playerFitsSlot(sp, p)))
       .sort((a, b) => b.prime_rating - a.prime_rating)
       .slice(0, 12); // top-12 by rating to keep the grid scannable
     return (
@@ -790,10 +790,12 @@ function MidSeasonSwapCard() {
           {career.squad.map((p, i) => {
             const key = `${p.club}:${p.name}`;
             const isFranchise = key === career.franchisePlayerKey;
-            // POSITION-RESTRICTED SWAP: only allow swap with compatible
-            // positions. A CM can replace a CM/CDM/CAM; an LW can't take
-            // a GK's slot. Uses the existing isPositionCompatible helper.
-            const samePosition = isPositionCompatible(p.position, incoming.position);
+            // POSITION-RESTRICTED SWAP: incoming player must fit the slot
+            // the squad member currently fills. playerFitsSlot considers
+            // BOTH the incoming's primary position AND their altPositions
+            // — so Mbappé (LW + [ST]) can swap into either an LW or ST
+            // slot, but Sørloth (ST, no alts) can only enter an ST slot.
+            const samePosition = playerFitsSlot(p.position, incoming);
             const disabled = isFranchise || !samePosition;
             return (
               <button

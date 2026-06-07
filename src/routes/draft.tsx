@@ -6,7 +6,7 @@ import { FORMATIONS } from "@/lib/formations";
 import { ClubBadge } from "@/components/ClubBadge";
 import { getClubs, getPlayers } from "@/lib/data";
 import { LEAGUES } from "@/lib/leagues";
-import { placeFoundingPlayer, isPositionCompatible } from "@/lib/draft-helpers";
+import { placeFoundingPlayer, isPositionCompatible, playerFitsSlot } from "@/lib/draft-helpers";
 import type { Club, Player, Position, Slot, EraTier, DraftMode } from "@/lib/game-types";
 
 const TIERS: { id: EraTier; label: string; sub: string }[] = [
@@ -131,10 +131,10 @@ function DraftScreen() {
     );
     if (forTier) pool = pool.filter((p) => playerMatchesTier(p, forTier));
     if (config.draftMode === "position" && pickingForSlotNow) {
-      pool = pool.filter((p) => isCompatible(pickingForSlotNow.position, p.position));
+      pool = pool.filter((p) => playerFitsSlot(pickingForSlotNow.position, p));
     } else {
       pool = pool.filter((p) =>
-        currentSlots.some((s) => !s.player && isCompatible(s.position, p.position)),
+        currentSlots.some((s) => !s.player && playerFitsSlot(s.position, p)),
       );
     }
     return pool;
@@ -230,7 +230,7 @@ function DraftScreen() {
     const taken = new Set<string>();
     const used: string[] = [];
     for (const p of players) {
-      const slot = open.find((s) => !taken.has(s.id) && isCompatible(s.position, p.position));
+      const slot = open.find((s) => !taken.has(s.id) && playerFitsSlot(s.position, p));
       if (!slot) continue;
       taken.add(slot.id);
       assignPlayer(slot.id, p);
@@ -280,7 +280,7 @@ function DraftScreen() {
 
   const compatibleSlotsForAssign = useMemo(() => {
     if (!assigningPlayer) return [];
-    return slots.filter((s) => !s.player && isCompatible(s.position, assigningPlayer.position));
+    return slots.filter((s) => !s.player && playerFitsSlot(s.position, assigningPlayer));
   }, [assigningPlayer, slots]);
 
   // auto-skip if no compatible slots
