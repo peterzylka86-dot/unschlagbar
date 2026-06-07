@@ -1,3434 +1,3506 @@
 [
   {
-    "name": "Marwin Hitz",
-    "position": "GK",
-    "prime_rating": 80,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Mirko Salvi",
-    "position": "GK",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Adrian Barišić",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "2024-2026",
-    "nationality": "Croatia",
-    "club": "basel"
-  },
-  {
-    "name": "Finn van Breemen",
-    "position": "CB",
-    "prime_rating": 77,
-    "career_years": "2024-2026",
-    "nationality": "Netherlands",
-    "club": "basel"
-  },
-  {
-    "name": "Jonas Adjetey",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "2023-2026",
-    "nationality": "Ghana",
-    "club": "basel"
-  },
-  {
-    "name": "Dominik Schmid",
-    "position": "LB",
-    "prime_rating": 77,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Anton Kade",
-    "position": "RB",
-    "prime_rating": 76,
-    "career_years": "2023-2026",
-    "nationality": "Germany",
-    "club": "basel"
-  },
-  {
-    "name": "Taulant Xhaka",
-    "position": "CDM",
-    "prime_rating": 78,
-    "career_years": "2014-2026",
-    "nationality": "Albania",
-    "club": "basel"
-  },
-  {
-    "name": "Metinho",
-    "position": "CM",
-    "prime_rating": 77,
-    "career_years": "2024-2026",
-    "nationality": "Brazil",
-    "club": "basel"
-  },
-  {
-    "name": "Xherdan Shaqiri",
-    "position": "CAM",
-    "prime_rating": 84,
-    "career_years": "2024-2026",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Albian Ajeti",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Thierno Barry",
-    "position": "ST",
-    "prime_rating": 79,
-    "career_years": "2023-2024",
-    "nationality": "France",
-    "club": "basel"
-  },
-  {
-    "name": "Renato Veiga",
-    "position": "CDM",
-    "prime_rating": 78,
-    "career_years": "2023-2024",
-    "nationality": "Portugal",
-    "club": "basel"
-  },
-  {
-    "name": "Bénie Traoré",
-    "position": "RW",
-    "prime_rating": 77,
-    "career_years": "2024-2026",
-    "nationality": "Ivory Coast",
-    "club": "basel"
-  },
-  {
-    "name": "Philip Otele",
-    "position": "LW",
-    "prime_rating": 76,
-    "career_years": "2024-2026",
-    "nationality": "Nigeria",
-    "club": "basel"
-  },
-  {
-    "name": "Franco Costanzo",
-    "position": "GK",
-    "prime_rating": 83,
-    "career_years": "2007-2010",
-    "nationality": "Argentina",
-    "club": "basel"
-  },
-  {
-    "name": "Pascal Zuberbühler",
-    "position": "GK",
-    "prime_rating": 84,
-    "career_years": "1992-2006",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Marco Streller",
-    "position": "ST",
-    "prime_rating": 83,
-    "career_years": "2007-2014",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Alex Frei",
-    "position": "ST",
-    "prime_rating": 87,
-    "career_years": "2009-2013",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Murat Yakin",
-    "position": "CB",
-    "prime_rating": 82,
-    "career_years": "1992-2007",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Hakan Yakin",
-    "position": "CAM",
-    "prime_rating": 83,
-    "career_years": "2002-2006",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Scott Chipperfield",
-    "position": "LW",
-    "prime_rating": 82,
-    "career_years": "2001-2010",
-    "nationality": "Australia",
-    "club": "basel"
-  },
-  {
-    "name": "Mladen Petrić",
-    "position": "ST",
-    "prime_rating": 84,
-    "career_years": "2003-2007",
-    "nationality": "Croatia",
-    "club": "basel"
-  },
-  {
-    "name": "Christian Gimenez",
-    "position": "RW",
-    "prime_rating": 81,
-    "career_years": "2003-2006",
-    "nationality": "Argentina",
-    "club": "basel"
-  },
-  {
-    "name": "Eduardo",
+    "name": "Adrian Knup",
     "position": "ST",
     "prime_rating": 82,
-    "career_years": "2007-2009",
-    "nationality": "Brazil",
-    "club": "basel"
-  },
-  {
-    "name": "Beg Ferati",
-    "position": "RB",
-    "prime_rating": 78,
-    "career_years": "2003-2008",
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "aarau",
+    "career_years": "1989-1991"
   },
   {
-    "name": "Boris Smiljanić",
+    "name": "Hany Ramzy",
     "position": "CB",
     "prime_rating": 80,
-    "career_years": "2000-2008",
-    "nationality": "Switzerland",
-    "club": "basel"
+    "nationality": "Egypt",
+    "club": "aarau",
+    "career_years": "1990-1992"
   },
   {
-    "name": "Stéphane Henchoz",
-    "position": "CB",
-    "prime_rating": 82,
-    "career_years": "2005-2007",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Daniel Majstorovic",
-    "position": "CB",
-    "prime_rating": 82,
-    "career_years": "2006-2009",
-    "nationality": "Sweden",
-    "club": "basel"
-  },
-  {
-    "name": "Behrang Safari",
-    "position": "LB",
-    "prime_rating": 80,
-    "career_years": "2008-2014",
-    "nationality": "Sweden",
-    "club": "basel"
-  },
-  {
-    "name": "Granit Xhaka",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "2010-2012",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Kim Källström",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "2003-2006",
-    "nationality": "Sweden",
-    "club": "basel"
-  },
-  {
-    "name": "Stéphane Chapuisat",
+    "name": "Markus Pinösch",
     "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1998-1999",
+    "prime_rating": 78,
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "aarau",
+    "career_years": "1985-1990"
   },
   {
-    "name": "Massimo Ceccaroni",
-    "position": "CB",
-    "prime_rating": 82,
-    "career_years": "1986-2000",
+    "name": "Stefan Wolf",
+    "position": "GK",
+    "prime_rating": 78,
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "aarau",
+    "career_years": "1992-1999"
   },
   {
-    "name": "Marco Walker",
+    "name": "Sven Lüscher",
     "position": "CB",
     "prime_rating": 78,
-    "career_years": "1996-2002",
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "aarau",
+    "career_years": "1985-1992"
   },
   {
-    "name": "Ratinho",
-    "position": "CAM",
-    "prime_rating": 81,
-    "career_years": "1997-2001",
-    "nationality": "Brazil",
-    "club": "basel"
-  },
-  {
-    "name": "Sébastien Barberis",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1994-1999",
+    "name": "Alexander Frei",
+    "position": "ST",
+    "prime_rating": 89,
     "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Bruno Berner",
-    "position": "LB",
-    "prime_rating": 78,
-    "career_years": "1996-2002",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Patrick Mueller",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "1996-1999",
-    "nationality": "Switzerland",
-    "club": "basel"
+    "club": "basel",
+    "career_years": "1999-2002, 2009-2013"
   },
   {
     "name": "Karl Odermatt",
     "position": "CAM",
-    "prime_rating": 87,
-    "career_years": "1962-1979",
+    "prime_rating": 88,
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "basel",
+    "career_years": "1962-1976"
   },
   {
-    "name": "Walter Mundschin",
-    "position": "CB",
-    "prime_rating": 83,
-    "career_years": "1965-1976",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Otto Demarmels",
-    "position": "CM",
-    "prime_rating": 80,
-    "career_years": "1969-1981",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Daniel Jeandupeux",
-    "position": "ST",
-    "prime_rating": 81,
-    "career_years": "1977-1979",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Bernard Schaer",
-    "position": "RB",
-    "prime_rating": 78,
-    "career_years": "1974-1982",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Beat Sutter",
+    "name": "Mohamed Salah",
     "position": "RW",
-    "prime_rating": 83,
-    "career_years": "1978-1986",
-    "nationality": "Switzerland",
-    "club": "basel"
+    "prime_rating": 88,
+    "nationality": "Egypt",
+    "club": "basel",
+    "career_years": "2012-2014"
   },
   {
-    "name": "René Hasler",
-    "position": "CM",
-    "prime_rating": 81,
-    "career_years": "1972-1982",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Helmut Benthaus",
-    "position": "CDM",
-    "prime_rating": 83,
-    "career_years": "1965-1976",
-    "nationality": "Germany",
-    "club": "basel"
-  },
-  {
-    "name": "Erni Maissen",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "1980-1989",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Heinz Hermann",
-    "position": "CM",
-    "prime_rating": 83,
-    "career_years": "1986-1988",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Kurt Müller",
-    "position": "ST",
-    "prime_rating": 81,
-    "career_years": "1970-1976",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Marco Schällibaum",
-    "position": "LB",
-    "prime_rating": 80,
-    "career_years": "1986-1990",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Anthony Racioppi",
-    "position": "GK",
-    "prime_rating": 78,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Marvin Keller",
-    "position": "GK",
-    "prime_rating": 78,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Loris Benito",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Sandro Lauper",
-    "position": "CDM",
-    "prime_rating": 79,
-    "career_years": "2020-2026",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Mohamed Camara",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "2023-2026",
-    "nationality": "Senegal",
-    "club": "youngboys"
-  },
-  {
-    "name": "Saidy Janko",
-    "position": "RB",
-    "prime_rating": 78,
-    "career_years": "2023-2026",
-    "nationality": "Gambia",
-    "club": "youngboys"
-  },
-  {
-    "name": "Aurèle Amenda",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "2022-2025",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Lewin Blum",
-    "position": "RB",
-    "prime_rating": 77,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Filip Ugrinic",
-    "position": "CM",
-    "prime_rating": 80,
-    "career_years": "2022-2026",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Cheikh Niasse",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "2022-2026",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Joel Monteiro",
+    "name": "Xherdan Shaqiri",
     "position": "RW",
-    "prime_rating": 78,
-    "career_years": "2021-2026",
+    "prime_rating": 88,
     "nationality": "Switzerland",
-    "club": "youngboys"
+    "club": "basel",
+    "career_years": "2009-2012"
   },
   {
-    "name": "Meschack Elia",
-    "position": "LW",
-    "prime_rating": 80,
-    "career_years": "2020-2024",
-    "nationality": "DR Congo",
-    "club": "youngboys"
-  },
-  {
-    "name": "Jean-Pierre Nsame",
-    "position": "ST",
-    "prime_rating": 81,
-    "career_years": "2017-2026",
-    "nationality": "Cameroon",
-    "club": "youngboys"
-  },
-  {
-    "name": "Cedric Itten",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "2022-2026",
+    "name": "Granit Xhaka",
+    "position": "CM",
+    "prime_rating": 86,
     "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Joël Mvuka",
-    "position": "RW",
-    "prime_rating": 77,
-    "career_years": "2024-2026",
-    "nationality": "Norway",
-    "club": "youngboys"
-  },
-  {
-    "name": "Silvere Ganvoula",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "2024-2026",
-    "nationality": "DR Congo",
-    "club": "youngboys"
-  },
-  {
-    "name": "Marco Wölfli",
-    "position": "GK",
-    "prime_rating": 81,
-    "career_years": "2001-2018",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Hakan Yakin YB",
-    "position": "CAM",
-    "prime_rating": 83,
-    "career_years": "2008-2012",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Seydou Doumbia",
-    "position": "ST",
-    "prime_rating": 84,
-    "career_years": "2008-2010",
-    "nationality": "Ivory Coast",
-    "club": "youngboys"
-  },
-  {
-    "name": "Henri Bienvenu",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "2010-2015",
-    "nationality": "Cameroon",
-    "club": "youngboys"
-  },
-  {
-    "name": "Christoph Spycher",
-    "position": "LB",
-    "prime_rating": 81,
-    "career_years": "2010-2014",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Steve Beleck",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "2009-2012",
-    "nationality": "Cameroon",
-    "club": "youngboys"
-  },
-  {
-    "name": "Alex Frei YB",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "2002-2003",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Thomas Häberli",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "2002-2005",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Adrian Eugster",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "2003-2008",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Steve von Bergen",
-    "position": "CB",
-    "prime_rating": 83,
-    "career_years": "2013-2018",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Marco Pascolo",
-    "position": "GK",
-    "prime_rating": 82,
-    "career_years": "1993-1997",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Stefan Wolf",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1990-1997",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Markus Hodel",
-    "position": "CDM",
-    "prime_rating": 78,
-    "career_years": "1991-1996",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Marco Schällibaum",
-    "position": "LB",
-    "prime_rating": 80,
-    "career_years": "1990-1992",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Adrian Kunz",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1995-1998",
-    "nationality": "Switzerland",
-    "club": "youngboys"
+    "club": "basel",
+    "career_years": "2010-2012"
   },
   {
     "name": "Marco Streller",
     "position": "ST",
-    "prime_rating": 78,
-    "career_years": "2000-2003",
+    "prime_rating": 86,
     "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Stéphane Chapuisat",
-    "position": "ST",
-    "prime_rating": 84,
-    "career_years": "1990-1991",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Andy Egli",
-    "position": "CB",
-    "prime_rating": 82,
-    "career_years": "1990-1994",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Erich Burgener",
-    "position": "GK",
-    "prime_rating": 83,
-    "career_years": "1979-1986",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Karl Odermatt YB",
-    "position": "CAM",
-    "prime_rating": 82,
-    "career_years": "1980-1982",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Robert Lüthi",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1978-1984",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Heinz Bigler",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1976-1984",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Beat Brönnimann",
-    "position": "LB",
-    "prime_rating": 78,
-    "career_years": "1980-1989",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Marco Schällibaum YB",
-    "position": "LB",
-    "prime_rating": 80,
-    "career_years": "1986-1990",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Robert Prytz",
-    "position": "CM",
-    "prime_rating": 83,
-    "career_years": "1985-1988",
-    "nationality": "Sweden",
-    "club": "youngboys"
-  },
-  {
-    "name": "Lars Lunde",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1987-1990",
-    "nationality": "Denmark",
-    "club": "youngboys"
-  },
-  {
-    "name": "Heinz Hermann",
-    "position": "CM",
-    "prime_rating": 83,
-    "career_years": "1984-1989",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Stephan Lehmann",
-    "position": "GK",
-    "prime_rating": 80,
-    "career_years": "1986-1992",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Daniel Jeandupeux",
-    "position": "CAM",
-    "prime_rating": 81,
-    "career_years": "1973-1977",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Walter Müller",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1972-1980",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Yanick Brecher",
-    "position": "GK",
-    "prime_rating": 79,
-    "career_years": "2012-2026",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Zivko Kostadinović",
-    "position": "GK",
-    "prime_rating": 75,
-    "career_years": "2022-2026",
-    "nationality": "Serbia",
-    "club": "zurich"
-  },
-  {
-    "name": "Mirlind Kryeziu",
-    "position": "CB",
-    "prime_rating": 77,
-    "career_years": "2017-2026",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Bledian Krasniqi",
-    "position": "CM",
-    "prime_rating": 77,
-    "career_years": "2022-2026",
-    "nationality": "Kosovo",
-    "club": "zurich"
-  },
-  {
-    "name": "Cheveyo Tsawa",
-    "position": "CDM",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Nikola Boranijašević",
-    "position": "RB",
-    "prime_rating": 76,
-    "career_years": "2020-2026",
-    "nationality": "Serbia",
-    "club": "zurich"
-  },
-  {
-    "name": "Daniel Denoon",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "USA",
-    "club": "zurich"
-  },
-  {
-    "name": "Steven Zuber",
-    "position": "LW",
-    "prime_rating": 80,
-    "career_years": "2024-2026",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Antonio Marchesano",
-    "position": "CAM",
-    "prime_rating": 78,
-    "career_years": "2017-2024",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Aiyegun Tosin",
-    "position": "RW",
-    "prime_rating": 78,
-    "career_years": "2022-2026",
-    "nationality": "Nigeria",
-    "club": "zurich"
-  },
-  {
-    "name": "Ifeanyi Mathew",
-    "position": "CM",
-    "prime_rating": 76,
-    "career_years": "2024-2026",
-    "nationality": "Nigeria",
-    "club": "zurich"
-  },
-  {
-    "name": "Daniel Afriyie",
-    "position": "ST",
-    "prime_rating": 77,
-    "career_years": "2023-2026",
-    "nationality": "Ghana",
-    "club": "zurich"
-  },
-  {
-    "name": "Junior Ligue",
-    "position": "RW",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "France",
-    "club": "zurich"
-  },
-  {
-    "name": "Mounir Chouiar",
-    "position": "LW",
-    "prime_rating": 76,
-    "career_years": "2024-2026",
-    "nationality": "France",
-    "club": "zurich"
-  },
-  {
-    "name": "Johnny Leoni",
-    "position": "GK",
-    "prime_rating": 83,
-    "career_years": "2005-2012",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Heinz Barmettler",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "2005-2010",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Iulian Filipescu",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "2003-2008",
-    "nationality": "Romania",
-    "club": "zurich"
-  },
-  {
-    "name": "Bernt Haas",
-    "position": "RB",
-    "prime_rating": 81,
-    "career_years": "2002-2003",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Steve von Bergen",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "2003-2007",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Alhassane Keita",
-    "position": "ST",
-    "prime_rating": 83,
-    "career_years": "2006-2009",
-    "nationality": "Guinea",
-    "club": "zurich"
-  },
-  {
-    "name": "Iván Bessa",
-    "position": "CAM",
-    "prime_rating": 81,
-    "career_years": "2003-2006",
-    "nationality": "Brazil",
-    "club": "zurich"
-  },
-  {
-    "name": "Raffael",
-    "position": "CAM",
-    "prime_rating": 82,
-    "career_years": "2007-2008",
-    "nationality": "Brazil",
-    "club": "zurich"
-  },
-  {
-    "name": "Daniel Gygax",
-    "position": "RW",
-    "prime_rating": 81,
-    "career_years": "2002-2005",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Blerim Džemaili",
-    "position": "CM",
-    "prime_rating": 83,
-    "career_years": "2002-2007",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Hannu Tihinen",
-    "position": "CB",
-    "prime_rating": 81,
-    "career_years": "2004-2008",
-    "nationality": "Finland",
-    "club": "zurich"
-  },
-  {
-    "name": "Almen Abdi",
-    "position": "CAM",
-    "prime_rating": 80,
-    "career_years": "2005-2008",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Davide Chiumiento",
-    "position": "CAM",
-    "prime_rating": 80,
-    "career_years": "2008-2010",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Mauro Lustrinelli",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "2002-2005",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Marco Pascolo",
-    "position": "GK",
-    "prime_rating": 83,
-    "career_years": "1991-1993",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Marc Hottiger",
-    "position": "RB",
-    "prime_rating": 83,
-    "career_years": "1994-1996",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Stéphane Chapuisat",
-    "position": "ST",
-    "prime_rating": 84,
-    "career_years": "1991-1992",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Sven Christ",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1996-2000",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Murat Yakin",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "1990-1992",
-    "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "basel",
+    "career_years": "2001-2003, 2007-2015"
   },
   {
     "name": "Pascal Zuberbühler",
     "position": "GK",
-    "prime_rating": 81,
-    "career_years": "1999-2001",
+    "prime_rating": 86,
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "basel",
+    "career_years": "2003-2006"
   },
   {
-    "name": "Bruno Pizzul",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1994-1999",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Adrian Kunz",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "1990-1995",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Andy Egli",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "1994-1996",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Karl Grob",
+    "name": "Yann Sommer",
     "position": "GK",
-    "prime_rating": 83,
-    "career_years": "1970-1985",
+    "prime_rating": 86,
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "basel",
+    "career_years": "2009-2014"
   },
   {
-    "name": "Köbi Kuhn",
-    "position": "CM",
+    "name": "Mladen Petric",
+    "position": "ST",
+    "prime_rating": 85,
+    "nationality": "Croatia",
+    "club": "basel",
+    "career_years": "2004-2006"
+  },
+  {
+    "name": "Murat Yakin",
+    "position": "CB",
+    "prime_rating": 85,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2000-2004"
+  },
+  {
+    "name": "Aleksandar Dragović",
+    "position": "CB",
     "prime_rating": 84,
-    "career_years": "1962-1977",
-    "nationality": "Switzerland",
-    "club": "zurich"
+    "nationality": "Austria",
+    "club": "basel",
+    "career_years": "2012-2016"
   },
   {
-    "name": "Fritz Künzli",
+    "name": "Benjamin Huggel",
+    "position": "CDM",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "1998-2014"
+  },
+  {
+    "name": "Breel Embolo",
+    "position": "ST",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2014-2016"
+  },
+  {
+    "name": "Christian Giménez",
+    "position": "ST",
+    "prime_rating": 84,
+    "nationality": "Argentina",
+    "club": "basel",
+    "career_years": "2007-2010"
+  },
+  {
+    "name": "Massimo Ceccaroni",
+    "position": "CB",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "1986-2000"
+  },
+  {
+    "name": "Ottmar Hitzfeld",
+    "position": "ST",
+    "prime_rating": 84,
+    "nationality": "Germany",
+    "club": "basel",
+    "career_years": "1971-1975"
+  },
+  {
+    "name": "Scott Chipperfield",
+    "position": "LW",
+    "prime_rating": 84,
+    "nationality": "Australia",
+    "club": "basel",
+    "career_years": "2001-2012"
+  },
+  {
+    "name": "Valentin Stocker",
+    "position": "LW",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2007-2014"
+  },
+  {
+    "name": "Eren Derdiyok",
     "position": "ST",
     "prime_rating": 83,
-    "career_years": "1968-1976",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "basel",
+    "career_years": "2005-2009"
   },
   {
-    "name": "René Botteron",
+    "name": "Behrang Safari",
+    "position": "LB",
+    "prime_rating": 82,
+    "nationality": "Sweden",
+    "club": "basel",
+    "career_years": "2009-2013"
+  },
+  {
+    "name": "Christian Gross",
     "position": "CM",
     "prime_rating": 82,
-    "career_years": "1972-1979",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "basel",
+    "career_years": "1985-1990"
   },
   {
-    "name": "Daniel Jeandupeux",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1972-1973",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Ilija Katić",
-    "position": "ST",
-    "prime_rating": 81,
-    "career_years": "1971-1976",
-    "nationality": "Yugoslavia",
-    "club": "zurich"
-  },
-  {
-    "name": "Heinz Hermann",
+    "name": "Fabian Frei",
     "position": "CM",
     "prime_rating": 82,
-    "career_years": "1980-1984",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "basel",
+    "career_years": "2008-2013, 2015-2024"
   },
   {
-    "name": "Marco Schällibaum",
-    "position": "LB",
+    "name": "S. Doumbia",
+    "position": "ST",
+    "prime_rating": 79,
+    "nationality": "Ivory Coast",
+    "club": "basel",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Elyounoussi",
+    "position": "CM",
     "prime_rating": 78,
-    "career_years": "1980-1985",
-    "nationality": "Switzerland",
-    "club": "zurich"
+    "nationality": "Norway",
+    "club": "basel",
+    "career_years": "2017-2018"
   },
   {
-    "name": "Roger Berbig",
+    "name": "M. Lang",
+    "position": "RB",
+    "prime_rating": 78,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2017-2022"
+  },
+  {
+    "name": "T. Vaclík",
     "position": "GK",
-    "prime_rating": 80,
-    "career_years": "1975-1986",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Hansjörg Pfister",
-    "position": "LB",
     "prime_rating": 78,
-    "career_years": "1980-1988",
-    "nationality": "Switzerland",
-    "club": "zurich"
+    "nationality": "Czech Republic",
+    "club": "basel",
+    "career_years": "2017-2018"
   },
   {
-    "name": "Andreas Egli",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "1980-1989",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Justin Hammel",
-    "position": "GK",
-    "prime_rating": 75,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Adrian de Vries",
-    "position": "CB",
+    "name": "13 A. Frei",
+    "position": "ST",
     "prime_rating": 77,
-    "career_years": "2023-2026",
-    "nationality": "Netherlands",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Saulo Decarli",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "2022-2026",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "basel",
+    "career_years": "2019-2020"
   },
   {
-    "name": "Tomás Veron Lupi",
-    "position": "CB",
-    "prime_rating": 77,
-    "career_years": "2024-2026",
-    "nationality": "Argentina",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Awer Mabil",
-    "position": "RW",
-    "prime_rating": 78,
-    "career_years": "2024-2026",
-    "nationality": "Australia",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Giotto Morandi",
+    "name": "17 M. Delgado",
     "position": "CAM",
-    "prime_rating": 78,
-    "career_years": "2022-2026",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
+    "prime_rating": 77,
+    "nationality": "Argentina",
+    "club": "basel",
+    "career_years": "2021-2022"
   },
   {
-    "name": "Amir Abrashi",
-    "position": "CDM",
-    "prime_rating": 78,
-    "career_years": "2023-2026",
-    "nationality": "Albania",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Sékou Sangaré",
-    "position": "CDM",
-    "prime_rating": 76,
-    "career_years": "2024-2026",
-    "nationality": "Senegal",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Tsiy Ndenge",
-    "position": "CDM",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "Belgium",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Bradley Fink",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "2023-2026",
-    "nationality": "Germany",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Léo Bonatini",
+    "name": "Arthur Cabral",
     "position": "ST",
     "prime_rating": 77,
-    "career_years": "2024-2026",
     "nationality": "Brazil",
-    "club": "grasshopper"
+    "club": "basel",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Suchý",
+    "position": "CB",
+    "prime_rating": 77,
+    "nationality": "Czech Republic",
+    "club": "basel",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "R. Steffen",
+    "position": "CM",
+    "prime_rating": 77,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "21 Jorge",
+    "position": "LB",
+    "prime_rating": 76,
+    "nationality": "Brazil",
+    "club": "basel",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "E. Balanta",
+    "position": "CB",
+    "prime_rating": 76,
+    "nationality": "Colombia",
+    "club": "basel",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "J. Omlin",
+    "position": "GK",
+    "prime_rating": 76,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "L. Zuffi",
+    "position": "CM",
+    "prime_rating": 76,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "S. Widmer",
+    "position": "RB",
+    "prime_rating": 76,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "Serey Dié",
+    "position": "CB",
+    "prime_rating": 76,
+    "nationality": "Ivory Coast",
+    "club": "basel",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "C. Zambrano",
+    "position": "CB",
+    "prime_rating": 75,
+    "nationality": "Peru",
+    "club": "basel",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "F. Frei",
+    "position": "CM",
+    "prime_rating": 75,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2017-2022"
+  },
+  {
+    "name": "Jordi Quintillà",
+    "position": "CM",
+    "prime_rating": 75,
+    "nationality": "Spain",
+    "club": "basel",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Janko",
+    "position": "ST",
+    "prime_rating": 75,
+    "nationality": "Austria",
+    "club": "basel",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "O. Alderete",
+    "position": "CB",
+    "prime_rating": 75,
+    "nationality": "Paraguay",
+    "club": "basel",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "R. van Wolfswinkel",
+    "position": "ST",
+    "prime_rating": 75,
+    "nationality": "Netherlands",
+    "club": "basel",
+    "career_years": "2017-2021"
+  },
+  {
+    "name": "16 W. Samuel",
+    "position": "CB",
+    "prime_rating": 74,
+    "nationality": "Argentina",
+    "club": "basel",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "A. Ajeti",
+    "position": "ST",
+    "prime_rating": 74,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "H. Lindner",
+    "position": "GK",
+    "prime_rating": 74,
+    "nationality": "Austria",
+    "club": "basel",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "P. Kasami",
+    "position": "CAM",
+    "prime_rating": 74,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "V. Stocker",
+    "position": "CAM",
+    "prime_rating": 74,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2017-2022"
+  },
+  {
+    "name": "A. Traoré",
+    "position": "LB",
+    "prime_rating": 73,
+    "nationality": "Ivory Coast",
+    "club": "basel",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "T. Xhaka",
+    "position": "RB",
+    "prime_rating": 73,
+    "nationality": "Albania",
+    "club": "basel",
+    "career_years": "2017-2022"
+  },
+  {
+    "name": "Tomás Tavares",
+    "position": "RB",
+    "prime_rating": 73,
+    "nationality": "Portugal",
+    "club": "basel",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "A. Fransson",
+    "position": "CDM",
+    "prime_rating": 72,
+    "nationality": "Sweden",
+    "club": "basel",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "L. Lacroix",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "R. Petretta",
+    "position": "LB",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "basel",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "E. Cömert",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "E. Zhegrova",
+    "position": "CAM",
+    "prime_rating": 71,
+    "nationality": "Kosovo",
+    "club": "basel",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "K. Bua",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "Z. Kuzmanović",
+    "position": "CDM",
+    "prime_rating": 71,
+    "nationality": "Serbia",
+    "club": "basel",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Pelmard",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "France",
+    "club": "basel",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "A. Šporar",
+    "position": "RW",
+    "prime_rating": 70,
+    "nationality": "Slovenia",
+    "club": "basel",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "D. Oberlin",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2017-2021"
+  },
+  {
+    "name": "E. Bergström",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Sweden",
+    "club": "basel",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "S. Campo",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "20 Z. Kuzmanović",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Serbia",
+    "club": "basel",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "A. Kalulu",
+    "position": "RW",
+    "prime_rating": 69,
+    "nationality": "France",
+    "club": "basel",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "B. Riveros",
+    "position": "LB",
+    "prime_rating": 69,
+    "nationality": "Paraguay",
+    "club": "basel",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "D. Callà",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "D. Ndoye",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Salvi",
+    "position": "GK",
+    "prime_rating": 69,
+    "nationality": "Switzerland",
+    "club": "basel",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "O. Gaber",
+    "position": "CDM",
+    "prime_rating": 69,
+    "nationality": "Egypt",
+    "club": "basel",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Pululu",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Angola",
+    "club": "basel",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "D. Høegh",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Denmark",
+    "club": "basel",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "Eric Ramires",
+    "position": "CAM",
+    "prime_rating": 68,
+    "nationality": "Brazil",
+    "club": "basel",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "Joelson Fernandes",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Portugal",
+    "club": "basel",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "S. Esposito",
+    "position": "CAM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "basel",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Giovane Élber",
+    "position": "ST",
+    "prime_rating": 88,
+    "nationality": "Brazil",
+    "club": "grasshopper",
+    "career_years": "1994-1996"
+  },
+  {
+    "name": "Alain Sutter",
+    "position": "LW",
+    "prime_rating": 86,
+    "nationality": "Switzerland",
+    "club": "grasshopper",
+    "career_years": "1989-1994"
+  },
+  {
+    "name": "Claudio Sulser",
+    "position": "ST",
+    "prime_rating": 86,
+    "nationality": "Switzerland",
+    "club": "grasshopper",
+    "career_years": "1976-1985"
+  },
+  {
+    "name": "Stéphane Chapuisat",
+    "position": "ST",
+    "prime_rating": 85,
+    "nationality": "Switzerland",
+    "club": "grasshopper",
+    "career_years": "1999-2005"
   },
   {
     "name": "Fabio Coltorti",
     "position": "GK",
-    "prime_rating": 83,
-    "career_years": "2002-2007",
+    "prime_rating": 84,
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "career_years": "2002-2007"
+  },
+  {
+    "name": "Heinz Hermann",
+    "position": "CM",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "grasshopper",
+    "career_years": "1980-1984, 1989-1992"
+  },
+  {
+    "name": "Raimondo Ponte",
+    "position": "CAM",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "grasshopper",
+    "career_years": "1976-1979"
+  },
+  {
+    "name": "Roger Berbig",
+    "position": "GK",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "grasshopper",
+    "career_years": "1975-1984"
   },
   {
     "name": "Stephan Lichtsteiner",
     "position": "RB",
     "prime_rating": 84,
-    "career_years": "2003-2005",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "career_years": "2003-2005"
   },
   {
-    "name": "Ricardo Cabanas",
-    "position": "CM",
-    "prime_rating": 81,
-    "career_years": "1999-2005",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Dario Cantaluppi",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "2003-2010",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Erich Vogel",
+    "name": "Heinz Lüdi",
     "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1990-1996",
+    "prime_rating": 82,
     "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Giovane Élber",
-    "position": "ST",
-    "prime_rating": 84,
-    "career_years": "1994-1996",
-    "nationality": "Brazil",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "career_years": "1977-1986"
   },
   {
     "name": "Murat Yakin",
     "position": "CB",
-    "prime_rating": 81,
-    "career_years": "1996-1998",
+    "prime_rating": 82,
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "career_years": "1996-1998"
   },
   {
-    "name": "Stéphane Chapuisat",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1999-2005",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Alain Sutter",
-    "position": "LW",
-    "prime_rating": 81,
-    "career_years": "1989-1994",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Heinz Hermann",
+    "name": "Ricardo Cabanas",
     "position": "CM",
-    "prime_rating": 83,
-    "career_years": "1980-1992",
+    "prime_rating": 82,
     "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Roger Berbig",
-    "position": "GK",
-    "prime_rating": 81,
-    "career_years": "1975-1984",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Claudio Sulser",
-    "position": "ST",
-    "prime_rating": 84,
-    "career_years": "1976-1985",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Raimondo Ponte",
-    "position": "CAM",
-    "prime_rating": 83,
-    "career_years": "1976-1979",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Marco Schällibaum",
-    "position": "LB",
-    "prime_rating": 80,
-    "career_years": "1982-1986",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Hansjörg Pfister",
-    "position": "LB",
-    "prime_rating": 80,
-    "career_years": "1981-1985",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Wolfgang Wenger",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1976-1982",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Heinz Lüdi",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "1977-1986",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "career_years": "1999-2005"
   },
   {
     "name": "Roger Wehrli",
     "position": "RB",
-    "prime_rating": 81,
-    "career_years": "1980-1989",
+    "prime_rating": 82,
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "career_years": "1980-1989"
   },
   {
     "name": "Ruedi Elsener",
     "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1975-1982",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Jérémy Frick",
-    "position": "GK",
-    "prime_rating": 80,
-    "career_years": "2018-2026",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Joël Mall",
-    "position": "GK",
-    "prime_rating": 78,
-    "career_years": "2024-2026",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Bradley Mazikou",
-    "position": "LB",
-    "prime_rating": 77,
-    "career_years": "2023-2026",
-    "nationality": "Republic of Congo",
-    "club": "servette"
-  },
-  {
-    "name": "Steve Rouiller",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "2018-2026",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Yoan Severin",
-    "position": "CB",
-    "prime_rating": 77,
-    "career_years": "2022-2026",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Anthony Baron",
-    "position": "RB",
-    "prime_rating": 75,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Gaël Ondoua",
-    "position": "CDM",
-    "prime_rating": 78,
-    "career_years": "2022-2026",
-    "nationality": "Cameroon",
-    "club": "servette"
-  },
-  {
-    "name": "Jérémy Guillemenot",
-    "position": "ST",
-    "prime_rating": 77,
-    "career_years": "2022-2026",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Chris Bedia",
-    "position": "ST",
-    "prime_rating": 79,
-    "career_years": "2022-2024",
-    "nationality": "Ivory Coast",
-    "club": "servette"
-  },
-  {
-    "name": "Dereck Kutesa",
-    "position": "LW",
-    "prime_rating": 79,
-    "career_years": "2021-2026",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Miroslav Stevanović",
-    "position": "RW",
-    "prime_rating": 80,
-    "career_years": "2018-2026",
-    "nationality": "Bosnia",
-    "club": "servette"
-  },
-  {
-    "name": "Timothé Cognat",
-    "position": "CAM",
-    "prime_rating": 78,
-    "career_years": "2022-2026",
-    "nationality": "France",
-    "club": "servette"
-  },
-  {
-    "name": "Sandy Wittchen",
-    "position": "GK",
-    "prime_rating": 78,
-    "career_years": "2003-2008",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Stefan Wolf",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "2001-2005",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Marc-André Vögtli",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "2003-2008",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Sébastien Wüthrich",
-    "position": "LW",
-    "prime_rating": 78,
-    "career_years": "2007-2010",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Eric Pédat",
-    "position": "GK",
-    "prime_rating": 80,
-    "career_years": "1990-1998",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Marc Schneider",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "1995-2000",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Sonny Anderson",
-    "position": "ST",
-    "prime_rating": 84,
-    "career_years": "1992-1993",
-    "nationality": "Brazil",
-    "club": "servette"
-  },
-  {
-    "name": "Marco Pascolo",
-    "position": "GK",
-    "prime_rating": 80,
-    "career_years": "1997-1999",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Christophe Ohrel",
-    "position": "CM",
-    "prime_rating": 80,
-    "career_years": "1995-1998",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Sébastien Fournier",
-    "position": "CM",
-    "prime_rating": 80,
-    "career_years": "1993-1996",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Daniel Jeandupeux",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "1991-1993",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Petar Aleksandrov",
-    "position": "ST",
-    "prime_rating": 83,
-    "career_years": "1993-1997",
-    "nationality": "Bulgaria",
-    "club": "servette"
-  },
-  {
-    "name": "Karl Engel",
-    "position": "GK",
-    "prime_rating": 83,
-    "career_years": "1979-1986",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Eric Burgener",
-    "position": "GK",
-    "prime_rating": 81,
-    "career_years": "1970-1975",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Lucio Bizzini",
-    "position": "CB",
-    "prime_rating": 81,
-    "career_years": "1973-1986",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Heinz Hermann",
-    "position": "CM",
-    "prime_rating": 80,
-    "career_years": "1979-1980",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Umberto Barberis",
-    "position": "CM",
-    "prime_rating": 81,
-    "career_years": "1976-1983",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Claude Andrey",
-    "position": "CDM",
-    "prime_rating": 80,
-    "career_years": "1976-1985",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Jean-Paul Brigger",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1980-1984",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Karl Heinz Rummenigge",
-    "position": "ST",
-    "prime_rating": 83,
-    "career_years": "1988-1989",
-    "nationality": "Germany",
-    "club": "servette"
-  },
-  {
-    "name": "Sergei Aleinikov",
-    "position": "CM",
     "prime_rating": 82,
-    "career_years": "1989-1991",
-    "nationality": "Russia",
-    "club": "servette"
+    "nationality": "Switzerland",
+    "club": "grasshopper",
+    "career_years": "1975-1982"
   },
   {
-    "name": "Pierre-Albert Chapuisat",
+    "name": "Dario Cantaluppi",
+    "position": "CM",
+    "prime_rating": 80,
+    "nationality": "Switzerland",
+    "club": "grasshopper",
+    "career_years": "2003-2010"
+  },
+  {
+    "name": "Wolfgang Wenger",
     "position": "CB",
-    "prime_rating": 82,
-    "career_years": "1976-1989",
+    "prime_rating": 80,
     "nationality": "Switzerland",
-    "club": "servette"
+    "club": "grasshopper",
+    "career_years": "1976-1982"
   },
   {
-    "name": "Ruedi Schnyder",
-    "position": "RB",
-    "prime_rating": 78,
-    "career_years": "1976-1984",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Heinz Lüdi",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1986-1989",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Anthony Racioppi",
-    "position": "GK",
-    "prime_rating": 78,
-    "career_years": "2022-2024",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Timothy Fayulu",
-    "position": "GK",
-    "prime_rating": 77,
-    "career_years": "2024-2026",
-    "nationality": "DR Congo",
-    "club": "sion"
-  },
-  {
-    "name": "Numa Lavanchy",
-    "position": "RB",
-    "prime_rating": 77,
-    "career_years": "2022-2026",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Patrick Luan",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "Brazil",
-    "club": "sion"
-  },
-  {
-    "name": "Reto Ziegler",
-    "position": "CB",
-    "prime_rating": 81,
-    "career_years": "2009-2024",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Yassin Fortuné",
-    "position": "RW",
+    "name": "Caio",
+    "position": "ST",
     "prime_rating": 76,
-    "career_years": "2023-2026",
-    "nationality": "France",
-    "club": "sion"
-  },
-  {
-    "name": "Liam Chipperfield",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Théo Bouchlarhem",
-    "position": "CDM",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "France",
-    "club": "sion"
-  },
-  {
-    "name": "Anto Grgić",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Dejan Sorgić",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Itaitinga",
-    "position": "RW",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
     "nationality": "Brazil",
-    "club": "sion"
+    "club": "grasshopper",
+    "career_years": "2016-2017"
   },
   {
-    "name": "Benjamin Kololli",
-    "position": "LW",
-    "prime_rating": 77,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Andris Vaņins",
-    "position": "GK",
-    "prime_rating": 81,
-    "career_years": "2007-2017",
-    "nationality": "Latvia",
-    "club": "sion"
-  },
-  {
-    "name": "Geoffrey Dernis",
-    "position": "RW",
-    "prime_rating": 80,
-    "career_years": "2008-2011",
-    "nationality": "France",
-    "club": "sion"
-  },
-  {
-    "name": "Goran Obradović",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "2005-2008",
-    "nationality": "Serbia",
-    "club": "sion"
-  },
-  {
-    "name": "Mario Mutsch",
-    "position": "CDM",
-    "prime_rating": 78,
-    "career_years": "2008-2010",
-    "nationality": "Luxembourg",
-    "club": "sion"
-  },
-  {
-    "name": "Stéphane Sarni",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "2005-2009",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Léo Itaperuna",
+    "name": "Caiuby",
     "position": "ST",
-    "prime_rating": 80,
-    "career_years": "2005-2008",
+    "prime_rating": 76,
     "nationality": "Brazil",
-    "club": "sion"
+    "club": "grasshopper",
+    "career_years": "2018-2019"
   },
   {
-    "name": "Davide Chiumiento",
+    "name": "M. Dabbur",
+    "position": "ST",
+    "prime_rating": 76,
+    "nationality": "Israel",
+    "club": "grasshopper",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "L. Andersen",
     "position": "CAM",
-    "prime_rating": 81,
-    "career_years": "2007-2010",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Stéphane Lehmann",
-    "position": "GK",
-    "prime_rating": 80,
-    "career_years": "1992-1998",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Christophe Ohrel",
-    "position": "CM",
-    "prime_rating": 81,
-    "career_years": "1995-1998",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Alain Geiger",
-    "position": "CB",
-    "prime_rating": 83,
-    "career_years": "1985-1995",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Sébastien Fournier",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1991-1996",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Marc Hottiger",
-    "position": "RB",
-    "prime_rating": 78,
-    "career_years": "1996-1998",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Daniel Tholot",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1992-1996",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Adrian Knup",
-    "position": "ST",
-    "prime_rating": 81,
-    "career_years": "1989-1990",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Heinz Hermann",
-    "position": "CM",
-    "prime_rating": 80,
-    "career_years": "1992-1995",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Karl Heinz Wyder",
-    "position": "GK",
-    "prime_rating": 78,
-    "career_years": "1980-1986",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Jean-Paul Brigger",
-    "position": "ST",
-    "prime_rating": 83,
-    "career_years": "1976-1985",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Pierre-Albert Chapuisat",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "1985-1990",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Christian Matthey",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1980-1986",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Charly In-Albon",
-    "position": "LB",
-    "prime_rating": 80,
-    "career_years": "1978-1985",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Daniel Bonvin",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1980-1989",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Umberto Barberis",
-    "position": "CM",
-    "prime_rating": 80,
-    "career_years": "1980-1986",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
-    "name": "Pascal Loretz",
-    "position": "GK",
-    "prime_rating": 78,
-    "career_years": "2022-2026",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Severin Ottiger",
-    "position": "RB",
     "prime_rating": 75,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Luca Jaquez",
-    "position": "CB",
-    "prime_rating": 77,
-    "career_years": "2022-2026",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Adrian Bajrami",
-    "position": "CB",
-    "prime_rating": 76,
-    "career_years": "2023-2026",
-    "nationality": "Albania",
-    "club": "luzern"
-  },
-  {
-    "name": "Lars Villiger",
-    "position": "CDM",
-    "prime_rating": 75,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Pius Dorn",
-    "position": "LB",
-    "prime_rating": 75,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Ardon Jashari",
-    "position": "CM",
-    "prime_rating": 80,
-    "career_years": "2021-2024",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Lucas Ferreira",
-    "position": "RW",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "Brazil",
-    "club": "luzern"
-  },
-  {
-    "name": "Sofyan Chader",
-    "position": "CAM",
-    "prime_rating": 76,
-    "career_years": "2023-2026",
-    "nationality": "Algeria",
-    "club": "luzern"
-  },
-  {
-    "name": "Mohamed Dräger",
-    "position": "RB",
-    "prime_rating": 77,
-    "career_years": "2024-2026",
-    "nationality": "Tunisia",
-    "club": "luzern"
-  },
-  {
-    "name": "Teddy Okou",
-    "position": "RW",
-    "prime_rating": 76,
-    "career_years": "2023-2026",
-    "nationality": "France",
-    "club": "luzern"
-  },
-  {
-    "name": "Lasse Sørensen",
-    "position": "CM",
-    "prime_rating": 76,
-    "career_years": "2024-2026",
     "nationality": "Denmark",
-    "club": "luzern"
+    "club": "grasshopper",
+    "career_years": "2017-2018"
   },
   {
-    "name": "Adrian Grbic",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "2023-2024",
+    "name": "H. Lindner",
+    "position": "GK",
+    "prime_rating": 74,
     "nationality": "Austria",
-    "club": "luzern"
+    "club": "grasshopper",
+    "career_years": "2017-2019"
   },
   {
-    "name": "David Zibung",
-    "position": "GK",
-    "prime_rating": 80,
-    "career_years": "2003-2018",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Eldin Adilović",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "2009-2012",
-    "nationality": "Bosnia",
-    "club": "luzern"
-  },
-  {
-    "name": "Christian Schwegler",
-    "position": "RB",
-    "prime_rating": 80,
-    "career_years": "2005-2009",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Hekuran Kryeziu",
-    "position": "CDM",
-    "prime_rating": 78,
-    "career_years": "2010-2013",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Joël Magnin",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1990-1996",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Stefan Marini",
+    "name": "T. Sainsbury",
     "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1991-1998",
-    "nationality": "Switzerland",
-    "club": "luzern"
+    "prime_rating": 73,
+    "nationality": "Australia",
+    "club": "grasshopper",
+    "career_years": "2017-2018"
   },
   {
-    "name": "Christian Sutter",
-    "position": "GK",
-    "prime_rating": 78,
-    "career_years": "1990-1998",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Marco Walker",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1990-1995",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Ciri Sforza",
-    "position": "CM",
-    "prime_rating": 83,
-    "career_years": "1989-1990",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Hansjürg Wandeler",
-    "position": "GK",
-    "prime_rating": 78,
-    "career_years": "1980-1989",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "René Botteron",
-    "position": "CM",
-    "prime_rating": 80,
-    "career_years": "1980-1983",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Jürg Baur",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1980-1988",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Heinz Risi",
-    "position": "CDM",
-    "prime_rating": 78,
-    "career_years": "1980-1989",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Roger Wehrli",
-    "position": "RB",
-    "prime_rating": 80,
-    "career_years": "1979-1984",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Martin Müller",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "1980-1988",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Pius Fischer",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1979-1986",
-    "nationality": "Switzerland",
-    "club": "luzern"
-  },
-  {
-    "name": "Amir Saipi",
-    "position": "GK",
-    "prime_rating": 78,
-    "career_years": "2021-2026",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Sandy Walsh",
-    "position": "RB",
-    "prime_rating": 78,
-    "career_years": "2024-2026",
-    "nationality": "Indonesia",
-    "club": "lugano"
-  },
-  {
-    "name": "Mattia Zanotti",
-    "position": "RB",
-    "prime_rating": 75,
-    "career_years": "2023-2024",
-    "nationality": "Italy",
-    "club": "lugano"
-  },
-  {
-    "name": "Albian Hajdari",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "2022-2026",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Anto Grgić",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "2021-2023",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Hadji Mahmoud",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "2022-2026",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Renato Steffen",
-    "position": "LW",
-    "prime_rating": 79,
-    "career_years": "2022-2026",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Mattia Bottani",
+    "name": "Y. Ravet",
     "position": "CAM",
-    "prime_rating": 78,
-    "career_years": "2017-2026",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Mohamed Mahou",
-    "position": "RW",
-    "prime_rating": 75,
-    "career_years": "2023-2026",
+    "prime_rating": 73,
     "nationality": "France",
-    "club": "lugano"
+    "club": "grasshopper",
+    "career_years": "2018-2019"
   },
   {
-    "name": "Cyril Ngonge",
-    "position": "RW",
-    "prime_rating": 75,
-    "career_years": "2021-2023",
-    "nationality": "Belgium",
-    "club": "lugano"
-  },
-  {
-    "name": "Renato Vargas",
-    "position": "ST",
-    "prime_rating": 77,
-    "career_years": "2024-2026",
-    "nationality": "Bolivia",
-    "club": "lugano"
-  },
-  {
-    "name": "Daniel Dos Santos",
+    "name": "19 R. Holzhauser",
     "position": "CM",
-    "prime_rating": 75,
-    "career_years": "2023-2026",
-    "nationality": "France",
-    "club": "lugano"
-  },
-  {
-    "name": "Davide Chiumiento",
-    "position": "CAM",
-    "prime_rating": 80,
-    "career_years": "2005-2007",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Carlo Taldo",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "2000-2004",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Maurizio Jacobacci",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "2003-2007",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Mauro Lustrinelli",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "2003-2006",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Hansjürg Walker",
-    "position": "GK",
-    "prime_rating": 78,
-    "career_years": "1992-1998",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Patrick Sylvestre",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1990-1995",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Stéphane Henchoz",
-    "position": "CB",
-    "prime_rating": 81,
-    "career_years": "1995-1997",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Frédéric Chassot",
-    "position": "RW",
-    "prime_rating": 80,
-    "career_years": "1993-1996",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Daniel Mascolo",
-    "position": "CAM",
-    "prime_rating": 78,
-    "career_years": "1992-1996",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Davide Pellegrini",
-    "position": "LB",
-    "prime_rating": 78,
-    "career_years": "1980-1986",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Pierre Tachet",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1980-1989",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Daniele Manini",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1985-1990",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Massimo Lombardo",
-    "position": "CAM",
-    "prime_rating": 78,
-    "career_years": "1986-1990",
-    "nationality": "Switzerland",
-    "club": "lugano"
-  },
-  {
-    "name": "Lawrence Ati Zigi",
-    "position": "GK",
-    "prime_rating": 81,
-    "career_years": "2020-2026",
-    "nationality": "Ghana",
-    "club": "stgallen"
-  },
-  {
-    "name": "Nico Strübi",
-    "position": "GK",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "Lukas Görtler",
-    "position": "CM",
-    "prime_rating": 81,
-    "career_years": "2018-2026",
-    "nationality": "Germany",
-    "club": "stgallen"
-  },
-  {
-    "name": "Christian Witzig",
-    "position": "CAM",
-    "prime_rating": 78,
-    "career_years": "2022-2026",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "Lukas Daschner",
-    "position": "LW",
-    "prime_rating": 78,
-    "career_years": "2024-2026",
-    "nationality": "Germany",
-    "club": "stgallen"
-  },
-  {
-    "name": "Albert Vallci",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "2024-2026",
+    "prime_rating": 72,
     "nationality": "Austria",
-    "club": "stgallen"
+    "club": "grasshopper",
+    "career_years": "2019-2020"
   },
   {
-    "name": "Christian Stark",
+    "name": "M. Vilotić",
     "position": "CB",
-    "prime_rating": 77,
-    "career_years": "2022-2026",
-    "nationality": "Germany",
-    "club": "stgallen"
+    "prime_rating": 72,
+    "nationality": "Serbia",
+    "club": "grasshopper",
+    "career_years": "2016-2018"
   },
   {
-    "name": "Daniel Schmidt",
-    "position": "RB",
-    "prime_rating": 75,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "Carlo Boukhalfa",
+    "name": "R. Sigurjónsson",
     "position": "CM",
-    "prime_rating": 77,
-    "career_years": "2024-2026",
-    "nationality": "Germany",
-    "club": "stgallen"
+    "prime_rating": 72,
+    "nationality": "Iceland",
+    "club": "grasshopper",
+    "career_years": "2018-2019"
   },
   {
-    "name": "Willem Geubbels",
+    "name": "K. Kodro",
     "position": "ST",
-    "prime_rating": 79,
-    "career_years": "2023-2026",
-    "nationality": "France",
-    "club": "stgallen"
+    "prime_rating": 71,
+    "nationality": "Bosnia Herzegovina",
+    "club": "grasshopper",
+    "career_years": "2017-2018"
   },
   {
-    "name": "Chadrac Akolo",
-    "position": "ST",
-    "prime_rating": 77,
-    "career_years": "2022-2024",
-    "nationality": "DR Congo",
-    "club": "stgallen"
-  },
-  {
-    "name": "Alessandro Vogt",
-    "position": "LW",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "Stefano Razzetti",
-    "position": "GK",
-    "prime_rating": 80,
-    "career_years": "2000-2005",
-    "nationality": "Italy",
-    "club": "stgallen"
-  },
-  {
-    "name": "Marc Zellweger",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1995-2007",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "Charles Amoah",
-    "position": "ST",
-    "prime_rating": 83,
-    "career_years": "1999-2001",
-    "nationality": "Ghana",
-    "club": "stgallen"
-  },
-  {
-    "name": "Alex Tachie-Mensah",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1998-2002",
-    "nationality": "Ghana",
-    "club": "stgallen"
-  },
-  {
-    "name": "Davide Callà",
-    "position": "CAM",
-    "prime_rating": 80,
-    "career_years": "2008-2012",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "Ezequiel Scarione",
-    "position": "CAM",
-    "prime_rating": 80,
-    "career_years": "2010-2014",
-    "nationality": "Argentina",
-    "club": "stgallen"
-  },
-  {
-    "name": "Tranquillo Barnetta",
-    "position": "CAM",
-    "prime_rating": 81,
-    "career_years": "2000-2004",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "Roman Wölfli",
-    "position": "GK",
-    "prime_rating": 78,
-    "career_years": "1993-1999",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "Marcel Koller",
+    "name": "A. Abrashi",
     "position": "CDM",
-    "prime_rating": 80,
-    "career_years": "1985-1990",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "Heribert Bruchez",
-    "position": "LB",
-    "prime_rating": 78,
-    "career_years": "1985-1996",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "Frédéric Chassot",
-    "position": "RW",
-    "prime_rating": 78,
-    "career_years": "1996-1999",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "Roger Berbig",
-    "position": "GK",
-    "prime_rating": 78,
-    "career_years": "1986-1990",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "Karl Engel",
-    "position": "GK",
-    "prime_rating": 80,
-    "career_years": "1986-1989",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "René Botteron",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1985-1988",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "Heinz Hermann",
-    "position": "CM",
-    "prime_rating": 80,
-    "career_years": "1986-1990",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "Ivan Zamorano",
-    "position": "ST",
-    "prime_rating": 84,
-    "career_years": "1988-1990",
-    "nationality": "Chile",
-    "club": "stgallen"
-  },
-  {
-    "name": "Pius Fischer",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1986-1990",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "Karlo Letica",
-    "position": "GK",
-    "prime_rating": 80,
-    "career_years": "2023-2026",
-    "nationality": "Croatia",
-    "club": "lausanne"
-  },
-  {
-    "name": "Olivier Custodio",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "Switzerland",
-    "club": "lausanne"
-  },
-  {
-    "name": "Karim Sow",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "lausanne"
-  },
-  {
-    "name": "Diakité",
-    "position": "LB",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "Mali",
-    "club": "lausanne"
-  },
-  {
-    "name": "Olivier Mendy",
-    "position": "RB",
-    "prime_rating": 75,
-    "career_years": "2023-2026",
-    "nationality": "Senegal",
-    "club": "lausanne"
-  },
-  {
-    "name": "Beyatik Zeqiri",
-    "position": "CDM",
-    "prime_rating": 75,
-    "career_years": "2023-2026",
+    "prime_rating": 70,
     "nationality": "Albania",
-    "club": "lausanne"
+    "club": "grasshopper",
+    "career_years": "2021-2022"
   },
   {
-    "name": "Théo Bair",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "2023-2026",
-    "nationality": "Canada",
-    "club": "lausanne"
-  },
-  {
-    "name": "Brighton Labeau",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "Switzerland",
-    "club": "lausanne"
-  },
-  {
-    "name": "Antoine Bernede",
-    "position": "CM",
-    "prime_rating": 77,
-    "career_years": "2023-2026",
-    "nationality": "France",
-    "club": "lausanne"
-  },
-  {
-    "name": "Kévin Mouanga",
-    "position": "RB",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "France",
-    "club": "lausanne"
-  },
-  {
-    "name": "Joseph Mouaha",
-    "position": "CDM",
-    "prime_rating": 78,
-    "career_years": "2005-2009",
-    "nationality": "France",
-    "club": "lausanne"
-  },
-  {
-    "name": "Maamoun Hennen",
+    "name": "Jeffrén",
     "position": "CAM",
-    "prime_rating": 78,
-    "career_years": "2006-2010",
-    "nationality": "Switzerland",
-    "club": "lausanne"
+    "prime_rating": 70,
+    "nationality": "Venezuela",
+    "club": "grasshopper",
+    "career_years": "2017-2018"
   },
   {
-    "name": "Marc Hottiger",
-    "position": "RB",
-    "prime_rating": 80,
-    "career_years": "1990-1992",
-    "nationality": "Switzerland",
-    "club": "lausanne"
+    "name": "M. Djuricin",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Austria",
+    "club": "grasshopper",
+    "career_years": "2017-2018"
   },
   {
-    "name": "Stéphane Henchoz",
+    "name": "19 Jeffrén",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Venezuela",
+    "club": "grasshopper",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "E. Bergström",
     "position": "CB",
-    "prime_rating": 80,
-    "career_years": "1992-1995",
-    "nationality": "Switzerland",
-    "club": "lausanne"
+    "prime_rating": 69,
+    "nationality": "Sweden",
+    "club": "grasshopper",
+    "career_years": "2016-2018"
   },
   {
-    "name": "Christophe Ohrel",
+    "name": "E. Lenjani",
     "position": "CM",
-    "prime_rating": 80,
-    "career_years": "1990-1993",
-    "nationality": "Switzerland",
-    "club": "lausanne"
+    "prime_rating": 69,
+    "nationality": "Albania",
+    "club": "grasshopper",
+    "career_years": "2021-2022"
   },
   {
-    "name": "Jean-Luc Vasconcellos",
+    "name": "H. Kawabe",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Japan",
+    "club": "grasshopper",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Léo Bonatini",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Brazil",
+    "club": "grasshopper",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "G. Margreitter",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Austria",
+    "club": "grasshopper",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Bašić",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Croatia",
+    "club": "grasshopper",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "N. Bajrami",
     "position": "CAM",
-    "prime_rating": 80,
-    "career_years": "1990-1996",
+    "prime_rating": 68,
     "nationality": "Switzerland",
-    "club": "lausanne"
+    "club": "grasshopper",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "P. Pušić",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Switzerland",
+    "club": "grasshopper",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "R. Munsy",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "DR Congo",
+    "club": "grasshopper",
+    "career_years": "2016-2017"
   },
   {
     "name": "Erich Burgener",
     "position": "GK",
-    "prime_rating": 84,
-    "career_years": "1972-1979",
+    "prime_rating": 85,
     "nationality": "Switzerland",
-    "club": "lausanne"
+    "club": "lausanne",
+    "career_years": "1972-1979"
   },
   {
-    "name": "Karl Heinz Wyder",
-    "position": "GK",
-    "prime_rating": 78,
-    "career_years": "1975-1980",
+    "name": "Stéphane Chapuisat",
+    "position": "ST",
+    "prime_rating": 85,
     "nationality": "Switzerland",
-    "club": "lausanne"
-  },
-  {
-    "name": "Charly In-Albon",
-    "position": "LB",
-    "prime_rating": 81,
-    "career_years": "1980-1989",
-    "nationality": "Switzerland",
-    "club": "lausanne"
-  },
-  {
-    "name": "Walter Diserens",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1976-1984",
-    "nationality": "Switzerland",
-    "club": "lausanne"
+    "club": "lausanne",
+    "career_years": "1989-1991"
   },
   {
     "name": "Umberto Barberis",
-    "position": "CM",
-    "prime_rating": 80,
-    "career_years": "1976-1980",
-    "nationality": "Switzerland",
-    "club": "lausanne"
-  },
-  {
-    "name": "Jean-Paul Brigger",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1985-1987",
-    "nationality": "Switzerland",
-    "club": "lausanne"
-  },
-  {
-    "name": "Daniel Jeandupeux",
     "position": "CAM",
-    "prime_rating": 80,
-    "career_years": "1979-1981",
+    "prime_rating": 84,
     "nationality": "Switzerland",
-    "club": "lausanne"
+    "club": "lausanne",
+    "career_years": "1976-1981"
+  },
+  {
+    "name": "Charly In-Albon",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "lausanne",
+    "career_years": "1985-1990"
+  },
+  {
+    "name": "Marc Hottiger",
+    "position": "RB",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "lausanne",
+    "career_years": "1985-1990"
   },
   {
     "name": "Lars Lunde",
     "position": "ST",
     "prime_rating": 80,
-    "career_years": "1985-1987",
     "nationality": "Denmark",
-    "club": "lausanne"
-  },
-  {
-    "name": "Stefanos Kapino",
-    "position": "GK",
-    "prime_rating": 78,
-    "career_years": "2023-2026",
-    "nationality": "Greece",
-    "club": "winterthur"
-  },
-  {
-    "name": "Roman Macek",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "2023-2026",
-    "nationality": "Czechia",
-    "club": "winterthur"
-  },
-  {
-    "name": "Souleymane Diaby",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "Mali",
-    "club": "winterthur"
-  },
-  {
-    "name": "Sayfallah Ltaief",
-    "position": "CAM",
-    "prime_rating": 76,
-    "career_years": "2024-2026",
-    "nationality": "Tunisia",
-    "club": "winterthur"
-  },
-  {
-    "name": "Adrian Gantenbein",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Aldin Turkes",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "2022-2026",
-    "nationality": "Bosnia",
-    "club": "winterthur"
-  },
-  {
-    "name": "Adriano Russo",
-    "position": "RB",
-    "prime_rating": 75,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Christian Gomis",
-    "position": "LB",
-    "prime_rating": 73,
-    "career_years": "2024-2026",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Roman Buess",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "2022-2026",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Basil Stillhart",
-    "position": "CDM",
-    "prime_rating": 76,
-    "career_years": "2022-2026",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Matteo Di Giusto",
-    "position": "CAM",
-    "prime_rating": 76,
-    "career_years": "2022-2026",
-    "nationality": "Switzerland",
-    "club": "winterthur"
+    "club": "lausanne",
+    "career_years": "1985-1987"
   },
   {
     "name": "Walter Diserens",
     "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1976-1982",
+    "prime_rating": 80,
     "nationality": "Switzerland",
-    "club": "winterthur"
+    "club": "lausanne",
+    "career_years": "1976-1984"
   },
   {
-    "name": "Hans Künzli",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "1975-1980",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Roger Burri",
-    "position": "CB",
-    "prime_rating": 76,
-    "career_years": "1976-1984",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Pierre Tachet",
+    "name": "Charly Hertig",
     "position": "CM",
-    "prime_rating": 76,
-    "career_years": "1975-1980",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Heinz Schneeberger",
-    "position": "RW",
-    "prime_rating": 76,
-    "career_years": "1976-1982",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Sepp Wandeler",
-    "position": "GK",
-    "prime_rating": 76,
-    "career_years": "1972-1980",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Walter Eggimann",
-    "position": "LB",
-    "prime_rating": 75,
-    "career_years": "1976-1982",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Heribert Weber",
-    "position": "CDM",
-    "prime_rating": 76,
-    "career_years": "1976-1980",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Roberto Frigerio",
-    "position": "ST",
-    "prime_rating": 76,
-    "career_years": "1980-1985",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Charly Müller",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1980-1986",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Sébastien Wüthrich",
-    "position": "CAM",
-    "prime_rating": 76,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "yverdon"
-  },
-  {
-    "name": "Anthony Sauthier",
-    "position": "RB",
-    "prime_rating": 76,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "yverdon"
-  },
-  {
-    "name": "Brian Beyer",
-    "position": "GK",
-    "prime_rating": 75,
-    "career_years": "2023-2026",
-    "nationality": "Switzerland",
-    "club": "yverdon"
-  },
-  {
-    "name": "Anton Miranchuk",
-    "position": "CAM",
     "prime_rating": 78,
-    "career_years": "2024-2026",
-    "nationality": "Russia",
-    "club": "yverdon"
+    "nationality": "Switzerland",
+    "club": "lausanne",
+    "career_years": "1971-1980"
   },
   {
-    "name": "Boris Cespedes",
-    "position": "CDM",
-    "prime_rating": 75,
-    "career_years": "2023-2026",
-    "nationality": "Bolivia",
-    "club": "yverdon"
-  },
-  {
-    "name": "Kévin Carlos",
-    "position": "ST",
+    "name": "Joël Magnin",
+    "position": "CM",
     "prime_rating": 78,
-    "career_years": "2024-2026",
-    "nationality": "Spain",
-    "club": "yverdon"
+    "nationality": "Switzerland",
+    "club": "lausanne",
+    "career_years": "1997-2000"
   },
   {
-    "name": "Marvin Senaya",
+    "name": "Pirmin Stierli",
+    "position": "CB",
+    "prime_rating": 78,
+    "nationality": "Switzerland",
+    "club": "lausanne",
+    "career_years": "1990-1994"
+  },
+  {
+    "name": "18 D. Mesbah",
     "position": "LB",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "France",
-    "club": "yverdon"
-  },
-  {
-    "name": "Adriano Russo",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "2023-2024",
-    "nationality": "Switzerland",
-    "club": "yverdon"
-  },
-  {
-    "name": "Jean-Pierre Rhyner",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "Switzerland",
-    "club": "yverdon"
-  },
-  {
-    "name": "Loïc Williams",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
-    "nationality": "Wales",
-    "club": "yverdon"
-  },
-  {
-    "name": "Mauro Rodrigues",
-    "position": "CDM",
     "prime_rating": 73,
-    "career_years": "2024-2026",
-    "nationality": "Switzerland",
-    "club": "yverdon"
+    "nationality": "Algeria",
+    "club": "lausanne",
+    "career_years": "2021-2022"
   },
   {
-    "name": "Mehmet Mehmedi",
-    "position": "RW",
-    "prime_rating": 75,
-    "career_years": "2024-2026",
+    "name": "C. Puertas",
+    "position": "CM",
+    "prime_rating": 71,
     "nationality": "Switzerland",
-    "club": "yverdon"
+    "club": "lausanne",
+    "career_years": "2021-2022"
   },
   {
-    "name": "Marco da Silva",
-    "position": "GK",
-    "prime_rating": 78,
-    "career_years": "2001-2008",
-    "nationality": "Switzerland",
-    "club": "thun"
-  },
-  {
-    "name": "Mauro Lustrinelli",
-    "position": "ST",
-    "prime_rating": 81,
-    "career_years": "2003-2007",
-    "nationality": "Switzerland",
-    "club": "thun"
-  },
-  {
-    "name": "Selver Hodzic",
+    "name": "E. Fernández",
     "position": "CAM",
-    "prime_rating": 78,
-    "career_years": "2005-2009",
-    "nationality": "Switzerland",
-    "club": "thun"
+    "prime_rating": 71,
+    "nationality": "France",
+    "club": "lausanne",
+    "career_years": "2017-2018"
   },
   {
-    "name": "Adrian Moser",
-    "position": "CB",
-    "prime_rating": 77,
-    "career_years": "2003-2010",
-    "nationality": "Switzerland",
-    "club": "thun"
-  },
-  {
-    "name": "Erden Sahin",
-    "position": "CDM",
-    "prime_rating": 77,
-    "career_years": "2002-2008",
-    "nationality": "Switzerland",
-    "club": "thun"
-  },
-  {
-    "name": "Andres Gerber",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "2004-2008",
-    "nationality": "Switzerland",
-    "club": "thun"
-  },
-  {
-    "name": "Andreas Hirzel",
-    "position": "RB",
-    "prime_rating": 76,
-    "career_years": "2003-2008",
-    "nationality": "Switzerland",
-    "club": "thun"
-  },
-  {
-    "name": "Nelson Ferreira",
-    "position": "CM",
-    "prime_rating": 77,
-    "career_years": "2004-2010",
-    "nationality": "Switzerland",
-    "club": "thun"
-  },
-  {
-    "name": "Wenger",
-    "position": "LB",
-    "prime_rating": 75,
-    "career_years": "2003-2008",
-    "nationality": "Switzerland",
-    "club": "thun"
-  },
-  {
-    "name": "Aboubacar Sissoko",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "2003-2007",
-    "nationality": "Senegal",
-    "club": "thun"
-  },
-  {
-    "name": "Daniel Imhof",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "2000-2005",
-    "nationality": "Switzerland",
-    "club": "aarau"
-  },
-  {
-    "name": "Petar Aleksandrov",
-    "position": "ST",
-    "prime_rating": 81,
-    "career_years": "1997-2002",
-    "nationality": "Bulgaria",
-    "club": "aarau"
-  },
-  {
-    "name": "Daniel Tarone",
-    "position": "RB",
-    "prime_rating": 77,
-    "career_years": "2000-2007",
-    "nationality": "Switzerland",
-    "club": "aarau"
-  },
-  {
-    "name": "Sandro Burki",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "2001-2008",
-    "nationality": "Switzerland",
-    "club": "aarau"
-  },
-  {
-    "name": "Christian Schwegler",
-    "position": "RB",
-    "prime_rating": 78,
-    "career_years": "2002-2005",
-    "nationality": "Switzerland",
-    "club": "aarau"
-  },
-  {
-    "name": "Mladen Petrić",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "2000-2003",
-    "nationality": "Croatia",
-    "club": "aarau"
-  },
-  {
-    "name": "Marcel Koller",
-    "position": "CDM",
-    "prime_rating": 79,
-    "career_years": "1990-1995",
-    "nationality": "Switzerland",
-    "club": "aarau"
-  },
-  {
-    "name": "Heinz Hermann",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1990-1992",
-    "nationality": "Switzerland",
-    "club": "aarau"
-  },
-  {
-    "name": "Marko Holenstein",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1993-1998",
-    "nationality": "Switzerland",
-    "club": "aarau"
-  },
-  {
-    "name": "Olaf Marschall",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1990-1993",
-    "nationality": "Germany",
-    "club": "aarau"
-  },
-  {
-    "name": "Heinz Hermann Aar",
-    "position": "CM",
-    "prime_rating": 79,
-    "career_years": "1991-1993",
-    "nationality": "Switzerland",
-    "club": "aarau"
-  },
-  {
-    "name": "Beat Rietmann",
-    "position": "LB",
-    "prime_rating": 78,
-    "career_years": "1980-1989",
-    "nationality": "Switzerland",
-    "club": "aarau"
-  },
-  {
-    "name": "Mario Marchand",
-    "position": "CB",
-    "prime_rating": 77,
-    "career_years": "1980-1988",
-    "nationality": "Switzerland",
-    "club": "aarau"
-  },
-  {
-    "name": "Rolf Osterwalder",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1980-1985",
-    "nationality": "Switzerland",
-    "club": "aarau"
-  },
-  {
-    "name": "Peter Hegi",
-    "position": "RB",
-    "prime_rating": 76,
-    "career_years": "1980-1988",
-    "nationality": "Switzerland",
-    "club": "aarau"
-  },
-  {
-    "name": "Hanspeter Kunz",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "1976-1984",
-    "nationality": "Switzerland",
-    "club": "aarau"
-  },
-  {
-    "name": "Joël Corminboeuf",
+    "name": "M. Diaw",
     "position": "GK",
-    "prime_rating": 81,
-    "career_years": "1985-1995",
-    "nationality": "Switzerland",
-    "club": "xamax"
+    "prime_rating": 70,
+    "nationality": "France",
+    "club": "lausanne",
+    "career_years": "2021-2022"
   },
   {
-    "name": "Heinz Hermann",
+    "name": "S. Grippo",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Switzerland",
+    "club": "lausanne",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "X. Margairaz",
+    "position": "CAM",
+    "prime_rating": 70,
+    "nationality": "Switzerland",
+    "club": "lausanne",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "Y. Tejeda",
+    "position": "CDM",
+    "prime_rating": 70,
+    "nationality": "Costa Rica",
+    "club": "lausanne",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "F. Chafik",
+    "position": "RB",
+    "prime_rating": 69,
+    "nationality": "Morocco",
+    "club": "lausanne",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "L. Marín",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Argentina",
+    "club": "lausanne",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "G. Torres",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Panama",
+    "club": "lausanne",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. George",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Costa Rica",
+    "club": "lausanne",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Kubilay Türkyilmaz",
+    "position": "ST",
+    "prime_rating": 85,
+    "nationality": "Switzerland",
+    "club": "lugano",
+    "career_years": "1985-1990, 1995-1998"
+  },
+  {
+    "name": "Davide Chiumiento",
+    "position": "CAM",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "lugano",
+    "career_years": "2007-2008, 2015-2017"
+  },
+  {
+    "name": "Reto Ziegler",
+    "position": "CB",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "lugano",
+    "career_years": "2017-2020"
+  },
+  {
+    "name": "Carlinhos",
+    "position": "ST",
+    "prime_rating": 82,
+    "nationality": "Brazil",
+    "club": "lugano",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "Mattia Bottani",
+    "position": "CAM",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "lugano",
+    "career_years": "2013-2022"
+  },
+  {
+    "name": "Sandi Lovric",
     "position": "CM",
     "prime_rating": 82,
-    "career_years": "1980-1992",
-    "nationality": "Switzerland",
-    "club": "xamax"
+    "nationality": "Slovenia",
+    "club": "lugano",
+    "career_years": "2020-2022"
   },
   {
-    "name": "Sébastien Fournier",
+    "name": "Sebastiano Rossi",
+    "position": "GK",
+    "prime_rating": 82,
+    "nationality": "Italy",
+    "club": "lugano",
+    "career_years": "1981-1983"
+  },
+  {
+    "name": "Roberto Zaccheo",
     "position": "CM",
     "prime_rating": 80,
-    "career_years": "1990-1993",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "lugano",
+    "career_years": "1978-1984"
   },
   {
-    "name": "Daniel Mascolo",
-    "position": "CAM",
-    "prime_rating": 78,
-    "career_years": "1990-1995",
+    "name": "Sandro Pellegrini",
+    "position": "CB",
+    "prime_rating": 80,
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "lugano",
+    "career_years": "1986-1991"
+  },
+  {
+    "name": "A. Gerndt",
+    "position": "CM",
+    "prime_rating": 73,
+    "nationality": "Sweden",
+    "club": "lugano",
+    "career_years": "2017-2020"
+  },
+  {
+    "name": "N. Baumann",
+    "position": "GK",
+    "prime_rating": 73,
+    "nationality": "Switzerland",
+    "club": "lugano",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "D. Ba",
+    "position": "ST",
+    "prime_rating": 72,
+    "nationality": "Senegal",
+    "club": "lugano",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Janko",
+    "position": "ST",
+    "prime_rating": 72,
+    "nationality": "Austria",
+    "club": "lugano",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "N. Lavanchy",
+    "position": "RB",
+    "prime_rating": 72,
+    "nationality": "Switzerland",
+    "club": "lugano",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "18 C. Ledesma",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "lugano",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "C. Ledesma",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "lugano",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "E. Alioski",
+    "position": "CAM",
+    "prime_rating": 71,
+    "nationality": "North Macedonia",
+    "club": "lugano",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "S. Lovrič",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Slovenia",
+    "club": "lugano",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "A. Sadiku",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Albania",
+    "club": "lugano",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Salvi",
+    "position": "GK",
+    "prime_rating": 70,
+    "nationality": "Switzerland",
+    "club": "lugano",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "P. Brlek",
+    "position": "CAM",
+    "prime_rating": 70,
+    "nationality": "Croatia",
+    "club": "lugano",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "20 R. Janga",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Curacao",
+    "club": "lugano",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "E. Yao Guy",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Ivory Coast",
+    "club": "lugano",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "F. Daprelà",
+    "position": "LB",
+    "prime_rating": 69,
+    "nationality": "Switzerland",
+    "club": "lugano",
+    "career_years": "2017-2020"
+  },
+  {
+    "name": "R. Janga",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Curacao",
+    "club": "lugano",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "R. Ziegler",
+    "position": "CDM",
+    "prime_rating": 69,
+    "nationality": "Switzerland",
+    "club": "lugano",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 A. Gerndt",
+    "position": "CAM",
+    "prime_rating": 68,
+    "nationality": "Sweden",
+    "club": "lugano",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "F. Holender",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Hungary",
+    "club": "lugano",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "Hakan Yakin",
+    "position": "CAM",
+    "prime_rating": 85,
+    "nationality": "Switzerland",
+    "club": "luzern",
+    "career_years": "2003-2004"
+  },
+  {
+    "name": "Adrian Knup",
+    "position": "ST",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "luzern",
+    "career_years": "1988-1990, 1996-1998"
+  },
+  {
+    "name": "Ciriaco Sforza",
+    "position": "CDM",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "luzern",
+    "career_years": "1986-1990"
+  },
+  {
+    "name": "Pirmin Schwegler",
+    "position": "CM",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "luzern",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "René Botteron",
+    "position": "CM",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "luzern",
+    "career_years": "1979-1983"
+  },
+  {
+    "name": "Hans Burri",
+    "position": "GK",
+    "prime_rating": 80,
+    "nationality": "Switzerland",
+    "club": "luzern",
+    "career_years": "1976-1985"
+  },
+  {
+    "name": "Tomislav Puljic",
+    "position": "CB",
+    "prime_rating": 80,
+    "nationality": "Croatia",
+    "club": "luzern",
+    "career_years": "2010-2015"
+  },
+  {
+    "name": "Marius Müller",
+    "position": "GK",
+    "prime_rating": 78,
+    "nationality": "Switzerland",
+    "club": "luzern",
+    "career_years": "1981-1989"
+  },
+  {
+    "name": "Markus Neumayr",
+    "position": "CM",
+    "prime_rating": 78,
+    "nationality": "Germany",
+    "club": "luzern",
+    "career_years": "2008-2010"
+  },
+  {
+    "name": "M. Müller",
+    "position": "GK",
+    "prime_rating": 76,
+    "nationality": "Germany",
+    "club": "luzern",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Frýdek",
+    "position": "LB",
+    "prime_rating": 74,
+    "nationality": "Czech Republic",
+    "club": "luzern",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "L. Schaub",
+    "position": "CAM",
+    "prime_rating": 73,
+    "nationality": "Austria",
+    "club": "luzern",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "C. Gentner",
+    "position": "CM",
+    "prime_rating": 72,
+    "nationality": "Germany",
+    "club": "luzern",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Schneuwly",
+    "position": "ST",
+    "prime_rating": 72,
+    "nationality": "Switzerland",
+    "club": "luzern",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Schulz",
+    "position": "CDM",
+    "prime_rating": 72,
+    "nationality": "Germany",
+    "club": "luzern",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "I. Ndiaye",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Senegal",
+    "club": "luzern",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "N. Čumić",
+    "position": "CAM",
+    "prime_rating": 71,
+    "nationality": "Serbia",
+    "club": "luzern",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "P. Farkas",
+    "position": "RB",
+    "prime_rating": 71,
+    "nationality": "Austria",
+    "club": "luzern",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Ricardo Costa",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Portugal",
+    "club": "luzern",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "D. Sorgić",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Serbia",
+    "club": "luzern",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "I. Voca",
+    "position": "CDM",
+    "prime_rating": 70,
+    "nationality": "Kosovo",
+    "club": "luzern",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "Ryder Matos",
+    "position": "RW",
+    "prime_rating": 70,
+    "nationality": "Brazil",
+    "club": "luzern",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "C. Schneuwly",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Switzerland",
+    "club": "luzern",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "C. Schwegler",
+    "position": "RB",
+    "prime_rating": 69,
+    "nationality": "Switzerland",
+    "club": "luzern",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "Lucas",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Brazil",
+    "club": "luzern",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Salvi",
+    "position": "GK",
+    "prime_rating": 69,
+    "nationality": "Switzerland",
+    "club": "luzern",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "O. Kakabadze",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Georgia",
+    "club": "luzern",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "S. Campo",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Switzerland",
+    "club": "luzern",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "T. Jurić",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Australia",
+    "club": "luzern",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "B. Eleke",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Nigeria",
+    "club": "luzern",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "F. Margiotta",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "luzern",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "F. Rodríguez",
+    "position": "CAM",
+    "prime_rating": 68,
+    "nationality": "Switzerland",
+    "club": "luzern",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "Sonny Anderson",
+    "position": "ST",
+    "prime_rating": 85,
+    "nationality": "Brazil",
+    "club": "servette",
+    "career_years": "1990-1991"
   },
   {
     "name": "Andy Egli",
     "position": "CB",
-    "prime_rating": 81,
-    "career_years": "1984-1990",
+    "prime_rating": 83,
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "servette",
+    "career_years": "1990-1992"
+  },
+  {
+    "name": "Charly In-Albon",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "servette",
+    "career_years": "1978-1985"
+  },
+  {
+    "name": "Christophe Ohrel",
+    "position": "CM",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "servette",
+    "career_years": "1993-1995"
+  },
+  {
+    "name": "Erich Burgener",
+    "position": "GK",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "servette",
+    "career_years": "1979-1985"
   },
   {
     "name": "Karl Engel",
     "position": "GK",
     "prime_rating": 82,
-    "career_years": "1980-1991",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "servette",
+    "career_years": "1979-1986"
   },
   {
-    "name": "Patrick Sylvestre",
+    "name": "Lucien Favre",
     "position": "CAM",
-    "prime_rating": 80,
-    "career_years": "1990-1995",
-    "nationality": "Switzerland",
-    "club": "xamax"
-  },
-  {
-    "name": "Robert Lüthi",
-    "position": "ST",
     "prime_rating": 82,
-    "career_years": "1984-1992",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "servette",
+    "career_years": "1981-1990"
   },
   {
-    "name": "Sonny Anderson",
+    "name": "Marc Schnyder",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "servette",
+    "career_years": "1979-1987"
+  },
+  {
+    "name": "Marco Pascolo",
+    "position": "GK",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "servette",
+    "career_years": "1997-1999"
+  },
+  {
+    "name": "Sébastien Fournier",
+    "position": "CM",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "servette",
+    "career_years": "1995-1999"
+  },
+  {
+    "name": "Alex Geijo",
     "position": "ST",
+    "prime_rating": 80,
+    "nationality": "Spain",
+    "club": "servette",
+    "career_years": "2003-2007"
+  },
+  {
+    "name": "Massimo Lombardo",
+    "position": "CM",
+    "prime_rating": 80,
+    "nationality": "Switzerland",
+    "club": "servette",
+    "career_years": "1992-2000"
+  },
+  {
+    "name": "G. Clichy",
+    "position": "LB",
+    "prime_rating": 76,
+    "nationality": "France",
+    "club": "servette",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Stevanović",
+    "position": "CM",
+    "prime_rating": 74,
+    "nationality": "Bosnia and Herzegovina",
+    "club": "servette",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "T. Valls",
+    "position": "CAM",
+    "prime_rating": 71,
+    "nationality": "France",
+    "club": "servette",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "V. Sasso",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "France",
+    "club": "servette",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "G. Kyei",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "France",
+    "club": "servette",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "J. Frick",
+    "position": "GK",
+    "prime_rating": 69,
+    "nationality": "Switzerland",
+    "club": "servette",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "R. Rodelin",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "France",
+    "club": "servette",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "A. Schalk",
+    "position": "LW",
+    "prime_rating": 68,
+    "nationality": "Netherlands",
+    "club": "servette",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "D. Douline",
+    "position": "CDM",
+    "prime_rating": 68,
+    "nationality": "France",
+    "club": "servette",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "S. Wüthrich",
+    "position": "CAM",
+    "prime_rating": 68,
+    "nationality": "Switzerland",
+    "club": "servette",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "T. Cognat",
+    "position": "CAM",
+    "prime_rating": 68,
+    "nationality": "France",
+    "club": "servette",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Kubilay Türkyilmaz",
+    "position": "ST",
+    "prime_rating": 86,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "1992-1995"
+  },
+  {
+    "name": "Stéphane Henchoz",
+    "position": "CB",
+    "prime_rating": 86,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "1993-1995"
+  },
+  {
+    "name": "Marc Hottiger",
+    "position": "RB",
     "prime_rating": 84,
-    "career_years": "1991-1992",
-    "nationality": "Brazil",
-    "club": "xamax"
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "1986-1990, 1998-2003"
+  },
+  {
+    "name": "Andoni Goikoetxea",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "Spain",
+    "club": "sion",
+    "career_years": "1986-1990"
   },
   {
     "name": "Beat Sutter",
     "position": "RW",
-    "prime_rating": 81,
-    "career_years": "1986-1993",
+    "prime_rating": 82,
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "sion",
+    "career_years": "1980-1985"
+  },
+  {
+    "name": "Christophe Bonvin",
+    "position": "RW",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "1989-1997"
+  },
+  {
+    "name": "Jean-Paul Brigger",
+    "position": "ST",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "1983-1989"
+  },
+  {
+    "name": "Mladen Petric",
+    "position": "ST",
+    "prime_rating": 82,
+    "nationality": "Croatia",
+    "club": "sion",
+    "career_years": "2001-2004"
+  },
+  {
+    "name": "Pajtim Kasami",
+    "position": "CAM",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "2014-2017"
+  },
+  {
+    "name": "Stéphane Grichting",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "1998-2001"
+  },
+  {
+    "name": "Alexandre Rey",
+    "position": "CAM",
+    "prime_rating": 80,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "1996-2002"
+  },
+  {
+    "name": "13 G. Gattuso",
+    "position": "CDM",
+    "prime_rating": 78,
+    "nationality": "Italy",
+    "club": "sion",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "Léonard Karlen",
+    "position": "CM",
+    "prime_rating": 78,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "1991-1998"
+  },
+  {
+    "name": "A. Boka",
+    "position": "LB",
+    "prime_rating": 75,
+    "nationality": "Ivory Coast",
+    "club": "sion",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "G. Bia",
+    "position": "CAM",
+    "prime_rating": 75,
+    "nationality": "Belgium",
+    "club": "sion",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "S. Uçan",
+    "position": "CAM",
+    "prime_rating": 75,
+    "nationality": "Turkey",
+    "club": "sion",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Song",
+    "position": "CDM",
+    "prime_rating": 74,
+    "nationality": "Cameroon",
+    "club": "sion",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "G. Hoarau",
+    "position": "ST",
+    "prime_rating": 74,
+    "nationality": "France",
+    "club": "sion",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "I. Mboyo",
+    "position": "ST",
+    "prime_rating": 74,
+    "nationality": "Belgium",
+    "club": "sion",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Konaté",
+    "position": "ST",
+    "prime_rating": 74,
+    "nationality": "Senegal",
+    "club": "sion",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "20 P. Kasami",
+    "position": "CM",
+    "prime_rating": 73,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "P. Kasami",
+    "position": "CM",
+    "prime_rating": 73,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "2017-2020"
+  },
+  {
+    "name": "R. Ziegler",
+    "position": "CDM",
+    "prime_rating": 73,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "18 K. Constant",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Guinea",
+    "club": "sion",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "20 E. Lenjani",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Albania",
+    "club": "sion",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 J. Djourou",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 S. Doumbia",
+    "position": "ST",
+    "prime_rating": 71,
+    "nationality": "Ivory Coast",
+    "club": "sion",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "Adryan",
+    "position": "CAM",
+    "prime_rating": 71,
+    "nationality": "Brazil",
+    "club": "sion",
+    "career_years": "2017-2022"
+  },
+  {
+    "name": "Carlitos",
+    "position": "CAM",
+    "prime_rating": 71,
+    "nationality": "Portugal",
+    "club": "sion",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "E. Lenjani",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Albania",
+    "club": "sion",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "J. Djourou",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "J. Taravel",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "France",
+    "club": "sion",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "K. Bua",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "K. Constant",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Guinea",
+    "club": "sion",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "Raphael Rossi",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Brazil",
+    "club": "sion",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "S. Doumbia",
+    "position": "ST",
+    "prime_rating": 71,
+    "nationality": "Ivory Coast",
+    "club": "sion",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "Vagner",
+    "position": "CAM",
+    "prime_rating": 71,
+    "nationality": "Cape Verde Islands",
+    "club": "sion",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 A. Song",
+    "position": "CDM",
+    "prime_rating": 70,
+    "nationality": "Cameroon",
+    "club": "sion",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "A. Grgić",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "B. Ndoye",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Senegal",
+    "club": "sion",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "I. Martić",
+    "position": "RB",
+    "prime_rating": 70,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "L. Zuffi",
+    "position": "CDM",
+    "prime_rating": 70,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Marquinhos Cipriano",
+    "position": "LB",
+    "prime_rating": 70,
+    "nationality": "Brazil",
+    "club": "sion",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Serey Dié",
+    "position": "CDM",
+    "prime_rating": 70,
+    "nationality": "Ivory Coast",
+    "club": "sion",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "X. Kouassi",
+    "position": "CDM",
+    "prime_rating": 70,
+    "nationality": "Ivory Coast",
+    "club": "sion",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Mitryushkin",
+    "position": "GK",
+    "prime_rating": 69,
+    "nationality": "Russia",
+    "club": "sion",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "B. Toma",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "C. Akolo",
+    "position": "RW",
+    "prime_rating": 69,
+    "nationality": "DR Congo",
+    "club": "sion",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "D. Cavaré",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "France",
+    "club": "sion",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "Léo Itaperuna",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Brazil",
+    "club": "sion",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Schneuwly",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "V. Salatić",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Tosetti",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Switzerland",
+    "club": "sion",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Tranquillo Barnetta",
+    "position": "CAM",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "stgallen",
+    "career_years": "1999-2003, 2017-2020"
+  },
+  {
+    "name": "Alex Frei (early)",
+    "position": "ST",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "stgallen",
+    "career_years": "1995-1999"
+  },
+  {
+    "name": "Charles Amoah",
+    "position": "ST",
+    "prime_rating": 82,
+    "nationality": "Ghana",
+    "club": "stgallen",
+    "career_years": "1998-2000"
+  },
+  {
+    "name": "Lukas Görtler",
+    "position": "CM",
+    "prime_rating": 82,
+    "nationality": "Germany",
+    "club": "stgallen",
+    "career_years": "2019-2024"
+  },
+  {
+    "name": "Marcel Koller",
+    "position": "CM",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "stgallen",
+    "career_years": "1980-1986"
+  },
+  {
+    "name": "Mauro Lustrinelli",
+    "position": "ST",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "stgallen",
+    "career_years": "2005-2008"
+  },
+  {
+    "name": "Jürg Studer",
+    "position": "CB",
+    "prime_rating": 80,
+    "nationality": "Switzerland",
+    "club": "stgallen",
+    "career_years": "1995-2002"
+  },
+  {
+    "name": "Boris Babic",
+    "position": "ST",
+    "prime_rating": 78,
+    "nationality": "Switzerland",
+    "club": "stgallen",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "Marco Mathys",
+    "position": "CM",
+    "prime_rating": 78,
+    "nationality": "Switzerland",
+    "club": "stgallen",
+    "career_years": "1999-2010"
+  },
+  {
+    "name": "Roger Hegi",
+    "position": "GK",
+    "prime_rating": 78,
+    "nationality": "Switzerland",
+    "club": "stgallen",
+    "career_years": "1978-1983"
+  },
+  {
+    "name": "T. Barnetta",
+    "position": "CAM",
+    "prime_rating": 77,
+    "nationality": "Switzerland",
+    "club": "stgallen",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "S. Salihović",
+    "position": "CM",
+    "prime_rating": 75,
+    "nationality": "Bosnia Herzegovina",
+    "club": "stgallen",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "Jordi Quintillà",
+    "position": "CM",
+    "prime_rating": 74,
+    "nationality": "Spain",
+    "club": "stgallen",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "D. Aleksić",
+    "position": "CAM",
+    "prime_rating": 72,
+    "nationality": "Serbia",
+    "club": "stgallen",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "L. Görtler",
+    "position": "CM",
+    "prime_rating": 72,
+    "nationality": "Germany",
+    "club": "stgallen",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "19 T. Barnetta",
+    "position": "CAM",
+    "prime_rating": 71,
+    "nationality": "Switzerland",
+    "club": "stgallen",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "L. Zigi",
+    "position": "GK",
+    "prime_rating": 70,
+    "nationality": "Ghana",
+    "club": "stgallen",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "R. Sigurjónsson",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Iceland",
+    "club": "stgallen",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "S. Hefti",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Switzerland",
+    "club": "stgallen",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "C. Itten",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Switzerland",
+    "club": "stgallen",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "E. Demirović",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Bosnia Herzegovina",
+    "club": "stgallen",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "F. Kamberi",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Switzerland",
+    "club": "stgallen",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "G. Gaudino",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Germany",
+    "club": "stgallen",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "K. Haggui",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Tunisia",
+    "club": "stgallen",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "Víctor Ruiz",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Spain",
+    "club": "stgallen",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "Y. Musavu-King",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Gabon",
+    "club": "stgallen",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "19 N. Ben Khalifa",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Switzerland",
+    "club": "stgallen",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Gouaida",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Tunisia",
+    "club": "stgallen",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "N. Ben Khalifa",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Switzerland",
+    "club": "stgallen",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "N. Toko",
+    "position": "CDM",
+    "prime_rating": 68,
+    "nationality": "DR Congo",
+    "club": "stgallen",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "R. Buess",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Switzerland",
+    "club": "stgallen",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "Y. Tafer",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Algeria",
+    "club": "stgallen",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "Andres Gerber",
+    "position": "CM",
+    "prime_rating": 80,
+    "nationality": "Switzerland",
+    "club": "thun",
+    "career_years": "2000-2006"
+  },
+  {
+    "name": "Dennis Hediger",
+    "position": "CM",
+    "prime_rating": 80,
+    "nationality": "Switzerland",
+    "club": "thun",
+    "career_years": "2007-2018"
+  },
+  {
+    "name": "Nelson Ferreira",
+    "position": "ST",
+    "prime_rating": 78,
+    "nationality": "Portugal",
+    "club": "thun",
+    "career_years": "2008-2012"
+  },
+  {
+    "name": "Selver Hodzic",
+    "position": "CDM",
+    "prime_rating": 78,
+    "nationality": "Bosnia and Herzegovina",
+    "club": "thun",
+    "career_years": "2010-2015"
+  },
+  {
+    "name": "M. Costanzo",
+    "position": "CAM",
+    "prime_rating": 71,
+    "nationality": "Switzerland",
+    "club": "thun",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "M. Tosetti",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Switzerland",
+    "club": "thun",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "20 H. Bandé",
+    "position": "LW",
+    "prime_rating": 70,
+    "nationality": "Burkina Faso",
+    "club": "thun",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "D. Sorgić",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Serbia",
+    "club": "thun",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "H. Bandé",
+    "position": "LW",
+    "prime_rating": 70,
+    "nationality": "Burkina Faso",
+    "club": "thun",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Spielmann",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Switzerland",
+    "club": "thun",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "D. Hediger",
+    "position": "CDM",
+    "prime_rating": 68,
+    "nationality": "Switzerland",
+    "club": "thun",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "Roberto Di Matteo",
+    "position": "CM",
+    "prime_rating": 82,
+    "nationality": "Italy",
+    "club": "winterthur",
+    "career_years": "1990-1992"
+  },
+  {
+    "name": "Walter Diserens",
+    "position": "CB",
+    "prime_rating": 80,
+    "nationality": "Switzerland",
+    "club": "winterthur",
+    "career_years": "1976-1982"
+  },
+  {
+    "name": "Robert Frick",
+    "position": "CB",
+    "prime_rating": 78,
+    "nationality": "Switzerland",
+    "club": "winterthur",
+    "career_years": "1990-2000"
+  },
+  {
+    "name": "Stefan Knöpfli",
+    "position": "ST",
+    "prime_rating": 78,
+    "nationality": "Switzerland",
+    "club": "winterthur",
+    "career_years": "1985-1995"
+  },
+  {
+    "name": "Hakan Yakin",
+    "position": "CAM",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "xamax",
+    "career_years": "2000-2001"
+  },
+  {
+    "name": "Stéphane Henchoz",
+    "position": "CB",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "xamax",
+    "career_years": "1995-1996"
+  },
+  {
+    "name": "Andy Egli",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "xamax",
+    "career_years": "1986-1990"
+  },
+  {
+    "name": "Beat Sutter",
+    "position": "RW",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "xamax",
+    "career_years": "1985-1989"
+  },
+  {
+    "name": "Charly In-Albon",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "xamax",
+    "career_years": "1990-1995"
   },
   {
     "name": "Don Givens",
     "position": "ST",
     "prime_rating": 82,
-    "career_years": "1981-1986",
     "nationality": "Ireland",
-    "club": "xamax"
+    "club": "xamax",
+    "career_years": "1981-1985"
   },
   {
-    "name": "Hugo Perret",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1980-1989",
+    "name": "Heinz Hermann",
+    "position": "CM",
+    "prime_rating": 82,
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "career_years": "1980-1984"
   },
   {
-    "name": "Charly In-Albon",
-    "position": "LB",
-    "prime_rating": 78,
-    "career_years": "1985-1989",
+    "name": "Karl Engel",
+    "position": "GK",
+    "prime_rating": 82,
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "career_years": "1980-1991"
   },
   {
-    "name": "Philippe Mottiez",
-    "position": "RB",
-    "prime_rating": 78,
-    "career_years": "1980-1988",
+    "name": "Marco Pascolo",
+    "position": "GK",
+    "prime_rating": 82,
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "career_years": "1987-1990, 1993-1996"
   },
   {
-    "name": "Ueli Forrer",
+    "name": "Maxime Lestienne",
+    "position": "LW",
+    "prime_rating": 82,
+    "nationality": "Belgium",
+    "club": "xamax",
+    "career_years": "2012-2013"
+  },
+  {
+    "name": "Robert Lüthi",
+    "position": "ST",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "xamax",
+    "career_years": "1984-1992"
+  },
+  {
+    "name": "Stéphane Chapuisat",
+    "position": "ST",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "xamax",
+    "career_years": "1991-1992"
+  },
+  {
+    "name": "20 R. Nuzzolo",
+    "position": "RW",
+    "prime_rating": 74,
+    "nationality": "Switzerland",
+    "club": "xamax",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "R. Nuzzolo",
+    "position": "LW",
+    "prime_rating": 74,
+    "nationality": "Switzerland",
+    "club": "xamax",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "Serey Dié",
     "position": "CDM",
-    "prime_rating": 78,
-    "career_years": "1982-1989",
-    "nationality": "Switzerland",
-    "club": "xamax"
+    "prime_rating": 74,
+    "nationality": "Ivory Coast",
+    "club": "xamax",
+    "career_years": "2018-2019"
   },
   {
-    "name": "Heribert Bruchez",
+    "name": "Guillaume Hoarau",
+    "position": "ST",
+    "prime_rating": 85,
+    "nationality": "France",
+    "club": "youngboys",
+    "career_years": "2014-2019"
+  },
+  {
+    "name": "Jean-Pierre Nsame",
+    "position": "ST",
+    "prime_rating": 85,
+    "nationality": "Cameroon",
+    "club": "youngboys",
+    "career_years": "2017-2024"
+  },
+  {
+    "name": "Christian Fassnacht",
+    "position": "CAM",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2017-2023"
+  },
+  {
+    "name": "Roger Assalé",
+    "position": "ST",
+    "prime_rating": 84,
+    "nationality": "Ivory Coast",
+    "club": "youngboys",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "Steve von Bergen",
+    "position": "CB",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2010-2018"
+  },
+  {
+    "name": "David von Ballmoos",
+    "position": "GK",
+    "prime_rating": 83,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2014-2024"
+  },
+  {
+    "name": "Kevin Mbabu",
+    "position": "RB",
+    "prime_rating": 83,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "Robert Lüthi",
+    "position": "ST",
+    "prime_rating": 83,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "1978-1984"
+  },
+  {
+    "name": "Sékou Sanogo",
+    "position": "CDM",
+    "prime_rating": 83,
+    "nationality": "Ivory Coast",
+    "club": "youngboys",
+    "career_years": "2014-2020"
+  },
+  {
+    "name": "Cédric Itten",
+    "position": "ST",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2022-2024"
+  },
+  {
+    "name": "Loris Benito",
     "position": "LB",
-    "prime_rating": 78,
-    "career_years": "1980-1985",
+    "prime_rating": 82,
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "youngboys",
+    "career_years": "2010-2014"
   },
   {
-    "name": "Daniel Jeandupeux",
+    "name": "Marco Bürki",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2011-2020"
+  },
+  {
+    "name": "Marco Schällibaum",
+    "position": "LB",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "1990-1995"
+  },
+  {
+    "name": "Mohamed Camara",
+    "position": "CM",
+    "prime_rating": 82,
+    "nationality": "Mali",
+    "club": "youngboys",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "Roger Berbig",
+    "position": "GK",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "1985-1989"
+  },
+  {
+    "name": "Stefan Bichofberger",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "1985-1995"
+  },
+  {
+    "name": "Walter Sproll",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "1977-1985"
+  },
+  {
+    "name": "J. Nsame",
     "position": "ST",
     "prime_rating": 78,
-    "career_years": "1981-1983",
-    "nationality": "Switzerland",
-    "club": "xamax"
+    "nationality": "Cameroon",
+    "club": "youngboys",
+    "career_years": "2020-2022"
   },
   {
-    "name": "Stéphane Grichting",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "2002-2005",
+    "name": "G. Hoarau",
+    "position": "ST",
+    "prime_rating": 77,
+    "nationality": "France",
+    "club": "youngboys",
+    "career_years": "2017-2020"
+  },
+  {
+    "name": "K. Mbabu",
+    "position": "RB",
+    "prime_rating": 77,
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "youngboys",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Sulejmani",
+    "position": "LW",
+    "prime_rating": 77,
+    "nationality": "Serbia",
+    "club": "youngboys",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "D. von Ballmoos",
+    "position": "GK",
+    "prime_rating": 76,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "C. Fassnacht",
+    "position": "CM",
+    "prime_rating": 75,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "F. Lustenberger",
+    "position": "CB",
+    "prime_rating": 75,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "M. Aebischer",
+    "position": "CM",
+    "prime_rating": 75,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "N. Moumi Ngamaleu",
+    "position": "CM",
+    "prime_rating": 75,
+    "nationality": "Cameroon",
+    "club": "youngboys",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "Y. Mvogo",
+    "position": "GK",
+    "prime_rating": 75,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "Y. Ravet",
+    "position": "CM",
+    "prime_rating": 75,
+    "nationality": "France",
+    "club": "youngboys",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "R. Assalé",
+    "position": "LW",
+    "prime_rating": 74,
+    "nationality": "Ivory Coast",
+    "club": "youngboys",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "S. Hefti",
+    "position": "RB",
+    "prime_rating": 74,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "S. Sanogo",
+    "position": "CDM",
+    "prime_rating": 74,
+    "nationality": "Ivory Coast",
+    "club": "youngboys",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Gerndt",
+    "position": "CAM",
+    "prime_rating": 73,
+    "nationality": "Sweden",
+    "club": "youngboys",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Letellier",
+    "position": "GK",
+    "prime_rating": 73,
+    "nationality": "France",
+    "club": "youngboys",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "L. Benito",
+    "position": "LB",
+    "prime_rating": 73,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "D. Zakaria",
+    "position": "CDM",
+    "prime_rating": 72,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Sørensen",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Denmark",
+    "club": "youngboys",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "J. Lefort",
+    "position": "LB",
+    "prime_rating": 72,
+    "nationality": "France",
+    "club": "youngboys",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "J. Siebatcheu",
+    "position": "ST",
+    "prime_rating": 72,
+    "nationality": "United States",
+    "club": "youngboys",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Elia",
+    "position": "ST",
+    "prime_rating": 72,
+    "nationality": "Congo DR",
+    "club": "youngboys",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "U. Garcia",
+    "position": "LB",
+    "prime_rating": 72,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "D. Sow",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "K. Adams Nuhu",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Ghana",
+    "club": "youngboys",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Camara",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Guinea",
+    "club": "youngboys",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "S. von Bergen",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "T. Schick",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Austria",
+    "club": "youngboys",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "A. Rochat",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "C. Martins",
+    "position": "CDM",
+    "prime_rating": 70,
+    "nationality": "Luxembourg",
+    "club": "youngboys",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "C. Zesiger",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Spielmann",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "S. Janko",
+    "position": "RB",
+    "prime_rating": 70,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "S. Lauper",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "G. Gaudino",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Germany",
+    "club": "youngboys",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "J. Lecjaks",
+    "position": "LB",
+    "prime_rating": 69,
+    "nationality": "Czech Republic",
+    "club": "youngboys",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Frey",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Wölfli",
+    "position": "GK",
+    "prime_rating": 68,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "V. Sierro",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Switzerland",
+    "club": "youngboys",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "Patrick Müller",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "yverdon",
+    "career_years": "1996-1998"
+  },
+  {
+    "name": "Daniel Gygax",
+    "position": "RW",
+    "prime_rating": 80,
+    "nationality": "Switzerland",
+    "club": "yverdon",
+    "career_years": "1999-2002"
+  },
+  {
+    "name": "Köbi Kuhn",
+    "position": "CM",
+    "prime_rating": 86,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "1962-1977"
+  },
+  {
+    "name": "Fritz Künzli",
+    "position": "ST",
+    "prime_rating": 85,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "1968-1976"
+  },
+  {
+    "name": "Alhassane Keita",
+    "position": "ST",
+    "prime_rating": 84,
+    "nationality": "Guinea",
+    "club": "zurich",
+    "career_years": "2006-2009"
+  },
+  {
+    "name": "Blerim Džemaili",
+    "position": "CM",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "2002-2007"
+  },
+  {
+    "name": "Ilija Katić",
+    "position": "ST",
+    "prime_rating": 84,
+    "nationality": "Yugoslavia",
+    "club": "zurich",
+    "career_years": "1971-1976"
+  },
+  {
+    "name": "Johnny Leoni",
+    "position": "GK",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "2005-2012"
+  },
+  {
+    "name": "Karl Grob",
+    "position": "GK",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "1972-1985"
+  },
+  {
+    "name": "Raffael",
+    "position": "CAM",
+    "prime_rating": 84,
+    "nationality": "Brazil",
+    "club": "zurich",
+    "career_years": "2007-2008"
+  },
+  {
+    "name": "René Botteron",
+    "position": "CM",
+    "prime_rating": 84,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "1972-1979"
+  },
+  {
+    "name": "Steve von Bergen",
+    "position": "CB",
+    "prime_rating": 83,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "2003-2007"
+  },
+  {
+    "name": "Daniel Gygax",
+    "position": "RW",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "2002-2005"
+  },
+  {
+    "name": "Eric Hassli",
+    "position": "ST",
+    "prime_rating": 82,
+    "nationality": "France",
+    "club": "zurich",
+    "career_years": "2007-2009"
+  },
+  {
+    "name": "Hannu Tihinen",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "Finland",
+    "club": "zurich",
+    "career_years": "2004-2008"
+  },
+  {
+    "name": "Heinz Barmettler",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "2005-2010"
+  },
+  {
+    "name": "Heinz Lüdi",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "1986-1992"
+  },
+  {
+    "name": "Iván Bessa",
+    "position": "CAM",
+    "prime_rating": 82,
+    "nationality": "Brazil",
+    "club": "zurich",
+    "career_years": "2003-2006"
+  },
+  {
+    "name": "Pascal Zuberbühler",
+    "position": "GK",
+    "prime_rating": 82,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "1999-2001"
+  },
+  {
+    "name": "Mehmet Yılmaz",
+    "position": "ST",
+    "prime_rating": 78,
+    "nationality": "Turkey",
+    "club": "zurich",
+    "career_years": "2005-2008"
+  },
+  {
+    "name": "G. Sertic",
+    "position": "CDM",
+    "prime_rating": 72,
+    "nationality": "France",
+    "club": "zurich",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "K. Rüegg",
+    "position": "RB",
+    "prime_rating": 72,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "M. Mahi",
+    "position": "CAM",
+    "prime_rating": 72,
+    "nationality": "Morocco",
+    "club": "zurich",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "R. Thelander",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Denmark",
+    "club": "zurich",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "B. Džemaili",
+    "position": "CDM",
+    "prime_rating": 71,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "B. Kololli",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Kosovo",
+    "club": "zurich",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "L. Sobiech",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Germany",
+    "club": "zurich",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "M. Leitner",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Germany",
+    "club": "zurich",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "A. Vaņins",
+    "position": "GK",
+    "prime_rating": 70,
+    "nationality": "Latvia",
+    "club": "zurich",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Schönbächler",
+    "position": "CAM",
+    "prime_rating": 70,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "P. Jagne",
+    "position": "LB",
+    "prime_rating": 70,
+    "nationality": "Gambia",
+    "club": "zurich",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "Y. Brecher",
+    "position": "GK",
+    "prime_rating": 70,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "A. Gogia",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Germany",
+    "club": "zurich",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "A. Marchesano",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "A. Ćorić",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Croatia",
+    "club": "zurich",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Guerrero",
+    "position": "LB",
+    "prime_rating": 69,
+    "nationality": "Spain",
+    "club": "zurich",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 P. Jagne",
+    "position": "LB",
+    "prime_rating": 68,
+    "nationality": "Gambia",
+    "club": "zurich",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "A. Tosin",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Nigeria",
+    "club": "zurich",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "H. Kryeziu",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Kosovo",
+    "club": "zurich",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Frey",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "R. Rodriguez",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "S. Khelifi",
+    "position": "RW",
+    "prime_rating": 68,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "V. Janjičić",
+    "position": "CDM",
+    "prime_rating": 68,
+    "nationality": "Switzerland",
+    "club": "zurich",
+    "career_years": "2019-2020"
   }
 ]
