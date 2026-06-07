@@ -248,6 +248,7 @@ function DraftScreen() {
           ) : assigningPlayer ? (
             <AssignPanel
               player={assigningPlayer}
+              club={CLUBS.find(c => c.id === assigningPlayer.club) ?? null}
               showRatings={config.showRatings}
               compatible={compatibleSlotsForAssign}
               onCancel={skipAssign}
@@ -573,8 +574,9 @@ function PlayerPicker({ club, players, mode, showRatings, targetSlot, onPick, on
   );
 }
 
-function AssignPanel({ player, showRatings, compatible, onCancel }: {
+function AssignPanel({ player, club, showRatings, compatible, onCancel }: {
   player: Player;
+  club: Club | null;
   showRatings: boolean;
   compatible: Slot[];
   onCancel: () => void;
@@ -586,7 +588,18 @@ function AssignPanel({ player, showRatings, compatible, onCancel }: {
       className="flex flex-col h-full text-center"
     >
       <h3 className="font-display text-xl">Assign to a slot</h3>
-      <div className="mt-3 p-4 rounded-xl bg-background/50 border border-warning/30 shadow-[0_0_24px_-8px] shadow-warning/40">
+      <div
+        className="mt-3 p-4 rounded-xl border border-warning/30 shadow-[0_0_24px_-8px] shadow-warning/40"
+        style={club ? {
+          background: `linear-gradient(135deg, color-mix(in oklab, ${club.color} 25%, transparent), transparent)`,
+        } : undefined}
+      >
+        {club && (
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <ClubBadge club={club} size={28} />
+            <span className="text-xs text-muted-foreground">{club.short}</span>
+          </div>
+        )}
         <div className="font-medium text-lg">{player.name}</div>
         <div className="text-xs text-muted-foreground mt-0.5">{player.position} · {player.career_years} · {player.nationality}</div>
         {showRatings && (
@@ -598,6 +611,14 @@ function AssignPanel({ player, showRatings, compatible, onCancel }: {
           ? "Tap a glowing position on the pitch."
           : "No compatible slots — skipping…"}
       </p>
+      {compatible.length > 0 && (
+        <button
+          onClick={onCancel}
+          className="mt-3 text-xs text-muted-foreground underline self-center hover:text-foreground"
+        >
+          discard player
+        </button>
+      )}
     </motion.div>
   );
 }
