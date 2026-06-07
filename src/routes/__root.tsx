@@ -87,8 +87,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Unschlagbar!" },
       { name: "twitter:description", content: "Can you go unschlagbar?" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/80623470-341d-4283-8a86-8dd1819900db/id-preview-e7e4d7bd--7fa0d0dc-2f68-4181-87d3-304394fc8b3e.lovable.app-1780768591715.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/80623470-341d-4283-8a86-8dd1819900db/id-preview-e7e4d7bd--7fa0d0dc-2f68-4181-87d3-304394fc8b3e.lovable.app-1780768591715.png" },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/80623470-341d-4283-8a86-8dd1819900db/id-preview-e7e4d7bd--7fa0d0dc-2f68-4181-87d3-304394fc8b3e.lovable.app-1780768591715.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/80623470-341d-4283-8a86-8dd1819900db/id-preview-e7e4d7bd--7fa0d0dc-2f68-4181-87d3-304394fc8b3e.lovable.app-1780768591715.png",
+      },
     ],
     links: [
       {

@@ -29,22 +29,31 @@ function CareerHistory() {
     const totalLosses = seasons.reduce((a, s) => a + s.losses, 0);
     const totalGF = seasons.reduce((a, s) => a + s.goalsFor, 0);
     const totalGA = seasons.reduce((a, s) => a + s.goalsAgainst, 0);
-    const leagueTitles = seasons.filter(s => s.finalPosition === 1).length;
-    const cupWins = seasons.filter(s => s.cupResult === "champion").length;
-    const relegations = seasons.filter(s => s.relegated).length;
-    const bestPosition = seasons.length > 0
-      ? Math.min(...seasons.map(s => s.finalPosition))
-      : null;
+    const leagueTitles = seasons.filter((s) => s.finalPosition === 1).length;
+    const cupWins = seasons.filter((s) => s.cupResult === "champion").length;
+    const relegations = seasons.filter((s) => s.relegated).length;
+    const bestPosition =
+      seasons.length > 0 ? Math.min(...seasons.map((s) => s.finalPosition)) : null;
     return {
-      totalWins, totalDraws, totalLosses, totalGF, totalGA,
-      leagueTitles, cupWins, relegations, bestPosition,
+      totalWins,
+      totalDraws,
+      totalLosses,
+      totalGF,
+      totalGA,
+      leagueTitles,
+      cupWins,
+      relegations,
+      bestPosition,
     };
   }, [seasons]);
 
   return (
     <div className="min-h-screen px-4 py-8 max-w-3xl mx-auto">
       <header className="text-center">
-        <Link to="/career" className="text-[11px] text-muted-foreground hover:text-warning underline">
+        <Link
+          to="/career"
+          className="text-[11px] text-muted-foreground hover:text-warning underline"
+        >
           ← GOLAZO hub
         </Link>
         <h1 className="mt-3 font-display text-3xl text-warning">🏆 Hall of Fame</h1>
@@ -71,7 +80,9 @@ function CareerHistory() {
         <>
           {/* Career totals */}
           <section className="mt-8">
-            <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Career totals</div>
+            <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
+              Career totals
+            </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
               <Stat label="Seasons" value={seasons.length} />
               <Stat label="🏆 League" value={aggregate.leagueTitles} accent="text-warning" />
@@ -84,7 +95,15 @@ function CareerHistory() {
               <Stat label="L" value={aggregate.totalLosses} accent="text-primary" />
             </div>
             <div className="grid grid-cols-3 gap-2 mt-2">
-              <Stat label="Best finish" value={aggregate.bestPosition !== null ? `${aggregate.bestPosition}${ordinal(aggregate.bestPosition)}` : "—"} accent="text-warning" />
+              <Stat
+                label="Best finish"
+                value={
+                  aggregate.bestPosition !== null
+                    ? `${aggregate.bestPosition}${ordinal(aggregate.bestPosition)}`
+                    : "—"
+                }
+                accent="text-warning"
+              />
               <Stat label="Goals for" value={aggregate.totalGF} />
               <Stat label="Goals against" value={aggregate.totalGA} />
             </div>
@@ -92,9 +111,11 @@ function CareerHistory() {
 
           {/* Season-by-season */}
           <section className="mt-8">
-            <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Season by season</div>
+            <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
+              Season by season
+            </div>
             <ul className="space-y-2">
-              {[...seasons].reverse().map(s => (
+              {[...seasons].reverse().map((s) => (
                 <SeasonRow key={s.season} record={s} />
               ))}
             </ul>
@@ -105,11 +126,21 @@ function CareerHistory() {
   );
 }
 
-function Stat({ label, value, accent }: { label: string; value: number | string; accent?: string }) {
+function Stat({
+  label,
+  value,
+  accent,
+}: {
+  label: string;
+  value: number | string;
+  accent?: string;
+}) {
   return (
     <div className="rounded-lg border border-border bg-card/40 py-3 px-2 text-center">
       <div className={`font-display text-2xl ${accent ?? "text-foreground"}`}>{value}</div>
-      <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mt-1">{label}</div>
+      <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mt-1">
+        {label}
+      </div>
     </div>
   );
 }
@@ -118,11 +149,15 @@ function SeasonRow({ record }: { record: SeasonRecord }) {
   const isChampion = record.finalPosition === 1;
   const isCupWinner = record.cupResult === "champion";
   return (
-    <li className={`rounded-xl border p-4 ${
-      isChampion ? "border-warning bg-warning/15" :
-      record.relegated ? "border-primary/40 bg-primary/5" :
-      "border-border bg-card/40"
-    }`}>
+    <li
+      className={`rounded-xl border p-4 ${
+        isChampion
+          ? "border-warning bg-warning/15"
+          : record.relegated
+            ? "border-primary/40 bg-primary/5"
+            : "border-border bg-card/40"
+      }`}
+    >
       <div className="flex items-baseline justify-between gap-2">
         <div className="font-display text-lg">
           Season {record.season}
@@ -134,7 +169,10 @@ function SeasonRow({ record }: { record: SeasonRecord }) {
       </div>
 
       <div className="mt-2 grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
-        <Mini label="Position" value={`${record.finalPosition}${ordinal(record.finalPosition)} / ${record.totalLeagueClubs}`} />
+        <Mini
+          label="Position"
+          value={`${record.finalPosition}${ordinal(record.finalPosition)} / ${record.totalLeagueClubs}`}
+        />
         <Mini label="W·D·L" value={`${record.wins}·${record.draws}·${record.losses}`} />
         <Mini label="Goals" value={`${record.goalsFor}:${record.goalsAgainst}`} />
         <Mini label="Cup" value={cupLabel(record.cupResult)} />
@@ -143,7 +181,10 @@ function SeasonRow({ record }: { record: SeasonRecord }) {
       {record.trophies.length > 0 && (
         <div className="mt-2 flex flex-wrap gap-1">
           {record.trophies.map((t, i) => (
-            <span key={i} className="px-2 py-0.5 rounded text-[10px] uppercase tracking-wider bg-warning/20 text-warning border border-warning/40">
+            <span
+              key={i}
+              className="px-2 py-0.5 rounded text-[10px] uppercase tracking-wider bg-warning/20 text-warning border border-warning/40"
+            >
               🏆 {t}
             </span>
           ))}
@@ -164,11 +205,16 @@ function Mini({ label, value }: { label: string; value: string }) {
 
 function cupLabel(r: SeasonRecord["cupResult"]): string {
   switch (r) {
-    case "champion": return "🏆 Winner";
-    case "runner-up": return "🥈 Final";
-    case "semi-final": return "🥉 SF";
-    case "quarter-final": return "QF";
-    default: return "—";
+    case "champion":
+      return "🏆 Winner";
+    case "runner-up":
+      return "🥈 Final";
+    case "semi-final":
+      return "🥉 SF";
+    case "quarter-final":
+      return "QF";
+    default:
+      return "—";
   }
 }
 

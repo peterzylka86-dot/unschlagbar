@@ -1,6 +1,6 @@
-export type Position = "GK"|"CB"|"RB"|"LB"|"CDM"|"CM"|"CAM"|"RW"|"LW"|"ST";
+export type Position = "GK" | "CB" | "RB" | "LB" | "CDM" | "CM" | "CAM" | "RW" | "LW" | "ST";
 
-export type EraTier = "current"|"00s"|"90s"|"70s-80s";
+export type EraTier = "current" | "00s" | "90s" | "70s-80s";
 
 export interface Club {
   id: string;
@@ -10,7 +10,7 @@ export interface Club {
   color: string;
   founded: number;
   strength: number;
-  era: "current"|"classic"|"historic";
+  era: "current" | "classic" | "historic";
   era_tier: EraTier;
   era_tiers?: EraTier[];
 }
@@ -32,7 +32,7 @@ export interface Slot {
   player?: Player;
 }
 
-export type FormationKey = "4-3-3"|"4-4-2"|"4-2-3-1"|"4-5-1"|"3-4-3"|"3-5-2"|"5-4-1";
+export type FormationKey = "4-3-3" | "4-4-2" | "4-2-3-1" | "4-5-1" | "3-4-3" | "3-5-2" | "5-4-1";
 
 export interface Formation {
   key: FormationKey;
@@ -41,9 +41,9 @@ export interface Formation {
   slots: Slot[];
 }
 
-export type Difficulty = "easy"|"normal"|"hard";
-export type DraftMode = "squad"|"position"|"quick";
-export type RatingMode = "career"|"prime";
+export type Difficulty = "easy" | "normal" | "hard";
+export type DraftMode = "squad" | "position" | "quick";
+export type RatingMode = "career" | "prime";
 
 export interface RunConfig {
   league: import("./leagues").LeagueId;
@@ -64,7 +64,7 @@ export interface MatchResult {
   home: boolean;
   ourScore: number;
   theirScore: number;
-  outcome: "W"|"D"|"L";
+  outcome: "W" | "D" | "L";
   /** Knockout/group round label, e.g. "Group", "Quarter-Final", "Final". */
   round?: string;
   /** True if this match eliminates us (knockout loss / group failure). */

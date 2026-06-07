@@ -595,7 +595,7 @@ export function scorePlayerByArchetype(
       }
       if (fillsNeed) score += 2;
       break;
-    case "hipster":
+    case "hipster": {
       // Era / OVR sweet-spot — favor 88-91 over 95+, and pre-2010 eras
       if (player.prime_rating >= 88 && player.prime_rating <= 91) score += 6;
       const yearMatch = player.career_years.match(/(?:19|20)\d{2}/);
@@ -605,6 +605,7 @@ export function scorePlayerByArchetype(
       }
       if (fillsNeed) score += 2;
       break;
+    }
     case "brickwall":
       if (pos === "GK" || pos === "DEF") score += 8;
       else score -= 3;
@@ -616,12 +617,13 @@ export function scorePlayerByArchetype(
       else score -= 4;
       if (fillsNeed) score += 2;
       break;
-    case "oldschool":
+    case "oldschool": {
       const yMatch = player.career_years.match(/(?:19|20)\d{2}/);
       if (yMatch && parseInt(yMatch[0]) < 2000) score += 10;
       else if (yMatch && parseInt(yMatch[0]) < 2010) score += 3;
       if (fillsNeed) score += 2;
       break;
+    }
     default:
       if (fillsNeed) score += 3;
   }

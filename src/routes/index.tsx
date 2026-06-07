@@ -11,9 +11,16 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "UNSCHLAGBAR · 34:0 — Retro Football Draft" },
-      { name: "description", content: "Pick your league, draft a perfect XI from six decades of football, and chase the unbeaten season. A retro fan project." },
+      {
+        name: "description",
+        content:
+          "Pick your league, draft a perfect XI from six decades of football, and chase the unbeaten season. A retro fan project.",
+      },
       { property: "og:title", content: "UNSCHLAGBAR · 34:0" },
-      { property: "og:description", content: "Draft your XI, simulate a perfect season. Can you go unbeaten?" },
+      {
+        property: "og:description",
+        content: "Draft your XI, simulate a perfect season. Can you go unbeaten?",
+      },
     ],
   }),
   component: Landing,
@@ -22,8 +29,8 @@ export const Route = createFileRoute("/")({
 function Landing() {
   const { challenge } = Route.useSearch();
   const navigate = useNavigate();
-  const setConfig = useGame(s => s.setConfig);
-  const reset = useGame(s => s.reset);
+  const setConfig = useGame((s) => s.setConfig);
+  const reset = useGame((s) => s.reset);
   useEffect(() => {
     if (!challenge) return;
     const payload = decodeChallenge(challenge);
@@ -42,8 +49,13 @@ function Landing() {
   }, [challenge, setConfig, reset, navigate]);
   return (
     <div className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.05] pointer-events-none"
-        style={{ backgroundImage: "repeating-linear-gradient(0deg, transparent 0 42px, rgba(255,240,200,0.5) 42px 43px)" }} />
+      <div
+        className="absolute inset-0 opacity-[0.05] pointer-events-none"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, transparent 0 42px, rgba(255,240,200,0.5) 42px 43px)",
+        }}
+      />
 
       <div className="relative w-full max-w-xl">
         <div className="retro-stripes h-2 rounded-t-2xl" />
@@ -60,22 +72,22 @@ function Landing() {
             <BrandMark size="xl" to={undefined} />
             <WordMark className="text-[11px] sm:text-xs text-warning/90" />
             <div className="scoreboard scanlines rounded-sm mt-1 text-xl">
-              <span className="opacity-70">SPIELE</span>{" "}
-              <span>34</span>
+              <span className="opacity-70">SPIELE</span> <span>34</span>
               <span className="mx-2 opacity-50">|</span>
-              <span className="opacity-70">NIEDERLAGEN</span>{" "}
-              <span>00</span>
+              <span className="opacity-70">NIEDERLAGEN</span> <span>00</span>
             </div>
           </div>
 
           <div className="mt-7 mx-auto w-24 h-px bg-warning/40" />
 
           <p className="mt-6 text-base sm:text-lg text-foreground/85 font-light">
-            Pick your league. Draft a perfect XI from <span className="text-warning">six decades of football</span>.<br />
+            Pick your league. Draft a perfect XI from{" "}
+            <span className="text-warning">six decades of football</span>.<br />
             Spin the wheel. Chase the unbeaten season.
           </p>
           <p className="mt-2 text-sm text-muted-foreground italic">
-            🌎 LIVE World Cup 2026 · 🏆 Champions League<br />
+            🌎 LIVE World Cup 2026 · 🏆 Champions League
+            <br />
             🇩🇪 Bundesliga · 🇪🇸 La Liga · 🇮🇹 Serie A · 🇨🇭 Super League · ♀ Women's
           </p>
 
@@ -88,7 +100,9 @@ function Landing() {
               <span className="flex items-center gap-2">
                 ⚡ Kick-off <span aria-hidden>→</span>
               </span>
-              <span className="text-[10px] tracking-[0.18em] normal-case opacity-80">One match · 5–30 min</span>
+              <span className="text-[10px] tracking-[0.18em] normal-case opacity-80">
+                One match · 5–30 min
+              </span>
             </Link>
             <Link
               to="/career"
@@ -97,7 +111,9 @@ function Landing() {
               <span className="flex items-center gap-2">
                 🌟 GOLAZO <span aria-hidden>→</span>
               </span>
-              <span className="text-[10px] tracking-[0.18em] normal-case opacity-80">Career · multi-season legacy</span>
+              <span className="text-[10px] tracking-[0.18em] normal-case opacity-80">
+                Career · multi-season legacy
+              </span>
             </Link>
           </div>
 
@@ -126,8 +142,15 @@ function Landing() {
 
       <footer className="absolute bottom-5 left-0 right-0 text-center text-[11px] text-muted-foreground px-4">
         Inspired by{" "}
-        <a href="https://82-0.com" className="underline hover:text-warning" target="_blank" rel="noreferrer">82-0.com</a>
-        {" "}· A fun fan project — not affiliated with any league or club shown.
+        <a
+          href="https://82-0.com"
+          className="underline hover:text-warning"
+          target="_blank"
+          rel="noreferrer"
+        >
+          82-0.com
+        </a>{" "}
+        · A fun fan project — not affiliated with any league or club shown.
       </footer>
     </div>
   );
@@ -137,7 +160,9 @@ function Stat({ value, label }: { value: string; label: string }) {
   return (
     <div className="border-t border-warning/20 pt-3">
       <div className="font-display text-3xl text-warning leading-none">{value}</div>
-      <div className="mt-1.5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">{label}</div>
+      <div className="mt-1.5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+        {label}
+      </div>
     </div>
   );
 }

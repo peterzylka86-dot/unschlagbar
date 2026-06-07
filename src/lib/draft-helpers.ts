@@ -28,7 +28,7 @@ export const POSITION_FAMILIES: ReadonlyArray<ReadonlyArray<Position>> = [
   ["CB"],
   ["LB"],
   ["RB"],
-  ["CDM", "CM", "CAM"],   // central midfielders — the user-requested cluster
+  ["CDM", "CM", "CAM"], // central midfielders — the user-requested cluster
   ["LW"],
   ["RW"],
   ["ST"],
@@ -44,9 +44,7 @@ export const POSITION_FAMILIES: ReadonlyArray<ReadonlyArray<Position>> = [
  */
 export function isPositionCompatible(slotPos: Position, playerPos: Position): boolean {
   if (slotPos === playerPos) return true;
-  return POSITION_FAMILIES.some(
-    family => family.includes(slotPos) && family.includes(playerPos),
-  );
+  return POSITION_FAMILIES.some((family) => family.includes(slotPos) && family.includes(playerPos));
 }
 
 /** Result of attempting to place a founding player. */
@@ -90,7 +88,7 @@ export function placeFoundingPlayer(
     };
   }
   const idx = slots.findIndex(
-    s => !s.player && isCompatible(s.position, foundingPlayer.position),
+    (s) => !s.player && isCompatible(s.position, foundingPlayer.position),
   );
   if (idx === -1) {
     return {
@@ -100,9 +98,7 @@ export function placeFoundingPlayer(
       placedClubId: null,
     };
   }
-  const newSlots = slots.map((s, i) =>
-    i === idx ? { ...s, player: foundingPlayer } : s,
-  );
+  const newSlots = slots.map((s, i) => (i === idx ? { ...s, player: foundingPlayer } : s));
   return {
     slots: newSlots,
     placedSlotId: slots[idx].id,

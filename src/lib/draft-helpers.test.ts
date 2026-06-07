@@ -36,7 +36,7 @@ describe("isPositionMatch (strict equality)", () => {
   });
   it("returns false when positions differ", () => {
     expect(isPositionMatch("CB", "ST")).toBe(false);
-    expect(isPositionMatch("CAM", "CM")).toBe(false);  // strict, not bucketed
+    expect(isPositionMatch("CAM", "CM")).toBe(false); // strict, not bucketed
   });
 });
 
@@ -48,11 +48,11 @@ describe("isPositionCompatible (family-aware)", () => {
 
   it("central-midfield family: CDM ↔ CM ↔ CAM are interchangeable", () => {
     expect(isPositionCompatible("CM", "CAM")).toBe(true);
-    expect(isPositionCompatible("CAM", "CM")).toBe(true);   // symmetric
+    expect(isPositionCompatible("CAM", "CM")).toBe(true); // symmetric
     expect(isPositionCompatible("CM", "CDM")).toBe(true);
-    expect(isPositionCompatible("CDM", "CM")).toBe(true);   // symmetric
+    expect(isPositionCompatible("CDM", "CM")).toBe(true); // symmetric
     expect(isPositionCompatible("CAM", "CDM")).toBe(true);
-    expect(isPositionCompatible("CDM", "CAM")).toBe(true);  // symmetric
+    expect(isPositionCompatible("CDM", "CAM")).toBe(true); // symmetric
   });
 
   it("side-specific positions do NOT cross sides", () => {
@@ -79,9 +79,9 @@ describe("isPositionCompatible (family-aware)", () => {
   });
 
   it("every position belongs to exactly one family", () => {
-    const allPositions: Position[] = ["GK","CB","LB","RB","CDM","CM","CAM","LW","RW","ST"];
+    const allPositions: Position[] = ["GK", "CB", "LB", "RB", "CDM", "CM", "CAM", "LW", "RW", "ST"];
     for (const p of allPositions) {
-      const familyCount = POSITION_FAMILIES.filter(f => f.includes(p)).length;
+      const familyCount = POSITION_FAMILIES.filter((f) => f.includes(p)).length;
       expect(familyCount).toBe(1);
     }
   });
@@ -111,8 +111,8 @@ describe("placeFoundingPlayer", () => {
     expect(result.placedPlayerKey).toBe("werder:Per Mertesacker");
     expect(result.placedClubId).toBe("werder");
     expect(result.slots[1].player).toEqual(fp);
-    expect(result.slots[2].player).toBeUndefined();  // 2nd CB still empty
-    expect(result.slots[0].player).toBeUndefined();  // GK still empty
+    expect(result.slots[2].player).toBeUndefined(); // 2nd CB still empty
+    expect(result.slots[0].player).toBeUndefined(); // GK still empty
   });
 
   it("returns null target when no compatible slot exists in formation", () => {
@@ -140,8 +140,8 @@ describe("placeFoundingPlayer", () => {
     const fp = mockPlayer("Per Mertesacker", "CB", "werder");
     const result = placeFoundingPlayer(slots, fp);
     expect(result.placedSlotId).toBe("cb-2");
-    expect(result.slots[0].player).toEqual(existing);  // first CB unchanged
-    expect(result.slots[1].player).toEqual(fp);        // second CB placed
+    expect(result.slots[0].player).toEqual(existing); // first CB unchanged
+    expect(result.slots[1].player).toEqual(fp); // second CB placed
   });
 
   it("does not mutate the input slots array or its members", () => {
@@ -149,7 +149,7 @@ describe("placeFoundingPlayer", () => {
     const slotsCopy = JSON.parse(JSON.stringify(slots));
     const fp = mockPlayer("Per Mertesacker", "CB");
     placeFoundingPlayer(slots, fp);
-    expect(slots).toEqual(slotsCopy);  // input untouched
+    expect(slots).toEqual(slotsCopy); // input untouched
     expect(slots[0].player).toBeUndefined();
   });
 
@@ -172,11 +172,12 @@ describe("placeFoundingPlayer", () => {
   it("works with a custom compatibility function (position-bucket flexible)", () => {
     // Accept any-FB into a generic DEF slot
     const flexCompat = (slotPos: Position, playerPos: Position) => {
-      if (slotPos === "CB" && (playerPos === "CB" || playerPos === "LB" || playerPos === "RB")) return true;
+      if (slotPos === "CB" && (playerPos === "CB" || playerPos === "LB" || playerPos === "RB"))
+        return true;
       return slotPos === playerPos;
     };
     const slots = [mockSlot("cb-1", "CB"), mockSlot("st-1", "ST")];
-    const fp = mockPlayer("Stéphane Henchoz", "LB", "liverpool");  // LB into CB slot
+    const fp = mockPlayer("Stéphane Henchoz", "LB", "liverpool"); // LB into CB slot
     const result = placeFoundingPlayer(slots, fp, flexCompat);
     expect(result.placedSlotId).toBe("cb-1");
     expect(result.slots[0].player).toEqual(fp);
@@ -195,17 +196,17 @@ describe("placeFoundingPlayer", () => {
     // The fix for the user-reported issue: CDM/CM/CAM are the same family,
     // so a CAM player slots gracefully into a CM slot in 4-3-3.
     const slots = [
-      mockSlot("gk",   "GK"),
-      mockSlot("lb",   "LB"),
+      mockSlot("gk", "GK"),
+      mockSlot("lb", "LB"),
       mockSlot("cb-1", "CB"),
       mockSlot("cb-2", "CB"),
-      mockSlot("rb",   "RB"),
+      mockSlot("rb", "RB"),
       mockSlot("cm-1", "CM"),
       mockSlot("cm-2", "CM"),
       mockSlot("cm-3", "CM"),
-      mockSlot("lw",   "LW"),
-      mockSlot("st",   "ST"),
-      mockSlot("rw",   "RW"),
+      mockSlot("lw", "LW"),
+      mockSlot("st", "ST"),
+      mockSlot("rw", "RW"),
     ];
     const fp = mockPlayer("Dariusz Wosz", "CAM", "bochum");
     const result = placeFoundingPlayer(slots, fp);
@@ -215,11 +216,7 @@ describe("placeFoundingPlayer", () => {
 
   it("CAM founding player into a CDM-only formation slot", () => {
     // Pep Guardiola's CDM accepting a CAM-tagged player (defensive 10 → 8 swap)
-    const slots = [
-      mockSlot("gk",    "GK"),
-      mockSlot("cdm-1", "CDM"),
-      mockSlot("cdm-2", "CDM"),
-    ];
+    const slots = [mockSlot("gk", "GK"), mockSlot("cdm-1", "CDM"), mockSlot("cdm-2", "CDM")];
     const fp = mockPlayer("Mikel Arteta", "CAM", "arsenal");
     expect(placeFoundingPlayer(slots, fp).placedSlotId).toBe("cdm-1");
   });

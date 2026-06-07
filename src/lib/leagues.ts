@@ -15,11 +15,11 @@ export interface League {
   name: string;
   country: string;
   flag: string;
-  matches: number;          // total matches in a season for "unschlagbar"
-  brandMark: string;        // e.g. "34:0"
-  tagline: string;          // localized tagline (UNSCHLAGBAR / INVENCIBLE / ...)
-  kickoffWord: string;      // CTA on landing/start
-  seasonWord: string;       // header word in season screen
+  matches: number; // total matches in a season for "unschlagbar"
+  brandMark: string; // e.g. "34:0"
+  tagline: string; // localized tagline (UNSCHLAGBAR / INVENCIBLE / ...)
+  kickoffWord: string; // CTA on landing/start
+  seasonWord: string; // header word in season screen
   matchesWord: string;
   defeatsWord: string;
   drawWord: string;
@@ -27,9 +27,9 @@ export interface League {
   lossWord: string;
   tableTitle: string;
   unbeatenLabel: string;
-  opponentsCount: number;   // distinct opponents available
-  fixtureRounds: number;    // for league kind
-  kind: CompetitionKind;    // league | knockout | groupKO
+  opponentsCount: number; // distinct opponents available
+  fixtureRounds: number; // for league kind
+  kind: CompetitionKind; // league | knockout | groupKO
   /** Knockout: round labels in order. For groupKO, includes "Group" repeated for group matches. */
   rounds?: string[];
   /** Friendly short label for tile UI: "League · 34" / "Knockout · 4" */
@@ -148,10 +148,18 @@ export const LEAGUES: Record<LeagueId, League> = {
     // Classic UCL format: 6 group matches (3 opps × home & away),
     // R16 / QF / SF two-legged, single-leg final = 13 matches.
     rounds: [
-      "Group","Group","Group","Group","Group","Group",
-      "Round of 16","Round of 16",
-      "Quarter-Final","Quarter-Final",
-      "Semi-Final","Semi-Final",
+      "Group",
+      "Group",
+      "Group",
+      "Group",
+      "Group",
+      "Group",
+      "Round of 16",
+      "Round of 16",
+      "Quarter-Final",
+      "Quarter-Final",
+      "Semi-Final",
+      "Semi-Final",
       "Final",
     ],
     formatLabel: "Group + KO · 13 matches",

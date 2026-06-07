@@ -14,14 +14,13 @@ export const Route = createFileRoute("/season")({
 });
 
 function pickOpponents(clubs: Club[], count: number): Club[] {
-  const ranked = clubs
-    .slice()
-    .sort((a, b) => {
-      const era = (e: string) => e === "current" ? 0 : e === "classic" ? 1 : 2;
-      const ea = era(a.era), eb = era(b.era);
-      if (ea !== eb) return ea - eb;
-      return b.strength - a.strength;
-    });
+  const ranked = clubs.slice().sort((a, b) => {
+    const era = (e: string) => (e === "current" ? 0 : e === "classic" ? 1 : 2);
+    const ea = era(a.era),
+      eb = era(b.era);
+    if (ea !== eb) return ea - eb;
+    return b.strength - a.strength;
+  });
   return ranked.slice(0, count);
 }
 
@@ -36,16 +35,18 @@ function buildKnockoutOpponents(clubs: Club[], rounds: string[], seedNum: number
   const pool = clubs.slice().sort((a, b) => b.strength - a.strength);
   const rng = (s: { v: number }) => {
     let x = s.v | 0;
-    x ^= x << 13; x ^= x >>> 17; x ^= x << 5;
+    x ^= x << 13;
+    x ^= x >>> 17;
+    x ^= x << 5;
     s.v = x;
     return ((x >>> 0) % 10000) / 10000;
   };
   const rs = { v: seedNum || 4242 };
   const used = new Set<string>();
   const pickFrom = (candidates: Club[]): Club => {
-    const fresh = candidates.filter(c => !used.has(c.id));
-    const fallback = pool.filter(c => !used.has(c.id));
-    const list = fresh.length ? fresh : (fallback.length ? fallback : pool);
+    const fresh = candidates.filter((c) => !used.has(c.id));
+    const fallback = pool.filter((c) => !used.has(c.id));
+    const list = fresh.length ? fresh : fallback.length ? fallback : pool;
     const pick = list[Math.floor(rng(rs) * list.length)]!;
     used.add(pick.id);
     return pick;
@@ -81,7 +82,7 @@ function buildKnockoutOpponents(clubs: Club[], rounds: string[], seedNum: number
   void groupBlocks;
 
   // Step 2: progressively harder buckets for KO ties; weaker bucket for group opponents.
-  const koTies = ties.filter(t => !t.isGroup);
+  const koTies = ties.filter((t) => !t.isGroup);
   const nKO = koTies.length;
   const bucketSize = Math.max(1, Math.floor(pool.length / Math.max(nKO + 1, 1)));
   // group draws from the weakest bucket
@@ -94,7 +95,8 @@ function buildKnockoutOpponents(clubs: Club[], rounds: string[], seedNum: number
       // 3 distinct group opponents if 6 group matches (home & away), else 1 per match.
       const distinct = tie.legs % 2 === 0 ? tie.legs / 2 : tie.legs;
       const groupOpps: Club[] = [];
-      for (let k = 0; k < distinct; k++) groupOpps.push(pickFrom(groupBucket.length ? groupBucket : pool));
+      for (let k = 0; k < distinct; k++)
+        groupOpps.push(pickFrom(groupBucket.length ? groupBucket : pool));
       if (distinct * 2 === tie.legs) {
         // Pair home/away
         for (const o of groupOpps) {
@@ -106,7 +108,10 @@ function buildKnockoutOpponents(clubs: Club[], rounds: string[], seedNum: number
     } else {
       // Pick one opponent from the bucket for this round; later rounds = stronger pool
       const bucketStart = (nKO - 1 - koIdx) * bucketSize;
-      const bucket = pool.slice(bucketStart, koIdx === nKO - 1 ? pool.length : bucketStart + bucketSize);
+      const bucket = pool.slice(
+        bucketStart,
+        koIdx === nKO - 1 ? pool.length : bucketStart + bucketSize,
+      );
       const opp = pickFrom(bucket.length ? bucket : pool);
       for (let leg = 0; leg < tie.legs; leg++) opponents.push(opp);
       koIdx++;
@@ -125,7 +130,7 @@ function SeasonScreen() {
   const [revealCount, setRevealCount] = useState(0);
 
   useEffect(() => {
-    if (slots.every(s => !s.player)) {
+    if (slots.every((s) => !s.player)) {
       navigate({ to: "/" });
       return;
     }
@@ -148,20 +153,25 @@ function SeasonScreen() {
     if (revealCount >= matches.length) return;
     const last = matches[revealCount - 1];
     const base = isKO ? 600 : 380;
-    const extra = !last ? 120
-      : last.outcome === "L" ? 320
-      : last.outcome === "D" ? 200
-      : isKO ? 180 : 0;
-    const t = setTimeout(() => setRevealCount(c => c + 1), base + extra);
+    const extra = !last
+      ? 120
+      : last.outcome === "L"
+        ? 320
+        : last.outcome === "D"
+          ? 200
+          : isKO
+            ? 180
+            : 0;
+    const t = setTimeout(() => setRevealCount((c) => c + 1), base + extra);
     return () => clearTimeout(t);
   }, [matches, revealCount, isKO]);
 
   const shown = matches.slice(0, revealCount);
-  const firstNonWinIdx = matches.findIndex(m => m.outcome === "L");
+  const firstNonWinIdx = matches.findIndex((m) => m.outcome === "L");
   const streakBroken = firstNonWinIdx !== -1 && revealCount > firstNonWinIdx;
-  const wins = shown.filter(m => m.outcome === "W").length;
-  const draws = shown.filter(m => m.outcome === "D").length;
-  const losses = shown.filter(m => m.outcome === "L").length;
+  const wins = shown.filter((m) => m.outcome === "W").length;
+  const draws = shown.filter((m) => m.outcome === "D").length;
+  const losses = shown.filter((m) => m.outcome === "L").length;
   const goalsFor = shown.reduce((a, m) => a + m.ourScore, 0);
   const goalsAgainst = shown.reduce((a, m) => a + m.theirScore, 0);
   const seasonOver = revealCount >= matches.length;
@@ -173,9 +183,16 @@ function SeasonScreen() {
     <div className="min-h-screen pb-16">
       <div className="sticky top-0 z-20 backdrop-blur-md bg-background/75 border-b border-border/60">
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
-          <Link to="/" className="brand-mark text-3xl inline-flex items-baseline gap-0.5 leading-none shrink-0">
-            <span>{brandA}</span><span className="text-primary">:</span><span>{brandB}</span>
-            <span className="ml-2 text-[10px] tracking-[0.25em] text-warning/80 hidden sm:inline">{league.flag} {league.name}</span>
+          <Link
+            to="/"
+            className="brand-mark text-3xl inline-flex items-baseline gap-0.5 leading-none shrink-0"
+          >
+            <span>{brandA}</span>
+            <span className="text-primary">:</span>
+            <span>{brandB}</span>
+            <span className="ml-2 text-[10px] tracking-[0.25em] text-warning/80 hidden sm:inline">
+              {league.flag} {league.name}
+            </span>
           </Link>
           <div className="flex items-center gap-1.5 text-xs flex-wrap justify-end">
             <Stat label="OVR" value={String(ourRating)} />
@@ -207,7 +224,11 @@ function SeasonScreen() {
         </AnimatePresence>
 
         {isKO ? (
-          <BracketView matches={matches} revealCount={revealCount} allRounds={league.rounds ?? []} />
+          <BracketView
+            matches={matches}
+            revealCount={revealCount}
+            allRounds={league.rounds ?? []}
+          />
         ) : (
           <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
             {matches.map((m, i) => {
@@ -271,7 +292,15 @@ function SeasonScreen() {
   );
 }
 
-function BracketView({ matches, revealCount, allRounds }: { matches: MatchResult[]; revealCount: number; allRounds: string[] }) {
+function BracketView({
+  matches,
+  revealCount,
+  allRounds,
+}: {
+  matches: MatchResult[];
+  revealCount: number;
+  allRounds: string[];
+}) {
   // Group played matches by round, preserving order
   const groups: { round: string; items: { m: MatchResult; idx: number }[]; played: boolean }[] = [];
   matches.forEach((m, idx) => {
@@ -283,9 +312,14 @@ function BracketView({ matches, revealCount, allRounds }: { matches: MatchResult
 
   // Append ghost rounds for any rounds in the bracket that were never reached
   const playedRoundsCount: Record<string, number> = {};
-  matches.forEach(m => { const r = m.round ?? "Match"; playedRoundsCount[r] = (playedRoundsCount[r] ?? 0) + 1; });
+  matches.forEach((m) => {
+    const r = m.round ?? "Match";
+    playedRoundsCount[r] = (playedRoundsCount[r] ?? 0) + 1;
+  });
   const expectedCount: Record<string, number> = {};
-  allRounds.forEach(r => { expectedCount[r] = (expectedCount[r] ?? 0) + 1; });
+  allRounds.forEach((r) => {
+    expectedCount[r] = (expectedCount[r] ?? 0) + 1;
+  });
   // Find first round in allRounds that wasn't fully played, render rest as ghosts
   const seenInAll: Record<string, number> = {};
   const ghostRounds: { round: string; slots: number }[] = [];
@@ -303,7 +337,8 @@ function BracketView({ matches, revealCount, allRounds }: { matches: MatchResult
       // (this round itself: if partially played it stays in `groups`; everything AFTER becomes ghost)
       // We only add ghost entries for rounds that come AFTER any played match.
       const lastPlayedRoundIdx = groups.length - 1;
-      const currentRoundAlreadyShown = lastPlayedRoundIdx >= 0 && groups[lastPlayedRoundIdx]!.round === r;
+      const currentRoundAlreadyShown =
+        lastPlayedRoundIdx >= 0 && groups[lastPlayedRoundIdx]!.round === r;
       if (!currentRoundAlreadyShown && (playedRoundsCount[r] ?? 0) === 0) {
         ghostRounds.push({ round: r, slots: expectedCount[r] ?? 1 });
       }
@@ -314,12 +349,19 @@ function BracketView({ matches, revealCount, allRounds }: { matches: MatchResult
   return (
     <div className="mt-6 space-y-5">
       {groups.map((g) => {
-        const anyRevealed = g.items.some(it => it.idx < revealCount);
+        const anyRevealed = g.items.some((it) => it.idx < revealCount);
         return (
-          <div key={g.round + g.items[0]!.idx} className={`rounded-xl border ${anyRevealed ? "border-warning/40 bg-warning/5" : "border-border bg-card/30"} p-3`}>
+          <div
+            key={g.round + g.items[0]!.idx}
+            className={`rounded-xl border ${anyRevealed ? "border-warning/40 bg-warning/5" : "border-border bg-card/30"} p-3`}
+          >
             <div className="flex items-center justify-between mb-2">
-              <div className="text-[10px] uppercase tracking-[0.25em] text-warning/90 font-display">{g.round}</div>
-              <div className="text-[10px] text-muted-foreground">{g.items.length} match{g.items.length > 1 ? "es" : ""}</div>
+              <div className="text-[10px] uppercase tracking-[0.25em] text-warning/90 font-display">
+                {g.round}
+              </div>
+              <div className="text-[10px] text-muted-foreground">
+                {g.items.length} match{g.items.length > 1 ? "es" : ""}
+              </div>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
               {g.items.map(({ m, idx }) => (
@@ -336,17 +378,29 @@ function BracketView({ matches, revealCount, allRounds }: { matches: MatchResult
         );
       })}
       {ghostRounds.map((g, gi) => (
-        <div key={`ghost-${gi}-${g.round}`} className="rounded-xl border border-dashed border-muted-foreground/20 bg-card/10 p-3 opacity-60">
+        <div
+          key={`ghost-${gi}-${g.round}`}
+          className="rounded-xl border border-dashed border-muted-foreground/20 bg-card/10 p-3 opacity-60"
+        >
           <div className="flex items-center justify-between mb-2">
-            <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground font-display">{g.round}</div>
-            <div className="text-[10px] text-destructive/80 uppercase tracking-widest">Not reached</div>
+            <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground font-display">
+              {g.round}
+            </div>
+            <div className="text-[10px] text-destructive/80 uppercase tracking-widest">
+              Not reached
+            </div>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
             {Array.from({ length: g.slots }).map((_, i) => (
-              <div key={i} className="flex items-center gap-3 p-3 rounded-lg border border-dashed border-muted-foreground/20 bg-card/20">
+              <div
+                key={i}
+                className="flex items-center gap-3 p-3 rounded-lg border border-dashed border-muted-foreground/20 bg-card/20"
+              >
                 <div className="w-7 text-[11px] text-muted-foreground font-mono pl-1">—</div>
                 <div className="w-8 h-8 rounded-full border border-dashed border-muted-foreground/30" />
-                <div className="flex-1 text-xs text-muted-foreground italic">Eliminated in group stage</div>
+                <div className="flex-1 text-xs text-muted-foreground italic">
+                  Eliminated in group stage
+                </div>
                 <div className="font-display text-lg tabular-nums text-muted-foreground">— —</div>
               </div>
             ))}
@@ -357,13 +411,25 @@ function BracketView({ matches, revealCount, allRounds }: { matches: MatchResult
   );
 }
 
-function LiveCard({ match, league }: { match: MatchResult; league: typeof LEAGUES[keyof typeof LEAGUES] }) {
-  const tone = match.outcome === "W" ? "from-success/30 via-success/10 border-success/50"
-    : match.outcome === "D" ? "from-warning/30 via-warning/10 border-warning/50"
-    : "from-destructive/40 via-destructive/15 border-destructive/60";
-  const badge = match.outcome === "W" ? "bg-success text-success-foreground"
-    : match.outcome === "D" ? "bg-warning text-warning-foreground"
-    : "bg-destructive text-destructive-foreground";
+function LiveCard({
+  match,
+  league,
+}: {
+  match: MatchResult;
+  league: (typeof LEAGUES)[keyof typeof LEAGUES];
+}) {
+  const tone =
+    match.outcome === "W"
+      ? "from-success/30 via-success/10 border-success/50"
+      : match.outcome === "D"
+        ? "from-warning/30 via-warning/10 border-warning/50"
+        : "from-destructive/40 via-destructive/15 border-destructive/60";
+  const badge =
+    match.outcome === "W"
+      ? "bg-success text-success-foreground"
+      : match.outcome === "D"
+        ? "bg-warning text-warning-foreground"
+        : "bg-destructive text-destructive-foreground";
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.96, y: 16 }}
@@ -372,8 +438,12 @@ function LiveCard({ match, league }: { match: MatchResult; league: typeof LEAGUE
       transition={{ type: "spring", stiffness: 280, damping: 22 }}
       className={`mt-4 relative overflow-hidden rounded-xl border-2 bg-gradient-to-br ${tone} px-4 py-3`}
     >
-      <div className="pointer-events-none absolute inset-0 opacity-[0.07]"
-           style={{ background: "repeating-linear-gradient(45deg, currentColor 0 2px, transparent 2px 8px)" }} />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.07]"
+        style={{
+          background: "repeating-linear-gradient(45deg, currentColor 0 2px, transparent 2px 8px)",
+        }}
+      />
       <div className="relative flex items-center gap-3">
         <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
           {match.round
@@ -386,7 +456,11 @@ function LiveCard({ match, league }: { match: MatchResult; league: typeof LEAGUE
           transition={{ duration: 0.4 }}
           className={`ml-auto px-2 py-0.5 rounded text-[10px] font-display tracking-widest ${badge}`}
         >
-          {match.outcome === "W" ? league.winWord : match.outcome === "D" ? league.drawWord : league.lossWord}
+          {match.outcome === "W"
+            ? league.winWord
+            : match.outcome === "D"
+              ? league.drawWord
+              : league.lossWord}
         </motion.span>
       </div>
       <div className="relative mt-2 flex items-center gap-3">
@@ -409,11 +483,23 @@ function LiveCard({ match, league }: { match: MatchResult; league: typeof LEAGUE
   );
 }
 
-function Stat({ label, value, color }: { label: string; value: string; color?: "success"|"warning"|"destructive" }) {
-  const c = color === "success" ? "text-success border-success/30 bg-success/10"
-    : color === "warning" ? "text-warning border-warning/30 bg-warning/10"
-    : color === "destructive" ? "text-destructive border-destructive/30 bg-destructive/10"
-    : "text-foreground border-border bg-card";
+function Stat({
+  label,
+  value,
+  color,
+}: {
+  label: string;
+  value: string;
+  color?: "success" | "warning" | "destructive";
+}) {
+  const c =
+    color === "success"
+      ? "text-success border-success/30 bg-success/10"
+      : color === "warning"
+        ? "text-warning border-warning/30 bg-warning/10"
+        : color === "destructive"
+          ? "text-destructive border-destructive/30 bg-destructive/10"
+          : "text-foreground border-border bg-card";
   return (
     <div className={`px-2 py-1 rounded border ${c} tabular-nums`}>
       <span className="text-[10px] uppercase tracking-wider opacity-70 mr-1">{label}</span>
@@ -422,18 +508,25 @@ function Stat({ label, value, color }: { label: string; value: string; color?: "
   );
 }
 
-function MatchCard({ match, revealed, isStreakBreaker, dimmed }: {
+function MatchCard({
+  match,
+  revealed,
+  isStreakBreaker,
+  dimmed,
+}: {
   match: MatchResult;
   revealed: boolean;
   isStreakBreaker: boolean;
   dimmed: boolean;
 }) {
-  const accent = match.outcome === "W" ? "border-success/40 bg-success/5"
-    : match.outcome === "D" ? "border-warning/40 bg-warning/5"
-    : "border-destructive/40 bg-destructive/5";
-  const bar = match.outcome === "W" ? "bg-success"
-    : match.outcome === "D" ? "bg-warning"
-    : "bg-destructive";
+  const accent =
+    match.outcome === "W"
+      ? "border-success/40 bg-success/5"
+      : match.outcome === "D"
+        ? "border-warning/40 bg-warning/5"
+        : "border-destructive/40 bg-destructive/5";
+  const bar =
+    match.outcome === "W" ? "bg-success" : match.outcome === "D" ? "bg-warning" : "bg-destructive";
   return (
     <motion.div
       initial={{ opacity: 0, x: -6 }}
@@ -442,20 +535,29 @@ function MatchCard({ match, revealed, isStreakBreaker, dimmed }: {
       className={`relative overflow-hidden flex items-center gap-3 p-3 rounded-lg border ${revealed ? accent : "border-border bg-card/30"} ${isStreakBreaker ? "ring-2 ring-destructive shadow-[0_0_24px_-4px] shadow-destructive/60" : ""}`}
     >
       {revealed && <span className={`absolute left-0 top-0 bottom-0 w-1 ${bar}`} />}
-      <div className="w-7 text-[11px] text-muted-foreground font-mono pl-1">{String(match.matchday).padStart(2, "0")}</div>
+      <div className="w-7 text-[11px] text-muted-foreground font-mono pl-1">
+        {String(match.matchday).padStart(2, "0")}
+      </div>
       <ClubBadge club={match.opponent} size={32} />
       <div className="flex-1 min-w-0">
         <div className="text-xs truncate">
-          <span className="text-muted-foreground">{match.home ? "vs" : "@"}</span> {match.opponent.short}
+          <span className="text-muted-foreground">{match.home ? "vs" : "@"}</span>{" "}
+          {match.opponent.short}
         </div>
         <div className="text-[10px] text-muted-foreground truncate">{match.opponent.name}</div>
       </div>
       <div className="font-display text-lg tabular-nums">
         {revealed ? `${match.ourScore}-${match.theirScore}` : "— —"}
       </div>
-      <div className={`w-5 text-center font-display text-sm ${
-        match.outcome === "W" ? "text-success" : match.outcome === "D" ? "text-warning" : "text-destructive"
-      }`}>
+      <div
+        className={`w-5 text-center font-display text-sm ${
+          match.outcome === "W"
+            ? "text-success"
+            : match.outcome === "D"
+              ? "text-warning"
+              : "text-destructive"
+        }`}
+      >
         {revealed ? match.outcome : ""}
       </div>
     </motion.div>

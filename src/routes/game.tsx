@@ -81,7 +81,9 @@ function GameSetup() {
       <header className="text-center">
         <Link to="/" className="inline-block">
           <h1 className="brand-mark text-5xl inline-flex items-baseline gap-1 leading-none">
-            <span>{league.brandMark.split(":")[0]}</span><span className="text-primary">:</span><span>{league.brandMark.split(":")[1]}</span>
+            <span>{league.brandMark.split(":")[0]}</span>
+            <span className="text-primary">:</span>
+            <span>{league.brandMark.split(":")[1]}</span>
           </h1>
           <div className="text-[10px] tracking-[0.3em] text-warning/80 mt-1">{league.tagline}</div>
         </Link>
@@ -91,7 +93,9 @@ function GameSetup() {
       {/* Quick-start escape hatch — newcomers can skip the 7-section form */}
       <div className="mt-6 p-4 rounded-xl border border-warning/40 bg-warning/10 flex items-center justify-between gap-3">
         <div className="min-w-0">
-          <div className="font-display text-warning text-sm uppercase tracking-[0.2em]">⚡ Quick Start</div>
+          <div className="font-display text-warning text-sm uppercase tracking-[0.2em]">
+            ⚡ Quick Start
+          </div>
           <div className="text-xs text-muted-foreground mt-0.5">
             LIVE WC 2026 · 4-3-3 · Normal · pick-as-you-go — straight to the wheel.
           </div>
@@ -106,27 +110,30 @@ function GameSetup() {
 
       <Section label="Competition">
         <div className="space-y-5">
-          {COMPETITION_GROUPS.map(group => {
-            const ids = LEAGUE_IDS.filter(id => group.kinds.includes(LEAGUES[id].kind));
+          {COMPETITION_GROUPS.map((group) => {
+            const ids = LEAGUE_IDS.filter((id) => group.kinds.includes(LEAGUES[id].kind));
             if (ids.length === 0) return null;
             return (
               <div key={group.id}>
                 <div className="flex items-baseline justify-between mb-2 px-0.5">
                   <h3 className={`font-display text-sm tracking-wide ${group.accent}`}>
-                    <span className="mr-1.5">{group.icon}</span>{group.title}
+                    <span className="mr-1.5">{group.icon}</span>
+                    {group.title}
                   </h3>
                   <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
                     {group.timeHint}
                   </span>
                 </div>
-                <div className={`grid gap-2 ${
-                  ids.length === 1
-                    ? "grid-cols-1"
-                    : ids.length === 2
-                      ? "grid-cols-2"
-                      : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
-                }`}>
-                  {ids.map(id => {
+                <div
+                  className={`grid gap-2 ${
+                    ids.length === 1
+                      ? "grid-cols-1"
+                      : ids.length === 2
+                        ? "grid-cols-2"
+                        : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
+                  }`}
+                >
+                  {ids.map((id) => {
                     const l = LEAGUES[id];
                     const isLive = id === "worldcup2026";
                     const selected = config.league === id;
@@ -150,7 +157,9 @@ function GameSetup() {
                         )}
                         <div className="text-2xl leading-none">{l.flag}</div>
                         <div className="mt-1.5 font-display text-sm">{l.name}</div>
-                        <div className={`text-[10px] ${selected ? "opacity-80" : isLive ? "text-warning/80" : "text-muted-foreground"}`}>
+                        <div
+                          className={`text-[10px] ${selected ? "opacity-80" : isLive ? "text-warning/80" : "text-muted-foreground"}`}
+                        >
                           {l.formatLabel}
                         </div>
                       </button>
@@ -180,7 +189,7 @@ function GameSetup() {
         hint="How your XI lines up. 4-3-3 is the modern classic; 5-4-1 locks the back; 3-5-2 favors midfield."
       >
         <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
-          {FORMATION_KEYS.map(k => (
+          {FORMATION_KEYS.map((k) => (
             <Chip
               key={k}
               active={config.formation === k}
@@ -192,7 +201,6 @@ function GameSetup() {
         </div>
         <p className="mt-3 text-sm text-muted-foreground text-center">{formation.description}</p>
       </Section>
-
 
       <Section label="">
         <Pitch slots={slots} />
@@ -301,7 +309,10 @@ function GameSetup() {
       </Section>
 
       <button
-        onClick={() => { reset(); navigate({ to: "/draft" }); }}
+        onClick={() => {
+          reset();
+          navigate({ to: "/draft" });
+        }}
         className="mt-10 w-full py-4 rounded-xl bg-success text-success-foreground font-display text-xl tracking-wide hover:brightness-110 transition"
       >
         {league.kickoffWord} →
@@ -310,13 +321,23 @@ function GameSetup() {
   );
 }
 
-function Section({ label, children, hint }: { label: string; children: React.ReactNode; hint?: string }) {
+function Section({
+  label,
+  children,
+  hint,
+}: {
+  label: string;
+  children: React.ReactNode;
+  hint?: string;
+}) {
   return (
     <section className="mt-10">
       {label && (
         <div className="mb-3 px-0.5">
           <h2 className="text-xs uppercase tracking-widest text-muted-foreground">{label}</h2>
-          {hint && <p className="text-[11px] text-muted-foreground/80 mt-1 leading-tight">{hint}</p>}
+          {hint && (
+            <p className="text-[11px] text-muted-foreground/80 mt-1 leading-tight">{hint}</p>
+          )}
         </div>
       )}
       {children}
@@ -324,7 +345,15 @@ function Section({ label, children, hint }: { label: string; children: React.Rea
   );
 }
 
-function Chip({ active, children, onClick }: { active: boolean; children: React.ReactNode; onClick: () => void }) {
+function Chip({
+  active,
+  children,
+  onClick,
+}: {
+  active: boolean;
+  children: React.ReactNode;
+  onClick: () => void;
+}) {
   return (
     <button
       onClick={onClick}
@@ -345,7 +374,12 @@ function Chip({ active, children, onClick }: { active: boolean; children: React.
  * Dariusz Wosz from VfL Bochum"). On /draft mount the player gets
  * auto-assigned to a compatible slot before the wheel takes over.
  */
-function FoundingPlayerPicker({ league, current, onPick, onClear }: {
+function FoundingPlayerPicker({
+  league,
+  current,
+  onPick,
+  onClear,
+}: {
   league: import("@/lib/leagues").LeagueId;
   current: Player | undefined;
   onPick: (p: Player) => void;
@@ -354,36 +388,35 @@ function FoundingPlayerPicker({ league, current, onPick, onClear }: {
   const [query, setQuery] = useState("");
   const players = useMemo(() => getPlayers(league), [league]);
   const clubs = useMemo(() => getClubs(league), [league]);
-  const clubName = (id: string) =>
-    clubs.find(c => c.id === id)?.short ?? id;
+  const clubName = (id: string) => clubs.find((c) => c.id === id)?.short ?? id;
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (q.length < 2) return [];
     return players
-      .filter(p => p.name.toLowerCase().includes(q))
+      .filter((p) => p.name.toLowerCase().includes(q))
       .sort((a, b) => b.prime_rating - a.prime_rating)
       .slice(0, 25);
   }, [players, query]);
 
   if (current) {
     return (
-      <div
-        className="flex items-center justify-between p-4 rounded-xl border bg-warning/10 border-warning"
-      >
+      <div className="flex items-center justify-between p-4 rounded-xl border bg-warning/10 border-warning">
         <div className="min-w-0">
-          <div className="font-display text-lg text-warning truncate">
-            ⚡ {current.name}
-          </div>
+          <div className="font-display text-lg text-warning truncate">⚡ {current.name}</div>
           <div className="text-xs text-muted-foreground mt-0.5 truncate">
-            {current.position} · {clubName(current.club)} · {current.career_years} · OVR {current.prime_rating}
+            {current.position} · {clubName(current.club)} · {current.career_years} · OVR{" "}
+            {current.prime_rating}
           </div>
           <div className="text-[10px] text-warning/80 mt-1.5 uppercase tracking-[0.18em]">
             will be pre-assigned in your XI
           </div>
         </div>
         <button
-          onClick={() => { onClear(); setQuery(""); }}
+          onClick={() => {
+            onClear();
+            setQuery("");
+          }}
           className="shrink-0 ml-3 w-8 h-8 rounded-full border border-warning/50 text-warning hover:bg-warning/20 transition"
           aria-label="Clear founding player"
         >
@@ -395,9 +428,7 @@ function FoundingPlayerPicker({ league, current, onPick, onClear }: {
 
   function surpriseMe() {
     // Pick a random top-50-by-rating player so the surprise is fun, not obscure
-    const top = [...players]
-      .sort((a, b) => b.prime_rating - a.prime_rating)
-      .slice(0, 50);
+    const top = [...players].sort((a, b) => b.prime_rating - a.prime_rating).slice(0, 50);
     if (top.length === 0) return;
     onPick(top[Math.floor(Math.random() * top.length)]);
   }
@@ -431,7 +462,10 @@ function FoundingPlayerPicker({ league, current, onPick, onClear }: {
               {results.map((p, i) => (
                 <li key={`${p.name}-${p.club}-${i}`}>
                   <button
-                    onClick={() => { onPick(p); setQuery(""); }}
+                    onClick={() => {
+                      onPick(p);
+                      setQuery("");
+                    }}
                     className="w-full px-4 py-2.5 text-left hover:bg-warning/10 hover:text-warning transition flex items-center justify-between gap-3"
                   >
                     <div className="min-w-0">
@@ -455,8 +489,18 @@ function FoundingPlayerPicker({ league, current, onPick, onClear }: {
 }
 
 function OptionCard({
-  active, title, sub, onClick, color,
-}: { active: boolean; title: string; sub: string; onClick: () => void; color: "success"|"warning"|"primary"|"muted" }) {
+  active,
+  title,
+  sub,
+  onClick,
+  color,
+}: {
+  active: boolean;
+  title: string;
+  sub: string;
+  onClick: () => void;
+  color: "success" | "warning" | "primary" | "muted";
+}) {
   const colorClass = {
     success: "border-success bg-success/10 text-success",
     warning: "border-warning bg-warning/10 text-warning",
@@ -478,13 +522,45 @@ function OptionCard({
 
 function Pitch({ slots }: { slots: ReturnType<typeof useGame.getState>["slots"] }) {
   return (
-    <div className="relative w-full rounded-xl border border-pitch-line/30 bg-pitch-pattern overflow-hidden" style={{ aspectRatio: "16/9" }}>
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full pointer-events-none">
-        <rect x="1" y="1" width="98" height="98" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
-        <line x1="0" y1="50" x2="100" y2="50" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
-        <circle cx="50" cy="50" r="9" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
+    <div
+      className="relative w-full rounded-xl border border-pitch-line/30 bg-pitch-pattern overflow-hidden"
+      style={{ aspectRatio: "16/9" }}
+    >
+      <svg
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        className="absolute inset-0 w-full h-full pointer-events-none"
+      >
+        <rect
+          x="1"
+          y="1"
+          width="98"
+          height="98"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="0.3"
+          className="text-pitch-line"
+        />
+        <line
+          x1="0"
+          y1="50"
+          x2="100"
+          y2="50"
+          stroke="currentColor"
+          strokeWidth="0.3"
+          className="text-pitch-line"
+        />
+        <circle
+          cx="50"
+          cy="50"
+          r="9"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="0.3"
+          className="text-pitch-line"
+        />
       </svg>
-      {slots.map(s => (
+      {slots.map((s) => (
         <div
           key={s.id}
           className="absolute -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-success text-success-foreground text-[10px] font-bold flex items-center justify-center border border-success-foreground/30"

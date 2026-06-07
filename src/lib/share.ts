@@ -1,9 +1,8 @@
 import type { RunConfig, Slot, MatchResult } from "./game-types";
 import { LEAGUES } from "./leagues";
 
-const BASE_URL = typeof window !== "undefined"
-  ? window.location.origin
-  : "https://unschlagbar.lovable.app";
+const BASE_URL =
+  typeof window !== "undefined" ? window.location.origin : "https://unschlagbar.lovable.app";
 
 export interface ChallengePayload {
   league: RunConfig["league"];
@@ -18,11 +17,17 @@ export interface ChallengePayload {
 // URL-safe base64
 function b64encode(s: string): string {
   if (typeof window !== "undefined") {
-    return window.btoa(unescape(encodeURIComponent(s)))
-      .replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+    return window
+      .btoa(unescape(encodeURIComponent(s)))
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=+$/, "");
   }
-  return Buffer.from(s, "utf-8").toString("base64")
-    .replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  return Buffer.from(s, "utf-8")
+    .toString("base64")
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/, "");
 }
 function b64decode(s: string): string {
   const norm = s.replace(/-/g, "+").replace(/_/g, "/") + "===".slice((s.length + 3) % 4);
@@ -61,14 +66,16 @@ export function buildShareText(
   lines.push("");
   for (const s of slots) {
     const p = s.player;
-    lines.push(p
-      ? `${s.position.padEnd(3, " ")} ${p.name}${p.career_years ? ` (${p.career_years.split("–")[0]?.trim() ?? ""})` : ""}`
-      : `${s.position.padEnd(3, " ")} —`);
+    lines.push(
+      p
+        ? `${s.position.padEnd(3, " ")} ${p.name}${p.career_years ? ` (${p.career_years.split("–")[0]?.trim() ?? ""})` : ""}`
+        : `${s.position.padEnd(3, " ")} —`,
+    );
   }
   if (matches && matches.length) {
-    const w = matches.filter(m => m.outcome === "W").length;
-    const d = matches.filter(m => m.outcome === "D").length;
-    const l = matches.filter(m => m.outcome === "L").length;
+    const w = matches.filter((m) => m.outcome === "W").length;
+    const d = matches.filter((m) => m.outcome === "D").length;
+    const l = matches.filter((m) => m.outcome === "L").length;
     const gf = matches.reduce((a, m) => a + m.ourScore, 0);
     const ga = matches.reduce((a, m) => a + m.theirScore, 0);
     const unbeaten = l === 0;
@@ -77,13 +84,17 @@ export function buildShareText(
       // Knockout / groupKO recap: list each match with its round
       for (const m of matches) {
         const round = m.round ?? `M${m.matchday}`;
-        lines.push(`${round.padEnd(14, " ")} ${m.outcome} ${m.ourScore}-${m.theirScore} ${m.home ? "vs" : "@"} ${m.opponent.short}`);
+        lines.push(
+          `${round.padEnd(14, " ")} ${m.outcome} ${m.ourScore}-${m.theirScore} ${m.home ? "vs" : "@"} ${m.opponent.short}`,
+        );
       }
       lines.push("");
-      const champ = matches.some(x => x.round === "Final" && x.outcome === "W");
+      const champ = matches.some((x) => x.round === "Final" && x.outcome === "W");
       lines.push(`${w}W ${d}D ${l}L · ${gf}:${ga}${champ ? " · 🏆 " + league.unbeatenLabel : ""}`);
     } else {
-      lines.push(`${w}W ${d}D ${l}L · ${gf}:${ga}${unbeaten ? " · ★ " + league.unbeatenLabel + " ★" : ""}`);
+      lines.push(
+        `${w}W ${d}D ${l}L · ${gf}:${ga}${unbeaten ? " · ★ " + league.unbeatenLabel + " ★" : ""}`,
+      );
     }
   }
   const seed = challengeSeed ?? Math.floor(Math.random() * 1e9);
@@ -101,12 +112,23 @@ export function buildShareText(
   return lines.join("\n");
 }
 
-export async function shareOrCopy(text: string, title = "UNSCHLAGBAR"): Promise<"shared" | "copied"> {
-  if (typeof navigator !== "undefined" && (navigator as Navigator & { share?: (d: ShareData) => Promise<void> }).share) {
+export async function shareOrCopy(
+  text: string,
+  title = "UNSCHLAGBAR",
+): Promise<"shared" | "copied"> {
+  if (
+    typeof navigator !== "undefined" &&
+    (navigator as Navigator & { share?: (d: ShareData) => Promise<void> }).share
+  ) {
     try {
-      await (navigator as Navigator & { share: (d: ShareData) => Promise<void> }).share({ title, text });
+      await (navigator as Navigator & { share: (d: ShareData) => Promise<void> }).share({
+        title,
+        text,
+      });
       return "shared";
-    } catch { /* fall through to copy */ }
+    } catch {
+      /* fall through to copy */
+    }
   }
   await navigator.clipboard.writeText(text);
   return "copied";

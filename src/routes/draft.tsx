@@ -10,18 +10,18 @@ import { placeFoundingPlayer, isPositionCompatible } from "@/lib/draft-helpers";
 import type { Club, Player, Position, Slot, EraTier, DraftMode } from "@/lib/game-types";
 
 const TIERS: { id: EraTier; label: string; sub: string }[] = [
-  { id: "current",  label: "20s",     sub: "starting 2020s" },
-  { id: "00s",      label: "00s",     sub: "noughties era" },
-  { id: "90s",      label: "90s",     sub: "post-Bosman" },
-  { id: "70s-80s",  label: "70s-80s", sub: "old guard" },
+  { id: "current", label: "20s", sub: "starting 2020s" },
+  { id: "00s", label: "00s", sub: "noughties era" },
+  { id: "90s", label: "90s", sub: "post-Bosman" },
+  { id: "70s-80s", label: "70s-80s", sub: "old guard" },
 ];
 
 // Derive a player's era from career_years string (uses the earliest year found).
 const TIER_YEAR_RANGES: Record<EraTier, [number, number]> = {
   "70s-80s": [1900, 1987],
-  "90s":     [1988, 1999],
-  "00s":     [2000, 2014],
-  "current": [2015, 2100],
+  "90s": [1988, 1999],
+  "00s": [2000, 2014],
+  current: [2015, 2100],
 };
 function getPlayerStartYear(p: Player): number {
   const m = p.career_years.match(/(19|20)\d{2}/g);
@@ -84,41 +84,41 @@ function DraftScreen() {
       return;
     }
     state.assignPlayer(result.placedSlotId, fp);
-    setUsedPlayers(prev => new Set(prev).add(result.placedPlayerKey!));
-    setUsedClubs(prev => new Set(prev).add(result.placedClubId!));
+    setUsedPlayers((prev) => new Set(prev).add(result.placedPlayerKey!));
+    setUsedClubs((prev) => new Set(prev).add(result.placedClubId!));
     state.setConfig({ foundingPlayer: undefined });
   }, []);
 
   const clubInTier = (c: Club, t: EraTier) => (c.era_tiers ?? [c.era_tier]).includes(t);
-  const tierClubs = useMemo(() => CLUBS.filter(c => clubInTier(c, tier)), [tier]);
+  const tierClubs = useMemo(() => CLUBS.filter((c) => clubInTier(c, tier)), [tier]);
 
   const formation = FORMATIONS[config.formation];
   void formation;
-  const emptySlots = slots.filter(s => !s.player);
+  const emptySlots = slots.filter((s) => !s.player);
   const totalSlots = slots.length;
   const filledCount = totalSlots - emptySlots.length;
   const done = emptySlots.length === 0;
 
   function clubHasCompatible(club: Club, forTier?: EraTier): boolean {
-    const openSlots = slots.filter(s => !s.player);
+    const openSlots = slots.filter((s) => !s.player);
     if (openSlots.length === 0) return false;
     let clubPlayers = PLAYERS.filter(
-      p => p.club === club.id && !usedPlayers.has(`${p.club}:${p.name}`)
+      (p) => p.club === club.id && !usedPlayers.has(`${p.club}:${p.name}`),
     );
-    if (forTier) clubPlayers = clubPlayers.filter(p => playerMatchesTier(p, forTier));
+    if (forTier) clubPlayers = clubPlayers.filter((p) => playerMatchesTier(p, forTier));
     if (config.draftMode === "position" && pickingForSlot) {
-      return clubPlayers.some(p => isCompatible(pickingForSlot.position, p.position));
+      return clubPlayers.some((p) => isCompatible(pickingForSlot.position, p.position));
     }
-    return clubPlayers.some(p => openSlots.some(s => isCompatible(s.position, p.position)));
+    return clubPlayers.some((p) => openSlots.some((s) => isCompatible(s.position, p.position)));
   }
 
   function pickRandomTier(): EraTier {
-    const tiersWithFresh = TIERS.filter(t =>
-      CLUBS.some(c => clubInTier(c, t.id) && !usedClubs.has(c.id) && clubHasCompatible(c, t.id))
+    const tiersWithFresh = TIERS.filter((t) =>
+      CLUBS.some((c) => clubInTier(c, t.id) && !usedClubs.has(c.id) && clubHasCompatible(c, t.id)),
     );
     const pool = tiersWithFresh.length
       ? tiersWithFresh
-      : TIERS.filter(t => CLUBS.some(c => clubInTier(c, t.id) && clubHasCompatible(c, t.id)));
+      : TIERS.filter((t) => CLUBS.some((c) => clubInTier(c, t.id) && clubHasCompatible(c, t.id)));
     if (!pool.length) return TIERS[0].id;
     return pool[Math.floor(Math.random() * pool.length)].id;
   }
@@ -127,20 +127,20 @@ function DraftScreen() {
     if (spinning) return;
     const activeTier = pickRandomTier();
     setTier(activeTier);
-    const tierPool = CLUBS.filter(c => clubInTier(c, activeTier));
-    const fresh = tierPool.filter(c => !usedClubs.has(c.id) && clubHasCompatible(c, activeTier));
+    const tierPool = CLUBS.filter((c) => clubInTier(c, activeTier));
+    const fresh = tierPool.filter((c) => !usedClubs.has(c.id) && clubHasCompatible(c, activeTier));
     const candidates = fresh.length
       ? fresh
-      : tierPool.filter(c => clubHasCompatible(c, activeTier));
+      : tierPool.filter((c) => clubHasCompatible(c, activeTier));
     if (!candidates.length) return;
     const pick = candidates[Math.floor(Math.random() * candidates.length)];
-    const idx = tierPool.findIndex(c => c.id === pick.id);
+    const idx = tierPool.findIndex((c) => c.id === pick.id);
     const segAngle = 360 / tierPool.length;
     // Pointer is at 3 o'clock (0°). Slice i midpoint in SVG (before rotation) sits at (i+0.5)*segAngle - 90.
     // After rotating wheel by R° clockwise, midpoint lands at that + R. Solve for R ≡ 90 - (i+0.5)*seg (mod 360).
     const desired = 90 - (idx + 0.5) * segAngle;
     setSpinning(true);
-    setAngle(prev => {
+    setAngle((prev) => {
       const current = ((prev % 360) + 360) % 360;
       const delta = (((desired - current) % 360) + 360) % 360;
       return prev + 360 * 6 + delta;
@@ -148,20 +148,24 @@ function DraftScreen() {
     setTimeout(() => {
       setSpinning(false);
       setCurrentClub(pick);
-      setUsedClubs(prev => new Set(prev).add(pick.id));
+      setUsedClubs((prev) => new Set(prev).add(pick.id));
     }, 3600);
   }
 
   function playersForCurrentClub(): Player[] {
     if (!currentClub) return [];
-    let pool = PLAYERS.filter(p => p.club === currentClub.id && !usedPlayers.has(`${p.club}:${p.name}`));
+    let pool = PLAYERS.filter(
+      (p) => p.club === currentClub.id && !usedPlayers.has(`${p.club}:${p.name}`),
+    );
     // Only show players whose career era matches the active tier (fixes 80s players appearing in 2000s, etc.)
-    pool = pool.filter(p => playerMatchesTier(p, tier));
+    pool = pool.filter((p) => playerMatchesTier(p, tier));
     if (config.draftMode === "position" && pickingForSlot) {
-      pool = pool.filter(p => isCompatible(pickingForSlot.position, p.position));
+      pool = pool.filter((p) => isCompatible(pickingForSlot.position, p.position));
     } else {
       // squad / quick: hide players whose position has no open compatible slot
-      pool = pool.filter(p => slots.some(s => !s.player && isCompatible(s.position, p.position)));
+      pool = pool.filter((p) =>
+        slots.some((s) => !s.player && isCompatible(s.position, p.position)),
+      );
     }
     return pool.slice().sort((a, b) => b.prime_rating - a.prime_rating);
   }
@@ -173,7 +177,7 @@ function DraftScreen() {
   function commitToSlot(slotId: string) {
     if (!assigningPlayer) return;
     assignPlayer(slotId, assigningPlayer);
-    setUsedPlayers(prev => new Set(prev).add(`${assigningPlayer.club}:${assigningPlayer.name}`));
+    setUsedPlayers((prev) => new Set(prev).add(`${assigningPlayer.club}:${assigningPlayer.name}`));
     setAssigningPlayer(null);
     setCurrentClub(null);
     queueAutoSpin();
@@ -182,7 +186,7 @@ function DraftScreen() {
   function positionFirstPickPlayer(player: Player) {
     if (!pickingForSlot) return;
     assignPlayer(pickingForSlot.id, player);
-    setUsedPlayers(prev => new Set(prev).add(`${player.club}:${player.name}`));
+    setUsedPlayers((prev) => new Set(prev).add(`${player.club}:${player.name}`));
     setPickingForSlot(null);
     setCurrentClub(null);
     // position-first waits for user to click next slot, no auto-spin
@@ -190,34 +194,38 @@ function DraftScreen() {
 
   function quickAssignTwo(players: Player[]) {
     // assign each player to the first open compatible slot; skip if none
-    const open = slots.filter(s => !s.player);
+    const open = slots.filter((s) => !s.player);
     const taken = new Set<string>();
     const used: string[] = [];
     for (const p of players) {
-      const slot = open.find(s => !taken.has(s.id) && isCompatible(s.position, p.position));
+      const slot = open.find((s) => !taken.has(s.id) && isCompatible(s.position, p.position));
       if (!slot) continue;
       taken.add(slot.id);
       assignPlayer(slot.id, p);
       used.push(`${p.club}:${p.name}`);
     }
-    if (used.length) setUsedPlayers(prev => {
-      const next = new Set(prev);
-      for (const k of used) next.add(k);
-      return next;
-    });
+    if (used.length)
+      setUsedPlayers((prev) => {
+        const next = new Set(prev);
+        for (const k of used) next.add(k);
+        return next;
+      });
     setCurrentClub(null);
     // auto-spin if any slots still open
     const remaining = open.length - taken.size;
     if (remaining > 0) {
       setAutoSpinHint(true);
-      setTimeout(() => { setAutoSpinHint(false); spinClub(); }, 700);
+      setTimeout(() => {
+        setAutoSpinHint(false);
+        spinClub();
+      }, 700);
     }
   }
 
   function queueAutoSpin() {
     // auto-spin in squad/quick mode if more slots remain
     if (config.draftMode === "position") return;
-    const remaining = slots.filter(s => !s.player).length - 1; // we just filled one (state not yet flushed)
+    const remaining = slots.filter((s) => !s.player).length - 1; // we just filled one (state not yet flushed)
     if (remaining <= 0) return;
     setAutoSpinHint(true);
     setTimeout(() => {
@@ -240,7 +248,7 @@ function DraftScreen() {
 
   const compatibleSlotsForAssign = useMemo(() => {
     if (!assigningPlayer) return [];
-    return slots.filter(s => !s.player && isCompatible(s.position, assigningPlayer.position));
+    return slots.filter((s) => !s.player && isCompatible(s.position, assigningPlayer.position));
   }, [assigningPlayer, slots]);
 
   // auto-skip if no compatible slots
@@ -254,7 +262,10 @@ function DraftScreen() {
   const currentClubPlayers = currentClub ? playersForCurrentClub() : [];
   useEffect(() => {
     if (currentClub && !assigningPlayer && currentClubPlayers.length === 0) {
-      const t = setTimeout(() => { setCurrentClub(null); queueAutoSpin(); }, 900);
+      const t = setTimeout(() => {
+        setCurrentClub(null);
+        queueAutoSpin();
+      }, 900);
       return () => clearTimeout(t);
     }
   }, [currentClub, assigningPlayer, currentClubPlayers.length]);
@@ -262,19 +273,30 @@ function DraftScreen() {
   return (
     <div className="min-h-screen px-3 py-6 max-w-6xl mx-auto">
       <header className="flex items-center justify-between gap-3">
-        <Link to="/" className="brand-mark text-3xl inline-flex items-baseline gap-0.5 leading-none">
-          <span>{league.brandMark.split(":")[0]}</span><span className="text-primary">:</span><span>{league.brandMark.split(":")[1]}</span>
-          <span className="ml-2 text-[10px] tracking-[0.25em] text-warning/80 hidden sm:inline">{league.tagline}</span>
-          <span className="ml-2 text-base leading-none" aria-hidden>{league.flag}</span>
+        <Link
+          to="/"
+          className="brand-mark text-3xl inline-flex items-baseline gap-0.5 leading-none"
+        >
+          <span>{league.brandMark.split(":")[0]}</span>
+          <span className="text-primary">:</span>
+          <span>{league.brandMark.split(":")[1]}</span>
+          <span className="ml-2 text-[10px] tracking-[0.25em] text-warning/80 hidden sm:inline">
+            {league.tagline}
+          </span>
+          <span className="ml-2 text-base leading-none" aria-hidden>
+            {league.flag}
+          </span>
         </Link>
         <div className="flex items-center gap-2 text-xs">
           <span className="pixel-badge text-[11px]">{config.formation}</span>
           <span className="scoreboard rounded-sm text-sm tabular-nums">
-            <span className="opacity-60 text-[10px] mr-1">SQUAD</span>{String(filledCount).padStart(2,"0")}/{String(totalSlots).padStart(2,"0")}
+            <span className="opacity-60 text-[10px] mr-1">SQUAD</span>
+            {String(filledCount).padStart(2, "0")}/{String(totalSlots).padStart(2, "0")}
           </span>
           {rerollsLeft > 0 && (
             <span className="scoreboard amber rounded-sm text-sm tabular-nums">
-              <span className="opacity-60 text-[10px] mr-1">RR</span>{String(rerollsLeft).padStart(2,"0")}
+              <span className="opacity-60 text-[10px] mr-1">RR</span>
+              {String(rerollsLeft).padStart(2, "0")}
             </span>
           )}
         </div>
@@ -286,9 +308,9 @@ function DraftScreen() {
           slots={slots}
           clubs={CLUBS}
           showRatings={config.showRatings}
-          highlightSlots={compatibleSlotsForAssign.map(s => s.id)}
+          highlightSlots={compatibleSlotsForAssign.map((s) => s.id)}
           onSlotClick={(s) => {
-            if (assigningPlayer && compatibleSlotsForAssign.some(c => c.id === s.id)) {
+            if (assigningPlayer && compatibleSlotsForAssign.some((c) => c.id === s.id)) {
               commitToSlot(s.id);
             } else if (config.draftMode === "position" && !s.player && !currentClub) {
               setPickingForSlot(s);
@@ -299,12 +321,15 @@ function DraftScreen() {
         {/* Side panel */}
         <aside className="rounded-2xl border bg-card/40 backdrop-blur-sm p-4 flex flex-col gap-3 min-h-[460px] shadow-[0_30px_80px_-40px_rgba(220,5,21,0.4)]">
           {done ? (
-            <DonePanel matches={league.matches} kickoff={league.kickoffWord} onContinue={() => navigate({ to: "/season" })} />
-
+            <DonePanel
+              matches={league.matches}
+              kickoff={league.kickoffWord}
+              onContinue={() => navigate({ to: "/season" })}
+            />
           ) : assigningPlayer ? (
             <AssignPanel
               player={assigningPlayer}
-              club={CLUBS.find(c => c.id === assigningPlayer.club) ?? null}
+              club={CLUBS.find((c) => c.id === assigningPlayer.club) ?? null}
               showRatings={config.showRatings}
               compatible={compatibleSlotsForAssign}
               onCancel={skipAssign}
@@ -318,11 +343,25 @@ function DraftScreen() {
               mode={config.draftMode}
               showRatings={config.showRatings}
               targetSlot={pickingForSlot}
-              onPick={(p) => config.draftMode === "squad" ? handleSquadFirstPickPlayer(p) : positionFirstPickPlayer(p)}
+              onPick={(p) =>
+                config.draftMode === "squad"
+                  ? handleSquadFirstPickPlayer(p)
+                  : positionFirstPickPlayer(p)
+              }
               onQuickPick={quickAssignTwo}
-              onReroll={rerollsLeft > 0 ? () => { startReroll(); spinClub(); } : undefined}
+              onReroll={
+                rerollsLeft > 0
+                  ? () => {
+                      startReroll();
+                      spinClub();
+                    }
+                  : undefined
+              }
               rerollsLeft={rerollsLeft}
-              onSkip={() => { setCurrentClub(null); queueAutoSpin(); }}
+              onSkip={() => {
+                setCurrentClub(null);
+                queueAutoSpin();
+              }}
             />
           ) : (
             <WheelPanel
@@ -344,7 +383,15 @@ function DraftScreen() {
   );
 }
 
-function DonePanel({ onContinue, matches, kickoff }: { onContinue: () => void; matches: number; kickoff: string }) {
+function DonePanel({
+  onContinue,
+  matches,
+  kickoff,
+}: {
+  onContinue: () => void;
+  matches: number;
+  kickoff: string;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -364,17 +411,24 @@ function DonePanel({ onContinue, matches, kickoff }: { onContinue: () => void; m
   );
 }
 
-
 function PositionPrompt() {
   return (
     <div className="flex flex-col items-center justify-center text-center text-muted-foreground py-16 gap-3">
       <div className="text-3xl opacity-50">⊕</div>
-      <p className="text-sm max-w-[220px]">Tap an empty position on the pitch to pick which slot to fill next.</p>
+      <p className="text-sm max-w-[220px]">
+        Tap an empty position on the pitch to pick which slot to fill next.
+      </p>
     </div>
   );
 }
 
-function PitchView({ slots, clubs, showRatings, onSlotClick, highlightSlots }: {
+function PitchView({
+  slots,
+  clubs,
+  showRatings,
+  onSlotClick,
+  highlightSlots,
+}: {
   slots: Slot[];
   clubs: Club[];
   showRatings: boolean;
@@ -384,23 +438,70 @@ function PitchView({ slots, clubs, showRatings, onSlotClick, highlightSlots }: {
   return (
     <div className="relative w-full" style={{ aspectRatio: "16/11" }}>
       <div className="absolute inset-0 rounded-2xl border border-pitch-line/30 bg-pitch-pattern overflow-hidden shadow-2xl">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full pointer-events-none">
-          <rect x="1" y="1" width="98" height="98" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
-          <line x1="0" y1="50" x2="100" y2="50" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
-          <circle cx="50" cy="50" r="9" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
-          <rect x="25" y="0" width="50" height="14" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
-          <rect x="25" y="86" width="50" height="14" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-pitch-line" />
+        <svg
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+          className="absolute inset-0 w-full h-full pointer-events-none"
+        >
+          <rect
+            x="1"
+            y="1"
+            width="98"
+            height="98"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.3"
+            className="text-pitch-line"
+          />
+          <line
+            x1="0"
+            y1="50"
+            x2="100"
+            y2="50"
+            stroke="currentColor"
+            strokeWidth="0.3"
+            className="text-pitch-line"
+          />
+          <circle
+            cx="50"
+            cy="50"
+            r="9"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.3"
+            className="text-pitch-line"
+          />
+          <rect
+            x="25"
+            y="0"
+            width="50"
+            height="14"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.3"
+            className="text-pitch-line"
+          />
+          <rect
+            x="25"
+            y="86"
+            width="50"
+            height="14"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.3"
+            className="text-pitch-line"
+          />
         </svg>
       </div>
-      {slots.map(s => {
+      {slots.map((s) => {
         const filled = !!s.player;
         const highlight = highlightSlots.includes(s.id);
-        const club = filled ? clubs.find(c => c.id === s.player!.club) : null;
+        const club = filled ? clubs.find((c) => c.id === s.player!.club) : null;
 
         // Stagger label sides so a slot directly below another doesn't overlap its label
         // (was making the GK's name sit on top of the central CB's name).
-        const hasNeighborBelow = slots.some(o =>
-          o.id !== s.id && Math.abs(o.x - s.x) < 18 && o.y > s.y && o.y - s.y < 14
+        const hasNeighborBelow = slots.some(
+          (o) => o.id !== s.id && Math.abs(o.x - s.x) < 18 && o.y > s.y && o.y - s.y < 14,
         );
         const labelAbove = hasNeighborBelow || s.y >= 86;
         return (
@@ -412,23 +513,38 @@ function PitchView({ slots, clubs, showRatings, onSlotClick, highlightSlots }: {
           >
             <motion.div
               initial={false}
-              animate={filled ? { scale: [0.6, 1.1, 1], opacity: 1 } : highlight ? { scale: [1, 1.12, 1] } : { scale: 1, opacity: 1 }}
+              animate={
+                filled
+                  ? { scale: [0.6, 1.1, 1], opacity: 1 }
+                  : highlight
+                    ? { scale: [1, 1.12, 1] }
+                    : { scale: 1, opacity: 1 }
+              }
               transition={highlight ? { duration: 1.1, repeat: Infinity } : { duration: 0.35 }}
               className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center text-[10px] font-bold border-2 transition ${
                 filled
                   ? "border-white/30 text-white shadow-[0_8px_18px_-4px_rgba(0,0,0,0.6)]"
                   : highlight
-                  ? "bg-warning text-warning-foreground border-warning shadow-[0_0_22px_-2px] shadow-warning/70"
-                  : "bg-success/80 text-success-foreground border-success-foreground/30 hover:scale-110"
+                    ? "bg-warning text-warning-foreground border-warning shadow-[0_0_22px_-2px] shadow-warning/70"
+                    : "bg-success/80 text-success-foreground border-success-foreground/30 hover:scale-110"
               }`}
-              style={filled && club ? {
-                background: `linear-gradient(135deg, ${club.color}, color-mix(in oklab, ${club.color} 50%, black))`,
-              } : undefined}
+              style={
+                filled && club
+                  ? {
+                      background: `linear-gradient(135deg, ${club.color}, color-mix(in oklab, ${club.color} 50%, black))`,
+                    }
+                  : undefined
+              }
             >
               {filled ? (
-                showRatings ? <span className="font-display text-base">{s.player!.prime_rating}</span>
-                : s.position
-              ) : s.position}
+                showRatings ? (
+                  <span className="font-display text-base">{s.player!.prime_rating}</span>
+                ) : (
+                  s.position
+                )
+              ) : (
+                s.position
+              )}
             </motion.div>
             {filled && (
               <div
@@ -446,7 +562,18 @@ function PitchView({ slots, clubs, showRatings, onSlotClick, highlightSlots }: {
   );
 }
 
-function WheelPanel({ wheelRef, angle, spinning, autoSpinHint, tier, tierClubs, onSpin, pickingForSlot, draftMode, onCancelSlot }: {
+function WheelPanel({
+  wheelRef,
+  angle,
+  spinning,
+  autoSpinHint,
+  tier,
+  tierClubs,
+  onSpin,
+  pickingForSlot,
+  draftMode,
+  onCancelSlot,
+}: {
   wheelRef: React.RefObject<HTMLDivElement | null>;
   angle: number;
   spinning: boolean;
@@ -458,7 +585,7 @@ function WheelPanel({ wheelRef, angle, spinning, autoSpinHint, tier, tierClubs, 
   draftMode: DraftMode;
   onCancelSlot: () => void;
 }) {
-  const tierMeta = TIERS.find(t => t.id === tier);
+  const tierMeta = TIERS.find((t) => t.id === tier);
   return (
     <div className="flex flex-col items-center text-center gap-3">
       {draftMode === "position" && pickingForSlot && (
@@ -467,7 +594,9 @@ function WheelPanel({ wheelRef, angle, spinning, autoSpinHint, tier, tierClubs, 
           <span className="px-2 py-1 rounded bg-warning/15 text-warning border border-warning/30 font-display">
             {pickingForSlot.position}
           </span>
-          <button onClick={onCancelSlot} className="text-muted-foreground underline">change</button>
+          <button onClick={onCancelSlot} className="text-muted-foreground underline">
+            change
+          </button>
         </div>
       )}
 
@@ -482,14 +611,20 @@ function WheelPanel({ wheelRef, angle, spinning, autoSpinHint, tier, tierClubs, 
         <span className="px-2.5 py-1 rounded-full text-[11px] font-display tracking-wide bg-primary/15 text-primary border border-primary/40">
           {tierMeta?.label}
         </span>
-        <span className="text-[11px] text-muted-foreground">{tierMeta?.sub} · {tierClubs.length} clubs</span>
+        <span className="text-[11px] text-muted-foreground">
+          {tierMeta?.sub} · {tierClubs.length} clubs
+        </span>
       </motion.div>
-
 
       <div className="relative w-64 h-64 mt-1">
         {/* glow */}
-        <div className="absolute inset-[-12%] rounded-full pointer-events-none"
-             style={{ background: "radial-gradient(circle, color-mix(in oklab, var(--color-primary) 35%, transparent), transparent 65%)" }} />
+        <div
+          className="absolute inset-[-12%] rounded-full pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(circle, color-mix(in oklab, var(--color-primary) 35%, transparent), transparent 65%)",
+          }}
+        />
         {/* pointer */}
         <div className="absolute top-1/2 right-[-10px] -translate-y-1/2 z-10">
           <div className="w-0 h-0 border-y-[12px] border-y-transparent border-r-[18px] border-r-warning drop-shadow-[0_0_8px_rgba(255,200,80,0.7)]" />
@@ -527,8 +662,10 @@ function Wheel({ clubs }: { clubs: Club[] }) {
       {clubs.map((c, i) => {
         const a0 = (i / n) * Math.PI * 2 - Math.PI / 2;
         const a1 = ((i + 1) / n) * Math.PI * 2 - Math.PI / 2;
-        const x0 = Math.cos(a0) * r, y0 = Math.sin(a0) * r;
-        const x1 = Math.cos(a1) * r, y1 = Math.sin(a1) * r;
+        const x0 = Math.cos(a0) * r,
+          y0 = Math.sin(a0) * r;
+        const x1 = Math.cos(a1) * r,
+          y1 = Math.sin(a1) * r;
         const large = a1 - a0 > Math.PI ? 1 : 0;
         const d = `M0,0 L${x0},${y0} A${r},${r} 0 ${large} 1 ${x1},${y1} Z`;
         const am = (a0 + a1) / 2;
@@ -538,8 +675,10 @@ function Wheel({ clubs }: { clubs: Club[] }) {
           <g key={c.id}>
             <path d={d} fill={c.color} stroke="rgba(0,0,0,0.3)" strokeWidth="0.8" />
             <text
-              x={tx} y={ty}
-              fontSize={fs} fontWeight="900"
+              x={tx}
+              y={ty}
+              fontSize={fs}
+              fontWeight="900"
               fill="white"
               textAnchor="middle"
               dominantBaseline="middle"
@@ -562,7 +701,18 @@ function Wheel({ clubs }: { clubs: Club[] }) {
 // users who want a specific deeper-cut pick.
 const PICKER_DEFAULT_VISIBLE = 12;
 
-function PlayerPicker({ club, players, mode, showRatings, targetSlot, onPick, onQuickPick, onReroll, rerollsLeft, onSkip }: {
+function PlayerPicker({
+  club,
+  players,
+  mode,
+  showRatings,
+  targetSlot,
+  onPick,
+  onQuickPick,
+  onReroll,
+  rerollsLeft,
+  onSkip,
+}: {
   club: Club;
   players: Player[];
   mode: DraftMode;
@@ -582,11 +732,14 @@ function PlayerPicker({ club, players, mode, showRatings, targetSlot, onPick, on
   const visible = showAll ? players : players.slice(0, PICKER_DEFAULT_VISIBLE);
   const hiddenCount = players.length - visible.length;
   function togglePick(p: Player) {
-    if (!isQuick) { onPick(p); return; }
+    if (!isQuick) {
+      onPick(p);
+      return;
+    }
     const key = `${p.club}:${p.name}`;
-    const exists = quickPicks.find(qp => `${qp.club}:${qp.name}` === key);
+    const exists = quickPicks.find((qp) => `${qp.club}:${qp.name}` === key);
     let next: Player[];
-    if (exists) next = quickPicks.filter(qp => `${qp.club}:${qp.name}` !== key);
+    if (exists) next = quickPicks.filter((qp) => `${qp.club}:${qp.name}` !== key);
     else if (quickPicks.length < 2) next = [...quickPicks, p];
     else next = [quickPicks[1], p]; // replace oldest
     setQuickPicks(next);
@@ -604,12 +757,16 @@ function PlayerPicker({ club, players, mode, showRatings, targetSlot, onPick, on
     >
       <div
         className="flex items-center gap-3 p-3 rounded-xl border border-white/10"
-        style={{ background: `linear-gradient(135deg, color-mix(in oklab, ${club.color} 35%, transparent), transparent)` }}
+        style={{
+          background: `linear-gradient(135deg, color-mix(in oklab, ${club.color} 35%, transparent), transparent)`,
+        }}
       >
         <ClubBadge club={club} />
         <div className="min-w-0">
           <div className="font-display text-lg leading-tight truncate">{club.name}</div>
-          <div className="text-xs text-muted-foreground">Founded {club.founded} · {club.city}</div>
+          <div className="text-xs text-muted-foreground">
+            Founded {club.founded} · {club.city}
+          </div>
         </div>
       </div>
       {mode === "position" && targetSlot && (
@@ -625,10 +782,17 @@ function PlayerPicker({ club, players, mode, showRatings, targetSlot, onPick, on
       {overflow && (
         <div className="mt-3 flex items-center justify-between text-[11px] text-muted-foreground px-0.5">
           <span>
-            {showAll
-              ? <>Showing all <span className="font-display text-warning">{players.length}</span> players</>
-              : <>Top <span className="font-display text-warning">{PICKER_DEFAULT_VISIBLE}</span> of <span className="font-display text-warning">{players.length}</span> by rating</>
-            }
+            {showAll ? (
+              <>
+                Showing all <span className="font-display text-warning">{players.length}</span>{" "}
+                players
+              </>
+            ) : (
+              <>
+                Top <span className="font-display text-warning">{PICKER_DEFAULT_VISIBLE}</span> of{" "}
+                <span className="font-display text-warning">{players.length}</span> by rating
+              </>
+            )}
           </span>
           {!showAll && (
             <button
@@ -646,21 +810,22 @@ function PlayerPicker({ club, players, mode, showRatings, targetSlot, onPick, on
             No matching players from this club.
           </p>
         )}
-        {visible.map(p => {
-          const selected = isQuick && quickPicks.some(qp => qp.name === p.name && qp.club === p.club);
+        {visible.map((p) => {
+          const selected =
+            isQuick && quickPicks.some((qp) => qp.name === p.name && qp.club === p.club);
           return (
             <button
               key={p.name}
               onClick={() => togglePick(p)}
               className={`flex items-center justify-between gap-2 px-3 py-2 rounded-lg border hover:bg-background hover:-translate-y-0.5 transition text-left group ${
-                selected
-                  ? "bg-warning/15 border-warning"
-                  : "bg-background/50 border-border"
+                selected ? "bg-warning/15 border-warning" : "bg-background/50 border-border"
               }`}
               style={{ ["--club" as string]: club.color }}
             >
               <div className="min-w-0">
-                <div className="text-sm font-medium truncate group-hover:text-warning">{p.name}</div>
+                <div className="text-sm font-medium truncate group-hover:text-warning">
+                  {p.name}
+                </div>
                 <div className="text-[11px] text-muted-foreground truncate">
                   {p.position} · {p.career_years} · {p.nationality}
                 </div>
@@ -696,7 +861,13 @@ function PlayerPicker({ club, players, mode, showRatings, targetSlot, onPick, on
   );
 }
 
-function AssignPanel({ player, club, showRatings, compatible, onCancel }: {
+function AssignPanel({
+  player,
+  club,
+  showRatings,
+  compatible,
+  onCancel,
+}: {
   player: Player;
   club: Club | null;
   showRatings: boolean;
@@ -712,9 +883,13 @@ function AssignPanel({ player, club, showRatings, compatible, onCancel }: {
       <h3 className="font-display text-xl">Assign to a slot</h3>
       <div
         className="mt-3 p-4 rounded-xl border border-warning/30 shadow-[0_0_24px_-8px] shadow-warning/40"
-        style={club ? {
-          background: `linear-gradient(135deg, color-mix(in oklab, ${club.color} 25%, transparent), transparent)`,
-        } : undefined}
+        style={
+          club
+            ? {
+                background: `linear-gradient(135deg, color-mix(in oklab, ${club.color} 25%, transparent), transparent)`,
+              }
+            : undefined
+        }
       >
         {club && (
           <div className="flex items-center justify-center gap-2 mb-2">
@@ -723,7 +898,9 @@ function AssignPanel({ player, club, showRatings, compatible, onCancel }: {
           </div>
         )}
         <div className="font-medium text-lg">{player.name}</div>
-        <div className="text-xs text-muted-foreground mt-0.5">{player.position} · {player.career_years} · {player.nationality}</div>
+        <div className="text-xs text-muted-foreground mt-0.5">
+          {player.position} · {player.career_years} · {player.nationality}
+        </div>
         {showRatings && (
           <div className="mt-2 font-display text-3xl text-warning">{player.prime_rating}</div>
         )}

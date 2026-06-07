@@ -25,7 +25,7 @@ export const Route = createFileRoute("/career/found")({
 /** Leagues that make sense as a Career-mode home. WC modes excluded — your
  *  career is anchored to a club, not a national team. */
 const CAREER_LEAGUES: LeagueId[] = [
-  "ucl",          // top European clubs, most prestigious career
+  "ucl", // top European clubs, most prestigious career
   "bundesliga",
   "laliga",
   "seriea",
@@ -34,7 +34,7 @@ const CAREER_LEAGUES: LeagueId[] = [
 ];
 
 function FoundingClubPicker() {
-  const startCareer = useCareer(s => s.startCareer);
+  const startCareer = useCareer((s) => s.startCareer);
   const navigate = useNavigate();
   const [activeLeague, setActiveLeague] = useState<LeagueId>("ucl");
 
@@ -50,20 +50,23 @@ function FoundingClubPicker() {
   return (
     <div className="min-h-screen px-4 py-10 max-w-3xl mx-auto">
       <header className="text-center">
-        <Link to="/career" className="text-[11px] text-muted-foreground hover:text-warning underline">
+        <Link
+          to="/career"
+          className="text-[11px] text-muted-foreground hover:text-warning underline"
+        >
           ← back to GOLAZO
         </Link>
         <h1 className="mt-3 font-display text-3xl text-warning">Pick your founding club</h1>
         <p className="mt-2 text-sm text-muted-foreground max-w-md mx-auto">
-          One choice that anchors your entire career. Your founding club shapes the
-          league, the AI rivals you face, and the legends available in your first draft.
+          One choice that anchors your entire career. Your founding club shapes the league, the AI
+          rivals you face, and the legends available in your first draft.
         </p>
       </header>
 
       <section className="mt-8">
         <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">League</div>
         <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
-          {CAREER_LEAGUES.map(lid => (
+          {CAREER_LEAGUES.map((lid) => (
             <button
               key={lid}
               onClick={() => setActiveLeague(lid)}
@@ -85,7 +88,7 @@ function FoundingClubPicker() {
           Clubs in {LEAGUES[activeLeague].name} ({sortedClubs.length})
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
-          {sortedClubs.map(club => (
+          {sortedClubs.map((club) => (
             <button
               key={club.id}
               onClick={() => pick(club.id)}
