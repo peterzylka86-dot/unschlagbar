@@ -46,11 +46,23 @@ export const useGame = create<GameState>((set, get) => ({
       };
     }),
   reset: () =>
-    set({
-      slots: FORMATIONS[get().config.formation].slots.map((s) => ({ ...s })),
-      rerollsLeft: rerollsFor(get().config.difficulty),
+    set((state) => ({
+      slots: FORMATIONS[state.config.formation].slots.map((s) => ({ ...s })),
+      rerollsLeft: rerollsFor(state.config.difficulty),
       matches: [],
-    }),
+      // Single-run scoped fields — must clear so a fresh "New Run" isn't
+      // contaminated by stale state from a finished challenge:
+      //   - challengeSeed → otherwise next run replays same fixtures
+      //   - challengerScore → otherwise H2H panel shows stale comparison
+      //   - foundingPlayer → otherwise the next run pre-assigns someone
+      //                      the user didn't pick this time
+      config: {
+        ...state.config,
+        challengeSeed: undefined,
+        challengerScore: undefined,
+        foundingPlayer: undefined,
+      },
+    })),
   setSlots: (slots) => set({ slots }),
   assignPlayer: (slotId, player) =>
     set((state) => ({
