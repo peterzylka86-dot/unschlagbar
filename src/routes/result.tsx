@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useMemo } from "react";
+import { useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useGame } from "@/lib/store";
 import { ClubBadge } from "@/components/ClubBadge";
@@ -7,6 +7,8 @@ import { getClubs } from "@/lib/data";
 import { LEAGUES } from "@/lib/leagues";
 import type { Club } from "@/lib/game-types";
 import { squadRating, computeLeagueTable } from "@/lib/sim";
+import { buildShareText, shareOrCopy } from "@/lib/share";
+import { toPng } from "html-to-image";
 
 export const Route = createFileRoute("/result")({
   validateSearch: (s: Record<string, unknown>) => ({ unbeaten: s.unbeaten === true || s.unbeaten === "true" }),
@@ -163,6 +165,8 @@ function ResultScreen() {
           })}
         </div>
       </div>
+
+      <ShareBlock />
 
       <div className="mt-10 flex justify-center gap-3 flex-wrap">
         <button
