@@ -73,7 +73,18 @@ export function buildShareText(
     const ga = matches.reduce((a, m) => a + m.theirScore, 0);
     const unbeaten = l === 0;
     lines.push("");
-    lines.push(`${w}W ${d}D ${l}L · ${gf}:${ga}${unbeaten ? " · ★ " + league.unbeatenLabel + " ★" : ""}`);
+    if (league.kind !== "league") {
+      // Knockout / groupKO recap: list each match with its round
+      for (const m of matches) {
+        const round = m.round ?? `M${m.matchday}`;
+        lines.push(`${round.padEnd(14, " ")} ${m.outcome} ${m.ourScore}-${m.theirScore} ${m.home ? "vs" : "@"} ${m.opponent.short}`);
+      }
+      lines.push("");
+      const champ = matches.some(x => x.round === "Final" && x.outcome === "W");
+      lines.push(`${w}W ${d}D ${l}L · ${gf}:${ga}${champ ? " · 🏆 " + league.unbeatenLabel : ""}`);
+    } else {
+      lines.push(`${w}W ${d}D ${l}L · ${gf}:${ga}${unbeaten ? " · ★ " + league.unbeatenLabel + " ★" : ""}`);
+    }
   }
   const seed = challengeSeed ?? Math.floor(Math.random() * 1e9);
   const url = challengeUrl({
