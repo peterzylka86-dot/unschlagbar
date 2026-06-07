@@ -22,7 +22,11 @@ import type { LeagueId } from "@/lib/leagues";
 import { getClubs } from "@/lib/data";
 import { simulateSeason, squadRating, computeLeagueTable } from "@/lib/sim";
 import {
-  computeFormDelta, clampForm, normalizeName, pickScorer, pickAssister,
+  computeFormDelta,
+  clampForm,
+  normalizeName,
+  pickScorer,
+  pickAssister,
   simplifyPosition,
 } from "@/lib/career-core";
 import type { Club, MatchResult, Player, Slot } from "@/lib/game-types";
@@ -58,15 +62,24 @@ function CareerSeason() {
 
   // Build the opponent list: 11 AI rivals × their founding clubs
   const opponents = useMemo(() => {
-    return career.rivals.map(r => {
-      const club = clubs.find(c => c.id === r.foundingClubId);
+    return career.rivals.map((r) => {
+      const club = clubs.find((c) => c.id === r.foundingClubId);
       if (club) return club;
       // Fallback (shouldn't happen but be safe)
       return {
-        id: r.foundingClubId, name: r.archetypeName, short: r.badge.slice(0, 3),
-        city: "—", color: r.color, founded: 1900,
-        strength: 75 + Math.floor(r.squad.reduce((a, p) => a + p.prime_rating, 0) / Math.max(1, r.squad.length) - 75),
-        era: "current" as const, era_tier: "current" as const,
+        id: r.foundingClubId,
+        name: r.archetypeName,
+        short: r.badge.slice(0, 3),
+        city: "—",
+        color: r.color,
+        founded: 1900,
+        strength:
+          75 +
+          Math.floor(
+            r.squad.reduce((a, p) => a + p.prime_rating, 0) / Math.max(1, r.squad.length) - 75,
+          ),
+        era: "current" as const,
+        era_tier: "current" as const,
       };
     });
   }, [career.rivals, clubs]);
@@ -74,7 +87,11 @@ function CareerSeason() {
   // Slots representation for squadRating + scorer-picking
   const userSlots: Slot[] = useMemo(() => {
     return career.squad.map((p, i) => ({
-      id: `slot-${i}`, position: p.position, x: 50, y: 50, player: p,
+      id: `slot-${i}`,
+      position: p.position,
+      x: 50,
+      y: 50,
+      player: p,
     }));
   }, [career.squad]);
 
@@ -82,7 +99,7 @@ function CareerSeason() {
 
   // ─── Simulate the season once on mount ────────────────────────────
   const [matches, setMatches] = useState<MatchWithScorers[]>([]);
-  const [shown, setShown] = useState(0);  // index of last revealed match
+  const [shown, setShown] = useState(0); // index of last revealed match
   const [tableComputed, setTableComputed] = useState(false);
   const [played, setPlayed] = useState(false);
 
@@ -93,7 +110,7 @@ function CareerSeason() {
 
     // Attach scorers using our match-rng so order is reproducible
     const rand = mulberry32(seed + 1);
-    const enriched: MatchWithScorers[] = raw.map(m => {
+    const enriched: MatchWithScorers[] = raw.map((m) => {
       const scorers: { name: string; assister?: string }[] = [];
       const xi = career.squad;
       for (let g = 0; g < m.ourScore; g++) {
@@ -109,41 +126,54 @@ function CareerSeason() {
 
   // ─── Reveal matchdays one by one (or all at once on "Skip") ───────
   function playNext() {
-    setShown(s => Math.min(s + 1, matches.length));
+    setShown((s) => Math.min(s + 1, matches.length));
   }
   function playAll() {
     setShown(matches.length);
     setPlayed(true);
   }
 
-  // When all matches revealed, compute form deltas + write to store
+  // Compute form INCREMENTALLY based on matches revealed so far.
+  // This drives both the live 🔥/❄️ indicators during the season AND the
+  // value persisted to career.form at season end (single source of truth).
+  const liveForm = useMemo(() => {
+    const f: Record<string, number> = {};
+    matches.slice(0, shown).forEach((m) => {
+      career.squad.forEach((p) => {
+        const key = `${p.club}:${normalizeName(p.name)}`;
+        const current = f[key] ?? 0;
+        const wasInvolved = m.scorers.some(
+          (s) =>
+            normalizeName(s.name) === normalizeName(p.name) ||
+            (s.assister && normalizeName(s.assister) === normalizeName(p.name)),
+        );
+        const delta = computeFormDelta(p, {
+          wasInvolved,
+          gf: m.ourScore,
+          ga: m.theirScore,
+          currentForm: current,
+        });
+        f[key] = clampForm(current + delta);
+      });
+    });
+    return f;
+  }, [matches, shown, career.squad]);
+
+  // When all matches revealed, persist the final form snapshot to the store
+  // so /career/postseason can read it. Run exactly once per season completion.
   useEffect(() => {
     if (shown < matches.length || matches.length === 0) return;
     if (tableComputed) return;
     setTableComputed(true);
-
-    // Apply form deltas per match per player. Each player picks up ~1 match
-    // of form influence (involved? goals for/against?). Aggregate over season.
-    const formNext: Record<string, number> = { ...career.form };
-    matches.forEach(m => {
-      career.squad.forEach(p => {
-        const key = `${p.club}:${normalizeName(p.name)}`;
-        const current = formNext[key] ?? 0;
-        const wasInvolved = m.scorers.some(s => normalizeName(s.name) === normalizeName(p.name)
-          || (s.assister && normalizeName(s.assister) === normalizeName(p.name)));
-        const delta = computeFormDelta(p, {
-          wasInvolved, gf: m.ourScore, ga: m.theirScore, currentForm: current,
-        });
-        formNext[key] = clampForm(current + delta);
-      });
-    });
-    // Single batched write
-    Object.entries(formNext).forEach(([k, v]) => career.setForm(k, v));
+    Object.entries(liveForm).forEach(([k, v]) => career.setForm(k, v));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [shown, matches.length]);
 
+  // Live league table — recomputes after every matchday revealed.
   const { table, ourPosition } = useMemo(() => {
-    if (shown < matches.length) return { table: [], ourPosition: 0 };
+    if (shown === 0) {
+      return { table: [] as ReturnType<typeof computeLeagueTable>["table"], ourPosition: 0 };
+    }
     return computeLeagueTable(matches.slice(0, shown), opponents, userRating, MATCHES_PER_SEASON);
   }, [shown, matches, opponents, userRating]);
 
@@ -152,18 +182,25 @@ function CareerSeason() {
   if (career.squad.length === 0 || career.rivals.length === 0) return null;
 
   if (matches.length === 0) {
-    return <div className="min-h-screen flex items-center justify-center text-muted-foreground">Generating fixtures…</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center text-muted-foreground">
+        Generating fixtures…
+      </div>
+    );
   }
 
   const seasonDone = shown >= matches.length;
-  const wins = matches.slice(0, shown).filter(m => m.outcome === "W").length;
-  const draws = matches.slice(0, shown).filter(m => m.outcome === "D").length;
-  const losses = matches.slice(0, shown).filter(m => m.outcome === "L").length;
+  const wins = matches.slice(0, shown).filter((m) => m.outcome === "W").length;
+  const draws = matches.slice(0, shown).filter((m) => m.outcome === "D").length;
+  const losses = matches.slice(0, shown).filter((m) => m.outcome === "L").length;
 
   return (
     <div className="min-h-screen px-4 py-8 max-w-4xl mx-auto">
       <header className="flex items-center justify-between gap-3">
-        <Link to="/career" className="text-[11px] text-muted-foreground hover:text-warning underline">
+        <Link
+          to="/career"
+          className="text-[11px] text-muted-foreground hover:text-warning underline"
+        >
           ← GOLAZO hub
         </Link>
         <div className="text-right">
@@ -201,14 +238,24 @@ function CareerSeason() {
         </div>
       )}
 
+      {/* Live league table — updates after every matchday */}
+      {shown > 0 && <LiveTable table={table} matchday={shown} totalMatchdays={matches.length} />}
+
+      {/* Squad form — 🔥 on a run, ❄️ cold streak */}
+      {shown > 0 && <SquadForm squad={career.squad} form={liveForm} />}
+
       {/* Match feed (newest first) */}
       <div className="mt-6">
         <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
           Match feed
         </div>
-        {matches.slice(0, shown).slice().reverse().map((m, i) => (
-          <MatchRow key={`md-${m.matchday}`} match={m} />
-        ))}
+        {matches
+          .slice(0, shown)
+          .slice()
+          .reverse()
+          .map((m) => (
+            <MatchRow key={`md-${m.matchday}`} match={m} />
+          ))}
         {shown === 0 && (
           <p className="text-sm text-muted-foreground italic py-6 text-center">
             Click "Play matchday 1" to start the season.
@@ -216,17 +263,14 @@ function CareerSeason() {
         )}
       </div>
 
-      {/* End-of-season — final table + next step */}
+      {/* End-of-season — next-step CTA (final table already shown live above) */}
       {seasonDone && (
-        <>
-          <FinalTable table={table} />
-          <PostSeasonCTA
-            ourPosition={ourPosition}
-            matches={matches}
-            userRating={userRating}
-            opponents={opponents}
-          />
-        </>
+        <PostSeasonCTA
+          ourPosition={ourPosition}
+          matches={matches}
+          userRating={userRating}
+          opponents={opponents}
+        />
       )}
     </div>
   );
@@ -244,7 +288,7 @@ function hashString(s: string | null): number {
 function mulberry32(seed: number): () => number {
   let s = seed >>> 0;
   return () => {
-    s = (s + 0x6D2B79F5) >>> 0;
+    s = (s + 0x6d2b79f5) >>> 0;
     let t = s;
     t = Math.imul(t ^ (t >>> 15), t | 1);
     t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
@@ -254,20 +298,32 @@ function mulberry32(seed: number): () => number {
 
 // ─── sub-components ──────────────────────────────────────────────────
 
-function ScoreboardStat({ label, value, accent }: { label: string; value: number; accent: string }) {
+function ScoreboardStat({
+  label,
+  value,
+  accent,
+}: {
+  label: string;
+  value: number;
+  accent: string;
+}) {
   return (
     <div className="rounded-lg border border-border bg-card/40 py-3">
       <div className={`font-display text-2xl ${accent}`}>{value}</div>
-      <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">{label}</div>
+      <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">
+        {label}
+      </div>
     </div>
   );
 }
 
 function MatchRow({ match }: { match: MatchWithScorers }) {
   const outcomeColor =
-    match.outcome === "W" ? "text-success" :
-    match.outcome === "L" ? "text-primary" :
-    "text-muted-foreground";
+    match.outcome === "W"
+      ? "text-success"
+      : match.outcome === "L"
+        ? "text-primary"
+        : "text-muted-foreground";
   return (
     <div className="flex items-center gap-3 py-2.5 px-3 rounded-lg border border-border bg-card/40 mb-1.5">
       <div className="w-10 shrink-0 text-[11px] text-muted-foreground font-mono">
@@ -279,13 +335,16 @@ function MatchRow({ match }: { match: MatchWithScorers }) {
       <div className="flex-1 min-w-0">
         <div className="font-display text-sm truncate">
           {match.home ? "vs" : "@"} {match.opponent.name}{" "}
-          <span className="font-display text-warning">{match.ourScore}-{match.theirScore}</span>
+          <span className="font-display text-warning">
+            {match.ourScore}-{match.theirScore}
+          </span>
         </div>
         {match.scorers.length > 0 && (
           <div className="text-[11px] text-muted-foreground truncate mt-0.5">
-            ⚽ {match.scorers.map((s, i) =>
-              s.assister ? `${s.name} (${s.assister})` : s.name
-            ).join(" · ")}
+            ⚽{" "}
+            {match.scorers
+              .map((s, i) => (s.assister ? `${s.name} (${s.assister})` : s.name))
+              .join(" · ")}
           </div>
         )}
       </div>
@@ -293,10 +352,24 @@ function MatchRow({ match }: { match: MatchWithScorers }) {
   );
 }
 
-function FinalTable({ table }: { table: ReturnType<typeof computeLeagueTable>["table"] }) {
+function LiveTable({
+  table,
+  matchday,
+  totalMatchdays,
+}: {
+  table: ReturnType<typeof computeLeagueTable>["table"];
+  matchday: number;
+  totalMatchdays: number;
+}) {
+  const isFinal = matchday >= totalMatchdays;
   return (
     <div className="mt-8">
-      <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Final table</div>
+      <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3 flex items-baseline justify-between">
+        <span>{isFinal ? "Final table" : "Live table"}</span>
+        <span className="text-[10px] normal-case tracking-normal opacity-70">
+          After MD {matchday}/{totalMatchdays}
+        </span>
+      </div>
       <div className="rounded-2xl border border-border bg-card/40 overflow-hidden">
         <table className="w-full text-sm">
           <thead>
@@ -328,7 +401,9 @@ function FinalTable({ table }: { table: ReturnType<typeof computeLeagueTable>["t
                 <td className="px-3 py-1.5 text-center tabular-nums">{row.w}</td>
                 <td className="px-3 py-1.5 text-center tabular-nums">{row.d}</td>
                 <td className="px-3 py-1.5 text-center tabular-nums">{row.l}</td>
-                <td className="px-3 py-1.5 text-center tabular-nums text-[11px]">{row.gf}:{row.ga}</td>
+                <td className="px-3 py-1.5 text-center tabular-nums text-[11px]">
+                  {row.gf}:{row.ga}
+                </td>
                 <td className="px-3 py-1.5 text-center tabular-nums font-display">{row.pts}</td>
               </tr>
             ))}
@@ -336,14 +411,23 @@ function FinalTable({ table }: { table: ReturnType<typeof computeLeagueTable>["t
         </table>
       </div>
       <div className="mt-2 text-[10px] text-muted-foreground flex justify-between px-1">
-        <span><span className="text-warning">CUP</span> = top 8 qualify for knockout</span>
-        <span><span className="opacity-60">Bottom 2</span> = relegation zone</span>
+        <span>
+          <span className="text-warning">CUP</span> = top 8 qualify for knockout
+        </span>
+        <span>
+          <span className="opacity-60">Bottom 2</span> = relegation zone
+        </span>
       </div>
     </div>
   );
 }
 
-function PostSeasonCTA({ ourPosition, matches, userRating, opponents }: {
+function PostSeasonCTA({
+  ourPosition,
+  matches,
+  userRating,
+  opponents,
+}: {
   ourPosition: number;
   matches: MatchWithScorers[];
   userRating: number;
@@ -356,11 +440,11 @@ function PostSeasonCTA({ ourPosition, matches, userRating, opponents }: {
 
   // Record this season into career.seasonHistory exactly once.
   useEffect(() => {
-    const alreadyRecorded = career.seasonHistory.some(s => s.season === career.currentSeason);
+    const alreadyRecorded = career.seasonHistory.some((s) => s.season === career.currentSeason);
     if (alreadyRecorded) return;
-    const wins = matches.filter(m => m.outcome === "W").length;
-    const draws = matches.filter(m => m.outcome === "D").length;
-    const losses = matches.filter(m => m.outcome === "L").length;
+    const wins = matches.filter((m) => m.outcome === "W").length;
+    const draws = matches.filter((m) => m.outcome === "D").length;
+    const losses = matches.filter((m) => m.outcome === "L").length;
     const goalsFor = matches.reduce((a, m) => a + m.ourScore, 0);
     const goalsAgainst = matches.reduce((a, m) => a + m.theirScore, 0);
     const trophies: string[] = [];
@@ -372,8 +456,12 @@ function PostSeasonCTA({ ourPosition, matches, userRating, opponents }: {
       formation: career.formation,
       finalPosition: ourPosition,
       totalLeagueClubs: opponents.length + 1,
-      wins, draws, losses, goalsFor, goalsAgainst,
-      cupResult: "did-not-qualify",  // updated by /career/cup if applicable
+      wins,
+      draws,
+      losses,
+      goalsFor,
+      goalsAgainst,
+      cupResult: "did-not-qualify", // updated by /career/cup if applicable
       relegated: isRelegated,
       trophies,
       endedAt: new Date().toISOString(),
@@ -407,6 +495,70 @@ function PostSeasonCTA({ ourPosition, matches, userRating, opponents }: {
       >
         {isCupQualifier ? "Enter cup →" : "Transfer window →"}
       </Link>
+    </div>
+  );
+}
+
+function SquadForm({ squad, form }: { squad: Player[]; form: Record<string, number> }) {
+  // 🔥 hot streak: form >= +1.5 · ❄️ cold streak: form <= -1.5
+  // Threshold chosen empirically — picks up ~top 2-3 / bottom 2-3 over a season.
+  const HOT = 1.5;
+  const COLD = -1.5;
+  const enriched = squad.map((p) => ({
+    player: p,
+    formVal: form[`${p.club}:${normalizeName(p.name)}`] ?? 0,
+  }));
+  const fire = enriched.filter((e) => e.formVal >= HOT).sort((a, b) => b.formVal - a.formVal);
+  const ice = enriched.filter((e) => e.formVal <= COLD).sort((a, b) => a.formVal - b.formVal);
+  if (fire.length === 0 && ice.length === 0) return null;
+  return (
+    <div className="mt-6 grid sm:grid-cols-2 gap-3">
+      {fire.length > 0 && (
+        <div className="rounded-xl border border-success/40 bg-success/5 p-3">
+          <div className="text-[10px] uppercase tracking-widest text-success mb-2">🔥 On a run</div>
+          <ul className="space-y-1">
+            {fire.map((e) => (
+              <li
+                key={`hot-${e.player.club}-${e.player.name}`}
+                className="flex justify-between text-xs"
+              >
+                <span className="truncate">
+                  <span className="text-muted-foreground text-[10px] mr-1">
+                    {simplifyPosition(e.player.position)}
+                  </span>
+                  {e.player.name}
+                </span>
+                <span className="text-success font-display tabular-nums">
+                  +{e.formVal.toFixed(1)}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {ice.length > 0 && (
+        <div className="rounded-xl border border-primary/30 bg-primary/5 p-3">
+          <div className="text-[10px] uppercase tracking-widest text-primary mb-2">❄️ Cold</div>
+          <ul className="space-y-1">
+            {ice.map((e) => (
+              <li
+                key={`cold-${e.player.club}-${e.player.name}`}
+                className="flex justify-between text-xs"
+              >
+                <span className="truncate">
+                  <span className="text-muted-foreground text-[10px] mr-1">
+                    {simplifyPosition(e.player.position)}
+                  </span>
+                  {e.player.name}
+                </span>
+                <span className="text-primary font-display tabular-nums">
+                  {e.formVal.toFixed(1)}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
