@@ -25,7 +25,7 @@ import { useCareer } from "@/lib/career-store";
 import type { SeasonRecord } from "@/lib/career-store";
 import { LEAGUES } from "@/lib/leagues";
 import type { LeagueId } from "@/lib/leagues";
-import { getClubs } from "@/lib/data";
+import { getCareerClubs } from "@/lib/data";
 import { FORMATIONS } from "@/lib/formations";
 import { isPositionCompatible } from "@/lib/draft-helpers";
 import { normalizeName } from "@/lib/career-core";
@@ -49,7 +49,7 @@ function CareerRecap() {
 
   const latest = career.seasonHistory[career.seasonHistory.length - 1] ?? null;
   const leagueId = (latest?.leagueId ?? career.leagueId ?? "ucl") as LeagueId;
-  const clubs = useMemo(() => getClubs(leagueId), [leagueId]);
+  const clubs = useMemo(() => getCareerClubs(), []);
   const club = useMemo(
     () => clubs.find((c) => c.id === (latest?.foundingClubId ?? career.foundingClubId)) ?? null,
     [clubs, latest, career.foundingClubId],

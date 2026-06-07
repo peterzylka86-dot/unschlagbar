@@ -13,7 +13,7 @@
 import { createFileRoute, Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { useCareer } from "@/lib/career-store";
 import { LEAGUES } from "@/lib/leagues";
-import { getClubs } from "@/lib/data";
+import { getCareerClubs } from "@/lib/data";
 
 export const Route = createFileRoute("/career")({
   head: () => ({ meta: [{ title: "GOLAZO · Career Mode" }] }),
@@ -24,7 +24,7 @@ function CareerHub() {
   // ALL hooks first, then conditional rendering. React's rules-of-hooks
   // requires the same hook count + order every render — never early-return
   // before subsequent hook calls.
-  const pathname = useRouterState({ select: s => s.location.pathname });
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
   const career = useCareer();
 
   // /career/{found,draft,season} are file-based children of this route.
@@ -34,9 +34,7 @@ function CareerHub() {
   if (onChildRoute) return <Outlet />;
 
   const hasActive = career.foundingClubId !== null;
-  const club = hasActive && career.leagueId
-    ? getClubs(career.leagueId as never).find(c => c.id === career.foundingClubId)
-    : null;
+  const club = hasActive ? getCareerClubs().find((c) => c.id === career.foundingClubId) : null;
 
   return (
     <div className="min-h-screen px-4 py-10 max-w-2xl mx-auto">
@@ -50,8 +48,8 @@ function CareerHub() {
           </div>
         </Link>
         <p className="mt-4 text-muted-foreground max-w-md mx-auto text-sm">
-          Pick a founding club. Build a squad season after season. Win the league.
-          Win the cup. Transfer. Rebuild. Score a GOLAZO.
+          Pick a founding club. Build a squad season after season. Win the league. Win the cup.
+          Transfer. Rebuild. Score a GOLAZO.
         </p>
       </header>
 
@@ -63,7 +61,8 @@ function CareerHub() {
           >
             <span className="text-warning font-display text-sm">🏆 Hall of Fame</span>
             <span className="text-muted-foreground text-xs ml-2">
-              · {career.seasonHistory.length} season{career.seasonHistory.length === 1 ? "" : "s"} · {career.trophies} {career.trophies === 1 ? "trophy" : "trophies"}
+              · {career.seasonHistory.length} season{career.seasonHistory.length === 1 ? "" : "s"} ·{" "}
+              {career.trophies} {career.trophies === 1 ? "trophy" : "trophies"}
             </span>
           </Link>
         )}
@@ -88,7 +87,11 @@ function CareerHub() {
       </div>
 
       <footer className="mt-12 text-center text-[11px] text-muted-foreground">
-        <Link to="/" search={{ challenge: undefined as never }} className="underline hover:text-warning">
+        <Link
+          to="/"
+          search={{ challenge: undefined as never }}
+          className="underline hover:text-warning"
+        >
           ← back to home
         </Link>
       </footer>
@@ -102,8 +105,8 @@ function StartCareerCard() {
       <div className="text-3xl mb-1">🌟</div>
       <div className="font-display text-2xl text-warning mb-2">Start a Career</div>
       <p className="text-sm text-muted-foreground mb-5 max-w-sm mx-auto">
-        Pick one founding club from any league. Your career starts there — and
-        every season builds on the last.
+        Pick one founding club from any league. Your career starts there — and every season builds
+        on the last.
       </p>
       <Link
         to="/career/found"
@@ -116,7 +119,11 @@ function StartCareerCard() {
 }
 
 function ActiveCareerCard({
-  clubName, leagueName, currentSeason, trophies, onAbandon,
+  clubName,
+  leagueName,
+  currentSeason,
+  trophies,
+  onAbandon,
 }: {
   clubName: string;
   leagueName: string;
@@ -133,11 +140,15 @@ function ActiveCareerCard({
       <div className="mt-4 grid grid-cols-2 gap-3 text-center">
         <div className="rounded-lg border border-warning/30 py-3">
           <div className="font-display text-2xl text-warning">{currentSeason}</div>
-          <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mt-1">Season</div>
+          <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mt-1">
+            Season
+          </div>
         </div>
         <div className="rounded-lg border border-warning/30 py-3">
           <div className="font-display text-2xl text-warning">{trophies}</div>
-          <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mt-1">Trophies</div>
+          <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mt-1">
+            Trophies
+          </div>
         </div>
       </div>
 
@@ -163,27 +174,44 @@ function ActiveCareerCard({
 function HowItWorksCard() {
   return (
     <div className="p-5 rounded-2xl border border-border bg-card/40">
-      <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-3">How GOLAZO works</div>
+      <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground mb-3">
+        How GOLAZO works
+      </div>
       <ol className="space-y-2 text-sm text-foreground/85">
         <li className="flex gap-3">
           <span className="font-display text-warning shrink-0">1.</span>
-          <span><span className="text-warning">Pick a founding club</span> — Real Madrid, Bayern, Liverpool, whichever fits your taste.</span>
+          <span>
+            <span className="text-warning">Pick a founding club</span> — Real Madrid, Bayern,
+            Liverpool, whichever fits your taste.
+          </span>
         </li>
         <li className="flex gap-3">
           <span className="font-display text-warning shrink-0">2.</span>
-          <span><span className="text-warning">Draft against AI rivals</span> — each rival has an archetype (Galáctico, Pragmatist, Romantic, …) and competes for the legends you want.</span>
+          <span>
+            <span className="text-warning">Draft against AI rivals</span> — each rival has an
+            archetype (Galáctico, Pragmatist, Romantic, …) and competes for the legends you want.
+          </span>
         </li>
         <li className="flex gap-3">
           <span className="font-display text-warning shrink-0">3.</span>
-          <span><span className="text-warning">Play a full season</span> — 22 matchdays + a knockout cup. Top 8 qualify; bottom 2 relegate.</span>
+          <span>
+            <span className="text-warning">Play a full season</span> — 22 matchdays + a knockout
+            cup. Top 8 qualify; bottom 2 relegate.
+          </span>
         </li>
         <li className="flex gap-3">
           <span className="font-display text-warning shrink-0">4.</span>
-          <span><span className="text-warning">Transfer window</span> — hot-form players demand moves, cold players can be sold, you fill gaps for next season.</span>
+          <span>
+            <span className="text-warning">Transfer window</span> — hot-form players demand moves,
+            cold players can be sold, you fill gaps for next season.
+          </span>
         </li>
         <li className="flex gap-3">
           <span className="font-display text-warning shrink-0">5.</span>
-          <span><span className="text-warning">Repeat. Build a legacy.</span> Win the league. Win the cup. Score a GOLAZO.</span>
+          <span>
+            <span className="text-warning">Repeat. Build a legacy.</span> Win the league. Win the
+            cup. Score a GOLAZO.
+          </span>
         </li>
       </ol>
     </div>

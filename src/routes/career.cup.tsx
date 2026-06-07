@@ -17,8 +17,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { useCareer } from "@/lib/career-store";
-import { getClubs } from "@/lib/data";
-import type { LeagueId } from "@/lib/leagues";
+import { getCareerClubs } from "@/lib/data";
 import { cupBracketSeeded, pickScorer, pickAssister, type StandingsTable } from "@/lib/career-core";
 import type { Player } from "@/lib/game-types";
 
@@ -49,8 +48,7 @@ interface CupState {
 function CareerCup() {
   const career = useCareer();
   const navigate = useNavigate();
-  const leagueId = (career.leagueId ?? "ucl") as LeagueId;
-  const clubs = useMemo(() => getClubs(leagueId), [leagueId]);
+  const clubs = useMemo(() => getCareerClubs(), []);
 
   // The user's average squad rating drives match outcomes
   const userRating = useMemo(() => {

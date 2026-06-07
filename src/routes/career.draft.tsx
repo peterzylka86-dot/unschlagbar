@@ -22,7 +22,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useCareer } from "@/lib/career-store";
 import { LEAGUES } from "@/lib/leagues";
 import type { LeagueId } from "@/lib/leagues";
-import { getClubs, getPlayers } from "@/lib/data";
+import { getCareerClubs, getCareerPlayers } from "@/lib/data";
 import { FORMATIONS } from "@/lib/formations";
 import { isPositionCompatible } from "@/lib/draft-helpers";
 import {
@@ -118,8 +118,14 @@ function CareerDraft() {
   // hooks must always be called, but their results are discarded when we
   // bail out at the end.
   const leagueId = (career.leagueId ?? "ucl") as LeagueId;
-  const allClubs = useMemo(() => getClubs(leagueId), [leagueId]);
-  const allPlayers = useMemo(() => getPlayers(leagueId), [leagueId]);
+  // GOLAZO super-league pool: every available club + player across the
+  // career-mode leagues, not just the user's founding league. Picking GC
+  // doesn't trap you with Swiss players only — you can draft global
+  // legends with GC as your identity anchor. The founding club itself
+  // still resolves from this pool because it includes all leagues.
+  void leagueId; // kept for `Season {career.currentSeason}` HUD reference
+  const allClubs = useMemo(() => getCareerClubs(), []);
+  const allPlayers = useMemo(() => getCareerPlayers(), []);
   const userClub = useMemo(
     () => allClubs.find((c) => c.id === career.foundingClubId) ?? null,
     [allClubs, career.foundingClubId],

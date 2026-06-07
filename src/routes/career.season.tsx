@@ -19,7 +19,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useCareer } from "@/lib/career-store";
 import { LEAGUES } from "@/lib/leagues";
 import type { LeagueId } from "@/lib/leagues";
-import { getClubs, getPlayers } from "@/lib/data";
+import { getCareerClubs, getCareerPlayers } from "@/lib/data";
 import { simulateSeason, squadRating, computeLeagueTable } from "@/lib/sim";
 import { isPositionCompatible } from "@/lib/draft-helpers";
 import {
@@ -59,10 +59,10 @@ function CareerSeason() {
     }
   }, [career.squad, career.rivals, navigate]);
 
-  // Safe fallback so getClubs() doesn't throw when career.leagueId is null
-  // (which happens transiently during the redirect window).
+  // Safe fallback for HUD label; the actual pool is the cross-league super-pool.
   const leagueId = (career.leagueId ?? "ucl") as LeagueId;
-  const clubs = useMemo(() => getClubs(leagueId), [leagueId]);
+  void leagueId; // still referenced for the HUD subtitle below
+  const clubs = useMemo(() => getCareerClubs(), []);
 
   // Build the opponent list: 11 AI rivals × their founding clubs
   const opponents = useMemo(() => {
@@ -607,8 +607,8 @@ function SquadForm({ squad, form }: { squad: Player[]; form: Record<string, numb
 function MidSeasonSwapCard() {
   const career = useCareer();
   const leagueId = (career.leagueId ?? "ucl") as LeagueId;
-  const allPlayers = useMemo(() => getPlayers(leagueId), [leagueId]);
-  const allClubs = useMemo(() => getClubs(leagueId), [leagueId]);
+  const allPlayers = useMemo(() => getCareerPlayers(), []);
+  const allClubs = useMemo(() => getCareerClubs(), []);
 
   const [stage, setStage] = useState<"prompt" | "spinning" | "picking-in" | "picking-out">(
     "prompt",

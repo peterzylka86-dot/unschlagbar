@@ -7,7 +7,14 @@
  * and the suite fails. That's the safety net.
  */
 import { describe, it, expect } from "vitest";
-import { getClubs, getPlayers, _schemas } from "./data";
+import {
+  getClubs,
+  getPlayers,
+  getCareerClubs,
+  getCareerPlayers,
+  CAREER_POOL_LEAGUES,
+  _schemas,
+} from "./data";
 import type { LeagueId } from "./leagues";
 import { LEAGUE_IDS } from "./leagues";
 
@@ -30,6 +37,43 @@ describe("data module loads cleanly", () => {
       const orphans = getPlayers(league).filter(p => !clubIds.has(p.club));
       expect(orphans).toEqual([]);
     });
+  });
+});
+
+describe("career super-league pool", () => {
+  it("includes clubs from every CAREER_POOL_LEAGUES source", () => {
+    const careerClubIds = new Set(getCareerClubs().map(c => c.id));
+    for (const lg of CAREER_POOL_LEAGUES) {
+      const sourceIds = getClubs(lg).map(c => c.id);
+      // At least one club from each source league must survive the dedupe
+      const overlap = sourceIds.filter(id => careerClubIds.has(id));
+      expect(overlap.length).toBeGreaterThan(0);
+    }
+  });
+
+  it("strictly bigger than any single source league (super-league > any one league)", () => {
+    const careerSize = getCareerPlayers().length;
+    for (const lg of CAREER_POOL_LEAGUES) {
+      expect(careerSize).toBeGreaterThanOrEqual(getPlayers(lg).length);
+    }
+    // And bigger than at least one source (proves it's a real union)
+    expect(careerSize).toBeGreaterThan(getPlayers(CAREER_POOL_LEAGUES[0]).length);
+  });
+
+  it("deduplicates players by `${club}:${name}`", () => {
+    const players = getCareerPlayers();
+    const keys = players.map(p => `${p.club}:${p.name}`);
+    expect(new Set(keys).size).toBe(keys.length);
+  });
+
+  it("returns a Swiss founding-club anchor (regression: GC is in the pool)", () => {
+    // The user reported: "If I pick GC as my club...I only get Swiss players."
+    // The super-league pool must INCLUDE GC so the founding pick resolves,
+    // and must also include non-Swiss clubs so the draft isn't Swiss-only.
+    const clubs = getCareerClubs();
+    expect(clubs.some(c => c.id === "grasshopper")).toBe(true);
+    // Non-Swiss club sample: Real Madrid (la-liga) must coexist with GC.
+    expect(clubs.some(c => c.id === "realmadrid")).toBe(true);
   });
 });
 

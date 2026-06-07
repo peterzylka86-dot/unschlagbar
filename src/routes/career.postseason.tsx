@@ -27,8 +27,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { useCareer } from "@/lib/career-store";
-import { getPlayers } from "@/lib/data";
-import type { LeagueId } from "@/lib/leagues";
+import { getCareerPlayers } from "@/lib/data";
 import { detectStarDemands, normalizeName } from "@/lib/career-core";
 import { isPositionCompatible } from "@/lib/draft-helpers";
 import type { Player } from "@/lib/game-types";
@@ -50,8 +49,7 @@ function PostSeason() {
   const navigate = useNavigate();
 
   // All hooks unconditional (rules-of-hooks; see LEARNINGS.md L-1)
-  const leagueId = (career.leagueId ?? "ucl") as LeagueId;
-  const allPlayers = useMemo(() => getPlayers(leagueId), [leagueId]);
+  const allPlayers = useMemo(() => getCareerPlayers(), []);
 
   // Build a {normalized name : form} map for star-demand detection
   const formMap = useMemo(() => {
