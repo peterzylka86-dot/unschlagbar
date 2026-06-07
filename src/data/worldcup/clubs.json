@@ -53,7 +53,7 @@
     "id": "colombia",
     "name": "Colombia",
     "short": "COL",
-    "city": "Bogotá",
+    "city": "Bogot\u00e1",
     "color": "#fcd116",
     "founded": 1924,
     "strength": 86,
@@ -112,7 +112,7 @@
     "id": "paraguay",
     "name": "Paraguay",
     "short": "PAR",
-    "city": "Asunción",
+    "city": "Asunci\u00f3n",
     "color": "#d52b1e",
     "founded": 1906,
     "strength": 76,
@@ -300,7 +300,7 @@
     "id": "switzerland",
     "name": "Switzerland",
     "short": "SUI",
-    "city": "Zürich",
+    "city": "Z\u00fcrich",
     "color": "#dc291e",
     "founded": 1895,
     "strength": 82,
@@ -369,20 +369,6 @@
     ]
   },
   {
-    "id": "ukraine",
-    "name": "Ukraine",
-    "short": "UKR",
-    "city": "Kyiv",
-    "color": "#005bbb",
-    "founded": 1991,
-    "strength": 80,
-    "era": "current",
-    "era_tier": "current",
-    "era_tiers": [
-      "current"
-    ]
-  },
-  {
     "id": "hungary",
     "name": "Hungary",
     "short": "HUN",
@@ -405,20 +391,6 @@
     "color": "#0048e0",
     "founded": 1947,
     "strength": 76,
-    "era": "current",
-    "era_tier": "current",
-    "era_tiers": [
-      "current"
-    ]
-  },
-  {
-    "id": "faroe",
-    "name": "Faroe Islands",
-    "short": "FRO",
-    "city": "Tórshavn",
-    "color": "#0065bd",
-    "founded": 1979,
-    "strength": 62,
     "era": "current",
     "era_tier": "current",
     "era_tiers": [
@@ -487,7 +459,7 @@
     "id": "costarica",
     "name": "Costa Rica",
     "short": "CRC",
-    "city": "San José",
+    "city": "San Jos\u00e9",
     "color": "#002b7f",
     "founded": 1921,
     "strength": 76,
@@ -615,7 +587,7 @@
     "id": "cameroon",
     "name": "Cameroon",
     "short": "CMR",
-    "city": "Yaoundé",
+    "city": "Yaound\u00e9",
     "color": "#007a5e",
     "founded": 1959,
     "strength": 80,
