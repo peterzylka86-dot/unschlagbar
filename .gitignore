@@ -36,3 +36,6 @@ package-lock.json
 *.njsproj
 *.sln
 *.sw?
+
+# jfjelstul WC dataset cache (downloaded CSVs for tools/build_wc_squads.py)
+tools/.wc_cache/

@@ -684,5 +684,668 @@
       "00s",
       "90s"
     ]
+  },
+  {
+    "id": "dutcheastindies",
+    "name": "Dutch East Indies",
+    "short": "DUT",
+    "city": "Batavia",
+    "color": "#ce1126",
+    "founded": 1929,
+    "strength": 64,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "zaire",
+    "name": "Zaire",
+    "short": "ZAI",
+    "city": "Kinshasa",
+    "color": "#007fff",
+    "founded": 1919,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "haiti",
+    "name": "Haiti",
+    "short": "HAI",
+    "city": "Port-au-Prince",
+    "color": "#00209f",
+    "founded": 1904,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "jamaica",
+    "name": "Jamaica",
+    "short": "JAM",
+    "city": "Kingston",
+    "color": "#fed100",
+    "founded": 1910,
+    "strength": 68,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "northernireland",
+    "name": "Northern Ireland",
+    "short": "NOR",
+    "city": "Belfast",
+    "color": "#009a44",
+    "founded": 1880,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "yugoslavia",
+    "name": "Yugoslavia",
+    "short": "YUG",
+    "city": "Belgrade",
+    "color": "#0e3692",
+    "founded": 1919,
+    "strength": 76,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "qatar",
+    "name": "Qatar",
+    "short": "QAT",
+    "city": "Doha",
+    "color": "#8a1538",
+    "founded": 1960,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "serbiaandmontenegro",
+    "name": "Serbia and Montenegro",
+    "short": "SER",
+    "city": "Belgrade",
+    "color": "#0e3692",
+    "founded": 2003,
+    "strength": 73,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "bolivia",
+    "name": "Bolivia",
+    "short": "BOL",
+    "city": "La Paz",
+    "color": "#007934",
+    "founded": 1925,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "trinidadandtobago",
+    "name": "Trinidad and Tobago",
+    "short": "TRI",
+    "city": "Port of Spain",
+    "color": "#ce1126",
+    "founded": 1908,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "russia",
+    "name": "Russia",
+    "short": "RUS",
+    "city": "Moscow",
+    "color": "#d52b1e",
+    "founded": 1912,
+    "strength": 74,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "china",
+    "name": "China",
+    "short": "CHI",
+    "city": "Beijing",
+    "color": "#de2910",
+    "founded": 1924,
+    "strength": 67,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "angola",
+    "name": "Angola",
+    "short": "ANG",
+    "city": "Luanda",
+    "color": "#cc092f",
+    "founded": 1979,
+    "strength": 67,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "elsalvador",
+    "name": "El Salvador",
+    "short": "EL ",
+    "city": "San Salvador",
+    "color": "#0f47af",
+    "founded": 1935,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "sovietunion",
+    "name": "Soviet Union",
+    "short": "SOV",
+    "city": "Moscow",
+    "color": "#cc0000",
+    "founded": 1912,
+    "strength": 78,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "romania",
+    "name": "Romania",
+    "short": "ROM",
+    "city": "Bucharest",
+    "color": "#fcd116",
+    "founded": 1909,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "unitedarabemirates",
+    "name": "United Arab Emirates",
+    "short": "UNI",
+    "city": "Abu Dhabi",
+    "color": "#00732f",
+    "founded": 1971,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "norway",
+    "name": "Norway",
+    "short": "NOR",
+    "city": "Oslo",
+    "color": "#ba0c2f",
+    "founded": 1902,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "cuba",
+    "name": "Cuba",
+    "short": "CUB",
+    "city": "Havana",
+    "color": "#002a8f",
+    "founded": 1924,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "bulgaria",
+    "name": "Bulgaria",
+    "short": "BUL",
+    "city": "Sofia",
+    "color": "#009b75",
+    "founded": 1923,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "panama",
+    "name": "Panama",
+    "short": "PAN",
+    "city": "Panama City",
+    "color": "#005293",
+    "founded": 1937,
+    "strength": 67,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "iraq",
+    "name": "Iraq",
+    "short": "IRA",
+    "city": "Baghdad",
+    "color": "#ce1126",
+    "founded": 1948,
+    "strength": 67,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "southafrica",
+    "name": "South Africa",
+    "short": "SOU",
+    "city": "—",
+    "color": "#666666",
+    "founded": 1900,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "wales",
+    "name": "Wales",
+    "short": "WAL",
+    "city": "Cardiff",
+    "color": "#d30731",
+    "founded": 1876,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "czechoslovakia",
+    "name": "Czechoslovakia",
+    "short": "CZE",
+    "city": "Prague",
+    "color": "#11457e",
+    "founded": 1922,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "slovenia",
+    "name": "Slovenia",
+    "short": "SLO",
+    "city": "—",
+    "color": "#666666",
+    "founded": 1900,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "bosniaandherzegovina",
+    "name": "Bosnia and Herzegovina",
+    "short": "BOS",
+    "city": "Sarajevo",
+    "color": "#002395",
+    "founded": 1992,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "honduras",
+    "name": "Honduras",
+    "short": "HON",
+    "city": "Tegucigalpa",
+    "color": "#0073cf",
+    "founded": 1951,
+    "strength": 68,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "slovakia",
+    "name": "Slovakia",
+    "short": "SLO",
+    "city": "Bratislava",
+    "color": "#0b4ea2",
+    "founded": 1993,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "ukraine",
+    "name": "Ukraine",
+    "short": "UKR",
+    "city": "Kyiv",
+    "color": "#005bbb",
+    "founded": 1991,
+    "strength": 73,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "republicofireland",
+    "name": "Republic of Ireland",
+    "short": "REP",
+    "city": "Dublin",
+    "color": "#169b62",
+    "founded": 1921,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "togo",
+    "name": "Togo",
+    "short": "TOG",
+    "city": "Lomé",
+    "color": "#006a4e",
+    "founded": 1960,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "westgermany",
+    "name": "West Germany",
+    "short": "WES",
+    "city": "—",
+    "color": "#666666",
+    "founded": 1900,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "northkorea",
+    "name": "North Korea",
+    "short": "NOR",
+    "city": "Pyongyang",
+    "color": "#ed1c27",
+    "founded": 1945,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "israel",
+    "name": "Israel",
+    "short": "ISR",
+    "city": "Tel Aviv",
+    "color": "#0038b8",
+    "founded": 1928,
+    "strength": 68,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "czechrepublic",
+    "name": "Czech Republic",
+    "short": "CZE",
+    "city": "Prague",
+    "color": "#11457e",
+    "founded": 1993,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "eastgermany",
+    "name": "East Germany",
+    "short": "EAS",
+    "city": "Berlin",
+    "color": "#ffce00",
+    "founded": 1949,
+    "strength": 74,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "greece",
+    "name": "Greece",
+    "short": "GRE",
+    "city": "Athens",
+    "color": "#0d5eaf",
+    "founded": 1926,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
+  },
+  {
+    "id": "kuwait",
+    "name": "Kuwait",
+    "short": "KUW",
+    "city": "Kuwait City",
+    "color": "#007a3d",
+    "founded": 1952,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current",
+      "00s",
+      "90s",
+      "70s-80s"
+    ]
   }
 ]
