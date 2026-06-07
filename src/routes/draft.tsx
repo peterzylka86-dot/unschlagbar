@@ -6,7 +6,7 @@ import { FORMATIONS } from "@/lib/formations";
 import { ClubBadge } from "@/components/ClubBadge";
 import { getClubs, getPlayers } from "@/lib/data";
 import { LEAGUES } from "@/lib/leagues";
-import { placeFoundingPlayer } from "@/lib/draft-helpers";
+import { placeFoundingPlayer, isPositionCompatible } from "@/lib/draft-helpers";
 import type { Club, Player, Position, Slot, EraTier, DraftMode } from "@/lib/game-types";
 
 const TIERS: { id: EraTier; label: string; sub: string }[] = [
@@ -39,9 +39,9 @@ export const Route = createFileRoute("/draft")({
   component: DraftScreen,
 });
 
-function isCompatible(slotPos: Position, playerPos: Position): boolean {
-  return slotPos === playerPos;
-}
+// Compatibility check: same position OR same family (CDM/CM/CAM share, etc.).
+// See src/lib/draft-helpers.ts for the family table.
+const isCompatible = isPositionCompatible;
 
 function DraftScreen() {
   const { config, slots, rerollsLeft, assignPlayer, consumeReroll, setConfig } = useGame();

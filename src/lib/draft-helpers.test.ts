@@ -6,7 +6,12 @@
  * behavior so a regression couldn't silently break it.
  */
 import { describe, it, expect } from "vitest";
-import { placeFoundingPlayer, isPositionMatch } from "./draft-helpers";
+import {
+  placeFoundingPlayer,
+  isPositionMatch,
+  isPositionCompatible,
+  POSITION_FAMILIES,
+} from "./draft-helpers";
 import type { Player, Position, Slot } from "./game-types";
 
 function mockSlot(id: string, position: Position, player?: Player): Slot {
@@ -24,7 +29,7 @@ function mockPlayer(name: string, position: Position, club = "test"): Player {
   };
 }
 
-describe("isPositionMatch", () => {
+describe("isPositionMatch (strict equality)", () => {
   it("returns true when positions match", () => {
     expect(isPositionMatch("CB", "CB")).toBe(true);
     expect(isPositionMatch("CAM", "CAM")).toBe(true);
@@ -32,6 +37,53 @@ describe("isPositionMatch", () => {
   it("returns false when positions differ", () => {
     expect(isPositionMatch("CB", "ST")).toBe(false);
     expect(isPositionMatch("CAM", "CM")).toBe(false);  // strict, not bucketed
+  });
+});
+
+describe("isPositionCompatible (family-aware)", () => {
+  it("returns true when positions match exactly", () => {
+    expect(isPositionCompatible("CB", "CB")).toBe(true);
+    expect(isPositionCompatible("ST", "ST")).toBe(true);
+  });
+
+  it("central-midfield family: CDM ↔ CM ↔ CAM are interchangeable", () => {
+    expect(isPositionCompatible("CM", "CAM")).toBe(true);
+    expect(isPositionCompatible("CAM", "CM")).toBe(true);   // symmetric
+    expect(isPositionCompatible("CM", "CDM")).toBe(true);
+    expect(isPositionCompatible("CDM", "CM")).toBe(true);   // symmetric
+    expect(isPositionCompatible("CAM", "CDM")).toBe(true);
+    expect(isPositionCompatible("CDM", "CAM")).toBe(true);  // symmetric
+  });
+
+  it("side-specific positions do NOT cross sides", () => {
+    expect(isPositionCompatible("LB", "RB")).toBe(false);
+    expect(isPositionCompatible("LW", "RW")).toBe(false);
+  });
+
+  it("position families are NOT lumped across role boundaries", () => {
+    // A CB is not a fullback (different role, different physical demand)
+    expect(isPositionCompatible("CB", "LB")).toBe(false);
+    expect(isPositionCompatible("LB", "CB")).toBe(false);
+    // A winger is not a striker (different role)
+    expect(isPositionCompatible("LW", "ST")).toBe(false);
+    expect(isPositionCompatible("ST", "LW")).toBe(false);
+    // A central mid is not a wide forward
+    expect(isPositionCompatible("CM", "LW")).toBe(false);
+    expect(isPositionCompatible("CAM", "ST")).toBe(false);
+  });
+
+  it("GK only matches GK", () => {
+    expect(isPositionCompatible("GK", "GK")).toBe(true);
+    expect(isPositionCompatible("GK", "CB")).toBe(false);
+    expect(isPositionCompatible("CB", "GK")).toBe(false);
+  });
+
+  it("every position belongs to exactly one family", () => {
+    const allPositions: Position[] = ["GK","CB","LB","RB","CDM","CM","CAM","LW","RW","ST"];
+    for (const p of allPositions) {
+      const familyCount = POSITION_FAMILIES.filter(f => f.includes(p)).length;
+      expect(familyCount).toBe(1);
+    }
   });
 });
 
@@ -139,9 +191,9 @@ describe("placeFoundingPlayer", () => {
     expect(result.placedPlayerKey).toBe("bochum:Dariusz Wosz");
   });
 
-  it("regression: founding player at the FIRST slot of correct position", () => {
-    // The bug we're guarding against: the placement somehow skips the first
-    // valid empty slot. Cover the canonical formation-shape case.
+  it("Wosz (CAM) now places into 4-3-3's first CM slot via family compatibility", () => {
+    // The fix for the user-reported issue: CDM/CM/CAM are the same family,
+    // so a CAM player slots gracefully into a CM slot in 4-3-3.
     const slots = [
       mockSlot("gk",   "GK"),
       mockSlot("lb",   "LB"),
@@ -156,11 +208,19 @@ describe("placeFoundingPlayer", () => {
       mockSlot("rw",   "RW"),
     ];
     const fp = mockPlayer("Dariusz Wosz", "CAM", "bochum");
-    // 4-3-3 has no CAM — should NOT place
-    expect(placeFoundingPlayer(slots, fp).placedSlotId).toBeNull();
+    const result = placeFoundingPlayer(slots, fp);
+    expect(result.placedSlotId).toBe("cm-1");
+    expect(result.slots[5].player?.name).toBe("Dariusz Wosz");
+  });
 
-    // But same player as CM should place
-    const fpCM = mockPlayer("Dariusz Wosz", "CM", "bochum");
-    expect(placeFoundingPlayer(slots, fpCM).placedSlotId).toBe("cm-1");
+  it("CAM founding player into a CDM-only formation slot", () => {
+    // Pep Guardiola's CDM accepting a CAM-tagged player (defensive 10 → 8 swap)
+    const slots = [
+      mockSlot("gk",    "GK"),
+      mockSlot("cdm-1", "CDM"),
+      mockSlot("cdm-2", "CDM"),
+    ];
+    const fp = mockPlayer("Mikel Arteta", "CAM", "arsenal");
+    expect(placeFoundingPlayer(slots, fp).placedSlotId).toBe("cdm-1");
   });
 });

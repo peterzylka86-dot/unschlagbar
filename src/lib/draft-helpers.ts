@@ -5,11 +5,48 @@
  */
 import type { Player, Position, Slot } from "./game-types";
 
-/** Default position compatibility — same-slot-position-as-player. The
- *  draft route allows callers to inject a custom check, but the natural
- *  default for unschlagbar is strict equality. */
+/** Strict same-position check. Kept for callers that explicitly want it. */
 export function isPositionMatch(slotPos: Position, playerPos: Position): boolean {
   return slotPos === playerPos;
+}
+
+/**
+ * Position families — positions in the same family share a slot in real
+ * football. A CAM player slots into a CM role gracefully; a CDM into CM
+ * the same. (Pep Guardiola playing as a CDM is the same player Andrés
+ * Iniesta later played as CAM — central midfielders interchange.)
+ *
+ * Side-specific positions (LB/RB/LW/RW) stay in their own family because
+ * playing a left-back at right-back is awkward in a way central-mid swaps
+ * aren't.
+ *
+ * GK / CB / LB / RB / ST each have their own single-position family —
+ * intentionally not lumped. A striker is not a wing-forward.
+ */
+export const POSITION_FAMILIES: ReadonlyArray<ReadonlyArray<Position>> = [
+  ["GK"],
+  ["CB"],
+  ["LB"],
+  ["RB"],
+  ["CDM", "CM", "CAM"],   // central midfielders — the user-requested cluster
+  ["LW"],
+  ["RW"],
+  ["ST"],
+];
+
+/**
+ * Slot-vs-player compatibility check that honors position families.
+ *
+ * Returns true if the slot's position is the same as the player's, OR
+ * they're in the same family (e.g. CM slot + CAM player → true).
+ *
+ * Symmetric: isPositionCompatible(a, b) === isPositionCompatible(b, a).
+ */
+export function isPositionCompatible(slotPos: Position, playerPos: Position): boolean {
+  if (slotPos === playerPos) return true;
+  return POSITION_FAMILIES.some(
+    family => family.includes(slotPos) && family.includes(playerPos),
+  );
 }
 
 /** Result of attempting to place a founding player. */
@@ -42,7 +79,7 @@ export interface PlaceFoundingResult {
 export function placeFoundingPlayer(
   slots: Slot[],
   foundingPlayer: Player | undefined,
-  isCompatible: (slotPos: Position, playerPos: Position) => boolean = isPositionMatch,
+  isCompatible: (slotPos: Position, playerPos: Position) => boolean = isPositionCompatible,
 ): PlaceFoundingResult {
   if (!foundingPlayer) {
     return {
