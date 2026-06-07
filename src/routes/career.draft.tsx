@@ -118,14 +118,15 @@ function CareerDraft() {
   // hooks must always be called, but their results are discarded when we
   // bail out at the end.
   const leagueId = (career.leagueId ?? "ucl") as LeagueId;
-  // GOLAZO super-league pool: every available club + player across the
-  // career-mode leagues, not just the user's founding league. Picking GC
-  // doesn't trap you with Swiss players only — you can draft global
-  // legends with GC as your identity anchor. The founding club itself
-  // still resolves from this pool because it includes all leagues.
-  void leagueId; // kept for `Season {career.currentSeason}` HUD reference
-  const allClubs = useMemo(() => getCareerClubs(), []);
-  const allPlayers = useMemo(() => getCareerPlayers(), []);
+  void leagueId; // referenced indirectly via founding-club lookup below
+  // GOLAZO super-league pool: elite clubs (strength ≥ 80) across the career
+  // leagues, PLUS the user's founding club. Picking GC doesn't trap you in
+  // Switzerland and doesn't dilute the draft with Pro-Vercelli-tier clubs.
+  const allClubs = useMemo(() => getCareerClubs(career.foundingClubId), [career.foundingClubId]);
+  const allPlayers = useMemo(
+    () => getCareerPlayers(career.foundingClubId),
+    [career.foundingClubId],
+  );
   const userClub = useMemo(
     () => allClubs.find((c) => c.id === career.foundingClubId) ?? null,
     [allClubs, career.foundingClubId],
@@ -136,7 +137,12 @@ function CareerDraft() {
 
   useEffect(() => {
     if (draft) return;
-    const seed = career.startedAt ? hashString(career.startedAt) : 12345;
+    // Seed includes the season number so each season gets a NEW random
+    // snake order. Previously the order was identical every season (only
+    // startedAt was used) — the user's slot was locked from S1 forever.
+    const seed = career.startedAt
+      ? hashString(`${career.startedAt}-s${career.currentSeason}`)
+      : 12345;
     const rand = mulberry32(seed);
 
     // Build AI rivals from the league's clubs (excluding the user's founding)
@@ -439,6 +445,11 @@ function CareerDraft() {
         </div>
       </header>
 
+      {/* Draft slot reveal — the snake order is reshuffled every season so
+          the user's draft slot is genuinely random. Show prominently so
+          they can see "I pick X of 12" before the draft starts. */}
+      <UserSlotBadge order={draft.draftOrder} totalManagers={draft.managers.length} />
+
       {/* Formation picker — only when no picks made yet (locking after first pick prevents broken squads) */}
       {userManager.squad.length === 0 && (
         <FormationPicker current={career.formation} onChange={career.setFormation} />
@@ -550,6 +561,37 @@ function advance(d: DraftSnapshot): DraftSnapshot {
  * 7 formations, displayed as chip-buttons. Updates career.formation in
  * the store; the AI rival loop + need-calc both read from that.
  */
+function UserSlotBadge({ order, totalManagers }: { order: string[]; totalManagers: number }) {
+  const slot = order.indexOf("user") + 1; // 1-indexed
+  if (slot === 0) return null;
+  const ordSuffix = (n: number) => {
+    const s = ["th", "st", "nd", "rd"];
+    const v = n % 100;
+    return s[(v - 20) % 10] || s[v] || s[0];
+  };
+  // Color cue: top 4 picks = warning gold (great), middle = neutral,
+  // bottom 4 = muted (you'll be picking late in odd rounds).
+  const colorClass =
+    slot <= 4
+      ? "border-warning bg-warning/10 text-warning"
+      : slot >= totalManagers - 3
+        ? "border-muted-foreground/40 bg-muted/10 text-muted-foreground"
+        : "border-foreground/30 bg-card text-foreground";
+  return (
+    <div className={`mt-4 rounded-xl border-2 ${colorClass} p-4 text-center`}>
+      <div className="text-[10px] uppercase tracking-[0.25em] opacity-80">Your draft slot</div>
+      <div className="font-display text-3xl mt-1">
+        {slot}
+        <span className="text-base">{ordSuffix(slot)}</span>{" "}
+        <span className="opacity-60 text-base">of {totalManagers}</span>
+      </div>
+      <div className="text-[10px] opacity-70 mt-1">
+        Snake order — picks reverse each round. Re-rolled at the start of every season.
+      </div>
+    </div>
+  );
+}
+
 function FormationPicker({
   current,
   onChange,

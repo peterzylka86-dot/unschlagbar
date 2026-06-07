@@ -131,35 +131,70 @@ export function getLeagueData(league: LeagueId) {
  */
 export const CAREER_POOL_LEAGUES: LeagueId[] = ["ucl", "bundesliga", "laliga", "seriea", "swiss"];
 
-let _careerClubsCache: Club[] | null = null;
-let _careerPlayersCache: Player[] | null = null;
+/**
+ * Crème-de-la-crème threshold for the GOLAZO super pool.
+ *
+ * User feedback: "Pro Vercelli...no...but rather super teams." Anyone
+ * who joins GOLAZO is here for the elite fantasy — they want to draft
+ * Real Madrid · Bayern · Inter, not Frosinone or Pro Vercelli.
+ *
+ * Strength ≥ 80 keeps every realistic 'super club' across the leagues.
+ * Reference points (see data.test.ts):
+ *   UCL    — all 34 clubs (min strength 78–94)  → ~all in
+ *   La Liga — Real Madrid (93), Barça (92), Atlético (87), Sevilla (82)
+ *   Bundesliga — Bayern (92), Dortmund (86), Leipzig (85), Bayer (83)
+ *   Serie A — Juventus (90), Milan (90), Inter (88), Roma (88), Napoli, Lazio
+ *   Swiss — Basel (83), Young Boys (82)
+ *
+ * Always include the user's founding club regardless of strength — GC
+ * (strength 76) is your identity anchor and round-1 pool, so it has to
+ * survive the filter even when it's below the elite cut.
+ */
+export const SUPER_TEAM_STRENGTH = 80;
 
-/** All clubs across CAREER_POOL_LEAGUES, deduped by club.id. Cached. */
-export function getCareerClubs(): Club[] {
-  if (_careerClubsCache) return _careerClubsCache;
+const _careerClubsCache = new Map<string, Club[]>(); // keyed by foundingClubId (or "")
+const _careerPlayersCache = new Map<string, Player[]>();
+
+/** Build the deduped super-set across CAREER_POOL_LEAGUES, no filter. */
+function _allCareerClubs(): Club[] {
   const seen = new Map<string, Club>();
   for (const lg of CAREER_POOL_LEAGUES) {
     for (const c of DATA[lg].clubs) {
       if (!seen.has(c.id)) seen.set(c.id, c);
     }
   }
-  _careerClubsCache = Array.from(seen.values());
-  return _careerClubsCache;
+  return Array.from(seen.values());
 }
 
-/** All players across CAREER_POOL_LEAGUES, deduped by `${club}:${name}`.
- *  Cached so the heavy concat-and-dedupe runs once per session. */
-export function getCareerPlayers(): Player[] {
-  if (_careerPlayersCache) return _careerPlayersCache;
+/** Elite-only career pool clubs. Always includes the user's founding club. */
+export function getCareerClubs(foundingClubId?: string | null): Club[] {
+  const key = foundingClubId ?? "";
+  const hit = _careerClubsCache.get(key);
+  if (hit) return hit;
+  const all = _allCareerClubs();
+  const out = all.filter((c) => c.strength >= SUPER_TEAM_STRENGTH || c.id === foundingClubId);
+  _careerClubsCache.set(key, out);
+  return out;
+}
+
+/** Elite-only career pool players. Restricted to players whose club is in
+ *  the filtered super-pool. The founding club's full roster stays available. */
+export function getCareerPlayers(foundingClubId?: string | null): Player[] {
+  const key = foundingClubId ?? "";
+  const hit = _careerPlayersCache.get(key);
+  if (hit) return hit;
+  const clubIds = new Set(getCareerClubs(foundingClubId).map((c) => c.id));
   const seen = new Map<string, Player>();
   for (const lg of CAREER_POOL_LEAGUES) {
     for (const p of DATA[lg].players) {
+      if (!clubIds.has(p.club)) continue;
       const k = `${p.club}:${p.name}`;
       if (!seen.has(k)) seen.set(k, p);
     }
   }
-  _careerPlayersCache = Array.from(seen.values());
-  return _careerPlayersCache;
+  const out = Array.from(seen.values());
+  _careerPlayersCache.set(key, out);
+  return out;
 }
 
 // Exposed for tests

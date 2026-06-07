@@ -13,6 +13,7 @@ import {
   getCareerClubs,
   getCareerPlayers,
   CAREER_POOL_LEAGUES,
+  SUPER_TEAM_STRENGTH,
   _schemas,
 } from "./data";
 import type { LeagueId } from "./leagues";
@@ -41,23 +42,33 @@ describe("data module loads cleanly", () => {
 });
 
 describe("career super-league pool", () => {
-  it("includes clubs from every CAREER_POOL_LEAGUES source", () => {
-    const careerClubIds = new Set(getCareerClubs().map(c => c.id));
-    for (const lg of CAREER_POOL_LEAGUES) {
-      const sourceIds = getClubs(lg).map(c => c.id);
-      // At least one club from each source league must survive the dedupe
-      const overlap = sourceIds.filter(id => careerClubIds.has(id));
-      expect(overlap.length).toBeGreaterThan(0);
-    }
+  it("every default-pool club meets the SUPER_TEAM_STRENGTH threshold", () => {
+    // Crème-de-la-crème filter: no Pro-Vercelli-tier clubs in the GOLAZO draft.
+    const clubs = getCareerClubs();
+    clubs.forEach(c => {
+      expect(c.strength).toBeGreaterThanOrEqual(SUPER_TEAM_STRENGTH);
+    });
   });
 
-  it("strictly bigger than any single source league (super-league > any one league)", () => {
-    const careerSize = getCareerPlayers().length;
+  it("excludes weak clubs from a known source league (regression)", () => {
+    // Bundesliga's median is 72 — those clubs MUST NOT show up in the pool.
+    const careerIds = new Set(getCareerClubs().map(c => c.id));
+    const weakBundesliga = getClubs("bundesliga").filter(c => c.strength < SUPER_TEAM_STRENGTH);
+    weakBundesliga.forEach(c => {
+      expect(careerIds.has(c.id)).toBe(false);
+    });
+  });
+
+  it("includes elite clubs from every CAREER_POOL_LEAGUES source", () => {
+    const careerClubIds = new Set(getCareerClubs().map(c => c.id));
     for (const lg of CAREER_POOL_LEAGUES) {
-      expect(careerSize).toBeGreaterThanOrEqual(getPlayers(lg).length);
+      const eliteSourceIds = getClubs(lg)
+        .filter(c => c.strength >= SUPER_TEAM_STRENGTH)
+        .map(c => c.id);
+      if (eliteSourceIds.length === 0) continue; // (no league should hit this)
+      const overlap = eliteSourceIds.filter(id => careerClubIds.has(id));
+      expect(overlap.length).toBeGreaterThan(0);
     }
-    // And bigger than at least one source (proves it's a real union)
-    expect(careerSize).toBeGreaterThan(getPlayers(CAREER_POOL_LEAGUES[0]).length);
   });
 
   it("deduplicates players by `${club}:${name}`", () => {
@@ -66,14 +77,20 @@ describe("career super-league pool", () => {
     expect(new Set(keys).size).toBe(keys.length);
   });
 
-  it("returns a Swiss founding-club anchor (regression: GC is in the pool)", () => {
-    // The user reported: "If I pick GC as my club...I only get Swiss players."
-    // The super-league pool must INCLUDE GC so the founding pick resolves,
-    // and must also include non-Swiss clubs so the draft isn't Swiss-only.
-    const clubs = getCareerClubs();
+  it("always includes the user's founding club, even below threshold (GC case)", () => {
+    // GC's strength is 76 — below the 80 threshold. Without the anchor
+    // override they'd vanish from the pool and the founding pick would
+    // crash with a missing club.
+    const clubs = getCareerClubs("grasshopper");
     expect(clubs.some(c => c.id === "grasshopper")).toBe(true);
-    // Non-Swiss club sample: Real Madrid (la-liga) must coexist with GC.
+    // Real Madrid (elite) must still be in
     expect(clubs.some(c => c.id === "realmadrid")).toBe(true);
+  });
+
+  it("anchor inclusion also brings the anchor club's players in", () => {
+    // Without this, GC would be a club with zero players — draft crash.
+    const playersForGC = getCareerPlayers("grasshopper");
+    expect(playersForGC.some(p => p.club === "grasshopper")).toBe(true);
   });
 });
 
