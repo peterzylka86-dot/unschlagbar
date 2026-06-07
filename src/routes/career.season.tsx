@@ -279,6 +279,7 @@ function CareerSeason() {
           matches={matches}
           userRating={userRating}
           opponents={opponents}
+          liveForm={liveForm}
         />
       )}
     </div>
@@ -436,16 +437,33 @@ function PostSeasonCTA({
   matches,
   userRating,
   opponents,
+  liveForm,
 }: {
   ourPosition: number;
   matches: MatchWithScorers[];
   userRating: number;
   opponents: import("@/lib/game-types").Club[];
+  liveForm: Record<string, number>;
 }) {
   const career = useCareer();
   const isCupQualifier = ourPosition <= 8;
   const isRelegated = ourPosition >= 11;
   const isChampion = ourPosition === 1;
+
+  // Find the demanding star: hottest-form player ≥ +2.0, excluding the
+  // franchise (untouchable). Only one demand per season — the loudest voice.
+  const STAR_DEMAND_THRESHOLD = 2.0;
+  const demandingStar = useMemo(() => {
+    const enriched = career.squad
+      .map((p) => ({
+        player: p,
+        formVal: liveForm[`${p.club}:${normalizeName(p.name)}`] ?? 0,
+      }))
+      .filter((e) => e.formVal >= STAR_DEMAND_THRESHOLD)
+      .filter((e) => `${e.player.club}:${e.player.name}` !== career.franchisePlayerKey)
+      .sort((a, b) => b.formVal - a.formVal);
+    return enriched[0]?.player ?? null;
+  }, [career.squad, liveForm, career.franchisePlayerKey]);
 
   // Record this season into career.seasonHistory exactly once.
   useEffect(() => {
@@ -479,6 +497,29 @@ function PostSeasonCTA({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   void userRating;
+
+  // Gate: if a star is demanding AND the user hasn't answered yet,
+  // show the demand card instead of the next-step CTA.
+  if (demandingStar && !career.starDemandResolved) {
+    return (
+      <StarDemandCard
+        player={demandingStar}
+        onKeep={() => {
+          // Penalty: next draft starts with 1 reroll instead of 3.
+          career.setRerollsNextSeason(1);
+          career.setPendingDeparture(null);
+          career.setStarDemandResolved(true);
+        }}
+        onLetGo={() => {
+          // Player leaves at the start of next draft. Rerolls untouched.
+          career.setPendingDeparture(`${demandingStar.club}:${demandingStar.name}`);
+          career.setRerollsNextSeason(3);
+          career.setStarDemandResolved(true);
+        }}
+      />
+    );
+  }
+
   return (
     <div className="mt-8 rounded-2xl border-2 border-warning bg-warning/10 p-6 text-center">
       <div className="text-4xl mb-2">
@@ -493,6 +534,11 @@ function PostSeasonCTA({
               ? `Relegated · finished ${ourPosition}${ordinal(ourPosition)}`
               : `Finished ${ourPosition}${ordinal(ourPosition)}`}
       </div>
+      {career.pendingDeparture && (
+        <div className="text-xs text-primary mb-2">
+          🚪 A star will leave at the start of next season.
+        </div>
+      )}
       <div className="text-xs text-muted-foreground mb-5">
         {isCupQualifier
           ? "🏆 Cup competition next — top 8 finishers compete in a knockout for the trophy."
@@ -767,6 +813,70 @@ function MidSeasonSwapCard() {
   }
 
   return null;
+}
+
+/**
+ * End-of-season star demand card.
+ *
+ * If a non-franchise player ended the season on form ≥ +2, they demand
+ * to leave. User has a binary choice:
+ *
+ *   KEEP HIM  → next draft starts with 1 reroll (of 3). The star stays.
+ *   LET HIM GO → next draft keeps all 3 rerolls. The star departs at the
+ *                start of the next draft (removed by /career/postseason).
+ *
+ * One demand max per season. Franchise player never triggers a demand.
+ */
+function StarDemandCard({
+  player,
+  onKeep,
+  onLetGo,
+}: {
+  player: Player;
+  onKeep: () => void;
+  onLetGo: () => void;
+}) {
+  return (
+    <div className="mt-8 rounded-2xl border-2 border-primary bg-primary/10 p-6">
+      <div className="text-center mb-4">
+        <div className="text-4xl mb-1">💬</div>
+        <div className="text-[11px] uppercase tracking-widest text-primary">Star demand</div>
+        <div className="font-display text-2xl text-warning mt-2">{player.name} wants out</div>
+        <p className="text-xs text-muted-foreground mt-2 max-w-md mx-auto">
+          After a hot season, your{" "}
+          <span className="text-warning">
+            {player.position} · {player.prime_rating}
+          </span>{" "}
+          rated {player.name} feels they've outgrown the squad. Convince them to stay or let them
+          walk.
+        </p>
+      </div>
+
+      <div className="grid sm:grid-cols-2 gap-3 mt-5">
+        <button
+          onClick={onKeep}
+          className="rounded-xl border-2 border-warning bg-warning/15 hover:bg-warning/25 p-4 text-left transition"
+        >
+          <div className="font-display text-warning text-lg mb-1">Keep him</div>
+          <div className="text-[11px] text-muted-foreground leading-relaxed">
+            He stays. Cost: next draft starts with only{" "}
+            <span className="text-warning">1 reroll</span> (instead of 3) — you'll be stuck with
+            what the wheel gives you.
+          </div>
+        </button>
+        <button
+          onClick={onLetGo}
+          className="rounded-xl border-2 border-primary/40 bg-primary/5 hover:bg-primary/15 p-4 text-left transition"
+        >
+          <div className="font-display text-primary text-lg mb-1">Let him go</div>
+          <div className="text-[11px] text-muted-foreground leading-relaxed">
+            He walks. You keep all <span className="text-warning">3 rerolls</span> for next draft,
+            but the slot has to be re-drafted.
+          </div>
+        </button>
+      </div>
+    </div>
+  );
 }
 
 function ordinal(n: number): string {

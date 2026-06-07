@@ -94,6 +94,9 @@ export interface CareerState {
   /** Composite key of the star demanding to leave at season end. The player
    *  is removed from the squad at the start of the next draft. */
   pendingDeparture: string | null;
+  /** Per-season flag — true once the user has answered "keep him" or "let
+   *  him go" to the end-of-season star demand. Reset on new season. */
+  starDemandResolved: boolean;
 }
 
 const initialCareerState: CareerState = {
@@ -113,6 +116,7 @@ const initialCareerState: CareerState = {
   midSeasonSwapUsed: false,
   rerollsNextSeason: 3,
   pendingDeparture: null,
+  starDemandResolved: false,
 };
 
 interface CareerStore extends CareerState {
@@ -145,6 +149,8 @@ interface CareerStore extends CareerState {
   setRerollsNextSeason: (n: number) => void;
   /** Mark a star as departing — they're removed from squad at next draft start. */
   setPendingDeparture: (playerKey: string | null) => void;
+  /** Mark the end-of-season star demand as resolved (keep or let go chosen). */
+  setStarDemandResolved: (flag: boolean) => void;
 }
 
 export const useCareer = create<CareerStore>()(
@@ -172,6 +178,7 @@ export const useCareer = create<CareerStore>()(
           midSeasonSwapUsed: false,
           rerollsNextSeason: 3,
           pendingDeparture: null,
+          starDemandResolved: false,
         }),
 
       abandonCareer: () => set({ ...initialCareerState }),
@@ -221,6 +228,8 @@ export const useCareer = create<CareerStore>()(
       setRerollsNextSeason: (n) => set({ rerollsNextSeason: Math.max(0, n) }),
 
       setPendingDeparture: (playerKey) => set({ pendingDeparture: playerKey }),
+
+      setStarDemandResolved: (flag) => set({ starDemandResolved: flag }),
     }),
     {
       name: "unschlagbar:career:v1",
@@ -243,6 +252,7 @@ export const useCareer = create<CareerStore>()(
         midSeasonSwapUsed: state.midSeasonSwapUsed,
         rerollsNextSeason: state.rerollsNextSeason,
         pendingDeparture: state.pendingDeparture,
+        starDemandResolved: state.starDemandResolved,
       }),
     },
   ),

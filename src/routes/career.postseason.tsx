@@ -130,13 +130,20 @@ function PostSeason() {
           const topN = [...career.squad]
             .sort((a, b) => b.prime_rating - a.prime_rating)
             .slice(0, RELEGATION_KEEP_TOP_N);
+          // Honor the end-of-season star-demand "let them go" choice:
+          // strip the departing player from the carried-over squad.
+          const carried = career.pendingDeparture
+            ? topN.filter((p) => `${p.club}:${p.name}` !== career.pendingDeparture)
+            : topN;
           useCareer.setState({
-            squad: topN,
+            squad: carried,
             rivals: career.rivals.map((r) => ({ ...r, squad: [] })),
             form: {},
             relegatedLastSeason: false,
             currentSeason: career.currentSeason + 1,
             midSeasonSwapUsed: false, // fresh season → swap window resets
+            pendingDeparture: null, // consumed
+            starDemandResolved: false, // reset for next season's demand
           });
           navigate({ to: "/career/draft" });
         }}
@@ -170,7 +177,12 @@ function PostSeason() {
     coldPlayers.forEach((p) => soldKeys.add(normalizeName(p.name)));
 
     const survivors = career.squad.filter((p) => !soldKeys.has(normalizeName(p.name)));
-    const newSquad = [...survivors, ...newSignings];
+    // Honor the end-of-season star-demand "let them go" choice (if any):
+    // strip the departing player from the survivors carrying into next season.
+    const afterDeparture = career.pendingDeparture
+      ? survivors.filter((p) => `${p.club}:${p.name}` !== career.pendingDeparture)
+      : survivors;
+    const newSquad = [...afterDeparture, ...newSignings];
 
     // Reset rivals' squads (they re-draft from scratch next season too,
     // following the same /career/draft flow). Clear form for a fresh slate.
@@ -182,6 +194,8 @@ function PostSeason() {
       form: {},
       currentSeason: career.currentSeason + 1,
       midSeasonSwapUsed: false, // fresh season → swap window resets
+      pendingDeparture: null, // consumed
+      starDemandResolved: false, // reset for next season's demand
     });
     // The user's saved-XI carry-over: store the surviving players as
     // a "keep list" by setting them as initial squad before draft.

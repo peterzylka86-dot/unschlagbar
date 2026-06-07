@@ -399,6 +399,18 @@ function CareerDraft() {
             Season {career.currentSeason} · Round {Math.min(draft.currentRound, SQUAD_SIZE)} /{" "}
             {SQUAD_SIZE}
           </div>
+          <div
+            className={`text-[10px] uppercase tracking-[0.2em] mt-0.5 ${
+              career.rerollsNextSeason === 0
+                ? "text-muted-foreground/50"
+                : career.rerollsNextSeason === 1
+                  ? "text-primary"
+                  : "text-warning"
+            }`}
+            title="Rerolls let you re-spin the wheel when it lands on a club you don't want"
+          >
+            🔄 {career.rerollsNextSeason} reroll{career.rerollsNextSeason === 1 ? "" : "s"} left
+          </div>
         </div>
       </header>
 
@@ -438,7 +450,13 @@ function CareerDraft() {
                 club={userPickContext.club!}
                 pool={userPickContext.pool}
                 onPick={userPickPlayer}
-                onSkip={userSpin}
+                onSkip={() => {
+                  // A re-spin costs 1 reroll from the season's budget.
+                  if (career.rerollsNextSeason <= 0) return;
+                  career.setRerollsNextSeason(career.rerollsNextSeason - 1);
+                  userSpin();
+                }}
+                rerollsLeft={career.rerollsNextSeason}
               />
             )}
             {!isUserTurn && (
@@ -626,12 +644,15 @@ function UserPickFromClub({
   pool,
   onPick,
   onSkip,
+  rerollsLeft,
 }: {
   club: Club;
   pool: Player[];
   onPick: (p: Player) => void;
   onSkip: () => void;
+  rerollsLeft: number;
 }) {
+  const canReroll = rerollsLeft > 0;
   return (
     <div className="rounded-2xl border border-warning bg-card/40 p-5">
       <div className="flex items-center justify-between mb-3">
@@ -641,14 +662,27 @@ function UserPickFromClub({
         </div>
         <button
           onClick={onSkip}
-          className="text-xs text-muted-foreground hover:text-warning underline"
+          disabled={!canReroll}
+          title={
+            canReroll
+              ? `Re-spin uses 1 reroll (${rerollsLeft} left)`
+              : "Out of rerolls — pick from this club"
+          }
+          className={`text-xs underline transition ${
+            canReroll
+              ? "text-muted-foreground hover:text-warning"
+              : "text-muted-foreground/40 cursor-not-allowed no-underline"
+          }`}
         >
-          Re-spin →
+          Re-spin ({rerollsLeft} left) →
         </button>
       </div>
       {pool.length === 0 ? (
         <div className="text-sm text-muted-foreground py-4 text-center">
-          No eligible players left at this club. Try a re-spin.
+          No eligible players left at this club.{" "}
+          {canReroll
+            ? "Try a re-spin."
+            : "You must pick from elsewhere — but you're out of rerolls."}
         </div>
       ) : (
         <PlayerGrid pool={pool} onPick={onPick} />
@@ -928,6 +962,10 @@ function SeasonReadyCard({
         squad: m.squad,
       }));
     career.commitDraft(userManager.squad, rivals);
+    // Reset rerolls back to the default 3 — next season's end-of-season
+    // star demand will decide whether to reduce them again. Doing it here
+    // means the budget is fresh by the time the next draft starts.
+    career.setRerollsNextSeason(3);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
