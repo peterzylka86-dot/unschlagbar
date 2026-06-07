@@ -1,0 +1,674 @@
+[
+  {
+    "id": "czechrepublic",
+    "name": "Czech Republic",
+    "short": "CZE",
+    "city": "Prague",
+    "color": "#11457e",
+    "founded": 1900,
+    "strength": 81,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "mexico",
+    "name": "Mexico",
+    "short": "MEX",
+    "city": "Mexico City",
+    "color": "#006847",
+    "founded": 1900,
+    "strength": 84,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "southafrica",
+    "name": "South Africa",
+    "short": "RSA",
+    "city": "Pretoria",
+    "color": "#007749",
+    "founded": 1900,
+    "strength": 75,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "southkorea",
+    "name": "South Korea",
+    "short": "KOR",
+    "city": "Seoul",
+    "color": "#cd2e3a",
+    "founded": 1900,
+    "strength": 75,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "bosniaandherzegovina",
+    "name": "Bosnia and Herzegovina",
+    "short": "BIH",
+    "city": "Sarajevo",
+    "color": "#002395",
+    "founded": 1900,
+    "strength": 80,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "canada",
+    "name": "Canada",
+    "short": "CAN",
+    "city": "Ottawa",
+    "color": "#d52b1e",
+    "founded": 1900,
+    "strength": 78,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "qatar",
+    "name": "Qatar",
+    "short": "QAT",
+    "city": "Doha",
+    "color": "#8a1538",
+    "founded": 1900,
+    "strength": 75,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "switzerland",
+    "name": "Switzerland",
+    "short": "SUI",
+    "city": "Bern",
+    "color": "#ff0000",
+    "founded": 1900,
+    "strength": 84,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "brazil",
+    "name": "Brazil",
+    "short": "BRA",
+    "city": "Brasília",
+    "color": "#009b3a",
+    "founded": 1900,
+    "strength": 94,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "haiti",
+    "name": "Haiti",
+    "short": "HAI",
+    "city": "Port-au-Prince",
+    "color": "#00209f",
+    "founded": 1900,
+    "strength": 71,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "morocco",
+    "name": "Morocco",
+    "short": "MAR",
+    "city": "Rabat",
+    "color": "#c1272d",
+    "founded": 1900,
+    "strength": 87,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "scotland",
+    "name": "Scotland",
+    "short": "SCO",
+    "city": "Glasgow",
+    "color": "#0065bd",
+    "founded": 1900,
+    "strength": 80,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "australia",
+    "name": "Australia",
+    "short": "AUS",
+    "city": "Canberra",
+    "color": "#00843d",
+    "founded": 1900,
+    "strength": 80,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "paraguay",
+    "name": "Paraguay",
+    "short": "PAR",
+    "city": "Asunción",
+    "color": "#d52b1e",
+    "founded": 1900,
+    "strength": 75,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "turkey",
+    "name": "Turkey",
+    "short": "TUR",
+    "city": "Ankara",
+    "color": "#e30a17",
+    "founded": 1900,
+    "strength": 81,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "unitedstates",
+    "name": "United States",
+    "short": "USA",
+    "city": "Washington",
+    "color": "#bf0a30",
+    "founded": 1900,
+    "strength": 75,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "curacao",
+    "name": "Curaçao",
+    "short": "CUW",
+    "city": "Willemstad",
+    "color": "#002b7f",
+    "founded": 1900,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "ecuador",
+    "name": "Ecuador",
+    "short": "ECU",
+    "city": "Quito",
+    "color": "#fcd116",
+    "founded": 1900,
+    "strength": 81,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "germany",
+    "name": "Germany",
+    "short": "GER",
+    "city": "Berlin",
+    "color": "#000000",
+    "founded": 1900,
+    "strength": 93,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "ivorycoast",
+    "name": "Ivory Coast",
+    "short": "CIV",
+    "city": "Yamoussoukro",
+    "color": "#f77f00",
+    "founded": 1900,
+    "strength": 81,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "japan",
+    "name": "Japan",
+    "short": "JPN",
+    "city": "Tokyo",
+    "color": "#bc002d",
+    "founded": 1900,
+    "strength": 84,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "netherlands",
+    "name": "Netherlands",
+    "short": "NED",
+    "city": "Amsterdam",
+    "color": "#ff5b00",
+    "founded": 1900,
+    "strength": 92,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "sweden",
+    "name": "Sweden",
+    "short": "SWE",
+    "city": "Stockholm",
+    "color": "#005f9f",
+    "founded": 1900,
+    "strength": 80,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "tunisia",
+    "name": "Tunisia",
+    "short": "TUN",
+    "city": "Tunis",
+    "color": "#e70013",
+    "founded": 1900,
+    "strength": 78,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "belgium",
+    "name": "Belgium",
+    "short": "BEL",
+    "city": "Brussels",
+    "color": "#fcd116",
+    "founded": 1900,
+    "strength": 90,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "egypt",
+    "name": "Egypt",
+    "short": "EGY",
+    "city": "Cairo",
+    "color": "#ce1126",
+    "founded": 1900,
+    "strength": 80,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "iran",
+    "name": "Iran",
+    "short": "IRN",
+    "city": "Tehran",
+    "color": "#239f40",
+    "founded": 1900,
+    "strength": 79,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "newzealand",
+    "name": "New Zealand",
+    "short": "NZL",
+    "city": "Wellington",
+    "color": "#000000",
+    "founded": 1900,
+    "strength": 73,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "capeverde",
+    "name": "Cape Verde",
+    "short": "CPV",
+    "city": "Praia",
+    "color": "#003893",
+    "founded": 1900,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "saudiarabia",
+    "name": "Saudi Arabia",
+    "short": "KSA",
+    "city": "Riyadh",
+    "color": "#006c35",
+    "founded": 1900,
+    "strength": 77,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "spain",
+    "name": "Spain",
+    "short": "ESP",
+    "city": "Madrid",
+    "color": "#aa151b",
+    "founded": 1900,
+    "strength": 96,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "uruguay",
+    "name": "Uruguay",
+    "short": "URU",
+    "city": "Montevideo",
+    "color": "#7b96d4",
+    "founded": 1900,
+    "strength": 88,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "france",
+    "name": "France",
+    "short": "FRA",
+    "city": "Paris",
+    "color": "#0055a4",
+    "founded": 1900,
+    "strength": 95,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "iraq",
+    "name": "Iraq",
+    "short": "IRQ",
+    "city": "Baghdad",
+    "color": "#ce1126",
+    "founded": 1900,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "norway",
+    "name": "Norway",
+    "short": "NOR",
+    "city": "Oslo",
+    "color": "#ba0c2f",
+    "founded": 1900,
+    "strength": 86,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "senegal",
+    "name": "Senegal",
+    "short": "SEN",
+    "city": "Dakar",
+    "color": "#00853f",
+    "founded": 1900,
+    "strength": 83,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "algeria",
+    "name": "Algeria",
+    "short": "ALG",
+    "city": "Algiers",
+    "color": "#006233",
+    "founded": 1900,
+    "strength": 80,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "argentina",
+    "name": "Argentina",
+    "short": "ARG",
+    "city": "Buenos Aires",
+    "color": "#75aadb",
+    "founded": 1900,
+    "strength": 95,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "austria",
+    "name": "Austria",
+    "short": "AUT",
+    "city": "Vienna",
+    "color": "#ed2939",
+    "founded": 1900,
+    "strength": 81,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "jordan",
+    "name": "Jordan",
+    "short": "JOR",
+    "city": "Amman",
+    "color": "#000000",
+    "founded": 1900,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "colombia",
+    "name": "Colombia",
+    "short": "COL",
+    "city": "Bogotá",
+    "color": "#fcd116",
+    "founded": 1900,
+    "strength": 86,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "drcongo",
+    "name": "DR Congo",
+    "short": "COD",
+    "city": "Kinshasa",
+    "color": "#007fff",
+    "founded": 1900,
+    "strength": 78,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "portugal",
+    "name": "Portugal",
+    "short": "POR",
+    "city": "Lisbon",
+    "color": "#006600",
+    "founded": 1900,
+    "strength": 93,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "uzbekistan",
+    "name": "Uzbekistan",
+    "short": "UZB",
+    "city": "Tashkent",
+    "color": "#1eb53a",
+    "founded": 1900,
+    "strength": 73,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "croatia",
+    "name": "Croatia",
+    "short": "CRO",
+    "city": "Zagreb",
+    "color": "#ff0000",
+    "founded": 1900,
+    "strength": 88,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "england",
+    "name": "England",
+    "short": "ENG",
+    "city": "London",
+    "color": "#ce1124",
+    "founded": 1900,
+    "strength": 94,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "ghana",
+    "name": "Ghana",
+    "short": "GHA",
+    "city": "Accra",
+    "color": "#006b3f",
+    "founded": 1900,
+    "strength": 80,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "panama",
+    "name": "Panama",
+    "short": "PAN",
+    "city": "Panama City",
+    "color": "#005293",
+    "founded": 1900,
+    "strength": 73,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  }
+]

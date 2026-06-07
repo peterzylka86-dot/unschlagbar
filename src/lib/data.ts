@@ -14,6 +14,8 @@ import uclClubs from "@/data/ucl/clubs.json";
 import uclPlayers from "@/data/ucl/players.json";
 import wcClubs from "@/data/worldcup/clubs.json";
 import wcPlayers from "@/data/worldcup/players.json";
+import wc2026Clubs from "@/data/worldcup2026/clubs.json";
+import wc2026Players from "@/data/worldcup2026/players.json";
 import womensClubs from "@/data/womens/clubs.json";
 import womensPlayers from "@/data/womens/players.json";
 import womenscupClubs from "@/data/womenscup/clubs.json";
@@ -89,6 +91,7 @@ const DATA: Record<LeagueId, { clubs: Club[]; players: Player[] }> = {
   swiss:      validateLeague("swiss", swissClubs, swissPlayers),
   ucl:        validateLeague("ucl", uclClubs, uclPlayers),
   worldcup:   validateLeague("worldcup", wcClubs, wcPlayers),
+  worldcup2026: validateLeague("worldcup2026", wc2026Clubs, wc2026Players),
   womenscup:  validateLeague("womenscup", womenscupClubs, womenscupPlayers),
   womens:     validateLeague("womens", womensClubs, womensPlayers),
 };

@@ -5,6 +5,7 @@ export type LeagueId =
   | "swiss"
   | "ucl"
   | "worldcup"
+  | "worldcup2026"
   | "womenscup"
   | "womens";
 
@@ -200,6 +201,29 @@ export const LEAGUES: Record<LeagueId, League> = {
     fixtureRounds: 2,
     kind: "league",
     formatLabel: "League · 30 matches",
+  },
+  worldcup2026: {
+    id: "worldcup2026",
+    name: "World Cup 2026 · LIVE",
+    country: "World",
+    flag: "🌎",
+    matches: 7,
+    brandMark: "7:0",
+    tagline: "LIVE 2026",
+    kickoffWord: "Kick-off!",
+    seasonWord: "Tournament",
+    matchesWord: "Matches",
+    defeatsWord: "Defeats",
+    drawWord: "DRAW",
+    winWord: "WIN",
+    lossWord: "OUT",
+    tableTitle: "Road to Glory",
+    unbeatenLabel: "2026 World Champions",
+    opponentsCount: 7,
+    fixtureRounds: 1,
+    kind: "groupKO",
+    rounds: ["Group", "Group", "Group", "Round of 16", "Quarter-Final", "Semi-Final", "Final"],
+    formatLabel: "Group + KO · 7 matches · LIVE 26-man squads",
   },
   womenscup: {
     id: "womenscup",
