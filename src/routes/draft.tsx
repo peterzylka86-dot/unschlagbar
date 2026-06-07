@@ -99,17 +99,59 @@ function DraftScreen() {
   const filledCount = totalSlots - emptySlots.length;
   const done = emptySlots.length === 0;
 
-  function clubHasCompatible(club: Club, forTier?: EraTier): boolean {
-    const openSlots = slots.filter((s) => !s.player);
-    if (openSlots.length === 0) return false;
-    let clubPlayers = PLAYERS.filter(
-      (p) => p.club === club.id && !usedPlayers.has(`${p.club}:${p.name}`),
+  // ─── Bulletproof filter (option A) ─────────────────────────────────
+  // Refs mirror state so spin functions always see THE LATEST values,
+  // not closure snapshots. Fixes the race where "user picks player →
+  // setState → next spin reads stale usedPlayers" left the wheel
+  // landing on a club whose only compatible player was just picked.
+  const usedPlayersRef = useRef(usedPlayers);
+  const slotsRef = useRef(slots);
+  const pickingForSlotRef = useRef(pickingForSlot);
+  useEffect(() => {
+    usedPlayersRef.current = usedPlayers;
+  }, [usedPlayers]);
+  useEffect(() => {
+    slotsRef.current = slots;
+  }, [slots]);
+  useEffect(() => {
+    pickingForSlotRef.current = pickingForSlot;
+  }, [pickingForSlot]);
+
+  /** Pure compatibility check. The ONE place this logic lives — both the
+   *  pre-spin eligibility filter and the post-land player pool call this. */
+  function compatiblePlayersForClub(
+    clubId: string,
+    forTier: EraTier | null,
+    usedPlayersSet: Set<string>,
+    currentSlots: Slot[],
+    pickingForSlotNow: Slot | null,
+  ): Player[] {
+    let pool = PLAYERS.filter(
+      (p) => p.club === clubId && !usedPlayersSet.has(`${p.club}:${p.name}`),
     );
-    if (forTier) clubPlayers = clubPlayers.filter((p) => playerMatchesTier(p, forTier));
-    if (config.draftMode === "position" && pickingForSlot) {
-      return clubPlayers.some((p) => isCompatible(pickingForSlot.position, p.position));
+    if (forTier) pool = pool.filter((p) => playerMatchesTier(p, forTier));
+    if (config.draftMode === "position" && pickingForSlotNow) {
+      pool = pool.filter((p) => isCompatible(pickingForSlotNow.position, p.position));
+    } else {
+      pool = pool.filter((p) =>
+        currentSlots.some((s) => !s.player && isCompatible(s.position, p.position)),
+      );
     }
-    return clubPlayers.some((p) => openSlots.some((s) => isCompatible(s.position, p.position)));
+    return pool;
+  }
+
+  function clubHasCompatible(club: Club, forTier?: EraTier): boolean {
+    const openSlots = slotsRef.current.filter((s) => !s.player);
+    if (openSlots.length === 0) return false;
+    return (
+      compatiblePlayersForClub(
+        club.id,
+        forTier ?? null,
+        usedPlayersRef.current,
+        slotsRef.current,
+        pickingForSlotRef.current,
+      ).length > 0
+    );
   }
 
   function pickRandomTier(): EraTier {
@@ -154,20 +196,10 @@ function DraftScreen() {
 
   function playersForCurrentClub(): Player[] {
     if (!currentClub) return [];
-    let pool = PLAYERS.filter(
-      (p) => p.club === currentClub.id && !usedPlayers.has(`${p.club}:${p.name}`),
+    // Single source of truth — same filter as clubHasCompatible.
+    return compatiblePlayersForClub(currentClub.id, tier, usedPlayers, slots, pickingForSlot).sort(
+      (a, b) => b.prime_rating - a.prime_rating,
     );
-    // Only show players whose career era matches the active tier (fixes 80s players appearing in 2000s, etc.)
-    pool = pool.filter((p) => playerMatchesTier(p, tier));
-    if (config.draftMode === "position" && pickingForSlot) {
-      pool = pool.filter((p) => isCompatible(pickingForSlot.position, p.position));
-    } else {
-      // squad / quick: hide players whose position has no open compatible slot
-      pool = pool.filter((p) =>
-        slots.some((s) => !s.player && isCompatible(s.position, p.position)),
-      );
-    }
-    return pool.slice().sort((a, b) => b.prime_rating - a.prime_rating);
   }
 
   function handleSquadFirstPickPlayer(player: Player) {
@@ -258,27 +290,20 @@ function DraftScreen() {
       return () => clearTimeout(t);
     }
   }, [assigningPlayer, compatibleSlotsForAssign.length]);
-  // Auto-skip club if it has no compatible players (prevents stuck state).
-  // User now ALSO has a manual "🎰 Spin again" button in the empty-pool
-  // state of PlayerPicker — this background timer is a belt-and-suspenders
-  // fallback so the wheel re-spins even if the user doesn't click.
-  // queueAutoSpin is no-op in position mode (by design), so for that mode
-  // we trigger spinClub() directly.
+  // INVISIBLE auto-respin safety net (option D). If pre-filter ever misses
+  // a dead-end (state-race, data gap, anything), we instantly clear the
+  // club and re-spin — user never sees the empty pool. No 900ms delay,
+  // no "Spin again" button, no flash.
   const currentClubPlayers = currentClub ? playersForCurrentClub() : [];
   useEffect(() => {
     if (currentClub && !assigningPlayer && currentClubPlayers.length === 0) {
-      const t = setTimeout(() => {
-        setCurrentClub(null);
-        if (config.draftMode === "position") {
-          // No squad-mode auto-spin loop in position mode — kick it once
-          // so the wheel keeps moving instead of dumping the user back on
-          // a blank wheel.
-          spinClub();
-        } else {
-          queueAutoSpin();
-        }
-      }, 900);
-      return () => clearTimeout(t);
+      // Instant — runs synchronously on the next microtask
+      setCurrentClub(null);
+      if (config.draftMode === "position") {
+        spinClub();
+      } else {
+        queueAutoSpin();
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentClub, assigningPlayer, currentClubPlayers.length]);
@@ -817,23 +842,9 @@ function PlayerPicker({
         </div>
       )}
       <div className="mt-2 -mx-1 px-1 overflow-y-auto max-h-[380px] flex flex-col gap-1.5">
-        {players.length === 0 && (
-          <div className="py-6 text-center">
-            <div className="text-3xl mb-2">🎲</div>
-            <p className="text-sm text-muted-foreground mb-1">
-              No matching players from this club.
-            </p>
-            <p className="text-[11px] text-muted-foreground/70 mb-4">
-              Spin again — the wheel will land on a different club.
-            </p>
-            <button
-              onClick={onSkip}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-warning text-warning-foreground font-display text-sm tracking-wide hover:brightness-110 transition"
-            >
-              🎰 Spin again
-            </button>
-          </div>
-        )}
+        {/* No empty-pool UI — option C. The pre-filter guarantees the
+            wheel only lands on compatible clubs; an invisible auto-respin
+            safety net in DraftScreen handles any theoretical race. */}
         {visible.map((p) => {
           const selected =
             isQuick && quickPicks.some((qp) => qp.name === p.name && qp.club === p.club);
@@ -887,27 +898,18 @@ function PlayerPicker({
           </button>
         )}
       </div>
-      {/* Action row — Spin again is always available so the user can
-          escape a dead-end club. Reroll (if rerolls remain) is shown
-          alongside but only when there ARE players to pick from. */}
-      {players.length > 0 && (
+      {/* Action row — Reroll is the user's "I don't like this club"
+          tool (costs 1 of their N rerolls). No more "Spin again" — the
+          wheel can't land on a dead-end. */}
+      {players.length > 0 && onReroll && (
         <div className="mt-3 flex gap-2">
           <button
-            onClick={onSkip}
-            className="flex-1 px-3 py-2 text-xs rounded-lg border border-border bg-card/40 text-muted-foreground hover:text-warning hover:border-warning/40 transition"
-            title="Spin again — pick a different club"
+            onClick={onReroll}
+            className="flex-1 px-3 py-2 text-xs rounded-lg border border-warning/40 text-warning hover:bg-warning/10"
+            title="Use one of your rerolls"
           >
-            🎰 Spin again
+            Reroll ({rerollsLeft})
           </button>
-          {onReroll && (
-            <button
-              onClick={onReroll}
-              className="flex-1 px-3 py-2 text-xs rounded-lg border border-warning/40 text-warning hover:bg-warning/10"
-              title="Use one of your rerolls"
-            >
-              Reroll ({rerollsLeft})
-            </button>
-          )}
         </div>
       )}
     </motion.div>
