@@ -6726,5 +6726,365 @@
     "career_years": "1976-1984",
     "nationality": "Italy",
     "club": "avellino"
+  },
+  {
+    "name": "Giampiero Boniperti",
+    "position": "ST",
+    "prime_rating": 92,
+    "career_years": "1946-1961",
+    "nationality": "Italy",
+    "club": "juventus"
+  },
+  {
+    "name": "John Charles",
+    "position": "ST",
+    "prime_rating": 91,
+    "career_years": "1957-1962",
+    "nationality": "Wales",
+    "club": "juventus"
+  },
+  {
+    "name": "Omar Sívori",
+    "position": "CAM",
+    "prime_rating": 92,
+    "career_years": "1957-1965",
+    "nationality": "Argentina",
+    "club": "juventus"
+  },
+  {
+    "name": "Andreas Möller",
+    "position": "CAM",
+    "prime_rating": 88,
+    "career_years": "1992-1994",
+    "nationality": "Germany",
+    "club": "juventus"
+  },
+  {
+    "name": "Alessandro Del Piero",
+    "position": "CAM",
+    "prime_rating": 92,
+    "career_years": "1993-2012",
+    "nationality": "Italy",
+    "club": "juventus"
+  },
+  {
+    "name": "Lilian Thuram",
+    "position": "RB",
+    "prime_rating": 90,
+    "career_years": "2001-2006",
+    "nationality": "France",
+    "club": "juventus"
+  },
+  {
+    "name": "Carlos Tévez",
+    "position": "ST",
+    "prime_rating": 90,
+    "career_years": "2013-2015",
+    "nationality": "Argentina",
+    "club": "juventus"
+  },
+  {
+    "name": "Cesare Maldini",
+    "position": "CB",
+    "prime_rating": 88,
+    "career_years": "1954-1966",
+    "nationality": "Italy",
+    "club": "milan"
+  },
+  {
+    "name": "Paolo Maldini",
+    "position": "LB",
+    "prime_rating": 95,
+    "career_years": "1985-2009",
+    "nationality": "Italy",
+    "club": "milan"
+  },
+  {
+    "name": "Carlo Ancelotti",
+    "position": "CM",
+    "prime_rating": 87,
+    "career_years": "1987-1992",
+    "nationality": "Italy",
+    "club": "milan"
+  },
+  {
+    "name": "Demetrio Albertini",
+    "position": "CM",
+    "prime_rating": 90,
+    "career_years": "1988-2002",
+    "nationality": "Italy",
+    "club": "milan"
+  },
+  {
+    "name": "Filippo Inzaghi",
+    "position": "ST",
+    "prime_rating": 90,
+    "career_years": "2001-2012",
+    "nationality": "Italy",
+    "club": "milan"
+  },
+  {
+    "name": "Andrea Pirlo",
+    "position": "CM",
+    "prime_rating": 92,
+    "career_years": "2001-2011",
+    "nationality": "Italy",
+    "club": "milan"
+  },
+  {
+    "name": "Ronaldinho",
+    "position": "CAM",
+    "prime_rating": 89,
+    "career_years": "2008-2011",
+    "nationality": "Brazil",
+    "club": "milan"
+  },
+  {
+    "name": "Luis Suárez Miramontes",
+    "position": "CM",
+    "prime_rating": 92,
+    "career_years": "1961-1973",
+    "nationality": "Spain",
+    "club": "inter"
+  },
+  {
+    "name": "Helmut Haller",
+    "position": "CAM",
+    "prime_rating": 88,
+    "career_years": "1968-1973",
+    "nationality": "Germany",
+    "club": "inter"
+  },
+  {
+    "name": "Roberto Carlos",
+    "position": "LB",
+    "prime_rating": 87,
+    "career_years": "1995-1996",
+    "nationality": "Brazil",
+    "club": "inter"
+  },
+  {
+    "name": "Paul Ince",
+    "position": "CM",
+    "prime_rating": 86,
+    "career_years": "1995-1997",
+    "nationality": "England",
+    "club": "inter"
+  },
+  {
+    "name": "Diego Simeone",
+    "position": "CDM",
+    "prime_rating": 87,
+    "career_years": "1997-1999",
+    "nationality": "Argentina",
+    "club": "inter"
+  },
+  {
+    "name": "Ronaldo Nazário",
+    "position": "ST",
+    "prime_rating": 94,
+    "career_years": "1997-2002",
+    "nationality": "Brazil",
+    "club": "inter"
+  },
+  {
+    "name": "Christian Vieri",
+    "position": "ST",
+    "prime_rating": 91,
+    "career_years": "1999-2005",
+    "nationality": "Italy",
+    "club": "inter"
+  },
+  {
+    "name": "Álvaro Recoba",
+    "position": "CAM",
+    "prime_rating": 88,
+    "career_years": "1997-2008",
+    "nationality": "Uruguay",
+    "club": "inter"
+  },
+  {
+    "name": "Samuel Eto'o",
+    "position": "ST",
+    "prime_rating": 91,
+    "career_years": "2009-2011",
+    "nationality": "Cameroon",
+    "club": "inter"
+  },
+  {
+    "name": "Javier Mascherano",
+    "position": "CDM",
+    "prime_rating": 87,
+    "career_years": "2003-2005",
+    "nationality": "Argentina",
+    "club": "inter"
+  },
+  {
+    "name": "Alemão",
+    "position": "CM",
+    "prime_rating": 88,
+    "career_years": "1988-1992",
+    "nationality": "Brazil",
+    "club": "napoli"
+  },
+  {
+    "name": "Ciro Ferrara",
+    "position": "CB",
+    "prime_rating": 88,
+    "career_years": "1984-1994",
+    "nationality": "Italy",
+    "club": "napoli"
+  },
+  {
+    "name": "Roberto Bordin",
+    "position": "CM",
+    "prime_rating": 84,
+    "career_years": "1989-1994",
+    "nationality": "Italy",
+    "club": "napoli"
+  },
+  {
+    "name": "Marek Hamšík",
+    "position": "CAM",
+    "prime_rating": 90,
+    "career_years": "2007-2019",
+    "nationality": "Slovakia",
+    "club": "napoli"
+  },
+  {
+    "name": "Walter Samuel",
+    "position": "CB",
+    "prime_rating": 87,
+    "career_years": "2000-2004",
+    "nationality": "Argentina",
+    "club": "roma"
+  },
+  {
+    "name": "Christian Panucci",
+    "position": "RB",
+    "prime_rating": 87,
+    "career_years": "2001-2009",
+    "nationality": "Italy",
+    "club": "roma"
+  },
+  {
+    "name": "Marco Borriello",
+    "position": "ST",
+    "prime_rating": 85,
+    "career_years": "2010-2012",
+    "nationality": "Italy",
+    "club": "roma"
+  },
+  {
+    "name": "Miralem Pjanić",
+    "position": "CAM",
+    "prime_rating": 88,
+    "career_years": "2011-2016",
+    "nationality": "Bosnia and Herzegovina",
+    "club": "roma"
+  },
+  {
+    "name": "Mohamed Salah",
+    "position": "RW",
+    "prime_rating": 87,
+    "career_years": "2015-2017",
+    "nationality": "Egypt",
+    "club": "roma"
+  },
+  {
+    "name": "Aron Winter",
+    "position": "CM",
+    "prime_rating": 87,
+    "career_years": "1992-1996",
+    "nationality": "Netherlands",
+    "club": "lazio"
+  },
+  {
+    "name": "Beppe Signori",
+    "position": "ST",
+    "prime_rating": 90,
+    "career_years": "1992-1997",
+    "nationality": "Italy",
+    "club": "lazio"
+  },
+  {
+    "name": "Christian Vieri",
+    "position": "ST",
+    "prime_rating": 89,
+    "career_years": "1998-1999",
+    "nationality": "Italy",
+    "club": "lazio"
+  },
+  {
+    "name": "Alessandro Nesta",
+    "position": "CB",
+    "prime_rating": 90,
+    "career_years": "1993-2002",
+    "nationality": "Italy",
+    "club": "lazio"
+  },
+  {
+    "name": "Hernán Crespo",
+    "position": "ST",
+    "prime_rating": 89,
+    "career_years": "2000-2002",
+    "nationality": "Argentina",
+    "club": "lazio"
+  },
+  {
+    "name": "Diego Simeone",
+    "position": "CDM",
+    "prime_rating": 86,
+    "career_years": "1999-2003",
+    "nationality": "Argentina",
+    "club": "lazio"
+  },
+  {
+    "name": "Siniša Mihajlović",
+    "position": "LB",
+    "prime_rating": 87,
+    "career_years": "1998-2004",
+    "nationality": "Serbia",
+    "club": "lazio"
+  },
+  {
+    "name": "Stefano Borgonovo",
+    "position": "ST",
+    "prime_rating": 86,
+    "career_years": "1988-1992",
+    "nationality": "Italy",
+    "club": "fiorentina"
+  },
+  {
+    "name": "Stevan Jovetić",
+    "position": "CAM",
+    "prime_rating": 87,
+    "career_years": "2008-2013",
+    "nationality": "Montenegro",
+    "club": "fiorentina"
+  },
+  {
+    "name": "Riccardo Montolivo",
+    "position": "CM",
+    "prime_rating": 86,
+    "career_years": "2005-2012",
+    "nationality": "Italy",
+    "club": "fiorentina"
+  },
+  {
+    "name": "Alberto Gilardino",
+    "position": "ST",
+    "prime_rating": 86,
+    "career_years": "2008-2012",
+    "nationality": "Italy",
+    "club": "fiorentina"
+  },
+  {
+    "name": "Mario Gómez",
+    "position": "ST",
+    "prime_rating": 85,
+    "career_years": "2013-2016",
+    "nationality": "Germany",
+    "club": "fiorentina"
   }
 ]

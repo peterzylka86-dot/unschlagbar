@@ -6902,5 +6902,509 @@
     "career_years": "1976-1984",
     "nationality": "Spain",
     "club": "burgos"
+  },
+  {
+    "name": "Alfredo Di Stéfano",
+    "position": "ST",
+    "prime_rating": 96,
+    "career_years": "1953-1964",
+    "nationality": "Argentina",
+    "club": "realmadrid"
+  },
+  {
+    "name": "Ferenc Puskás",
+    "position": "ST",
+    "prime_rating": 95,
+    "career_years": "1958-1966",
+    "nationality": "Hungary",
+    "club": "realmadrid"
+  },
+  {
+    "name": "Francisco Gento",
+    "position": "LW",
+    "prime_rating": 93,
+    "career_years": "1953-1971",
+    "nationality": "Spain",
+    "club": "realmadrid"
+  },
+  {
+    "name": "Raymond Kopa",
+    "position": "RW",
+    "prime_rating": 92,
+    "career_years": "1956-1959",
+    "nationality": "France",
+    "club": "realmadrid"
+  },
+  {
+    "name": "Míchel",
+    "position": "RW",
+    "prime_rating": 89,
+    "career_years": "1982-1996",
+    "nationality": "Spain",
+    "club": "realmadrid"
+  },
+  {
+    "name": "Raúl González",
+    "position": "ST",
+    "prime_rating": 92,
+    "career_years": "1994-2010",
+    "nationality": "Spain",
+    "club": "realmadrid"
+  },
+  {
+    "name": "Predrag Mijatović",
+    "position": "ST",
+    "prime_rating": 87,
+    "career_years": "1996-1999",
+    "nationality": "Montenegro",
+    "club": "realmadrid"
+  },
+  {
+    "name": "Michael Owen",
+    "position": "ST",
+    "prime_rating": 86,
+    "career_years": "2004-2005",
+    "nationality": "England",
+    "club": "realmadrid"
+  },
+  {
+    "name": "Iván Helguera",
+    "position": "CDM",
+    "prime_rating": 86,
+    "career_years": "1999-2007",
+    "nationality": "Spain",
+    "club": "realmadrid"
+  },
+  {
+    "name": "Steve McManaman",
+    "position": "RW",
+    "prime_rating": 86,
+    "career_years": "1999-2003",
+    "nationality": "England",
+    "club": "realmadrid"
+  },
+  {
+    "name": "Wesley Sneijder",
+    "position": "CAM",
+    "prime_rating": 87,
+    "career_years": "2007-2009",
+    "nationality": "Netherlands",
+    "club": "realmadrid"
+  },
+  {
+    "name": "Mesut Özil",
+    "position": "CAM",
+    "prime_rating": 89,
+    "career_years": "2010-2013",
+    "nationality": "Germany",
+    "club": "realmadrid"
+  },
+  {
+    "name": "Ángel Di María",
+    "position": "RW",
+    "prime_rating": 88,
+    "career_years": "2010-2014",
+    "nationality": "Argentina",
+    "club": "realmadrid"
+  },
+  {
+    "name": "Gareth Bale",
+    "position": "RW",
+    "prime_rating": 90,
+    "career_years": "2013-2022",
+    "nationality": "Wales",
+    "club": "realmadrid"
+  },
+  {
+    "name": "James Rodríguez",
+    "position": "CAM",
+    "prime_rating": 86,
+    "career_years": "2014-2017",
+    "nationality": "Colombia",
+    "club": "realmadrid"
+  },
+  {
+    "name": "Bernd Schuster",
+    "position": "CAM",
+    "prime_rating": 89,
+    "career_years": "1980-1988",
+    "nationality": "Germany",
+    "club": "barcelona"
+  },
+  {
+    "name": "Carles Rexach",
+    "position": "RW",
+    "prime_rating": 86,
+    "career_years": "1965-1981",
+    "nationality": "Spain",
+    "club": "barcelona"
+  },
+  {
+    "name": "Julio Salinas",
+    "position": "ST",
+    "prime_rating": 85,
+    "career_years": "1988-1994",
+    "nationality": "Spain",
+    "club": "barcelona"
+  },
+  {
+    "name": "Hristo Stoichkov",
+    "position": "ST",
+    "prime_rating": 93,
+    "career_years": "1990-1995",
+    "nationality": "Bulgaria",
+    "club": "barcelona"
+  },
+  {
+    "name": "Ronaldo Nazário",
+    "position": "ST",
+    "prime_rating": 93,
+    "career_years": "1996-1997",
+    "nationality": "Brazil",
+    "club": "barcelona"
+  },
+  {
+    "name": "Frank de Boer",
+    "position": "CB",
+    "prime_rating": 88,
+    "career_years": "1998-2003",
+    "nationality": "Netherlands",
+    "club": "barcelona"
+  },
+  {
+    "name": "Lilian Thuram",
+    "position": "RB",
+    "prime_rating": 87,
+    "career_years": "2006-2008",
+    "nationality": "France",
+    "club": "barcelona"
+  },
+  {
+    "name": "Neymar",
+    "position": "LW",
+    "prime_rating": 92,
+    "career_years": "2013-2017",
+    "nationality": "Brazil",
+    "club": "barcelona"
+  },
+  {
+    "name": "Luis Suárez",
+    "position": "ST",
+    "prime_rating": 92,
+    "career_years": "2014-2020",
+    "nationality": "Uruguay",
+    "club": "barcelona"
+  },
+  {
+    "name": "Hugo Sánchez",
+    "position": "ST",
+    "prime_rating": 89,
+    "career_years": "1981-1985",
+    "nationality": "Mexico",
+    "club": "atletico"
+  },
+  {
+    "name": "Bernd Schuster",
+    "position": "CAM",
+    "prime_rating": 88,
+    "career_years": "1988-1990",
+    "nationality": "Germany",
+    "club": "atletico"
+  },
+  {
+    "name": "José Luis Caminero",
+    "position": "CAM",
+    "prime_rating": 86,
+    "career_years": "1993-1998",
+    "nationality": "Spain",
+    "club": "atletico"
+  },
+  {
+    "name": "Kiko",
+    "position": "ST",
+    "prime_rating": 86,
+    "career_years": "1993-2001",
+    "nationality": "Spain",
+    "club": "atletico"
+  },
+  {
+    "name": "Tiago",
+    "position": "CDM",
+    "prime_rating": 85,
+    "career_years": "2010-2017",
+    "nationality": "Portugal",
+    "club": "atletico"
+  },
+  {
+    "name": "Arda Turan",
+    "position": "CAM",
+    "prime_rating": 87,
+    "career_years": "2011-2015",
+    "nationality": "Turkey",
+    "club": "atletico"
+  },
+  {
+    "name": "Radamel Falcao",
+    "position": "ST",
+    "prime_rating": 90,
+    "career_years": "2011-2013",
+    "nationality": "Colombia",
+    "club": "atletico"
+  },
+  {
+    "name": "Fernando Gómez Colomer",
+    "position": "CAM",
+    "prime_rating": 87,
+    "career_years": "1983-1998",
+    "nationality": "Spain",
+    "club": "valencia"
+  },
+  {
+    "name": "Predrag Mijatović",
+    "position": "ST",
+    "prime_rating": 88,
+    "career_years": "1993-1996",
+    "nationality": "Montenegro",
+    "club": "valencia"
+  },
+  {
+    "name": "Claudio López",
+    "position": "ST",
+    "prime_rating": 88,
+    "career_years": "1996-2000",
+    "nationality": "Argentina",
+    "club": "valencia"
+  },
+  {
+    "name": "Gaizka Mendieta",
+    "position": "CAM",
+    "prime_rating": 91,
+    "career_years": "1992-2001",
+    "nationality": "Spain",
+    "club": "valencia"
+  },
+  {
+    "name": "David Villa",
+    "position": "ST",
+    "prime_rating": 91,
+    "career_years": "2005-2010",
+    "nationality": "Spain",
+    "club": "valencia"
+  },
+  {
+    "name": "Telmo Zarra",
+    "position": "ST",
+    "prime_rating": 92,
+    "career_years": "1940-1955",
+    "nationality": "Spain",
+    "club": "athletic"
+  },
+  {
+    "name": "José Ángel Iribar",
+    "position": "GK",
+    "prime_rating": 90,
+    "career_years": "1962-1980",
+    "nationality": "Spain",
+    "club": "athletic"
+  },
+  {
+    "name": "Manuel Sarabia",
+    "position": "CAM",
+    "prime_rating": 87,
+    "career_years": "1976-1988",
+    "nationality": "Spain",
+    "club": "athletic"
+  },
+  {
+    "name": "Iribar (return)",
+    "position": "GK",
+    "prime_rating": 86,
+    "career_years": "1973-1980",
+    "nationality": "Spain",
+    "club": "athletic"
+  },
+  {
+    "name": "Iker Muniain",
+    "position": "LW",
+    "prime_rating": 86,
+    "career_years": "2009-2024",
+    "nationality": "Spain",
+    "club": "athletic"
+  },
+  {
+    "name": "Diego Maradona",
+    "position": "CAM",
+    "prime_rating": 88,
+    "career_years": "1992-1993",
+    "nationality": "Argentina",
+    "club": "sevilla"
+  },
+  {
+    "name": "Davor Šuker",
+    "position": "ST",
+    "prime_rating": 87,
+    "career_years": "1991-1996",
+    "nationality": "Croatia",
+    "club": "sevilla"
+  },
+  {
+    "name": "Julio Cardeñosa",
+    "position": "CM",
+    "prime_rating": 84,
+    "career_years": "1976-1986",
+    "nationality": "Spain",
+    "club": "sevilla"
+  },
+  {
+    "name": "Sergio Ramos",
+    "position": "CB",
+    "prime_rating": 87,
+    "career_years": "2004-2005",
+    "nationality": "Spain",
+    "club": "sevilla"
+  },
+  {
+    "name": "Dani Alves",
+    "position": "RB",
+    "prime_rating": 88,
+    "career_years": "2003-2008",
+    "nationality": "Brazil",
+    "club": "sevilla"
+  },
+  {
+    "name": "Ivica Olić",
+    "position": "ST",
+    "prime_rating": 84,
+    "career_years": "2013-2014",
+    "nationality": "Croatia",
+    "club": "sevilla"
+  },
+  {
+    "name": "Carlos Bacca",
+    "position": "ST",
+    "prime_rating": 85,
+    "career_years": "2013-2015",
+    "nationality": "Colombia",
+    "club": "sevilla"
+  },
+  {
+    "name": "Éver Banega",
+    "position": "CM",
+    "prime_rating": 86,
+    "career_years": "2014-2020",
+    "nationality": "Argentina",
+    "club": "sevilla"
+  },
+  {
+    "name": "Julio Cardeñosa",
+    "position": "CM",
+    "prime_rating": 84,
+    "career_years": "1976-1989",
+    "nationality": "Spain",
+    "club": "betis"
+  },
+  {
+    "name": "Gordillo",
+    "position": "LB",
+    "prime_rating": 87,
+    "career_years": "1976-1987",
+    "nationality": "Spain",
+    "club": "betis"
+  },
+  {
+    "name": "Denilson",
+    "position": "LW",
+    "prime_rating": 87,
+    "career_years": "1998-2005",
+    "nationality": "Brazil",
+    "club": "betis"
+  },
+  {
+    "name": "Joaquín Sánchez",
+    "position": "RW",
+    "prime_rating": 90,
+    "career_years": "2000-2006",
+    "nationality": "Spain",
+    "club": "betis"
+  },
+  {
+    "name": "Dani",
+    "position": "ST",
+    "prime_rating": 85,
+    "career_years": "1998-2003",
+    "nationality": "Spain",
+    "club": "betis"
+  },
+  {
+    "name": "Capi",
+    "position": "CM",
+    "prime_rating": 84,
+    "career_years": "1998-2010",
+    "nationality": "Spain",
+    "club": "betis"
+  },
+  {
+    "name": "Jesús María Satrústegui",
+    "position": "ST",
+    "prime_rating": 87,
+    "career_years": "1974-1986",
+    "nationality": "Spain",
+    "club": "realsociedad"
+  },
+  {
+    "name": "Roberto López Ufarte",
+    "position": "LW",
+    "prime_rating": 88,
+    "career_years": "1976-1987",
+    "nationality": "Spain",
+    "club": "realsociedad"
+  },
+  {
+    "name": "Genar Andrinúa",
+    "position": "CB",
+    "prime_rating": 85,
+    "career_years": "1986-1995",
+    "nationality": "Spain",
+    "club": "realsociedad"
+  },
+  {
+    "name": "Txiki Begiristain",
+    "position": "RW",
+    "prime_rating": 87,
+    "career_years": "1985-1988",
+    "nationality": "Spain",
+    "club": "realsociedad"
+  },
+  {
+    "name": "John Aldridge",
+    "position": "ST",
+    "prime_rating": 85,
+    "career_years": "1989-1991",
+    "nationality": "Ireland",
+    "club": "realsociedad"
+  },
+  {
+    "name": "Mikel Aramburu",
+    "position": "CDM",
+    "prime_rating": 84,
+    "career_years": "1993-2003",
+    "nationality": "Spain",
+    "club": "realsociedad"
+  },
+  {
+    "name": "Xabi Alonso",
+    "position": "CM",
+    "prime_rating": 89,
+    "career_years": "1999-2004",
+    "nationality": "Spain",
+    "club": "realsociedad"
+  },
+  {
+    "name": "Antoine Griezmann",
+    "position": "CAM",
+    "prime_rating": 89,
+    "career_years": "2009-2014",
+    "nationality": "France",
+    "club": "realsociedad"
   }
 ]
