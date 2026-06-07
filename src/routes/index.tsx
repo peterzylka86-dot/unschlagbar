@@ -62,9 +62,9 @@ function Landing() {
 
         <div className="retro-card rounded-b-2xl bg-card/70 backdrop-blur-md px-8 pt-10 pb-8 text-center">
           <div className="flex items-center justify-center gap-2">
-            <span className="pixel-badge text-[11px]">SAISON 25/26</span>
+            <span className="pixel-badge text-[11px]">SEASON 25/26</span>
             <span className="px-2 py-0.5 text-[10px] tracking-[0.25em] uppercase text-warning border border-warning/40 rounded-sm bg-warning/5">
-              Manager-Modus
+              Manager Mode
             </span>
           </div>
 
@@ -91,7 +91,10 @@ function Landing() {
             🇩🇪 Bundesliga · 🇪🇸 La Liga · 🇮🇹 Serie A · 🇨🇭 Super League · ♀ Women's
           </p>
 
-          <div className="mt-9 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {/* Primary CTA — bigger, solid fill, drop shadow. Quick match is
+              the lower-commitment entry, so it gets first-class treatment.
+              GOLAZO is a richer mode for users ready to invest. */}
+          <div className="mt-9 flex flex-col items-stretch gap-3">
             <Link
               to="/game"
               search={{ new: true }}
@@ -106,13 +109,14 @@ function Landing() {
             </Link>
             <Link
               to="/career"
-              className="group inline-flex flex-col items-center gap-1 px-6 py-5 rounded-md bg-warning/15 text-warning font-display text-lg tracking-[0.15em] uppercase border border-warning/50 shadow-[0_18px_40px_-10px] shadow-warning/40 hover:bg-warning/25 hover:-translate-y-0.5 transition"
+              className="group inline-flex items-center justify-center gap-2 px-5 py-3 rounded-md text-warning/90 font-display text-sm tracking-[0.18em] uppercase border border-warning/30 bg-transparent hover:bg-warning/10 hover:text-warning transition"
             >
-              <span className="flex items-center gap-2">
-                🌟 GOLAZO <span aria-hidden>→</span>
+              <span>🌟 GOLAZO career</span>
+              <span className="text-[10px] tracking-[0.16em] normal-case opacity-70">
+                · multi-season legacy
               </span>
-              <span className="text-[10px] tracking-[0.18em] normal-case opacity-80">
-                Career · multi-season legacy
+              <span aria-hidden className="opacity-60">
+                →
               </span>
             </Link>
           </div>
@@ -125,14 +129,14 @@ function Landing() {
 
           <div className="ticker mt-8 rounded-sm">
             <div className="ticker-track">
-              <span>TRANSFERFENSTER GEÖFFNET</span>
-              <span>RAHN TRIFFT AUS 20 METERN</span>
-              <span>BARÇA HOLT REKORDSIEG</span>
-              <span>JUVE DOMINIERT TURIN</span>
-              <span>YOUNG BOYS BLEIBEN OBEN</span>
-              <span>EFFENBERG MIT GELB-ROT</span>
-              <span>KAHN HÄLT ALLES</span>
-              <span>LEGENDE GIBT COMEBACK</span>
+              <span>TRANSFER WINDOW OPEN</span>
+              <span>RAHN SCORES FROM 20 YARDS</span>
+              <span>BARÇA TAKE RECORD WIN</span>
+              <span>JUVE DOMINATE TURIN</span>
+              <span>YOUNG BOYS STAY ON TOP</span>
+              <span>EFFENBERG SENT OFF</span>
+              <span>KAHN SAVES EVERYTHING</span>
+              <span>LEGEND MAKES COMEBACK</span>
             </div>
           </div>
 
