@@ -42,7 +42,7 @@ export interface Formation {
 }
 
 export type Difficulty = "easy"|"normal"|"hard";
-export type DraftMode = "squad"|"position";
+export type DraftMode = "squad"|"position"|"quick";
 export type RatingMode = "career"|"prime";
 
 export interface RunConfig {
@@ -52,6 +52,7 @@ export interface RunConfig {
   showRatings: boolean;
   draftMode: DraftMode;
   ratingMode: RatingMode;
+  challengeSeed?: number;
 }
 
 export interface MatchResult {

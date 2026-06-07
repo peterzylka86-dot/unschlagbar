@@ -39,7 +39,8 @@ function SeasonScreen() {
       return;
     }
     const opponents = pickOpponents(CLUBS, league.opponentsCount);
-    const sim = simulateSeason(opponents, league.matches, ourRating, Math.floor(Math.random() * 1e9), config.difficulty);
+    const seed = config.challengeSeed ?? Math.floor(Math.random() * 1e9);
+    const sim = simulateSeason(opponents, league.matches, ourRating, seed, config.difficulty);
     setMatches(sim);
     setRevealCount(0);
   }, []); // eslint-disable-line
@@ -141,8 +142,18 @@ function SeasonScreen() {
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mt-8 text-center"
+            className="mt-8 flex justify-center gap-3 flex-wrap"
           >
+            <button
+              onClick={async () => {
+                const { buildShareText, shareOrCopy } = await import("@/lib/share");
+                const text = buildShareText(config, slots, matches, config.challengeSeed);
+                await shareOrCopy(text, `${league.brandMark} ${league.tagline}`);
+              }}
+              className="px-5 py-3 rounded-xl border border-warning/50 bg-warning/10 text-warning font-display tracking-wide hover:bg-warning/20"
+            >
+              📋 Share recap
+            </button>
             <button
               onClick={() => navigate({ to: "/result", search: { unbeaten: isUnbeaten } })}
               className="px-7 py-3 rounded-xl bg-primary text-primary-foreground font-display tracking-wide hover:brightness-110 shadow-[0_10px_30px_-10px] shadow-primary/60"
