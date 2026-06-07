@@ -11,32 +11,28 @@ import type { Difficulty, DraftMode, RatingMode, Player } from "@/lib/game-types
  * Group competitions by time commitment so the user picks "how long
  * do I have" first, "which league specifically" second.
  *
- * Order matters: top group is the lowest-commitment entry point (best
- * for first-time visitors and lunch-break sessions). Full Season sits
- * at the bottom because it's the deepest experience.
+ * UX colour discipline (post-cleanup):
+ *   warning (gold) — SELECTED state for any option/chip/card. The brand
+ *   primary (red)  — bold CTAs + destructive only
+ *   success (green)— positive outcomes (W match, ✓ picked) only
+ *   muted-foreground — group headers, hints, inactive
+ *
+ * Group headers use neutral text — the icon carries the personality, not
+ * a color swatch that competes with the selected-state highlight.
  */
 const COMPETITION_GROUPS: {
   id: string;
   title: string;
   icon: string;
   timeHint: string;
-  accent: string;
   kinds: CompetitionKind[];
 }[] = [
-  {
-    id: "quick",
-    title: "Quick",
-    icon: "⚡",
-    timeHint: "5–10 min · knockout",
-    accent: "text-warning",
-    kinds: ["knockout"],
-  },
+  { id: "quick", title: "Quick", icon: "⚡", timeHint: "5–10 min · knockout", kinds: ["knockout"] },
   {
     id: "tournament",
     title: "Tournament",
     icon: "🏆",
     timeHint: "15–20 min · group + KO",
-    accent: "text-primary",
     kinds: ["groupKO"],
   },
   {
@@ -44,7 +40,6 @@ const COMPETITION_GROUPS: {
     title: "Full Season",
     icon: "📅",
     timeHint: "20–30 min · full league",
-    accent: "text-success",
     kinds: ["league"],
   },
 ];
@@ -116,7 +111,7 @@ function GameSetup() {
             return (
               <div key={group.id}>
                 <div className="flex items-baseline justify-between mb-2 px-0.5">
-                  <h3 className={`font-display text-sm tracking-wide ${group.accent}`}>
+                  <h3 className="font-display text-sm tracking-wide text-foreground/80">
                     <span className="mr-1.5">{group.icon}</span>
                     {group.title}
                   </h3>
@@ -137,19 +132,21 @@ function GameSetup() {
                     const l = LEAGUES[id];
                     const isLive = id === "worldcup2026";
                     const selected = config.league === id;
+                    // Selected → warning-gold (consistent with every other
+                    // "selected" state on this screen). LIVE accent is a
+                    // small pulsing dot — not a full card recolour — so it
+                    // doesn't compete with the selection signal.
                     return (
                       <button
                         key={id}
                         onClick={() => setConfig({ league: id })}
                         className={`relative p-3 rounded-xl border text-left transition ${
                           selected
-                            ? "border-primary bg-primary/10 text-primary"
-                            : isLive
-                              ? "border-warning/60 bg-warning/10 hover:border-warning"
-                              : "border-border bg-card hover:border-foreground/30"
+                            ? "border-warning bg-warning/10 text-warning"
+                            : "border-border bg-card hover:border-foreground/30"
                         }`}
                       >
-                        {isLive && !selected && (
+                        {isLive && (
                           <span className="absolute top-2 right-2 inline-flex items-center gap-1 text-[9px] font-display tracking-[0.15em] uppercase text-warning">
                             <span className="w-1.5 h-1.5 rounded-full bg-warning animate-pulse"></span>
                             LIVE
@@ -158,7 +155,7 @@ function GameSetup() {
                         <div className="text-2xl leading-none">{l.flag}</div>
                         <div className="mt-1.5 font-display text-sm">{l.name}</div>
                         <div
-                          className={`text-[10px] ${selected ? "opacity-80" : isLive ? "text-warning/80" : "text-muted-foreground"}`}
+                          className={`text-[10px] ${selected ? "opacity-80" : "text-muted-foreground"}`}
                         >
                           {l.formatLabel}
                         </div>
@@ -213,21 +210,18 @@ function GameSetup() {
         <div className="grid grid-cols-3 gap-2">
           <OptionCard
             active={config.difficulty === "easy"}
-            color="success"
             title="Easy"
             sub="3 rerolls available"
             onClick={() => setConfig({ difficulty: "easy" as Difficulty })}
           />
           <OptionCard
             active={config.difficulty === "normal"}
-            color="warning"
             title="Normal"
             sub="1 reroll available"
             onClick={() => setConfig({ difficulty: "normal" as Difficulty })}
           />
           <OptionCard
             active={config.difficulty === "hard"}
-            color="primary"
             title="Hard"
             sub="No rerolls · ratings hidden"
             onClick={() => setConfig({ difficulty: "hard" as Difficulty, showRatings: false })}
@@ -242,14 +236,12 @@ function GameSetup() {
         <div className="grid grid-cols-2 gap-2">
           <OptionCard
             active={config.showRatings}
-            color="warning"
             title="On"
             sub="Player overalls visible"
             onClick={() => setConfig({ showRatings: true })}
           />
           <OptionCard
             active={!config.showRatings}
-            color="muted"
             title="Off"
             sub="Blind mode — trust your gut"
             onClick={() => setConfig({ showRatings: false })}
@@ -264,21 +256,18 @@ function GameSetup() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
           <OptionCard
             active={config.draftMode === "squad"}
-            color="success"
             title="Squad First"
             sub="Spin a club, pick any player, choose their position"
             onClick={() => setConfig({ draftMode: "squad" as DraftMode })}
           />
           <OptionCard
             active={config.draftMode === "position"}
-            color="success"
             title="Position First"
             sub="Pick a slot, then spin for a club to fill it"
             onClick={() => setConfig({ draftMode: "position" as DraftMode })}
           />
           <OptionCard
             active={config.draftMode === "quick"}
-            color="warning"
             title="Quick ⚡"
             sub="Two players per club — for the impatient"
             onClick={() => setConfig({ draftMode: "quick" as DraftMode })}
@@ -293,14 +282,12 @@ function GameSetup() {
         <div className="grid grid-cols-2 gap-2">
           <OptionCard
             active={config.ratingMode === "career"}
-            color="primary"
             title="Career Seasons"
             sub="Players rated as they were that exact season"
             onClick={() => setConfig({ ratingMode: "career" as RatingMode })}
           />
           <OptionCard
             active={config.ratingMode === "prime"}
-            color="primary"
             title="Prime Mode"
             sub="Every player at their career-best rating"
             onClick={() => setConfig({ ratingMode: "prime" as RatingMode })}
@@ -308,12 +295,13 @@ function GameSetup() {
         </div>
       </Section>
 
+      {/* THE primary CTA — red, bold, single-decisive button on the page. */}
       <button
         onClick={() => {
           reset();
           navigate({ to: "/draft" });
         }}
-        className="mt-10 w-full py-4 rounded-xl bg-success text-success-foreground font-display text-xl tracking-wide hover:brightness-110 transition"
+        className="mt-10 w-full py-4 rounded-xl bg-primary text-primary-foreground font-display text-xl tracking-wide hover:brightness-110 shadow-[0_18px_40px_-12px] shadow-primary/60 transition"
       >
         {league.kickoffWord} →
       </button>
@@ -354,12 +342,14 @@ function Chip({
   children: React.ReactNode;
   onClick: () => void;
 }) {
+  // Selected → warning-gold (same as OptionCard, league cards, founding-
+  // player card). One language for "this is picked" across the screen.
   return (
     <button
       onClick={onClick}
       className={`px-4 py-3 rounded-lg border font-display tracking-wide transition text-sm ${
         active
-          ? "bg-success/15 border-success text-success"
+          ? "bg-warning/15 border-warning text-warning"
           : "bg-card border-border text-foreground hover:border-foreground/40"
       }`}
     >
@@ -493,25 +483,21 @@ function OptionCard({
   title,
   sub,
   onClick,
-  color,
 }: {
   active: boolean;
   title: string;
   sub: string;
   onClick: () => void;
-  color: "success" | "warning" | "primary" | "muted";
 }) {
-  const colorClass = {
-    success: "border-success bg-success/10 text-success",
-    warning: "border-warning bg-warning/10 text-warning",
-    primary: "border-primary bg-primary/10 text-primary",
-    muted: "border-muted-foreground bg-muted/30 text-foreground",
-  }[color];
+  // All selected states are warning-gold. The `color` prop is gone —
+  // semantic distinction belongs in the title/sub, not in the color.
   return (
     <button
       onClick={onClick}
       className={`p-4 rounded-xl border text-left transition ${
-        active ? colorClass : "border-border bg-card hover:border-foreground/30"
+        active
+          ? "border-warning bg-warning/10 text-warning"
+          : "border-border bg-card hover:border-foreground/30"
       }`}
     >
       <div className={`font-display text-lg ${active ? "" : "text-foreground"}`}>{title}</div>

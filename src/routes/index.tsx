@@ -72,9 +72,9 @@ function Landing() {
             <BrandMark size="xl" to={undefined} />
             <WordMark className="text-[11px] sm:text-xs text-warning/90" />
             <div className="scoreboard scanlines rounded-sm mt-1 text-xl">
-              <span className="opacity-70">SPIELE</span> <span>34</span>
+              <span className="opacity-70">GAMES</span> <span>34</span>
               <span className="mx-2 opacity-50">|</span>
-              <span className="opacity-70">NIEDERLAGEN</span> <span>00</span>
+              <span className="opacity-70">LOSSES</span> <span>00</span>
             </div>
           </div>
 
