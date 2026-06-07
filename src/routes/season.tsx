@@ -25,10 +25,15 @@ function pickOpponents(clubs: Club[], count: number): Club[] {
   return ranked.slice(0, count);
 }
 
-/** For knockouts: pick opponents and seed them progressively harder per round. */
+/**
+ * For knockouts: builds the per-match opponent sequence so that:
+ * - Group entries are paired (home/away vs same opponent twice in a row when
+ *   the group has 6 matches; 3 distinct opponents for 3-match groups).
+ * - Consecutive non-Group entries with the same round name represent legs of
+ *   one tie and reuse the same opponent (2-leg ties).
+ */
 function buildKnockoutOpponents(clubs: Club[], rounds: string[], seedNum: number): Club[] {
   const pool = clubs.slice().sort((a, b) => b.strength - a.strength);
-  // Use a quick deterministic shuffle for group draw flavour
   const rng = (s: { v: number }) => {
     let x = s.v | 0;
     x ^= x << 13; x ^= x >>> 17; x ^= x << 5;
@@ -36,30 +41,78 @@ function buildKnockoutOpponents(clubs: Club[], rounds: string[], seedNum: number
     return ((x >>> 0) % 10000) / 10000;
   };
   const rs = { v: seedNum || 4242 };
-  // Bucket: weakest for early rounds, strongest for final
-  const buckets: Club[][] = [];
-  const n = rounds.length;
-  const chunk = Math.max(1, Math.floor(pool.length / Math.max(n, 1)));
-  for (let i = n - 1; i >= 0; i--) {
-    const start = (n - 1 - i) * chunk;
-    const end = i === 0 ? pool.length : start + chunk;
-    buckets.unshift(pool.slice(start, end));
-  }
-  // For groupKO, "Group" entries draw randomly from weaker bucket
-  const chosen: Club[] = [];
   const used = new Set<string>();
-  for (let i = 0; i < n; i++) {
-    const isGroup = rounds[i] === "Group";
-    const bucket = isGroup ? (buckets[0] ?? pool) : (buckets[i] ?? pool);
-    const candidates = bucket.filter(c => !used.has(c.id));
+  const pickFrom = (candidates: Club[]): Club => {
+    const fresh = candidates.filter(c => !used.has(c.id));
     const fallback = pool.filter(c => !used.has(c.id));
-    const list = candidates.length ? candidates : fallback;
-    if (!list.length) break;
+    const list = fresh.length ? fresh : (fallback.length ? fallback : pool);
     const pick = list[Math.floor(rng(rs) * list.length)]!;
     used.add(pick.id);
-    chosen.push(pick);
+    return pick;
+  };
+
+  // Step 1: group consecutive identical round names into "ties" (or group-pairs).
+  // For "Group", we treat the entire span of Group entries as ONE block,
+  // with N distinct opponents where N = matches / 2 if even (home & away) else N = matches.
+  // For KO rounds, consecutive same-name entries are legs of one tie (same opponent).
+  type Tie = { round: string; legs: number; isGroup: boolean };
+  const groupBlocks: { startIdx: number; matches: number }[] = [];
+  let groupStartIdx = -1;
+  let groupCount = 0;
+  const ties: Tie[] = [];
+  for (let i = 0; i < rounds.length; i++) {
+    const r = rounds[i]!;
+    const isGroup = r === "Group";
+    if (isGroup) {
+      if (groupStartIdx === -1) groupStartIdx = i;
+      groupCount++;
+      if (i === rounds.length - 1 || rounds[i + 1] !== "Group") {
+        groupBlocks.push({ startIdx: groupStartIdx, matches: groupCount });
+        ties.push({ round: "Group", legs: groupCount, isGroup: true });
+        groupStartIdx = -1;
+        groupCount = 0;
+      }
+    } else if (i > 0 && rounds[i - 1] === r) {
+      ties[ties.length - 1]!.legs += 1;
+    } else {
+      ties.push({ round: r, legs: 1, isGroup: false });
+    }
   }
-  return chosen;
+  void groupBlocks;
+
+  // Step 2: progressively harder buckets for KO ties; weaker bucket for group opponents.
+  const koTies = ties.filter(t => !t.isGroup);
+  const nKO = koTies.length;
+  const bucketSize = Math.max(1, Math.floor(pool.length / Math.max(nKO + 1, 1)));
+  // group draws from the weakest bucket
+  const groupBucket = pool.slice(nKO * bucketSize);
+
+  const opponents: Club[] = [];
+  let koIdx = 0;
+  for (const tie of ties) {
+    if (tie.isGroup) {
+      // 3 distinct group opponents if 6 group matches (home & away), else 1 per match.
+      const distinct = tie.legs % 2 === 0 ? tie.legs / 2 : tie.legs;
+      const groupOpps: Club[] = [];
+      for (let k = 0; k < distinct; k++) groupOpps.push(pickFrom(groupBucket.length ? groupBucket : pool));
+      if (distinct * 2 === tie.legs) {
+        // Pair home/away
+        for (const o of groupOpps) {
+          opponents.push(o, o);
+        }
+      } else {
+        for (const o of groupOpps) opponents.push(o);
+      }
+    } else {
+      // Pick one opponent from the bucket for this round; later rounds = stronger pool
+      const bucketStart = (nKO - 1 - koIdx) * bucketSize;
+      const bucket = pool.slice(bucketStart, koIdx === nKO - 1 ? pool.length : bucketStart + bucketSize);
+      const opp = pickFrom(bucket.length ? bucket : pool);
+      for (let leg = 0; leg < tie.legs; leg++) opponents.push(opp);
+      koIdx++;
+    }
+  }
+  return opponents;
 }
 
 function SeasonScreen() {
