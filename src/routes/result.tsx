@@ -3,15 +3,14 @@ import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { useGame } from "@/lib/store";
 import { ClubBadge } from "@/components/ClubBadge";
-import clubsData from "@/data/clubs.json";
+import { getClubs } from "@/lib/data";
+import { LEAGUES } from "@/lib/leagues";
 import type { Club } from "@/lib/game-types";
 import { squadRating, computeLeagueTable } from "@/lib/sim";
 
-const CLUBS = clubsData as Club[];
-
 export const Route = createFileRoute("/result")({
   validateSearch: (s: Record<string, unknown>) => ({ unbeaten: s.unbeaten === true || s.unbeaten === "true" }),
-  head: () => ({ meta: [{ title: "Ergebnis · UNSCHLAGBAR 34:0" }] }),
+  head: () => ({ meta: [{ title: "Result · UNSCHLAGBAR" }] }),
   component: ResultScreen,
 });
 
@@ -23,8 +22,10 @@ function ordinal(n: number) {
 
 function ResultScreen() {
   const { unbeaten } = Route.useSearch();
-  const { slots, matches, reset } = useGame();
+  const { slots, matches, reset, config } = useGame();
   const navigate = useNavigate();
+  const league = LEAGUES[config.league];
+  const CLUBS = useMemo(() => getClubs(config.league), [config.league]);
   const rating = squadRating(slots);
   const wins = matches.filter(m => m.outcome === "W").length;
   const draws = matches.filter(m => m.outcome === "D").length;
@@ -34,7 +35,6 @@ function ResultScreen() {
 
   const { table, ourPosition } = useMemo(() => {
     if (!matches.length) return { table: [], ourPosition: 0 };
-    // unique opponents in order of first appearance
     const seen = new Set<string>();
     const opps: Club[] = [];
     for (const m of matches) {
@@ -43,8 +43,9 @@ function ResultScreen() {
         opps.push(m.opponent);
       }
     }
-    return computeLeagueTable(matches, opps, rating);
-  }, [matches, rating]);
+    return computeLeagueTable(matches, opps, rating, league.matches);
+  }, [matches, rating, league.matches]);
+
 
   const positionTone =
     ourPosition === 1 ? "text-warning"
