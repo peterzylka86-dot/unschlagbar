@@ -9,6 +9,7 @@
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
+    "lint:hooks": "eslint . --rule 'react-hooks/rules-of-hooks: error' --no-error-on-unmatched-pattern --quiet",
     "format": "prettier --write .",
     "test": "vitest run",
     "test:watch": "vitest"

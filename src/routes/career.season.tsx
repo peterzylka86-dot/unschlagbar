@@ -42,16 +42,18 @@ function CareerSeason() {
   const career = useCareer();
   const navigate = useNavigate();
 
-  // Guard
+  // Guard: bounce to /career if no draft completed. CRITICAL: this useEffect
+  // runs unconditionally — DO NOT early-return before the hooks below it
+  // (rules-of-hooks violation; React crashes the page).
   useEffect(() => {
     if (career.squad.length === 0 || career.rivals.length === 0) {
       navigate({ to: "/career" });
     }
   }, [career.squad, career.rivals, navigate]);
 
-  if (career.squad.length === 0 || career.rivals.length === 0) return null;
-
-  const leagueId = career.leagueId as LeagueId;
+  // Safe fallback so getClubs() doesn't throw when career.leagueId is null
+  // (which happens transiently during the redirect window).
+  const leagueId = (career.leagueId ?? "ucl") as LeagueId;
   const clubs = useMemo(() => getClubs(leagueId), [leagueId]);
 
   // Build the opponent list: 11 AI rivals × their founding clubs
@@ -146,6 +148,9 @@ function CareerSeason() {
   }, [shown, matches, opponents, userRating]);
 
   // ─── Render ───────────────────────────────────────────────────────
+  // Career not yet drafted — bail (the redirect runs from the useEffect above).
+  if (career.squad.length === 0 || career.rivals.length === 0) return null;
+
   if (matches.length === 0) {
     return <div className="min-h-screen flex items-center justify-center text-muted-foreground">Generating fixtures…</div>;
   }

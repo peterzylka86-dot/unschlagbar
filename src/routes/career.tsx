@@ -21,16 +21,19 @@ export const Route = createFileRoute("/career")({
 });
 
 function CareerHub() {
+  // ALL hooks first, then conditional rendering. React's rules-of-hooks
+  // requires the same hook count + order every render — never early-return
+  // before subsequent hook calls.
+  const pathname = useRouterState({ select: s => s.location.pathname });
+  const career = useCareer();
+
   // /career/{found,draft,season} are file-based children of this route.
   // When user navigates to one of them, render JUST the child (no hub
   // shell around it). When the path is exactly /career, render the hub.
-  const pathname = useRouterState({ select: s => s.location.pathname });
   const onChildRoute = pathname !== "/career" && pathname !== "/career/";
   if (onChildRoute) return <Outlet />;
 
-  const career = useCareer();
   const hasActive = career.foundingClubId !== null;
-
   const club = hasActive && career.leagueId
     ? getClubs(career.leagueId as never).find(c => c.id === career.foundingClubId)
     : null;

@@ -92,16 +92,21 @@ function CareerDraft() {
   const career = useCareer();
   const navigate = useNavigate();
 
-  // Guard: no active career → bounce to hub
+  // Guard: no active career → bounce to hub.
+  // CRITICAL: this useEffect runs unconditionally. The "if not ready" check
+  // happens at the END of the component via `notReady` render guard.
+  // DO NOT return early before the other hooks — React's rules-of-hooks
+  // requires the same hook count + order every render.
   useEffect(() => {
     if (!career.foundingClubId || !career.leagueId) {
       navigate({ to: "/career" });
     }
   }, [career.foundingClubId, career.leagueId, navigate]);
 
-  if (!career.foundingClubId || !career.leagueId) return null;
-
-  const leagueId = career.leagueId as LeagueId;
+  // Use safe fallback ID for hooks even when career isn't ready — these
+  // hooks must always be called, but their results are discarded when we
+  // bail out at the end.
+  const leagueId = (career.leagueId ?? "ucl") as LeagueId;
   const allClubs = useMemo(() => getClubs(leagueId), [leagueId]);
   const allPlayers = useMemo(() => getPlayers(leagueId), [leagueId]);
   const userClub = useMemo(
@@ -282,24 +287,18 @@ function CareerDraft() {
     });
   }
 
-  // ─── Render ──────────────────────────────────────────────────────────
-  if (!draft) {
-    return (
-      <div className="min-h-screen flex items-center justify-center text-muted-foreground">
-        Setting up the draft…
-      </div>
-    );
-  }
-
-  const userManager = draft.managers.find(m => m.isUser)!;
-  const aiManagers = draft.managers.filter(m => !m.isUser);
-  const onClockId = snakePickerId(draft.draftOrder, draft.currentRound, draft.currentPickInRound);
+  // ─── DERIVED VALUES — these must compute even when draft is null, so the
+  // useMemo below is ALWAYS called (rules-of-hooks). The branches inside
+  // gracefully handle missing state. ────────────────────────────────────
+  const userManager = draft?.managers.find(m => m.isUser) ?? null;
+  const aiManagers = draft?.managers.filter(m => !m.isUser) ?? [];
+  const onClockId = draft ? snakePickerId(draft.draftOrder, draft.currentRound, draft.currentPickInRound) : null;
   const isUserTurn = onClockId === "user";
-  const draftDone = draft.currentRound > SQUAD_SIZE;
+  const draftDone = draft ? draft.currentRound > SQUAD_SIZE : false;
 
-  // What can the user pick from right now?
+  // What can the user pick from right now? Always computed.
   const userPickContext = useMemo(() => {
-    if (!isUserTurn) return null;
+    if (!draft || !userManager || !isUserTurn) return null;
     const need = computeNeed(userManager.squad);
     const isFirstPick = userManager.squad.length === 0;
     if (isFirstPick) {
@@ -335,7 +334,17 @@ function CareerDraft() {
       .sort((a, b) => b.prime_rating - a.prime_rating)
       .slice(0, 12);
     return { mode: "picking" as const, pool, club };
-  }, [isUserTurn, userManager.squad, draft.currentClubId, draft.usedPlayerKeys, allPlayers, allClubs, career.foundingClubId, userClub]);
+  }, [draft, userManager, isUserTurn, allPlayers, allClubs, career.foundingClubId, userClub]);
+
+  // ─── Render guards (after all hooks have been called) ─────────────────
+  if (!career.foundingClubId || !career.leagueId) return null;
+  if (!draft || !userManager) {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-muted-foreground">
+        Setting up the draft…
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen px-4 py-8 max-w-5xl mx-auto">
