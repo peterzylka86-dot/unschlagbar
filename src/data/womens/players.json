@@ -1302,5 +1302,541 @@
     "career_years": "2023-2026",
     "nationality": "USA",
     "club": "ngsuper"
+  },
+  {
+    "name": "Salma Paralluelo",
+    "position": "LW",
+    "prime_rating": 88,
+    "career_years": "2022-2026",
+    "nationality": "Spain",
+    "club": "barcelonafem"
+  },
+  {
+    "name": "Mariona Caldentey",
+    "position": "CAM",
+    "prime_rating": 88,
+    "career_years": "2014-2024",
+    "nationality": "Spain",
+    "club": "barcelonafem"
+  },
+  {
+    "name": "Sandra Paños",
+    "position": "GK",
+    "prime_rating": 87,
+    "career_years": "2015-2023",
+    "nationality": "Spain",
+    "club": "barcelonafem"
+  },
+  {
+    "name": "Jennifer Hermoso",
+    "position": "CAM",
+    "prime_rating": 89,
+    "career_years": "2013-2023",
+    "nationality": "Spain",
+    "club": "barcelonafem"
+  },
+  {
+    "name": "Esmee Brugts",
+    "position": "LW",
+    "prime_rating": 84,
+    "career_years": "2023-2026",
+    "nationality": "Netherlands",
+    "club": "barcelonafem"
+  },
+  {
+    "name": "Amel Majri",
+    "position": "LB",
+    "prime_rating": 87,
+    "career_years": "2012-2026",
+    "nationality": "France",
+    "club": "lyonfem"
+  },
+  {
+    "name": "Sara Däbritz",
+    "position": "CM",
+    "prime_rating": 86,
+    "career_years": "2022-2026",
+    "nationality": "Germany",
+    "club": "lyonfem"
+  },
+  {
+    "name": "Sarah Bouhaddi",
+    "position": "GK",
+    "prime_rating": 90,
+    "career_years": "2008-2023",
+    "nationality": "France",
+    "club": "lyonfem"
+  },
+  {
+    "name": "Kadeisha Buchanan",
+    "position": "CB",
+    "prime_rating": 88,
+    "career_years": "2017-2022",
+    "nationality": "Canada",
+    "club": "lyonfem"
+  },
+  {
+    "name": "Saki Kumagai",
+    "position": "CDM",
+    "prime_rating": 88,
+    "career_years": "2013-2021",
+    "nationality": "Japan",
+    "club": "lyonfem"
+  },
+  {
+    "name": "Vanessa Gilles",
+    "position": "CB",
+    "prime_rating": 85,
+    "career_years": "2022-2026",
+    "nationality": "Canada",
+    "club": "lyonfem"
+  },
+  {
+    "name": "Lauren James",
+    "position": "CAM",
+    "prime_rating": 88,
+    "career_years": "2021-2026",
+    "nationality": "England",
+    "club": "chelseafem"
+  },
+  {
+    "name": "Pernille Harder",
+    "position": "CAM",
+    "prime_rating": 91,
+    "career_years": "2020-2023",
+    "nationality": "Denmark",
+    "club": "chelseafem"
+  },
+  {
+    "name": "Magdalena Eriksson",
+    "position": "CB",
+    "prime_rating": 88,
+    "career_years": "2017-2023",
+    "nationality": "Sweden",
+    "club": "chelseafem"
+  },
+  {
+    "name": "Ji So-yun",
+    "position": "CAM",
+    "prime_rating": 89,
+    "career_years": "2014-2022",
+    "nationality": "South Korea",
+    "club": "chelseafem"
+  },
+  {
+    "name": "Fran Kirby",
+    "position": "CAM",
+    "prime_rating": 88,
+    "career_years": "2015-2024",
+    "nationality": "England",
+    "club": "chelseafem"
+  },
+  {
+    "name": "Caitlin Foord",
+    "position": "ST",
+    "prime_rating": 86,
+    "career_years": "2020-2026",
+    "nationality": "Australia",
+    "club": "arsenalfem"
+  },
+  {
+    "name": "Kim Little",
+    "position": "CAM",
+    "prime_rating": 89,
+    "career_years": "2008-2026",
+    "nationality": "Scotland",
+    "club": "arsenalfem"
+  },
+  {
+    "name": "Lia Wälti",
+    "position": "CDM",
+    "prime_rating": 86,
+    "career_years": "2018-2026",
+    "nationality": "Switzerland",
+    "club": "arsenalfem"
+  },
+  {
+    "name": "Frida Maanum",
+    "position": "CM",
+    "prime_rating": 85,
+    "career_years": "2021-2026",
+    "nationality": "Norway",
+    "club": "arsenalfem"
+  },
+  {
+    "name": "Stina Blackstenius",
+    "position": "ST",
+    "prime_rating": 85,
+    "career_years": "2022-2026",
+    "nationality": "Sweden",
+    "club": "arsenalfem"
+  },
+  {
+    "name": "Linda Dallmann",
+    "position": "CAM",
+    "prime_rating": 85,
+    "career_years": "2019-2026",
+    "nationality": "Germany",
+    "club": "bayernfem"
+  },
+  {
+    "name": "Sydney Lohmann",
+    "position": "CM",
+    "prime_rating": 85,
+    "career_years": "2018-2026",
+    "nationality": "Germany",
+    "club": "bayernfem"
+  },
+  {
+    "name": "Pernille Harder",
+    "position": "CAM",
+    "prime_rating": 90,
+    "career_years": "2024-2026",
+    "nationality": "Denmark",
+    "club": "bayernfem"
+  },
+  {
+    "name": "Almuth Schult",
+    "position": "GK",
+    "prime_rating": 90,
+    "career_years": "2012-2022",
+    "nationality": "Germany",
+    "club": "wolfsburgfem"
+  },
+  {
+    "name": "Dominique Janssen",
+    "position": "CB",
+    "prime_rating": 85,
+    "career_years": "2019-2026",
+    "nationality": "Netherlands",
+    "club": "wolfsburgfem"
+  },
+  {
+    "name": "Felicitas Rauch",
+    "position": "LB",
+    "prime_rating": 84,
+    "career_years": "2019-2026",
+    "nationality": "Germany",
+    "club": "wolfsburgfem"
+  },
+  {
+    "name": "Jule Brand",
+    "position": "RW",
+    "prime_rating": 85,
+    "career_years": "2022-2026",
+    "nationality": "Germany",
+    "club": "wolfsburgfem"
+  },
+  {
+    "name": "Kadidiatou Diani",
+    "position": "RW",
+    "prime_rating": 88,
+    "career_years": "2018-2023",
+    "nationality": "France",
+    "club": "psgfem"
+  },
+  {
+    "name": "Ramona Bachmann",
+    "position": "ST",
+    "prime_rating": 85,
+    "career_years": "2018-2020",
+    "nationality": "Switzerland",
+    "club": "psgfem"
+  },
+  {
+    "name": "Christiane Endler",
+    "position": "GK",
+    "prime_rating": 90,
+    "career_years": "2017-2021",
+    "nationality": "Chile",
+    "club": "psgfem"
+  },
+  {
+    "name": "Sandie Toletti",
+    "position": "CM",
+    "prime_rating": 84,
+    "career_years": "2022-2026",
+    "nationality": "France",
+    "club": "realmadridfem"
+  },
+  {
+    "name": "Teresa Abelleira",
+    "position": "CDM",
+    "prime_rating": 85,
+    "career_years": "2021-2026",
+    "nationality": "Spain",
+    "club": "realmadridfem"
+  },
+  {
+    "name": "Maëlle Lakrar",
+    "position": "CB",
+    "prime_rating": 84,
+    "career_years": "2024-2026",
+    "nationality": "France",
+    "club": "realmadridfem"
+  },
+  {
+    "name": "Naomie Feller",
+    "position": "ST",
+    "prime_rating": 82,
+    "career_years": "2022-2026",
+    "nationality": "France",
+    "club": "realmadridfem"
+  },
+  {
+    "name": "Ellie Roebuck",
+    "position": "GK",
+    "prime_rating": 85,
+    "career_years": "2017-2024",
+    "nationality": "England",
+    "club": "manchestercityfem"
+  },
+  {
+    "name": "Jess Park",
+    "position": "CAM",
+    "prime_rating": 83,
+    "career_years": "2022-2026",
+    "nationality": "England",
+    "club": "manchestercityfem"
+  },
+  {
+    "name": "Filippa Angeldal",
+    "position": "CM",
+    "prime_rating": 84,
+    "career_years": "2023-2026",
+    "nationality": "Sweden",
+    "club": "manchestercityfem"
+  },
+  {
+    "name": "Lucía García",
+    "position": "ST",
+    "prime_rating": 85,
+    "career_years": "2023-2026",
+    "nationality": "Spain",
+    "club": "manchesterunitedfem"
+  },
+  {
+    "name": "Hinata Miyazawa",
+    "position": "CM",
+    "prime_rating": 86,
+    "career_years": "2024-2026",
+    "nationality": "Japan",
+    "club": "manchesterunitedfem"
+  },
+  {
+    "name": "Geyse",
+    "position": "RW",
+    "prime_rating": 84,
+    "career_years": "2023-2025",
+    "nationality": "Brazil",
+    "club": "manchesterunitedfem"
+  },
+  {
+    "name": "Aoife Mannion",
+    "position": "CB",
+    "prime_rating": 83,
+    "career_years": "2021-2026",
+    "nationality": "Ireland",
+    "club": "manchesterunitedfem"
+  },
+  {
+    "name": "Phallon Tullis-Joyce",
+    "position": "GK",
+    "prime_rating": 84,
+    "career_years": "2024-2026",
+    "nationality": "USA",
+    "club": "manchesterunitedfem"
+  },
+  {
+    "name": "Sofie Pedersen",
+    "position": "CDM",
+    "prime_rating": 83,
+    "career_years": "2022-2026",
+    "nationality": "Denmark",
+    "club": "juventusfem"
+  },
+  {
+    "name": "Lina Hurtig",
+    "position": "ST",
+    "prime_rating": 84,
+    "career_years": "2019-2022",
+    "nationality": "Sweden",
+    "club": "juventusfem"
+  },
+  {
+    "name": "Manuela Giugliano",
+    "position": "CAM",
+    "prime_rating": 87,
+    "career_years": "2019-2026",
+    "nationality": "Italy",
+    "club": "romafem"
+  },
+  {
+    "name": "Andressa Alves",
+    "position": "RW",
+    "prime_rating": 83,
+    "career_years": "2018-2024",
+    "nationality": "Brazil",
+    "club": "romafem"
+  },
+  {
+    "name": "Saki Kumagai",
+    "position": "CDM",
+    "prime_rating": 87,
+    "career_years": "2021-2024",
+    "nationality": "Japan",
+    "club": "romafem"
+  },
+  {
+    "name": "Benedetta Glionna",
+    "position": "ST",
+    "prime_rating": 82,
+    "career_years": "2022-2026",
+    "nationality": "Italy",
+    "club": "romafem"
+  },
+  {
+    "name": "AD Franch",
+    "position": "GK",
+    "prime_rating": 86,
+    "career_years": "2022-2026",
+    "nationality": "USA",
+    "club": "kchiefs"
+  },
+  {
+    "name": "Hailie Mace",
+    "position": "LB",
+    "prime_rating": 84,
+    "career_years": "2022-2026",
+    "nationality": "USA",
+    "club": "kchiefs"
+  },
+  {
+    "name": "Michelle Cooper",
+    "position": "ST",
+    "prime_rating": 83,
+    "career_years": "2023-2026",
+    "nationality": "USA",
+    "club": "kchiefs"
+  },
+  {
+    "name": "Lorena",
+    "position": "CB",
+    "prime_rating": 83,
+    "career_years": "2024-2026",
+    "nationality": "Brazil",
+    "club": "kchiefs"
+  },
+  {
+    "name": "Adriana",
+    "position": "RW",
+    "prime_rating": 83,
+    "career_years": "2023-2025",
+    "nationality": "Brazil",
+    "club": "kchiefs"
+  },
+  {
+    "name": "Crystal Dunn",
+    "position": "LB",
+    "prime_rating": 88,
+    "career_years": "2021-2024",
+    "nationality": "USA",
+    "club": "portland"
+  },
+  {
+    "name": "Reyna Reyes",
+    "position": "LB",
+    "prime_rating": 82,
+    "career_years": "2023-2026",
+    "nationality": "USA",
+    "club": "portland"
+  },
+  {
+    "name": "Adriana",
+    "position": "RW",
+    "prime_rating": 84,
+    "career_years": "2022-2024",
+    "nationality": "Brazil",
+    "club": "orlando"
+  },
+  {
+    "name": "Kerry Abello",
+    "position": "LW",
+    "prime_rating": 82,
+    "career_years": "2024-2026",
+    "nationality": "USA",
+    "club": "orlando"
+  },
+  {
+    "name": "Angelina",
+    "position": "CM",
+    "prime_rating": 83,
+    "career_years": "2022-2024",
+    "nationality": "Brazil",
+    "club": "orlando"
+  },
+  {
+    "name": "Brittany Wilson",
+    "position": "CB",
+    "prime_rating": 82,
+    "career_years": "2024-2026",
+    "nationality": "USA",
+    "club": "orlando"
+  },
+  {
+    "name": "Haley McCutcheon",
+    "position": "CDM",
+    "prime_rating": 81,
+    "career_years": "2023-2026",
+    "nationality": "USA",
+    "club": "orlando"
+  },
+  {
+    "name": "Carrie Lawrence",
+    "position": "CM",
+    "prime_rating": 81,
+    "career_years": "2023-2026",
+    "nationality": "USA",
+    "club": "orlando"
+  },
+  {
+    "name": "Midge Purce",
+    "position": "RW",
+    "prime_rating": 85,
+    "career_years": "2020-2026",
+    "nationality": "USA",
+    "club": "ngsuper"
+  },
+  {
+    "name": "Mandy Freeman",
+    "position": "CB",
+    "prime_rating": 82,
+    "career_years": "2019-2024",
+    "nationality": "USA",
+    "club": "ngsuper"
+  },
+  {
+    "name": "Jaedyn Shaw",
+    "position": "CAM",
+    "prime_rating": 86,
+    "career_years": "2023-2026",
+    "nationality": "USA",
+    "club": "ngsuper"
+  },
+  {
+    "name": "Yuki Nagasato",
+    "position": "ST",
+    "prime_rating": 82,
+    "career_years": "2020-2023",
+    "nationality": "Japan",
+    "club": "ngsuper"
+  },
+  {
+    "name": "Crystal Dunn",
+    "position": "LB",
+    "prime_rating": 88,
+    "career_years": "2024-2026",
+    "nationality": "USA",
+    "club": "ngsuper"
   }
 ]
