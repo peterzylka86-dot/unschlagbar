@@ -584,9 +584,25 @@
     "club": "algeria"
   },
   {
-    "name": "not applicable Delgado",
+    "name": "Delgado",
     "position": "CB",
     "prime_rating": 77,
+    "career_years": "2006",
+    "nationality": "Angola",
+    "club": "angola"
+  },
+  {
+    "name": "Love",
+    "position": "ST",
+    "prime_rating": 76,
+    "career_years": "2006",
+    "nationality": "Angola",
+    "club": "angola"
+  },
+  {
+    "name": "Akwá",
+    "position": "ST",
+    "prime_rating": 75,
     "career_years": "2006",
     "nationality": "Angola",
     "club": "angola"
@@ -602,6 +618,14 @@
   {
     "name": "Edson Nobre",
     "position": "CM",
+    "prime_rating": 75,
+    "career_years": "2006",
+    "nationality": "Angola",
+    "club": "angola"
+  },
+  {
+    "name": "Jamba",
+    "position": "CB",
     "prime_rating": 75,
     "career_years": "2006",
     "nationality": "Angola",
@@ -624,6 +648,22 @@
     "club": "angola"
   },
   {
+    "name": "Locó",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "2006",
+    "nationality": "Angola",
+    "club": "angola"
+  },
+  {
+    "name": "Mantorras",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "2006",
+    "nationality": "Angola",
+    "club": "angola"
+  },
+  {
     "name": "Marco Abreu",
     "position": "CB",
     "prime_rating": 75,
@@ -634,6 +674,22 @@
   {
     "name": "Marco Airosa",
     "position": "CB",
+    "prime_rating": 75,
+    "career_years": "2006",
+    "nationality": "Angola",
+    "club": "angola"
+  },
+  {
+    "name": "Mendonça",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "2006",
+    "nationality": "Angola",
+    "club": "angola"
+  },
+  {
+    "name": "Miloy",
+    "position": "CM",
     "prime_rating": 75,
     "career_years": "2006",
     "nationality": "Angola",
@@ -664,63 +720,7 @@
     "club": "angola"
   },
   {
-    "name": "not applicable Akwá",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "2006",
-    "nationality": "Angola",
-    "club": "angola"
-  },
-  {
-    "name": "not applicable Jamba",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "2006",
-    "nationality": "Angola",
-    "club": "angola"
-  },
-  {
-    "name": "not applicable Kali",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "2006",
-    "nationality": "Angola",
-    "club": "angola"
-  },
-  {
-    "name": "not applicable Lamá",
-    "position": "GK",
-    "prime_rating": 75,
-    "career_years": "2006",
-    "nationality": "Angola",
-    "club": "angola"
-  },
-  {
-    "name": "not applicable Locó",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "2006",
-    "nationality": "Angola",
-    "club": "angola"
-  },
-  {
-    "name": "not applicable Love",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "2006",
-    "nationality": "Angola",
-    "club": "angola"
-  },
-  {
-    "name": "not applicable Mantorras",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "2006",
-    "nationality": "Angola",
-    "club": "angola"
-  },
-  {
-    "name": "not applicable Mendonça",
+    "name": "Zé Kalanga",
     "position": "CM",
     "prime_rating": 75,
     "career_years": "2006",
@@ -728,25 +728,25 @@
     "club": "angola"
   },
   {
-    "name": "not applicable Miloy",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "2006",
-    "nationality": "Angola",
-    "club": "angola"
-  },
-  {
-    "name": "not applicable Zé Kalanga",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "2006",
-    "nationality": "Angola",
-    "club": "angola"
-  },
-  {
-    "name": "not applicable Mateus",
+    "name": "Mateus",
     "position": "ST",
     "prime_rating": 73,
+    "career_years": "2006",
+    "nationality": "Angola",
+    "club": "angola"
+  },
+  {
+    "name": "Kali",
+    "position": "CB",
+    "prime_rating": 72,
+    "career_years": "2006",
+    "nationality": "Angola",
+    "club": "angola"
+  },
+  {
+    "name": "Flávio",
+    "position": "ST",
+    "prime_rating": 70,
     "career_years": "2006",
     "nationality": "Angola",
     "club": "angola"
@@ -760,16 +760,16 @@
     "club": "angola"
   },
   {
-    "name": "not applicable Flávio",
-    "position": "ST",
-    "prime_rating": 70,
+    "name": "Lamá",
+    "position": "GK",
+    "prime_rating": 61,
     "career_years": "2006",
     "nationality": "Angola",
     "club": "angola"
   },
   {
     "name": "Diego Maradona",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 96,
     "career_years": "1982-1994",
     "nationality": "Argentina",
@@ -777,8 +777,8 @@
   },
   {
     "name": "Lionel Messi",
-    "position": "ST",
-    "prime_rating": 95,
+    "position": "RW",
+    "prime_rating": 96,
     "career_years": "2006-2022",
     "nationality": "Argentina",
     "club": "argentina"
@@ -786,7 +786,7 @@
   {
     "name": "Gabriel Batistuta",
     "position": "ST",
-    "prime_rating": 92,
+    "prime_rating": 94,
     "career_years": "1994-2002",
     "nationality": "Argentina",
     "club": "argentina"
@@ -801,8 +801,8 @@
   },
   {
     "name": "Juan Román Riquelme",
-    "position": "CM",
-    "prime_rating": 90,
+    "position": "CAM",
+    "prime_rating": 91,
     "career_years": "2006",
     "nationality": "Argentina",
     "club": "argentina"
@@ -825,7 +825,7 @@
   },
   {
     "name": "Ariel Ortega",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 88,
     "career_years": "1994-2002",
     "nationality": "Argentina",
@@ -841,7 +841,7 @@
   },
   {
     "name": "Javier Mascherano",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 88,
     "career_years": "2006-2018",
     "nationality": "Argentina",
@@ -849,8 +849,8 @@
   },
   {
     "name": "Ángel Di María",
-    "position": "CM",
-    "prime_rating": 87,
+    "position": "RW",
+    "prime_rating": 89,
     "career_years": "2010-2022",
     "nationality": "Argentina",
     "club": "argentina"
@@ -858,7 +858,7 @@
   {
     "name": "Lautaro Martínez",
     "position": "ST",
-    "prime_rating": 86,
+    "prime_rating": 87,
     "career_years": "2022",
     "nationality": "Argentina",
     "club": "argentina"
@@ -898,7 +898,7 @@
   {
     "name": "Emiliano Martínez",
     "position": "GK",
-    "prime_rating": 84,
+    "prime_rating": 86,
     "career_years": "2022",
     "nationality": "Argentina",
     "club": "argentina"
@@ -914,7 +914,7 @@
   {
     "name": "Rodrigo De Paul",
     "position": "CM",
-    "prime_rating": 84,
+    "prime_rating": 85,
     "career_years": "2022",
     "nationality": "Argentina",
     "club": "argentina"
@@ -930,7 +930,7 @@
   {
     "name": "Cristian Romero",
     "position": "CB",
-    "prime_rating": 83,
+    "prime_rating": 85,
     "career_years": "2022",
     "nationality": "Argentina",
     "club": "argentina"
@@ -1202,7 +1202,7 @@
   {
     "name": "Claudio Caniggia",
     "position": "ST",
-    "prime_rating": 79,
+    "prime_rating": 88,
     "career_years": "1990-2002",
     "nationality": "Argentina",
     "club": "argentina"
@@ -1226,7 +1226,7 @@
   {
     "name": "Daniel Passarella",
     "position": "CB",
-    "prime_rating": 79,
+    "prime_rating": 91,
     "career_years": "1978-1986",
     "nationality": "Argentina",
     "club": "argentina"
@@ -1306,7 +1306,7 @@
   {
     "name": "Mario Kempes",
     "position": "ST",
-    "prime_rating": 79,
+    "prime_rating": 92,
     "career_years": "1974-1982",
     "nationality": "Argentina",
     "club": "argentina"
@@ -1346,7 +1346,7 @@
   {
     "name": "Ubaldo Fillol",
     "position": "GK",
-    "prime_rating": 79,
+    "prime_rating": 89,
     "career_years": "1974-1982",
     "nationality": "Argentina",
     "club": "argentina"
@@ -1369,8 +1369,8 @@
   },
   {
     "name": "Diego Simeone",
-    "position": "CM",
-    "prime_rating": 78,
+    "position": "CDM",
+    "prime_rating": 87,
     "career_years": "1994-2002",
     "nationality": "Argentina",
     "club": "argentina"
@@ -1433,8 +1433,8 @@
   },
   {
     "name": "Nahuel Molina",
-    "position": "CB",
-    "prime_rating": 78,
+    "position": "RB",
+    "prime_rating": 82,
     "career_years": "2022",
     "nationality": "Argentina",
     "club": "argentina"
@@ -1674,7 +1674,7 @@
   {
     "name": "Hernán Crespo",
     "position": "ST",
-    "prime_rating": 76,
+    "prime_rating": 89,
     "career_years": "1998-2006",
     "nationality": "Argentina",
     "club": "argentina"
@@ -2089,8 +2089,8 @@
   },
   {
     "name": "Javier Zanetti",
-    "position": "CB",
-    "prime_rating": 75,
+    "position": "RB",
+    "prime_rating": 90,
     "career_years": "1998-2002",
     "nationality": "Argentina",
     "club": "argentina"
@@ -2202,7 +2202,7 @@
   {
     "name": "Juan Sebastián Verón",
     "position": "CM",
-    "prime_rating": 75,
+    "prime_rating": 89,
     "career_years": "1998-2010",
     "nationality": "Argentina",
     "club": "argentina"
@@ -2946,7 +2946,7 @@
   {
     "name": "Osvaldo Ardiles",
     "position": "CM",
-    "prime_rating": 68,
+    "prime_rating": 88,
     "career_years": "1978-1982",
     "nationality": "Argentina",
     "club": "argentina"
@@ -3490,7 +3490,7 @@
   {
     "name": "Mark Schwarzer",
     "position": "GK",
-    "prime_rating": 73,
+    "prime_rating": 85,
     "career_years": "2006-2010",
     "nationality": "Australia",
     "club": "australia"
@@ -3569,8 +3569,8 @@
   },
   {
     "name": "Tim Cahill",
-    "position": "CM",
-    "prime_rating": 72,
+    "position": "CAM",
+    "prime_rating": 84,
     "career_years": "2006-2018",
     "nationality": "Australia",
     "club": "australia"
@@ -3793,8 +3793,8 @@
   },
   {
     "name": "Harry Kewell",
-    "position": "ST",
-    "prime_rating": 67,
+    "position": "LW",
+    "prime_rating": 85,
     "career_years": "2006-2010",
     "nationality": "Australia",
     "club": "australia"
@@ -7416,25 +7416,97 @@
     "club": "bosniaandherzegovina"
   },
   {
-    "name": "not applicable Ronaldo",
+    "name": "Pelé",
     "position": "ST",
-    "prime_rating": 94,
+    "prime_rating": 96,
+    "career_years": "1958-1970",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Ronaldo",
+    "position": "ST",
+    "prime_rating": 96,
     "career_years": "1994-2006",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Neymar",
-    "position": "ST",
-    "prime_rating": 92,
+    "name": "Garrincha",
+    "position": "RW",
+    "prime_rating": 94,
+    "career_years": "1958-1966",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Neymar",
+    "position": "LW",
+    "prime_rating": 93,
     "career_years": "2014-2022",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Alisson",
+    "name": "Romário",
+    "position": "ST",
+    "prime_rating": 93,
+    "career_years": "1990-1994",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Ronaldinho",
+    "position": "CAM",
+    "prime_rating": 93,
+    "career_years": "2002-2006",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Rivaldo",
+    "position": "CAM",
+    "prime_rating": 92,
+    "career_years": "1998-2002",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Alisson",
     "position": "GK",
+    "prime_rating": 91,
+    "career_years": "2018-2022",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Kaká",
+    "position": "CAM",
+    "prime_rating": 92,
+    "career_years": "2002-2010",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Silva",
+    "position": "ST",
     "prime_rating": 90,
+    "career_years": "1966",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Casemiro",
+    "position": "CDM",
+    "prime_rating": 89,
+    "career_years": "2018-2022",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Ederson",
+    "position": "GK",
+    "prime_rating": 89,
     "career_years": "2018-2022",
     "nationality": "Brazil",
     "club": "brazil"
@@ -7442,24 +7514,24 @@
   {
     "name": "Thiago Silva",
     "position": "CB",
-    "prime_rating": 89,
+    "prime_rating": 91,
     "career_years": "2010-2022",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Casemiro",
-    "position": "CM",
-    "prime_rating": 89,
+    "name": "Marquinhos",
+    "position": "CB",
+    "prime_rating": 88,
     "career_years": "2018-2022",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Ederson",
-    "position": "GK",
-    "prime_rating": 89,
-    "career_years": "2018-2022",
+    "name": "Pepe",
+    "position": "CB",
+    "prime_rating": 86,
+    "career_years": "1958-1962",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -7472,23 +7544,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Marquinhos",
-    "position": "CB",
-    "prime_rating": 88,
-    "career_years": "2018-2022",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "Philippe Coutinho",
-    "position": "CM",
-    "prime_rating": 87,
-    "career_years": "2018",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Coutinho",
+    "name": "Coutinho",
     "position": "ST",
     "prime_rating": 87,
     "career_years": "1962",
@@ -7496,7 +7552,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Fabinho",
+    "name": "Fabinho",
     "position": "CM",
     "prime_rating": 87,
     "career_years": "2022",
@@ -7504,23 +7560,39 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Fernandinho",
-    "position": "CM",
+    "name": "Fernandinho",
+    "position": "CDM",
     "prime_rating": 87,
     "career_years": "2014-2018",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Marcelo",
-    "position": "CB",
-    "prime_rating": 87,
+    "name": "Marcelo",
+    "position": "LB",
+    "prime_rating": 89,
     "career_years": "2014-2018",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Zé Maria",
+    "name": "Müller",
+    "position": "ST",
+    "prime_rating": 87,
+    "career_years": "1986-1994",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Philippe Coutinho",
+    "position": "CAM",
+    "prime_rating": 88,
+    "career_years": "2018",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Zé Maria",
     "position": "CB",
     "prime_rating": 87,
     "career_years": "1970-1974",
@@ -7544,7 +7616,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Miranda",
+    "name": "Miranda",
     "position": "CB",
     "prime_rating": 86,
     "career_years": "2018",
@@ -7568,15 +7640,15 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Falcão",
+    "name": "Falcão",
     "position": "CM",
-    "prime_rating": 85,
+    "prime_rating": 89,
     "career_years": "1982-1986",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Jorginho",
+    "name": "Jorginho",
     "position": "CB",
     "prime_rating": 85,
     "career_years": "1990-1994",
@@ -7584,7 +7656,15 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Paulinho",
+    "name": "Lopes",
+    "position": "ST",
+    "prime_rating": 85,
+    "career_years": "1938",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Paulinho",
     "position": "CB",
     "prime_rating": 85,
     "career_years": "1954",
@@ -7592,7 +7672,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Paulinho",
+    "name": "Paulinho",
     "position": "CM",
     "prime_rating": 85,
     "career_years": "2014-2018",
@@ -7600,7 +7680,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Willian",
+    "name": "Willian",
     "position": "CM",
     "prime_rating": 85,
     "career_years": "2014-2018",
@@ -7617,8 +7697,8 @@
   },
   {
     "name": "Dani Alves",
-    "position": "CB",
-    "prime_rating": 84,
+    "position": "RB",
+    "prime_rating": 90,
     "career_years": "2010-2022",
     "nationality": "Brazil",
     "club": "brazil"
@@ -7632,7 +7712,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Fernando",
+    "name": "Fernando",
     "position": "CM",
     "prime_rating": 84,
     "career_years": "1930",
@@ -7640,7 +7720,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Félix",
+    "name": "Félix",
     "position": "GK",
     "prime_rating": 84,
     "career_years": "1970",
@@ -7648,7 +7728,15 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Oscar",
+    "name": "Leão",
+    "position": "GK",
+    "prime_rating": 84,
+    "career_years": "1970-1986",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Oscar",
     "position": "CB",
     "prime_rating": 84,
     "career_years": "1978-1986",
@@ -7656,7 +7744,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Oscar",
+    "name": "Oscar",
     "position": "CM",
     "prime_rating": 84,
     "career_years": "2014",
@@ -7672,9 +7760,41 @@
     "club": "brazil"
   },
   {
+    "name": "Augusto",
+    "position": "CB",
+    "prime_rating": 83,
+    "career_years": "1950",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Bremer",
+    "position": "CB",
+    "prime_rating": 83,
+    "career_years": "2022",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Cafu",
+    "position": "RB",
+    "prime_rating": 92,
+    "career_years": "1994-2006",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Carlos",
+    "position": "GK",
+    "prime_rating": 83,
+    "career_years": "1978-1986",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Gabriel Jesus",
     "position": "ST",
-    "prime_rating": 83,
+    "prime_rating": 86,
     "career_years": "2018-2022",
     "nationality": "Brazil",
     "club": "brazil"
@@ -7688,6 +7808,30 @@
     "club": "brazil"
   },
   {
+    "name": "Nilmar",
+    "position": "ST",
+    "prime_rating": 83,
+    "career_years": "2010",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Pedro",
+    "position": "ST",
+    "prime_rating": 83,
+    "career_years": "2022",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Raphinha",
+    "position": "ST",
+    "prime_rating": 83,
+    "career_years": "2022",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Renato Augusto",
     "position": "CM",
     "prime_rating": 83,
@@ -7696,74 +7840,50 @@
     "club": "brazil"
   },
   {
+    "name": "Roberto",
+    "position": "ST",
+    "prime_rating": 83,
+    "career_years": "1938",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Roberto",
+    "position": "ST",
+    "prime_rating": 83,
+    "career_years": "1970",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Roberto Carlos",
-    "position": "CB",
+    "position": "LB",
+    "prime_rating": 92,
+    "career_years": "1998-2006",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Zé Roberto",
+    "position": "CM",
     "prime_rating": 83,
     "career_years": "1998-2006",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Augusto",
-    "position": "CB",
-    "prime_rating": 83,
-    "career_years": "1950",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Bremer",
-    "position": "CB",
-    "prime_rating": 83,
+    "name": "Antony",
+    "position": "ST",
+    "prime_rating": 82,
     "career_years": "2022",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Carlos",
-    "position": "GK",
-    "prime_rating": 83,
-    "career_years": "1978-1986",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Nilmar",
-    "position": "ST",
-    "prime_rating": 83,
-    "career_years": "2010",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Pedro",
-    "position": "ST",
-    "prime_rating": 83,
-    "career_years": "2022",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Raphinha",
-    "position": "ST",
-    "prime_rating": 83,
-    "career_years": "2022",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Zé Carlos",
-    "position": "GK",
-    "prime_rating": 83,
-    "career_years": "1990",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Zé Carlos",
+    "name": "Dante",
     "position": "CB",
-    "prime_rating": 83,
-    "career_years": "1998",
+    "prime_rating": 82,
+    "career_years": "2014",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -7792,42 +7912,26 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Antony",
+    "name": "Richarlison",
     "position": "ST",
-    "prime_rating": 82,
+    "prime_rating": 85,
     "career_years": "2022",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Dante",
-    "position": "CB",
-    "prime_rating": 82,
-    "career_years": "2014",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Pepe",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1958-1962",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Richarlison",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "2022",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Taison",
+    "name": "Taison",
     "position": "ST",
     "prime_rating": 82,
     "career_years": "2018",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Barbosa",
+    "position": "GK",
+    "prime_rating": 81,
+    "career_years": "1950",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -7848,6 +7952,54 @@
     "club": "brazil"
   },
   {
+    "name": "César",
+    "position": "ST",
+    "prime_rating": 81,
+    "career_years": "1974",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Danilo",
+    "position": "CM",
+    "prime_rating": 81,
+    "career_years": "1950",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Danilo",
+    "position": "CB",
+    "prime_rating": 81,
+    "career_years": "2018-2022",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Fred",
+    "position": "ST",
+    "prime_rating": 84,
+    "career_years": "2006-2014",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Fred",
+    "position": "ST",
+    "prime_rating": 84,
+    "career_years": "2018-2022",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Gonçalves",
+    "position": "CB",
+    "prime_rating": 81,
+    "career_years": "1998",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Júlio César",
     "position": "CB",
     "prime_rating": 81,
@@ -7864,6 +8016,14 @@
     "club": "brazil"
   },
   {
+    "name": "Marcos",
+    "position": "GK",
+    "prime_rating": 81,
+    "career_years": "2002",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Renato Gaúcho",
     "position": "ST",
     "prime_rating": 81,
@@ -7872,79 +8032,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Barbosa",
-    "position": "GK",
-    "prime_rating": 81,
-    "career_years": "1950",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Cafu",
-    "position": "CB",
-    "prime_rating": 81,
-    "career_years": "1994-2006",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable César",
-    "position": "ST",
-    "prime_rating": 81,
-    "career_years": "1974",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Danilo",
-    "position": "CM",
-    "prime_rating": 81,
-    "career_years": "1950",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Danilo",
-    "position": "CB",
-    "prime_rating": 81,
-    "career_years": "2018-2022",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Gonçalves",
-    "position": "CB",
-    "prime_rating": 81,
-    "career_years": "1998",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Leão",
-    "position": "GK",
-    "prime_rating": 81,
-    "career_years": "1970-1986",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Marcos",
-    "position": "GK",
-    "prime_rating": 81,
-    "career_years": "2002",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Pelé",
-    "position": "ST",
-    "prime_rating": 81,
-    "career_years": "1958-1970",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Rodrygo",
+    "name": "Rodrygo",
     "position": "ST",
     "prime_rating": 81,
     "career_years": "2022",
@@ -7960,6 +8048,78 @@
     "club": "brazil"
   },
   {
+    "name": "Almeida",
+    "position": "ST",
+    "prime_rating": 80,
+    "career_years": "1934",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Bernard",
+    "position": "ST",
+    "prime_rating": 80,
+    "career_years": "2014",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Gil",
+    "position": "ST",
+    "prime_rating": 80,
+    "career_years": "1978",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Grafite",
+    "position": "ST",
+    "prime_rating": 80,
+    "career_years": "2010",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Gérson",
+    "position": "CM",
+    "prime_rating": 89,
+    "career_years": "1966-1970",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Hulk",
+    "position": "ST",
+    "prime_rating": 80,
+    "career_years": "2014",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Jefferson",
+    "position": "GK",
+    "prime_rating": 80,
+    "career_years": "2014",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Lima",
+    "position": "CM",
+    "prime_rating": 80,
+    "career_years": "1966",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Maicon",
+    "position": "RB",
+    "prime_rating": 89,
+    "career_years": "2010-2014",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Marco Antônio",
     "position": "CB",
     "prime_rating": 80,
@@ -7968,58 +8128,42 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Almeida",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1934",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Bernard",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "2014",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Grafite",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "2010",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Gérson",
+    "name": "Ramires",
     "position": "CM",
     "prime_rating": 80,
-    "career_years": "1966-1970",
+    "career_years": "2010-2014",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Jefferson",
+    "name": "Éder",
+    "position": "ST",
+    "prime_rating": 80,
+    "career_years": "1982",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Dirceu",
+    "position": "ST",
+    "prime_rating": 79,
+    "career_years": "1974-1982",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Emerson",
+    "position": "CM",
+    "prime_rating": 79,
+    "career_years": "1998-2006",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Gilmar",
     "position": "GK",
-    "prime_rating": 80,
-    "career_years": "2014",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Maicon",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "2010-2014",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Ramires",
-    "position": "CM",
-    "prime_rating": 80,
-    "career_years": "2010-2014",
+    "prime_rating": 79,
+    "career_years": "1958-1966",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -8032,10 +8176,58 @@
     "club": "brazil"
   },
   {
+    "name": "Jairzinho",
+    "position": "RW",
+    "prime_rating": 92,
+    "career_years": "1966-1974",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Leonardo",
+    "position": "CM",
+    "prime_rating": 79,
+    "career_years": "1994-1998",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Luisão",
+    "position": "CB",
+    "prime_rating": 79,
+    "career_years": "2006-2010",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Marinho Peres",
     "position": "CB",
     "prime_rating": 79,
     "career_years": "1974",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Maxwell",
+    "position": "CB",
+    "prime_rating": 79,
+    "career_years": "2014",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Rivellino",
+    "position": "CAM",
+    "prime_rating": 91,
+    "career_years": "1970-1978",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Victor",
+    "position": "GK",
+    "prime_rating": 79,
+    "career_years": "2014",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -8048,130 +8240,18 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Dida",
-    "position": "GK",
-    "prime_rating": 79,
-    "career_years": "1998-2006",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Didi",
-    "position": "CM",
-    "prime_rating": 79,
-    "career_years": "1954-1962",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Dirceu",
-    "position": "ST",
-    "prime_rating": 79,
-    "career_years": "1974-1982",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Edu",
-    "position": "ST",
-    "prime_rating": 79,
-    "career_years": "1966-1974",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Emerson",
-    "position": "CM",
-    "prime_rating": 79,
-    "career_years": "1998-2006",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Garrincha",
-    "position": "ST",
-    "prime_rating": 79,
-    "career_years": "1958-1966",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Gilmar",
-    "position": "GK",
-    "prime_rating": 79,
-    "career_years": "1958-1966",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Jairzinho",
-    "position": "CM",
-    "prime_rating": 79,
-    "career_years": "1966-1974",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Kaká",
-    "position": "CM",
-    "prime_rating": 79,
-    "career_years": "2002-2010",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Leonardo",
-    "position": "CM",
-    "prime_rating": 79,
-    "career_years": "1994-1998",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Luisão",
-    "position": "CB",
-    "prime_rating": 79,
-    "career_years": "2006-2010",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Maxwell",
-    "position": "CB",
-    "prime_rating": 79,
-    "career_years": "2014",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Rivellino",
-    "position": "CM",
-    "prime_rating": 79,
-    "career_years": "1970-1978",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Victor",
-    "position": "GK",
-    "prime_rating": 79,
-    "career_years": "2014",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Zico",
-    "position": "CM",
-    "prime_rating": 79,
+    "name": "Zico",
+    "position": "CAM",
+    "prime_rating": 93,
     "career_years": "1978-1986",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Zito",
-    "position": "CM",
-    "prime_rating": 79,
-    "career_years": "1958-1966",
+    "name": "Adriano",
+    "position": "ST",
+    "prime_rating": 78,
+    "career_years": "2006",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -8188,6 +8268,46 @@
     "position": "ST",
     "prime_rating": 78,
     "career_years": "2022",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Gilberto",
+    "position": "CB",
+    "prime_rating": 78,
+    "career_years": "2006-2010",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Henrique",
+    "position": "CB",
+    "prime_rating": 78,
+    "career_years": "2014",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Hernanes",
+    "position": "CM",
+    "prime_rating": 78,
+    "career_years": "2014",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Júnior",
+    "position": "LB",
+    "prime_rating": 88,
+    "career_years": "1982-1986",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Júnior",
+    "position": "LB",
+    "prime_rating": 88,
+    "career_years": "2002",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -8224,47 +8344,7 @@
     "club": "brazil"
   },
   {
-    "name": "Vinícius Júnior",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "2022",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Adriano",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "2006",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Gilberto",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "2006-2010",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Hernanes",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "2014",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Müller",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "1986-1994",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Rodrigues",
+    "name": "Rodrigues",
     "position": "ST",
     "prime_rating": 78,
     "career_years": "1950-1954",
@@ -8272,7 +8352,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Romeu",
+    "name": "Romeu",
     "position": "ST",
     "prime_rating": 78,
     "career_years": "1938",
@@ -8280,18 +8360,50 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Ronaldinho",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "2002-2006",
+    "name": "Vinícius Júnior",
+    "position": "LW",
+    "prime_rating": 91,
+    "career_years": "2022",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Zé Sérgio",
+    "name": "Zé Sérgio",
     "position": "ST",
     "prime_rating": 78,
     "career_years": "1978",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Altair",
+    "position": "CB",
+    "prime_rating": 77,
+    "career_years": "1962-1966",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Caju",
+    "position": "CM",
+    "prime_rating": 77,
+    "career_years": "1970-1974",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Careca",
+    "position": "ST",
+    "prime_rating": 89,
+    "career_years": "1986-1990",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Cássio",
+    "position": "GK",
+    "prime_rating": 77,
+    "career_years": "2018",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -8304,10 +8416,58 @@
     "club": "brazil"
   },
   {
+    "name": "Fontana",
+    "position": "CB",
+    "prime_rating": 77,
+    "career_years": "1970",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Juninho",
+    "position": "CB",
+    "prime_rating": 77,
+    "career_years": "1982",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Jô",
+    "position": "ST",
+    "prime_rating": 77,
+    "career_years": "2014",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Júnior Baiano",
     "position": "CB",
     "prime_rating": 77,
     "career_years": "1998",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Kléberson",
+    "position": "CM",
+    "prime_rating": 77,
+    "career_years": "2002-2010",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Leônidas",
+    "position": "ST",
+    "prime_rating": 77,
+    "career_years": "1934-1938",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Luisinho",
+    "position": "ST",
+    "prime_rating": 77,
+    "career_years": "1934-1938",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -8320,10 +8480,42 @@
     "club": "brazil"
   },
   {
+    "name": "Mazinho",
+    "position": "CB",
+    "prime_rating": 77,
+    "career_years": "1990-1994",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Mário Zagallo",
     "position": "ST",
     "prime_rating": 77,
     "career_years": "1958-1962",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Nelinho",
+    "position": "CB",
+    "prime_rating": 77,
+    "career_years": "1974-1978",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Pamplona",
+    "position": "CM",
+    "prime_rating": 77,
+    "career_years": "1930-1934",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Patesko",
+    "position": "ST",
+    "prime_rating": 77,
+    "career_years": "1934-1938",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -8336,10 +8528,26 @@
     "club": "brazil"
   },
   {
+    "name": "Piazza",
+    "position": "CM",
+    "prime_rating": 77,
+    "career_years": "1970-1974",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Roberto Dinamite",
     "position": "ST",
     "prime_rating": 77,
     "career_years": "1978-1982",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Robinho",
+    "position": "ST",
+    "prime_rating": 77,
+    "career_years": "2006-2010",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -8352,175 +8560,23 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Altair",
-    "position": "CB",
-    "prime_rating": 77,
-    "career_years": "1962-1966",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Caju",
-    "position": "CM",
-    "prime_rating": 77,
-    "career_years": "1970-1974",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Careca",
-    "position": "ST",
-    "prime_rating": 77,
-    "career_years": "1986-1990",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Cássio",
-    "position": "GK",
-    "prime_rating": 77,
-    "career_years": "2018",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Ely",
-    "position": "CM",
-    "prime_rating": 77,
-    "career_years": "1950-1954",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Fontana",
-    "position": "CB",
-    "prime_rating": 77,
-    "career_years": "1970",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Fred",
-    "position": "ST",
-    "prime_rating": 77,
-    "career_years": "2006-2014",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Fred",
-    "position": "CM",
-    "prime_rating": 77,
-    "career_years": "2018-2022",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Juan",
-    "position": "CB",
-    "prime_rating": 77,
-    "career_years": "2006-2010",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Juninho",
-    "position": "CB",
-    "prime_rating": 77,
-    "career_years": "1982",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Kléberson",
-    "position": "CM",
-    "prime_rating": 77,
-    "career_years": "2002-2010",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Leônidas",
-    "position": "ST",
-    "prime_rating": 77,
-    "career_years": "1934-1938",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Luisinho",
-    "position": "ST",
-    "prime_rating": 77,
-    "career_years": "1934-1938",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Mazinho",
-    "position": "CB",
-    "prime_rating": 77,
-    "career_years": "1990-1994",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Nelinho",
-    "position": "CB",
-    "prime_rating": 77,
-    "career_years": "1974-1978",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Pamplona",
-    "position": "CM",
-    "prime_rating": 77,
-    "career_years": "1930-1934",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Patesko",
-    "position": "ST",
-    "prime_rating": 77,
-    "career_years": "1934-1938",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Piazza",
-    "position": "CM",
-    "prime_rating": 77,
-    "career_years": "1970-1974",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Robinho",
-    "position": "ST",
-    "prime_rating": 77,
-    "career_years": "2006-2010",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Sócrates",
-    "position": "CM",
-    "prime_rating": 77,
+    "name": "Sócrates",
+    "position": "CAM",
+    "prime_rating": 92,
     "career_years": "1982-1986",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Tostão",
-    "position": "CM",
-    "prime_rating": 77,
+    "name": "Tostão",
+    "position": "ST",
+    "prime_rating": 91,
     "career_years": "1966-1970",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Valdo",
+    "name": "Valdo",
     "position": "CM",
     "prime_rating": 77,
     "career_years": "1986-1990",
@@ -8528,15 +8584,15 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Vavá",
+    "name": "Vavá",
     "position": "ST",
-    "prime_rating": 77,
+    "prime_rating": 89,
     "career_years": "1958-1962",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Weverton",
+    "name": "Weverton",
     "position": "GK",
     "prime_rating": 77,
     "career_years": "2022",
@@ -8544,10 +8600,34 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Zózimo",
+    "name": "Zózimo",
     "position": "CM",
     "prime_rating": 77,
     "career_years": "1958-1962",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Josué",
+    "position": "CM",
+    "prime_rating": 76,
+    "career_years": "2010",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Juan",
+    "position": "CB",
+    "prime_rating": 87,
+    "career_years": "2006-2010",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Lúcio",
+    "position": "CB",
+    "prime_rating": 90,
+    "career_years": "2002-2010",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -8560,26 +8640,34 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Josué",
-    "position": "CM",
-    "prime_rating": 76,
-    "career_years": "2010",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Lúcio",
-    "position": "CB",
-    "prime_rating": 76,
-    "career_years": "2002-2010",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Pedrosa",
+    "name": "Pedrosa",
     "position": "GK",
     "prime_rating": 76,
     "career_years": "1934",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Abel",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1978",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Acácio",
+    "position": "GK",
+    "prime_rating": 75,
+    "career_years": "1990",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Ademir",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1950",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -8592,10 +8680,210 @@
     "club": "brazil"
   },
   {
+    "name": "Ado",
+    "position": "GK",
+    "prime_rating": 75,
+    "career_years": "1970",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Adãozinho",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1950",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Afonsinho",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1938",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Alcindo",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1966",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Aldair",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1990-1998",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Amarildo",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1962",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Araken",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1930",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Argemiro",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1938",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Ariel",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1934",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Armandinho",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1934",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Baldocchi",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1970",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Batatais",
+    "position": "GK",
+    "prime_rating": 75,
+    "career_years": "1938",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Bauer",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1950-1954",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Benedicto",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1930",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Benvenuto",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1930",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Bigode",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1950",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Bismarck",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1990",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Brandãozinho",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1954",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Brilhante",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1930",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Cabeção",
+    "position": "GK",
+    "prime_rating": 75,
+    "career_years": "1954",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Canalli",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1934",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Carlos Mozer",
     "position": "CB",
     "prime_rating": 75,
     "career_years": "1990",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Carpegiani",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1974",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Chicão",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1978",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Clodoaldo",
+    "position": "CDM",
+    "prime_rating": 88,
+    "career_years": "1970",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Dario",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1970",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -8608,10 +8896,42 @@
     "club": "brazil"
   },
   {
+    "name": "Dequinha",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1954",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Dida",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1958",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Dida",
+    "position": "GK",
+    "prime_rating": 75,
+    "career_years": "1998-2006",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Dino Sani",
     "position": "CM",
     "prime_rating": 75,
     "career_years": "1958",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Doca",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1930",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -8624,10 +8944,114 @@
     "club": "brazil"
   },
   {
+    "name": "Doni",
+    "position": "GK",
+    "prime_rating": 75,
+    "career_years": "2010",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Doriva",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1998",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Edevaldo",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1982",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Edivaldo",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1986",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Edmundo",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1998",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Edílson",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "2002",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Elzo",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1986",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Fausto",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1930",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Friaça",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1950",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Gilberto Silva",
     "position": "CM",
     "prime_rating": 75,
     "career_years": "2002-2010",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Hermógenes",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1930",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Humberto",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1954",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Hércules",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1938",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Itália",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1930",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -8640,10 +9064,26 @@
     "club": "brazil"
   },
   {
+    "name": "Jaú",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1938",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Jorge Mendonça",
     "position": "ST",
     "prime_rating": 75,
     "career_years": "1978",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Josimar",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1986",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -8664,10 +9104,42 @@
     "club": "brazil"
   },
   {
+    "name": "Julinho",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1954",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Juninho Pernambucano",
     "position": "CM",
     "prime_rating": 75,
     "career_years": "2006",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Jurandir",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1962",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Juvenal",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1950",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Leivinha",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1974",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -8680,10 +9152,146 @@
     "club": "brazil"
   },
   {
+    "name": "Luizinho",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1982",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Maneca",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1950",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Manoelzinho",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1930",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Martim",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1934",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Martim",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1938",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Maurinho",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1954",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Mauro Silva",
     "position": "CM",
     "prime_rating": 75,
     "career_years": "1994",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Mengálvio",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1962",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Mirandinha",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1974",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Moacir",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1958",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Moderato",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1930",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Nariz",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1938",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Nena",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1950",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Niginho",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1938",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Octacílio",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1934",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Oreco",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1958",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Oscarino",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1930",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Paraná",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1966",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -8696,6 +9304,54 @@
     "club": "brazil"
   },
   {
+    "name": "Pedrinho",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1982",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Perácio",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1938",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Polozzi",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1978",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Poly",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1930",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Preguinho",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1930",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Reinaldo",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1978",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Rodrigues Neto",
     "position": "CB",
     "prime_rating": 75,
@@ -8704,663 +9360,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Abel",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1978",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Acácio",
-    "position": "GK",
-    "prime_rating": 75,
-    "career_years": "1990",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Ademir",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1950",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Ado",
-    "position": "GK",
-    "prime_rating": 75,
-    "career_years": "1970",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Adãozinho",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1950",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Afonsinho",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1938",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Alcindo",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1966",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Aldair",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1990-1998",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Amarildo",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1962",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Araken",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1930",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Argemiro",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1938",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Ariel",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1934",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Armandinho",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1934",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Baldocchi",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1970",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Batatais",
-    "position": "GK",
-    "prime_rating": 75,
-    "career_years": "1938",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Bauer",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1950-1954",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Benedicto",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1930",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Benvenuto",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1930",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Bigode",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1950",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Bismarck",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1990",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Brandãozinho",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1954",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Brilhante",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1930",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Cabeção",
-    "position": "GK",
-    "prime_rating": 75,
-    "career_years": "1954",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Canalli",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1934",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Carpegiani",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1974",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Chicão",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1978",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Clodoaldo",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1970",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Cris",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "2006",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Dario",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1970",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Dequinha",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1954",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Dida",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1958",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Doca",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1930",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Doni",
-    "position": "GK",
-    "prime_rating": 75,
-    "career_years": "2010",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Doriva",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1998",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Edevaldo",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1982",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Edivaldo",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1986",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Edmundo",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1998",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Edílson",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "2002",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Elzo",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1986",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Fausto",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1930",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Friaça",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1950",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Hermógenes",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1930",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Hulk",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "2014",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Humberto",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1954",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Hércules",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1938",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Itália",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1930",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Jair",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1950",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Jaú",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1938",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Joel",
-    "position": "GK",
-    "prime_rating": 75,
-    "career_years": "1930",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Joel",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1970",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Josimar",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1986",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Julinho",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1954",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Jurandir",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1962",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Juvenal",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1950",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Jô",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "2014",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Leivinha",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1974",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Luizinho",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1982",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Maneca",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1950",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Manoelzinho",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1930",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Martim",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1934",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Martim",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1938",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Maurinho",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1954",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Mengálvio",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1962",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Mirandinha",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1974",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Moacir",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1958",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Moderato",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1930",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Nariz",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1938",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Nena",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1950",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Niginho",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1938",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Nilo",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1930",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Octacílio",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1934",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Oreco",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1958",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Oscarino",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1930",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Paraná",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1966",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Pedrinho",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1982",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Perácio",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1938",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Polozzi",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1978",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Poly",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1930",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Preguinho",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1930",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Raí",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1994",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Reinaldo",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1978",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Rivaldo",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1998-2002",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Ronaldão",
+    "name": "Ronaldão",
     "position": "CB",
     "prime_rating": 75,
     "career_years": "1994",
@@ -9368,7 +9368,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Rubens",
+    "name": "Rubens",
     "position": "ST",
     "prime_rating": 75,
     "career_years": "1954",
@@ -9376,7 +9376,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Rui",
+    "name": "Rui",
     "position": "CM",
     "prime_rating": 75,
     "career_years": "1950",
@@ -9384,7 +9384,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Russinho",
+    "name": "Russinho",
     "position": "ST",
     "prime_rating": 75,
     "career_years": "1930",
@@ -9392,7 +9392,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Teóphilo",
+    "name": "Teóphilo",
     "position": "ST",
     "prime_rating": 75,
     "career_years": "1930",
@@ -9400,7 +9400,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Tim",
+    "name": "Tim",
     "position": "ST",
     "prime_rating": 75,
     "career_years": "1938",
@@ -9408,7 +9408,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Tinoco",
+    "name": "Tinoco",
     "position": "CM",
     "prime_rating": 75,
     "career_years": "1934",
@@ -9416,7 +9416,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Tita",
+    "name": "Tita",
     "position": "CM",
     "prime_rating": 75,
     "career_years": "1990",
@@ -9424,7 +9424,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Toninho",
+    "name": "Toninho",
     "position": "CB",
     "prime_rating": 75,
     "career_years": "1978",
@@ -9432,7 +9432,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Valdomiro",
+    "name": "Valdomiro",
     "position": "ST",
     "prime_rating": 75,
     "career_years": "1974",
@@ -9440,7 +9440,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Vampeta",
+    "name": "Vampeta",
     "position": "CM",
     "prime_rating": 75,
     "career_years": "2002",
@@ -9448,7 +9448,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Velloso",
+    "name": "Velloso",
     "position": "GK",
     "prime_rating": 75,
     "career_years": "1930",
@@ -9456,7 +9456,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Veludo",
+    "name": "Veludo",
     "position": "GK",
     "prime_rating": 75,
     "career_years": "1954",
@@ -9464,7 +9464,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Waldyr",
+    "name": "Waldyr",
     "position": "CM",
     "prime_rating": 75,
     "career_years": "1934",
@@ -9472,7 +9472,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Zetti",
+    "name": "Zetti",
     "position": "GK",
     "prime_rating": 75,
     "career_years": "1994",
@@ -9480,7 +9480,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Zezé Procópio",
+    "name": "Zezé Procópio",
     "position": "CM",
     "prime_rating": 75,
     "career_years": "1938",
@@ -9488,7 +9488,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Zinho",
+    "name": "Zinho",
     "position": "CM",
     "prime_rating": 75,
     "career_years": "1994",
@@ -9496,7 +9496,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Zizinho",
+    "name": "Zizinho",
     "position": "ST",
     "prime_rating": 75,
     "career_years": "1950",
@@ -9504,7 +9504,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Zé Luiz",
+    "name": "Zé Luiz",
     "position": "CB",
     "prime_rating": 75,
     "career_years": "1930",
@@ -9512,26 +9512,10 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Áttila",
+    "name": "Áttila",
     "position": "ST",
     "prime_rating": 75,
     "career_years": "1934",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Éder",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1982",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Édson",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1986",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -9544,7 +9528,15 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Elano",
+    "name": "Édson",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1986",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Elano",
     "position": "CM",
     "prime_rating": 74,
     "career_years": "2010",
@@ -9552,7 +9544,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Everaldo",
+    "name": "Everaldo",
     "position": "CB",
     "prime_rating": 74,
     "career_years": "1970",
@@ -9560,7 +9552,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Manga",
+    "name": "Manga",
     "position": "GK",
     "prime_rating": 74,
     "career_years": "1966",
@@ -9568,17 +9560,41 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Silva",
+    "name": "Walter",
+    "position": "GK",
+    "prime_rating": 74,
+    "career_years": "1938",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Amaral",
+    "position": "CB",
+    "prime_rating": 73,
+    "career_years": "1978",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Bebeto",
     "position": "ST",
-    "prime_rating": 74,
-    "career_years": "1966",
+    "prime_rating": 90,
+    "career_years": "1990-1998",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Walter",
-    "position": "GK",
-    "prime_rating": 74,
+    "name": "Edinho",
+    "position": "CB",
+    "prime_rating": 73,
+    "career_years": "1978-1986",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Machado",
+    "position": "CB",
+    "prime_rating": 73,
     "career_years": "1938",
     "nationality": "Brazil",
     "club": "brazil"
@@ -9600,39 +9616,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Amaral",
-    "position": "CB",
-    "prime_rating": 73,
-    "career_years": "1978",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Bebeto",
-    "position": "ST",
-    "prime_rating": 73,
-    "career_years": "1990-1998",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Edinho",
-    "position": "CB",
-    "prime_rating": 73,
-    "career_years": "1978-1986",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Machado",
-    "position": "CB",
-    "prime_rating": 73,
-    "career_years": "1938",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Serginho",
+    "name": "Serginho",
     "position": "ST",
     "prime_rating": 73,
     "career_years": "1982",
@@ -9648,10 +9632,42 @@
     "club": "brazil"
   },
   {
+    "name": "Brandão",
+    "position": "CM",
+    "prime_rating": 72,
+    "career_years": "1938",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "César Sampaio",
     "position": "CM",
     "prime_rating": 72,
     "career_years": "1998",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Denílson",
+    "position": "CM",
+    "prime_rating": 72,
+    "career_years": "1966",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Denílson",
+    "position": "CM",
+    "prime_rating": 72,
+    "career_years": "1998-2002",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Fagner",
+    "position": "CB",
+    "prime_rating": 72,
+    "career_years": "2018",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -9664,6 +9680,22 @@
     "club": "brazil"
   },
   {
+    "name": "Leandro",
+    "position": "CB",
+    "prime_rating": 72,
+    "career_years": "1982",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Nilo",
+    "position": "ST",
+    "prime_rating": 72,
+    "career_years": "1930",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Sylvio Hoffmann",
     "position": "CB",
     "prime_rating": 72,
@@ -9672,58 +9704,50 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Brandão",
-    "position": "CM",
+    "name": "Zé Carlos",
+    "position": "GK",
     "prime_rating": 72,
-    "career_years": "1938",
+    "career_years": "1990",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Denílson",
-    "position": "CM",
-    "prime_rating": 72,
-    "career_years": "1966",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Denílson",
-    "position": "CM",
-    "prime_rating": 72,
-    "career_years": "1998-2002",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Fagner",
+    "name": "Zé Carlos",
     "position": "CB",
     "prime_rating": 72,
-    "career_years": "2018",
+    "career_years": "1998",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Henrique",
-    "position": "CB",
-    "prime_rating": 72,
-    "career_years": "2014",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Leandro",
-    "position": "CB",
-    "prime_rating": 72,
-    "career_years": "1982",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Índio",
+    "name": "Índio",
     "position": "ST",
     "prime_rating": 72,
     "career_years": "1954",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Cicinho",
+    "position": "CB",
+    "prime_rating": 71,
+    "career_years": "2006",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Edmílson",
+    "position": "CB",
+    "prime_rating": 71,
+    "career_years": "2002",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Jair",
+    "position": "ST",
+    "prime_rating": 71,
+    "career_years": "1950",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -9744,31 +9768,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Cicinho",
-    "position": "CB",
-    "prime_rating": 71,
-    "career_years": "2006",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Edmílson",
-    "position": "CB",
-    "prime_rating": 71,
-    "career_years": "2002",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Gil",
-    "position": "ST",
-    "prime_rating": 71,
-    "career_years": "1978",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Rildo",
+    "name": "Rildo",
     "position": "CB",
     "prime_rating": 71,
     "career_years": "1966",
@@ -9776,10 +9776,26 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Viola",
+    "name": "Viola",
     "position": "ST",
     "prime_rating": 71,
     "career_years": "1994",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Cris",
+    "position": "CB",
+    "prime_rating": 70,
+    "career_years": "2006",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Didi",
+    "position": "CAM",
+    "prime_rating": 90,
+    "career_years": "1954-1962",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -9792,6 +9808,14 @@
     "club": "brazil"
   },
   {
+    "name": "Fortes",
+    "position": "CM",
+    "prime_rating": 70,
+    "career_years": "1930",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Jair Marinho",
     "position": "CB",
     "prime_rating": 70,
@@ -9800,18 +9824,42 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Fortes",
-    "position": "CM",
+    "name": "Joel",
+    "position": "GK",
     "prime_rating": 70,
     "career_years": "1930",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Mineiro",
+    "name": "Joel",
+    "position": "CB",
+    "prime_rating": 70,
+    "career_years": "1970",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Mineiro",
     "position": "CM",
     "prime_rating": 70,
     "career_years": "2006",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Brito",
+    "position": "CB",
+    "prime_rating": 69,
+    "career_years": "1966-1970",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Dunga",
+    "position": "CDM",
+    "prime_rating": 89,
+    "career_years": "1990-1998",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -9848,42 +9896,26 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Brito",
-    "position": "CB",
-    "prime_rating": 69,
-    "career_years": "1966-1970",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Dunga",
+    "name": "Alemão",
     "position": "CM",
-    "prime_rating": 69,
-    "career_years": "1990-1998",
+    "prime_rating": 68,
+    "career_years": "1986-1990",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Júnior",
-    "position": "CB",
-    "prime_rating": 69,
-    "career_years": "1982-1986",
+    "name": "Branco",
+    "position": "LB",
+    "prime_rating": 86,
+    "career_years": "1986-1994",
     "nationality": "Brazil",
     "club": "brazil"
   },
   {
-    "name": "not applicable Júnior",
-    "position": "CB",
-    "prime_rating": 69,
-    "career_years": "2002",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Lima",
-    "position": "CM",
-    "prime_rating": 69,
-    "career_years": "1966",
+    "name": "Edu",
+    "position": "ST",
+    "prime_rating": 68,
+    "career_years": "1966-1974",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -9904,31 +9936,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Alemão",
-    "position": "CM",
-    "prime_rating": 68,
-    "career_years": "1986-1990",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Branco",
-    "position": "CB",
-    "prime_rating": 68,
-    "career_years": "1986-1994",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Lopes",
-    "position": "ST",
-    "prime_rating": 68,
-    "career_years": "1938",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Orlando",
+    "name": "Orlando",
     "position": "CB",
     "prime_rating": 68,
     "career_years": "1958-1966",
@@ -9936,7 +9944,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Ricardinho",
+    "name": "Ricardinho",
     "position": "CM",
     "prime_rating": 68,
     "career_years": "2002-2006",
@@ -9944,7 +9952,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Zequinha",
+    "name": "Zequinha",
     "position": "CM",
     "prime_rating": 68,
     "career_years": "1962",
@@ -9960,7 +9968,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Renato",
+    "name": "Renato",
     "position": "GK",
     "prime_rating": 67,
     "career_years": "1974",
@@ -9968,7 +9976,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Renato",
+    "name": "Renato",
     "position": "CM",
     "prime_rating": 67,
     "career_years": "1982",
@@ -9976,34 +9984,10 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Roberto",
-    "position": "ST",
-    "prime_rating": 67,
-    "career_years": "1938",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Roberto",
-    "position": "ST",
-    "prime_rating": 67,
-    "career_years": "1970",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Romário",
-    "position": "ST",
-    "prime_rating": 67,
-    "career_years": "1990-1994",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Zé Roberto",
+    "name": "Noronha",
     "position": "CM",
-    "prime_rating": 67,
-    "career_years": "1998-2006",
+    "prime_rating": 66,
+    "career_years": "1950",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -10016,10 +10000,18 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Noronha",
+    "name": "Raí",
+    "position": "CAM",
+    "prime_rating": 89,
+    "career_years": "1994",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Zito",
     "position": "CM",
     "prime_rating": 66,
-    "career_years": "1950",
+    "career_years": "1958-1966",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -10032,6 +10024,38 @@
     "club": "brazil"
   },
   {
+    "name": "Casagrande",
+    "position": "ST",
+    "prime_rating": 65,
+    "career_years": "1986",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Chico",
+    "position": "ST",
+    "prime_rating": 65,
+    "career_years": "1950",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Ely",
+    "position": "CM",
+    "prime_rating": 65,
+    "career_years": "1950-1954",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Germano",
+    "position": "GK",
+    "prime_rating": 65,
+    "career_years": "1934",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
     "name": "Ricardo Gomes",
     "position": "CB",
     "prime_rating": 65,
@@ -10040,26 +10064,10 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Casagrande",
-    "position": "ST",
-    "prime_rating": 65,
-    "career_years": "1986",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Chico",
-    "position": "ST",
-    "prime_rating": 65,
-    "career_years": "1950",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Germano",
-    "position": "GK",
-    "prime_rating": 65,
-    "career_years": "1934",
+    "name": "Batista",
+    "position": "CM",
+    "prime_rating": 64,
+    "career_years": "1978-1982",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -10072,10 +10080,34 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Batista",
-    "position": "CM",
-    "prime_rating": 64,
-    "career_years": "1978-1982",
+    "name": "Alfredo",
+    "position": "ST",
+    "prime_rating": 63,
+    "career_years": "1950",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Alfredo",
+    "position": "CB",
+    "prime_rating": 63,
+    "career_years": "1954",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Alfredo",
+    "position": "CB",
+    "prime_rating": 63,
+    "career_years": "1974",
+    "nationality": "Brazil",
+    "club": "brazil"
+  },
+  {
+    "name": "Luizão",
+    "position": "ST",
+    "prime_rating": 63,
+    "career_years": "2002",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -10096,39 +10128,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Alfredo",
-    "position": "ST",
-    "prime_rating": 63,
-    "career_years": "1950",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Alfredo",
-    "position": "CB",
-    "prime_rating": 63,
-    "career_years": "1954",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Alfredo",
-    "position": "CB",
-    "prime_rating": 63,
-    "career_years": "1974",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Luizão",
-    "position": "ST",
-    "prime_rating": 63,
-    "career_years": "2002",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "not applicable Britto",
+    "name": "Britto",
     "position": "CM",
     "prime_rating": 62,
     "career_years": "1938",
@@ -10136,7 +10136,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Giovanni",
+    "name": "Giovanni",
     "position": "CM",
     "prime_rating": 62,
     "career_years": "1998",
@@ -10144,7 +10144,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Pinga",
+    "name": "Pinga",
     "position": "ST",
     "prime_rating": 61,
     "career_years": "1954",
@@ -10152,7 +10152,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Baltazar",
+    "name": "Baltazar",
     "position": "ST",
     "prime_rating": 60,
     "career_years": "1950-1954",
@@ -10160,7 +10160,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Fidélis",
+    "name": "Fidélis",
     "position": "CB",
     "prime_rating": 60,
     "career_years": "1966",
@@ -10168,7 +10168,7 @@
     "club": "brazil"
   },
   {
-    "name": "not applicable Pinheiro",
+    "name": "Pinheiro",
     "position": "CM",
     "prime_rating": 60,
     "career_years": "1954",
@@ -10313,8 +10313,8 @@
   },
   {
     "name": "Krasimir Balakov",
-    "position": "CM",
-    "prime_rating": 77,
+    "position": "CAM",
+    "prime_rating": 89,
     "career_years": "1994-1998",
     "nationality": "Bulgaria",
     "club": "bulgaria"
@@ -10754,7 +10754,7 @@
   {
     "name": "Trifon Ivanov",
     "position": "CB",
-    "prime_rating": 75,
+    "prime_rating": 85,
     "career_years": "1994-1998",
     "nationality": "Bulgaria",
     "club": "bulgaria"
@@ -10817,8 +10817,8 @@
   },
   {
     "name": "Yordan Letchkov",
-    "position": "CM",
-    "prime_rating": 75,
+    "position": "CAM",
+    "prime_rating": 88,
     "career_years": "1994",
     "nationality": "Bulgaria",
     "club": "bulgaria"
@@ -10898,7 +10898,7 @@
   {
     "name": "Hristo Stoichkov",
     "position": "ST",
-    "prime_rating": 70,
+    "prime_rating": 94,
     "career_years": "1994-1998",
     "nationality": "Bulgaria",
     "club": "bulgaria"
@@ -11122,7 +11122,7 @@
   {
     "name": "Samuel Eto'o",
     "position": "ST",
-    "prime_rating": 90,
+    "prime_rating": 91,
     "career_years": "1998-2014",
     "nationality": "Cameroon",
     "club": "cameroon"
@@ -11186,7 +11186,7 @@
   {
     "name": "Rigobert Song",
     "position": "CB",
-    "prime_rating": 81,
+    "prime_rating": 84,
     "career_years": "1994-2010",
     "nationality": "Cameroon",
     "club": "cameroon"
@@ -11312,6 +11312,14 @@
     "club": "cameroon"
   },
   {
+    "name": "Geremi",
+    "position": "CM",
+    "prime_rating": 82,
+    "career_years": "2002-2010",
+    "nationality": "Cameroon",
+    "club": "cameroon"
+  },
+  {
     "name": "Joseph N'Do",
     "position": "CM",
     "prime_rating": 77,
@@ -11396,14 +11404,6 @@
     "position": "CB",
     "prime_rating": 77,
     "career_years": "1990-1994",
-    "nationality": "Cameroon",
-    "club": "cameroon"
-  },
-  {
-    "name": "not applicable Geremi",
-    "position": "CB",
-    "prime_rating": 77,
-    "career_years": "2002-2010",
     "nationality": "Cameroon",
     "club": "cameroon"
   },
@@ -11936,6 +11936,14 @@
     "club": "cameroon"
   },
   {
+    "name": "Lauren",
+    "position": "CB",
+    "prime_rating": 73,
+    "career_years": "1998-2002",
+    "nationality": "Cameroon",
+    "club": "cameroon"
+  },
+  {
     "name": "Martin Hongla",
     "position": "CM",
     "prime_rating": 73,
@@ -11948,14 +11956,6 @@
     "position": "CB",
     "prime_rating": 73,
     "career_years": "2010-2014",
-    "nationality": "Cameroon",
-    "club": "cameroon"
-  },
-  {
-    "name": "not applicable Lauren",
-    "position": "CB",
-    "prime_rating": 73,
-    "career_years": "1998-2002",
     "nationality": "Cameroon",
     "club": "cameroon"
   },
@@ -12553,8 +12553,8 @@
   },
   {
     "name": "Alexis Sánchez",
-    "position": "ST",
-    "prime_rating": 87,
+    "position": "RW",
+    "prime_rating": 88,
     "career_years": "2010-2014",
     "nationality": "Chile",
     "club": "chile"
@@ -12570,7 +12570,7 @@
   {
     "name": "Claudio Bravo",
     "position": "GK",
-    "prime_rating": 82,
+    "prime_rating": 86,
     "career_years": "2010-2014",
     "nationality": "Chile",
     "club": "chile"
@@ -12593,8 +12593,8 @@
   },
   {
     "name": "Gary Medel",
-    "position": "CB",
-    "prime_rating": 82,
+    "position": "CDM",
+    "prime_rating": 84,
     "career_years": "2010-2014",
     "nationality": "Chile",
     "club": "chile"
@@ -13442,7 +13442,7 @@
   {
     "name": "Marcelo Salas",
     "position": "ST",
-    "prime_rating": 70,
+    "prime_rating": 89,
     "career_years": "1998",
     "nationality": "Chile",
     "club": "chile"
@@ -13514,7 +13514,7 @@
   {
     "name": "Iván Zamorano",
     "position": "ST",
-    "prime_rating": 69,
+    "prime_rating": 90,
     "career_years": "1998",
     "nationality": "Chile",
     "club": "chile"
@@ -14081,8 +14081,8 @@
   },
   {
     "name": "Carlos Valderrama",
-    "position": "CM",
-    "prime_rating": 89,
+    "position": "CAM",
+    "prime_rating": 90,
     "career_years": "1990-1998",
     "nationality": "Colombia",
     "club": "colombia"
@@ -14362,7 +14362,7 @@
   {
     "name": "Freddy Rincón",
     "position": "CM",
-    "prime_rating": 77,
+    "prime_rating": 87,
     "career_years": "1990-1998",
     "nationality": "Colombia",
     "club": "colombia"
@@ -14610,7 +14610,7 @@
   {
     "name": "Faustino Asprilla",
     "position": "ST",
-    "prime_rating": 73,
+    "prime_rating": 88,
     "career_years": "1994-1998",
     "nationality": "Colombia",
     "club": "colombia"
@@ -15754,7 +15754,7 @@
   {
     "name": "Luka Modrić",
     "position": "CM",
-    "prime_rating": 91,
+    "prime_rating": 92,
     "career_years": "2006-2022",
     "nationality": "Croatia",
     "club": "croatia"
@@ -15762,14 +15762,14 @@
   {
     "name": "Ivan Rakitić",
     "position": "CM",
-    "prime_rating": 87,
+    "prime_rating": 88,
     "career_years": "2014-2018",
     "nationality": "Croatia",
     "club": "croatia"
   },
   {
     "name": "Marcelo Brozović",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 86,
     "career_years": "2014-2022",
     "nationality": "Croatia",
@@ -15777,8 +15777,8 @@
   },
   {
     "name": "Ivan Perišić",
-    "position": "CM",
-    "prime_rating": 85,
+    "position": "LW",
+    "prime_rating": 87,
     "career_years": "2014-2022",
     "nationality": "Croatia",
     "club": "croatia"
@@ -15786,7 +15786,7 @@
   {
     "name": "Mario Mandžukić",
     "position": "ST",
-    "prime_rating": 85,
+    "prime_rating": 88,
     "career_years": "2014-2018",
     "nationality": "Croatia",
     "club": "croatia"
@@ -15858,7 +15858,7 @@
   {
     "name": "Dejan Lovren",
     "position": "CB",
-    "prime_rating": 81,
+    "prime_rating": 84,
     "career_years": "2014-2022",
     "nationality": "Croatia",
     "club": "croatia"
@@ -15898,7 +15898,7 @@
   {
     "name": "Domagoj Vida",
     "position": "CB",
-    "prime_rating": 80,
+    "prime_rating": 82,
     "career_years": "2014-2022",
     "nationality": "Croatia",
     "club": "croatia"
@@ -15994,8 +15994,16 @@
   {
     "name": "Davor Šuker",
     "position": "ST",
-    "prime_rating": 77,
+    "prime_rating": 90,
     "career_years": "1998-2002",
+    "nationality": "Croatia",
+    "club": "croatia"
+  },
+  {
+    "name": "Eduardo",
+    "position": "ST",
+    "prime_rating": 77,
+    "career_years": "2014",
     "nationality": "Croatia",
     "club": "croatia"
   },
@@ -16065,8 +16073,8 @@
   },
   {
     "name": "Robert Prosinečki",
-    "position": "CM",
-    "prime_rating": 77,
+    "position": "CAM",
+    "prime_rating": 91,
     "career_years": "1998-2002",
     "nationality": "Croatia",
     "club": "croatia"
@@ -16084,14 +16092,6 @@
     "position": "GK",
     "prime_rating": 77,
     "career_years": "2002-2006",
-    "nationality": "Croatia",
-    "club": "croatia"
-  },
-  {
-    "name": "not applicable Eduardo",
-    "position": "ST",
-    "prime_rating": 77,
-    "career_years": "2014",
     "nationality": "Croatia",
     "club": "croatia"
   },
@@ -16272,9 +16272,17 @@
     "club": "croatia"
   },
   {
+    "name": "Sammir",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "2014",
+    "nationality": "Croatia",
+    "club": "croatia"
+  },
+  {
     "name": "Slaven Bilić",
     "position": "CB",
-    "prime_rating": 75,
+    "prime_rating": 86,
     "career_years": "1998",
     "nationality": "Croatia",
     "club": "croatia"
@@ -16290,16 +16298,8 @@
   {
     "name": "Zvonimir Boban",
     "position": "CM",
-    "prime_rating": 75,
+    "prime_rating": 89,
     "career_years": "1998",
-    "nationality": "Croatia",
-    "club": "croatia"
-  },
-  {
-    "name": "not applicable Sammir",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "2014",
     "nationality": "Croatia",
     "club": "croatia"
   },
@@ -18002,7 +18002,7 @@
   {
     "name": "Peter Schmeichel",
     "position": "GK",
-    "prime_rating": 92,
+    "prime_rating": 93,
     "career_years": "1998",
     "nationality": "Denmark",
     "club": "denmark"
@@ -18233,8 +18233,8 @@
   },
   {
     "name": "Michael Laudrup",
-    "position": "CM",
-    "prime_rating": 77,
+    "position": "CAM",
+    "prime_rating": 92,
     "career_years": "1986-1998",
     "nationality": "Denmark",
     "club": "denmark"
@@ -18385,8 +18385,8 @@
   },
   {
     "name": "Brian Laudrup",
-    "position": "ST",
-    "prime_rating": 75,
+    "position": "LW",
+    "prime_rating": 91,
     "career_years": "1998",
     "nationality": "Denmark",
     "club": "denmark"
@@ -18888,6 +18888,14 @@
     "club": "dutcheastindies"
   },
   {
+    "name": "Dorst",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1938",
+    "nationality": "Dutch East Indies",
+    "club": "dutcheastindies"
+  },
+  {
     "name": "Frans Alfred Meeng",
     "position": "CM",
     "prime_rating": 75,
@@ -19008,15 +19016,7 @@
     "club": "dutcheastindies"
   },
   {
-    "name": "not applicable Dorst",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1938",
-    "nationality": "Dutch East Indies",
-    "club": "dutcheastindies"
-  },
-  {
-    "name": "not applicable Teilherber",
+    "name": "Teilherber",
     "position": "ST",
     "prime_rating": 75,
     "career_years": "1938",
@@ -19024,7 +19024,7 @@
     "club": "dutcheastindies"
   },
   {
-    "name": "not applicable Van Den Burgh",
+    "name": "Van Den Burgh",
     "position": "CM",
     "prime_rating": 75,
     "career_years": "1938",
@@ -19833,14 +19833,14 @@
   },
   {
     "name": "Mohamed Salah",
-    "position": "ST",
-    "prime_rating": 90,
+    "position": "RW",
+    "prime_rating": 91,
     "career_years": "2018",
     "nationality": "Egypt",
     "club": "egypt"
   },
   {
-    "name": "not applicable Trézéguet",
+    "name": "Trézéguet",
     "position": "CM",
     "prime_rating": 78,
     "career_years": "2018",
@@ -19968,6 +19968,14 @@
     "club": "egypt"
   },
   {
+    "name": "Hamidu",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1934",
+    "nationality": "Egypt",
+    "club": "egypt"
+  },
+  {
     "name": "Hany Ramzy",
     "position": "CB",
     "prime_rating": 75,
@@ -20012,6 +20020,14 @@
     "position": "CM",
     "prime_rating": 75,
     "career_years": "1934",
+    "nationality": "Egypt",
+    "club": "egypt"
+  },
+  {
+    "name": "Kahraba",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "2018",
     "nationality": "Egypt",
     "club": "egypt"
   },
@@ -20120,22 +20136,6 @@
     "club": "egypt"
   },
   {
-    "name": "not applicable Hamidu",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1934",
-    "nationality": "Egypt",
-    "club": "egypt"
-  },
-  {
-    "name": "not applicable Kahraba",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "2018",
-    "nationality": "Egypt",
-    "club": "egypt"
-  },
-  {
     "name": "Adel Abdel Rahman",
     "position": "ST",
     "prime_rating": 74,
@@ -20224,7 +20224,7 @@
     "club": "egypt"
   },
   {
-    "name": "not applicable Shikabala",
+    "name": "Shikabala",
     "position": "ST",
     "prime_rating": 72,
     "career_years": "2018",
@@ -20689,7 +20689,7 @@
   },
   {
     "name": "Bobby Charlton",
-    "position": "ST",
+    "position": "CAM",
     "prime_rating": 94,
     "career_years": "1958-1970",
     "nationality": "England",
@@ -20698,7 +20698,7 @@
   {
     "name": "Bobby Moore",
     "position": "CB",
-    "prime_rating": 93,
+    "prime_rating": 94,
     "career_years": "1962-1970",
     "nationality": "England",
     "club": "england"
@@ -20714,15 +20714,15 @@
   {
     "name": "Harry Kane",
     "position": "ST",
-    "prime_rating": 89,
+    "prime_rating": 91,
     "career_years": "2018-2022",
     "nationality": "England",
     "club": "england"
   },
   {
     "name": "Raheem Sterling",
-    "position": "CM",
-    "prime_rating": 88,
+    "position": "LW",
+    "prime_rating": 87,
     "career_years": "2014-2022",
     "nationality": "England",
     "club": "england"
@@ -20746,7 +20746,7 @@
   {
     "name": "Jordan Henderson",
     "position": "CM",
-    "prime_rating": 86,
+    "prime_rating": 84,
     "career_years": "2014-2022",
     "nationality": "England",
     "club": "england"
@@ -20769,7 +20769,7 @@
   },
   {
     "name": "Kyle Walker",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 85,
     "career_years": "2018-2022",
     "nationality": "England",
@@ -20777,16 +20777,16 @@
   },
   {
     "name": "Marcus Rashford",
-    "position": "ST",
-    "prime_rating": 85,
+    "position": "LW",
+    "prime_rating": 86,
     "career_years": "2018-2022",
     "nationality": "England",
     "club": "england"
   },
   {
     "name": "Phil Foden",
-    "position": "CM",
-    "prime_rating": 85,
+    "position": "CAM",
+    "prime_rating": 87,
     "career_years": "2022",
     "nationality": "England",
     "club": "england"
@@ -20818,7 +20818,7 @@
   {
     "name": "Jude Bellingham",
     "position": "CM",
-    "prime_rating": 84,
+    "prime_rating": 90,
     "career_years": "2022",
     "nationality": "England",
     "club": "england"
@@ -20937,8 +20937,8 @@
   },
   {
     "name": "Bukayo Saka",
-    "position": "ST",
-    "prime_rating": 82,
+    "position": "RW",
+    "prime_rating": 88,
     "career_years": "2022",
     "nationality": "England",
     "club": "england"
@@ -21002,7 +21002,7 @@
   {
     "name": "Wayne Rooney",
     "position": "ST",
-    "prime_rating": 82,
+    "prime_rating": 91,
     "career_years": "2006-2014",
     "nationality": "England",
     "club": "england"
@@ -21058,7 +21058,7 @@
   {
     "name": "John Terry",
     "position": "CB",
-    "prime_rating": 81,
+    "prime_rating": 90,
     "career_years": "2006-2010",
     "nationality": "England",
     "club": "england"
@@ -21082,7 +21082,7 @@
   {
     "name": "Steven Gerrard",
     "position": "CM",
-    "prime_rating": 81,
+    "prime_rating": 92,
     "career_years": "2006-2014",
     "nationality": "England",
     "club": "england"
@@ -21202,7 +21202,7 @@
   {
     "name": "David Seaman",
     "position": "GK",
-    "prime_rating": 79,
+    "prime_rating": 89,
     "career_years": "1990-2002",
     "nationality": "England",
     "club": "england"
@@ -21226,7 +21226,7 @@
   {
     "name": "Michael Owen",
     "position": "ST",
-    "prime_rating": 79,
+    "prime_rating": 90,
     "career_years": "1998-2006",
     "nationality": "England",
     "club": "england"
@@ -21234,7 +21234,7 @@
   {
     "name": "Peter Shilton",
     "position": "GK",
-    "prime_rating": 79,
+    "prime_rating": 91,
     "career_years": "1982-1990",
     "nationality": "England",
     "club": "england"
@@ -21257,8 +21257,8 @@
   },
   {
     "name": "David Beckham",
-    "position": "CM",
-    "prime_rating": 78,
+    "position": "RW",
+    "prime_rating": 91,
     "career_years": "1998-2006",
     "nationality": "England",
     "club": "england"
@@ -21274,7 +21274,7 @@
   {
     "name": "Frank Lampard",
     "position": "CM",
-    "prime_rating": 78,
+    "prime_rating": 91,
     "career_years": "2006-2014",
     "nationality": "England",
     "club": "england"
@@ -21330,7 +21330,7 @@
   {
     "name": "Alan Ball",
     "position": "CM",
-    "prime_rating": 77,
+    "prime_rating": 88,
     "career_years": "1966-1970",
     "nationality": "England",
     "club": "england"
@@ -21394,7 +21394,7 @@
   {
     "name": "Gary Lineker",
     "position": "ST",
-    "prime_rating": 77,
+    "prime_rating": 91,
     "career_years": "1986-1990",
     "nationality": "England",
     "club": "england"
@@ -21402,7 +21402,7 @@
   {
     "name": "Geoff Hurst",
     "position": "ST",
-    "prime_rating": 77,
+    "prime_rating": 91,
     "career_years": "1966-1970",
     "nationality": "England",
     "club": "england"
@@ -21473,8 +21473,8 @@
   },
   {
     "name": "Nobby Stiles",
-    "position": "CM",
-    "prime_rating": 77,
+    "position": "CDM",
+    "prime_rating": 86,
     "career_years": "1966-1970",
     "nationality": "England",
     "club": "england"
@@ -21546,7 +21546,7 @@
   {
     "name": "Tony Adams",
     "position": "CB",
-    "prime_rating": 77,
+    "prime_rating": 88,
     "career_years": "1998",
     "nationality": "England",
     "club": "england"
@@ -21889,8 +21889,8 @@
   },
   {
     "name": "Paul Gascoigne",
-    "position": "CM",
-    "prime_rating": 75,
+    "position": "CAM",
+    "prime_rating": 90,
     "career_years": "1990",
     "nationality": "England",
     "club": "england"
@@ -21986,7 +21986,7 @@
   {
     "name": "Rio Ferdinand",
     "position": "CB",
-    "prime_rating": 75,
+    "prime_rating": 90,
     "career_years": "1998-2006",
     "nationality": "England",
     "club": "england"
@@ -22241,8 +22241,8 @@
   },
   {
     "name": "Stuart Pearce",
-    "position": "CB",
-    "prime_rating": 72,
+    "position": "LB",
+    "prime_rating": 87,
     "career_years": "1990",
     "nationality": "England",
     "club": "england"
@@ -22354,7 +22354,7 @@
   {
     "name": "Bryan Robson",
     "position": "CM",
-    "prime_rating": 67,
+    "prime_rating": 89,
     "career_years": "1982-1990",
     "nationality": "England",
     "club": "england"
@@ -22522,7 +22522,7 @@
   {
     "name": "Kevin Keegan",
     "position": "ST",
-    "prime_rating": 64,
+    "prime_rating": 90,
     "career_years": "1982",
     "nationality": "England",
     "club": "england"
@@ -22634,7 +22634,7 @@
   {
     "name": "Alan Shearer",
     "position": "ST",
-    "prime_rating": 60,
+    "prime_rating": 91,
     "career_years": "1998",
     "nationality": "England",
     "club": "england"
@@ -22681,7 +22681,7 @@
   },
   {
     "name": "Zinedine Zidane",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 95,
     "career_years": "1998-2006",
     "nationality": "France",
@@ -22690,15 +22690,15 @@
   {
     "name": "Kylian Mbappé",
     "position": "ST",
-    "prime_rating": 93,
+    "prime_rating": 95,
     "career_years": "2018-2022",
     "nationality": "France",
     "club": "france"
   },
   {
     "name": "Michel Platini",
-    "position": "CM",
-    "prime_rating": 93,
+    "position": "CAM",
+    "prime_rating": 95,
     "career_years": "1978-1986",
     "nationality": "France",
     "club": "france"
@@ -22706,7 +22706,7 @@
   {
     "name": "Thierry Henry",
     "position": "ST",
-    "prime_rating": 93,
+    "prime_rating": 94,
     "career_years": "1998-2010",
     "nationality": "France",
     "club": "france"
@@ -22729,7 +22729,7 @@
   },
   {
     "name": "Lilian Thuram",
-    "position": "CB",
+    "position": "RB",
     "prime_rating": 90,
     "career_years": "1998-2006",
     "nationality": "France",
@@ -22738,15 +22738,15 @@
   {
     "name": "Marcel Desailly",
     "position": "CB",
-    "prime_rating": 90,
+    "prime_rating": 91,
     "career_years": "1998-2002",
     "nationality": "France",
     "club": "france"
   },
   {
     "name": "N'Golo Kanté",
-    "position": "CM",
-    "prime_rating": 90,
+    "position": "CDM",
+    "prime_rating": 89,
     "career_years": "2018",
     "nationality": "France",
     "club": "france"
@@ -22761,15 +22761,15 @@
   },
   {
     "name": "Antoine Griezmann",
-    "position": "ST",
-    "prime_rating": 89,
+    "position": "CAM",
+    "prime_rating": 91,
     "career_years": "2014-2022",
     "nationality": "France",
     "club": "france"
   },
   {
     "name": "Claude Makélélé",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 89,
     "career_years": "2002-2006",
     "nationality": "France",
@@ -22801,8 +22801,8 @@
   },
   {
     "name": "Didier Deschamps",
-    "position": "CM",
-    "prime_rating": 88,
+    "position": "CDM",
+    "prime_rating": 89,
     "career_years": "1998",
     "nationality": "France",
     "club": "france"
@@ -22833,8 +22833,8 @@
   },
   {
     "name": "Franck Ribéry",
-    "position": "CM",
-    "prime_rating": 86,
+    "position": "LW",
+    "prime_rating": 89,
     "career_years": "2006-2010",
     "nationality": "France",
     "club": "france"
@@ -22850,7 +22850,7 @@
   {
     "name": "Olivier Giroud",
     "position": "ST",
-    "prime_rating": 86,
+    "prime_rating": 87,
     "career_years": "2014-2022",
     "nationality": "France",
     "club": "france"
@@ -22937,8 +22937,8 @@
   },
   {
     "name": "Ousmane Dembélé",
-    "position": "ST",
-    "prime_rating": 84,
+    "position": "RW",
+    "prime_rating": 86,
     "career_years": "2018-2022",
     "nationality": "France",
     "club": "france"
@@ -23306,7 +23306,7 @@
   {
     "name": "David Trezeguet",
     "position": "ST",
-    "prime_rating": 78,
+    "prime_rating": 88,
     "career_years": "1998-2006",
     "nationality": "France",
     "club": "france"
@@ -23474,7 +23474,7 @@
   {
     "name": "Jean Tigana",
     "position": "CM",
-    "prime_rating": 77,
+    "prime_rating": 89,
     "career_years": "1982-1986",
     "nationality": "France",
     "club": "france"
@@ -23553,8 +23553,8 @@
   },
   {
     "name": "Youri Djorkaeff",
-    "position": "CM",
-    "prime_rating": 77,
+    "position": "CAM",
+    "prime_rating": 88,
     "career_years": "1998-2002",
     "nationality": "France",
     "club": "france"
@@ -24042,7 +24042,7 @@
   {
     "name": "Laurent Blanc",
     "position": "CB",
-    "prime_rating": 75,
+    "prime_rating": 89,
     "career_years": "1998",
     "nationality": "France",
     "club": "france"
@@ -24498,7 +24498,7 @@
   {
     "name": "Alain Giresse",
     "position": "CM",
-    "prime_rating": 72,
+    "prime_rating": 89,
     "career_years": "1982-1986",
     "nationality": "France",
     "club": "france"
@@ -24546,7 +24546,7 @@
   {
     "name": "Marius Trésor",
     "position": "CB",
-    "prime_rating": 72,
+    "prime_rating": 86,
     "career_years": "1978-1982",
     "nationality": "France",
     "club": "france"
@@ -24657,16 +24657,16 @@
   },
   {
     "name": "Luis Fernández",
-    "position": "CM",
-    "prime_rating": 66,
+    "position": "CDM",
+    "prime_rating": 86,
     "career_years": "1986",
     "nationality": "France",
     "club": "france"
   },
   {
     "name": "Robert Pires",
-    "position": "CM",
-    "prime_rating": 66,
+    "position": "LW",
+    "prime_rating": 89,
     "career_years": "1998",
     "nationality": "France",
     "club": "france"
@@ -24754,7 +24754,7 @@
   {
     "name": "Manuel Neuer",
     "position": "GK",
-    "prime_rating": 92,
+    "prime_rating": 93,
     "career_years": "2010-2022",
     "nationality": "Germany",
     "club": "germany"
@@ -24762,7 +24762,7 @@
   {
     "name": "Jürgen Klinsmann",
     "position": "ST",
-    "prime_rating": 91,
+    "prime_rating": 92,
     "career_years": "1994-1998",
     "nationality": "Germany",
     "club": "germany"
@@ -24778,7 +24778,7 @@
   {
     "name": "Mats Hummels",
     "position": "CB",
-    "prime_rating": 90,
+    "prime_rating": 88,
     "career_years": "2014-2018",
     "nationality": "Germany",
     "club": "germany"
@@ -24786,14 +24786,14 @@
   {
     "name": "Toni Kroos",
     "position": "CM",
-    "prime_rating": 90,
+    "prime_rating": 91,
     "career_years": "2010-2018",
     "nationality": "Germany",
     "club": "germany"
   },
   {
     "name": "Joshua Kimmich",
-    "position": "CB",
+    "position": "CDM",
     "prime_rating": 89,
     "career_years": "2018-2022",
     "nationality": "Germany",
@@ -24802,14 +24802,14 @@
   {
     "name": "Jérôme Boateng",
     "position": "CB",
-    "prime_rating": 89,
+    "prime_rating": 88,
     "career_years": "2010-2018",
     "nationality": "Germany",
     "club": "germany"
   },
   {
     "name": "Mesut Özil",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 89,
     "career_years": "2010-2018",
     "nationality": "Germany",
@@ -24817,7 +24817,7 @@
   },
   {
     "name": "Thomas Müller",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 89,
     "career_years": "2010-2022",
     "nationality": "Germany",
@@ -24825,8 +24825,8 @@
   },
   {
     "name": "Marco Reus",
-    "position": "ST",
-    "prime_rating": 88,
+    "position": "CAM",
+    "prime_rating": 87,
     "career_years": "2018",
     "nationality": "Germany",
     "club": "germany"
@@ -24842,7 +24842,7 @@
   {
     "name": "Leon Goretzka",
     "position": "CM",
-    "prime_rating": 87,
+    "prime_rating": 85,
     "career_years": "2018-2022",
     "nationality": "Germany",
     "club": "germany"
@@ -24865,8 +24865,8 @@
   },
   {
     "name": "Kai Havertz",
-    "position": "ST",
-    "prime_rating": 85,
+    "position": "CAM",
+    "prime_rating": 86,
     "career_years": "2022",
     "nationality": "Germany",
     "club": "germany"
@@ -25009,8 +25009,8 @@
   },
   {
     "name": "André Schürrle",
-    "position": "ST",
-    "prime_rating": 81,
+    "position": "LW",
+    "prime_rating": 84,
     "career_years": "2014",
     "nationality": "Germany",
     "club": "germany"
@@ -25018,7 +25018,7 @@
   {
     "name": "Bastian Schweinsteiger",
     "position": "CM",
-    "prime_rating": 81,
+    "prime_rating": 91,
     "career_years": "2006-2014",
     "nationality": "Germany",
     "club": "germany"
@@ -25097,16 +25097,16 @@
   },
   {
     "name": "Lukas Podolski",
-    "position": "ST",
-    "prime_rating": 80,
+    "position": "LW",
+    "prime_rating": 86,
     "career_years": "2006-2014",
     "nationality": "Germany",
     "club": "germany"
   },
   {
     "name": "Michael Ballack",
-    "position": "CM",
-    "prime_rating": 80,
+    "position": "CAM",
+    "prime_rating": 91,
     "career_years": "2002-2006",
     "nationality": "Germany",
     "club": "germany"
@@ -25154,15 +25154,15 @@
   {
     "name": "Miroslav Klose",
     "position": "ST",
-    "prime_rating": 79,
+    "prime_rating": 90,
     "career_years": "2002-2014",
     "nationality": "Germany",
     "club": "germany"
   },
   {
     "name": "Philipp Lahm",
-    "position": "CB",
-    "prime_rating": 79,
+    "position": "RB",
+    "prime_rating": 92,
     "career_years": "2006-2014",
     "nationality": "Germany",
     "club": "germany"
@@ -25361,8 +25361,8 @@
   },
   {
     "name": "Andreas Brehme",
-    "position": "CB",
-    "prime_rating": 75,
+    "position": "LB",
+    "prime_rating": 89,
     "career_years": "1994",
     "nationality": "Germany",
     "club": "germany"
@@ -25380,6 +25380,14 @@
     "position": "GK",
     "prime_rating": 75,
     "career_years": "1994",
+    "nationality": "Germany",
+    "club": "germany"
+  },
+  {
+    "name": "Cacau",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "2010",
     "nationality": "Germany",
     "club": "germany"
   },
@@ -25626,7 +25634,7 @@
   {
     "name": "Rudi Völler",
     "position": "ST",
-    "prime_rating": 75,
+    "prime_rating": 90,
     "career_years": "1994",
     "nationality": "Germany",
     "club": "germany"
@@ -25682,7 +25690,7 @@
   {
     "name": "Stefan Effenberg",
     "position": "CM",
-    "prime_rating": 75,
+    "prime_rating": 89,
     "career_years": "1994",
     "nationality": "Germany",
     "club": "germany"
@@ -25772,14 +25780,6 @@
     "position": "CB",
     "prime_rating": 75,
     "career_years": "1938",
-    "nationality": "Germany",
-    "club": "germany"
-  },
-  {
-    "name": "not applicable Cacau",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "2010",
     "nationality": "Germany",
     "club": "germany"
   },
@@ -25890,7 +25890,7 @@
   {
     "name": "Jürgen Kohler",
     "position": "CB",
-    "prime_rating": 66,
+    "prime_rating": 88,
     "career_years": "1994-1998",
     "nationality": "Germany",
     "club": "germany"
@@ -25994,7 +25994,7 @@
   {
     "name": "Stephen Appiah",
     "position": "CM",
-    "prime_rating": 86,
+    "prime_rating": 85,
     "career_years": "2006-2010",
     "nationality": "Ghana",
     "club": "ghana"
@@ -26330,7 +26330,7 @@
   {
     "name": "Asamoah Gyan",
     "position": "ST",
-    "prime_rating": 74,
+    "prime_rating": 85,
     "career_years": "2006-2014",
     "nationality": "Ghana",
     "club": "ghana"
@@ -27698,7 +27698,7 @@
   {
     "name": "Ferenc Puskás",
     "position": "ST",
-    "prime_rating": 94,
+    "prime_rating": 95,
     "career_years": "1954",
     "nationality": "Hungary",
     "club": "hungary"
@@ -27977,8 +27977,8 @@
   },
   {
     "name": "Nándor Hidegkuti",
-    "position": "ST",
-    "prime_rating": 77,
+    "position": "CAM",
+    "prime_rating": 91,
     "career_years": "1954-1958",
     "nationality": "Hungary",
     "club": "hungary"
@@ -28858,7 +28858,7 @@
   {
     "name": "Flórián Albert",
     "position": "ST",
-    "prime_rating": 62,
+    "prime_rating": 88,
     "career_years": "1962-1966",
     "nationality": "Hungary",
     "club": "hungary"
@@ -30282,7 +30282,7 @@
   {
     "name": "Franco Baresi",
     "position": "CB",
-    "prime_rating": 93,
+    "prime_rating": 94,
     "career_years": "1982-1994",
     "nationality": "Italy",
     "club": "italy"
@@ -30297,8 +30297,8 @@
   },
   {
     "name": "Paolo Maldini",
-    "position": "CB",
-    "prime_rating": 93,
+    "position": "LB",
+    "prime_rating": 94,
     "career_years": "1990-2002",
     "nationality": "Italy",
     "club": "italy"
@@ -30322,7 +30322,7 @@
   {
     "name": "Giorgio Chiellini",
     "position": "CB",
-    "prime_rating": 90,
+    "prime_rating": 89,
     "career_years": "2010-2014",
     "nationality": "Italy",
     "club": "italy"
@@ -30346,7 +30346,7 @@
   {
     "name": "Leonardo Bonucci",
     "position": "CB",
-    "prime_rating": 87,
+    "prime_rating": 88,
     "career_years": "2010-2014",
     "nationality": "Italy",
     "club": "italy"
@@ -30434,7 +30434,7 @@
   {
     "name": "Paolo Rossi",
     "position": "ST",
-    "prime_rating": 83,
+    "prime_rating": 91,
     "career_years": "1978-1986",
     "nationality": "Italy",
     "club": "italy"
@@ -30474,7 +30474,7 @@
   {
     "name": "Dino Zoff",
     "position": "GK",
-    "prime_rating": 81,
+    "prime_rating": 92,
     "career_years": "1970-1982",
     "nationality": "Italy",
     "club": "italy"
@@ -30498,7 +30498,7 @@
   {
     "name": "Giuseppe Bergomi",
     "position": "CB",
-    "prime_rating": 81,
+    "prime_rating": 89,
     "career_years": "1982-1998",
     "nationality": "Italy",
     "club": "italy"
@@ -30537,8 +30537,8 @@
   },
   {
     "name": "Francesco Totti",
-    "position": "ST",
-    "prime_rating": 80,
+    "position": "CAM",
+    "prime_rating": 92,
     "career_years": "2002-2006",
     "nationality": "Italy",
     "club": "italy"
@@ -30625,8 +30625,8 @@
   },
   {
     "name": "Roberto Baggio",
-    "position": "ST",
-    "prime_rating": 79,
+    "position": "CAM",
+    "prime_rating": 95,
     "career_years": "1990-1998",
     "nationality": "Italy",
     "club": "italy"
@@ -30641,8 +30641,8 @@
   },
   {
     "name": "Gennaro Gattuso",
-    "position": "CM",
-    "prime_rating": 78,
+    "position": "CDM",
+    "prime_rating": 87,
     "career_years": "2002-2010",
     "nationality": "Italy",
     "club": "italy"
@@ -30689,8 +30689,8 @@
   },
   {
     "name": "Bruno Conti",
-    "position": "CM",
-    "prime_rating": 77,
+    "position": "RW",
+    "prime_rating": 89,
     "career_years": "1982-1986",
     "nationality": "Italy",
     "club": "italy"
@@ -30714,7 +30714,7 @@
   {
     "name": "Christian Vieri",
     "position": "ST",
-    "prime_rating": 77,
+    "prime_rating": 89,
     "career_years": "1998-2002",
     "nationality": "Italy",
     "club": "italy"
@@ -30722,7 +30722,7 @@
   {
     "name": "Claudio Gentile",
     "position": "CB",
-    "prime_rating": 77,
+    "prime_rating": 88,
     "career_years": "1978-1982",
     "nationality": "Italy",
     "club": "italy"
@@ -30825,8 +30825,8 @@
   },
   {
     "name": "Giancarlo Antognoni",
-    "position": "CM",
-    "prime_rating": 77,
+    "position": "CAM",
+    "prime_rating": 88,
     "career_years": "1978-1982",
     "nationality": "Italy",
     "club": "italy"
@@ -31017,8 +31017,8 @@
   },
   {
     "name": "Gianluca Zambrotta",
-    "position": "CB",
-    "prime_rating": 76,
+    "position": "RB",
+    "prime_rating": 87,
     "career_years": "2002-2010",
     "nationality": "Italy",
     "club": "italy"
@@ -31034,7 +31034,7 @@
   {
     "name": "Marco Tardelli",
     "position": "CM",
-    "prime_rating": 76,
+    "prime_rating": 90,
     "career_years": "1978-1986",
     "nationality": "Italy",
     "club": "italy"
@@ -31778,7 +31778,7 @@
   {
     "name": "Luca Toni",
     "position": "ST",
-    "prime_rating": 75,
+    "prime_rating": 86,
     "career_years": "2006",
     "nationality": "Italy",
     "club": "italy"
@@ -32130,7 +32130,7 @@
   {
     "name": "Salvatore Schillaci",
     "position": "ST",
-    "prime_rating": 75,
+    "prime_rating": 88,
     "career_years": "1990",
     "nationality": "Italy",
     "club": "italy"
@@ -32242,7 +32242,7 @@
   {
     "name": "Alessandro Nesta",
     "position": "CB",
-    "prime_rating": 73,
+    "prime_rating": 92,
     "career_years": "1998-2006",
     "nationality": "Italy",
     "club": "italy"
@@ -32250,7 +32250,7 @@
   {
     "name": "Filippo Inzaghi",
     "position": "ST",
-    "prime_rating": 73,
+    "prime_rating": 88,
     "career_years": "1998-2006",
     "nationality": "Italy",
     "club": "italy"
@@ -32305,8 +32305,8 @@
   },
   {
     "name": "Alessandro Del Piero",
-    "position": "ST",
-    "prime_rating": 70,
+    "position": "CAM",
+    "prime_rating": 91,
     "career_years": "1998-2006",
     "nationality": "Italy",
     "club": "italy"
@@ -32434,7 +32434,7 @@
   {
     "name": "Walter Zenga",
     "position": "GK",
-    "prime_rating": 66,
+    "prime_rating": 89,
     "career_years": "1986-1990",
     "nationality": "Italy",
     "club": "italy"
@@ -32490,7 +32490,7 @@
   {
     "name": "Alessandro Altobelli",
     "position": "ST",
-    "prime_rating": 63,
+    "prime_rating": 87,
     "career_years": "1982-1986",
     "nationality": "Italy",
     "club": "italy"
@@ -32562,7 +32562,7 @@
   {
     "name": "Didier Drogba",
     "position": "ST",
-    "prime_rating": 89,
+    "prime_rating": 90,
     "career_years": "2006-2014",
     "nationality": "Ivory Coast",
     "club": "ivorycoast"
@@ -32570,7 +32570,7 @@
   {
     "name": "Yaya Touré",
     "position": "CM",
-    "prime_rating": 84,
+    "prime_rating": 91,
     "career_years": "2006-2014",
     "nationality": "Ivory Coast",
     "club": "ivorycoast"
@@ -32616,6 +32616,14 @@
     "club": "ivorycoast"
   },
   {
+    "name": "Gervinho",
+    "position": "ST",
+    "prime_rating": 79,
+    "career_years": "2010-2014",
+    "nationality": "Ivory Coast",
+    "club": "ivorycoast"
+  },
+  {
     "name": "Max Gradel",
     "position": "ST",
     "prime_rating": 79,
@@ -32628,14 +32636,6 @@
     "position": "ST",
     "prime_rating": 79,
     "career_years": "2010",
-    "nationality": "Ivory Coast",
-    "club": "ivorycoast"
-  },
-  {
-    "name": "not applicable Gervinho",
-    "position": "ST",
-    "prime_rating": 79,
-    "career_years": "2010-2014",
     "nationality": "Ivory Coast",
     "club": "ivorycoast"
   },
@@ -32832,7 +32832,7 @@
     "club": "ivorycoast"
   },
   {
-    "name": "not applicable Romaric",
+    "name": "Romaric",
     "position": "CM",
     "prime_rating": 72,
     "career_years": "2006-2010",
@@ -32938,7 +32938,7 @@
   {
     "name": "Kolo Touré",
     "position": "CB",
-    "prime_rating": 60,
+    "prime_rating": 85,
     "career_years": "2006-2014",
     "nationality": "Ivory Coast",
     "club": "ivorycoast"
@@ -33129,8 +33129,8 @@
   },
   {
     "name": "Shinji Kagawa",
-    "position": "CM",
-    "prime_rating": 83,
+    "position": "CAM",
+    "prime_rating": 84,
     "career_years": "2014-2018",
     "nationality": "Japan",
     "club": "japan"
@@ -33161,16 +33161,16 @@
   },
   {
     "name": "Hidetoshi Nakata",
-    "position": "CM",
-    "prime_rating": 79,
+    "position": "CAM",
+    "prime_rating": 86,
     "career_years": "1998-2006",
     "nationality": "Japan",
     "club": "japan"
   },
   {
     "name": "Keisuke Honda",
-    "position": "CM",
-    "prime_rating": 79,
+    "position": "CAM",
+    "prime_rating": 85,
     "career_years": "2010-2018",
     "nationality": "Japan",
     "club": "japan"
@@ -33697,8 +33697,8 @@
   },
   {
     "name": "Shunsuke Nakamura",
-    "position": "CM",
-    "prime_rating": 72,
+    "position": "CAM",
+    "prime_rating": 85,
     "career_years": "2006-2010",
     "nationality": "Japan",
     "club": "japan"
@@ -34170,7 +34170,7 @@
   {
     "name": "Hugo Sánchez",
     "position": "ST",
-    "prime_rating": 89,
+    "prime_rating": 92,
     "career_years": "1978-1994",
     "nationality": "Mexico",
     "club": "mexico"
@@ -34210,7 +34210,7 @@
   {
     "name": "Rafael Márquez",
     "position": "CB",
-    "prime_rating": 87,
+    "prime_rating": 88,
     "career_years": "2002-2018",
     "nationality": "Mexico",
     "club": "mexico"
@@ -34297,8 +34297,8 @@
   },
   {
     "name": "Hirving Lozano",
-    "position": "ST",
-    "prime_rating": 82,
+    "position": "LW",
+    "prime_rating": 83,
     "career_years": "2018-2022",
     "nationality": "Mexico",
     "club": "mexico"
@@ -34321,8 +34321,8 @@
   },
   {
     "name": "Javier Hernández",
-    "position": "CM",
-    "prime_rating": 82,
+    "position": "ST",
+    "prime_rating": 84,
     "career_years": "1986",
     "nationality": "Mexico",
     "club": "mexico"
@@ -34330,7 +34330,7 @@
   {
     "name": "Javier Hernández",
     "position": "ST",
-    "prime_rating": 82,
+    "prime_rating": 84,
     "career_years": "2010-2018",
     "nationality": "Mexico",
     "club": "mexico"
@@ -34402,7 +34402,7 @@
   {
     "name": "Guillermo Ochoa",
     "position": "GK",
-    "prime_rating": 80,
+    "prime_rating": 85,
     "career_years": "2006-2022",
     "nationality": "Mexico",
     "club": "mexico"
@@ -35296,6 +35296,14 @@
     "club": "mexico"
   },
   {
+    "name": "Sinha",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "2006",
+    "nationality": "Mexico",
+    "club": "mexico"
+  },
+  {
     "name": "Tomás Balcázar",
     "position": "ST",
     "prime_rating": 75,
@@ -35320,15 +35328,7 @@
     "club": "mexico"
   },
   {
-    "name": "not applicable Sinha",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "2006",
-    "nationality": "Mexico",
-    "club": "mexico"
-  },
-  {
-    "name": "not applicable Zague",
+    "name": "Zague",
     "position": "ST",
     "prime_rating": 75,
     "career_years": "1994",
@@ -36305,16 +36305,16 @@
   },
   {
     "name": "Hakim Ziyech",
-    "position": "CM",
-    "prime_rating": 86,
+    "position": "CAM",
+    "prime_rating": 84,
     "career_years": "2018-2022",
     "nationality": "Morocco",
     "club": "morocco"
   },
   {
     "name": "Achraf Hakimi",
-    "position": "CB",
-    "prime_rating": 85,
+    "position": "RB",
+    "prime_rating": 87,
     "career_years": "2018-2022",
     "nationality": "Morocco",
     "club": "morocco"
@@ -36330,7 +36330,7 @@
   {
     "name": "Yassine Bounou",
     "position": "GK",
-    "prime_rating": 84,
+    "prime_rating": 83,
     "career_years": "2018-2022",
     "nationality": "Morocco",
     "club": "morocco"
@@ -37249,8 +37249,8 @@
   },
   {
     "name": "Johan Cruyff",
-    "position": "CM",
-    "prime_rating": 95,
+    "position": "CAM",
+    "prime_rating": 96,
     "career_years": "1974",
     "nationality": "Netherlands",
     "club": "netherlands"
@@ -37258,23 +37258,23 @@
   {
     "name": "Marco van Basten",
     "position": "ST",
-    "prime_rating": 94,
+    "prime_rating": 95,
     "career_years": "1990",
     "nationality": "Netherlands",
     "club": "netherlands"
   },
   {
     "name": "Ruud Gullit",
-    "position": "CM",
-    "prime_rating": 92,
+    "position": "CAM",
+    "prime_rating": 93,
     "career_years": "1990",
     "nationality": "Netherlands",
     "club": "netherlands"
   },
   {
     "name": "Dennis Bergkamp",
-    "position": "ST",
-    "prime_rating": 91,
+    "position": "CAM",
+    "prime_rating": 92,
     "career_years": "1994-1998",
     "nationality": "Netherlands",
     "club": "netherlands"
@@ -37289,16 +37289,16 @@
   },
   {
     "name": "Arjen Robben",
-    "position": "CM",
-    "prime_rating": 90,
+    "position": "RW",
+    "prime_rating": 91,
     "career_years": "2006-2014",
     "nationality": "Netherlands",
     "club": "netherlands"
   },
   {
     "name": "Frank Rijkaard",
-    "position": "CM",
-    "prime_rating": 90,
+    "position": "CDM",
+    "prime_rating": 91,
     "career_years": "1990-1994",
     "nationality": "Netherlands",
     "club": "netherlands"
@@ -37306,7 +37306,7 @@
   {
     "name": "Ruud van Nistelrooy",
     "position": "ST",
-    "prime_rating": 90,
+    "prime_rating": 91,
     "career_years": "2006",
     "nationality": "Netherlands",
     "club": "netherlands"
@@ -37322,7 +37322,7 @@
   {
     "name": "Edwin van der Sar",
     "position": "GK",
-    "prime_rating": 89,
+    "prime_rating": 90,
     "career_years": "1994-2006",
     "nationality": "Netherlands",
     "club": "netherlands"
@@ -37330,14 +37330,14 @@
   {
     "name": "Robin van Persie",
     "position": "ST",
-    "prime_rating": 89,
+    "prime_rating": 91,
     "career_years": "2006-2014",
     "nationality": "Netherlands",
     "club": "netherlands"
   },
   {
     "name": "Wesley Sneijder",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 89,
     "career_years": "2006-2014",
     "nationality": "Netherlands",
@@ -37345,7 +37345,7 @@
   },
   {
     "name": "Edgar Davids",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 88,
     "career_years": "1998",
     "nationality": "Netherlands",
@@ -37354,7 +37354,7 @@
   {
     "name": "Patrick Kluivert",
     "position": "ST",
-    "prime_rating": 88,
+    "prime_rating": 89,
     "career_years": "1998",
     "nationality": "Netherlands",
     "club": "netherlands"
@@ -37362,7 +37362,7 @@
   {
     "name": "Frenkie de Jong",
     "position": "CM",
-    "prime_rating": 87,
+    "prime_rating": 88,
     "career_years": "2022",
     "nationality": "Netherlands",
     "club": "netherlands"
@@ -37378,7 +37378,7 @@
   {
     "name": "Georginio Wijnaldum",
     "position": "CM",
-    "prime_rating": 85,
+    "prime_rating": 86,
     "career_years": "2014",
     "nationality": "Netherlands",
     "club": "netherlands"
@@ -37386,14 +37386,14 @@
   {
     "name": "Matthijs de Ligt",
     "position": "CB",
-    "prime_rating": 85,
+    "prime_rating": 86,
     "career_years": "2022",
     "nationality": "Netherlands",
     "club": "netherlands"
   },
   {
     "name": "Memphis Depay",
-    "position": "ST",
+    "position": "LW",
     "prime_rating": 85,
     "career_years": "2014-2022",
     "nationality": "Netherlands",
@@ -37722,7 +37722,7 @@
   {
     "name": "Frank de Boer",
     "position": "CB",
-    "prime_rating": 77,
+    "prime_rating": 88,
     "career_years": "1994-1998",
     "nationality": "Netherlands",
     "club": "netherlands"
@@ -37738,7 +37738,7 @@
   {
     "name": "Johan Neeskens",
     "position": "CM",
-    "prime_rating": 77,
+    "prime_rating": 91,
     "career_years": "1974-1978",
     "nationality": "Netherlands",
     "club": "netherlands"
@@ -37753,8 +37753,8 @@
   },
   {
     "name": "Johnny Rep",
-    "position": "ST",
-    "prime_rating": 77,
+    "position": "RW",
+    "prime_rating": 88,
     "career_years": "1974-1978",
     "nationality": "Netherlands",
     "club": "netherlands"
@@ -37841,8 +37841,8 @@
   },
   {
     "name": "Rob Rensenbrink",
-    "position": "ST",
-    "prime_rating": 77,
+    "position": "LW",
+    "prime_rating": 89,
     "career_years": "1974-1978",
     "nationality": "Netherlands",
     "club": "netherlands"
@@ -37858,15 +37858,15 @@
   {
     "name": "Ronald Koeman",
     "position": "CB",
-    "prime_rating": 77,
+    "prime_rating": 90,
     "career_years": "1990-1994",
     "nationality": "Netherlands",
     "club": "netherlands"
   },
   {
     "name": "Ruud Krol",
-    "position": "CB",
-    "prime_rating": 77,
+    "position": "LB",
+    "prime_rating": 89,
     "career_years": "1974-1978",
     "nationality": "Netherlands",
     "club": "netherlands"
@@ -37921,8 +37921,8 @@
   },
   {
     "name": "Wim Suurbier",
-    "position": "CB",
-    "prime_rating": 77,
+    "position": "RB",
+    "prime_rating": 85,
     "career_years": "1974-1978",
     "nationality": "Netherlands",
     "club": "netherlands"
@@ -38577,8 +38577,8 @@
   },
   {
     "name": "Rafael van der Vaart",
-    "position": "CM",
-    "prime_rating": 73,
+    "position": "CAM",
+    "prime_rating": 87,
     "career_years": "2006-2010",
     "nationality": "Netherlands",
     "club": "netherlands"
@@ -38657,8 +38657,8 @@
   },
   {
     "name": "Ronald de Boer",
-    "position": "CM",
-    "prime_rating": 68,
+    "position": "CAM",
+    "prime_rating": 86,
     "career_years": "1994-1998",
     "nationality": "Netherlands",
     "club": "netherlands"
@@ -39114,7 +39114,7 @@
   {
     "name": "Rashidi Yekini",
     "position": "ST",
-    "prime_rating": 86,
+    "prime_rating": 85,
     "career_years": "1994-1998",
     "nationality": "Nigeria",
     "club": "nigeria"
@@ -39234,7 +39234,7 @@
   {
     "name": "Daniel Amokachi",
     "position": "ST",
-    "prime_rating": 77,
+    "prime_rating": 83,
     "career_years": "1994-1998",
     "nationality": "Nigeria",
     "club": "nigeria"
@@ -39602,7 +39602,7 @@
   {
     "name": "Stephen Keshi",
     "position": "CB",
-    "prime_rating": 75,
+    "prime_rating": 84,
     "career_years": "1994",
     "nationality": "Nigeria",
     "club": "nigeria"
@@ -39737,8 +39737,8 @@
   },
   {
     "name": "Sunday Oliseh",
-    "position": "CM",
-    "prime_rating": 73,
+    "position": "CDM",
+    "prime_rating": 84,
     "career_years": "1994-1998",
     "nationality": "Nigeria",
     "club": "nigeria"
@@ -39824,7 +39824,7 @@
     "club": "nigeria"
   },
   {
-    "name": "not applicable Yakubu",
+    "name": "Yakubu",
     "position": "ST",
     "prime_rating": 70,
     "career_years": "2010",
@@ -40274,7 +40274,7 @@
   {
     "name": "Pat Jennings",
     "position": "GK",
-    "prime_rating": 64,
+    "prime_rating": 89,
     "career_years": "1982-1986",
     "nationality": "Northern Ireland",
     "club": "northernireland"
@@ -44633,23 +44633,39 @@
   },
   {
     "name": "Cristiano Ronaldo",
-    "position": "ST",
-    "prime_rating": 94,
+    "position": "RW",
+    "prime_rating": 95,
     "career_years": "2006-2022",
     "nationality": "Portugal",
     "club": "portugal"
   },
   {
+    "name": "Eusébio",
+    "position": "ST",
+    "prime_rating": 94,
+    "career_years": "1966",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
     "name": "Luís Figo",
-    "position": "CM",
+    "position": "RW",
     "prime_rating": 92,
     "career_years": "2002-2006",
     "nationality": "Portugal",
     "club": "portugal"
   },
   {
+    "name": "Deco",
+    "position": "CAM",
+    "prime_rating": 89,
+    "career_years": "2006-2010",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
     "name": "Bernardo Silva",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 88,
     "career_years": "2018-2022",
     "nationality": "Portugal",
@@ -44657,7 +44673,7 @@
   },
   {
     "name": "Bruno Fernandes",
-    "position": "CM",
+    "position": "CAM",
     "prime_rating": 88,
     "career_years": "2018-2022",
     "nationality": "Portugal",
@@ -44672,9 +44688,17 @@
     "club": "portugal"
   },
   {
+    "name": "Pepe",
+    "position": "CB",
+    "prime_rating": 86,
+    "career_years": "2010-2022",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
     "name": "Rúben Dias",
     "position": "CB",
-    "prime_rating": 88,
+    "prime_rating": 87,
     "career_years": "2018-2022",
     "nationality": "Portugal",
     "club": "portugal"
@@ -44721,7 +44745,7 @@
   },
   {
     "name": "João Félix",
-    "position": "ST",
+    "position": "CAM",
     "prime_rating": 84,
     "career_years": "2022",
     "nationality": "Portugal",
@@ -44730,7 +44754,7 @@
   {
     "name": "João Moutinho",
     "position": "CM",
-    "prime_rating": 84,
+    "prime_rating": 85,
     "career_years": "2014-2018",
     "nationality": "Portugal",
     "club": "portugal"
@@ -44808,6 +44832,14 @@
     "club": "portugal"
   },
   {
+    "name": "Nani",
+    "position": "CM",
+    "prime_rating": 83,
+    "career_years": "2014",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
     "name": "Nuno Gomes",
     "position": "ST",
     "prime_rating": 83,
@@ -44818,7 +44850,7 @@
   {
     "name": "Ricardo Carvalho",
     "position": "CB",
-    "prime_rating": 83,
+    "prime_rating": 88,
     "career_years": "2006-2010",
     "nationality": "Portugal",
     "club": "portugal"
@@ -44888,10 +44920,18 @@
     "club": "portugal"
   },
   {
-    "name": "not applicable Pepe",
-    "position": "CB",
+    "name": "Otávio",
+    "position": "CM",
     "prime_rating": 82,
-    "career_years": "2010-2022",
+    "career_years": "2022",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Danny",
+    "position": "CM",
+    "prime_rating": 81,
+    "career_years": "2010",
     "nationality": "Portugal",
     "club": "portugal"
   },
@@ -44944,15 +44984,7 @@
     "club": "portugal"
   },
   {
-    "name": "not applicable Danny",
-    "position": "CM",
-    "prime_rating": 81,
-    "career_years": "2010",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Tiago",
+    "name": "Tiago",
     "position": "CM",
     "prime_rating": 81,
     "career_years": "2006-2010",
@@ -44962,6 +44994,14 @@
   {
     "name": "André Almeida",
     "position": "CB",
+    "prime_rating": 80,
+    "career_years": "2014",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Eder",
+    "position": "ST",
     "prime_rating": 80,
     "career_years": "2014",
     "nationality": "Portugal",
@@ -45004,6 +45044,30 @@
     "position": "CB",
     "prime_rating": 79,
     "career_years": "1986",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Beto",
+    "position": "CB",
+    "prime_rating": 79,
+    "career_years": "2002",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Beto",
+    "position": "GK",
+    "prime_rating": 79,
+    "career_years": "2010-2018",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Cédric",
+    "position": "CB",
+    "prime_rating": 79,
+    "career_years": "2018",
     "nationality": "Portugal",
     "club": "portugal"
   },
@@ -45072,23 +45136,7 @@
     "club": "portugal"
   },
   {
-    "name": "not applicable Beto",
-    "position": "GK",
-    "prime_rating": 79,
-    "career_years": "2010-2018",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Cédric",
-    "position": "CB",
-    "prime_rating": 79,
-    "career_years": "2018",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Vieirinha",
+    "name": "Vieirinha",
     "position": "CM",
     "prime_rating": 79,
     "career_years": "2014",
@@ -45096,7 +45144,7 @@
     "club": "portugal"
   },
   {
-    "name": "not applicable Vitinha",
+    "name": "Vitinha",
     "position": "CM",
     "prime_rating": 79,
     "career_years": "2022",
@@ -45104,7 +45152,7 @@
     "club": "portugal"
   },
   {
-    "name": "not applicable Álvaro",
+    "name": "Álvaro",
     "position": "CB",
     "prime_rating": 79,
     "career_years": "1986",
@@ -45160,6 +45208,14 @@
     "club": "portugal"
   },
   {
+    "name": "Eduardo",
+    "position": "GK",
+    "prime_rating": 77,
+    "career_years": "2010-2014",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
     "name": "Luís Neto",
     "position": "CB",
     "prime_rating": 77,
@@ -45176,6 +45232,22 @@
     "club": "portugal"
   },
   {
+    "name": "Pauleta",
+    "position": "ST",
+    "prime_rating": 77,
+    "career_years": "2002-2006",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Petit",
+    "position": "CM",
+    "prime_rating": 77,
+    "career_years": "2002-2006",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
     "name": "Silvestre Varela",
     "position": "CM",
     "prime_rating": 77,
@@ -45184,34 +45256,18 @@
     "club": "portugal"
   },
   {
-    "name": "not applicable Deco",
+    "name": "Costinha",
     "position": "CM",
-    "prime_rating": 77,
-    "career_years": "2006-2010",
+    "prime_rating": 76,
+    "career_years": "2006",
     "nationality": "Portugal",
     "club": "portugal"
   },
   {
-    "name": "not applicable Eduardo",
-    "position": "GK",
-    "prime_rating": 77,
-    "career_years": "2010-2014",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Pauleta",
-    "position": "ST",
-    "prime_rating": 77,
-    "career_years": "2002-2006",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Petit",
+    "name": "Duda",
     "position": "CM",
-    "prime_rating": 77,
-    "career_years": "2002-2006",
+    "prime_rating": 76,
+    "career_years": "2010",
     "nationality": "Portugal",
     "club": "portugal"
   },
@@ -45248,6 +45304,14 @@
     "club": "portugal"
   },
   {
+    "name": "Rolando",
+    "position": "CB",
+    "prime_rating": 76,
+    "career_years": "2010",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
     "name": "Rui Jorge",
     "position": "CB",
     "prime_rating": 76,
@@ -45256,18 +45320,26 @@
     "club": "portugal"
   },
   {
-    "name": "not applicable Costinha",
-    "position": "CM",
-    "prime_rating": 76,
-    "career_years": "2006",
+    "name": "Américo",
+    "position": "GK",
+    "prime_rating": 75,
+    "career_years": "1966",
     "nationality": "Portugal",
     "club": "portugal"
   },
   {
-    "name": "not applicable Rolando",
-    "position": "CB",
-    "prime_rating": 76,
-    "career_years": "2010",
+    "name": "Capucho",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "2002",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Diamantino",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1986",
     "nationality": "Portugal",
     "club": "portugal"
   },
@@ -45288,10 +45360,26 @@
     "club": "portugal"
   },
   {
+    "name": "Frederico",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1986",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
     "name": "Gonçalo Ramos",
     "position": "ST",
     "prime_rating": 75,
     "career_years": "2022",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Liédson",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "2010",
     "nationality": "Portugal",
     "club": "portugal"
   },
@@ -45304,9 +45392,25 @@
     "club": "portugal"
   },
   {
-    "name": "Mário Coluna",
+    "name": "Maniche",
     "position": "CM",
     "prime_rating": 75,
+    "career_years": "2006",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Miguel",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "2006-2010",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Mário Coluna",
+    "position": "CM",
+    "prime_rating": 89,
     "career_years": "1966",
     "nationality": "Portugal",
     "club": "portugal"
@@ -45324,6 +45428,22 @@
     "position": "ST",
     "prime_rating": 75,
     "career_years": "1986",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Quim",
+    "position": "GK",
+    "prime_rating": 75,
+    "career_years": "2006",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Ricardo",
+    "position": "GK",
+    "prime_rating": 75,
+    "career_years": "2002-2006",
     "nationality": "Portugal",
     "club": "portugal"
   },
@@ -45348,118 +45468,6 @@
     "position": "GK",
     "prime_rating": 75,
     "career_years": "1986",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Américo",
-    "position": "GK",
-    "prime_rating": 75,
-    "career_years": "1966",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Beto",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "2002",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Capucho",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "2002",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Diamantino",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1986",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Duda",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "2010",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Eder",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "2014",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Eusébio",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1966",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Frederico",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1986",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Liédson",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "2010",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Maniche",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "2006",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Miguel",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "2006-2010",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Nani",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "2014",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Quim",
-    "position": "GK",
-    "prime_rating": 75,
-    "career_years": "2006",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Ricardo",
-    "position": "GK",
-    "prime_rating": 75,
-    "career_years": "2002-2006",
     "nationality": "Portugal",
     "club": "portugal"
   },
@@ -45512,7 +45520,7 @@
     "club": "portugal"
   },
   {
-    "name": "not applicable Simão",
+    "name": "Simão",
     "position": "ST",
     "prime_rating": 74,
     "career_years": "2006-2010",
@@ -45536,7 +45544,7 @@
     "club": "portugal"
   },
   {
-    "name": "not applicable Vicente",
+    "name": "Vicente",
     "position": "CB",
     "prime_rating": 72,
     "career_years": "1966",
@@ -45572,14 +45580,6 @@
     "position": "ST",
     "prime_rating": 70,
     "career_years": "2006",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
-    "name": "not applicable Otávio",
-    "position": "CM",
-    "prime_rating": 70,
-    "career_years": "2022",
     "nationality": "Portugal",
     "club": "portugal"
   },
@@ -45633,14 +45633,22 @@
   },
   {
     "name": "Rui Costa",
-    "position": "CM",
-    "prime_rating": 69,
+    "position": "CAM",
+    "prime_rating": 90,
     "career_years": "2002",
     "nationality": "Portugal",
     "club": "portugal"
   },
   {
     "name": "Fernando Cruz",
+    "position": "CM",
+    "prime_rating": 68,
+    "career_years": "1966",
+    "nationality": "Portugal",
+    "club": "portugal"
+  },
+  {
+    "name": "Hilário",
     "position": "CM",
     "prime_rating": 68,
     "career_years": "1966",
@@ -45672,14 +45680,6 @@
     "club": "portugal"
   },
   {
-    "name": "not applicable Hilário",
-    "position": "CM",
-    "prime_rating": 68,
-    "career_years": "1966",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
     "name": "Rúben Amorim",
     "position": "CM",
     "prime_rating": 67,
@@ -45696,16 +45696,16 @@
     "club": "portugal"
   },
   {
-    "name": "Jaime Graça",
-    "position": "CM",
+    "name": "Germano",
+    "position": "CB",
     "prime_rating": 65,
     "career_years": "1966",
     "nationality": "Portugal",
     "club": "portugal"
   },
   {
-    "name": "not applicable Germano",
-    "position": "CB",
+    "name": "Jaime Graça",
+    "position": "CM",
     "prime_rating": 65,
     "career_years": "1966",
     "nationality": "Portugal",
@@ -45721,16 +45721,16 @@
   },
   {
     "name": "João Pinto",
-    "position": "CB",
-    "prime_rating": 63,
+    "position": "CAM",
+    "prime_rating": 86,
     "career_years": "1986",
     "nationality": "Portugal",
     "club": "portugal"
   },
   {
     "name": "João Pinto",
-    "position": "ST",
-    "prime_rating": 63,
+    "position": "CAM",
+    "prime_rating": 86,
     "career_years": "2002",
     "nationality": "Portugal",
     "club": "portugal"
@@ -45816,6 +45816,14 @@
     "club": "qatar"
   },
   {
+    "name": "Ró-Ró",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar"
+  },
+  {
     "name": "Saad Al-Sheeb",
     "position": "GK",
     "prime_rating": 75,
@@ -45834,14 +45842,6 @@
   {
     "name": "Yousef Hassan",
     "position": "GK",
-    "prime_rating": 75,
-    "career_years": "2022",
-    "nationality": "Qatar",
-    "club": "qatar"
-  },
-  {
-    "name": "not applicable Ró-Ró",
-    "position": "CB",
     "prime_rating": 75,
     "career_years": "2022",
     "nationality": "Qatar",
@@ -46377,8 +46377,8 @@
   },
   {
     "name": "Gheorghe Hagi",
-    "position": "CM",
-    "prime_rating": 79,
+    "position": "CAM",
+    "prime_rating": 93,
     "career_years": "1990-1998",
     "nationality": "Romania",
     "club": "romania"
@@ -46426,7 +46426,7 @@
   {
     "name": "Florin Răducioiu",
     "position": "ST",
-    "prime_rating": 77,
+    "prime_rating": 86,
     "career_years": "1990-1994",
     "nationality": "Romania",
     "club": "romania"
@@ -46473,8 +46473,8 @@
   },
   {
     "name": "Marius Lăcătuș",
-    "position": "ST",
-    "prime_rating": 77,
+    "position": "RW",
+    "prime_rating": 87,
     "career_years": "1990-1998",
     "nationality": "Romania",
     "club": "romania"
@@ -47162,7 +47162,7 @@
   {
     "name": "Gheorghe Popescu",
     "position": "CB",
-    "prime_rating": 72,
+    "prime_rating": 87,
     "career_years": "1990-1998",
     "nationality": "Romania",
     "club": "romania"
@@ -48785,8 +48785,8 @@
   },
   {
     "name": "Graeme Souness",
-    "position": "CM",
-    "prime_rating": 79,
+    "position": "CDM",
+    "prime_rating": 89,
     "career_years": "1978-1986",
     "nationality": "Scotland",
     "club": "scotland"
@@ -48794,7 +48794,7 @@
   {
     "name": "Kenny Dalglish",
     "position": "ST",
-    "prime_rating": 79,
+    "prime_rating": 90,
     "career_years": "1974-1982",
     "nationality": "Scotland",
     "club": "scotland"
@@ -49833,8 +49833,8 @@
   },
   {
     "name": "Sadio Mané",
-    "position": "ST",
-    "prime_rating": 90,
+    "position": "LW",
+    "prime_rating": 91,
     "career_years": "2018",
     "nationality": "Senegal",
     "club": "senegal"
@@ -49842,7 +49842,7 @@
   {
     "name": "Kalidou Koulibaly",
     "position": "CB",
-    "prime_rating": 88,
+    "prime_rating": 87,
     "career_years": "2018-2022",
     "nationality": "Senegal",
     "club": "senegal"
@@ -49850,7 +49850,7 @@
   {
     "name": "Édouard Mendy",
     "position": "GK",
-    "prime_rating": 86,
+    "prime_rating": 84,
     "career_years": "2022",
     "nationality": "Senegal",
     "club": "senegal"
@@ -53434,7 +53434,7 @@
   {
     "name": "Lev Yashin",
     "position": "GK",
-    "prime_rating": 81,
+    "prime_rating": 94,
     "career_years": "1958-1970",
     "nationality": "Soviet Union",
     "club": "sovietunion"
@@ -54314,7 +54314,7 @@
   {
     "name": "Ferenc Puskás",
     "position": "ST",
-    "prime_rating": 94,
+    "prime_rating": 95,
     "career_years": "1962",
     "nationality": "Spain",
     "club": "spain"
@@ -54322,7 +54322,7 @@
   {
     "name": "Andrés Iniesta",
     "position": "CM",
-    "prime_rating": 92,
+    "prime_rating": 93,
     "career_years": "2006-2018",
     "nationality": "Spain",
     "club": "spain"
@@ -54345,8 +54345,8 @@
   },
   {
     "name": "David Silva",
-    "position": "CM",
-    "prime_rating": 90,
+    "position": "CAM",
+    "prime_rating": 89,
     "career_years": "2010-2018",
     "nationality": "Spain",
     "club": "spain"
@@ -54354,7 +54354,7 @@
   {
     "name": "Luis Suárez",
     "position": "ST",
-    "prime_rating": 90,
+    "prime_rating": 92,
     "career_years": "1962-1966",
     "nationality": "Spain",
     "club": "spain"
@@ -54362,14 +54362,14 @@
   {
     "name": "Sergio Ramos",
     "position": "CB",
-    "prime_rating": 90,
+    "prime_rating": 91,
     "career_years": "2006-2018",
     "nationality": "Spain",
     "club": "spain"
   },
   {
     "name": "Sergio Busquets",
-    "position": "CM",
+    "position": "CDM",
     "prime_rating": 89,
     "career_years": "2010-2022",
     "nationality": "Spain",
@@ -54378,7 +54378,7 @@
   {
     "name": "Gerard Piqué",
     "position": "CB",
-    "prime_rating": 88,
+    "prime_rating": 89,
     "career_years": "2010-2018",
     "nationality": "Spain",
     "club": "spain"
@@ -54392,7 +54392,7 @@
     "club": "spain"
   },
   {
-    "name": "not applicable Thiago",
+    "name": "Thiago",
     "position": "CM",
     "prime_rating": 88,
     "career_years": "2018",
@@ -54408,15 +54408,23 @@
     "club": "spain"
   },
   {
+    "name": "Isco",
+    "position": "CM",
+    "prime_rating": 87,
+    "career_years": "2018",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
     "name": "Jordi Alba",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 87,
     "career_years": "2014-2022",
     "nationality": "Spain",
     "club": "spain"
   },
   {
-    "name": "not applicable Rodri",
+    "name": "Rodri",
     "position": "CB",
     "prime_rating": 87,
     "career_years": "1962",
@@ -54424,7 +54432,7 @@
     "club": "spain"
   },
   {
-    "name": "not applicable Rodri",
+    "name": "Rodri",
     "position": "CM",
     "prime_rating": 87,
     "career_years": "2022",
@@ -54434,7 +54442,7 @@
   {
     "name": "Cesc Fàbregas",
     "position": "CM",
-    "prime_rating": 86,
+    "prime_rating": 88,
     "career_years": "2006-2014",
     "nationality": "Spain",
     "club": "spain"
@@ -54458,7 +54466,7 @@
   {
     "name": "Diego Costa",
     "position": "ST",
-    "prime_rating": 86,
+    "prime_rating": 87,
     "career_years": "2014-2018",
     "nationality": "Spain",
     "club": "spain"
@@ -54472,10 +54480,26 @@
     "club": "spain"
   },
   {
+    "name": "Koke",
+    "position": "CM",
+    "prime_rating": 86,
+    "career_years": "2014-2022",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
     "name": "Marcos Llorente",
     "position": "CM",
     "prime_rating": 86,
     "career_years": "2022",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Xavi",
+    "position": "CM",
+    "prime_rating": 93,
+    "career_years": "2002-2014",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -54528,6 +54552,14 @@
     "club": "spain"
   },
   {
+    "name": "Pedri",
+    "position": "CM",
+    "prime_rating": 85,
+    "career_years": "2022",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
     "name": "Santi Cazorla",
     "position": "CM",
     "prime_rating": 85,
@@ -54536,10 +54568,10 @@
     "club": "spain"
   },
   {
-    "name": "not applicable Pedri",
+    "name": "Saúl",
     "position": "CM",
     "prime_rating": 85,
-    "career_years": "2022",
+    "career_years": "2018",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -54556,6 +54588,14 @@
     "position": "ST",
     "prime_rating": 84,
     "career_years": "1962",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Fernando",
+    "position": "CM",
+    "prime_rating": 84,
+    "career_years": "1990",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -54584,17 +54624,9 @@
     "club": "spain"
   },
   {
-    "name": "not applicable Fernando",
-    "position": "CM",
-    "prime_rating": 84,
-    "career_years": "1990",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
     "name": "Álvaro Morata",
     "position": "ST",
-    "prime_rating": 84,
+    "prime_rating": 85,
     "career_years": "2022",
     "nationality": "Spain",
     "club": "spain"
@@ -54602,7 +54634,7 @@
   {
     "name": "Carles Puyol",
     "position": "CB",
-    "prime_rating": 83,
+    "prime_rating": 90,
     "career_years": "2002-2010",
     "nationality": "Spain",
     "club": "spain"
@@ -54632,6 +54664,22 @@
     "club": "spain"
   },
   {
+    "name": "Juanfran",
+    "position": "CB",
+    "prime_rating": 83,
+    "career_years": "2002",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Juanfran",
+    "position": "CB",
+    "prime_rating": 83,
+    "career_years": "2014",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
     "name": "Lucas Vázquez",
     "position": "ST",
     "prime_rating": 83,
@@ -54652,6 +54700,14 @@
     "position": "CB",
     "prime_rating": 83,
     "career_years": "2022",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Pedro",
+    "position": "ST",
+    "prime_rating": 83,
+    "career_years": "2010-2014",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -54680,6 +54736,30 @@
     "club": "spain"
   },
   {
+    "name": "Roberto",
+    "position": "CM",
+    "prime_rating": 83,
+    "career_years": "1990",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Rodrigo",
+    "position": "ST",
+    "prime_rating": 83,
+    "career_years": "2018",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Tomás",
+    "position": "CB",
+    "prime_rating": 83,
+    "career_years": "1986",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
     "name": "Unai Simón",
     "position": "GK",
     "prime_rating": 83,
@@ -54696,38 +54776,6 @@
     "club": "spain"
   },
   {
-    "name": "not applicable Juanfran",
-    "position": "CB",
-    "prime_rating": 83,
-    "career_years": "2002",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Juanfran",
-    "position": "CB",
-    "prime_rating": 83,
-    "career_years": "2014",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Pedro",
-    "position": "ST",
-    "prime_rating": 83,
-    "career_years": "2010-2014",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Rodrigo",
-    "position": "ST",
-    "prime_rating": 83,
-    "career_years": "2018",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
     "name": "Dani Olmo",
     "position": "ST",
     "prime_rating": 82,
@@ -54738,7 +54786,7 @@
   {
     "name": "David Villa",
     "position": "ST",
-    "prime_rating": 82,
+    "prime_rating": 90,
     "career_years": "2006-2014",
     "nationality": "Spain",
     "club": "spain"
@@ -54762,15 +54810,23 @@
   {
     "name": "Andoni Zubizarreta",
     "position": "GK",
-    "prime_rating": 81,
+    "prime_rating": 89,
     "career_years": "1986-1998",
     "nationality": "Spain",
     "club": "spain"
   },
   {
-    "name": "Fernando Hierro",
-    "position": "CM",
+    "name": "César",
+    "position": "ST",
     "prime_rating": 81,
+    "career_years": "1950",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Fernando Hierro",
+    "position": "CB",
+    "prime_rating": 90,
     "career_years": "1990-2002",
     "nationality": "Spain",
     "club": "spain"
@@ -54778,8 +54834,24 @@
   {
     "name": "Fernando Torres",
     "position": "ST",
-    "prime_rating": 81,
+    "prime_rating": 90,
     "career_years": "2006-2014",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Joaquín",
+    "position": "CM",
+    "prime_rating": 81,
+    "career_years": "1982",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Joaquín",
+    "position": "CM",
+    "prime_rating": 81,
+    "career_years": "2002-2006",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -54792,34 +54864,10 @@
     "club": "spain"
   },
   {
-    "name": "not applicable César",
+    "name": "Raúl",
     "position": "ST",
-    "prime_rating": 81,
-    "career_years": "1950",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Joaquín",
-    "position": "CM",
-    "prime_rating": 81,
-    "career_years": "1982",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Joaquín",
-    "position": "CM",
-    "prime_rating": 81,
-    "career_years": "2002-2006",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Xavi",
-    "position": "CM",
-    "prime_rating": 81,
-    "career_years": "2002-2014",
+    "prime_rating": 92,
+    "career_years": "1998-2006",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -54872,6 +54920,14 @@
     "club": "spain"
   },
   {
+    "name": "Gavi",
+    "position": "CM",
+    "prime_rating": 79,
+    "career_years": "2022",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
     "name": "José Santamaría",
     "position": "CB",
     "prime_rating": 79,
@@ -54896,34 +54952,18 @@
     "club": "spain"
   },
   {
+    "name": "Víctor",
+    "position": "CM",
+    "prime_rating": 79,
+    "career_years": "1986",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
     "name": "Yeremy Pino",
     "position": "ST",
     "prime_rating": 79,
     "career_years": "2022",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Koke",
-    "position": "CM",
-    "prime_rating": 79,
-    "career_years": "2014-2022",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Raúl",
-    "position": "ST",
-    "prime_rating": 79,
-    "career_years": "1998-2006",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Víctor",
-    "position": "CM",
-    "prime_rating": 79,
-    "career_years": "1986",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -54944,7 +54984,7 @@
     "club": "spain"
   },
   {
-    "name": "not applicable Nacho",
+    "name": "Nacho",
     "position": "CB",
     "prime_rating": 78,
     "career_years": "2018",
@@ -54952,10 +54992,26 @@
     "club": "spain"
   },
   {
-    "name": "not applicable Sergio",
+    "name": "Sergio",
     "position": "CM",
     "prime_rating": 78,
     "career_years": "2002",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Abelardo",
+    "position": "CB",
+    "prime_rating": 77,
+    "career_years": "1994-1998",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Adelardo",
+    "position": "CM",
+    "prime_rating": 77,
+    "career_years": "1962-1966",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -54964,6 +55020,14 @@
     "position": "CB",
     "prime_rating": 77,
     "career_years": "1982-1986",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Chendo",
+    "position": "CB",
+    "prime_rating": 77,
+    "career_years": "1986-1990",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -55034,7 +55098,7 @@
   {
     "name": "Luis Arconada",
     "position": "GK",
-    "prime_rating": 77,
+    "prime_rating": 87,
     "career_years": "1978-1982",
     "nationality": "Spain",
     "club": "spain"
@@ -55048,6 +55112,14 @@
     "club": "spain"
   },
   {
+    "name": "Pirri",
+    "position": "CM",
+    "prime_rating": 77,
+    "career_years": "1966-1978",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
     "name": "Robert Sánchez",
     "position": "GK",
     "prime_rating": 77,
@@ -55056,50 +55128,18 @@
     "club": "spain"
   },
   {
+    "name": "Santillana",
+    "position": "ST",
+    "prime_rating": 77,
+    "career_years": "1978-1982",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
     "name": "Severino Reija",
     "position": "CB",
     "prime_rating": 77,
     "career_years": "1962-1966",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Abelardo",
-    "position": "CB",
-    "prime_rating": 77,
-    "career_years": "1994-1998",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Adelardo",
-    "position": "CM",
-    "prime_rating": 77,
-    "career_years": "1962-1966",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Chendo",
-    "position": "CB",
-    "prime_rating": 77,
-    "career_years": "1986-1990",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Pirri",
-    "position": "CM",
-    "prime_rating": 77,
-    "career_years": "1966-1978",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Santillana",
-    "position": "ST",
-    "prime_rating": 77,
-    "career_years": "1978-1982",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -55152,17 +55192,25 @@
     "club": "spain"
   },
   {
+    "name": "Amancio",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1966",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
     "name": "Andoni Goikoetxea",
     "position": "CB",
-    "prime_rating": 75,
+    "prime_rating": 85,
     "career_years": "1986",
     "nationality": "Spain",
     "club": "spain"
   },
   {
     "name": "Andoni Goikoetxea",
-    "position": "ST",
-    "prime_rating": 75,
+    "position": "CB",
+    "prime_rating": 85,
     "career_years": "1994",
     "nationality": "Spain",
     "club": "spain"
@@ -55224,6 +55272,54 @@
     "club": "spain"
   },
   {
+    "name": "Carmelo",
+    "position": "GK",
+    "prime_rating": 75,
+    "career_years": "1962",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Chacho",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1934",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Ciriaco",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1934",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Dani",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1978",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Eladio",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1966",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Eloy",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1986",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
     "name": "Enrique Collar",
     "position": "ST",
     "prime_rating": 75,
@@ -55268,6 +55364,14 @@
     "position": "CB",
     "prime_rating": 75,
     "career_years": "1966",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Francisco",
+    "position": "CM",
+    "prime_rating": 75,
+    "career_years": "1986",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -55504,6 +55608,14 @@
     "club": "spain"
   },
   {
+    "name": "Juanele",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1994",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
     "name": "Julen Lopetegui",
     "position": "GK",
     "prime_rating": 75,
@@ -55516,6 +55628,14 @@
     "position": "CM",
     "prime_rating": 75,
     "career_years": "1978",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Lafuente",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1934",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -55548,6 +55668,38 @@
     "position": "ST",
     "prime_rating": 75,
     "career_years": "1934",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Manolo",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1990",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Marañón",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1978",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Marcelino",
+    "position": "ST",
+    "prime_rating": 75,
+    "career_years": "1966",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Marcelino",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1978",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -55608,6 +55760,22 @@
     "club": "spain"
   },
   {
+    "name": "Migueli",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1978",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Pachín",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "1962",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
     "name": "Pedro Solé",
     "position": "CM",
     "prime_rating": 75,
@@ -55652,6 +55820,14 @@
     "position": "CB",
     "prime_rating": 75,
     "career_years": "1934",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Ricardo",
+    "position": "GK",
+    "prime_rating": 75,
+    "career_years": "2002",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -55736,183 +55912,7 @@
     "club": "spain"
   },
   {
-    "name": "not applicable Amancio",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1966",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Carmelo",
-    "position": "GK",
-    "prime_rating": 75,
-    "career_years": "1962",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Chacho",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1934",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Ciriaco",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1934",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Dani",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1978",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Eladio",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1966",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Eloy",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1986",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Fede",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1934",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Francisco",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "1986",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Gavi",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "2022",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Isco",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "2018",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Juanele",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1994",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Kiko",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1998",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Lafuente",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1934",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Manolo",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1990",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Marañón",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1978",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Marcelino",
-    "position": "ST",
-    "prime_rating": 75,
-    "career_years": "1966",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Marcelino",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1978",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Migueli",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1978",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Pachín",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1962",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Ricardo",
-    "position": "GK",
-    "prime_rating": 75,
-    "career_years": "2002",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Saúl",
-    "position": "CM",
-    "prime_rating": 75,
-    "career_years": "2018",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Voro",
+    "name": "Voro",
     "position": "CB",
     "prime_rating": 75,
     "career_years": "1994",
@@ -55924,6 +55924,14 @@
     "position": "CB",
     "prime_rating": 74,
     "career_years": "1998",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Gallego",
+    "position": "CB",
+    "prime_rating": 74,
+    "career_years": "1966",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -55960,6 +55968,14 @@
     "club": "spain"
   },
   {
+    "name": "Míchel",
+    "position": "CM",
+    "prime_rating": 74,
+    "career_years": "1986-1990",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
     "name": "Nico Williams",
     "position": "ST",
     "prime_rating": 74,
@@ -55976,26 +55992,18 @@
     "club": "spain"
   },
   {
-    "name": "not applicable Gallego",
-    "position": "CB",
-    "prime_rating": 74,
-    "career_years": "1966",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Míchel",
-    "position": "CM",
-    "prime_rating": 74,
-    "career_years": "1986-1990",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
     "name": "Álvaro Arbeloa",
     "position": "CB",
     "prime_rating": 74,
     "career_years": "2010",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Fede",
+    "position": "CM",
+    "prime_rating": 73,
+    "career_years": "1934",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -56025,14 +56033,14 @@
   },
   {
     "name": "Rafael Gordillo",
-    "position": "CB",
-    "prime_rating": 73,
+    "position": "LB",
+    "prime_rating": 86,
     "career_years": "1982-1986",
     "nationality": "Spain",
     "club": "spain"
   },
   {
-    "name": "not applicable Urruti",
+    "name": "Urruti",
     "position": "GK",
     "prime_rating": 73,
     "career_years": "1978-1986",
@@ -56072,10 +56080,18 @@
     "club": "spain"
   },
   {
-    "name": "not applicable Quini",
+    "name": "Quini",
     "position": "ST",
     "prime_rating": 72,
     "career_years": "1978-1982",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Alfonso",
+    "position": "ST",
+    "prime_rating": 71,
+    "career_years": "1998",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -56104,14 +56120,6 @@
     "club": "spain"
   },
   {
-    "name": "not applicable Alfonso",
-    "position": "ST",
-    "prime_rating": 71,
-    "career_years": "1998",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
     "name": "Iván Campo",
     "position": "CB",
     "prime_rating": 70,
@@ -56136,18 +56144,18 @@
     "club": "spain"
   },
   {
-    "name": "Pedro Contreras",
-    "position": "GK",
+    "name": "Nando",
+    "position": "CM",
     "prime_rating": 69,
-    "career_years": "2002",
+    "career_years": "1950",
     "nationality": "Spain",
     "club": "spain"
   },
   {
-    "name": "not applicable Nando",
-    "position": "CM",
+    "name": "Pedro Contreras",
+    "position": "GK",
     "prime_rating": 69,
-    "career_years": "1950",
+    "career_years": "2002",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -56160,18 +56168,10 @@
     "club": "spain"
   },
   {
-    "name": "not applicable Hilario",
+    "name": "Hilario",
     "position": "CM",
     "prime_rating": 68,
     "career_years": "1934",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Tomás",
-    "position": "CB",
-    "prime_rating": 68,
-    "career_years": "1986",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -56196,6 +56196,22 @@
     "position": "ST",
     "prime_rating": 67,
     "career_years": "1982",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Juanito",
+    "position": "ST",
+    "prime_rating": 67,
+    "career_years": "1978-1982",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Juanito",
+    "position": "CB",
+    "prime_rating": 67,
+    "career_years": "2006",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -56232,30 +56248,6 @@
     "club": "spain"
   },
   {
-    "name": "not applicable Juanito",
-    "position": "ST",
-    "prime_rating": 67,
-    "career_years": "1978-1982",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Juanito",
-    "position": "CB",
-    "prime_rating": 67,
-    "career_years": "2006",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "not applicable Roberto",
-    "position": "CM",
-    "prime_rating": 67,
-    "career_years": "1990",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
     "name": "Diego Tristán",
     "position": "ST",
     "prime_rating": 66,
@@ -56284,6 +56276,14 @@
     "position": "CM",
     "prime_rating": 66,
     "career_years": "2006",
+    "nationality": "Spain",
+    "club": "spain"
+  },
+  {
+    "name": "Kiko",
+    "position": "ST",
+    "prime_rating": 66,
+    "career_years": "1998",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -56352,7 +56352,7 @@
     "club": "spain"
   },
   {
-    "name": "not applicable Sergi",
+    "name": "Sergi",
     "position": "CB",
     "prime_rating": 62,
     "career_years": "1994-1998",
@@ -61770,7 +61770,7 @@
   {
     "name": "Diego Godín",
     "position": "CB",
-    "prime_rating": 90,
+    "prime_rating": 89,
     "career_years": "2010-2022",
     "nationality": "Uruguay",
     "club": "uruguay"
@@ -61778,7 +61778,7 @@
   {
     "name": "Luis Suárez",
     "position": "ST",
-    "prime_rating": 90,
+    "prime_rating": 92,
     "career_years": "2010-2022",
     "nationality": "Uruguay",
     "club": "uruguay"
@@ -61802,7 +61802,7 @@
   {
     "name": "Edinson Cavani",
     "position": "ST",
-    "prime_rating": 88,
+    "prime_rating": 89,
     "career_years": "2010-2022",
     "nationality": "Uruguay",
     "club": "uruguay"
@@ -61922,7 +61922,7 @@
   {
     "name": "Fernando Muslera",
     "position": "GK",
-    "prime_rating": 82,
+    "prime_rating": 85,
     "career_years": "2010-2022",
     "nationality": "Uruguay",
     "club": "uruguay"
@@ -65425,8 +65425,8 @@
   },
   {
     "name": "Franz Beckenbauer",
-    "position": "CM",
-    "prime_rating": 95,
+    "position": "CB",
+    "prime_rating": 96,
     "career_years": "1966-1974",
     "nationality": "West Germany",
     "club": "westgermany"
@@ -65450,7 +65450,7 @@
   {
     "name": "Jürgen Klinsmann",
     "position": "ST",
-    "prime_rating": 91,
+    "prime_rating": 92,
     "career_years": "1990",
     "nationality": "West Germany",
     "club": "westgermany"
@@ -65498,7 +65498,7 @@
   {
     "name": "Uwe Seeler",
     "position": "ST",
-    "prime_rating": 81,
+    "prime_rating": 90,
     "career_years": "1958-1970",
     "nationality": "West Germany",
     "club": "westgermany"
@@ -65537,8 +65537,8 @@
   },
   {
     "name": "Berti Vogts",
-    "position": "CB",
-    "prime_rating": 79,
+    "position": "RB",
+    "prime_rating": 87,
     "career_years": "1970-1978",
     "nationality": "West Germany",
     "club": "westgermany"
@@ -65570,7 +65570,7 @@
   {
     "name": "Wolfgang Overath",
     "position": "CM",
-    "prime_rating": 79,
+    "prime_rating": 88,
     "career_years": "1966-1974",
     "nationality": "West Germany",
     "club": "westgermany"
@@ -65609,8 +65609,8 @@
   },
   {
     "name": "Andreas Brehme",
-    "position": "CB",
-    "prime_rating": 77,
+    "position": "LB",
+    "prime_rating": 89,
     "career_years": "1986-1990",
     "nationality": "West Germany",
     "club": "westgermany"
@@ -65777,8 +65777,8 @@
   },
   {
     "name": "Paul Breitner",
-    "position": "CB",
-    "prime_rating": 77,
+    "position": "LB",
+    "prime_rating": 89,
     "career_years": "1974-1982",
     "nationality": "West Germany",
     "club": "westgermany"
@@ -65786,7 +65786,7 @@
   {
     "name": "Rainer Bonhof",
     "position": "CM",
-    "prime_rating": 77,
+    "prime_rating": 86,
     "career_years": "1974-1978",
     "nationality": "West Germany",
     "club": "westgermany"
@@ -65794,7 +65794,7 @@
   {
     "name": "Rudi Völler",
     "position": "ST",
-    "prime_rating": 77,
+    "prime_rating": 90,
     "career_years": "1986-1990",
     "nationality": "West Germany",
     "club": "westgermany"
@@ -66138,7 +66138,7 @@
   {
     "name": "Klaus Allofs",
     "position": "ST",
-    "prime_rating": 75,
+    "prime_rating": 86,
     "career_years": "1986",
     "nationality": "West Germany",
     "club": "westgermany"
@@ -66538,7 +66538,7 @@
   {
     "name": "Sepp Maier",
     "position": "GK",
-    "prime_rating": 68,
+    "prime_rating": 90,
     "career_years": "1966-1978",
     "nationality": "West Germany",
     "club": "westgermany"
@@ -66570,7 +66570,7 @@
   {
     "name": "Jürgen Kohler",
     "position": "CB",
-    "prime_rating": 66,
+    "prime_rating": 88,
     "career_years": "1990",
     "nationality": "West Germany",
     "club": "westgermany"
@@ -66594,7 +66594,7 @@
   {
     "name": "Harald Schumacher",
     "position": "GK",
-    "prime_rating": 65,
+    "prime_rating": 88,
     "career_years": "1982-1986",
     "nationality": "West Germany",
     "club": "westgermany"
@@ -66970,7 +66970,7 @@
   {
     "name": "Davor Šuker",
     "position": "ST",
-    "prime_rating": 75,
+    "prime_rating": 90,
     "career_years": "1990",
     "nationality": "Yugoslavia",
     "club": "yugoslavia"
@@ -67001,8 +67001,8 @@
   },
   {
     "name": "Dragan Džajić",
-    "position": "ST",
-    "prime_rating": 75,
+    "position": "LW",
+    "prime_rating": 90,
     "career_years": "1974",
     "nationality": "Yugoslavia",
     "club": "yugoslavia"
@@ -67489,8 +67489,8 @@
   },
   {
     "name": "Robert Prosinečki",
-    "position": "CM",
-    "prime_rating": 75,
+    "position": "CAM",
+    "prime_rating": 91,
     "career_years": "1990",
     "nationality": "Yugoslavia",
     "club": "yugoslavia"
@@ -67697,8 +67697,8 @@
   },
   {
     "name": "Dragan Stojković",
-    "position": "CM",
-    "prime_rating": 73,
+    "position": "CAM",
+    "prime_rating": 91,
     "career_years": "1990-1998",
     "nationality": "Yugoslavia",
     "club": "yugoslavia"
@@ -67857,8 +67857,8 @@
   },
   {
     "name": "Dejan Savićević",
-    "position": "CM",
-    "prime_rating": 67,
+    "position": "CAM",
+    "prime_rating": 90,
     "career_years": "1990-1998",
     "nationality": "Yugoslavia",
     "club": "yugoslavia"

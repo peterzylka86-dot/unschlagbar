@@ -354,7 +354,12 @@ def main() -> int:
         if team_id is None:
             continue
         key = (s["player_id"], team_id)
-        full_name = (s["given_name"] + " " + s["family_name"]).strip()
+        # jfjelstul uses literal 'not applicable' as given_name for mononyms
+        # (Pelé, Cafu, Ronaldo, etc.). Strip that so the name reads cleanly.
+        given = s["given_name"]
+        if given.strip().lower() in ("not applicable", "n/a", ""):
+            given = ""
+        full_name = (given + " " + s["family_name"]).strip()
         year = int(s["tournament_id"].split("-")[1])
         bucket = POS_MAP.get(s["position_code"], "CM")
         if key not in agg:
