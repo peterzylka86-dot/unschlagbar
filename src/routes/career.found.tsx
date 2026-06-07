@@ -44,7 +44,7 @@ function FoundingClubPicker() {
 
   function pick(clubId: string) {
     startCareer(clubId, activeLeague);
-    navigate({ to: "/career" });
+    navigate({ to: "/career/draft" });
   }
 
   return (

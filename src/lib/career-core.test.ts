@@ -28,12 +28,15 @@ import {
   chemistryGroups,
   eraFromCareerYears,
   fromPlayer,
+  scorePlayerByArchetype,
+  DEFAULT_ARCHETYPES,
   type CareerPlayer,
   type Archetype,
   type FoundingClub,
   type StandingsTable,
   type StandingsRow,
 } from "./career-core";
+import type { Player } from "./game-types";
 
 // ─── Helpers ────────────────────────────────────────────────────────────────
 
@@ -766,6 +769,94 @@ describe("eraFromCareerYears", () => {
     expect(eraFromCareerYears(undefined)).toBe("");
     expect(eraFromCareerYears("")).toBe("");
     expect(eraFromCareerYears("no years here")).toBe("");
+  });
+});
+
+describe("DEFAULT_ARCHETYPES", () => {
+  it("ships exactly 7 archetypes (the GOLAZO canonical set)", () => {
+    expect(DEFAULT_ARCHETYPES).toHaveLength(7);
+  });
+  it("every archetype has name, style, and description", () => {
+    DEFAULT_ARCHETYPES.forEach(a => {
+      expect(a.name).toBeTruthy();
+      expect(a.style).toBeTruthy();
+      expect(a.description).toBeTruthy();
+    });
+  });
+});
+
+describe("scorePlayerByArchetype", () => {
+  function mockP(overrides: Partial<Player> = {}): Player {
+    return {
+      name: "Test Player",
+      position: "ST",
+      prime_rating: 80,
+      career_years: "2015-2025",
+      nationality: "Germany",
+      ...overrides,
+    } as Player;
+  }
+  const noNeed = new Set<"GK"|"DEF"|"MID"|"FWD">();
+  const needFWD = new Set<"GK"|"DEF"|"MID"|"FWD">(["FWD"]);
+
+  it("galactico boosts elite (≥92) over mid-tier players massively", () => {
+    const elite = mockP({ prime_rating: 95 });
+    const mid = mockP({ prime_rating: 85 });
+    const elScore = scorePlayerByArchetype(elite, "galactico", noNeed);
+    const midScore = scorePlayerByArchetype(mid, "galactico", noNeed);
+    expect(elScore).toBeGreaterThan(midScore + 5);
+  });
+
+  it("pragmatist heavily favors filling positional needs", () => {
+    const player = mockP({ position: "ST" });
+    const withNeed = scorePlayerByArchetype(player, "pragmatist", needFWD);
+    const withoutNeed = scorePlayerByArchetype(player, "pragmatist", noNeed);
+    expect(withNeed).toBeGreaterThan(withoutNeed + 10);
+  });
+
+  it("romantic bumps South Americans", () => {
+    const samerican = mockP({ nationality: "Brazil" });
+    const european = mockP({ nationality: "Germany" });
+    const sScore = scorePlayerByArchetype(samerican, "romantic", noNeed);
+    const eScore = scorePlayerByArchetype(european, "romantic", noNeed);
+    expect(sScore).toBeGreaterThan(eScore + 5);
+  });
+
+  it("brickwall picks defenders over forwards", () => {
+    const gk = mockP({ position: "GK", prime_rating: 80 });
+    const cb = mockP({ position: "CB", prime_rating: 80 });
+    const st = mockP({ position: "ST", prime_rating: 80 });
+    expect(scorePlayerByArchetype(gk, "brickwall", noNeed)).toBeGreaterThan(
+      scorePlayerByArchetype(st, "brickwall", noNeed),
+    );
+    expect(scorePlayerByArchetype(cb, "brickwall", noNeed)).toBeGreaterThan(
+      scorePlayerByArchetype(st, "brickwall", noNeed),
+    );
+  });
+
+  it("goals favors forwards over midfielders over defenders", () => {
+    const fwd = mockP({ position: "ST", prime_rating: 80 });
+    const mid = mockP({ position: "CM", prime_rating: 80 });
+    const def = mockP({ position: "CB", prime_rating: 80 });
+    expect(scorePlayerByArchetype(fwd, "goals", noNeed)).toBeGreaterThan(
+      scorePlayerByArchetype(mid, "goals", noNeed),
+    );
+    expect(scorePlayerByArchetype(mid, "goals", noNeed)).toBeGreaterThan(
+      scorePlayerByArchetype(def, "goals", noNeed),
+    );
+  });
+
+  it("oldschool bumps pre-2000 players over modern ones", () => {
+    const old = mockP({ career_years: "1985-1997" });
+    const modern = mockP({ career_years: "2018-2025" });
+    expect(scorePlayerByArchetype(old, "oldschool", noNeed)).toBeGreaterThan(
+      scorePlayerByArchetype(modern, "oldschool", noNeed) + 5,
+    );
+  });
+
+  it("unknown archetype style returns OVR with only need-bump", () => {
+    const player = mockP();
+    expect(scorePlayerByArchetype(player, "totally-fake-style", noNeed)).toBe(player.prime_rating);
   });
 });
 

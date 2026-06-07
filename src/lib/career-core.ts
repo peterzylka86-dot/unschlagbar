@@ -61,7 +61,22 @@ export type StandingsTable = Record<string, StandingsRow>;
 export interface Archetype {
   name: string;
   style: string;
+  /** One-line flavor describing their draft personality. */
+  description: string;
 }
+
+/** The canonical archetype set ported from GOLAZO. Each rival picks
+ *  according to their style — Galáctico chases OVR, Pragmatist fills gaps,
+ *  Romantic loves South Americans, etc. */
+export const DEFAULT_ARCHETYPES: Archetype[] = [
+  { name: "Galáctico",    style: "galactico",  description: "Chases the highest OVR. Pure star-power." },
+  { name: "Pragmatist",   style: "pragmatist", description: "Fills positional gaps first." },
+  { name: "Romantic",     style: "romantic",   description: "Loves Brazilians, Argentinians, South Americans." },
+  { name: "Hipster",      style: "hipster",    description: "Quirky picks — 80s legends, deep cuts." },
+  { name: "Brick Wall",   style: "brickwall",  description: "Defense first. CBs and GKs over flair." },
+  { name: "Goal Machine", style: "goals",      description: "Forwards, forwards, forwards." },
+  { name: "Old-School",   style: "oldschool",  description: "Pre-2000 legends only when possible." },
+];
 
 /** Minimal founding-club shape — id-less since the GOLAZO version keyed on
  *  name; can be upgraded to use Unschlagbar's `Club` id later. */
@@ -491,6 +506,74 @@ export function buildAIManagers(
     });
   }
   return result;
+}
+
+/**
+ * Score a player from an AI archetype's perspective. Higher = more likely
+ * to be picked by an AI with that style. Used by the snake-draft AI loop.
+ *
+ * Returns a number; the AI simply picks the highest-scoring eligible
+ * player from the available pool.
+ */
+export function scorePlayerByArchetype(
+  player: Player,
+  archetypeStyle: string,
+  positionalNeed: Set<SimplePosition>,
+): number {
+  let score = player.prime_rating;  // every archetype loves quality
+  const pos = simplifyPosition(player.position);
+  const fillsNeed = positionalNeed.has(pos);
+
+  switch (archetypeStyle) {
+    case "galactico":
+      // Pure OVR chaser — small bump for need, big multiplier for top tier
+      if (player.prime_rating >= 92) score += 10;
+      if (fillsNeed) score += 3;
+      break;
+    case "pragmatist":
+      // Need-first; OVR matters less
+      if (fillsNeed) score += 12;
+      else score -= 5;
+      break;
+    case "romantic":
+      // Brazilians, Argentinians, Uruguayans, Colombians — South American
+      // football romance.
+      if (/brazil|argentin|uruguay|colombi|chile|paraguay|ecuador|peru/i.test(player.nationality)) {
+        score += 8;
+      }
+      if (fillsNeed) score += 2;
+      break;
+    case "hipster":
+      // Era / OVR sweet-spot — favor 88-91 over 95+, and pre-2010 eras
+      if (player.prime_rating >= 88 && player.prime_rating <= 91) score += 6;
+      const yearMatch = player.career_years.match(/(?:19|20)\d{2}/);
+      if (yearMatch) {
+        const year = parseInt(yearMatch[0]);
+        if (year < 2010) score += 4;
+      }
+      if (fillsNeed) score += 2;
+      break;
+    case "brickwall":
+      if (pos === "GK" || pos === "DEF") score += 8;
+      else score -= 3;
+      if (fillsNeed) score += 3;
+      break;
+    case "goals":
+      if (pos === "FWD") score += 10;
+      else if (pos === "MID") score += 2;
+      else score -= 4;
+      if (fillsNeed) score += 2;
+      break;
+    case "oldschool":
+      const yMatch = player.career_years.match(/(?:19|20)\d{2}/);
+      if (yMatch && parseInt(yMatch[0]) < 2000) score += 10;
+      else if (yMatch && parseInt(yMatch[0]) < 2010) score += 3;
+      if (fillsNeed) score += 2;
+      break;
+    default:
+      if (fillsNeed) score += 3;
+  }
+  return score;
 }
 
 // ─── Chemistry — squad synergy from same club + era ─────────────────────────
