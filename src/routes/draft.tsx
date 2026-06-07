@@ -525,6 +525,13 @@ function Wheel({ clubs }: { clubs: Club[] }) {
   );
 }
 
+// Visible-by-default cap. With deep clubs (Real Madrid 76 players, Bayern 54,
+// etc.) showing every match drowns the user in choices and makes scanning slow.
+// The list is already sorted by prime_rating desc, so the top 12 are the
+// strongest options. A "show all N more" toggle reveals the rest for power
+// users who want a specific deeper-cut pick.
+const PICKER_DEFAULT_VISIBLE = 12;
+
 function PlayerPicker({ club, players, mode, showRatings, targetSlot, onPick, onQuickPick, onReroll, rerollsLeft, onSkip }: {
   club: Club;
   players: Player[];
@@ -539,7 +546,11 @@ function PlayerPicker({ club, players, mode, showRatings, targetSlot, onPick, on
 }) {
   void onSkip;
   const [quickPicks, setQuickPicks] = useState<Player[]>([]);
+  const [showAll, setShowAll] = useState(false);
   const isQuick = mode === "quick";
+  const overflow = players.length > PICKER_DEFAULT_VISIBLE;
+  const visible = showAll ? players : players.slice(0, PICKER_DEFAULT_VISIBLE);
+  const hiddenCount = players.length - visible.length;
   function togglePick(p: Player) {
     if (!isQuick) { onPick(p); return; }
     const key = `${p.club}:${p.name}`;
@@ -581,13 +592,31 @@ function PlayerPicker({ club, players, mode, showRatings, targetSlot, onPick, on
           Quick draft · pick {2 - quickPicks.length} more
         </div>
       )}
-      <div className="mt-3 -mx-1 px-1 overflow-y-auto max-h-[380px] flex flex-col gap-1.5">
+      {overflow && (
+        <div className="mt-3 flex items-center justify-between text-[11px] text-muted-foreground px-0.5">
+          <span>
+            {showAll
+              ? <>Showing all <span className="font-display text-warning">{players.length}</span> players</>
+              : <>Top <span className="font-display text-warning">{PICKER_DEFAULT_VISIBLE}</span> of <span className="font-display text-warning">{players.length}</span> by rating</>
+            }
+          </span>
+          {!showAll && (
+            <button
+              onClick={() => setShowAll(true)}
+              className="text-warning hover:underline font-display tracking-wide"
+            >
+              Show all +{hiddenCount}
+            </button>
+          )}
+        </div>
+      )}
+      <div className="mt-2 -mx-1 px-1 overflow-y-auto max-h-[380px] flex flex-col gap-1.5">
         {players.length === 0 && (
           <p className="text-sm text-muted-foreground py-6 text-center">
             No matching players from this club.
           </p>
         )}
-        {players.map(p => {
+        {visible.map(p => {
           const selected = isQuick && quickPicks.some(qp => qp.name === p.name && qp.club === p.club);
           return (
             <button
@@ -614,6 +643,14 @@ function PlayerPicker({ club, players, mode, showRatings, targetSlot, onPick, on
             </button>
           );
         })}
+        {overflow && showAll && (
+          <button
+            onClick={() => setShowAll(false)}
+            className="mt-1 px-3 py-2 text-[11px] rounded-lg border border-border bg-background/30 hover:bg-background/60 text-muted-foreground hover:text-warning transition"
+          >
+            ← Collapse to top {PICKER_DEFAULT_VISIBLE}
+          </button>
+        )}
       </div>
       {onReroll && (
         <div className="mt-3 flex gap-2">
