@@ -1296,50 +1296,10 @@
     "club": "grasshopper"
   },
   {
-    "name": "Eric Hassli",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "2007-2009",
-    "nationality": "France",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Mehmet Yılmaz",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "2005-2008",
-    "nationality": "Turkey",
-    "club": "grasshopper"
-  },
-  {
     "name": "Dario Cantaluppi",
     "position": "CM",
     "prime_rating": 78,
     "career_years": "2003-2010",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Stephane Grichting",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "2002-2005",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Almen Abdi",
-    "position": "CAM",
-    "prime_rating": 80,
-    "career_years": "2003-2005",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Davide Chiumiento",
-    "position": "CAM",
-    "prime_rating": 81,
-    "career_years": "2002-2005",
     "nationality": "Switzerland",
     "club": "grasshopper"
   },
@@ -1371,15 +1331,7 @@
     "name": "Stéphane Chapuisat",
     "position": "ST",
     "prime_rating": 80,
-    "career_years": "1989-1991",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Christophe Ohrel",
-    "position": "CM",
-    "prime_rating": 81,
-    "career_years": "1993-1995",
+    "career_years": "1999-2005",
     "nationality": "Switzerland",
     "club": "grasshopper"
   },
@@ -1388,30 +1340,6 @@
     "position": "LW",
     "prime_rating": 81,
     "career_years": "1989-1994",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Marc Hottiger",
-    "position": "RB",
-    "prime_rating": 81,
-    "career_years": "1990-1992",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Marco Pascolo",
-    "position": "GK",
-    "prime_rating": 82,
-    "career_years": "1990-1992",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Adrian Knup",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1990-1993",
     "nationality": "Switzerland",
     "club": "grasshopper"
   },
@@ -1444,14 +1372,6 @@
     "position": "ST",
     "prime_rating": 84,
     "career_years": "1976-1985",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Andy Egli",
-    "position": "CB",
-    "prime_rating": 83,
-    "career_years": "1981-1984",
     "nationality": "Switzerland",
     "club": "grasshopper"
   },
@@ -1492,14 +1412,6 @@
     "position": "CB",
     "prime_rating": 80,
     "career_years": "1977-1986",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Erich Burgener",
-    "position": "GK",
-    "prime_rating": 80,
-    "career_years": "1976-1979",
     "nationality": "Switzerland",
     "club": "grasshopper"
   },
