@@ -1,7 +1,13 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { useEffect } from "react";
 import { BrandMark, WordMark } from "@/components/BrandMark";
+import { decodeChallenge } from "@/lib/share";
+import { useGame } from "@/lib/store";
 
 export const Route = createFileRoute("/")({
+  validateSearch: (s: Record<string, unknown>) => ({
+    challenge: typeof s.challenge === "string" ? s.challenge : undefined,
+  }),
   head: () => ({
     meta: [
       { title: "UNSCHLAGBAR · 34:0 — Retro Football Draft" },
@@ -14,6 +20,26 @@ export const Route = createFileRoute("/")({
 });
 
 function Landing() {
+  const { challenge } = Route.useSearch();
+  const navigate = useNavigate();
+  const setConfig = useGame(s => s.setConfig);
+  const reset = useGame(s => s.reset);
+  useEffect(() => {
+    if (!challenge) return;
+    const payload = decodeChallenge(challenge);
+    if (!payload) return;
+    setConfig({
+      league: payload.league,
+      formation: payload.formation,
+      difficulty: payload.difficulty,
+      ratingMode: payload.ratingMode,
+      draftMode: payload.draftMode,
+      showRatings: payload.showRatings,
+      challengeSeed: payload.seed,
+    });
+    reset();
+    navigate({ to: "/game", search: { new: true } });
+  }, [challenge, setConfig, reset, navigate]);
   return (
     <div className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none"
