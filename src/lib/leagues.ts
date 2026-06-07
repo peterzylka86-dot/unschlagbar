@@ -1,4 +1,13 @@
-export type LeagueId = "bundesliga" | "laliga" | "seriea" | "swiss";
+export type LeagueId =
+  | "bundesliga"
+  | "laliga"
+  | "seriea"
+  | "swiss"
+  | "ucl"
+  | "worldcup"
+  | "womens";
+
+export type CompetitionKind = "league" | "knockout" | "groupKO";
 
 export interface League {
   id: LeagueId;
@@ -8,17 +17,22 @@ export interface League {
   matches: number;          // total matches in a season for "unschlagbar"
   brandMark: string;        // e.g. "34:0"
   tagline: string;          // localized tagline (UNSCHLAGBAR / INVENCIBLE / ...)
-  kickoffWord: string;      // CTA on landing/start: Anpfiff / ¡Vamos! / Forza! / Hopp Schwiiz!
+  kickoffWord: string;      // CTA on landing/start
   seasonWord: string;       // header word in season screen
-  matchesWord: string;      // localized "matches" label
-  defeatsWord: string;      // localized "defeats" label
-  drawWord: string;         // localized "draw"
-  winWord: string;          // localized "win"
-  lossWord: string;         // localized "loss"
-  tableTitle: string;       // localized "final table"
-  unbeatenLabel: string;    // localized "unbeaten" badge
-  opponentsCount: number;   // distinct opponents to draft for the season
-  fixtureRounds: number;    // how many times each opponent is played
+  matchesWord: string;
+  defeatsWord: string;
+  drawWord: string;
+  winWord: string;
+  lossWord: string;
+  tableTitle: string;
+  unbeatenLabel: string;
+  opponentsCount: number;   // distinct opponents available
+  fixtureRounds: number;    // for league kind
+  kind: CompetitionKind;    // league | knockout | groupKO
+  /** Knockout: round labels in order. For groupKO, includes "Group" repeated for group matches. */
+  rounds?: string[];
+  /** Friendly short label for tile UI: "League · 34" / "Knockout · 4" */
+  formatLabel: string;
 }
 
 export const LEAGUES: Record<LeagueId, League> = {
@@ -41,6 +55,8 @@ export const LEAGUES: Record<LeagueId, League> = {
     unbeatenLabel: "Invincible",
     opponentsCount: 17,
     fixtureRounds: 2,
+    kind: "league",
+    formatLabel: "League · 34 matches",
   },
   laliga: {
     id: "laliga",
@@ -61,6 +77,8 @@ export const LEAGUES: Record<LeagueId, League> = {
     unbeatenLabel: "Invencible",
     opponentsCount: 19,
     fixtureRounds: 2,
+    kind: "league",
+    formatLabel: "League · 38 matches",
   },
   seriea: {
     id: "seriea",
@@ -81,6 +99,8 @@ export const LEAGUES: Record<LeagueId, League> = {
     unbeatenLabel: "Imbattibile",
     opponentsCount: 19,
     fixtureRounds: 2,
+    kind: "league",
+    formatLabel: "League · 38 matches",
   },
   swiss: {
     id: "swiss",
@@ -100,7 +120,77 @@ export const LEAGUES: Record<LeagueId, League> = {
     tableTitle: "Schlusstabelle",
     unbeatenLabel: "Unbesiegt",
     opponentsCount: 11,
-    fixtureRounds: 3, // 12-club Swiss league: each opponent played ~3 times (rounded)
+    fixtureRounds: 3,
+    kind: "league",
+    formatLabel: "League · 36 matches",
+  },
+  ucl: {
+    id: "ucl",
+    name: "Champions League",
+    country: "Europe",
+    flag: "🏆",
+    matches: 4,
+    brandMark: "4:0",
+    tagline: "INVINCIBILE EUROPA",
+    kickoffWord: "Anstoß",
+    seasonWord: "Knockouts",
+    matchesWord: "Ties",
+    defeatsWord: "Defeats",
+    drawWord: "DRAW",
+    winWord: "WIN",
+    lossWord: "OUT",
+    tableTitle: "Road to the Final",
+    unbeatenLabel: "European Champions",
+    opponentsCount: 4,
+    fixtureRounds: 1,
+    kind: "knockout",
+    rounds: ["Round of 16", "Quarter-Final", "Semi-Final", "Final"],
+    formatLabel: "Knockout · 4 ties",
+  },
+  worldcup: {
+    id: "worldcup",
+    name: "World Cup",
+    country: "World",
+    flag: "🌍",
+    matches: 7,
+    brandMark: "7:0",
+    tagline: "WELTMEISTER",
+    kickoffWord: "Kick-off!",
+    seasonWord: "Tournament",
+    matchesWord: "Matches",
+    defeatsWord: "Defeats",
+    drawWord: "DRAW",
+    winWord: "WIN",
+    lossWord: "OUT",
+    tableTitle: "Road to Glory",
+    unbeatenLabel: "World Champions",
+    opponentsCount: 7,
+    fixtureRounds: 1,
+    kind: "groupKO",
+    rounds: ["Group", "Group", "Group", "Round of 16", "Quarter-Final", "Semi-Final", "Final"],
+    formatLabel: "Group + KO · 7 matches",
+  },
+  womens: {
+    id: "womens",
+    name: "Women's Elite",
+    country: "World",
+    flag: "♀",
+    matches: 30,
+    brandMark: "30:0",
+    tagline: "UNBESIEGBAR",
+    kickoffWord: "Kick-off!",
+    seasonWord: "Season",
+    matchesWord: "Matches",
+    defeatsWord: "Defeats",
+    drawWord: "DRAW",
+    winWord: "WIN",
+    lossWord: "LOSS",
+    tableTitle: "Final Table",
+    unbeatenLabel: "Untouchable",
+    opponentsCount: 15,
+    fixtureRounds: 2,
+    kind: "league",
+    formatLabel: "League · 30 matches",
   },
 };
 
