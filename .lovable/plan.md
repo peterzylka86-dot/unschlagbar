@@ -1,72 +1,101 @@
-## Scope (this round)
+## Goal
 
-Polish + sharing bundle. New formats (CL / WC / Women's) deferred to a later round.
+Add three new game modes alongside the existing domestic leagues:
 
-1. Remove the discard/skip-player button from the draft
-2. Quick Draft mode (2-at-once)
-3. Share team & result (text first, image card next)
-4. Async "challenge a friend" link (no backend)
+1. **Champions League** — knockout-format continental competition, deep historic pool (think Rosenborg-in-Camp-Nou nights).
+2. **World Cup** — 7-game national-team run (group stage + knockouts) to become world champ.
+3. **Women's edition** — lean top-women's-clubs league, present-day focused.
 
----
+## Scope decisions
 
-## 1. Remove discard button
+- **Data depth**: CL & WC = deep (large pools, multiple eras). Women's = lean (~16 clubs, ~10 players each, current era only).
+- **Format**: CL and WC introduce a **knockout** competition type. Women's reuses the existing league/round-robin format.
+- **Share + challenge links**: continue to work for all new modes (seed-driven sim already abstracted).
+- **Out of scope this round**: head-to-head auto-compare of challenge results, realtime multiplayer.
 
-`src/routes/draft.tsx` line ~619 still renders a "discard player" button in the `AssignPanel` footer. Remove the button and its handler wiring. Keep the internal `skipAssign()` function — it's still used for auto-skip when no compatible slot exists (lines 190–197) and as the `onCancel` for non-user-driven flows.
+## What we'll build
 
-## 2. Quick Draft mode (2-at-once)
+### 1. Competition abstraction
 
-A speed variant of `draftMode`. Add `"quick"` to the `DraftMode` union in `src/lib/game-types.ts` (currently `"squad" | "position"`).
+Today everything is a `LeagueId` round-robin. Generalize:
 
-Behavior: each wheel spin lands on a club and the user picks **two** players from that club's tier-filtered list in one panel, assigning them to the two best-matching open slots automatically (GK→GK, defenders to back line, etc.). Falls back to one player if only one compatible remains.
+- Rename mental model from "league" to "competition" without breaking existing routes. Add a `kind: "league" | "knockout" | "groupKO"` on each entry.
+- `LeagueId` union extended with `"ucl" | "worldcup" | "womens"`.
+- `LEAGUES` entries for the new three with their own brandMark, tagline, kickoff word, and labels:
+  - UCL: `brandMark: "13:0"`, tagline `INVINCIBILE EUROPA`, knockout kind.
+  - WC: `brandMark: "7:0"`, tagline `WELTMEISTER`, groupKO kind.
+  - Women's: `brandMark: "30:0"`, tagline `UNBESIEGBAR`, league kind.
 
-UI: add the option to the draft-mode picker in `src/routes/game.tsx` with label "Quick" and sub "2 players per club — for the impatient". In `draft.tsx`, `AssignPanel` gets a `quickMode` branch that renders a 2-pick grid instead of single-select.
+### 2. New data files
 
-Reroll cost: 1 reroll covers both picks.
+Add JSON under `src/data/`:
 
-## 3. Share team & result
+- `ucl/clubs.json` + `ucl/players.json` — deep pool spanning current top European clubs + historic euro-night clubs (Rosenborg, Steaua, Crvena Zvezda, Nottingham Forest, Ajax 95, Porto 04, etc.) and their iconic players across `current/00s/90s/70s-80s` tiers.
+- `worldcup/clubs.json` + `worldcup/players.json` — "clubs" are national teams (Brazil, Germany, France, Argentina, Italy, Spain, Netherlands, England, Uruguay, Croatia, Portugal, Belgium, etc.), players are legendary internationals per nation × era.
+- `womens/clubs.json` + `womens/players.json` — ~16 top women's clubs (Barça Femení, Lyon, Chelsea, Arsenal, Bayern, Wolfsburg, PSG, Real Madrid, NWSL stalwarts, etc.) with ~10 current-era players each.
 
-### 3a. Text recap (ships first)
-New helper `src/lib/share.ts` exporting `buildShareText(league, slots, matches?)`:
+Wire each into `src/lib/data.ts` like the existing leagues.
 
-```
-38:0 INVENCIBLE — La Liga 🇪🇸
-GK Casillas · CB Ramos · CB Puyol ...
-Result: 36W 2D 0L · 112:14 · 1st place 🏆
-Play: https://unschlagbar.lovable.app/?challenge=<seed>
-```
+### 3. Knockout simulation
 
-Add a "Share" button on `season.tsx` and `result.tsx`. Uses `navigator.share` when available, falls back to `navigator.clipboard.writeText` + toast.
+New helper in `src/lib/sim.ts` (or new `src/lib/knockout.ts`):
 
-### 3b. Image card
-Add a `<ShareCard />` component (hidden, rendered offscreen) showing brand mark, squad list on a pitch silhouette, league badge, and (on results) the W/D/L + GF:GA + table position. Use `html-to-image` (`bun add html-to-image`) to convert to PNG on demand. Button: "Save as image" — triggers download; on mobile, attaches to `navigator.share` as a file when supported.
+- `simulateKnockout(opponents, ourRating, seedNum, difficulty, format)` that returns an ordered `MatchResult[]` plus a `bracket` describing rounds (`R16 → QF → SF → F` for CL, `Group → R16 → QF → SF → F` for WC).
+- Seeding: opponents picked by strength from the relevant pool, then progressively harder rounds.
+- WC group stage = 3 matches; advancement assumed if avg-points ≥ 4 OR points ≥ 4 (else "eliminated in group" ending). On elimination, no further matches are simulated and the result screen reflects exit round.
+- Uses the same xG/Poisson core as `simulateSeason` so seeds remain deterministic across challenge links.
 
-## 4. Async challenge link
+### 4. Season/Bracket UI
 
-Encode the run config + simulation seed into a URL: `/?challenge=<base64({league, formation, difficulty, ratingMode, seed})>`.
+`src/routes/season.tsx` currently assumes round-robin. Branch on `league.kind`:
 
-- On `index.tsx`, detect `?challenge=` via `validateSearch`; if present, prefill `useGame.config`, store the seed, and route straight to `/game` with the picker pre-selected.
-- Persist the seed in the store (new field `challengeSeed?: number`) and feed it into `simulateSeason` so both players get the same fixtures and opponent variance.
-- On `result.tsx`, after a challenge run, show "Friend's record: —" placeholder + a "Copy result to send back" button that produces a text recap including the seed; pasting the friend's recap (later round) compares. v1: just round-trip the recap via copy/paste, no parsing.
+- `league` kind: existing UI (used for Bundesliga/LaLiga/SerieA/Swiss/Women's).
+- `knockout` / `groupKO`: render a **bracket strip** at the top showing rounds with revealed/upcoming slots; match cards group under each round header instead of one big grid. Reveal animation reused per match.
+- Stats header swaps "MD x/y" for round name (e.g. "Quarter-Final · Leg 2") and shows aggregate score on two-legged ties (CL = 2 legs from QF onward, 1 leg at Final; or single-leg throughout for simplicity if we want a quicker run — final choice in implementation, see Open Questions).
 
-No accounts, no backend. Just URL state + clipboard.
+### 5. Result screen
 
----
+`src/routes/result.tsx` extended:
 
-## Files touched
+- League kind: unchanged.
+- Knockout: "Champions of Europe" / "Eliminated in Semi-Final" headline, trophy-style mark, full bracket recap, opponents beaten.
+- WC: "World Champions 🏆 7:0" or "Eliminated in [round]".
 
-- `src/routes/draft.tsx` — remove discard button; quick-mode branch in `AssignPanel`
-- `src/routes/game.tsx` — add Quick draft-mode option
-- `src/routes/index.tsx` — `validateSearch` for `?challenge=`, prefill store, redirect
-- `src/routes/season.tsx`, `src/routes/result.tsx` — Share button + ShareCard mount
-- `src/lib/game-types.ts` — `DraftMode` adds `"quick"`; `RunConfig` adds `challengeSeed?`
-- `src/lib/store.ts` — persist `challengeSeed`
-- `src/lib/sim.ts` — accept explicit seed override (already takes `seedNum`, just thread through)
-- new `src/lib/share.ts` — text builder + base64 challenge codec
-- new `src/components/ShareCard.tsx` — printable card
-- `bun add html-to-image`
+### 6. Setup screen (`game.tsx`)
 
-## Out of scope (next rounds)
+- League grid expands from 4 to 7 tiles (two rows on mobile, three columns on desktop).
+- Each tile shows the kind: "League · 34 matches", "Knockout · 13 matches", "Knockout · 7 matches".
+- Difficulty and draft mode unchanged. Quick draft works in all modes (assigns 2 players per spin).
+- Draft target count auto-adjusts: still 11 starting slots regardless of competition.
 
-- Champions League / World Cup / Women's editions and their datasets
-- Real-time multiplayer / Lovable Cloud / accounts
-- Friend-recap parsing & head-to-head comparison view
+### 7. Sharing & challenge links
+
+- `src/lib/share.ts` already accepts league + matches; extend the recap text to label rounds for knockout modes (e.g. `R16 W 2-1, QF W 3-2, SF L 1-2`) instead of W/D/L counts.
+- Challenge link encoding already includes `league`, so picking `ucl`/`worldcup`/`womens` round-trips automatically; seed continues to determine opponents and outcomes.
+
+## File changes
+
+**New files:**
+- `src/data/ucl/clubs.json`, `src/data/ucl/players.json`
+- `src/data/worldcup/clubs.json`, `src/data/worldcup/players.json`
+- `src/data/womens/clubs.json`, `src/data/womens/players.json`
+- `src/lib/knockout.ts` (or extend `sim.ts`)
+- `src/components/Bracket.tsx`
+
+**Edited:**
+- `src/lib/leagues.ts` — extend type + entries + `kind` field.
+- `src/lib/data.ts` — register three new pools.
+- `src/lib/sim.ts` — knockout helper.
+- `src/lib/share.ts` — knockout recap formatting.
+- `src/routes/game.tsx` — 7-tile league grid + kind labels.
+- `src/routes/season.tsx` — branch on `kind`, render bracket vs grid.
+- `src/routes/result.tsx` — knockout/WC headlines and recap.
+- `src/routes/draft.tsx` — only opponent-pool reads change (data already abstracted via `getClubs`).
+
+## Open questions
+
+1. **CL ties**: single-leg every round (faster, simpler reveal) or two-legged from QF (more authentic but doubles match count)? Default: **single-leg, 4 rounds = 4 matches** unless you'd rather the longer arc.
+2. **WC seeding**: random group draw via seed (more realistic chaos) or strength-balanced groups (fairer)? Default: **seeded chaos**.
+3. **Women's depth**: confirmed lean — keep ~10 players per club; I'll prioritize Liga F / WSL / NWSL / Frauen-Bundesliga / Première Ligue.
+
+I'll proceed with the defaults above unless you flag otherwise.
