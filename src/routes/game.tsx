@@ -158,7 +158,7 @@ function GameSetup() {
         onClick={() => { reset(); navigate({ to: "/draft" }); }}
         className="mt-10 w-full py-4 rounded-xl bg-success text-success-foreground font-display text-xl tracking-wide hover:brightness-110 transition"
       >
-        Start Draft →
+        {league.kickoffWord} →
       </button>
     </div>
   );
