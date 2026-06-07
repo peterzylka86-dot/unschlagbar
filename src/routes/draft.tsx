@@ -34,17 +34,19 @@ function playerMatchesTier(p: Player, tier: EraTier): boolean {
 }
 
 export const Route = createFileRoute("/draft")({
-  head: () => ({ meta: [{ title: "Draft · UNSCHLAGBAR 34:0" }] }),
+  head: () => ({ meta: [{ title: "Draft · UNSCHLAGBAR" }] }),
   component: DraftScreen,
 });
 
 function isCompatible(slotPos: Position, playerPos: Position): boolean {
-  // Strict: every position only matches itself. RB plays RB, CB plays CB, etc.
   return slotPos === playerPos;
 }
 
 function DraftScreen() {
   const { config, slots, rerollsLeft, assignPlayer, consumeReroll } = useGame();
+  const league = LEAGUES[config.league];
+  const CLUBS = useMemo(() => getClubs(config.league), [config.league]);
+  const PLAYERS = useMemo(() => getPlayers(config.league), [config.league]);
   const navigate = useNavigate();
   const [spinning, setSpinning] = useState(false);
   const [angle, setAngle] = useState(0);
