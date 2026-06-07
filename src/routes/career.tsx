@@ -10,7 +10,7 @@
  * GOLAZO with 86 tests). This hub is the UI shell; the founding-club
  * picker is in /career/found.
  */
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { useCareer } from "@/lib/career-store";
 import { LEAGUES } from "@/lib/leagues";
 import { getClubs } from "@/lib/data";
@@ -21,6 +21,13 @@ export const Route = createFileRoute("/career")({
 });
 
 function CareerHub() {
+  // /career/{found,draft,season} are file-based children of this route.
+  // When user navigates to one of them, render JUST the child (no hub
+  // shell around it). When the path is exactly /career, render the hub.
+  const pathname = useRouterState({ select: s => s.location.pathname });
+  const onChildRoute = pathname !== "/career" && pathname !== "/career/";
+  if (onChildRoute) return <Outlet />;
+
   const career = useCareer();
   const hasActive = career.foundingClubId !== null;
 
