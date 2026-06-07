@@ -225,6 +225,7 @@ function DraftScreen() {
         {/* Pitch */}
         <PitchView
           slots={slots}
+          clubs={CLUBS}
           showRatings={config.showRatings}
           highlightSlots={compatibleSlotsForAssign.map(s => s.id)}
           onSlotClick={(s) => {
@@ -239,7 +240,8 @@ function DraftScreen() {
         {/* Side panel */}
         <aside className="rounded-2xl border bg-card/40 backdrop-blur-sm p-4 flex flex-col gap-3 min-h-[460px] shadow-[0_30px_80px_-40px_rgba(220,5,21,0.4)]">
           {done ? (
-            <DonePanel onContinue={() => navigate({ to: "/season" })} />
+            <DonePanel matches={league.matches} kickoff={league.kickoffWord} onContinue={() => navigate({ to: "/season" })} />
+
           ) : assigningPlayer ? (
             <AssignPanel
               player={assigningPlayer}
@@ -281,7 +283,7 @@ function DraftScreen() {
   );
 }
 
-function DonePanel({ onContinue }: { onContinue: () => void }) {
+function DonePanel({ onContinue, matches, kickoff }: { onContinue: () => void; matches: number; kickoff: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -290,16 +292,17 @@ function DonePanel({ onContinue }: { onContinue: () => void }) {
     >
       <div className="text-5xl">⚽</div>
       <h2 className="font-display text-3xl">Squad set.</h2>
-      <p className="text-muted-foreground">34 matches stand between you and immortality.</p>
+      <p className="text-muted-foreground">{matches} matches stand between you and immortality.</p>
       <button
         onClick={onContinue}
         className="px-7 py-3 rounded-xl bg-primary text-primary-foreground font-display tracking-wide hover:brightness-110 shadow-[0_10px_30px_-10px] shadow-primary/60"
       >
-        Play Season →
+        {kickoff} →
       </button>
     </motion.div>
   );
 }
+
 
 function PositionPrompt() {
   return (
