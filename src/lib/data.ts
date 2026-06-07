@@ -18,8 +18,6 @@ import wc2026Clubs from "@/data/worldcup2026/clubs.json";
 import wc2026Players from "@/data/worldcup2026/players.json";
 import womensClubs from "@/data/womens/clubs.json";
 import womensPlayers from "@/data/womens/players.json";
-import womenscupClubs from "@/data/womenscup/clubs.json";
-import womenscupPlayers from "@/data/womenscup/players.json";
 
 // ─── Runtime schemas ────────────────────────────────────────────────────────
 // Validate at load time so a malformed commit fails loudly instead of
@@ -92,7 +90,6 @@ const DATA: Record<LeagueId, { clubs: Club[]; players: Player[] }> = {
   ucl:        validateLeague("ucl", uclClubs, uclPlayers),
   worldcup:   validateLeague("worldcup", wcClubs, wcPlayers),
   worldcup2026: validateLeague("worldcup2026", wc2026Clubs, wc2026Players),
-  womenscup:  validateLeague("womenscup", womenscupClubs, womenscupPlayers),
   womens:     validateLeague("womens", womensClubs, womensPlayers),
 };
 

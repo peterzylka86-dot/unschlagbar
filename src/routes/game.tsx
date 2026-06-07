@@ -61,6 +61,21 @@ function GameSetup() {
   const league = LEAGUES[config.league];
   const navigate = useNavigate();
 
+  function applyQuickStart() {
+    // Newcomer-friendly defaults: ride the LIVE 2026 moment + simple draft
+    setConfig({
+      league: "worldcup2026",
+      formation: "4-3-3",
+      difficulty: "normal",
+      showRatings: true,
+      draftMode: "squad",
+      ratingMode: "prime",
+      foundingPlayer: undefined,
+    });
+    reset();
+    navigate({ to: "/draft" });
+  }
+
   return (
     <div className="min-h-screen px-4 py-10 max-w-3xl mx-auto">
       <header className="text-center">
@@ -72,6 +87,22 @@ function GameSetup() {
         </Link>
         <p className="mt-2 text-muted-foreground">Draft your greatest {league.name} XI</p>
       </header>
+
+      {/* Quick-start escape hatch — newcomers can skip the 7-section form */}
+      <div className="mt-6 p-4 rounded-xl border border-warning/40 bg-warning/10 flex items-center justify-between gap-3">
+        <div className="min-w-0">
+          <div className="font-display text-warning text-sm uppercase tracking-[0.2em]">⚡ Quick Start</div>
+          <div className="text-xs text-muted-foreground mt-0.5">
+            LIVE WC 2026 · 4-3-3 · Normal · pick-as-you-go — straight to the wheel.
+          </div>
+        </div>
+        <button
+          onClick={applyQuickStart}
+          className="shrink-0 px-4 py-2 rounded-lg bg-warning text-warning-foreground font-display text-sm tracking-wide hover:brightness-110 transition"
+        >
+          Go →
+        </button>
+      </div>
 
       <Section label="Competition">
         <div className="space-y-5">
@@ -97,19 +128,29 @@ function GameSetup() {
                 }`}>
                   {ids.map(id => {
                     const l = LEAGUES[id];
+                    const isLive = id === "worldcup2026";
+                    const selected = config.league === id;
                     return (
                       <button
                         key={id}
                         onClick={() => setConfig({ league: id })}
-                        className={`p-3 rounded-xl border text-left transition ${
-                          config.league === id
+                        className={`relative p-3 rounded-xl border text-left transition ${
+                          selected
                             ? "border-primary bg-primary/10 text-primary"
-                            : "border-border bg-card hover:border-foreground/30"
+                            : isLive
+                              ? "border-warning/60 bg-warning/10 hover:border-warning"
+                              : "border-border bg-card hover:border-foreground/30"
                         }`}
                       >
+                        {isLive && !selected && (
+                          <span className="absolute top-2 right-2 inline-flex items-center gap-1 text-[9px] font-display tracking-[0.15em] uppercase text-warning">
+                            <span className="w-1.5 h-1.5 rounded-full bg-warning animate-pulse"></span>
+                            LIVE
+                          </span>
+                        )}
                         <div className="text-2xl leading-none">{l.flag}</div>
                         <div className="mt-1.5 font-display text-sm">{l.name}</div>
-                        <div className={`text-[10px] ${config.league === id ? "opacity-80" : "text-muted-foreground"}`}>
+                        <div className={`text-[10px] ${selected ? "opacity-80" : isLive ? "text-warning/80" : "text-muted-foreground"}`}>
                           {l.formatLabel}
                         </div>
                       </button>
@@ -122,7 +163,22 @@ function GameSetup() {
         </div>
       </Section>
 
-      <Section label="Formation">
+      <Section
+        label="Founding Player (Optional)"
+        hint="Anchor your XI around one player you've got in mind. The wheel handles the rest 10."
+      >
+        <FoundingPlayerPicker
+          league={config.league}
+          current={config.foundingPlayer}
+          onPick={(p) => setConfig({ foundingPlayer: p })}
+          onClear={() => setConfig({ foundingPlayer: undefined })}
+        />
+      </Section>
+
+      <Section
+        label="Formation"
+        hint="How your XI lines up. 4-3-3 is the modern classic; 5-4-1 locks the back; 3-5-2 favors midfield."
+      >
         <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
           {FORMATION_KEYS.map(k => (
             <Chip
@@ -142,7 +198,10 @@ function GameSetup() {
         <Pitch slots={slots} />
       </Section>
 
-      <Section label="Difficulty">
+      <Section
+        label="Difficulty"
+        hint="Rerolls let you re-spin the wheel when it lands on a bad club. Hard hides ratings — pure gut feel."
+      >
         <div className="grid grid-cols-3 gap-2">
           <OptionCard
             active={config.difficulty === "easy"}
@@ -168,7 +227,10 @@ function GameSetup() {
         </div>
       </Section>
 
-      <Section label="Show Ratings">
+      <Section
+        label="Show Ratings"
+        hint="Show each player's OVR (0-99) during the draft, or hide them and trust your gut."
+      >
         <div className="grid grid-cols-2 gap-2">
           <OptionCard
             active={config.showRatings}
@@ -187,7 +249,10 @@ function GameSetup() {
         </div>
       </Section>
 
-      <Section label="Draft Mode">
+      <Section
+        label="Draft Mode"
+        hint="Squad-first is the simplest — pick any player from the wheel's club. Quick gives you 2 per spin."
+      >
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
           <OptionCard
             active={config.draftMode === "squad"}
@@ -213,16 +278,10 @@ function GameSetup() {
         </div>
       </Section>
 
-      <Section label="Founding Player (Optional)">
-        <FoundingPlayerPicker
-          league={config.league}
-          current={config.foundingPlayer}
-          onPick={(p) => setConfig({ foundingPlayer: p })}
-          onClear={() => setConfig({ foundingPlayer: undefined })}
-        />
-      </Section>
-
-      <Section label="Player Ratings">
+      <Section
+        label="Player Ratings"
+        hint="Prime = each player at their career-best year. Career = their rating in the specific season they played."
+      >
         <div className="grid grid-cols-2 gap-2">
           <OptionCard
             active={config.ratingMode === "career"}
@@ -251,10 +310,15 @@ function GameSetup() {
   );
 }
 
-function Section({ label, children }: { label: string; children: React.ReactNode }) {
+function Section({ label, children, hint }: { label: string; children: React.ReactNode; hint?: string }) {
   return (
     <section className="mt-10">
-      {label && <h2 className="text-xs uppercase tracking-widest text-muted-foreground mb-3">{label}</h2>}
+      {label && (
+        <div className="mb-3 px-0.5">
+          <h2 className="text-xs uppercase tracking-widest text-muted-foreground">{label}</h2>
+          {hint && <p className="text-[11px] text-muted-foreground/80 mt-1 leading-tight">{hint}</p>}
+        </div>
+      )}
       {children}
     </section>
   );
@@ -329,18 +393,33 @@ function FoundingPlayerPicker({ league, current, onPick, onClear }: {
     );
   }
 
+  function surpriseMe() {
+    // Pick a random top-50-by-rating player so the surprise is fun, not obscure
+    const top = [...players]
+      .sort((a, b) => b.prime_rating - a.prime_rating)
+      .slice(0, 50);
+    if (top.length === 0) return;
+    onPick(top[Math.floor(Math.random() * top.length)]);
+  }
+
   return (
     <div className="space-y-2">
-      <p className="text-xs text-muted-foreground">
-        Start your XI with one specific player you've already got in mind. The wheel handles the rest 10. Leave blank for pure random.
-      </p>
-      <input
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Search by name — e.g. Dariusz Wosz, Maldini, Cruyff…"
-        className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-warning transition"
-      />
+      <div className="flex items-stretch gap-2">
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search by name — e.g. Dariusz Wosz, Maldini, Cruyff…"
+          className="flex-1 min-w-0 px-4 py-3 rounded-xl border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-warning transition"
+        />
+        <button
+          onClick={surpriseMe}
+          className="shrink-0 px-4 py-3 rounded-xl border border-warning/50 bg-warning/10 text-warning font-display text-sm tracking-wide hover:bg-warning/25 transition whitespace-nowrap"
+          title="Pick a random top-50 player from this league"
+        >
+          🎲 Surprise me
+        </button>
+      </div>
       {query.length >= 2 && (
         <div className="rounded-xl border border-border bg-card/60 max-h-72 overflow-y-auto">
           {results.length === 0 ? (

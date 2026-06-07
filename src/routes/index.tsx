@@ -75,21 +75,35 @@ function Landing() {
             Spin the wheel. Chase the unbeaten season.
           </p>
           <p className="mt-2 text-sm text-muted-foreground italic">
-            🏆 Champions League · 🌍 World Cup · ♀ Women's Elite<br />
-            🇩🇪 Bundesliga · 🇪🇸 La Liga · 🇮🇹 Serie A · 🇨🇭 Super League
+            🌎 LIVE World Cup 2026 · 🏆 Champions League<br />
+            🇩🇪 Bundesliga · 🇪🇸 La Liga · 🇮🇹 Serie A · 🇨🇭 Super League · ♀ Women's
           </p>
 
-          <Link
-            to="/game"
-            search={{ new: true }}
-            className="mt-9 inline-flex items-center gap-2 px-8 py-4 rounded-md bg-primary text-primary-foreground font-display text-xl tracking-[0.15em] uppercase shadow-[0_18px_40px_-10px] shadow-primary/70 hover:brightness-110 hover:-translate-y-0.5 transition border border-primary-foreground/10"
-          >
-            Kick-off <span aria-hidden>→</span>
-          </Link>
+          <div className="mt-9 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <Link
+              to="/game"
+              search={{ new: true }}
+              className="group inline-flex flex-col items-center gap-1 px-6 py-5 rounded-md bg-primary text-primary-foreground font-display text-lg tracking-[0.15em] uppercase shadow-[0_18px_40px_-10px] shadow-primary/70 hover:brightness-110 hover:-translate-y-0.5 transition border border-primary-foreground/10"
+            >
+              <span className="flex items-center gap-2">
+                ⚡ Kick-off <span aria-hidden>→</span>
+              </span>
+              <span className="text-[10px] tracking-[0.18em] normal-case opacity-80">One match · 5–30 min</span>
+            </Link>
+            <Link
+              to="/career"
+              className="group inline-flex flex-col items-center gap-1 px-6 py-5 rounded-md bg-warning/15 text-warning font-display text-lg tracking-[0.15em] uppercase border border-warning/50 shadow-[0_18px_40px_-10px] shadow-warning/40 hover:bg-warning/25 hover:-translate-y-0.5 transition"
+            >
+              <span className="flex items-center gap-2">
+                🌟 GOLAZO <span aria-hidden>→</span>
+              </span>
+              <span className="text-[10px] tracking-[0.18em] normal-case opacity-80">Career · multi-season legacy</span>
+            </Link>
+          </div>
 
           <div className="mt-10 grid grid-cols-3 gap-2 text-center">
-            <Stat value="7" label="Competitions" />
-            <Stat value="200+" label="Clubs" />
+            <Stat value="8" label="Competitions" />
+            <Stat value="340+" label="Clubs" />
             <Stat value="60+" label="Years" />
           </div>
 
