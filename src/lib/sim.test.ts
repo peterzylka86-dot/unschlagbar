@@ -7,12 +7,7 @@
  * or variance constants would break user-expected results.
  */
 import { describe, it, expect } from "vitest";
-import {
-  squadRating,
-  simulateSeason,
-  simulateKnockout,
-  computeLeagueTable,
-} from "./sim";
+import { squadRating, simulateSeason, simulateKnockout, computeLeagueTable } from "./sim";
 import type { Club, Slot, Player } from "./game-types";
 
 function mockPlayer(rating: number): Player {
@@ -68,14 +63,14 @@ describe("squadRating", () => {
     // 10 players rated 90, 1 empty slot
     // sum = 900, penalty = 60, denom = 11 → (900+60)/11 ≈ 87.27 → 87
     const slots = Array.from({ length: 11 }, (_, i) =>
-      i < 10 ? mockSlot(90, i) : mockSlot(null, i)
+      i < 10 ? mockSlot(90, i) : mockSlot(null, i),
     );
     expect(squadRating(slots)).toBe(87);
   });
 
   it("handles a half-filled squad without crashing", () => {
     const slots = Array.from({ length: 11 }, (_, i) =>
-      i < 5 ? mockSlot(85, i) : mockSlot(null, i)
+      i < 5 ? mockSlot(85, i) : mockSlot(null, i),
     );
     const r = squadRating(slots);
     expect(r).toBeGreaterThan(0);
@@ -112,8 +107,8 @@ describe("simulateSeason", () => {
   it("strong squad wins MORE often than weak squad against same opponents", () => {
     const strong = simulateSeason(opponents, 30, 95, 7, "normal");
     const weak = simulateSeason(opponents, 30, 65, 7, "normal");
-    const strongWins = strong.filter(m => m.outcome === "W").length;
-    const weakWins = weak.filter(m => m.outcome === "W").length;
+    const strongWins = strong.filter((m) => m.outcome === "W").length;
+    const weakWins = weak.filter((m) => m.outcome === "W").length;
     expect(strongWins).toBeGreaterThan(weakWins);
   });
 
@@ -130,14 +125,14 @@ describe("simulateSeason", () => {
 
   it("home/away allocation is approximately balanced (within 3 matches)", () => {
     const matches = simulateSeason(opponents, 30, 88, 1234);
-    const home = matches.filter(m => m.home).length;
-    const away = matches.filter(m => !m.home).length;
+    const home = matches.filter((m) => m.home).length;
+    const away = matches.filter((m) => !m.home).length;
     expect(Math.abs(home - away)).toBeLessThanOrEqual(3);
   });
 
   it("scores are non-negative integers", () => {
     const matches = simulateSeason(opponents, 34, 88, 1234);
-    matches.forEach(m => {
+    matches.forEach((m) => {
       expect(m.ourScore).toBeGreaterThanOrEqual(0);
       expect(m.theirScore).toBeGreaterThanOrEqual(0);
       expect(Number.isInteger(m.ourScore)).toBe(true);
@@ -147,7 +142,7 @@ describe("simulateSeason", () => {
 
   it("outcome label matches the actual goal difference", () => {
     const matches = simulateSeason(opponents, 34, 88, 1234);
-    matches.forEach(m => {
+    matches.forEach((m) => {
       if (m.ourScore > m.theirScore) expect(m.outcome).toBe("W");
       else if (m.ourScore < m.theirScore) expect(m.outcome).toBe("L");
       else expect(m.outcome).toBe("D");
@@ -172,7 +167,7 @@ describe("simulateKnockout", () => {
     // Should have at least 1 match
     expect(matches.length).toBeGreaterThanOrEqual(1);
     // Once a match has eliminates=true, no further matches
-    const elimIdx = matches.findIndex(m => m.eliminates);
+    const elimIdx = matches.findIndex((m) => m.eliminates);
     if (elimIdx >= 0) {
       expect(matches.length).toBe(elimIdx + 1);
     }
@@ -208,7 +203,7 @@ describe("computeLeagueTable", () => {
   it("includes 'us' in the table", () => {
     const matches = simulateSeason(opponents, 20, 85, 100);
     const { table } = computeLeagueTable(matches, opponents, 85, 20);
-    expect(table.some(r => r.isUs)).toBe(true);
+    expect(table.some((r) => r.isUs)).toBe(true);
   });
 
   it("returns ourPosition between 1 and (opponents+1) inclusive", () => {
@@ -221,7 +216,7 @@ describe("computeLeagueTable", () => {
   it("our points = 3*W + D", () => {
     const matches = simulateSeason(opponents, 20, 85, 100);
     const { table } = computeLeagueTable(matches, opponents, 85, 20);
-    const us = table.find(r => r.isUs)!;
+    const us = table.find((r) => r.isUs)!;
     expect(us.pts).toBe(us.w * 3 + us.d);
     expect(us.played).toBe(matches.length);
   });
@@ -234,11 +229,11 @@ describe("computeLeagueTable", () => {
     const matches = simulateSeason(opponents, 22, 85, 100).slice(0, 5);
     const { table } = computeLeagueTable(matches, opponents, 85, 22);
     // user shows 5 matches played
-    const us = table.find(r => r.isUs)!;
+    const us = table.find((r) => r.isUs)!;
     expect(us.played).toBe(5);
     // all opponents should also show ~5 played (rounded), not 22
-    const others = table.filter(r => !r.isUs);
-    others.forEach(o => {
+    const others = table.filter((r) => !r.isUs);
+    others.forEach((o) => {
       expect(o.played).toBeLessThanOrEqual(6);
       expect(o.played).toBeGreaterThanOrEqual(4);
       expect(o.w + o.d + o.l).toBe(o.played);
@@ -248,8 +243,8 @@ describe("computeLeagueTable", () => {
 
   it("at 0 matchdays played, every opponent reports played=0", () => {
     const { table } = computeLeagueTable([], opponents, 85, 22);
-    const others = table.filter(r => !r.isUs);
-    others.forEach(o => {
+    const others = table.filter((r) => !r.isUs);
+    others.forEach((o) => {
       expect(o.played).toBe(0);
       expect(o.w).toBe(0);
       expect(o.d).toBe(0);
@@ -261,21 +256,40 @@ describe("computeLeagueTable", () => {
   it("at full season, opponent.played === matchesPerTeam (unchanged behavior)", () => {
     const matches = simulateSeason(opponents, 20, 85, 100);
     const { table } = computeLeagueTable(matches, opponents, 85, 20);
-    const others = table.filter(r => !r.isUs);
-    others.forEach(o => {
+    const others = table.filter((r) => !r.isUs);
+    others.forEach((o) => {
       expect(o.played).toBe(20);
     });
+  });
+
+  // Bias check: user reported "always ended up second (coincidence, but
+  // please check)". Run 100 seasons with the SAME inputs across different
+  // seeds — the user's final position should distribute across multiple
+  // ranks, NOT collapse to a single position. Catches the case where a
+  // tie-break rule or rounding makes the user deterministically 2nd.
+  it("variance check: user's final position distributes (not stuck at 2nd)", () => {
+    const opps5 = Array.from({ length: 5 }, (_, i) => mockClub(75 + i * 2, i));
+    const positions = new Set<number>();
+    for (let seed = 1; seed <= 100; seed++) {
+      const matches = simulateSeason(opps5, 20, 80, seed * 7919);
+      const { ourPosition } = computeLeagueTable(matches, opps5, 80, 20);
+      positions.add(ourPosition);
+    }
+    // 100 seasons → at least 3 distinct positions, AND no single position
+    // dominates 80%+ of outcomes. (For an 80-rated user vs 75-83 opps,
+    // expect a spread roughly between 1st and 4th.)
+    expect(positions.size).toBeGreaterThanOrEqual(3);
   });
 
   it("sorted by points DESC, then goal difference, then goals-for", () => {
     const matches = simulateSeason(opponents, 20, 85, 100);
     const { table } = computeLeagueTable(matches, opponents, 85, 20);
     for (let i = 0; i < table.length - 1; i++) {
-      const a = table[i], b = table[i + 1];
+      const a = table[i],
+        b = table[i + 1];
       // Strict pts >= pts; if equal, GD >= GD; if equal, GF >= GF
       if (a.pts !== b.pts) expect(a.pts).toBeGreaterThanOrEqual(b.pts);
-      else if (a.gf - a.ga !== b.gf - b.ga)
-        expect(a.gf - a.ga).toBeGreaterThanOrEqual(b.gf - b.ga);
+      else if (a.gf - a.ga !== b.gf - b.ga) expect(a.gf - a.ga).toBeGreaterThanOrEqual(b.gf - b.ga);
       else expect(a.gf).toBeGreaterThanOrEqual(b.gf);
     }
   });

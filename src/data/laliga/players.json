@@ -1616,7 +1616,7 @@
     "club": "sevilla"
   },
   {
-    "name": "Saúl Ñíguez Sev",
+    "name": "Saúl Ñíguez",
     "position": "CM",
     "prime_rating": 80,
     "career_years": "2024-2026",
@@ -1664,7 +1664,7 @@
     "club": "sevilla"
   },
   {
-    "name": "Sergio Ramos Sev",
+    "name": "Sergio Ramos",
     "position": "CB",
     "prime_rating": 84,
     "career_years": "2003-2005",
@@ -1688,7 +1688,7 @@
     "club": "sevilla"
   },
   {
-    "name": "Dani Alves Sev",
+    "name": "Dani Alves",
     "position": "RB",
     "prime_rating": 87,
     "career_years": "2002-2008",
@@ -1768,7 +1768,7 @@
     "club": "sevilla"
   },
   {
-    "name": "Davor Šuker Sev",
+    "name": "Davor Šuker",
     "position": "ST",
     "prime_rating": 87,
     "career_years": "1991-1996",
@@ -1776,7 +1776,7 @@
     "club": "sevilla"
   },
   {
-    "name": "Diego Maradona Sev",
+    "name": "Diego Maradona",
     "position": "CAM",
     "prime_rating": 84,
     "career_years": "1992-1993",
@@ -1784,7 +1784,7 @@
     "club": "sevilla"
   },
   {
-    "name": "Diego Simeone Sev",
+    "name": "Diego Simeone",
     "position": "CDM",
     "prime_rating": 86,
     "career_years": "1992-1994",
@@ -2128,7 +2128,7 @@
     "club": "valencia"
   },
   {
-    "name": "David Villa Val",
+    "name": "David Villa",
     "position": "ST",
     "prime_rating": 92,
     "career_years": "2005-2010",
@@ -2160,7 +2160,7 @@
     "club": "valencia"
   },
   {
-    "name": "Andoni Zubizarreta Val",
+    "name": "Andoni Zubizarreta",
     "position": "GK",
     "prime_rating": 88,
     "career_years": "1994-1998",
@@ -2208,7 +2208,7 @@
     "club": "valencia"
   },
   {
-    "name": "Romário Val",
+    "name": "Romário",
     "position": "ST",
     "prime_rating": 90,
     "career_years": "1996-1997",
@@ -2216,7 +2216,7 @@
     "club": "valencia"
   },
   {
-    "name": "Predrag Mijatović Val",
+    "name": "Predrag Mijatović",
     "position": "CAM",
     "prime_rating": 87,
     "career_years": "1993-1996",
@@ -2240,7 +2240,7 @@
     "club": "valencia"
   },
   {
-    "name": "Penev Val",
+    "name": "Penev",
     "position": "ST",
     "prime_rating": 82,
     "career_years": "1989-1995",
@@ -2360,7 +2360,7 @@
     "club": "valencia"
   },
   {
-    "name": "Quini Val",
+    "name": "Quini",
     "position": "ST",
     "prime_rating": 83,
     "career_years": "1984-1986",
@@ -2520,7 +2520,7 @@
     "club": "villarreal"
   },
   {
-    "name": "Diego Godín Vil",
+    "name": "Diego Godín",
     "position": "CB",
     "prime_rating": 85,
     "career_years": "2007-2010",
@@ -2568,7 +2568,7 @@
     "club": "villarreal"
   },
   {
-    "name": "Diego Forlán Vil",
+    "name": "Diego Forlán",
     "position": "ST",
     "prime_rating": 89,
     "career_years": "2004-2007",
@@ -3152,7 +3152,7 @@
     "club": "athletic"
   },
   {
-    "name": "Andoni Zubizarreta Ath",
+    "name": "Andoni Zubizarreta",
     "position": "GK",
     "prime_rating": 91,
     "career_years": "1981-1986",
@@ -3488,7 +3488,7 @@
     "club": "betis"
   },
   {
-    "name": "Denilson Bet",
+    "name": "Denilson",
     "position": "LW",
     "prime_rating": 87,
     "career_years": "1998-2005",
@@ -3584,7 +3584,7 @@
     "club": "betis"
   },
   {
-    "name": "Robert Jarni Bet",
+    "name": "Robert Jarni",
     "position": "LB",
     "prime_rating": 83,
     "career_years": "1997-1999",
@@ -3632,7 +3632,7 @@
     "club": "betis"
   },
   {
-    "name": "Esnaola Bet",
+    "name": "Esnaola",
     "position": "GK",
     "prime_rating": 81,
     "career_years": "1973-1981",
@@ -4576,7 +4576,7 @@
     "club": "getafe"
   },
   {
-    "name": "Soldado Get",
+    "name": "Soldado",
     "position": "ST",
     "prime_rating": 83,
     "career_years": "2008-2010",
@@ -4712,7 +4712,7 @@
     "club": "mallorca"
   },
   {
-    "name": "Eto'o Mal",
+    "name": "Eto'o",
     "position": "ST",
     "prime_rating": 87,
     "career_years": "2000-2004",
@@ -4736,7 +4736,7 @@
     "club": "mallorca"
   },
   {
-    "name": "Christian Vieri Mal",
+    "name": "Christian Vieri",
     "position": "ST",
     "prime_rating": 87,
     "career_years": "1996-1997",
@@ -4848,7 +4848,7 @@
     "club": "alaves"
   },
   {
-    "name": "Manu Sanchez Ala",
+    "name": "Manu Sanchez",
     "position": "LB",
     "prime_rating": 76,
     "career_years": "2024-2026",
@@ -5240,7 +5240,7 @@
     "club": "leganes"
   },
   {
-    "name": "Munir El Haddadi Leg",
+    "name": "Munir El Haddadi",
     "position": "ST",
     "prime_rating": 78,
     "career_years": "2024-2026",
@@ -5248,7 +5248,7 @@
     "club": "leganes"
   },
   {
-    "name": "Juan Cruz Leg",
+    "name": "Juan Cruz",
     "position": "ST",
     "prime_rating": 78,
     "career_years": "2023-2026",
@@ -5496,7 +5496,7 @@
     "club": "espanyol"
   },
   {
-    "name": "Coutinho Esp",
+    "name": "Coutinho",
     "position": "CAM",
     "prime_rating": 83,
     "career_years": "2012-2013",
@@ -5536,7 +5536,7 @@
     "club": "espanyol"
   },
   {
-    "name": "Coro Esp",
+    "name": "Coro",
     "position": "CB",
     "prime_rating": 78,
     "career_years": "1995-2000",
@@ -5728,7 +5728,7 @@
     "club": "deportivo"
   },
   {
-    "name": "Sergio González Dep",
+    "name": "Sergio González",
     "position": "CM",
     "prime_rating": 84,
     "career_years": "2002-2008",
@@ -5800,7 +5800,7 @@
     "club": "deportivo"
   },
   {
-    "name": "Rivaldo Dep",
+    "name": "Rivaldo",
     "position": "CAM",
     "prime_rating": 91,
     "career_years": "1996-1997",
@@ -5808,7 +5808,7 @@
     "club": "deportivo"
   },
   {
-    "name": "Donato Dep",
+    "name": "Donato",
     "position": "CB",
     "prime_rating": 84,
     "career_years": "1993-1998",
@@ -5824,7 +5824,7 @@
     "club": "deportivo"
   },
   {
-    "name": "Penev Dep",
+    "name": "Penev",
     "position": "ST",
     "prime_rating": 82,
     "career_years": "1995-1997",
@@ -5872,7 +5872,7 @@
     "club": "zaragoza"
   },
   {
-    "name": "Ander Herrera Zar",
+    "name": "Ander Herrera",
     "position": "CM",
     "prime_rating": 81,
     "career_years": "2009-2011",
@@ -6280,7 +6280,7 @@
     "club": "levante"
   },
   {
-    "name": "Augusto Batalla Gra",
+    "name": "Augusto Batalla",
     "position": "GK",
     "prime_rating": 78,
     "career_years": "2024-2026",

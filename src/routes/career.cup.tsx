@@ -57,32 +57,70 @@ function CareerCup() {
     return Math.round(sum / career.squad.length);
   }, [career.squad]);
 
-  // Build the standings table from the most-recent season record (or fall
-  // back to building one fresh if the user lands here without one).
+  // Build the cup bracket — TRUST the league's `finalPosition` from
+  // seasonHistory (computed by computeLeagueTable in /career/season).
+  //
+  // BUG FIXED: previously the cup re-built its own standings table where
+  // user.pts came from match outcomes but rivals.pts came from a strength
+  // heuristic WITHOUT jitter — different from the heuristic-WITH-jitter
+  // that decided the league table. A user finishing 2nd in the league
+  // could end up 9th in the cup's re-derived standings and get bounced
+  // out. Now we honor the league position the user actually saw.
   const standings = useMemo<StandingsTable>(() => {
-    // Use user's W/D/L/GF/GA from career history if available
     const latest = career.seasonHistory[career.seasonHistory.length - 1];
-    const userPts = latest ? latest.wins * 3 + latest.draws : 0;
-    const userGF = latest?.goalsFor ?? 0;
-    const userGA = latest?.goalsAgainst ?? 0;
+    const finalPos = latest?.finalPosition ?? null;
+    const userQualifies = finalPos !== null && finalPos <= 8;
+
+    // Order rivals by their synthetic strength (descending) — used to
+    // place them around the user in seeding order.
+    const rivalsRanked = career.rivals
+      .map((r) => {
+        const rating =
+          r.squad.length > 0
+            ? r.squad.reduce((a, p) => a + p.prime_rating, 0) / r.squad.length
+            : 75;
+        return { id: r.id, rating };
+      })
+      .sort((a, b) => b.rating - a.rating);
+
+    // Build the ordered list of 12 league positions. User at finalPos - 1,
+    // rivals fill the rest in strength order.
+    const orderedIds: string[] = [];
+    let rivalIdx = 0;
+    for (let pos = 1; pos <= 12; pos++) {
+      if (pos === finalPos) {
+        orderedIds.push("user");
+      } else if (rivalIdx < rivalsRanked.length) {
+        orderedIds.push(rivalsRanked[rivalIdx].id);
+        rivalIdx++;
+      }
+    }
+    // Assign synthetic Pts in descending order so cupBracketSeeded's sort
+    // honors the ordered list. (12 → 36 pts spread; user keeps their real
+    // W/D/L/GF/GA for the recap chips.)
     const table: StandingsTable = {};
-    table["user"] = {
-      Pts: userPts,
-      GF: userGF,
-      GA: userGA,
-      W: latest?.wins ?? 0,
-      D: latest?.draws ?? 0,
-      L: latest?.losses ?? 0,
-      P: 22,
-    };
-    // Rivals: use their squad-rating heuristic for points (matches the
-    // computeLeagueTable approach in sim.ts).
-    career.rivals.forEach((r) => {
-      const rating =
-        r.squad.length > 0 ? r.squad.reduce((a, p) => a + p.prime_rating, 0) / r.squad.length : 75;
-      const pts = Math.max(8, Math.round((rating - 60) * (22 / 15.5)));
-      table[r.id] = { Pts: pts, GF: Math.round(pts * 1.3), GA: Math.round(pts * 0.9), P: 22 };
+    orderedIds.forEach((id, idx) => {
+      const pts = 50 - idx * 3; // monotonically decreasing
+      if (id === "user" && latest) {
+        table["user"] = {
+          Pts: pts,
+          GF: latest.goalsFor,
+          GA: latest.goalsAgainst,
+          W: latest.wins,
+          D: latest.draws,
+          L: latest.losses,
+          P: 22,
+        };
+      } else {
+        table[id] = {
+          Pts: pts,
+          GF: Math.round(pts * 1.3),
+          GA: Math.round(pts * 0.9),
+          P: 22,
+        };
+      }
     });
+    void userQualifies; // (just here for the diff to read clearly)
     return table;
   }, [career.seasonHistory, career.rivals]);
 

@@ -44,7 +44,7 @@ import type { Player } from "./game-types";
 function seededRand(seed: number): () => number {
   let s = seed >>> 0;
   return function () {
-    s = (s + 0x6D2B79F5) >>> 0;
+    s = (s + 0x6d2b79f5) >>> 0;
     let t = s;
     t = Math.imul(t ^ (t >>> 15), t | 1);
     t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
@@ -163,7 +163,7 @@ describe("weightedPick", () => {
     const N = 10000;
     let aCount = 0;
     for (let i = 0; i < N; i++) {
-      const pick = weightedPick(items, x => (x === "A" ? 9 : 1), rand);
+      const pick = weightedPick(items, (x) => (x === "A" ? 9 : 1), rand);
       if (pick === "A") aCount++;
     }
     expect(aCount).toBeGreaterThan(N * 0.86);
@@ -176,7 +176,7 @@ describe("weightedPick", () => {
     expect(weightedPick(["A", "B"], () => 0)).toBeNull();
   });
   it("ignores negative weights", () => {
-    const result = weightedPick(["A", "B"], x => (x === "A" ? -1 : 5));
+    const result = weightedPick(["A", "B"], (x) => (x === "A" ? -1 : 5));
     expect(result).toBe("B");
   });
 });
@@ -188,50 +188,50 @@ describe("generateFixtures", () => {
     const ids = ["A", "B", "C", "D", "E", "F", "G", "H"];
     const md = generateFixtures(ids);
     expect(md).toHaveLength(14);
-    md.forEach(round => expect(round).toHaveLength(4));
+    md.forEach((round) => expect(round).toHaveLength(4));
   });
   it("produces 22 matchdays × 6 matches for 12 clubs", () => {
     const ids = Array.from({ length: 12 }, (_, i) => "c" + i);
     const md = generateFixtures(ids);
     expect(md).toHaveLength(22);
-    md.forEach(round => expect(round).toHaveLength(6));
+    md.forEach((round) => expect(round).toHaveLength(6));
   });
   it("every unordered pair plays exactly twice", () => {
     const ids = ["A", "B", "C", "D", "E", "F"];
     const md = generateFixtures(ids);
     const pairs: Record<string, number> = {};
-    md.flat().forEach(m => {
+    md.flat().forEach((m) => {
       const key = [m.home, m.away].sort().join("-");
       pairs[key] = (pairs[key] ?? 0) + 1;
     });
     const expectedPairs = (ids.length * (ids.length - 1)) / 2;
     expect(Object.keys(pairs)).toHaveLength(expectedPairs);
-    Object.values(pairs).forEach(count => expect(count).toBe(2));
+    Object.values(pairs).forEach((count) => expect(count).toBe(2));
   });
   it("each pair plays once at home, once away", () => {
     const ids = ["A", "B", "C", "D"];
     const md = generateFixtures(ids);
     const ordered: Record<string, number> = {};
-    md.flat().forEach(m => {
+    md.flat().forEach((m) => {
       const key = m.home + "->" + m.away;
       ordered[key] = (ordered[key] ?? 0) + 1;
     });
-    Object.values(ordered).forEach(count => expect(count).toBe(1));
+    Object.values(ordered).forEach((count) => expect(count).toBe(1));
   });
   it("no self-pairings", () => {
     const ids = ["A", "B", "C", "D", "E", "F", "G", "H"];
     const md = generateFixtures(ids);
-    md.flat().forEach(m => expect(m.home).not.toBe(m.away));
+    md.flat().forEach((m) => expect(m.home).not.toBe(m.away));
   });
   it("every team plays exactly (n-1)*2 matches", () => {
     const ids = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
     const md = generateFixtures(ids);
     const counts: Record<string, number> = {};
-    md.flat().forEach(m => {
+    md.flat().forEach((m) => {
       counts[m.home] = (counts[m.home] ?? 0) + 1;
       counts[m.away] = (counts[m.away] ?? 0) + 1;
     });
-    ids.forEach(id => expect(counts[id]).toBe((ids.length - 1) * 2));
+    ids.forEach((id) => expect(counts[id]).toBe((ids.length - 1) * 2));
   });
   it("edge case: 2 clubs", () => {
     const md = generateFixtures(["A", "B"], { shuffle: false });
@@ -249,9 +249,14 @@ describe("generateFixtures", () => {
     const ids = Array.from({ length: 12 }, (_, i) => "c" + i);
     const md = generateFixtures(ids, { shuffle: false });
     const counts: Record<string, { H: number; A: number }> = {};
-    ids.forEach(id => { counts[id] = { H: 0, A: 0 }; });
-    md.flat().forEach(m => { counts[m.home].H++; counts[m.away].A++; });
-    ids.forEach(id => {
+    ids.forEach((id) => {
+      counts[id] = { H: 0, A: 0 };
+    });
+    md.flat().forEach((m) => {
+      counts[m.home].H++;
+      counts[m.away].A++;
+    });
+    ids.forEach((id) => {
       expect(counts[id].H).toBe(counts[id].A);
       expect(counts[id].H).toBe(ids.length - 1);
     });
@@ -260,18 +265,26 @@ describe("generateFixtures", () => {
     const ids = Array.from({ length: 12 }, (_, i) => "c" + i);
     const md = generateFixtures(ids, { rand: seededRand(12345) });
     const counts: Record<string, { H: number; A: number }> = {};
-    ids.forEach(id => { counts[id] = { H: 0, A: 0 }; });
-    md.flat().forEach(m => { counts[m.home].H++; counts[m.away].A++; });
-    ids.forEach(id => expect(counts[id].H).toBe(counts[id].A));
-    ids.forEach(id => {
-      const seq = md.map(round => {
-        const m = round.find(x => x.home === id || x.away === id);
+    ids.forEach((id) => {
+      counts[id] = { H: 0, A: 0 };
+    });
+    md.flat().forEach((m) => {
+      counts[m.home].H++;
+      counts[m.away].A++;
+    });
+    ids.forEach((id) => expect(counts[id].H).toBe(counts[id].A));
+    ids.forEach((id) => {
+      const seq = md.map((round) => {
+        const m = round.find((x) => x.home === id || x.away === id);
         return m && m.home === id ? "H" : "A";
       });
-      let run = 1, maxRun = 1;
+      let run = 1,
+        maxRun = 1;
       for (let i = 1; i < seq.length; i++) {
-        if (seq[i] === seq[i-1]) { run++; maxRun = Math.max(maxRun, run); }
-        else run = 1;
+        if (seq[i] === seq[i - 1]) {
+          run++;
+          maxRun = Math.max(maxRun, run);
+        } else run = 1;
       }
       expect(maxRun).toBeLessThan(8);
     });
@@ -280,8 +293,9 @@ describe("generateFixtures", () => {
     const ids = ["a", "b", "c", "d", "e", "f"];
     const a = generateFixtures(ids, { rand: seededRand(99) });
     const b = generateFixtures(ids, { rand: seededRand(99) });
-    expect(a.map(md => md.map(m => m.home + "-" + m.away)))
-      .toEqual(b.map(md => md.map(m => m.home + "-" + m.away)));
+    expect(a.map((md) => md.map((m) => m.home + "-" + m.away))).toEqual(
+      b.map((md) => md.map((m) => m.home + "-" + m.away)),
+    );
   });
 });
 
@@ -460,31 +474,52 @@ describe("pickAssister", () => {
 
 describe("form", () => {
   it("computeFormDelta: scorer/assister gets +1", () => {
-    const d = computeFormDelta({ position: "ST" }, { wasInvolved: true, gf: 2, ga: 1, currentForm: 0 });
+    const d = computeFormDelta(
+      { position: "ST" },
+      { wasInvolved: true, gf: 2, ga: 1, currentForm: 0 },
+    );
     expect(d).toBeGreaterThanOrEqual(1);
   });
   it("computeFormDelta: clean sheet for a defender = +1", () => {
-    const d = computeFormDelta({ position: "CB" }, { wasInvolved: false, gf: 1, ga: 0, currentForm: 0 });
+    const d = computeFormDelta(
+      { position: "CB" },
+      { wasInvolved: false, gf: 1, ga: 0, currentForm: 0 },
+    );
     expect(d).toBe(1);
   });
   it("computeFormDelta: clean sheet for a forward does NOT boost", () => {
-    const d = computeFormDelta({ position: "ST" }, { wasInvolved: false, gf: 1, ga: 0, currentForm: 0 });
+    const d = computeFormDelta(
+      { position: "ST" },
+      { wasInvolved: false, gf: 1, ga: 0, currentForm: 0 },
+    );
     expect(d).toBe(0);
   });
   it("computeFormDelta: heavy loss penalises uninvolved attackers", () => {
-    const d = computeFormDelta({ position: "ST" }, { wasInvolved: false, gf: 0, ga: 3, currentForm: 1 });
+    const d = computeFormDelta(
+      { position: "ST" },
+      { wasInvolved: false, gf: 0, ga: 3, currentForm: 1 },
+    );
     expect(d).toBe(-1);
   });
   it("computeFormDelta: GK conceding 3 takes a hit", () => {
-    const d = computeFormDelta({ position: "GK" }, { wasInvolved: false, gf: 0, ga: 3, currentForm: 0 });
+    const d = computeFormDelta(
+      { position: "GK" },
+      { wasInvolved: false, gf: 0, ga: 3, currentForm: 0 },
+    );
     expect(d).toBe(-1);
   });
   it("computeFormDelta: positive form decays without involvement", () => {
-    const d = computeFormDelta({ position: "CM" }, { wasInvolved: false, gf: 1, ga: 1, currentForm: 1.5 });
+    const d = computeFormDelta(
+      { position: "CM" },
+      { wasInvolved: false, gf: 1, ga: 1, currentForm: 1.5 },
+    );
     expect(d).toBe(-0.5);
   });
   it("computeFormDelta: negative form recovers without involvement", () => {
-    const d = computeFormDelta({ position: "CM" }, { wasInvolved: false, gf: 1, ga: 1, currentForm: -1.0 });
+    const d = computeFormDelta(
+      { position: "CM" },
+      { wasInvolved: false, gf: 1, ga: 1, currentForm: -1.0 },
+    );
     expect(d).toBe(0.5);
   });
   it("clampForm respects bounds", () => {
@@ -511,12 +546,19 @@ describe("form", () => {
 
 describe("sortStandings", () => {
   it("sorts by Pts descending", () => {
-    const t = makeTable([["a", 30], ["b", 50], ["c", 40]]);
+    const t = makeTable([
+      ["a", 30],
+      ["b", 50],
+      ["c", 40],
+    ]);
     const sorted = sortStandings(t).map(([id]) => id);
     expect(sorted).toEqual(["b", "c", "a"]);
   });
   it("tiebreaks on goal difference", () => {
-    const t = makeTable([["a", 30, 5], ["b", 30, 10]]);
+    const t = makeTable([
+      ["a", 30, 5],
+      ["b", 30, 10],
+    ]);
     const sorted = sortStandings(t).map(([id]) => id);
     expect(sorted).toEqual(["b", "a"]);
   });
@@ -525,9 +567,16 @@ describe("sortStandings", () => {
 describe("cupBracketSeeded", () => {
   it("top 8 seeded 1v8 / 2v7 / 3v6 / 4v5", () => {
     const t = makeTable([
-      ["user", 50], ["ai2", 48], ["ai3", 45], ["ai4", 42],
-      ["ai5", 40], ["ai6", 38], ["ai7", 35], ["ai8", 32],
-      ["ai9", 28], ["ai10", 22],
+      ["user", 50],
+      ["ai2", 48],
+      ["ai3", 45],
+      ["ai4", 42],
+      ["ai5", 40],
+      ["ai6", 38],
+      ["ai7", 35],
+      ["ai8", 32],
+      ["ai9", 28],
+      ["ai10", 22],
     ]);
     const { qf, userOut, qualifiers } = cupBracketSeeded(t, "user");
     expect(qf).toHaveLength(4);
@@ -540,17 +589,56 @@ describe("cupBracketSeeded", () => {
   });
   it("user out of top 8 → userOut = true", () => {
     const t = makeTable([
-      ["ai1", 50], ["ai2", 48], ["ai3", 45], ["ai4", 42],
-      ["ai5", 40], ["ai6", 38], ["ai7", 35], ["ai8", 32],
+      ["ai1", 50],
+      ["ai2", 48],
+      ["ai3", 45],
+      ["ai4", 42],
+      ["ai5", 40],
+      ["ai6", 38],
+      ["ai7", 35],
+      ["ai8", 32],
       ["user", 22],
     ]);
     expect(cupBracketSeeded(t, "user").userOut).toBe(true);
   });
   it("6-club league makes a smaller bracket", () => {
     const t = makeTable([
-      ["a", 50], ["b", 48], ["c", 45], ["d", 42], ["e", 40], ["f", 38],
+      ["a", 50],
+      ["b", 48],
+      ["c", 45],
+      ["d", 42],
+      ["e", 40],
+      ["f", 38],
     ]);
     expect(cupBracketSeeded(t, "a").qf).toHaveLength(3);
+  });
+
+  // Regression: user finished 2nd in the league but got bounced from
+  // the cup. Root cause was a re-derived standings table in /career/cup
+  // using a DIFFERENT pts formula than computeLeagueTable used. Test:
+  // when standings put user at position 2 by points, qualifiers[1] is user
+  // and they pair with seed 7 (1v8, 2v7, 3v6, 4v5).
+  it("regression: user 2nd in league qualifies for the cup", () => {
+    const t = makeTable([
+      ["ai1", 53],
+      ["user", 50],
+      ["ai3", 47],
+      ["ai4", 44],
+      ["ai5", 41],
+      ["ai6", 38],
+      ["ai7", 35],
+      ["ai8", 32],
+      ["ai9", 28],
+      ["ai10", 22],
+      ["ai11", 18],
+      ["ai12", 14],
+    ]);
+    const { qualifiers, qf, userOut } = cupBracketSeeded(t, "user");
+    expect(userOut).toBe(false);
+    expect(qualifiers).toEqual(["ai1", "user", "ai3", "ai4", "ai5", "ai6", "ai7", "ai8"]);
+    expect(qualifiers[1]).toBe("user");
+    // 2v7 pairing: user vs ai7
+    expect(qf[1]).toEqual({ home: "user", away: "ai7" });
   });
 });
 
@@ -563,8 +651,8 @@ describe("detectStarDemands", () => {
     ];
     const stats = {
       "cold star": { form: -2 },
-      "warm one":  { form: 1.5 },
-      "hot boss":  { form: 2 },
+      "warm one": { form: 1.5 },
+      "hot boss": { form: 2 },
     };
     const demands = detectStarDemands(squad, stats);
     expect(demands).toHaveLength(1);
@@ -585,9 +673,18 @@ describe("detectStarDemands", () => {
 describe("detectRelegation", () => {
   it("returns bottom 2 ids in a 12-club league", () => {
     const t = makeTable([
-      ["user", 60], ["ai1", 55], ["ai2", 50], ["ai3", 45], ["ai4", 40],
-      ["ai5", 38], ["ai6", 35], ["ai7", 30], ["ai8", 25], ["ai9", 20],
-      ["flop1", 12], ["flop2", 8],
+      ["user", 60],
+      ["ai1", 55],
+      ["ai2", 50],
+      ["ai3", 45],
+      ["ai4", 40],
+      ["ai5", 38],
+      ["ai6", 35],
+      ["ai7", 30],
+      ["ai8", 25],
+      ["ai9", 20],
+      ["flop1", 12],
+      ["flop2", 8],
     ]);
     const { relegatedIds, userRelegated } = detectRelegation(t, "user");
     expect(relegatedIds).toEqual(["flop1", "flop2"]);
@@ -595,9 +692,18 @@ describe("detectRelegation", () => {
   });
   it("detects when user is in the zone", () => {
     const t = makeTable([
-      ["ai1", 60], ["ai2", 55], ["ai3", 50], ["ai4", 45], ["ai5", 40],
-      ["ai6", 38], ["ai7", 35], ["ai8", 30], ["ai9", 25], ["ai10", 20],
-      ["user", 15], ["flop", 8],
+      ["ai1", 60],
+      ["ai2", 55],
+      ["ai3", 50],
+      ["ai4", 45],
+      ["ai5", 40],
+      ["ai6", 38],
+      ["ai7", 35],
+      ["ai8", 30],
+      ["ai9", 25],
+      ["ai10", 20],
+      ["user", 15],
+      ["flop", 8],
     ]);
     const { relegatedIds, userRelegated } = detectRelegation(t, "user");
     expect(relegatedIds.sort()).toEqual(["flop", "user"]);
@@ -605,8 +711,14 @@ describe("detectRelegation", () => {
   });
   it("skipped in small leagues", () => {
     const t = makeTable([
-      ["a", 50], ["b", 40], ["c", 30], ["d", 20], ["e", 10], ["f", 5],
-      ["g", 4], ["h", 3],
+      ["a", 50],
+      ["b", 40],
+      ["c", 30],
+      ["d", 20],
+      ["e", 10],
+      ["f", 5],
+      ["g", 4],
+      ["h", 3],
     ]);
     const { relegatedIds, userRelegated } = detectRelegation(t, "a");
     expect(relegatedIds).toEqual([]);
@@ -617,13 +729,13 @@ describe("detectRelegation", () => {
 // ─── buildAIManagers (the 12-club regression suite) ─────────────────────────
 
 const FAKE_ARCHETYPES: Archetype[] = [
-  { name: "Galáctico",    style: "galactico" },
-  { name: "Pragmatist",   style: "pragmatist" },
-  { name: "Romantic",     style: "romantic" },
-  { name: "Hipster",      style: "hipster" },
-  { name: "Brick Wall",   style: "brickwall" },
+  { name: "Galáctico", style: "galactico" },
+  { name: "Pragmatist", style: "pragmatist" },
+  { name: "Romantic", style: "romantic" },
+  { name: "Hipster", style: "hipster" },
+  { name: "Brick Wall", style: "brickwall" },
   { name: "Goal Machine", style: "goals" },
-  { name: "Old-School",   style: "oldschool" },
+  { name: "Old-School", style: "oldschool" },
 ];
 const FAKE_CLUBS: FoundingClub[] = Array.from({ length: 30 }, (_, i) => ({
   name: "Club" + i,
@@ -644,23 +756,25 @@ describe("buildAIManagers", () => {
   });
   it("each manager has a unique founding club", () => {
     const ais = buildAIManagers(11, "Club0", FAKE_ARCHETYPES, FAKE_CLUBS);
-    const clubs = new Set(ais.map(m => m.foundingClub));
+    const clubs = new Set(ais.map((m) => m.foundingClub));
     expect(clubs.size).toBe(ais.length);
   });
   it("user club is never assigned", () => {
     const ais = buildAIManagers(11, "Club5", FAKE_ARCHETYPES, FAKE_CLUBS);
-    ais.forEach(m => expect(m.foundingClub).not.toBe("Club5"));
+    ais.forEach((m) => expect(m.foundingClub).not.toBe("Club5"));
   });
   it("archetypes recycle when n > available archetypes", () => {
     const ais = buildAIManagers(11, "Club0", FAKE_ARCHETYPES, FAKE_CLUBS);
     const counts: Record<string, number> = {};
-    ais.forEach(m => { counts[m.archetype] = (counts[m.archetype] ?? 0) + 1; });
+    ais.forEach((m) => {
+      counts[m.archetype] = (counts[m.archetype] ?? 0) + 1;
+    });
     expect(Object.values(counts).reduce((a, b) => a + b, 0)).toBe(11);
     expect(Math.max(...Object.values(counts))).toBeGreaterThanOrEqual(2);
   });
   it("every manager has id, name, badge, colour, empty squad", () => {
     const ais = buildAIManagers(11, "Club0", FAKE_ARCHETYPES, FAKE_CLUBS);
-    ais.forEach(m => {
+    ais.forEach((m) => {
       expect(m.id).toBeTruthy();
       expect(m.name).toBeTruthy();
       expect(m.badge).toBeTruthy();
@@ -680,14 +794,14 @@ describe("buildAIManagers", () => {
     const tinyClubs = FAKE_CLUBS.slice(0, 3);
     const ais = buildAIManagers(10, "Club0", FAKE_ARCHETYPES, tinyClubs);
     expect(ais.length).toBeLessThanOrEqual(2);
-    const clubs = new Set(ais.map(m => m.foundingClub));
+    const clubs = new Set(ais.map((m) => m.foundingClub));
     expect(clubs.size).toBe(ais.length);
   });
   it("deterministic with a seeded random source", () => {
     const a = buildAIManagers(11, "Club0", FAKE_ARCHETYPES, FAKE_CLUBS, seededRand(123));
     const b = buildAIManagers(11, "Club0", FAKE_ARCHETYPES, FAKE_CLUBS, seededRand(123));
-    expect(a.map(m => m.foundingClub)).toEqual(b.map(m => m.foundingClub));
-    expect(a.map(m => m.archetype)).toEqual(b.map(m => m.archetype));
+    expect(a.map((m) => m.foundingClub)).toEqual(b.map((m) => m.foundingClub));
+    expect(a.map((m) => m.archetype)).toEqual(b.map((m) => m.archetype));
   });
 });
 
@@ -697,7 +811,7 @@ describe("chemistry", () => {
   it("a duo from same club+era gets 0.5 each", () => {
     const squad: CareerPlayer[] = [
       { name: "Messi", position: "ST", club: "Barcelona", era: "2010s" },
-      { name: "Xavi",  position: "CM", club: "Barcelona", era: "2010s" },
+      { name: "Xavi", position: "CM", club: "Barcelona", era: "2010s" },
       { name: "Buffon", position: "GK", club: "Juventus", era: "2000s" },
     ];
     const chem = computeChemistry(squad);
@@ -707,10 +821,10 @@ describe("chemistry", () => {
   });
   it("a trio+ gets 1.0 each", () => {
     const squad: CareerPlayer[] = [
-      { name: "Messi",   position: "ST", club: "Barcelona", era: "2010s" },
-      { name: "Xavi",    position: "CM", club: "Barcelona", era: "2010s" },
+      { name: "Messi", position: "ST", club: "Barcelona", era: "2010s" },
+      { name: "Xavi", position: "CM", club: "Barcelona", era: "2010s" },
       { name: "Iniesta", position: "CM", club: "Barcelona", era: "2010s" },
-      { name: "Suarez",  position: "ST", club: "Barcelona", era: "2010s" },
+      { name: "Suarez", position: "ST", club: "Barcelona", era: "2010s" },
     ];
     const chem = computeChemistry(squad);
     expect(chem["messi"]).toBe(1.0);
@@ -719,7 +833,7 @@ describe("chemistry", () => {
   });
   it("same club but different era = no chemistry", () => {
     const squad: CareerPlayer[] = [
-      { name: "Messi",      position: "ST", club: "Barcelona", era: "2010s" },
+      { name: "Messi", position: "ST", club: "Barcelona", era: "2010s" },
       { name: "Ronaldinho", position: "ST", club: "Barcelona", era: "2000s" },
     ];
     expect(Object.keys(computeChemistry(squad))).toHaveLength(0);
@@ -737,12 +851,12 @@ describe("chemistry", () => {
   });
   it("chemistryGroups: returns display-ready groups sorted by size", () => {
     const squad: CareerPlayer[] = [
-      { name: "Messi",   position: "ST", club: "Barcelona", era: "2010s" },
-      { name: "Xavi",    position: "CM", club: "Barcelona", era: "2010s" },
+      { name: "Messi", position: "ST", club: "Barcelona", era: "2010s" },
+      { name: "Xavi", position: "CM", club: "Barcelona", era: "2010s" },
       { name: "Iniesta", position: "CM", club: "Barcelona", era: "2010s" },
-      { name: "Kaka",    position: "CM", club: "AC Milan", era: "2000s" },
-      { name: "Nesta",   position: "CB", club: "AC Milan", era: "2000s" },
-      { name: "Buffon",  position: "GK", club: "Juventus", era: "2000s" },
+      { name: "Kaka", position: "CM", club: "AC Milan", era: "2000s" },
+      { name: "Nesta", position: "CB", club: "AC Milan", era: "2000s" },
+      { name: "Buffon", position: "GK", club: "Juventus", era: "2000s" },
     ];
     const groups = chemistryGroups(squad);
     expect(groups).toHaveLength(2);
@@ -777,7 +891,7 @@ describe("DEFAULT_ARCHETYPES", () => {
     expect(DEFAULT_ARCHETYPES).toHaveLength(7);
   });
   it("every archetype has name, style, and description", () => {
-    DEFAULT_ARCHETYPES.forEach(a => {
+    DEFAULT_ARCHETYPES.forEach((a) => {
       expect(a.name).toBeTruthy();
       expect(a.style).toBeTruthy();
       expect(a.description).toBeTruthy();
@@ -796,8 +910,8 @@ describe("scorePlayerByArchetype", () => {
       ...overrides,
     } as Player;
   }
-  const noNeed = new Set<"GK"|"DEF"|"MID"|"FWD">();
-  const needFWD = new Set<"GK"|"DEF"|"MID"|"FWD">(["FWD"]);
+  const noNeed = new Set<"GK" | "DEF" | "MID" | "FWD">();
+  const needFWD = new Set<"GK" | "DEF" | "MID" | "FWD">(["FWD"]);
 
   it("galactico boosts elite (≥92) over mid-tier players massively", () => {
     const elite = mockP({ prime_rating: 95 });

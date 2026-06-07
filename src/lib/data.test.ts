@@ -34,8 +34,8 @@ describe("data module loads cleanly", () => {
       expect(getPlayers(league).length).toBeGreaterThan(0);
     });
     it("every player's club id exists in clubs", () => {
-      const clubIds = new Set(getClubs(league).map(c => c.id));
-      const orphans = getPlayers(league).filter(p => !clubIds.has(p.club));
+      const clubIds = new Set(getClubs(league).map((c) => c.id));
+      const orphans = getPlayers(league).filter((p) => !clubIds.has(p.club));
       expect(orphans).toEqual([]);
     });
   });
@@ -45,35 +45,35 @@ describe("career super-league pool", () => {
   it("every default-pool club meets the SUPER_TEAM_STRENGTH threshold", () => {
     // Crème-de-la-crème filter: no Pro-Vercelli-tier clubs in the GOLAZO draft.
     const clubs = getCareerClubs();
-    clubs.forEach(c => {
+    clubs.forEach((c) => {
       expect(c.strength).toBeGreaterThanOrEqual(SUPER_TEAM_STRENGTH);
     });
   });
 
   it("excludes weak clubs from a known source league (regression)", () => {
     // Bundesliga's median is 72 — those clubs MUST NOT show up in the pool.
-    const careerIds = new Set(getCareerClubs().map(c => c.id));
-    const weakBundesliga = getClubs("bundesliga").filter(c => c.strength < SUPER_TEAM_STRENGTH);
-    weakBundesliga.forEach(c => {
+    const careerIds = new Set(getCareerClubs().map((c) => c.id));
+    const weakBundesliga = getClubs("bundesliga").filter((c) => c.strength < SUPER_TEAM_STRENGTH);
+    weakBundesliga.forEach((c) => {
       expect(careerIds.has(c.id)).toBe(false);
     });
   });
 
   it("includes elite clubs from every CAREER_POOL_LEAGUES source", () => {
-    const careerClubIds = new Set(getCareerClubs().map(c => c.id));
+    const careerClubIds = new Set(getCareerClubs().map((c) => c.id));
     for (const lg of CAREER_POOL_LEAGUES) {
       const eliteSourceIds = getClubs(lg)
-        .filter(c => c.strength >= SUPER_TEAM_STRENGTH)
-        .map(c => c.id);
+        .filter((c) => c.strength >= SUPER_TEAM_STRENGTH)
+        .map((c) => c.id);
       if (eliteSourceIds.length === 0) continue; // (no league should hit this)
-      const overlap = eliteSourceIds.filter(id => careerClubIds.has(id));
+      const overlap = eliteSourceIds.filter((id) => careerClubIds.has(id));
       expect(overlap.length).toBeGreaterThan(0);
     }
   });
 
   it("deduplicates players by `${club}:${name}`", () => {
     const players = getCareerPlayers();
-    const keys = players.map(p => `${p.club}:${p.name}`);
+    const keys = players.map((p) => `${p.club}:${p.name}`);
     expect(new Set(keys).size).toBe(keys.length);
   });
 
@@ -82,15 +82,42 @@ describe("career super-league pool", () => {
     // override they'd vanish from the pool and the founding pick would
     // crash with a missing club.
     const clubs = getCareerClubs("grasshopper");
-    expect(clubs.some(c => c.id === "grasshopper")).toBe(true);
+    expect(clubs.some((c) => c.id === "grasshopper")).toBe(true);
     // Real Madrid (elite) must still be in
-    expect(clubs.some(c => c.id === "realmadrid")).toBe(true);
+    expect(clubs.some((c) => c.id === "realmadrid")).toBe(true);
   });
 
   it("anchor inclusion also brings the anchor club's players in", () => {
     // Without this, GC would be a club with zero players — draft crash.
     const playersForGC = getCareerPlayers("grasshopper");
-    expect(playersForGC.some(p => p.club === "grasshopper")).toBe(true);
+    expect(playersForGC.some((p) => p.club === "grasshopper")).toBe(true);
+  });
+});
+
+describe("player name hygiene (regression)", () => {
+  // User reported "Diego Forlan VIL" displaying in the recap. Root cause:
+  // 86 player records had their club's short attribute appended to the
+  // name during data ingestion (Forlán→Vil, Pirlo→Mil, Vieri→Int, etc.).
+  // After the cleanup pass, no player name should END with a token that
+  // equals their club's short (case-insensitive).
+  describe.each(LEAGUE_IDS as LeagueId[])("league %s", (league) => {
+    it("no player name ends with their club's short attribute", () => {
+      const clubs = getClubs(league);
+      const shortById = new Map(clubs.map((c) => [c.id, c.short]));
+      const players = getPlayers(league);
+      const offenders = players
+        .filter((p) => {
+          const short = shortById.get(p.club);
+          if (!short) return false;
+          const parts = p.name.split(/\s+/);
+          if (parts.length < 2) return false;
+          const last = parts[parts.length - 1];
+          return last.toLowerCase() === short.toLowerCase();
+        })
+        .map((p) => `${p.name} (club=${p.club}, short=${shortById.get(p.club)})`)
+        .slice(0, 5);
+      expect(offenders).toEqual([]);
+    });
   });
 });
 
@@ -173,8 +200,13 @@ describe("clubSchema", () => {
 
   it("rejects unrealistic founding year", () => {
     const bad = _schemas.clubSchema.safeParse({
-      id: "x", name: "X", short: "X", city: "X",
-      color: "#000", founded: 1500, strength: 80,
+      id: "x",
+      name: "X",
+      short: "X",
+      city: "X",
+      color: "#000",
+      founded: 1500,
+      strength: 80,
     });
     expect(bad.success).toBe(false);
   });
