@@ -487,5 +487,271 @@
     "era_tiers": [
       "70s-80s"
     ]
+  },
+  {
+    "id": "spal",
+    "name": "SPAL",
+    "short": "SPL",
+    "city": "Ferrara",
+    "color": "#1b4798",
+    "founded": 1907,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "frosinone",
+    "name": "Frosinone Calcio",
+    "short": "FRO",
+    "city": "Frosinone",
+    "color": "#0c4790",
+    "founded": 1928,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "spezia",
+    "name": "Spezia Calcio",
+    "short": "SPE",
+    "city": "La Spezia",
+    "color": "#dbdbdb",
+    "founded": 1906,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "salernitana",
+    "name": "US Salernitana",
+    "short": "SAL",
+    "city": "Salerno",
+    "color": "#7a132a",
+    "founded": 1919,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "perugia",
+    "name": "AC Perugia",
+    "short": "PER",
+    "city": "Perugia",
+    "color": "#a02b2f",
+    "founded": 1905,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "pescara",
+    "name": "Pescara Calcio",
+    "short": "PSC",
+    "city": "Pescara",
+    "color": "#082a73",
+    "founded": 1936,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "cremonese",
+    "name": "US Cremonese",
+    "short": "CRE",
+    "city": "Cremona",
+    "color": "#a30025",
+    "founded": 1903,
+    "strength": 69,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "cittadella",
+    "name": "AS Cittadella",
+    "short": "CIT",
+    "city": "Cittadella",
+    "color": "#5a1f29",
+    "founded": 1973,
+    "strength": 68,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "pisa",
+    "name": "AC Pisa",
+    "short": "PIS",
+    "city": "Pisa",
+    "color": "#0c4790",
+    "founded": 1909,
+    "strength": 69,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "carpi",
+    "name": "Carpi FC",
+    "short": "CRP",
+    "city": "Carpi",
+    "color": "#f00",
+    "founded": 1909,
+    "strength": 67,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "cesena",
+    "name": "Cesena FC",
+    "short": "CES",
+    "city": "Cesena",
+    "color": "#fffd00",
+    "founded": 1940,
+    "strength": 68,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "entella",
+    "name": "Virtus Entella",
+    "short": "ENT",
+    "city": "Chiavari",
+    "color": "#0c4087",
+    "founded": 1914,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "ternana",
+    "name": "Ternana Calcio",
+    "short": "TER",
+    "city": "Terni",
+    "color": "#dc1f1d",
+    "founded": 1925,
+    "strength": 67,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "novara",
+    "name": "Novara Calcio",
+    "short": "NOV",
+    "city": "Novara",
+    "color": "#0c4087",
+    "founded": 1908,
+    "strength": 67,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "livorno",
+    "name": "AS Livorno",
+    "short": "LIV",
+    "city": "Livorno",
+    "color": "#7a132a",
+    "founded": 1915,
+    "strength": 67,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "pordenone",
+    "name": "Pordenone Calcio",
+    "short": "POR",
+    "city": "Pordenone",
+    "color": "#000000",
+    "founded": 1920,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "padovacalcio",
+    "name": "Calcio Padova",
+    "short": "PAD",
+    "city": "Padua",
+    "color": "#cd0000",
+    "founded": 1910,
+    "strength": 66,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "trapani",
+    "name": "Trapani Calcio",
+    "short": "TRA",
+    "city": "Trapani",
+    "color": "#0c4087",
+    "founded": 1905,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "provercelli",
+    "name": "Pro Vercelli",
+    "short": "PVE",
+    "city": "Vercelli",
+    "color": "#fff",
+    "founded": 1892,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
   }
 ]

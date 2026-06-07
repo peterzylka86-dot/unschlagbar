@@ -464,5 +464,257 @@
     "era_tiers": [
       "70s-80s"
     ]
+  },
+  {
+    "id": "huesca",
+    "name": "SD Huesca",
+    "short": "HUE",
+    "city": "Huesca",
+    "color": "#0d3675",
+    "founded": 1960,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "tenerife",
+    "name": "CD Tenerife",
+    "short": "TEN",
+    "city": "Santa Cruz",
+    "color": "#0250a4",
+    "founded": 1922,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "elche",
+    "name": "Elche CF",
+    "short": "ELC",
+    "city": "Elche",
+    "color": "#055d28",
+    "founded": 1923,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "almeria",
+    "name": "UD Almería",
+    "short": "ALM",
+    "city": "Almería",
+    "color": "#cc0000",
+    "founded": 1989,
+    "strength": 72,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "lugo",
+    "name": "CD Lugo",
+    "short": "LUG",
+    "city": "Lugo",
+    "color": "#820000",
+    "founded": 1953,
+    "strength": 68,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "alcorcon",
+    "name": "AD Alcorcón",
+    "short": "ALC",
+    "city": "Alcorcón",
+    "color": "#fef200",
+    "founded": 1971,
+    "strength": 68,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "numancia",
+    "name": "CD Numancia",
+    "short": "NUM",
+    "city": "Soria",
+    "color": "#cb000a",
+    "founded": 1945,
+    "strength": 68,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "nastic",
+    "name": "Gimnàstic de Tarragona",
+    "short": "NAS",
+    "city": "Tarragona",
+    "color": "#cf152d",
+    "founded": 1886,
+    "strength": 67,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "reus",
+    "name": "CF Reus Deportiu",
+    "short": "REU",
+    "city": "Reus",
+    "color": "#cd2729",
+    "founded": 1909,
+    "strength": 68,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "mirandes",
+    "name": "CD Mirandés",
+    "short": "MIR",
+    "city": "Miranda de Ebro",
+    "color": "#cc0000",
+    "founded": 1927,
+    "strength": 67,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "extremadura",
+    "name": "Extremadura UD",
+    "short": "EXT",
+    "city": "Almendralejo",
+    "color": "#022a59",
+    "founded": 1924,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "sevillab",
+    "name": "Sevilla Atlético",
+    "short": "SEB",
+    "city": "Seville",
+    "color": "#cd0000",
+    "founded": 1958,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "cartagena",
+    "name": "FC Cartagena",
+    "short": "CAR",
+    "city": "Cartagena",
+    "color": "#000000",
+    "founded": 1995,
+    "strength": 68,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "ponferradina",
+    "name": "SD Ponferradina",
+    "short": "PON",
+    "city": "Ponferrada",
+    "color": "#00208a",
+    "founded": 1922,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "santander",
+    "name": "Racing Santander",
+    "short": "RAC",
+    "city": "Santander",
+    "color": "#108542",
+    "founded": 1913,
+    "strength": 70,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "logrones",
+    "name": "UD Logroñés",
+    "short": "LOG",
+    "city": "Logroño",
+    "color": "#fef200",
+    "founded": 1940,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "murcia",
+    "name": "UCAM Murcia CF",
+    "short": "MUR",
+    "city": "Murcia",
+    "color": "#0c1f8b",
+    "founded": 1999,
+    "strength": 65,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
+  },
+  {
+    "id": "lorca",
+    "name": "Lorca FC",
+    "short": "LOR",
+    "city": "Lorca",
+    "color": "#ffffff",
+    "founded": 1949,
+    "strength": 64,
+    "era": "current",
+    "era_tier": "current",
+    "era_tiers": [
+      "current"
+    ]
   }
 ]

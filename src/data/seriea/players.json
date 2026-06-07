@@ -7086,5 +7086,8341 @@
     "career_years": "2013-2016",
     "nationality": "Germany",
     "club": "fiorentina"
+  },
+  {
+    "name": "A. Duncan",
+    "position": "CDM",
+    "prime_rating": 76,
+    "nationality": "Ghana",
+    "club": "sassuolo",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "L. Pellegrini",
+    "position": "CM",
+    "prime_rating": 77,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "D. Berardi",
+    "position": "CAM",
+    "prime_rating": 81,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2021"
+  },
+  {
+    "name": "E. Cascione",
+    "position": "CM",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "A. Aquilani",
+    "position": "CAM",
+    "prime_rating": 76,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "L. Vitale",
+    "position": "LB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "C. Ledesma",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "S. Muntari",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Ghana",
+    "club": "pescara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Barillà",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "T. Letschert",
+    "position": "CB",
+    "prime_rating": 74,
+    "nationality": "Netherlands",
+    "club": "sassuolo",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "M. Kone",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Ivory Coast",
+    "club": "cesena",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "S. Missiroli",
+    "position": "CM",
+    "prime_rating": 76,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "L. Memushaj",
+    "position": "CM",
+    "prime_rating": 72,
+    "nationality": "Albania",
+    "club": "pescara",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "S. Sensi",
+    "position": "CM",
+    "prime_rating": 75,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "F. Rossi",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "L. Lollo",
+    "position": "CM",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Magnanelli",
+    "position": "CDM",
+    "prime_rating": 77,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2021"
+  },
+  {
+    "name": "A. Lazzari",
+    "position": "CAM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "C. Mammarella",
+    "position": "LB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "S. Rizzato",
+    "position": "LB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "P. Schiattarella",
+    "position": "CAM",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "D. Biondini",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "S. Guberti",
+    "position": "CAM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Casarini",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "novara",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "M. Brighi",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "L. Laverone",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "avellino",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "L. Mazzitelli",
+    "position": "CM",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2021"
+  },
+  {
+    "name": "G. Vives",
+    "position": "CDM",
+    "prime_rating": 74,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "C. Biraghi",
+    "position": "LB",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "Pol Lirola",
+    "position": "RB",
+    "prime_rating": 74,
+    "nationality": "Spain",
+    "club": "sassuolo",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "O. Kragl",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Germany",
+    "club": "frosinone",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Signori",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "vicenza",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "N. Pulzetti",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "G. Rizzo",
+    "position": "LB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "vicenza",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "R. Bianco",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Zito",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "M. Coppola",
+    "position": "CDM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "D. Sciaudone",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "D. Mannini",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Renzetti",
+    "position": "LB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "P. Sammarco",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "N. Bellomo",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "vicenza",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Bolzoni",
+    "position": "CDM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "novara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Busellato",
+    "position": "RB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "J. Bahebeck",
+    "position": "RW",
+    "prime_rating": 72,
+    "nationality": "France",
+    "club": "pescara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Benali",
+    "position": "CAM",
+    "prime_rating": 70,
+    "nationality": "Libya",
+    "club": "pescara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Defendi",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "A. Ragusa",
+    "position": "RW",
+    "prime_rating": 74,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "G. Sansone",
+    "position": "LW",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "novara",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "J. Dezi",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Iori",
+    "position": "CM",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "V. Verre",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "G. Letizia",
+    "position": "LB",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Cubas",
+    "position": "CDM",
+    "prime_rating": 73,
+    "nationality": "Argentina",
+    "club": "pescara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "T. Kupisz",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Poland",
+    "club": "novara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Acerbi",
+    "position": "CB",
+    "prime_rating": 82,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "J. Mbakogu",
+    "position": "ST",
+    "prime_rating": 73,
+    "nationality": "Nigeria",
+    "club": "carpi",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "F. Della Rocca",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "L. Pasciuti",
+    "position": "CM",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "R. Lašík",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Slovakia",
+    "club": "avellino",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "D. Djoković",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Croatia",
+    "club": "spezia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "D. Gavazzi",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "avellino",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "F. Moretti",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "avellino",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "F. Signorelli",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Venezuela",
+    "club": "spezia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "E. Schiavon",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "M. Crimi",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Gazzola",
+    "position": "RB",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "L. Mora",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "J. Minala",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Cameroon",
+    "club": "salernitana",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "G. Defrel",
+    "position": "ST",
+    "prime_rating": 78,
+    "nationality": "France",
+    "club": "sassuolo",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "L. Del Prete",
+    "position": "RB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "C. Bovo",
+    "position": "CB",
+    "prime_rating": 74,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "A. Balzano",
+    "position": "RB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Odjer",
+    "position": "CDM",
+    "prime_rating": 67,
+    "nationality": "Ghana",
+    "club": "salernitana",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "I. Coronado",
+    "position": "CAM",
+    "prime_rating": 70,
+    "nationality": "Brazil",
+    "club": "trapani",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Antenucci",
+    "position": "CAM",
+    "prime_rating": 76,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "Andrea Orlandi",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Spain",
+    "club": "novara",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "F. Peluso",
+    "position": "CB",
+    "prime_rating": 75,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2021"
+  },
+  {
+    "name": "A. Schiavone",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "A. Mazzotta",
+    "position": "LB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Concas",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "L. Nizzetto",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "C. Ciano",
+    "position": "CM",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "R. Maiello",
+    "position": "CAM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Paolucci",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Rosina",
+    "position": "CAM",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "S. D'Elia",
+    "position": "LB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "vicenza",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "R. Gucher",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Austria",
+    "club": "vicenza",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Longhi",
+    "position": "LB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "Ronaldo",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Brazil",
+    "club": "salernitana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "R. Pucino",
+    "position": "RB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "vicenza",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Migliore",
+    "position": "LB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Urso",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "vicenza",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Troiano",
+    "position": "CDM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "E. Jelenič",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Slovenia",
+    "club": "carpi",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "M. Arini",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Ricci",
+    "position": "CM",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2021"
+  },
+  {
+    "name": "M. Calderoni",
+    "position": "LB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "novara",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "M. Mustacchio",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "P. Visconti",
+    "position": "LB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "G. Acampora",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "R. Bianchi",
+    "position": "ST",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "C. Adjapong",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "P. Granoche",
+    "position": "ST",
+    "prime_rating": 72,
+    "nationality": "Uruguay",
+    "club": "spezia",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "F. Paghera",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "avellino",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Moscati",
+    "position": "RB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Matri",
+    "position": "ST",
+    "prime_rating": 76,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2020"
+  },
+  {
+    "name": "G. Brugman",
+    "position": "CM",
+    "prime_rating": 72,
+    "nationality": "Uruguay",
+    "club": "pescara",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "S. Giacomelli",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "vicenza",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "E. Gnahoré",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "France",
+    "club": "perugia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "S. Floccari",
+    "position": "ST",
+    "prime_rating": 74,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2016-2021"
+  },
+  {
+    "name": "A. D'Angelo",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "avellino",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "G. De Luca",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "vicenza",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "C. Zaccardo",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "vicenza",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "D. Verde",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "avellino",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Cinelli",
+    "position": "CDM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "novara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "G. Caprari",
+    "position": "CAM",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "D. Zanon",
+    "position": "RB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Aramu",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Fedato",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "G. Ebagua",
+    "position": "ST",
+    "prime_rating": 71,
+    "nationality": "Nigeria",
+    "club": "vicenza",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "Nenê",
+    "position": "ST",
+    "prime_rating": 71,
+    "nationality": "Brazil",
+    "club": "spezia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Politano",
+    "position": "LW",
+    "prime_rating": 79,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Gilardino",
+    "position": "ST",
+    "prime_rating": 75,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "L. Castiglia",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "L. Bittante",
+    "position": "RB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "D. Fabbrini",
+    "position": "CAM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "Errasti",
+    "position": "CDM",
+    "prime_rating": 72,
+    "nationality": "Spain",
+    "club": "spezia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "G. Perico",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "U. Germano",
+    "position": "RB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "M. Alhassan",
+    "position": "LB",
+    "prime_rating": 65,
+    "nationality": "Ghana",
+    "club": "perugia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "K. Laribi",
+    "position": "CAM",
+    "prime_rating": 70,
+    "nationality": "Tunisia",
+    "club": "cesena",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "N. Giannetti",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Frara",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Crescenzi",
+    "position": "LB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "D. Adejo",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Nigeria",
+    "club": "vicenza",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Ciaramitaro",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "R. Fiamozzi",
+    "position": "RB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Rossi",
+    "position": "LB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Macheda",
+    "position": "ST",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "novara",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "A. Donnarumma",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "R. Gagliolo",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Zampano",
+    "position": "RB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Gori",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "N. Ammari",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "Algeria",
+    "club": "entella",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Dionisi",
+    "position": "ST",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "A. Di Gaudio",
+    "position": "CM",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Iunco",
+    "position": "CAM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "L. Garritano",
+    "position": "LW",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "P. Iemmello",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "B. Mokulu",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "DR Congo",
+    "club": "frosinone",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Cocco",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "L. Valzania",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "S. Colombatto",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Argentina",
+    "club": "trapani",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Mantovani",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "novara",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "R. Murić",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "Croatia",
+    "club": "pescara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "K. Lasagna",
+    "position": "ST",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "S. Emmanuello",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Caputo",
+    "position": "ST",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Valjent",
+    "position": "CB",
+    "prime_rating": 65,
+    "nationality": "Slovakia",
+    "club": "ternana",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "Alejandro Rodríguez",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Spain",
+    "club": "cesena",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "D. Soddimo",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "H. Campagnaro",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Argentina",
+    "club": "pescara",
+    "career_years": "2016-2020"
+  },
+  {
+    "name": "L. Tremolada",
+    "position": "CAM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "N. Di Roberto",
+    "position": "RW",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Ardemagni",
+    "position": "ST",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "avellino",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "C. Terzi",
+    "position": "CB",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2016-2021"
+  },
+  {
+    "name": "N. Citro",
+    "position": "LW",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "T. Casasola",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Argentina",
+    "club": "trapani",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Tabanelli",
+    "position": "CAM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "L. Krajnc",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Slovenia",
+    "club": "frosinone",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "S. Corazza",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "novara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Piccolo",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "C. Dell'Orco",
+    "position": "LB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "A. Struna",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Slovenia",
+    "club": "carpi",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "P. Koch",
+    "position": "RB",
+    "prime_rating": 65,
+    "nationality": "Switzerland",
+    "club": "novara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Legittimo",
+    "position": "LB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Galabinov",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Bulgaria",
+    "club": "novara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "L. Dickmann",
+    "position": "RB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "novara",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "F. De Col",
+    "position": "RB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "N. Belmonte",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "G. Masucci",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "P. Cannavaro",
+    "position": "CB",
+    "prime_rating": 76,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Mitriţă",
+    "position": "RW",
+    "prime_rating": 67,
+    "nationality": "Romania",
+    "club": "pescara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "G. Zigoni",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "L. Landre",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "France",
+    "club": "pisa",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "S. Di Carmine",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "L. Filippini",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Vita",
+    "position": "RW",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "vicenza",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "I. Lores Varela",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Uruguay",
+    "club": "pisa",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "C. Falletti",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "Uruguay",
+    "club": "ternana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "L. Castaldo",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "avellino",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "G. Litteri",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Lazzari",
+    "position": "CM",
+    "prime_rating": 80,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Coda",
+    "position": "ST",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "R. Acquafresca",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "G. Kastanos",
+    "position": "CAM",
+    "prime_rating": 66,
+    "nationality": "Cyprus",
+    "club": "pescara",
+    "career_years": "2016-2020"
+  },
+  {
+    "name": "M. Finotto",
+    "position": "ST",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "K. Adorján",
+    "position": "CAM",
+    "prime_rating": 65,
+    "nationality": "Hungary",
+    "club": "novara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Orlando",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "vicenza",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "L. Ariaudo",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "P. Fazio",
+    "position": "RB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "G. Beretta",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Diakité",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "France",
+    "club": "ternana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "G. Comi",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "U. Eusepi",
+    "position": "ST",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "avellino",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "N. Brighenti",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "R. Manaj",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Albania",
+    "club": "pisa",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "E. Terranova",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "L. Chiaretti",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Brazil",
+    "club": "cittadella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "E. Çani",
+    "position": "ST",
+    "prime_rating": 65,
+    "nationality": "Albania",
+    "club": "pisa",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "R. Crivello",
+    "position": "LB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "D. Ciofani",
+    "position": "ST",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "A. Arrighini",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "G. Monachello",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "S. Sini",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Volta",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "A. Bernardini",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "L. Paganini",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "B. Djimsiti",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Albania",
+    "club": "avellino",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Lisuzzo",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Tuia",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "G. Scognamiglio",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "novara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "R. Perticone",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Cerri",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "S. Luperto",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "João Silva",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Portugal",
+    "club": "salernitana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. González",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Uruguay",
+    "club": "avellino",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "N. Giani",
+    "position": "CB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Ciofani",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "S. Benedetti",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "M. Sprocati",
+    "position": "LW",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "L. Antei",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Chiosa",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "novara",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "K. Bonifazi",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "R. Schiavi",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "D. Capelli",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "R. Improta",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "D. Del Fabro",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Pellizzer",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "A. Coda",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "E. Legati",
+    "position": "CB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Avenatti",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Uruguay",
+    "club": "ternana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. La Mantia",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "L. Ceccarelli",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "D. Gasparetto",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "S. Romagnoli",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Milanović",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Serbia",
+    "club": "pisa",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Cremonesi",
+    "position": "CB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Troest",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Denmark",
+    "club": "novara",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "L. Strizzolo",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Contini",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Vicari",
+    "position": "CB",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "V. Pryyma",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Ukraine",
+    "club": "frosinone",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "G. Stendardo",
+    "position": "CB",
+    "prime_rating": 75,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Fornasier",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "N. Valentini",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Argentina",
+    "club": "spezia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Poli",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2016-2019"
+  },
+  {
+    "name": "A. Masi",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Russo",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "B. Meccariello",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "L. Pagliarulo",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Ligi",
+    "position": "CB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Esposito",
+    "position": "CB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "vicenza",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "E. Lancini",
+    "position": "CB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "novara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "N. Datković",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Croatia",
+    "club": "spezia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "E. Alfonso",
+    "position": "GK",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Bani",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Scaglia",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Bizzarri",
+    "position": "GK",
+    "prime_rating": 75,
+    "nationality": "Argentina",
+    "club": "pescara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Consigli",
+    "position": "GK",
+    "prime_rating": 82,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2021"
+  },
+  {
+    "name": "A. Gomis",
+    "position": "GK",
+    "prime_rating": 73,
+    "nationality": "Senegal",
+    "club": "salernitana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Amelia",
+    "position": "GK",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "vicenza",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "F. Benussi",
+    "position": "GK",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "vicenza",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Pigliacelli",
+    "position": "GK",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Iacobucci",
+    "position": "GK",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "A. Meret",
+    "position": "GK",
+    "prime_rating": 74,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "F. Agliardi",
+    "position": "GK",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "F. Bardi",
+    "position": "GK",
+    "prime_rating": 76,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2016-2020"
+  },
+  {
+    "name": "S. Colombi",
+    "position": "GK",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "S. Ujkani",
+    "position": "GK",
+    "prime_rating": 72,
+    "nationality": "Kosovo",
+    "club": "pisa",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "L. Chichizola",
+    "position": "GK",
+    "prime_rating": 71,
+    "nationality": "Argentina",
+    "club": "spezia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "D. Da Costa",
+    "position": "GK",
+    "prime_rating": 66,
+    "nationality": "Switzerland",
+    "club": "novara",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Zappino",
+    "position": "GK",
+    "prime_rating": 66,
+    "nationality": "Brazil",
+    "club": "frosinone",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "G. Pegolo",
+    "position": "GK",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2021"
+  },
+  {
+    "name": "R. Di Gennaro",
+    "position": "GK",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "M. Agazzi",
+    "position": "GK",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "S. Aresti",
+    "position": "GK",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "I. Provedel",
+    "position": "GK",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "V. Belec",
+    "position": "GK",
+    "prime_rating": 73,
+    "nationality": "Slovenia",
+    "club": "carpi",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Pomini",
+    "position": "GK",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "B. Radunović",
+    "position": "GK",
+    "prime_rating": 67,
+    "nationality": "Serbia",
+    "club": "avellino",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "L. Lezzerini",
+    "position": "GK",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "avellino",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "A. Rosati",
+    "position": "GK",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "P. Terracciano",
+    "position": "GK",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "A. Brignoli",
+    "position": "GK",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2016-2017"
+  },
+  {
+    "name": "V. Fiorillo",
+    "position": "GK",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "G. Marchegiani",
+    "position": "GK",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2016-2018"
+  },
+  {
+    "name": "F. Viviani",
+    "position": "CM",
+    "prime_rating": 76,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2017-2021"
+  },
+  {
+    "name": "J. Kurtić",
+    "position": "CDM",
+    "prime_rating": 75,
+    "nationality": "Slovenia",
+    "club": "spal",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "J. Akpa Akpro",
+    "position": "RB",
+    "prime_rating": 74,
+    "nationality": "Ivory Coast",
+    "club": "salernitana",
+    "career_years": "2017-2020"
+  },
+  {
+    "name": "F. Mattiello",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Kone",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Ivory Coast",
+    "club": "frosinone",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "D. Croce",
+    "position": "CAM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "B. Dramé",
+    "position": "LB",
+    "prime_rating": 73,
+    "nationality": "Senegal",
+    "club": "spal",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Grassi",
+    "position": "CM",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Crimi",
+    "position": "RB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2017-2020"
+  },
+  {
+    "name": "A. Diamanti",
+    "position": "CAM",
+    "prime_rating": 75,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "Reginaldo",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Brazil",
+    "club": "provercelli",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "S. Pesce",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "Y. Chibsah",
+    "position": "CDM",
+    "prime_rating": 73,
+    "nationality": "Ghana",
+    "club": "frosinone",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Salvi",
+    "position": "RB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "F. Renzetti",
+    "position": "LB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "F. Signori",
+    "position": "CDM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Eramo",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "L. Mora",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2017-2021"
+  },
+  {
+    "name": "S. Rizzato",
+    "position": "LB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "avellino",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "D. Brivio",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "R. Bianco",
+    "position": "CDM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "F. Bolzoni",
+    "position": "CDM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Pajač",
+    "position": "CAM",
+    "prime_rating": 66,
+    "nationality": "Croatia",
+    "club": "perugia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "D. Sciaudone",
+    "position": "CAM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "novara",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Lemos",
+    "position": "CB",
+    "prime_rating": 75,
+    "nationality": "Uruguay",
+    "club": "sassuolo",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "L. Giorgi",
+    "position": "CAM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "D. Ivan",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Slovakia",
+    "club": "provercelli",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Fedele",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Switzerland",
+    "club": "cesena",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "Paulinho",
+    "position": "CAM",
+    "prime_rating": 72,
+    "nationality": "Brazil",
+    "club": "cremonese",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "F. Signorelli",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Venezuela",
+    "club": "salernitana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "P. Bartolomei",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "Éverton Luiz",
+    "position": "CDM",
+    "prime_rating": 66,
+    "nationality": "Brazil",
+    "club": "spal",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Paloschi",
+    "position": "ST",
+    "prime_rating": 76,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2017-2021"
+  },
+  {
+    "name": "G. Marilungo",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "T. Kupisz",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Poland",
+    "club": "cesena",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "J. Gomez",
+    "position": "RW",
+    "prime_rating": 71,
+    "nationality": "Argentina",
+    "club": "cremonese",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Schenetti",
+    "position": "CAM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "S. Pasa",
+    "position": "CDM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "D. Moro",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "R. Fiamozzi",
+    "position": "RB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "L. Nizzetto",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "L. Garritano",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Mazzotta",
+    "position": "LB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "G. Di Noia",
+    "position": "LB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "R. Pucino",
+    "position": "RB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "K. Babacar",
+    "position": "ST",
+    "prime_rating": 76,
+    "nationality": "Senegal",
+    "club": "sassuolo",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "M. Arini",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "Ronaldo",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Brazil",
+    "club": "novara",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "C. Ciano",
+    "position": "LW",
+    "prime_rating": 74,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "A. Paolucci",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "Alex",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Portugal",
+    "club": "provercelli",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "Rogério",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Brazil",
+    "club": "sassuolo",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "T. Pachonik",
+    "position": "RB",
+    "prime_rating": 70,
+    "nationality": "Germany",
+    "club": "carpi",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "N. Dalmonte",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "G. Acampora",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Borriello",
+    "position": "ST",
+    "prime_rating": 77,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Settembrini",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Almici",
+    "position": "RB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "F. Paghera",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "F. Falco",
+    "position": "CAM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "D. Giorico",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Moscati",
+    "position": "RB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "novara",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "W. López",
+    "position": "LB",
+    "prime_rating": 69,
+    "nationality": "Uruguay",
+    "club": "spezia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Balzano",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2017-2020"
+  },
+  {
+    "name": "D. Zanon",
+    "position": "RB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "G. De Luca",
+    "position": "RW",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2017-2020"
+  },
+  {
+    "name": "M. Aramu",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "S. Gustafson",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "Sweden",
+    "club": "perugia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "L. Jallow",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Gambia",
+    "club": "cesena",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "L. Bittante",
+    "position": "RB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "S. Colombatto",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Argentina",
+    "club": "perugia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Cinelli",
+    "position": "CDM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Benedetti",
+    "position": "LB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Pessina",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "F. Costa",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "F. Di Tacchio",
+    "position": "CDM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "avellino",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "Abel Camará",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Guinea Bissau",
+    "club": "cremonese",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "Juande",
+    "position": "CDM",
+    "prime_rating": 66,
+    "nationality": "Spain",
+    "club": "spezia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Ricci",
+    "position": "CAM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "J. Machín",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Equatorial Guinea",
+    "club": "pescara",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Gilardino",
+    "position": "ST",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "S. Pettinari",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "F. Bandinelli",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "N. Ammari",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "Algeria",
+    "club": "spezia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "G. Maggiore",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "L. Mancuso",
+    "position": "RW",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "L. Valzania",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "B. Mokulu",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "DR Congo",
+    "club": "cremonese",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Cavion",
+    "position": "CAM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "R. Palladino",
+    "position": "CAM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "L. Tremolada",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Cocco",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "S. Molina",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "avellino",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "T. Casasola",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Argentina",
+    "club": "salernitana",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "B. Salamon",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Poland",
+    "club": "spal",
+    "career_years": "2017-2021"
+  },
+  {
+    "name": "F. Cassata",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "C. Chiricò",
+    "position": "RW",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "N. Citro",
+    "position": "CAM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2017-2020"
+  },
+  {
+    "name": "C. Kouamé",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Ivory Coast",
+    "club": "cittadella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "P. Ngawa",
+    "position": "RB",
+    "prime_rating": 67,
+    "nationality": "Belgium",
+    "club": "avellino",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Brighenti",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "P. Konate",
+    "position": "LB",
+    "prime_rating": 67,
+    "nationality": "Sweden",
+    "club": "spal",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "F. Melchiorri",
+    "position": "ST",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Piccolo",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2017-2020"
+  },
+  {
+    "name": "G. Castrovilli",
+    "position": "CAM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "N. Di Roberto",
+    "position": "LW",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "N. Aliji",
+    "position": "LB",
+    "prime_rating": 67,
+    "nationality": "Albania",
+    "club": "entella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "D. Cacia",
+    "position": "ST",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "L. Vido",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "R. Bocalon",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "L. Calapai",
+    "position": "RB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Canini",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "F. Piovaccari",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "S. Bidaoui",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Morocco",
+    "club": "avellino",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "R. Maniero",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "novara",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "C. Buonaiuto",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Varnier",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "R. Vitiello",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "S. Väisänen",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Finland",
+    "club": "spal",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "C. Pelagatti",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "G. Moncini",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "L. Verna",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Montalto",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "F. Orlando",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "L. Morosini",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "avellino",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "G. Di Chiara",
+    "position": "LB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Vita",
+    "position": "CAM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "D. Luppi",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "I. Donkor",
+    "position": "RB",
+    "prime_rating": 66,
+    "nationality": "Ghana",
+    "club": "cesena",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Finotto",
+    "position": "ST",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "G. Mastinu",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "A. Cerri",
+    "position": "ST",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "Felipe",
+    "position": "CB",
+    "prime_rating": 75,
+    "nationality": "Brazil",
+    "club": "spal",
+    "career_years": "2017-2020"
+  },
+  {
+    "name": "G. Puşcaş",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Romania",
+    "club": "novara",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "S. Scappini",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "G. Scognamiglio",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "F. Raičević",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Montenegro",
+    "club": "provercelli",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "Thiago Cionek",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Poland",
+    "club": "spal",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "G. Malcore",
+    "position": "ST",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "S. Morero",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Argentina",
+    "club": "avellino",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "L. Gatto",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Rossi",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "N. Giani",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "S. Gozzi",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "S. Monaco",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "D. Bergamelli",
+    "position": "CB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "D. Adorni",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "S. Popescu",
+    "position": "LB",
+    "prime_rating": 66,
+    "nationality": "Romania",
+    "club": "salernitana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "H. Dellafiore",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "E. Goldaniga",
+    "position": "CB",
+    "prime_rating": 74,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "C. Morra",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Rigione",
+    "position": "CB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "Aníbal Capela",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Portugal",
+    "club": "carpi",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. La Mantia",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "C. Capone",
+    "position": "RW",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "F. Belli",
+    "position": "RB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "R. Alcibiade",
+    "position": "CB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "D. Del Fabro",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "novara",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "F. Forte",
+    "position": "ST",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "E. Suagher",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "L. Šimić",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Croatia",
+    "club": "spal",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "D. Capelli",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "Claiton",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Brazil",
+    "club": "cremonese",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "M. Cremonesi",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "R. Brosco",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "Pol García",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Spain",
+    "club": "cremonese",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Krešić",
+    "position": "CB",
+    "prime_rating": 65,
+    "nationality": "Croatia",
+    "club": "avellino",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Perrotta",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "D. Gasparetto",
+    "position": "CB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "D. Cinaglia",
+    "position": "CB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Esposito",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Migliorini",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "avellino",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Masi",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Ligi",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Gomis",
+    "position": "GK",
+    "prime_rating": 76,
+    "nationality": "Senegal",
+    "club": "spal",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Fulignati",
+    "position": "GK",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Pigliacelli",
+    "position": "GK",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "provercelli",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "S. Ujkani",
+    "position": "GK",
+    "prime_rating": 72,
+    "nationality": "Kosovo",
+    "club": "cremonese",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "D. Bassi",
+    "position": "GK",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "R. Di Gennaro",
+    "position": "GK",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "B. Radunović",
+    "position": "GK",
+    "prime_rating": 68,
+    "nationality": "Serbia",
+    "club": "salernitana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Plizzari",
+    "position": "GK",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "L. Montipó",
+    "position": "GK",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "novara",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "N. Leali",
+    "position": "GK",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "M. Vigorito",
+    "position": "GK",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "N. Ravaglia",
+    "position": "GK",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2017-2019"
+  },
+  {
+    "name": "T. Nocchi",
+    "position": "GK",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "I. Radu",
+    "position": "GK",
+    "prime_rating": 67,
+    "nationality": "Romania",
+    "club": "avellino",
+    "career_years": "2017-2018"
+  },
+  {
+    "name": "A. Paleari",
+    "position": "GK",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "F. Viviani",
+    "position": "CM",
+    "prime_rating": 74,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "V. Verre",
+    "position": "CAM",
+    "prime_rating": 74,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Locatelli",
+    "position": "CDM",
+    "prime_rating": 78,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "M. Castagnetti",
+    "position": "CDM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Fares",
+    "position": "CM",
+    "prime_rating": 72,
+    "nationality": "Algeria",
+    "club": "spal",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "L. Lollo",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Falzerano",
+    "position": "RW",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "S. Missiroli",
+    "position": "CM",
+    "prime_rating": 75,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "A. Luci",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "L. Rizzo",
+    "position": "CM",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Valdifiori",
+    "position": "CM",
+    "prime_rating": 74,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "D. Di Gennaro",
+    "position": "CAM",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "F. Valiani",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "P. Bartolomei",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "N. Pulzetti",
+    "position": "CDM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Morganella",
+    "position": "RB",
+    "prime_rating": 69,
+    "nationality": "Switzerland",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Moscati",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "P. Tachtsidis",
+    "position": "CDM",
+    "prime_rating": 72,
+    "nationality": "Greece",
+    "club": "lecce",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "M. Crimi",
+    "position": "RB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Rosi",
+    "position": "RB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "F. Di Francesco",
+    "position": "CM",
+    "prime_rating": 76,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Diamanti",
+    "position": "CAM",
+    "prime_rating": 76,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "K. Michael",
+    "position": "CAM",
+    "prime_rating": 68,
+    "nationality": "Nigeria",
+    "club": "perugia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "F. Đuričić",
+    "position": "CAM",
+    "prime_rating": 75,
+    "nationality": "Serbia",
+    "club": "sassuolo",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "C. Molinaro",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "S. Branca",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "J. Boga",
+    "position": "CAM",
+    "prime_rating": 77,
+    "nationality": "Ivory Coast",
+    "club": "sassuolo",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "D. Soddimo",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "J. Mbakogu",
+    "position": "ST",
+    "prime_rating": 74,
+    "nationality": "Nigeria",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "C. Kouan",
+    "position": "CDM",
+    "prime_rating": 65,
+    "nationality": "Ivory Coast",
+    "club": "perugia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Bourabia",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Morocco",
+    "club": "sassuolo",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "N. Siega",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Coulibaly",
+    "position": "CDM",
+    "prime_rating": 66,
+    "nationality": "Senegal",
+    "club": "carpi",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "V. Mogos",
+    "position": "RB",
+    "prime_rating": 69,
+    "nationality": "Romania",
+    "club": "cremonese",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "D. Pavlovic",
+    "position": "CDM",
+    "prime_rating": 69,
+    "nationality": "Bosnia Herzegovina",
+    "club": "perugia",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "V. Dragomir",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "Romania",
+    "club": "perugia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "R. Fiamozzi",
+    "position": "RB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "F. Proia",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "A. Murgia",
+    "position": "CM",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "L. Belingheri",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Mustacchio",
+    "position": "RW",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "G. Rolando",
+    "position": "RB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "N. Falasco",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "Z. Majer",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Slovenia",
+    "club": "lecce",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "F. Zampano",
+    "position": "RB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "L. Parodi",
+    "position": "RB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Beghetto",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Scavone",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "T. Haye",
+    "position": "CAM",
+    "prime_rating": 65,
+    "nationality": "Netherlands",
+    "club": "lecce",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Mandorlini",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "S. Longo",
+    "position": "ST",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "L. Vignali",
+    "position": "RB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "F. Migliore",
+    "position": "LB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Valoti",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "M. Trotta",
+    "position": "ST",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "G. Di Noia",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "N. Madonna",
+    "position": "RB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "T. Kupisz",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Poland",
+    "club": "livorno",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "C. Del Grosso",
+    "position": "LB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Mancosu",
+    "position": "CAM",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "P. Mazzocchi",
+    "position": "RB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "F. Falco",
+    "position": "CAM",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "M. Calderoni",
+    "position": "LB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "Marlon",
+    "position": "CB",
+    "prime_rating": 75,
+    "nationality": "Brazil",
+    "club": "sassuolo",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "M. Ricci",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "M. Drudi",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Petagna",
+    "position": "ST",
+    "prime_rating": 78,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "F. Di Tacchio",
+    "position": "CDM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "G. Felicioli",
+    "position": "LB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "E. Calaió",
+    "position": "ST",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Mazzarani",
+    "position": "CAM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "L. Jallow",
+    "position": "RW",
+    "prime_rating": 69,
+    "nationality": "Gambia",
+    "club": "salernitana",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "W. López",
+    "position": "LB",
+    "prime_rating": 69,
+    "nationality": "Uruguay",
+    "club": "salernitana",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "L. Vido",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Bussaglia",
+    "position": "RW",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Vitale",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Longhi",
+    "position": "LB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "L. Ghiringhelli",
+    "position": "RB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "L. Crecco",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "M. Mbaye",
+    "position": "CDM",
+    "prime_rating": 65,
+    "nationality": "Senegal",
+    "club": "cremonese",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "P. Ghiglione",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "Y. Baraye",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Senegal",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "L. Valzania",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "N. Giannetti",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "D. Agazzi",
+    "position": "CDM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "G. Piscitella",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Sabbione",
+    "position": "CDM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "T. Cancellotti",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "D. Marsura",
+    "position": "RW",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "G. Moncini",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Finotto",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "F. Melchiorri",
+    "position": "ST",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "X. Emmers",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Belgium",
+    "club": "cremonese",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "L. Dickmann",
+    "position": "RB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "D. Anderson",
+    "position": "RB",
+    "prime_rating": 65,
+    "nationality": "Netherlands",
+    "club": "salernitana",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "Han Kwang Song",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Korea DPR",
+    "club": "perugia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "N. Dumitru",
+    "position": "RW",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "K. Cissé",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Guinea",
+    "club": "carpi",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Ciofani",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "J. Petriccione",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "S. Calvano",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "E. Pezzi",
+    "position": "CB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "V. Regini",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "F. Cassata",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Janković",
+    "position": "RW",
+    "prime_rating": 66,
+    "nationality": "Montenegro",
+    "club": "spal",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "I. Rondanini",
+    "position": "RB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Bruno",
+    "position": "CDM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "D. Cappelletti",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "D. Marcandella",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "G. Panico",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "B. Salamon",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Poland",
+    "club": "frosinone",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Vuletich",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Argentina",
+    "club": "salernitana",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "R. Crivello",
+    "position": "LB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "A. Cocco",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "T. Augello",
+    "position": "LB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "S. Palombi",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "J. El Yamiq",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Morocco",
+    "club": "perugia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Carretta",
+    "position": "LW",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Arrighini",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Capello",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Montalto",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "E. Brignola",
+    "position": "CAM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "S. Bidaoui",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Morocco",
+    "club": "spezia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "F. Lucioni",
+    "position": "CB",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "R. Perticone",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Capuano",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Demiral",
+    "position": "CB",
+    "prime_rating": 73,
+    "nationality": "Turkey",
+    "club": "sassuolo",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "S. Anđelković",
+    "position": "CB",
+    "prime_rating": 74,
+    "nationality": "Slovenia",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Galabinov",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Bulgaria",
+    "club": "spezia",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "H. Memolla",
+    "position": "LB",
+    "prime_rating": 65,
+    "nationality": "Albania",
+    "club": "salernitana",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "L. Clemenza",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Marras",
+    "position": "LW",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Pinamonti",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "G. Monachello",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "F. Del Sole",
+    "position": "CAM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "U. Sadiq",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Nigeria",
+    "club": "perugia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "S. Scappini",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "F. Bonazzoli",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "D. Okereke",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Nigeria",
+    "club": "spezia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "L. Strizzolo",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "G. Scognamiglio",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "L. Venuti",
+    "position": "RB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Đurić",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Bosnia Herzegovina",
+    "club": "salernitana",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "T. Trevisan",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "F. Raičević",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Montenegro",
+    "club": "livorno",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "E. Terranova",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "M. Antonucci",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Gasbarro",
+    "position": "LB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "G. Magnani",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "D. Frare",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "A. La Mantia",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "L. Ravanelli",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Cremonesi",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Caracciolo",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Gravillon",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "France",
+    "club": "pescara",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "E. Goldaniga",
+    "position": "CB",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "B. Meccariello",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "N. Gyömbér",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Slovakia",
+    "club": "perugia",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "D. Del Fabro",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "V. Mantovani",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "S. Simič",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Czech Republic",
+    "club": "frosinone",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "E. Suagher",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "G. Ferrari",
+    "position": "CB",
+    "prime_rating": 75,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2018-2021"
+  },
+  {
+    "name": "L. Bogdan",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Croatia",
+    "club": "livorno",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "D. Capelli",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "D. Dainelli",
+    "position": "CB",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Krešić",
+    "position": "CB",
+    "prime_rating": 65,
+    "nationality": "Croatia",
+    "club": "carpi",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "F. Cosenza",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "L. Gonnelli",
+    "position": "CB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Di Gennaro",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "E. Capradossi",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Migliorini",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "N. Cherubin",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Ligi",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Sportiello",
+    "position": "GK",
+    "prime_rating": 77,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Bizzarri",
+    "position": "GK",
+    "prime_rating": 73,
+    "nationality": "Argentina",
+    "club": "perugia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "E. Viviano",
+    "position": "GK",
+    "prime_rating": 82,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Iacobucci",
+    "position": "GK",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "A. Fulignati",
+    "position": "GK",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "Gabrìel",
+    "position": "GK",
+    "prime_rating": 74,
+    "nationality": "Brazil",
+    "club": "perugia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "S. Minelli",
+    "position": "GK",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Agazzi",
+    "position": "GK",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "A. Micai",
+    "position": "GK",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2018-2020"
+  },
+  {
+    "name": "E. Lamanna",
+    "position": "GK",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "M. Vigorito",
+    "position": "GK",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2018-2022"
+  },
+  {
+    "name": "B. Radunović",
+    "position": "GK",
+    "prime_rating": 68,
+    "nationality": "Serbia",
+    "club": "cremonese",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "L. Zima",
+    "position": "GK",
+    "prime_rating": 66,
+    "nationality": "Czech Republic",
+    "club": "livorno",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "N. Manfredini",
+    "position": "GK",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "D. Merelli",
+    "position": "GK",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2018-2019"
+  },
+  {
+    "name": "L. Castro",
+    "position": "CM",
+    "prime_rating": 76,
+    "nationality": "Argentina",
+    "club": "spal",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "B. Dabo",
+    "position": "CM",
+    "prime_rating": 74,
+    "nationality": "Burkina Faso",
+    "club": "spal",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "F. Viviani",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. De Agostini",
+    "position": "LB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "pordenone",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "L. Vitale",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "Pedro Obiang",
+    "position": "CDM",
+    "prime_rating": 77,
+    "nationality": "Equatorial Guinea",
+    "club": "sassuolo",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "Felipe Curcio",
+    "position": "LB",
+    "prime_rating": 69,
+    "nationality": "Brazil",
+    "club": "salernitana",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "A. Barák",
+    "position": "CAM",
+    "prime_rating": 76,
+    "nationality": "Czech Republic",
+    "club": "lecce",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "J. Sala",
+    "position": "RB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "A. Rispoli",
+    "position": "RB",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "C. Kouan Oulai",
+    "position": "RB",
+    "prime_rating": 68,
+    "nationality": "Ivory Coast",
+    "club": "perugia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "I. Chochev",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Bulgaria",
+    "club": "pescara",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "A. Salvi",
+    "position": "RB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Moscati",
+    "position": "RB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "J. Dezi",
+    "position": "CM",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "N. Haas",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Switzerland",
+    "club": "frosinone",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "L. Rizzo",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "H. Traorè",
+    "position": "CAM",
+    "prime_rating": 71,
+    "nationality": "Ivory Coast",
+    "club": "sassuolo",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "N. Siega",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "18 Reginaldo",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Brazil",
+    "club": "provercelli",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "F. Di Francesco",
+    "position": "CM",
+    "prime_rating": 76,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "Y. Shakhov",
+    "position": "CAM",
+    "prime_rating": 72,
+    "nationality": "Ukraine",
+    "club": "lecce",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "R. Benzar",
+    "position": "RB",
+    "prime_rating": 70,
+    "nationality": "Romania",
+    "club": "perugia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "K. Michael",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "Nigeria",
+    "club": "cremonese",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "19 S. Rizzato",
+    "position": "LB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "avellino",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "T. Pobega",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pordenone",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "L. Palmiero",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "G. Donati",
+    "position": "CB",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "19 J. Mbakogu",
+    "position": "ST",
+    "prime_rating": 74,
+    "nationality": "Nigeria",
+    "club": "padovacalcio",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "A. Ragusa",
+    "position": "RW",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "A. Paolucci",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "16 L. Antonini",
+    "position": "RB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "F. Lisi",
+    "position": "LW",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "Diego Farías",
+    "position": "RW",
+    "prime_rating": 72,
+    "nationality": "Brazil",
+    "club": "lecce",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Pucciarelli",
+    "position": "RW",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Pinato",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "S. Kiyine",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Morocco",
+    "club": "salernitana",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "S. Aloi",
+    "position": "CAM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "A. Cerci",
+    "position": "RW",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "C. Galano",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "L. Haraslín",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Slovakia",
+    "club": "sassuolo",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "R. Saponara",
+    "position": "CAM",
+    "prime_rating": 76,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "19 N. Bellomo",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "G. Imbula",
+    "position": "CM",
+    "prime_rating": 72,
+    "nationality": "DR Congo",
+    "club": "lecce",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "F. Caputo",
+    "position": "ST",
+    "prime_rating": 79,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "L. Mazzitelli",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "V. Chiricheș",
+    "position": "CB",
+    "prime_rating": 75,
+    "nationality": "Romania",
+    "club": "sassuolo",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "M. Coulibaly",
+    "position": "CDM",
+    "prime_rating": 65,
+    "nationality": "Senegal",
+    "club": "trapani",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "A. Reca",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Poland",
+    "club": "spal",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "S. Birindelli",
+    "position": "RB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "19 G. Marilungo",
+    "position": "RW",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "J. Biabiany",
+    "position": "RW",
+    "prime_rating": 70,
+    "nationality": "France",
+    "club": "trapani",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Odjer",
+    "position": "CDM",
+    "prime_rating": 65,
+    "nationality": "Ghana",
+    "club": "trapani",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Carraro",
+    "position": "CDM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "T. Kupisz",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Poland",
+    "club": "trapani",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Marin",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Romania",
+    "club": "pisa",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "José Machín",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Equatorial Guinea",
+    "club": "pescara",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "L. Capezzi",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "S. Gustafson",
+    "position": "CAM",
+    "prime_rating": 68,
+    "nationality": "Sweden",
+    "club": "cremonese",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "18 Andrea Orlandi",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Spain",
+    "club": "novara",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "J. Toljan",
+    "position": "RB",
+    "prime_rating": 73,
+    "nationality": "Germany",
+    "club": "sassuolo",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "G. Lapadula",
+    "position": "ST",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "F. Ricci",
+    "position": "CAM",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "E. Zukanović",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Bosnia Herzegovina",
+    "club": "spal",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "N. Dalmonte",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "K. Babacar",
+    "position": "ST",
+    "prime_rating": 73,
+    "nationality": "Senegal",
+    "club": "lecce",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Vitale",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "L. Del Prete",
+    "position": "RB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "L. Vido",
+    "position": "ST",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "V. Bojinov",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Bulgaria",
+    "club": "pescara",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "D. Moscardelli",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "C. Dell'Orco",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Müldür",
+    "position": "RB",
+    "prime_rating": 71,
+    "nationality": "Turkey",
+    "club": "sassuolo",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "A. Rizzo",
+    "position": "LB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "P. Dziczek",
+    "position": "CDM",
+    "prime_rating": 68,
+    "nationality": "Poland",
+    "club": "salernitana",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "17 C. Zaccardo",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "vicenza",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "P. Jaroszyński",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Poland",
+    "club": "salernitana",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "Alejandro Rodríguez",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Spain",
+    "club": "entella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "N. Giannetti",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "A. Balić",
+    "position": "CAM",
+    "prime_rating": 68,
+    "nationality": "Croatia",
+    "club": "perugia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "P. Iemmello",
+    "position": "ST",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "19 T. Cancellotti",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "N. Tomović",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Serbia",
+    "club": "spal",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "D. Marsura",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "A. Crescenzi",
+    "position": "RB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "S. Pettinari",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "17 D. Lanzafame",
+    "position": "RW",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "novara",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "L. Valzania",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "G. Di Chiara",
+    "position": "LB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Rosafio",
+    "position": "RW",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. D'Alessandro",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "A. Cerri",
+    "position": "ST",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "19 D. Anderson",
+    "position": "RB",
+    "prime_rating": 65,
+    "nationality": "Netherlands",
+    "club": "salernitana",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "G. Kyriakopoulos",
+    "position": "LB",
+    "prime_rating": 69,
+    "nationality": "Greece",
+    "club": "sassuolo",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "M. Fabbro",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "F. Deli",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Nzola",
+    "position": "ST",
+    "prime_rating": 73,
+    "nationality": "France",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Paolo Fernandes",
+    "position": "CAM",
+    "prime_rating": 66,
+    "nationality": "Spain",
+    "club": "perugia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "D. Diaw",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "P. Ciurria",
+    "position": "CAM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pordenone",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "A. Barison",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "pordenone",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "A. Di Gaudio",
+    "position": "LW",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "Lucas Chiaretti",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "Brazil",
+    "club": "pordenone",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "R. Maniero",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "P. Szymiński",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Poland",
+    "club": "frosinone",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "19 D. Marcandella",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "A. Tabanelli",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "17 I. H'Maidat",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Morocco",
+    "club": "vicenza",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "D. Luppi",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "14 T. Rocchi",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Marconi",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "S. Lo Faso",
+    "position": "ST",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "L. Candellone",
+    "position": "ST",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "pordenone",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "C. D'Urso",
+    "position": "CAM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "18 N. Aliji",
+    "position": "LB",
+    "prime_rating": 67,
+    "nationality": "Albania",
+    "club": "entella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "F. Belli",
+    "position": "RB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Marras",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "S. Palombi",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Coppolaro",
+    "position": "RB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "L. Strizzolo",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "pordenone",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "V. Parigini",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "F. Evacuo",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "19 C. Bovo",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Silvestre",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Argentina",
+    "club": "livorno",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "T. Heurtaux",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "France",
+    "club": "salernitana",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "E. Brignola",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "D. Falcinelli",
+    "position": "ST",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Sala",
+    "position": "LB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "C. Lombardi",
+    "position": "RW",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "R. Perticone",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "F. De Col",
+    "position": "RB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "S. Braken",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Netherlands",
+    "club": "livorno",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "E. Gyasi",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Ghana",
+    "club": "spezia",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "L. Clemenza",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Bianchetti",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Varnier",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "F. Romagna",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "L. Rossettini",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "19 U. Sadiq",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Nigeria",
+    "club": "perugia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "S. Benedetti",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "A. Novakovich",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "United States",
+    "club": "frosinone",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "F. Ferrari",
+    "position": "ST",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "C. Capone",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "R. Marchizza",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "N. Paz",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Argentina",
+    "club": "lecce",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "F. Stanco",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "14 P. Farkaš",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Slovakia",
+    "club": "ternana",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "L. Ravanelli",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "A. Meroni",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "C. Morra",
+    "position": "ST",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "R. Šimović",
+    "position": "ST",
+    "prime_rating": 65,
+    "nationality": "Sweden",
+    "club": "livorno",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "A. Caracciolo",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Camporese",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "pordenone",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "G. Angella",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "19 L. Šimić",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Croatia",
+    "club": "spal",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "F. Sgarbi",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "S. Scuffet",
+    "position": "GK",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "Gabriel",
+    "position": "GK",
+    "prime_rating": 76,
+    "nationality": "Brazil",
+    "club": "lecce",
+    "career_years": "2019-2022"
+  },
+  {
+    "name": "19 S. Minelli",
+    "position": "GK",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "S. Gori",
+    "position": "GK",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "E. Berisha",
+    "position": "GK",
+    "prime_rating": 76,
+    "nationality": "Albania",
+    "club": "spal",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "A. Plizzari",
+    "position": "GK",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "M. Di Gregorio",
+    "position": "GK",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pordenone",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "K. Letica",
+    "position": "GK",
+    "prime_rating": 71,
+    "nationality": "Croatia",
+    "club": "spal",
+    "career_years": "2019-2021"
+  },
+  {
+    "name": "M. Carnesecchi",
+    "position": "GK",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "G. Vicario",
+    "position": "GK",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2019-2020"
+  },
+  {
+    "name": "12 M. Oddo",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "K. Ayhan",
+    "position": "CB",
+    "prime_rating": 75,
+    "nationality": "Turkey",
+    "club": "sassuolo",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "17 S. Pepe",
+    "position": "CAM",
+    "prime_rating": 74,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 Felipe Curcio",
+    "position": "LB",
+    "prime_rating": 69,
+    "nationality": "Brazil",
+    "club": "salernitana",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 L. Memushaj",
+    "position": "CM",
+    "prime_rating": 72,
+    "nationality": "Albania",
+    "club": "pescara",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "F. Mattiello",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "J. Sala",
+    "position": "RB",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 C. Kouan Oulai",
+    "position": "RB",
+    "prime_rating": 68,
+    "nationality": "Ivory Coast",
+    "club": "perugia",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 A. Salvi",
+    "position": "RB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "N. Estévez",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Argentina",
+    "club": "spezia",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 C. Ciano",
+    "position": "LW",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "D. Verde",
+    "position": "CAM",
+    "prime_rating": 74,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 A. Benedetti",
+    "position": "LB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 S. Aloi",
+    "position": "CAM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 A. Cerci",
+    "position": "RW",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 C. Galano",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 F. Proia",
+    "position": "CDM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "L. Henderson",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Scotland",
+    "club": "lecce",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 G. Imbula",
+    "position": "CM",
+    "prime_rating": 72,
+    "nationality": "DR Congo",
+    "club": "lecce",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "Diego Farías",
+    "position": "RW",
+    "prime_rating": 71,
+    "nationality": "Brazil",
+    "club": "spezia",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 S. Birindelli",
+    "position": "RB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 J. Biabiany",
+    "position": "RW",
+    "prime_rating": 70,
+    "nationality": "France",
+    "club": "trapani",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 M. Odjer",
+    "position": "CDM",
+    "prime_rating": 65,
+    "nationality": "Ghana",
+    "club": "trapani",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 T. Kupisz",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Poland",
+    "club": "trapani",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 S. Gustafson",
+    "position": "CAM",
+    "prime_rating": 68,
+    "nationality": "Sweden",
+    "club": "cremonese",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 E. Pisano",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "C. Adjapong",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "M. Listkowski",
+    "position": "CAM",
+    "prime_rating": 66,
+    "nationality": "Poland",
+    "club": "lecce",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 A. Bussaglia",
+    "position": "CAM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 N. Dalmonte",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 M. Vitale",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 L. Vido",
+    "position": "ST",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 L. Jallow",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Gambia",
+    "club": "salernitana",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 V. Bojinov",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Bulgaria",
+    "club": "pescara",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "S. Esposito",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "18 M. Borriello",
+    "position": "ST",
+    "prime_rating": 77,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 D. Moscardelli",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 A. Rizzo",
+    "position": "LB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 P. Jaroszyński",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Poland",
+    "club": "salernitana",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "C. Dell'Orco",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 L. Crecco",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 A. Balzano",
+    "position": "RB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 Alejandro Rodríguez",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Spain",
+    "club": "entella",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 A. Balić",
+    "position": "CAM",
+    "prime_rating": 68,
+    "nationality": "Croatia",
+    "club": "perugia",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "L. Zuta",
+    "position": "LB",
+    "prime_rating": 65,
+    "nationality": "North Macedonia",
+    "club": "lecce",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 F. Grillo",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Argentina",
+    "club": "trapani",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 S. Pettinari",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 G. Panico",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "18 A. Gilardino",
+    "position": "ST",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 R. Aya",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 A. Matri",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 A. Piccolo",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 P. Ciurria",
+    "position": "CAM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pordenone",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "Salva",
+    "position": "RB",
+    "prime_rating": 67,
+    "nationality": "Spain",
+    "club": "spezia",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 A. Barison",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "pordenone",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 P. Szymiński",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Poland",
+    "club": "frosinone",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 D. Adorni",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 S. Strandberg",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Norway",
+    "club": "trapani",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "L. Paganini",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 L. Candellone",
+    "position": "ST",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "pordenone",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 C. D'Urso",
+    "position": "CAM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 S. Palombi",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 M. Coppolaro",
+    "position": "RB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 S. Bidaoui",
+    "position": "LW",
+    "prime_rating": 66,
+    "nationality": "Morocco",
+    "club": "spezia",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 F. Evacuo",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 M. Capuano",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "19 S. Anđelković",
+    "position": "CB",
+    "prime_rating": 74,
+    "nationality": "Slovenia",
+    "club": "padovacalcio",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 T. Heurtaux",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "France",
+    "club": "salernitana",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "M. Coda",
+    "position": "ST",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "E. Brignola",
+    "position": "CAM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 D. Falcinelli",
+    "position": "ST",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "J. Odgaard",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Denmark",
+    "club": "sassuolo",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 C. Lombardi",
+    "position": "RW",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "M. Sala",
+    "position": "LB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 F. De Col",
+    "position": "RB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 S. Braken",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Netherlands",
+    "club": "livorno",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 M. Bianchetti",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 M. Varnier",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 G. Kastanos",
+    "position": "CAM",
+    "prime_rating": 66,
+    "nationality": "Cyprus",
+    "club": "pescara",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "18 P. Cannavaro",
+    "position": "CB",
+    "prime_rating": 75,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 D. Frare",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 S. Benedetti",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "G. Scamacca",
+    "position": "ST",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "A. Ismajli",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Albania",
+    "club": "spezia",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 A. Novakovich",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "United States",
+    "club": "frosinone",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 F. Ferrari",
+    "position": "ST",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 H. Campagnaro",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Argentina",
+    "club": "pescara",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 E. Terranova",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 D. Ciofani",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 L. Ravanelli",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 A. Meroni",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 M. Chiosa",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "entella",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 M. Camporese",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "pordenone",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 G. Angella",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "20 L. Bogdan",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Croatia",
+    "club": "livorno",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 V. Mantovani",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 N. Gyömbér",
+    "position": "CB",
+    "prime_rating": 72,
+    "nationality": "Slovakia",
+    "club": "perugia",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "15 C. Natali",
+    "position": "CB",
+    "prime_rating": 74,
+    "nationality": "Italy",
+    "club": "sassuolo",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "J. Chabot",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Germany",
+    "club": "spezia",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 M. Boben",
+    "position": "CB",
+    "prime_rating": 65,
+    "nationality": "Slovenia",
+    "club": "livorno",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 F. Sgarbi",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "M. Erlić",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Croatia",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 M. Migliorini",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "J. Zoet",
+    "position": "GK",
+    "prime_rating": 76,
+    "nationality": "Netherlands",
+    "club": "spezia",
+    "career_years": "2020-2022"
+  },
+  {
+    "name": "17 M. Amelia",
+    "position": "GK",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "vicenza",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 F. Bardi",
+    "position": "GK",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 S. Gori",
+    "position": "GK",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "16 L. Gomis",
+    "position": "GK",
+    "prime_rating": 68,
+    "nationality": "Senegal",
+    "club": "frosinone",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "Rafael",
+    "position": "GK",
+    "prime_rating": 73,
+    "nationality": "Brazil",
+    "club": "spezia",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 A. Plizzari",
+    "position": "GK",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "20 A. Paleari",
+    "position": "GK",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "cittadella",
+    "career_years": "2020-2021"
+  },
+  {
+    "name": "J. Obi",
+    "position": "CM",
+    "prime_rating": 72,
+    "nationality": "Nigeria",
+    "club": "salernitana",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "V. Kovalenko",
+    "position": "CAM",
+    "prime_rating": 73,
+    "nationality": "Ukraine",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 C. Maggio",
+    "position": "RB",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 F. Viviani",
+    "position": "CDM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 M. Rohdén",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Sweden",
+    "club": "frosinone",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 D. Croce",
+    "position": "CM",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "L. Coulibaly",
+    "position": "CDM",
+    "prime_rating": 73,
+    "nationality": "Mali",
+    "club": "salernitana",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "18 B. Dramé",
+    "position": "LB",
+    "prime_rating": 73,
+    "nationality": "Senegal",
+    "club": "spal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "K. Amian",
+    "position": "CB",
+    "prime_rating": 73,
+    "nationality": "France",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 A. Rosi",
+    "position": "RB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "19 G. Pinzi",
+    "position": "CDM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 S. Missiroli",
+    "position": "CM",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "F. Ribéry",
+    "position": "CAM",
+    "prime_rating": 79,
+    "nationality": "France",
+    "club": "salernitana",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "19 M. Antenucci",
+    "position": "ST",
+    "prime_rating": 75,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 A. De Vitis",
+    "position": "CM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "pisa",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Coulibaly",
+    "position": "CDM",
+    "prime_rating": 66,
+    "nationality": "Senegal",
+    "club": "salernitana",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 M. Ricci",
+    "position": "CM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 V. Dragomir",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Romania",
+    "club": "perugia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 M. Valdifiori",
+    "position": "CDM",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 M. Busellato",
+    "position": "CDM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 L. Greco",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "A. Reca",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Poland",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "A. Blin",
+    "position": "CDM",
+    "prime_rating": 72,
+    "nationality": "France",
+    "club": "lecce",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "S. Bastoni",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Bourabia",
+    "position": "CM",
+    "prime_rating": 68,
+    "nationality": "Morocco",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "R. Benzar",
+    "position": "RB",
+    "prime_rating": 67,
+    "nationality": "Romania",
+    "club": "lecce",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "19 Paulinho",
+    "position": "CAM",
+    "prime_rating": 71,
+    "nationality": "Brazil",
+    "club": "cremonese",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 C. Buonaiuto",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "K. Agudelo",
+    "position": "CAM",
+    "prime_rating": 69,
+    "nationality": "Colombia",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 A. Murgia",
+    "position": "CM",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 M. Calderoni",
+    "position": "LB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 A. Paloschi",
+    "position": "ST",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 S. Esposito",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "R. Gagliolo",
+    "position": "LB",
+    "prime_rating": 73,
+    "nationality": "Sweden",
+    "club": "salernitana",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 L. Del Prete",
+    "position": "RB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "trapani",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 C. Del Grosso",
+    "position": "LB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "pescara",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 E. Calaiò",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "19 P. Granoche",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Uruguay",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "E. Salcedo",
+    "position": "RW",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 M. Stępiński",
+    "position": "ST",
+    "prime_rating": 70,
+    "nationality": "Poland",
+    "club": "lecce",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "A. Barreca",
+    "position": "LB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Ruggeri",
+    "position": "LB",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 L. Dickmann",
+    "position": "RB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "F. Veseli",
+    "position": "RB",
+    "prime_rating": 69,
+    "nationality": "Albania",
+    "club": "salernitana",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 F. Ceravolo",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Léo Sena",
+    "position": "CM",
+    "prime_rating": 65,
+    "nationality": "Brazil",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "M. Hjulmand",
+    "position": "CM",
+    "prime_rating": 67,
+    "nationality": "Denmark",
+    "club": "lecce",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "J. Björkengren",
+    "position": "CDM",
+    "prime_rating": 65,
+    "nationality": "Sweden",
+    "club": "lecce",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 L. Valzania",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 N. Tomović",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Serbia",
+    "club": "spal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 G. Di Chiara",
+    "position": "LB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "perugia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 S. Pettinari",
+    "position": "ST",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "S. Strandberg",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Norway",
+    "club": "salernitana",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "R. Aya",
+    "position": "CB",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "R. Manaj",
+    "position": "ST",
+    "prime_rating": 71,
+    "nationality": "Albania",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Salva Ferrer",
+    "position": "RB",
+    "prime_rating": 67,
+    "nationality": "Spain",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 S. Floccari",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 N. Citro",
+    "position": "LW",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "frosinone",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 S. Lo Faso",
+    "position": "CAM",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Simy",
+    "position": "ST",
+    "prime_rating": 74,
+    "nationality": "Nigeria",
+    "club": "salernitana",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "F. Di Mariano",
+    "position": "CAM",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "19 D. Cacia",
+    "position": "ST",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "cesena",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 G. Mastinu",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "F. Bonazzoli",
+    "position": "ST",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "A. Calabresi",
+    "position": "CB",
+    "prime_rating": 69,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "J. Antiste",
+    "position": "ST",
+    "prime_rating": 68,
+    "nationality": "France",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "G. Kastanos",
+    "position": "CAM",
+    "prime_rating": 65,
+    "nationality": "Cyprus",
+    "club": "salernitana",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "F. Pisacane",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Italy",
+    "club": "lecce",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "Strefezza",
+    "position": "CAM",
+    "prime_rating": 67,
+    "nationality": "Brazil",
+    "club": "lecce",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 A. Galabinov",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Bulgaria",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "K. Dermaku",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Albania",
+    "club": "lecce",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "E. Colley",
+    "position": "ST",
+    "prime_rating": 67,
+    "nationality": "Gambia",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 Thiago Cionek",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Poland",
+    "club": "spal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "D. Nikolaou",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Greece",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 Felipe",
+    "position": "CB",
+    "prime_rating": 70,
+    "nationality": "Brazil",
+    "club": "spal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "N. Gyömbér",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Slovakia",
+    "club": "salernitana",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "19 E. Suagher",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Italy",
+    "club": "carpi",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "19 D. Capelli",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "padovacalcio",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 F. Vicari",
+    "position": "CB",
+    "prime_rating": 71,
+    "nationality": "Italy",
+    "club": "spal",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 D. Dainelli",
+    "position": "CB",
+    "prime_rating": 73,
+    "nationality": "Italy",
+    "club": "livorno",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "L. Bogdan",
+    "position": "CB",
+    "prime_rating": 66,
+    "nationality": "Croatia",
+    "club": "salernitana",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "17 M. Contini",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Italy",
+    "club": "ternana",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 Claiton",
+    "position": "CB",
+    "prime_rating": 68,
+    "nationality": "Brazil",
+    "club": "cremonese",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "I. Provedel",
+    "position": "GK",
+    "prime_rating": 74,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 M. Agazzi",
+    "position": "GK",
+    "prime_rating": 67,
+    "nationality": "Italy",
+    "club": "cremonese",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "V. Belec",
+    "position": "GK",
+    "prime_rating": 73,
+    "nationality": "Slovenia",
+    "club": "salernitana",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "20 D. Bassi",
+    "position": "GK",
+    "prime_rating": 65,
+    "nationality": "Italy",
+    "club": "spezia",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "V. Fiorillo",
+    "position": "GK",
+    "prime_rating": 72,
+    "nationality": "Italy",
+    "club": "salernitana",
+    "career_years": "2021-2022"
+  },
+  {
+    "name": "21 Rafael",
+    "position": "GK",
+    "prime_rating": 71,
+    "nationality": "Brazil",
+    "club": "spezia",
+    "career_years": "2021-2022"
   }
 ]
