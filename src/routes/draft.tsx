@@ -56,6 +56,11 @@ function DraftScreen() {
   const [usedPlayers, setUsedPlayers] = useState<Set<string>>(new Set());
   const [usedClubs, setUsedClubs] = useState<Set<string>>(new Set());
   const [assigningPlayer, setAssigningPlayer] = useState<Player | null>(null);
+  // Quick mode picks 2 players from the same club, then the user manually
+  // places each onto an open slot. After PlayerPicker hands us both picks,
+  // the first becomes `assigningPlayer` and the second sits in this queue
+  // until the first is placed. `commitToSlot` advances the queue.
+  const [quickPlaceQueue, setQuickPlaceQueue] = useState<Player[]>([]);
   const [tier, setTier] = useState<EraTier>("current");
   const [autoSpinHint, setAutoSpinHint] = useState(false);
   const wheelRef = useRef<HTMLDivElement>(null);
@@ -140,18 +145,46 @@ function DraftScreen() {
     return pool;
   }
 
+  /** Can we place 2 distinct players from `pool` into 2 distinct open
+   *  slots? Brute pair-scan — n is at most ~70 so this is cheap and
+   *  more correct than length checks (two STs + only one ST slot left
+   *  would otherwise pass a naïve `pool.length >= 2`). */
+  function canPlaceTwoDistinct(pool: Player[], openSlots: Slot[]): boolean {
+    if (pool.length < 2 || openSlots.length < 2) return false;
+    for (let i = 0; i < pool.length; i++) {
+      for (let j = 0; j < pool.length; j++) {
+        if (i === j) continue;
+        const p1 = pool[i];
+        const p2 = pool[j];
+        const slot1 = openSlots.find((s) => playerFitsSlot(s.position, p1));
+        if (!slot1) continue;
+        const slot2 = openSlots.find(
+          (s) => s.id !== slot1.id && playerFitsSlot(s.position, p2),
+        );
+        if (slot2) return true;
+      }
+    }
+    return false;
+  }
+
   function clubHasCompatible(club: Club, forTier?: EraTier): boolean {
     const openSlots = slotsRef.current.filter((s) => !s.player);
     if (openSlots.length === 0) return false;
-    return (
-      compatiblePlayersForClub(
-        club.id,
-        forTier ?? null,
-        usedPlayersRef.current,
-        slotsRef.current,
-        pickingForSlotRef.current,
-      ).length > 0
+    const pool = compatiblePlayersForClub(
+      club.id,
+      forTier ?? null,
+      usedPlayersRef.current,
+      slotsRef.current,
+      pickingForSlotRef.current,
     );
+    if (pool.length === 0) return false;
+    // Quick mode requires picking 2 — only land on clubs that can satisfy
+    // that. Exception: when the FINAL slot is being filled, fall back to
+    // single-pick (the picker shows "pick 1 more" in that case).
+    if (config.draftMode === "quick" && openSlots.length >= 2) {
+      return canPlaceTwoDistinct(pool, openSlots);
+    }
+    return true;
   }
 
   function pickRandomTier(): EraTier {
@@ -211,6 +244,16 @@ function DraftScreen() {
     assignPlayer(slotId, assigningPlayer);
     setUsedPlayers((prev) => new Set(prev).add(`${assigningPlayer.club}:${assigningPlayer.name}`));
     setAssigningPlayer(null);
+    // Quick-mode: if a second player is queued, advance to it WITHOUT
+    // clearing the club or auto-spinning. The user keeps placing on the
+    // same club until both picks are down. Then we fall through to the
+    // normal "done with club" branch below.
+    if (quickPlaceQueue.length > 0) {
+      const [next, ...rest] = quickPlaceQueue;
+      setQuickPlaceQueue(rest);
+      setAssigningPlayer(next);
+      return;
+    }
     setCurrentClub(null);
     queueAutoSpin();
   }
@@ -224,34 +267,14 @@ function DraftScreen() {
     // position-first waits for user to click next slot, no auto-spin
   }
 
+  /** Quick-mode handoff: PlayerPicker delivers the user's 2 picks here.
+   *  Instead of auto-assigning (the old behaviour), we queue both and
+   *  surface the first via the same `assigningPlayer` flow squad-first
+   *  uses — the user clicks an open slot to place each one manually. */
   function quickAssignTwo(players: Player[]) {
-    // assign each player to the first open compatible slot; skip if none
-    const open = slots.filter((s) => !s.player);
-    const taken = new Set<string>();
-    const used: string[] = [];
-    for (const p of players) {
-      const slot = open.find((s) => !taken.has(s.id) && playerFitsSlot(s.position, p));
-      if (!slot) continue;
-      taken.add(slot.id);
-      assignPlayer(slot.id, p);
-      used.push(`${p.club}:${p.name}`);
-    }
-    if (used.length)
-      setUsedPlayers((prev) => {
-        const next = new Set(prev);
-        for (const k of used) next.add(k);
-        return next;
-      });
-    setCurrentClub(null);
-    // auto-spin if any slots still open
-    const remaining = open.length - taken.size;
-    if (remaining > 0) {
-      setAutoSpinHint(true);
-      setTimeout(() => {
-        setAutoSpinHint(false);
-        spinClub();
-      }, 700);
-    }
+    if (players.length === 0) return;
+    setAssigningPlayer(players[0]);
+    setQuickPlaceQueue(players.slice(1));
   }
 
   function queueAutoSpin() {
@@ -268,6 +291,8 @@ function DraftScreen() {
 
   function skipAssign() {
     setAssigningPlayer(null);
+    // Drop any quick-mode second pick too — user wanted out of this club.
+    setQuickPlaceQueue([]);
     setCurrentClub(null);
     queueAutoSpin();
   }
@@ -381,11 +406,19 @@ function DraftScreen() {
               mode={config.draftMode}
               showRatings={config.showRatings}
               targetSlot={pickingForSlot}
-              onPick={(p) =>
-                config.draftMode === "squad"
-                  ? handleSquadFirstPickPlayer(p)
-                  : positionFirstPickPlayer(p)
-              }
+              // Last-slot fallback: when only one slot remains open,
+              // quick mode reduces to single-pick (forcing 2 picks would
+              // strand the user with one player and nowhere to put them).
+              openSlotCount={slots.filter((s) => !s.player).length}
+              onPick={(p) => {
+                if (config.draftMode === "position") {
+                  positionFirstPickPlayer(p);
+                } else {
+                  // squad-first AND quick-mode-last-slot both route through
+                  // the same single-pick → manual-place flow.
+                  handleSquadFirstPickPlayer(p);
+                }
+              }}
               onQuickPick={quickAssignTwo}
               onReroll={
                 rerollsLeft > 0
@@ -745,6 +778,7 @@ function PlayerPicker({
   mode,
   showRatings,
   targetSlot,
+  openSlotCount,
   onPick,
   onQuickPick,
   onReroll,
@@ -756,6 +790,9 @@ function PlayerPicker({
   mode: DraftMode;
   showRatings: boolean;
   targetSlot: Slot | null;
+  /** Number of empty slots remaining in the XI. Quick mode picks 2
+   *  normally, but falls back to 1 when only the last slot is open. */
+  openSlotCount: number;
   onPick: (p: Player) => void;
   onQuickPick: (players: Player[]) => void;
   onReroll?: () => void;
@@ -764,7 +801,10 @@ function PlayerPicker({
 }) {
   const [quickPicks, setQuickPicks] = useState<Player[]>([]);
   const [showAll, setShowAll] = useState(false);
-  const isQuick = mode === "quick";
+  // Quick mode normally requires 2 picks. When only the last slot is open,
+  // we need exactly 1 pick — fall through to the same single-pick path
+  // squad-first uses (parent's onPick already does manual placement).
+  const isQuick = mode === "quick" && openSlotCount >= 2;
   const overflow = players.length > PICKER_DEFAULT_VISIBLE;
   const visible = showAll ? players : players.slice(0, PICKER_DEFAULT_VISIBLE);
   const hiddenCount = players.length - visible.length;
