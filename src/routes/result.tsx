@@ -474,6 +474,35 @@ function ShareBlock() {
     return { forecast: f, delta: pts - f };
   }, [matches, slots, league.kind, league.matches]);
 
+  // Truthful tagline + brand-mark tone for the share image. League-table
+  // position is derived here too so the helper can return the right
+  // "1st place" / "RELEGATED" / "Nth place" label. Reuses the same
+  // computeLeagueTable as /result's on-screen renderer.
+  const shareTagline = useMemo(() => {
+    if (!matches.length) return { line: league.tagline, tone: "neutral" as const };
+    let ourPosition = 0;
+    let totalTeams = 0;
+    if (league.kind === "league") {
+      const seen = new Set<string>();
+      const opps: Club[] = [];
+      for (const m of matches) {
+        if (!seen.has(m.opponent.id)) {
+          seen.add(m.opponent.id);
+          opps.push(m.opponent);
+        }
+      }
+      const { table, ourPosition: pos } = computeLeagueTable(
+        matches,
+        opps,
+        squadRating(slots),
+        league.matches,
+      );
+      ourPosition = pos;
+      totalTeams = table.length;
+    }
+    return getResultTagline(league, matches, ourPosition, totalTeams);
+  }, [league, matches, slots]);
+
   async function onShareText() {
     const text = buildShareText(config, slots, matches, config.challengeSeed);
     const r = await shareOrCopy(text, `${league.brandMark} ${league.tagline}`);
@@ -705,7 +734,16 @@ function ShareBlock() {
                 fontSize: "220px",
                 lineHeight: 0.85,
                 letterSpacing: "0.02em",
-                color: unbeaten ? "#22c55e" : "#facc15",
+                // Brand-mark tone reflects the actual result:
+                // win → green, loss → red, neutral → gold.
+                // Previously was binary (green/gold) which falsely
+                // implied "you did well" on neutral or losing runs.
+                color:
+                  shareTagline.tone === "win"
+                    ? "#22c55e"
+                    : shareTagline.tone === "loss"
+                      ? "#ef4444"
+                      : "#facc15",
               }}
             >
               {league.brandMark.split(":")[0]}
@@ -718,10 +756,16 @@ function ShareBlock() {
                 fontSize: "22px",
                 letterSpacing: "0.32em",
                 textTransform: "uppercase",
-                color: "#facc15",
+                // Tagline color tracks the same tone — truthful at a glance.
+                color:
+                  shareTagline.tone === "win"
+                    ? "#22c55e"
+                    : shareTagline.tone === "loss"
+                      ? "#ef4444"
+                      : "#facc15",
               }}
             >
-              {unbeaten ? `★ ${league.unbeatenLabel} ★` : league.tagline}
+              {shareTagline.line}
             </div>
             <div style={{ marginTop: "8px", fontSize: "22px", color: "#a3a3a3" }}>
               {league.flag} {league.name}
@@ -1070,4 +1114,54 @@ export function computeStarPerformers(matches: MatchResult[]): {
     if (!topAssister || a > topAssister.assists) topAssister = { name, assists: a };
   });
   return { topScorer, topAssister };
+}
+
+/**
+ * Derive a TRUTHFUL tagline + brand-mark color for the share image.
+ *
+ * The brand mark stays bold ("13:0" / "34:0") because it's the league
+ * identity — but the tagline next to it must reflect what actually
+ * happened. Previously every share showed `league.tagline` (e.g.
+ * "INVINCIBLE EUROPE") regardless of whether the user actually went
+ * invincible. A glance-read of a 5-2-3 share looking like "13:0 ·
+ * INVINCIBLE EUROPE" was misleading.
+ *
+ * Returns:
+ *   line   — the tagline string (uppercase, letter-spaced in the render)
+ *   tone   — "win" | "neutral" | "loss" — drives brand-mark color
+ *            (green / gold / red respectively)
+ */
+export function getResultTagline(
+  league: import("@/lib/leagues").League,
+  matches: MatchResult[],
+  ourPosition: number,
+  totalTeams: number,
+): { line: string; tone: "win" | "neutral" | "loss" } {
+  if (!matches.length) {
+    return { line: league.tagline, tone: "neutral" };
+  }
+  const losses = matches.filter((m) => m.outcome === "L").length;
+  const unbeaten = losses === 0;
+  const wonFinal = matches.some((m) => m.round === "Final" && m.outcome === "W");
+  const eliminator = matches.find((m) => m.eliminates);
+
+  // Knockout / groupKO branch — winning the final is the only "win" state.
+  if (league.kind !== "league") {
+    if (wonFinal) return { line: `★ ${league.unbeatenLabel} ★`, tone: "win" };
+    if (eliminator?.round === "Group") return { line: "GROUP STAGE EXIT", tone: "loss" };
+    if (eliminator?.round) return { line: `ELIMINATED · ${eliminator.round}`, tone: "loss" };
+    // No eliminator marked but didn't win — shouldn't happen, but fall
+    // back to a neutral framing rather than the misleading "INVINCIBLE".
+    return { line: "RUN ENDED", tone: "neutral" };
+  }
+
+  // League branch.
+  if (unbeaten) return { line: `★ ${league.unbeatenLabel} ★`, tone: "win" };
+  if (ourPosition === 1) return { line: "LEAGUE CHAMPIONS", tone: "win" };
+  // Bottom-3 → relegation tone in a league with ≥10 teams.
+  if (totalTeams >= 10 && ourPosition >= totalTeams - 2) {
+    return { line: "RELEGATED", tone: "loss" };
+  }
+  // Mid-table → ordinal label, neutral tone.
+  return { line: `${ordinal(ourPosition).toUpperCase()} PLACE`, tone: "neutral" };
 }
