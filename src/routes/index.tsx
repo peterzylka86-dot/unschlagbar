@@ -61,7 +61,13 @@ function Landing() {
     navigate({ to: "/game", search: { new: true } });
   }, [challenge, setConfig, reset, navigate]);
   return (
-    <div className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
+    // Vertical layout: card centers in the available space, footer always
+    // lives in the natural flow below it. Previous structure absolutely-
+    // positioned the footer at `bottom-5` over the viewport; on phones
+    // where the card was taller than (viewport − 20px), the footer
+    // collided with the card's bottom retro-stripes element. Fix is
+    // structural — keep footer in flow, drop the absolute positioning.
+    <div className="relative min-h-screen flex flex-col items-center justify-between px-4 py-6 overflow-hidden">
       <div
         className="absolute inset-0 opacity-[0.05] pointer-events-none"
         style={{
@@ -70,7 +76,7 @@ function Landing() {
         }}
       />
 
-      <div className="relative w-full max-w-xl">
+      <div className="relative w-full max-w-xl my-auto">
         <div className="retro-stripes h-2 rounded-t-2xl" />
 
         <div className="retro-card rounded-b-2xl bg-card/70 backdrop-blur-md px-6 sm:px-8 pt-8 pb-6 text-center">
@@ -177,7 +183,11 @@ function Landing() {
         </div>
       </div>
 
-      <footer className="absolute bottom-5 left-0 right-0 text-center text-[11px] text-muted-foreground px-4">
+      {/* Footer lives in the natural flow at the bottom of the column.
+          With `justify-between` on the outer flex, the card centers in
+          the available space (via my-auto) and the footer pins to the
+          column's end — never overlapping the card. */}
+      <footer className="relative w-full max-w-xl text-center text-[11px] text-muted-foreground mt-6">
         Inspired by{" "}
         <a
           href="https://82-0.com"
