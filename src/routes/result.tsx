@@ -6,7 +6,7 @@ import { ClubBadge } from "@/components/ClubBadge";
 import { getClubs } from "@/lib/data";
 import { LEAGUES } from "@/lib/leagues";
 import type { Club, MatchResult } from "@/lib/game-types";
-import { squadRating, computeLeagueTable } from "@/lib/sim";
+import { squadRating, computeLeagueTable, forecastSeasonPoints } from "@/lib/sim";
 import { buildShareText, shareOrCopy, shareImage, challengeUrl } from "@/lib/share";
 import { toPng } from "html-to-image";
 import { isToday, saveDaily, dailyDateLabel } from "@/lib/daily";
@@ -69,6 +69,29 @@ function ResultScreen() {
   }, [matches, config.challengeSeed, config.league, wins, draws, losses, topScorer]);
 
   const isDaily = config.challengeSeed != null && isToday(config.challengeSeed);
+
+  // Overperformance score — only meaningful for league competitions.
+  // Knockout/groupKO has a different success function (advance vs eliminate),
+  // so we skip the forecast there and keep the trophy framing instead.
+  //
+  // The forecast is the analytic expected league points given THIS squad
+  // against the actual season fixtures. delta > 0 means "your team beat
+  // its forecast" — which is the Elevenary insight: succeeding with a
+  // modest squad scores higher than winning everything with eleven
+  // superstars. Bolts onto the binary unbeaten check without replacing it.
+  const overperformance = useMemo(() => {
+    if (isKO || !matches.length) return null;
+    const seen = new Set<string>();
+    const opps: Club[] = [];
+    for (const m of matches) {
+      if (!seen.has(m.opponent.id)) {
+        seen.add(m.opponent.id);
+        opps.push(m.opponent);
+      }
+    }
+    const forecast = forecastSeasonPoints(opps, league.matches, rating);
+    return { forecast, delta: points - forecast };
+  }, [isKO, matches, league.matches, rating, points]);
 
   const { table, ourPosition } = useMemo(() => {
     if (isKO || !matches.length) return { table: [], ourPosition: 0 };
@@ -209,6 +232,44 @@ function ResultScreen() {
               <div className="font-display text-base">—</div>
             </div>
           )}
+        </motion.div>
+      )}
+
+      {/* Overperformance card — league mode only. Shows actual vs forecast
+          points so a 30-pt squad that beats its forecast feels like a win,
+          not a failure. Hidden in KO modes where the success function is
+          binary (advance vs eliminate). */}
+      {overperformance && (
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.25 }}
+          className={`mt-6 inline-flex flex-col items-center gap-1 px-5 py-3 rounded-xl border-2 ${
+            overperformance.delta > 0
+              ? "border-success/40 bg-success/10"
+              : overperformance.delta < 0
+                ? "border-destructive/40 bg-destructive/10"
+                : "border-warning/40 bg-warning/10"
+          }`}
+        >
+          <div className="text-[10px] uppercase tracking-[0.25em] opacity-80">
+            vs Forecast
+          </div>
+          <div
+            className={`font-display text-2xl tabular-nums ${
+              overperformance.delta > 0
+                ? "text-success"
+                : overperformance.delta < 0
+                  ? "text-destructive"
+                  : "text-warning"
+            }`}
+          >
+            {overperformance.delta > 0 ? "+" : ""}
+            {overperformance.delta.toFixed(1)} pts
+          </div>
+          <div className="text-[10px] text-muted-foreground">
+            you {points} · forecast {overperformance.forecast.toFixed(1)}
+          </div>
         </motion.div>
       )}
 
@@ -393,6 +454,25 @@ function ShareBlock() {
   const { topScorer, topAssister } = useMemo(() => computeStarPerformers(matches), [matches]);
   const isDailyShare =
     config.challengeSeed != null && isToday(config.challengeSeed);
+
+  // Overperformance — only computed for league mode (KO uses a different
+  // success function). Mirrors the parent's computation.
+  const overperformanceShare = useMemo(() => {
+    if (league.kind !== "league" || !matches.length) return null;
+    const seen = new Set<string>();
+    const opps: Club[] = [];
+    for (const m of matches) {
+      if (!seen.has(m.opponent.id)) {
+        seen.add(m.opponent.id);
+        opps.push(m.opponent);
+      }
+    }
+    const f = forecastSeasonPoints(opps, league.matches, squadRating(slots));
+    const wins_ = matches.filter((m) => m.outcome === "W").length;
+    const draws_ = matches.filter((m) => m.outcome === "D").length;
+    const pts = wins_ * 3 + draws_;
+    return { forecast: f, delta: pts - f };
+  }, [matches, slots, league.kind, league.matches]);
 
   async function onShareText() {
     const text = buildShareText(config, slots, matches, config.challengeSeed);
@@ -682,6 +762,56 @@ function ShareBlock() {
                   GOALS
                 </div>
               </div>
+            </div>
+          )}
+
+          {/* Overperformance pill — league mode only. The Elevenary insight:
+              a modest XI beating its forecast scores higher than a stacked
+              XI grinding out a perfect record. Reframes "33-1" as a win. */}
+          {overperformanceShare && (
+            <div
+              style={{
+                marginTop: "20px",
+                alignSelf: "center",
+                padding: "10px 22px",
+                borderRadius: "999px",
+                border: `2px solid ${
+                  overperformanceShare.delta > 0
+                    ? "rgba(34,197,94,0.5)"
+                    : overperformanceShare.delta < 0
+                      ? "rgba(239,68,68,0.5)"
+                      : "rgba(250,204,21,0.5)"
+                }`,
+                background:
+                  overperformanceShare.delta > 0
+                    ? "rgba(34,197,94,0.12)"
+                    : overperformanceShare.delta < 0
+                      ? "rgba(239,68,68,0.12)"
+                      : "rgba(250,204,21,0.12)",
+                display: "flex",
+                alignItems: "baseline",
+                gap: "14px",
+              }}
+            >
+              <span style={{ fontSize: "14px", letterSpacing: "0.3em", color: "#a3a3a3" }}>
+                VS FORECAST
+              </span>
+              <span
+                style={{
+                  fontFamily: '"Bebas Neue", "Anton", Impact, sans-serif',
+                  fontSize: "34px",
+                  lineHeight: 1,
+                  color:
+                    overperformanceShare.delta > 0
+                      ? "#22c55e"
+                      : overperformanceShare.delta < 0
+                        ? "#ef4444"
+                        : "#facc15",
+                }}
+              >
+                {overperformanceShare.delta > 0 ? "+" : ""}
+                {overperformanceShare.delta.toFixed(1)} PTS
+              </span>
             </div>
           )}
 

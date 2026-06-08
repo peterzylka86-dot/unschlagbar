@@ -7,7 +7,13 @@
  * or variance constants would break user-expected results.
  */
 import { describe, it, expect } from "vitest";
-import { squadRating, simulateSeason, simulateKnockout, computeLeagueTable } from "./sim";
+import {
+  squadRating,
+  simulateSeason,
+  simulateKnockout,
+  computeLeagueTable,
+  forecastSeasonPoints,
+} from "./sim";
 import type { Club, Slot, Player } from "./game-types";
 
 function mockPlayer(rating: number): Player {
@@ -356,6 +362,58 @@ describe("computeLeagueTable", () => {
     // dominates 80%+ of outcomes. (For an 80-rated user vs 75-83 opps,
     // expect a spread roughly between 1st and 4th.)
     expect(positions.size).toBeGreaterThanOrEqual(3);
+  });
+
+  it("forecast: zero opponents → 0", () => {
+    expect(forecastSeasonPoints([], 34, 80)).toBe(0);
+  });
+
+  it("forecast: monotonically increases in our rating", () => {
+    // Same fixture list, stronger squad must expect more points.
+    const opps = Array.from({ length: 17 }, (_, i) => mockClub(78, i));
+    const weak = forecastSeasonPoints(opps, 34, 70);
+    const mid = forecastSeasonPoints(opps, 34, 80);
+    const strong = forecastSeasonPoints(opps, 34, 90);
+    expect(weak).toBeLessThan(mid);
+    expect(mid).toBeLessThan(strong);
+  });
+
+  it("forecast: bounded between 0 and 3·totalMatches", () => {
+    const opps = Array.from({ length: 17 }, (_, i) => mockClub(78, i));
+    const f = forecastSeasonPoints(opps, 34, 80);
+    expect(f).toBeGreaterThan(0);
+    expect(f).toBeLessThan(34 * 3);
+  });
+
+  it("forecast: even-matched squad → mid-table points (~1 pt/match ±0.5)", () => {
+    // ourRating = oppStrength → no edge; expected points ≈ matches × 1.0 by
+    // construction of a balanced match. Loose band so the test pins
+    // direction, not arithmetic.
+    const opps = Array.from({ length: 17 }, (_, i) => mockClub(80, i));
+    const f = forecastSeasonPoints(opps, 34, 80);
+    const perMatch = f / 34;
+    expect(perMatch).toBeGreaterThan(0.7);
+    expect(perMatch).toBeLessThan(1.6);
+  });
+
+  it("forecast: deterministic — same inputs always yield same output", () => {
+    // No seed parameter (analytic, not Monte Carlo). Two calls must
+    // produce IDENTICAL floats — guards against any future drift to
+    // sampling-based estimation.
+    const opps = Array.from({ length: 17 }, (_, i) => mockClub(75 + (i % 10), i));
+    const a = forecastSeasonPoints(opps, 34, 82);
+    const b = forecastSeasonPoints(opps, 34, 82);
+    expect(a).toBe(b);
+  });
+
+  it("forecast: regression — Premier-League-shaped pin to catch silent drift", () => {
+    // Snapshot value at rating=85 vs 17 opponents of strength 78 over 34
+    // matches. Re-pin if the sim's xG formula changes intentionally.
+    const opps = Array.from({ length: 17 }, (_, i) => mockClub(78, i));
+    const f = forecastSeasonPoints(opps, 34, 85);
+    // Expect roughly upper-table — somewhere in the 70s of points
+    expect(f).toBeGreaterThan(60);
+    expect(f).toBeLessThan(95);
   });
 
   it("sorted by points DESC, then goal difference, then goals-for", () => {

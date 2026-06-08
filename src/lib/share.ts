@@ -1,5 +1,6 @@
-import type { RunConfig, Slot, MatchResult } from "./game-types";
+import type { RunConfig, Slot, MatchResult, Club } from "./game-types";
 import { LEAGUES } from "./leagues";
+import { forecastSeasonPoints, squadRating } from "./sim";
 
 const BASE_URL =
   typeof window !== "undefined" ? window.location.origin : "https://unschlagbar.lovable.app";
@@ -107,6 +108,22 @@ export function buildShareText(
       lines.push(
         `${w}W ${d}D ${l}L · ${gf}:${ga}${unbeaten ? " · ★ " + league.unbeatenLabel + " ★" : ""}`,
       );
+      // Overperformance line — only for league mode. Shows actual vs
+      // forecast so a "modest XI overperformed" recap feels like a win
+      // even without unbeaten status.
+      const uniqueOpps: Club[] = [];
+      const seen = new Set<string>();
+      for (const m of matches) {
+        if (!seen.has(m.opponent.id)) {
+          seen.add(m.opponent.id);
+          uniqueOpps.push(m.opponent);
+        }
+      }
+      const forecast = forecastSeasonPoints(uniqueOpps, league.matches, squadRating(slots));
+      const points = w * 3 + d;
+      const delta = points - forecast;
+      const sign = delta > 0 ? "+" : "";
+      lines.push(`📊 vs Forecast: ${sign}${delta.toFixed(1)} pts (you ${points} · forecast ${forecast.toFixed(1)})`);
     }
     // Top scorer + assister — shown only if scorer data is attached. Makes
     // the share text feel like a real season recap, not just a score line.

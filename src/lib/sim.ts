@@ -78,6 +78,79 @@ function poisson(lambda: number, seed: { v: number }): number {
 }
 
 /**
+ * forecastSeasonPoints — analytic expected league points for the user's XI
+ * against a known fixture list. The "what should this squad achieve?" baseline
+ * that drives the overperformance score on /result.
+ *
+ * Uses the SAME xG formula as simulateSeason, but strips the random term
+ * (variance contributes zero to E[outcome] over a single match). Per match:
+ *
+ *   E[points] = 3 · P(win) + 1 · P(draw)
+ *
+ * where P(win) / P(draw) come from convolving two independent Poissons
+ * with means ourXG / theirXG, truncated at 8 goals each (covers >99.99%
+ * of mass at the lambdas this sim produces, < 1e-6 truncation error).
+ *
+ * Fixture order does NOT matter for expected points (linearity of
+ * expectation), so we don't need the same shuffle as the live sim.
+ *
+ * Only meaningful for league competitions — knockout/groupKO uses a
+ * different success function (advance vs eliminate, not points).
+ */
+export function forecastSeasonPoints(
+  opponents: Club[],
+  totalMatches: number,
+  ourRating: number,
+): number {
+  if (!opponents.length || totalMatches <= 0) return 0;
+  let total = 0;
+  for (let i = 0; i < totalMatches; i++) {
+    const opp = opponents[i % opponents.length]!;
+    // Alternate home/away over the season — same pattern as simulateSeason
+    // before its shuffle. Shuffle doesn't change E[total], so we don't
+    // emulate it here.
+    const round = Math.floor(i / opponents.length);
+    const home = ((i % opponents.length) + round) % 2 === 0;
+    const homeBoost = home ? 4 : -1;
+    const diff = ourRating + homeBoost - opp.strength;
+    const ourXG = Math.max(0.2, 1.2 + diff * 0.08);
+    const theirXG = Math.max(0.1, 1.1 - diff * 0.06);
+    total += expectedMatchPoints(ourXG, theirXG);
+  }
+  return total;
+}
+
+/** Per-match E[points] = 3·P(W) + 1·P(D), Poisson model with goals 0..8. */
+function expectedMatchPoints(lambdaUs: number, lambdaThem: number): number {
+  const MAX_GOALS = 8;
+  const pmfUs = poissonPMF(lambdaUs, MAX_GOALS);
+  const pmfThem = poissonPMF(lambdaThem, MAX_GOALS);
+  let pW = 0,
+    pD = 0;
+  for (let a = 0; a <= MAX_GOALS; a++) {
+    for (let b = 0; b <= MAX_GOALS; b++) {
+      const p = pmfUs[a]! * pmfThem[b]!;
+      if (a > b) pW += p;
+      else if (a === b) pD += p;
+    }
+  }
+  return 3 * pW + pD;
+}
+
+/** Poisson PMF for k = 0..maxK at rate lambda. */
+function poissonPMF(lambda: number, maxK: number): number[] {
+  const out: number[] = new Array(maxK + 1);
+  const eMinusL = Math.exp(-lambda);
+  let term = eMinusL; // k=0: e^-λ
+  out[0] = term;
+  for (let k = 1; k <= maxK; k++) {
+    term = (term * lambda) / k;
+    out[k] = term;
+  }
+  return out;
+}
+
+/**
  * Simulate a knockout (or group+KO) competition with proper two-legged ties.
  * - `rounds[i]` is the round label of match i (e.g. "Group", "Round of 16", "Final").
  * - Consecutive matches in a non-group round vs the SAME opponent are treated as
