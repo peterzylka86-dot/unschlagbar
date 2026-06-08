@@ -932,7 +932,7 @@ function PlayerPicker({
         {overflow && showAll && (
           <button
             onClick={() => setShowAll(false)}
-            className="mt-1 px-3 py-2 text-[11px] rounded-lg border border-border bg-background/30 hover:bg-background/60 text-muted-foreground hover:text-warning transition"
+            className="mt-1 min-h-[44px] px-3 py-2 text-xs rounded-lg border border-border bg-background/30 hover:bg-background/60 text-muted-foreground hover:text-warning transition"
           >
             ← Collapse to top {PICKER_DEFAULT_VISIBLE}
           </button>
@@ -940,12 +940,14 @@ function PlayerPicker({
       </div>
       {/* Action row — Reroll is the user's "I don't like this club"
           tool (costs 1 of their N rerolls). No more "Spin again" — the
-          wheel can't land on a dead-end. */}
+          wheel can't land on a dead-end.
+          min-h-[44px] enforces the iOS HIG tap-target minimum; the
+          button was previously ~28px and getting mis-tapped on mobile. */}
       {players.length > 0 && onReroll && (
         <div className="mt-3 flex gap-2">
           <button
             onClick={onReroll}
-            className="flex-1 px-3 py-2 text-xs rounded-lg border border-warning/40 text-warning hover:bg-warning/10"
+            className="flex-1 min-h-[44px] px-3 py-2.5 text-sm rounded-lg border border-warning/40 text-warning hover:bg-warning/10 transition"
             title="Use one of your rerolls"
           >
             Reroll ({rerollsLeft})

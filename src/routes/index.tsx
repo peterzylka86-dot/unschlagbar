@@ -73,35 +73,35 @@ function Landing() {
       <div className="relative w-full max-w-xl">
         <div className="retro-stripes h-2 rounded-t-2xl" />
 
-        <div className="retro-card rounded-b-2xl bg-card/70 backdrop-blur-md px-8 pt-10 pb-8 text-center">
-          <div className="flex items-center justify-center gap-2">
-            <span className="pixel-badge text-[11px]">SEASON 25/26</span>
-            <span className="px-2 py-0.5 text-[10px] tracking-[0.25em] uppercase text-warning border border-warning/40 rounded-sm bg-warning/5">
-              Manager Mode
-            </span>
-          </div>
+        <div className="retro-card rounded-b-2xl bg-card/70 backdrop-blur-md px-6 sm:px-8 pt-8 pb-6 text-center">
+          {/* Type hierarchy — 4 sizes only:
+              • display: BrandMark
+              • heading: text-lg (CTAs)
+              • body: text-sm (descriptions, league list)
+              • meta: text-[11px] uppercase tracked (badges, labels)
+              All semantic colors via theme tokens (warning/primary/foreground)
+              — no inline hex on this screen. */}
+          <span className="pixel-badge text-[11px]">SEASON 25/26</span>
 
-          <div className="mt-7 flex flex-col items-center gap-4">
+          <div className="mt-6 flex flex-col items-center gap-4">
             <BrandMark size="xl" to={undefined} />
-            <WordMark className="text-[11px] sm:text-xs text-warning/90" />
-            <div className="scoreboard scanlines rounded-sm mt-1 text-xl">
+            <WordMark className="text-[11px] text-warning/90" />
+            <div className="scoreboard scanlines rounded-sm mt-1 text-lg">
               <span className="opacity-70">GAMES</span> <span>34</span>
               <span className="mx-2 opacity-50">|</span>
               <span className="opacity-70">LOSSES</span> <span>00</span>
             </div>
           </div>
 
-          <div className="mt-7 mx-auto w-24 h-px bg-warning/40" />
+          <div className="mt-6 mx-auto w-24 h-px bg-warning/40" />
 
-          <p className="mt-6 text-base sm:text-lg text-foreground/85 font-light">
-            Pick your league. Draft a perfect XI from{" "}
-            <span className="text-warning">six decades of football</span>.<br />
-            Spin the wheel. Chase the unbeaten season.
+          <p className="mt-5 text-sm text-foreground/85 font-light">
+            Draft a perfect XI from{" "}
+            <span className="text-warning">six decades of football</span>. Chase the unbeaten
+            season.
           </p>
-          <p className="mt-2 text-sm text-muted-foreground italic">
-            🌎 LIVE World Cup 2026 · 🏆 Champions League
-            <br />
-            🇩🇪 Bundesliga · 🇪🇸 La Liga · 🇮🇹 Serie A · 🇨🇭 Super League · ♀ Women's
+          <p className="mt-2 text-[11px] text-muted-foreground tracking-wide">
+            🌎 WC 2026 LIVE · 🏆 UCL · 🇩🇪 BL · 🇪🇸 LL · 🇮🇹 SA · 🇨🇭 SL · ♀ W
           </p>
 
           {/* Primary CTA — bigger, solid fill, drop shadow. Quick match is
@@ -162,24 +162,16 @@ function Landing() {
             </Link>
           </div>
 
-          <div className="mt-10 grid grid-cols-3 gap-2 text-center">
+          <div className="mt-8 grid grid-cols-3 gap-2 text-center">
             <Stat value="8" label="Competitions" />
             <Stat value="340+" label="Clubs" />
             <Stat value="60+" label="Years" />
           </div>
 
-          <div className="ticker mt-8 rounded-sm">
-            <div className="ticker-track">
-              <span>TRANSFER WINDOW OPEN</span>
-              <span>RAHN SCORES FROM 20 YARDS</span>
-              <span>BARÇA TAKE RECORD WIN</span>
-              <span>JUVE DOMINATE TURIN</span>
-              <span>YOUNG BOYS STAY ON TOP</span>
-              <span>EFFENBERG SENT OFF</span>
-              <span>KAHN SAVES EVERYTHING</span>
-              <span>LEGEND MAKES COMEBACK</span>
-            </div>
-          </div>
+          {/* Ticker removed — it was charming but distracted attention from
+              the primary CTAs above. Retro-pixel identity is carried by
+              the stripes, scanlines, scoreboard, and BrandMark — the
+              ticker was overkill. */}
 
           <div className="retro-stripes h-1.5 rounded mt-6 opacity-80" />
         </div>
@@ -202,10 +194,11 @@ function Landing() {
 }
 
 function Stat({ value, label }: { value: string; label: string }) {
+  // Display + meta — same hierarchy as the rest of the landing.
   return (
     <div className="border-t border-warning/20 pt-3">
-      <div className="font-display text-3xl text-warning leading-none">{value}</div>
-      <div className="mt-1.5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+      <div className="font-display text-2xl text-warning leading-none">{value}</div>
+      <div className="mt-1.5 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
         {label}
       </div>
     </div>
