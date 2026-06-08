@@ -108,6 +108,27 @@ export function buildShareText(
         `${w}W ${d}D ${l}L · ${gf}:${ga}${unbeaten ? " · ★ " + league.unbeatenLabel + " ★" : ""}`,
       );
     }
+    // Top scorer + assister — shown only if scorer data is attached. Makes
+    // the share text feel like a real season recap, not just a score line.
+    const goals = new Map<string, number>();
+    const assists = new Map<string, number>();
+    matches.forEach((m) =>
+      m.scorers?.forEach((s) => {
+        goals.set(s.name, (goals.get(s.name) ?? 0) + 1);
+        if (s.assister) assists.set(s.assister, (assists.get(s.assister) ?? 0) + 1);
+      }),
+    );
+    let topName: string | null = null;
+    let topGoals = 0;
+    goals.forEach((n, name) => {
+      if (n > topGoals) {
+        topGoals = n;
+        topName = name;
+      }
+    });
+    if (topName) {
+      lines.push(`⚽ Golden Boot: ${topName} (${topGoals})`);
+    }
   }
   const seed = challengeSeed ?? Math.floor(Math.random() * 1e9);
   const url = challengeUrl({

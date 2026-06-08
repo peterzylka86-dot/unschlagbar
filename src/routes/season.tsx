@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useGame } from "@/lib/store";
 import { simulateSeason, simulateKnockout, squadRating } from "@/lib/sim";
+import { pickScorer, pickAssister } from "@/lib/career-core";
 import { ClubBadge } from "@/components/ClubBadge";
 import { getClubs } from "@/lib/data";
 import { LEAGUES } from "@/lib/leagues";
@@ -144,6 +145,23 @@ function SeasonScreen() {
       const opponents = pickOpponents(CLUBS, league.opponentsCount);
       sim = simulateSeason(opponents, league.matches, ourRating, seed, config.difficulty);
     }
+    // Enrich each match with scorers + assisters so /result can show the
+    // Golden Boot race. Uses career-core's weighted picker (forwards score
+    // more often) seeded deterministically off the sim seed — same seed →
+    // same goalscorers, every time. The XI is the user's full drafted
+    // squad; we filter to slots with a player to keep career-core happy.
+    const xi = slots.map((s) => s.player).filter((p): p is NonNullable<typeof p> => !!p);
+    const rand = mulberry32(seed + 1);
+    sim = sim.map((m) => {
+      const scorers: { name: string; assister?: string }[] = [];
+      for (let g = 0; g < m.ourScore; g++) {
+        const s = pickScorer(xi, null, rand);
+        if (!s) continue;
+        const a = pickAssister(xi, s, rand);
+        scorers.push({ name: s.name, assister: a?.name });
+      }
+      return { ...m, scorers };
+    });
     setMatches(sim);
     setRevealCount(0);
   }, []); // eslint-disable-line
@@ -562,4 +580,17 @@ function MatchCard({
       </div>
     </motion.div>
   );
+}
+
+// Deterministic PRNG — same shape as the one in career.season.tsx.
+// Inlined here so /season has no upstream coupling to the career screen.
+function mulberry32(seed: number): () => number {
+  let s = seed >>> 0;
+  return () => {
+    s = (s + 0x6d2b79f5) >>> 0;
+    let t = s;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
 }

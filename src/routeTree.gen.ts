@@ -13,6 +13,7 @@ import { Route as SeasonRouteImport } from './routes/season'
 import { Route as ResultRouteImport } from './routes/result'
 import { Route as GameRouteImport } from './routes/game'
 import { Route as DraftRouteImport } from './routes/draft'
+import { Route as DailyRouteImport } from './routes/daily'
 import { Route as CareerRouteImport } from './routes/career'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CareerSeasonRouteImport } from './routes/career.season'
@@ -41,6 +42,11 @@ const GameRoute = GameRouteImport.update({
 const DraftRoute = DraftRouteImport.update({
   id: '/draft',
   path: '/draft',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DailyRoute = DailyRouteImport.update({
+  id: '/daily',
+  path: '/daily',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CareerRoute = CareerRouteImport.update({
@@ -92,6 +98,7 @@ const CareerCupRoute = CareerCupRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/career': typeof CareerRouteWithChildren
+  '/daily': typeof DailyRoute
   '/draft': typeof DraftRoute
   '/game': typeof GameRoute
   '/result': typeof ResultRoute
@@ -107,6 +114,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/career': typeof CareerRouteWithChildren
+  '/daily': typeof DailyRoute
   '/draft': typeof DraftRoute
   '/game': typeof GameRoute
   '/result': typeof ResultRoute
@@ -123,6 +131,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/career': typeof CareerRouteWithChildren
+  '/daily': typeof DailyRoute
   '/draft': typeof DraftRoute
   '/game': typeof GameRoute
   '/result': typeof ResultRoute
@@ -140,6 +149,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/career'
+    | '/daily'
     | '/draft'
     | '/game'
     | '/result'
@@ -155,6 +165,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/career'
+    | '/daily'
     | '/draft'
     | '/game'
     | '/result'
@@ -170,6 +181,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/career'
+    | '/daily'
     | '/draft'
     | '/game'
     | '/result'
@@ -186,6 +198,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CareerRoute: typeof CareerRouteWithChildren
+  DailyRoute: typeof DailyRoute
   DraftRoute: typeof DraftRoute
   GameRoute: typeof GameRoute
   ResultRoute: typeof ResultRoute
@@ -220,6 +233,13 @@ declare module '@tanstack/react-router' {
       path: '/draft'
       fullPath: '/draft'
       preLoaderRoute: typeof DraftRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/daily': {
+      id: '/daily'
+      path: '/daily'
+      fullPath: '/daily'
+      preLoaderRoute: typeof DailyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/career': {
@@ -314,6 +334,7 @@ const CareerRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CareerRoute: CareerRouteWithChildren,
+  DailyRoute: DailyRoute,
   DraftRoute: DraftRoute,
   GameRoute: GameRoute,
   ResultRoute: ResultRoute,

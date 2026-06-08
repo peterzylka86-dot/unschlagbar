@@ -87,4 +87,8 @@ export interface MatchResult {
   round?: string;
   /** True if this match eliminates us (knockout loss / group failure). */
   eliminates?: boolean;
+  /** Goal scorers (with optional assister) — populated for Quick Match
+   *  by /season post-sim, and for Career by /career/season. Pure sim
+   *  output omits this; consumers must treat as optional. */
+  scorers?: { name: string; assister?: string }[];
 }

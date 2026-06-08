@@ -1,8 +1,9 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BrandMark, WordMark } from "@/components/BrandMark";
 import { decodeChallenge } from "@/lib/share";
 import { useGame } from "@/lib/store";
+import { dailySeed, getDaily, getDailyStreak } from "@/lib/daily";
 
 export const Route = createFileRoute("/")({
   validateSearch: (s: Record<string, unknown>) => ({
@@ -31,6 +32,15 @@ function Landing() {
   const navigate = useNavigate();
   const setConfig = useGame((s) => s.setConfig);
   const reset = useGame((s) => s.reset);
+
+  // Daily snapshot — read once on mount to keep SSR/CSR matched. The card
+  // shows streak + whether today is still playable; the route /daily owns
+  // the actual play flow.
+  const [daily, setDaily] = useState<{ played: boolean; streak: number } | null>(null);
+  useEffect(() => {
+    const seed = dailySeed();
+    setDaily({ played: !!getDaily(seed), streak: getDailyStreak() });
+  }, []);
   useEffect(() => {
     if (!challenge) return;
     const payload = decodeChallenge(challenge);
@@ -96,8 +106,36 @@ function Landing() {
 
           {/* Primary CTA — bigger, solid fill, drop shadow. Quick match is
               the lower-commitment entry, so it gets first-class treatment.
+              Daily is shown above it as a daily-return hook.
               GOLAZO is a richer mode for users ready to invest. */}
           <div className="mt-9 flex flex-col items-stretch gap-3">
+            {/* Daily card — same wheel for everyone today. The genre
+                standard (RoadTo38, 17-0, 82-0+ all ship this). Shows
+                streak when present; greys to "✓ played today" once done. */}
+            <Link
+              to="/daily"
+              className="group inline-flex items-center justify-between gap-3 px-5 py-3 rounded-md border-2 border-warning/40 bg-warning/5 text-warning hover:bg-warning/10 hover:-translate-y-0.5 transition"
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">🗓️</span>
+                <div className="text-left">
+                  <div className="font-display text-sm tracking-[0.16em] uppercase">
+                    Daily Challenge
+                  </div>
+                  <div className="text-[10px] tracking-[0.1em] text-muted-foreground normal-case">
+                    {daily?.played
+                      ? "✓ Played today — see your result"
+                      : "Same wheel · everyone today"}
+                  </div>
+                </div>
+              </div>
+              {daily && daily.streak > 0 && (
+                <div className="flex items-center gap-1 px-2 py-1 rounded-md bg-warning/15 border border-warning/30">
+                  <span className="text-sm">🔥</span>
+                  <span className="font-display text-sm leading-none">{daily.streak}</span>
+                </div>
+              )}
+            </Link>
             <Link
               to="/game"
               search={{ new: true }}

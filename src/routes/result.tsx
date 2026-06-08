@@ -1,14 +1,15 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useGame } from "@/lib/store";
 import { ClubBadge } from "@/components/ClubBadge";
 import { getClubs } from "@/lib/data";
 import { LEAGUES } from "@/lib/leagues";
-import type { Club } from "@/lib/game-types";
+import type { Club, MatchResult } from "@/lib/game-types";
 import { squadRating, computeLeagueTable } from "@/lib/sim";
 import { buildShareText, shareOrCopy, shareImage, challengeUrl } from "@/lib/share";
 import { toPng } from "html-to-image";
+import { isToday, saveDaily, dailyDateLabel } from "@/lib/daily";
 
 export const Route = createFileRoute("/result")({
   validateSearch: (s: Record<string, unknown>) => ({
@@ -40,6 +41,34 @@ function ResultScreen() {
   const eliminator = matches.find((m) => m.eliminates);
   const reachedFinal = matches.some((m) => m.round === "Final");
   const wonFinal = matches.some((m) => m.round === "Final" && m.outcome === "W");
+
+  // Golden Boot + Playmaker — derived from per-match scorers attached by
+  // /season. Older matches without scorers are skipped, so a season run
+  // that pre-dates this feature renders without the badge (no crash).
+  const { topScorer, topAssister } = useMemo(() => computeStarPerformers(matches), [matches]);
+
+  // Daily Challenge: if the seed the user just played is today's seed AND
+  // we have a result, persist it to localStorage so /daily and / can show
+  // "you played today · streak X." First-play-wins is enforced inside
+  // saveDaily (no overwrites on replay).
+  useEffect(() => {
+    if (!matches.length) return;
+    if (config.challengeSeed == null) return;
+    if (!isToday(config.challengeSeed)) return;
+    saveDaily({
+      seed: config.challengeSeed,
+      wins,
+      draws,
+      losses,
+      goalsFor: matches.reduce((a, m) => a + m.ourScore, 0),
+      goalsAgainst: matches.reduce((a, m) => a + m.theirScore, 0),
+      topScorer: topScorer ? { name: topScorer.name, goals: topScorer.goals } : undefined,
+      playedAt: new Date().toISOString(),
+      league: config.league,
+    });
+  }, [matches, config.challengeSeed, config.league, wins, draws, losses, topScorer]);
+
+  const isDaily = config.challengeSeed != null && isToday(config.challengeSeed);
 
   const { table, ourPosition } = useMemo(() => {
     if (isKO || !matches.length) return { table: [], ourPosition: 0 };
@@ -286,6 +315,43 @@ function ResultScreen() {
         </div>
       </div>
 
+      {/* Daily badge — only shown when this run was today's daily. */}
+      {isDaily && (
+        <div className="mt-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-warning/40 bg-warning/10 text-warning text-[10px] font-semibold tracking-widest uppercase">
+          🗓️ Daily Challenge · {dailyDateLabel(config.challengeSeed!)}
+        </div>
+      )}
+
+      {/* Golden Boot + Playmaker — appears only when scorer data is present
+          (Quick Match runs from /season enrich matches; older runs that
+          never had scorers attached will silently skip this block). */}
+      {(topScorer || topAssister) && (
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-md mx-auto">
+          {topScorer && (
+            <div className="rounded-xl border border-warning/40 bg-warning/5 px-4 py-3 text-left">
+              <div className="text-[10px] uppercase tracking-[0.25em] text-warning/80">
+                ⚽ Golden Boot
+              </div>
+              <div className="font-display text-base truncate mt-1">{topScorer.name}</div>
+              <div className="text-xs text-muted-foreground">
+                {topScorer.goals} {topScorer.goals === 1 ? "goal" : "goals"}
+              </div>
+            </div>
+          )}
+          {topAssister && (
+            <div className="rounded-xl border border-success/40 bg-success/5 px-4 py-3 text-left">
+              <div className="text-[10px] uppercase tracking-[0.25em] text-success/80">
+                🅰️ Playmaker
+              </div>
+              <div className="font-display text-base truncate mt-1">{topAssister.name}</div>
+              <div className="text-xs text-muted-foreground">
+                {topAssister.assists} {topAssister.assists === 1 ? "assist" : "assists"}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
       <ShareBlock />
 
       <div className="mt-10 flex justify-center gap-3 flex-wrap">
@@ -319,6 +385,14 @@ function ShareBlock() {
   const league = LEAGUES[config.league];
   const cardRef = useRef<HTMLDivElement>(null);
   const [status, setStatus] = useState<string | null>(null);
+  const [renderingImage, setRenderingImage] = useState(false);
+
+  // Re-derive locally so ShareBlock is self-contained — the parent
+  // component already computes the same thing for on-screen display, but
+  // passing props in would couple the two more tightly than needed.
+  const { topScorer, topAssister } = useMemo(() => computeStarPerformers(matches), [matches]);
+  const isDailyShare =
+    config.challengeSeed != null && isToday(config.challengeSeed);
 
   async function onShareText() {
     const text = buildShareText(config, slots, matches, config.challengeSeed);
@@ -328,13 +402,29 @@ function ShareBlock() {
   }
   async function onShareImage() {
     if (!cardRef.current) return;
+    setRenderingImage(true);
     try {
+      // Pre-warm fonts before rasterizing — html-to-image samples whatever
+      // is currently in the cache, so if our display font (Bebas/Inter/etc)
+      // hasn't been faulted in yet, we capture a fallback and the card
+      // looks generic. `document.fonts.ready` resolves once the browser
+      // has all currently-requested fonts loaded. Cheap, sometimes nothing,
+      // worth doing.
+      if (typeof document !== "undefined" && (document as Document & { fonts?: FontFaceSet }).fonts) {
+        try {
+          await (document as Document & { fonts: FontFaceSet }).fonts.ready;
+        } catch {
+          /* font load timeout — proceed anyway */
+        }
+      }
       const dataUrl = await toPng(cardRef.current, {
         pixelRatio: 2,
         cacheBust: true,
         backgroundColor: "#0a0a0a",
+        // Render at the card's own intrinsic dimensions (1080×1080 set on
+        // the offscreen element) — no transform scaling.
       });
-      const filename = `unschlagbar-${config.league}.png`;
+      const filename = `unschlagbar-${config.league}-${config.challengeSeed ?? Date.now()}.png`;
       const text = buildShareText(config, slots, matches, config.challengeSeed);
       const result = await shareImage(dataUrl, filename, text, `${league.brandMark}`);
       setStatus(
@@ -344,6 +434,8 @@ function ShareBlock() {
     } catch {
       setStatus("Image failed");
       setTimeout(() => setStatus(null), 2200);
+    } finally {
+      setRenderingImage(false);
     }
   }
 
@@ -444,9 +536,10 @@ function ShareBlock() {
             challenge invite — recipient can tap to play. */}
         <button
           onClick={onShareImage}
-          className="px-5 py-3 rounded-xl bg-primary text-primary-foreground font-display tracking-wide hover:brightness-110 transition shadow-[0_10px_30px_-10px] shadow-primary/60"
+          disabled={renderingImage}
+          className="px-5 py-3 rounded-xl bg-primary text-primary-foreground font-display tracking-wide hover:brightness-110 transition shadow-[0_10px_30px_-10px] shadow-primary/60 disabled:opacity-60 disabled:cursor-wait"
         >
-          📸 Share image
+          {renderingImage ? "Rendering…" : "📸 Share image"}
         </button>
         <div className="grid grid-cols-2 gap-2">
           <button
@@ -465,61 +558,377 @@ function ShareBlock() {
       </div>
       {status && <div className="mt-3 text-xs text-warning text-center">{status}</div>}
 
-      {/* Offscreen share card used for PNG export */}
+      {/* Offscreen share card used for PNG export — 1080×1080 (Instagram /
+          X feed friendly). The on-screen recap doubles as the share artifact
+          but we render a dedicated card so we control layout + watermark
+          regardless of viewport size. Off-screen positioning means it
+          never paints visibly. */}
       <div className="fixed -left-[9999px] top-0 pointer-events-none" aria-hidden>
         <div
           ref={cardRef}
-          className="w-[640px] p-8 bg-background text-foreground"
-          style={{ background: "linear-gradient(135deg, #0a0a0a, #1a0a14)" }}
+          className="text-foreground"
+          style={{
+            width: "1080px",
+            height: "1080px",
+            background:
+              "radial-gradient(circle at 30% 0%, rgba(250,204,21,0.18) 0%, transparent 55%), linear-gradient(135deg, #050505 0%, #0a0a0a 60%, #1a0a14 100%)",
+            padding: "64px",
+            display: "flex",
+            flexDirection: "column",
+            fontFamily:
+              '"Inter", "Helvetica Neue", system-ui, -apple-system, sans-serif',
+            color: "#fafafa",
+          }}
         >
-          <div className="flex items-baseline justify-between">
-            <div className="brand-mark text-5xl text-warning leading-none">
+          {/* Top stripe — retro pixel accent */}
+          <div
+            style={{
+              height: "8px",
+              background:
+                "repeating-linear-gradient(90deg, #facc15 0 12px, transparent 12px 24px)",
+              opacity: 0.85,
+            }}
+          />
+
+          {/* Hero block — brand mark dominates */}
+          <div style={{ marginTop: "44px", textAlign: "center" }}>
+            {isDailyShare && (
+              <div
+                style={{
+                  display: "inline-block",
+                  padding: "8px 18px",
+                  borderRadius: "999px",
+                  border: "1px solid rgba(250,204,21,0.4)",
+                  background: "rgba(250,204,21,0.1)",
+                  fontSize: "16px",
+                  letterSpacing: "0.25em",
+                  textTransform: "uppercase",
+                  color: "#facc15",
+                  marginBottom: "20px",
+                }}
+              >
+                🗓️ Daily · {dailyDateLabel(config.challengeSeed!)}
+              </div>
+            )}
+            <div
+              style={{
+                fontFamily: '"Bebas Neue", "Anton", Impact, sans-serif',
+                fontSize: "220px",
+                lineHeight: 0.85,
+                letterSpacing: "0.02em",
+                color: unbeaten ? "#22c55e" : "#facc15",
+              }}
+            >
               {league.brandMark.split(":")[0]}
-              <span className="text-primary">:</span>
+              <span style={{ color: "#ef4444" }}>:</span>
               {league.brandMark.split(":")[1]}
             </div>
-            <div className="text-right">
-              <div className="text-[10px] tracking-[0.3em] text-warning/80">{league.tagline}</div>
-              <div className="text-xs text-muted-foreground">
-                {league.flag} {league.name}
-              </div>
+            <div
+              style={{
+                marginTop: "12px",
+                fontSize: "22px",
+                letterSpacing: "0.32em",
+                textTransform: "uppercase",
+                color: "#facc15",
+              }}
+            >
+              {unbeaten ? `★ ${league.unbeatenLabel} ★` : league.tagline}
+            </div>
+            <div style={{ marginTop: "8px", fontSize: "22px", color: "#a3a3a3" }}>
+              {league.flag} {league.name}
             </div>
           </div>
-          <div className="mt-6 grid grid-cols-2 gap-1.5">
-            {slots.map((s) => (
-              <div
-                key={s.id}
-                className="flex items-center gap-2 px-2 py-1.5 rounded border border-white/10 bg-white/5 text-sm"
-              >
-                <span className="font-mono text-[10px] text-warning w-8">{s.position}</span>
-                <span className="truncate">{s.player?.name ?? "—"}</span>
-              </div>
-            ))}
-          </div>
+
+          {/* Score line — chunky, scoreboard feel */}
           {matches.length > 0 && (
-            <div className="mt-6 flex items-center justify-between px-3 py-2 rounded border border-warning/40 bg-warning/10">
-              <div className="font-display text-2xl">
-                <span className="text-success">{wins}</span>
-                <span className="text-muted-foreground mx-1">·</span>
-                <span className="text-warning">{draws}</span>
-                <span className="text-muted-foreground mx-1">·</span>
-                <span className="text-destructive">{losses}</span>
+            <div
+              style={{
+                marginTop: "44px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "baseline",
+                gap: "28px",
+                fontFamily: '"Bebas Neue", "Anton", Impact, sans-serif',
+              }}
+            >
+              <div style={{ textAlign: "center" }}>
+                <div style={{ fontSize: "108px", color: "#22c55e", lineHeight: 1 }}>{wins}</div>
+                <div style={{ fontSize: "16px", letterSpacing: "0.3em", color: "#737373" }}>W</div>
               </div>
-              <div className="font-display text-xl tabular-nums">
-                {gf}:{ga}
+              <div style={{ fontSize: "60px", color: "#525252" }}>·</div>
+              <div style={{ textAlign: "center" }}>
+                <div style={{ fontSize: "108px", color: "#facc15", lineHeight: 1 }}>{draws}</div>
+                <div style={{ fontSize: "16px", letterSpacing: "0.3em", color: "#737373" }}>D</div>
               </div>
-              {unbeaten && (
-                <div className="text-xs font-display tracking-widest text-warning">
-                  ★ {league.unbeatenLabel} ★
+              <div style={{ fontSize: "60px", color: "#525252" }}>·</div>
+              <div style={{ textAlign: "center" }}>
+                <div style={{ fontSize: "108px", color: "#ef4444", lineHeight: 1 }}>{losses}</div>
+                <div style={{ fontSize: "16px", letterSpacing: "0.3em", color: "#737373" }}>L</div>
+              </div>
+              <div
+                style={{
+                  marginLeft: "28px",
+                  paddingLeft: "28px",
+                  borderLeft: "2px solid rgba(255,255,255,0.12)",
+                  textAlign: "center",
+                }}
+              >
+                <div
+                  style={{ fontSize: "68px", color: "#fafafa", lineHeight: 1, fontVariantNumeric: "tabular-nums" }}
+                >
+                  {gf}:{ga}
                 </div>
-              )}
+                <div style={{ fontSize: "16px", letterSpacing: "0.3em", color: "#737373" }}>
+                  GOALS
+                </div>
+              </div>
             </div>
           )}
-          <div className="mt-4 text-[10px] text-muted-foreground text-center">
-            unschlagbar.lovable.app
+
+          {/* Top scorer (only if data present) + XI list in a 2-col layout */}
+          <div
+            style={{
+              marginTop: "40px",
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "20px",
+              flex: 1,
+            }}
+          >
+            {/* Left: XI roster */}
+            <div
+              style={{
+                padding: "20px",
+                borderRadius: "16px",
+                border: "1px solid rgba(255,255,255,0.08)",
+                background: "rgba(255,255,255,0.03)",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "14px",
+                  letterSpacing: "0.3em",
+                  textTransform: "uppercase",
+                  color: "#facc15",
+                  marginBottom: "12px",
+                }}
+              >
+                Your XI · {squadRating(slots)} OVR
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+                {slots.map((s) => (
+                  <div
+                    key={s.id}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px",
+                      fontSize: "20px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontFamily: '"JetBrains Mono", "Menlo", monospace',
+                        fontSize: "14px",
+                        color: "#facc15",
+                        width: "44px",
+                        flexShrink: 0,
+                      }}
+                    >
+                      {s.position}
+                    </span>
+                    <span
+                      style={{
+                        flex: 1,
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      {s.player?.name ?? "—"}
+                    </span>
+                    {s.player && (
+                      <span
+                        style={{
+                          fontFamily: '"Bebas Neue", "Anton", Impact, sans-serif',
+                          fontSize: "22px",
+                          color: "#facc15",
+                          flexShrink: 0,
+                        }}
+                      >
+                        {s.player.prime_rating}
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: Golden Boot + meta */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              {topScorer && (
+                <div
+                  style={{
+                    padding: "20px",
+                    borderRadius: "16px",
+                    border: "1px solid rgba(250,204,21,0.4)",
+                    background: "rgba(250,204,21,0.08)",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: "14px",
+                      letterSpacing: "0.3em",
+                      textTransform: "uppercase",
+                      color: "#facc15",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    ⚽ Golden Boot
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: '"Bebas Neue", "Anton", Impact, sans-serif',
+                      fontSize: "44px",
+                      lineHeight: 1.05,
+                    }}
+                  >
+                    {topScorer.name}
+                  </div>
+                  <div style={{ fontSize: "22px", color: "#a3a3a3", marginTop: "4px" }}>
+                    {topScorer.goals} {topScorer.goals === 1 ? "goal" : "goals"}
+                  </div>
+                </div>
+              )}
+              {topAssister && (
+                <div
+                  style={{
+                    padding: "20px",
+                    borderRadius: "16px",
+                    border: "1px solid rgba(34,197,94,0.4)",
+                    background: "rgba(34,197,94,0.06)",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: "14px",
+                      letterSpacing: "0.3em",
+                      textTransform: "uppercase",
+                      color: "#22c55e",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    🅰️ Playmaker
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: '"Bebas Neue", "Anton", Impact, sans-serif',
+                      fontSize: "36px",
+                      lineHeight: 1.05,
+                    }}
+                  >
+                    {topAssister.name}
+                  </div>
+                  <div style={{ fontSize: "20px", color: "#a3a3a3", marginTop: "4px" }}>
+                    {topAssister.assists} {topAssister.assists === 1 ? "assist" : "assists"}
+                  </div>
+                </div>
+              )}
+              {/* Difficulty + formation chips fill remaining space */}
+              <div
+                style={{
+                  marginTop: "auto",
+                  padding: "16px 20px",
+                  borderRadius: "16px",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  background: "rgba(255,255,255,0.03)",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "18px",
+                  color: "#a3a3a3",
+                }}
+              >
+                <span>{config.formation}</span>
+                <span style={{ textTransform: "uppercase", letterSpacing: "0.2em" }}>
+                  {config.difficulty}
+                </span>
+              </div>
+            </div>
           </div>
+
+          {/* Footer watermark */}
+          <div
+            style={{
+              marginTop: "32px",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              paddingTop: "16px",
+              borderTop: "1px solid rgba(255,255,255,0.08)",
+            }}
+          >
+            <div
+              style={{
+                fontFamily: '"Bebas Neue", "Anton", Impact, sans-serif',
+                fontSize: "24px",
+                color: "#facc15",
+                letterSpacing: "0.18em",
+              }}
+            >
+              UNSCHLAGBAR
+            </div>
+            <div
+              style={{
+                fontSize: "18px",
+                color: "#a3a3a3",
+                letterSpacing: "0.18em",
+              }}
+            >
+              unschlagbar.lovable.app
+            </div>
+          </div>
+
+          {/* Bottom stripe — mirrors top */}
+          <div
+            style={{
+              marginTop: "16px",
+              height: "8px",
+              background:
+                "repeating-linear-gradient(90deg, #facc15 0 12px, transparent 12px 24px)",
+              opacity: 0.85,
+            }}
+          />
         </div>
       </div>
     </div>
   );
+}
+
+/** Tally goals + assists across a season's match feed. Returns the single
+ *  top scorer and top assister (ties broken by first-seen, deterministic
+ *  since the match feed itself is seeded). Returns nulls if no scorer
+ *  data is present on the matches (e.g. an older run that ran before
+ *  /season started enriching matches with scorers). */
+export function computeStarPerformers(matches: MatchResult[]): {
+  topScorer: { name: string; goals: number } | null;
+  topAssister: { name: string; assists: number } | null;
+} {
+  const goals = new Map<string, number>();
+  const assists = new Map<string, number>();
+  matches.forEach((m) => {
+    m.scorers?.forEach((s) => {
+      goals.set(s.name, (goals.get(s.name) ?? 0) + 1);
+      if (s.assister) assists.set(s.assister, (assists.get(s.assister) ?? 0) + 1);
+    });
+  });
+  let topScorer: { name: string; goals: number } | null = null;
+  goals.forEach((g, name) => {
+    if (!topScorer || g > topScorer.goals) topScorer = { name, goals: g };
+  });
+  let topAssister: { name: string; assists: number } | null = null;
+  assists.forEach((a, name) => {
+    if (!topAssister || a > topAssister.assists) topAssister = { name, assists: a };
+  });
+  return { topScorer, topAssister };
 }
