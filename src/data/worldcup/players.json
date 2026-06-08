@@ -7668,17 +7668,6 @@
     ]
   },
   {
-    "name": "Danilo",
-    "position": "RB",
-    "prime_rating": 81,
-    "career_years": "2018-2022",
-    "nationality": "Brazil",
-    "club": "brazil",
-    "altPositions": [
-      "CB"
-    ]
-  },
-  {
     "name": "Fred",
     "position": "ST",
     "prime_rating": 84,
@@ -8007,14 +7996,6 @@
     "position": "LB",
     "prime_rating": 88,
     "career_years": "1982-1986",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "Júnior",
-    "position": "LB",
-    "prime_rating": 88,
-    "career_years": "2002",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -42897,14 +42878,6 @@
     "club": "portugal"
   },
   {
-    "name": "João Pinto",
-    "position": "CAM",
-    "prime_rating": 86,
-    "career_years": "2002",
-    "nationality": "Portugal",
-    "club": "portugal"
-  },
-  {
     "name": "Alberto Festa",
     "position": "CB",
     "prime_rating": 62,
@@ -51034,17 +51007,6 @@
     "position": "CDM",
     "prime_rating": 87,
     "career_years": "1962",
-    "nationality": "Spain",
-    "club": "spain",
-    "altPositions": [
-      "CM"
-    ]
-  },
-  {
-    "name": "Rodri",
-    "position": "CDM",
-    "prime_rating": 87,
-    "career_years": "2022",
     "nationality": "Spain",
     "club": "spain",
     "altPositions": [

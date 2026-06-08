@@ -1392,14 +1392,6 @@
     "club": "atletico"
   },
   {
-    "name": "Koke",
-    "position": "CM",
-    "prime_rating": 87,
-    "career_years": "2009-2026",
-    "nationality": "Spain",
-    "club": "atletico"
-  },
-  {
     "name": "Saúl Ñíguez",
     "position": "CM",
     "prime_rating": 86,
@@ -3037,14 +3029,6 @@
     "prime_rating": 88,
     "career_years": "2015-2017",
     "nationality": "France",
-    "club": "monaco"
-  },
-  {
-    "name": "Radamel Falcao",
-    "position": "ST",
-    "prime_rating": 85,
-    "career_years": "2013-2019",
-    "nationality": "Colombia",
     "club": "monaco"
   },
   {
@@ -5104,14 +5088,6 @@
     "club": "inter"
   },
   {
-    "name": "Samuel Eto'o",
-    "position": "ST",
-    "prime_rating": 90,
-    "career_years": "2009-2011",
-    "nationality": "Cameroon",
-    "club": "inter"
-  },
-  {
     "name": "Goran Pandev",
     "position": "ST",
     "prime_rating": 83,
@@ -5456,26 +5432,10 @@
     "club": "milan"
   },
   {
-    "name": "Andrea Pirlo",
-    "position": "CM",
-    "prime_rating": 92,
-    "career_years": "2001-2011",
-    "nationality": "Italy",
-    "club": "milan"
-  },
-  {
     "name": "Massimo Ambrosini",
     "position": "CM",
     "prime_rating": 83,
     "career_years": "1995-2013",
-    "nationality": "Italy",
-    "club": "milan"
-  },
-  {
-    "name": "Filippo Inzaghi",
-    "position": "ST",
-    "prime_rating": 90,
-    "career_years": "2001-2012",
     "nationality": "Italy",
     "club": "milan"
   },
@@ -5828,14 +5788,6 @@
     "position": "LB",
     "prime_rating": 85,
     "career_years": "2014-2017",
-    "nationality": "France",
-    "club": "juventus"
-  },
-  {
-    "name": "Zinedine Zidane",
-    "position": "CAM",
-    "prime_rating": 94,
-    "career_years": "1996-2001",
     "nationality": "France",
     "club": "juventus"
   },
@@ -6340,14 +6292,6 @@
     "position": "ST",
     "prime_rating": 87,
     "career_years": "1993-2001",
-    "nationality": "Spain",
-    "club": "atletico"
-  },
-  {
-    "name": "Caminero",
-    "position": "CM",
-    "prime_rating": 87,
-    "career_years": "1993-2000",
     "nationality": "Spain",
     "club": "atletico"
   },
@@ -7120,14 +7064,6 @@
     "club": "napoli"
   },
   {
-    "name": "Careca",
-    "position": "ST",
-    "prime_rating": 90,
-    "career_years": "1987-1993",
-    "nationality": "Brazil",
-    "club": "napoli"
-  },
-  {
     "name": "Daniel Fonseca",
     "position": "ST",
     "prime_rating": 83,
@@ -7408,14 +7344,6 @@
     "club": "valencia"
   },
   {
-    "name": "David Villa",
-    "position": "ST",
-    "prime_rating": 92,
-    "career_years": "2005-2010",
-    "nationality": "Spain",
-    "club": "valencia"
-  },
-  {
     "name": "Juan Mata",
     "position": "CAM",
     "prime_rating": 85,
@@ -7476,14 +7404,6 @@
     "position": "CM",
     "prime_rating": 82,
     "career_years": "1988-1996",
-    "nationality": "Spain",
-    "club": "valencia"
-  },
-  {
-    "name": "Mendieta",
-    "position": "CAM",
-    "prime_rating": 90,
-    "career_years": "1992-2001",
     "nationality": "Spain",
     "club": "valencia"
   },
@@ -8750,14 +8670,6 @@
     "nationality": "Germany",
     "club": "arsenal",
     "career_years": "2016-2022"
-  },
-  {
-    "name": "De Gea",
-    "position": "GK",
-    "prime_rating": 91,
-    "nationality": "Spain",
-    "club": "manchesterunited",
-    "career_years": "2017-2022"
   },
   {
     "name": "C. Bravo",
@@ -10552,14 +10464,6 @@
     "club": "benfica"
   },
   {
-    "name": "Falcao",
-    "position": "ST",
-    "prime_rating": 90,
-    "career_years": "2009-2011",
-    "nationality": "Colombia",
-    "club": "porto"
-  },
-  {
     "name": "João Moutinho",
     "position": "CM",
     "prime_rating": 87,
@@ -11040,14 +10944,6 @@
     "club": "steaua"
   },
   {
-    "name": "Lăcătuș",
-    "position": "RW",
-    "prime_rating": 82,
-    "career_years": "1996-2000",
-    "nationality": "Romania",
-    "club": "steaua"
-  },
-  {
     "name": "Robert Prosinečki",
     "position": "CAM",
     "prime_rating": 91,
@@ -11352,22 +11248,6 @@
     "club": "inter"
   },
   {
-    "name": "Diego Simeone",
-    "position": "CDM",
-    "prime_rating": 87,
-    "career_years": "1997-1999",
-    "nationality": "Argentina",
-    "club": "inter"
-  },
-  {
-    "name": "Christian Vieri",
-    "position": "ST",
-    "prime_rating": 91,
-    "career_years": "1999-2005",
-    "nationality": "Italy",
-    "club": "inter"
-  },
-  {
     "name": "Álvaro Recoba",
     "position": "CAM",
     "prime_rating": 88,
@@ -11405,14 +11285,6 @@
     "prime_rating": 90,
     "career_years": "1988-2002",
     "nationality": "Italy",
-    "club": "milan"
-  },
-  {
-    "name": "Ronaldinho",
-    "position": "CAM",
-    "prime_rating": 89,
-    "career_years": "2008-2011",
-    "nationality": "Brazil",
     "club": "milan"
   },
   {
@@ -11517,14 +11389,6 @@
     "prime_rating": 88,
     "career_years": "1988-1992",
     "nationality": "Brazil",
-    "club": "napoli"
-  },
-  {
-    "name": "Ciro Ferrara",
-    "position": "CB",
-    "prime_rating": 88,
-    "career_years": "1984-1994",
-    "nationality": "Italy",
     "club": "napoli"
   },
   {

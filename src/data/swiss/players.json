@@ -1480,14 +1480,6 @@
     "career_years": "2017-2020"
   },
   {
-    "name": "R. Janga",
-    "position": "ST",
-    "prime_rating": 69,
-    "nationality": "Curacao",
-    "club": "lugano",
-    "career_years": "2019-2020"
-  },
-  {
     "name": "R. Ziegler",
     "position": "CDM",
     "prime_rating": 69,
@@ -2176,14 +2168,6 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "P. Kasami",
-    "position": "CM",
-    "prime_rating": 73,
-    "nationality": "Switzerland",
-    "club": "sion",
-    "career_years": "2017-2020"
-  },
-  {
     "name": "R. Ziegler",
     "position": "CDM",
     "prime_rating": 73,
@@ -2240,22 +2224,6 @@
     "career_years": "2016-2019"
   },
   {
-    "name": "E. Lenjani",
-    "position": "CM",
-    "prime_rating": 71,
-    "nationality": "Albania",
-    "club": "sion",
-    "career_years": "2019-2020"
-  },
-  {
-    "name": "J. Djourou",
-    "position": "CB",
-    "prime_rating": 71,
-    "nationality": "Switzerland",
-    "club": "sion",
-    "career_years": "2019-2020"
-  },
-  {
     "name": "J. Taravel",
     "position": "CB",
     "prime_rating": 71,
@@ -2288,28 +2256,12 @@
     "career_years": "2018-2019"
   },
   {
-    "name": "S. Doumbia",
-    "position": "ST",
-    "prime_rating": 71,
-    "nationality": "Ivory Coast",
-    "club": "sion",
-    "career_years": "2019-2020"
-  },
-  {
     "name": "Vagner",
     "position": "CAM",
     "prime_rating": 71,
     "nationality": "Cape Verde Islands",
     "club": "sion",
     "career_years": "2021-2022"
-  },
-  {
-    "name": "20 A. Song",
-    "position": "CDM",
-    "prime_rating": 70,
-    "nationality": "Cameroon",
-    "club": "sion",
-    "career_years": "2020-2022"
   },
   {
     "name": "A. Grgić",
@@ -2608,14 +2560,6 @@
     "career_years": "2016-2017"
   },
   {
-    "name": "N. Ben Khalifa",
-    "position": "CM",
-    "prime_rating": 68,
-    "nationality": "Switzerland",
-    "club": "stgallen",
-    "career_years": "2018-2019"
-  },
-  {
     "name": "N. Toko",
     "position": "CDM",
     "prime_rating": 68,
@@ -2702,14 +2646,6 @@
     "nationality": "Serbia",
     "club": "thun",
     "career_years": "2018-2019"
-  },
-  {
-    "name": "H. Bandé",
-    "position": "LW",
-    "prime_rating": 70,
-    "nationality": "Burkina Faso",
-    "club": "thun",
-    "career_years": "2019-2020"
   },
   {
     "name": "M. Spielmann",

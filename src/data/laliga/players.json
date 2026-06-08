@@ -1120,14 +1120,6 @@
     "club": "atletico"
   },
   {
-    "name": "Koke",
-    "position": "CM",
-    "prime_rating": 87,
-    "career_years": "2009-2026",
-    "nationality": "Spain",
-    "club": "atletico"
-  },
-  {
     "name": "Pablo Barrios",
     "position": "CM",
     "prime_rating": 82,
@@ -1340,14 +1332,6 @@
     "position": "ST",
     "prime_rating": 87,
     "career_years": "1993-2001",
-    "nationality": "Spain",
-    "club": "atletico"
-  },
-  {
-    "name": "Caminero",
-    "position": "CM",
-    "prime_rating": 87,
-    "career_years": "1993-2000",
     "nationality": "Spain",
     "club": "atletico"
   },
@@ -2200,14 +2184,6 @@
     "club": "valencia"
   },
   {
-    "name": "Mendieta",
-    "position": "CAM",
-    "prime_rating": 90,
-    "career_years": "1992-2001",
-    "nationality": "Spain",
-    "club": "valencia"
-  },
-  {
     "name": "Romário",
     "position": "ST",
     "prime_rating": 90,
@@ -2784,14 +2760,6 @@
     "club": "realsociedad"
   },
   {
-    "name": "Bakero",
-    "position": "CM",
-    "prime_rating": 87,
-    "career_years": "1980-1988",
-    "nationality": "Spain",
-    "club": "realsociedad"
-  },
-  {
     "name": "José Mari Bakero",
     "position": "CM",
     "prime_rating": 85,
@@ -2900,22 +2868,6 @@
     "position": "CAM",
     "prime_rating": 81,
     "career_years": "1978-1987",
-    "nationality": "Spain",
-    "club": "realsociedad"
-  },
-  {
-    "name": "Satrústegui",
-    "position": "ST",
-    "prime_rating": 87,
-    "career_years": "1974-1986",
-    "nationality": "Spain",
-    "club": "realsociedad"
-  },
-  {
-    "name": "López Ufarte",
-    "position": "LW",
-    "prime_rating": 87,
-    "career_years": "1974-1985",
     "nationality": "Spain",
     "club": "realsociedad"
   },
@@ -3232,14 +3184,6 @@
     "club": "athletic"
   },
   {
-    "name": "Iribar",
-    "position": "GK",
-    "prime_rating": 92,
-    "career_years": "1962-1980",
-    "nationality": "Spain",
-    "club": "athletic"
-  },
-  {
     "name": "Cedrún",
     "position": "GK",
     "prime_rating": 81,
@@ -3252,14 +3196,6 @@
     "position": "CB",
     "prime_rating": 88,
     "career_years": "1976-1988",
-    "nationality": "Spain",
-    "club": "athletic"
-  },
-  {
-    "name": "Andoni Zubizarreta",
-    "position": "GK",
-    "prime_rating": 87,
-    "career_years": "1981-1986",
     "nationality": "Spain",
     "club": "athletic"
   },
@@ -3528,14 +3464,6 @@
     "club": "betis"
   },
   {
-    "name": "Assunção",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "2000-2005",
-    "nationality": "Brazil",
-    "club": "betis"
-  },
-  {
     "name": "Marcos Assunção",
     "position": "CDM",
     "prime_rating": 84,
@@ -3581,14 +3509,6 @@
     "prime_rating": 80,
     "career_years": "1996-1998",
     "nationality": "Bolivia",
-    "club": "betis"
-  },
-  {
-    "name": "Robert Jarni",
-    "position": "LB",
-    "prime_rating": 83,
-    "career_years": "1997-1999",
-    "nationality": "Croatia",
     "club": "betis"
   },
   {
@@ -3660,14 +3580,6 @@
     "position": "CB",
     "prime_rating": 79,
     "career_years": "1976-1984",
-    "nationality": "Spain",
-    "club": "betis"
-  },
-  {
-    "name": "Cardeñosa",
-    "position": "CM",
-    "prime_rating": 84,
-    "career_years": "1969-1983",
     "nationality": "Spain",
     "club": "betis"
   },
@@ -4013,14 +3925,6 @@
     "prime_rating": 87,
     "career_years": "1992-1998",
     "nationality": "Spain",
-    "club": "celta"
-  },
-  {
-    "name": "Gudelj",
-    "position": "CB",
-    "prime_rating": 82,
-    "career_years": "1996-2000",
-    "nationality": "Yugoslavia",
     "club": "celta"
   },
   {
@@ -5536,14 +5440,6 @@
     "club": "espanyol"
   },
   {
-    "name": "Coro",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1995-2000",
-    "nationality": "Spain",
-    "club": "espanyol"
-  },
-  {
     "name": "Cristobal",
     "position": "CB",
     "prime_rating": 78,
@@ -5804,14 +5700,6 @@
     "position": "CAM",
     "prime_rating": 91,
     "career_years": "1996-1997",
-    "nationality": "Brazil",
-    "club": "deportivo"
-  },
-  {
-    "name": "Donato",
-    "position": "CB",
-    "prime_rating": 84,
-    "career_years": "1993-1998",
     "nationality": "Brazil",
     "club": "deportivo"
   },
@@ -7184,14 +7072,6 @@
     "club": "valencia"
   },
   {
-    "name": "David Villa",
-    "position": "ST",
-    "prime_rating": 91,
-    "career_years": "2005-2010",
-    "nationality": "Spain",
-    "club": "valencia"
-  },
-  {
     "name": "Telmo Zarra",
     "position": "ST",
     "prime_rating": 92,
@@ -7232,43 +7112,11 @@
     "club": "athletic"
   },
   {
-    "name": "Diego Maradona",
-    "position": "CAM",
-    "prime_rating": 88,
-    "career_years": "1992-1993",
-    "nationality": "Argentina",
-    "club": "sevilla"
-  },
-  {
-    "name": "Davor Šuker",
-    "position": "ST",
-    "prime_rating": 87,
-    "career_years": "1991-1996",
-    "nationality": "Croatia",
-    "club": "sevilla"
-  },
-  {
     "name": "Julio Cardeñosa",
     "position": "CM",
     "prime_rating": 84,
     "career_years": "1976-1986",
     "nationality": "Spain",
-    "club": "sevilla"
-  },
-  {
-    "name": "Sergio Ramos",
-    "position": "CB",
-    "prime_rating": 87,
-    "career_years": "2004-2005",
-    "nationality": "Spain",
-    "club": "sevilla"
-  },
-  {
-    "name": "Dani Alves",
-    "position": "RB",
-    "prime_rating": 88,
-    "career_years": "2003-2008",
-    "nationality": "Brazil",
     "club": "sevilla"
   },
   {
@@ -7309,14 +7157,6 @@
     "prime_rating": 87,
     "career_years": "1976-1987",
     "nationality": "Spain",
-    "club": "betis"
-  },
-  {
-    "name": "Denilson",
-    "position": "LW",
-    "prime_rating": 87,
-    "career_years": "1998-2005",
-    "nationality": "Brazil",
     "club": "betis"
   },
   {
@@ -8054,14 +7894,6 @@
     "nationality": "Spain",
     "club": "alcorcon",
     "career_years": "2016-2017"
-  },
-  {
-    "name": "Alex Bergantiños",
-    "position": "CDM",
-    "prime_rating": 73,
-    "nationality": "Spain",
-    "club": "deportivo",
-    "career_years": "2016-2020"
   },
   {
     "name": "David Rodríguez",
@@ -8933,14 +8765,6 @@
     "prime_rating": 72,
     "nationality": "Spain",
     "club": "elche",
-    "career_years": "2016-2017"
-  },
-  {
-    "name": "Miramón",
-    "position": "CM",
-    "prime_rating": 68,
-    "nationality": "Spain",
-    "club": "reus",
     "career_years": "2016-2017"
   },
   {
@@ -11024,28 +10848,12 @@
     "career_years": "2017-2018"
   },
   {
-    "name": "Luis Ruiz",
-    "position": "LB",
-    "prime_rating": 67,
-    "nationality": "Spain",
-    "club": "lugo",
-    "career_years": "2017-2021"
-  },
-  {
     "name": "Javi Muñoz",
     "position": "CDM",
     "prime_rating": 65,
     "nationality": "Spain",
     "club": "lorca",
     "career_years": "2017-2018"
-  },
-  {
-    "name": "Bicho",
-    "position": "CAM",
-    "prime_rating": 67,
-    "nationality": "Spain",
-    "club": "deportivo",
-    "career_years": "2017-2019"
   },
   {
     "name": "Juan Muñoz",
@@ -11224,14 +11032,6 @@
     "career_years": "2017-2018"
   },
   {
-    "name": "Mujaid",
-    "position": "RB",
-    "prime_rating": 69,
-    "nationality": "Spain",
-    "club": "deportivo",
-    "career_years": "2019-2020"
-  },
-  {
     "name": "José Carlos",
     "position": "CB",
     "prime_rating": 66,
@@ -11342,14 +11142,6 @@
     "nationality": "Spain",
     "club": "huesca",
     "career_years": "2017-2018"
-  },
-  {
-    "name": "Bernabé",
-    "position": "GK",
-    "prime_rating": 69,
-    "nationality": "Spain",
-    "club": "nastic",
-    "career_years": "2018-2019"
   },
   {
     "name": "M. Koval",
@@ -11472,27 +11264,11 @@
     "career_years": "2018-2019"
   },
   {
-    "name": "Luisinho",
-    "position": "LB",
-    "prime_rating": 73,
-    "nationality": "Portugal",
-    "club": "huesca",
-    "career_years": "2018-2021"
-  },
-  {
     "name": "Eddy Silvestre",
     "position": "CDM",
     "prime_rating": 70,
     "nationality": "Azerbaijan",
     "club": "alcorcon",
-    "career_years": "2018-2019"
-  },
-  {
-    "name": "Imanol García",
-    "position": "CM",
-    "prime_rating": 67,
-    "nationality": "Spain",
-    "club": "nastic",
     "career_years": "2018-2019"
   },
   {
@@ -11558,14 +11334,6 @@
     "nationality": "Spain",
     "club": "huesca",
     "career_years": "2020-2021"
-  },
-  {
-    "name": "Juan Muñiz",
-    "position": "CAM",
-    "prime_rating": 68,
-    "nationality": "Spain",
-    "club": "lugo",
-    "career_years": "2018-2019"
   },
   {
     "name": "Pedro Sánchez",
@@ -11693,14 +11461,6 @@
     "prime_rating": 68,
     "nationality": "France",
     "club": "elche",
-    "career_years": "2018-2019"
-  },
-  {
-    "name": "Cotán",
-    "position": "CM",
-    "prime_rating": 69,
-    "nationality": "Spain",
-    "club": "nastic",
     "career_years": "2018-2019"
   },
   {
@@ -11910,14 +11670,6 @@
     "nationality": "Spain",
     "club": "extremadura",
     "career_years": "2018-2019"
-  },
-  {
-    "name": "Derik",
-    "position": "CB",
-    "prime_rating": 67,
-    "nationality": "Spain",
-    "club": "numancia",
-    "career_years": "2018-2020"
   },
   {
     "name": "Borja Lasso",
@@ -12320,22 +12072,6 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "Higinio",
-    "position": "ST",
-    "prime_rating": 68,
-    "nationality": "Spain",
-    "club": "numancia",
-    "career_years": "2019-2020"
-  },
-  {
-    "name": "Mayoral",
-    "position": "CM",
-    "prime_rating": 65,
-    "nationality": "Spain",
-    "club": "alcorcon",
-    "career_years": "2018-2019"
-  },
-  {
     "name": "Manuel Sánchez",
     "position": "CB",
     "prime_rating": 66,
@@ -12454,14 +12190,6 @@
     "nationality": "Finland",
     "club": "nastic",
     "career_years": "2018-2019"
-  },
-  {
-    "name": "M. Somma",
-    "position": "CB",
-    "prime_rating": 70,
-    "nationality": "Italy",
-    "club": "deportivo",
-    "career_years": "2019-2020"
   },
   {
     "name": "Borja",
@@ -12712,14 +12440,6 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "Dani Giménez",
-    "position": "GK",
-    "prime_rating": 73,
-    "nationality": "Spain",
-    "club": "deportivo",
-    "career_years": "2018-2020"
-  },
-  {
     "name": "Álvaro",
     "position": "GK",
     "prime_rating": 65,
@@ -12758,14 +12478,6 @@
     "nationality": "Spain",
     "club": "celta",
     "career_years": "2019-2022"
-  },
-  {
-    "name": "19 M. Krohn-Dehli",
-    "position": "CM",
-    "prime_rating": 73,
-    "nationality": "Denmark",
-    "club": "deportivo",
-    "career_years": "2019-2021"
   },
   {
     "name": "V. Vada",
@@ -12840,14 +12552,6 @@
     "career_years": "2020-2022"
   },
   {
-    "name": "Pedro López",
-    "position": "RB",
-    "prime_rating": 72,
-    "nationality": "Spain",
-    "club": "huesca",
-    "career_years": "2020-2021"
-  },
-  {
     "name": "Aketxe",
     "position": "CAM",
     "prime_rating": 71,
@@ -12912,30 +12616,6 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "Keko",
-    "position": "CM",
-    "prime_rating": 70,
-    "nationality": "Spain",
-    "club": "deportivo",
-    "career_years": "2019-2020"
-  },
-  {
-    "name": "L. Crisetig",
-    "position": "CM",
-    "prime_rating": 73,
-    "nationality": "Italy",
-    "club": "mirandes",
-    "career_years": "2019-2020"
-  },
-  {
-    "name": "Víctor Rodríguez",
-    "position": "CM",
-    "prime_rating": 74,
-    "nationality": "Spain",
-    "club": "elche",
-    "career_years": "2020-2021"
-  },
-  {
     "name": "19 Raphael Guzzo",
     "position": "CAM",
     "prime_rating": 69,
@@ -12968,14 +12648,6 @@
     "career_years": "2019-2022"
   },
   {
-    "name": "C. Beauvue",
-    "position": "ST",
-    "prime_rating": 71,
-    "nationality": "France",
-    "club": "deportivo",
-    "career_years": "2019-2020"
-  },
-  {
     "name": "Juan Carlos",
     "position": "CAM",
     "prime_rating": 74,
@@ -12990,14 +12662,6 @@
     "nationality": "Spain",
     "club": "elche",
     "career_years": "2021-2022"
-  },
-  {
-    "name": "Jaime Seoane",
-    "position": "CAM",
-    "prime_rating": 66,
-    "nationality": "Spain",
-    "club": "lugo",
-    "career_years": "2019-2020"
   },
   {
     "name": "Pere Milla",
@@ -13112,14 +12776,6 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "R. Kitoko",
-    "position": "CDM",
-    "prime_rating": 65,
-    "nationality": "Belgium",
-    "club": "santander",
-    "career_years": "2019-2020"
-  },
-  {
     "name": "Javi Muñoz",
     "position": "CAM",
     "prime_rating": 69,
@@ -13133,14 +12789,6 @@
     "prime_rating": 68,
     "nationality": "Spain",
     "club": "santander",
-    "career_years": "2019-2020"
-  },
-  {
-    "name": "U. Agbo",
-    "position": "CB",
-    "prime_rating": 68,
-    "nationality": "Nigeria",
-    "club": "deportivo",
     "career_years": "2019-2020"
   },
   {
@@ -13158,14 +12806,6 @@
     "nationality": "Spain",
     "club": "ponferradina",
     "career_years": "2019-2021"
-  },
-  {
-    "name": "R. Mazáň",
-    "position": "CDM",
-    "prime_rating": 66,
-    "nationality": "Slovakia",
-    "club": "tenerife",
-    "career_years": "2019-2020"
   },
   {
     "name": "Son",
@@ -13216,27 +12856,11 @@
     "career_years": "2019-2021"
   },
   {
-    "name": "Jonathas",
-    "position": "ST",
-    "prime_rating": 75,
-    "nationality": "Brazil",
-    "club": "elche",
-    "career_years": "2019-2021"
-  },
-  {
     "name": "Dani Raba",
     "position": "CAM",
     "prime_rating": 73,
     "nationality": "Spain",
     "club": "huesca",
-    "career_years": "2019-2020"
-  },
-  {
-    "name": "Sergio Gil",
-    "position": "CAM",
-    "prime_rating": 65,
-    "nationality": "Spain",
-    "club": "extremadura",
     "career_years": "2019-2020"
   },
   {
@@ -13270,14 +12894,6 @@
     "nationality": "Spain",
     "club": "almeria",
     "career_years": "2019-2021"
-  },
-  {
-    "name": "Nico Hidalgo",
-    "position": "CM",
-    "prime_rating": 65,
-    "nationality": "Spain",
-    "club": "santander",
-    "career_years": "2019-2020"
   },
   {
     "name": "J. Harper",
@@ -13456,14 +13072,6 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "David Carmona",
-    "position": "RB",
-    "prime_rating": 66,
-    "nationality": "Spain",
-    "club": "santander",
-    "career_years": "2019-2020"
-  },
-  {
     "name": "Jordi Mboula",
     "position": "CM",
     "prime_rating": 69,
@@ -13477,14 +13085,6 @@
     "prime_rating": 70,
     "nationality": "Spain",
     "club": "tenerife",
-    "career_years": "2019-2020"
-  },
-  {
-    "name": "David Rodríguez",
-    "position": "ST",
-    "prime_rating": 67,
-    "nationality": "Spain",
-    "club": "santander",
     "career_years": "2019-2020"
   },
   {
@@ -13632,14 +13232,6 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "Salva Ruíz",
-    "position": "LB",
-    "prime_rating": 68,
-    "nationality": "Spain",
-    "club": "deportivo",
-    "career_years": "2019-2020"
-  },
-  {
     "name": "Nacho Gil",
     "position": "CAM",
     "prime_rating": 68,
@@ -13652,14 +13244,6 @@
     "position": "RB",
     "prime_rating": 67,
     "nationality": "Spain",
-    "club": "numancia",
-    "career_years": "2019-2020"
-  },
-  {
-    "name": "Moha",
-    "position": "CM",
-    "prime_rating": 68,
-    "nationality": "Morocco",
     "club": "numancia",
     "career_years": "2019-2020"
   },
@@ -13720,30 +13304,6 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "Alexis",
-    "position": "CB",
-    "prime_rating": 69,
-    "nationality": "Spain",
-    "club": "santander",
-    "career_years": "2019-2020"
-  },
-  {
-    "name": "19 Fran Rodríguez",
-    "position": "RB",
-    "prime_rating": 65,
-    "nationality": "Spain",
-    "club": "almeria",
-    "career_years": "2019-2020"
-  },
-  {
-    "name": "Airam Cabrera",
-    "position": "ST",
-    "prime_rating": 65,
-    "nationality": "Spain",
-    "club": "extremadura",
-    "career_years": "2019-2020"
-  },
-  {
     "name": "19 J. Dongou Tsafack",
     "position": "ST",
     "prime_rating": 66,
@@ -13798,14 +13358,6 @@
     "nationality": "Spain",
     "club": "alcorcon",
     "career_years": "2019-2022"
-  },
-  {
-    "name": "S. Sosa",
-    "position": "CM",
-    "prime_rating": 67,
-    "nationality": "Venezuela",
-    "club": "alcorcon",
-    "career_years": "2019-2021"
   },
   {
     "name": "Jonathan",
@@ -14056,14 +13608,6 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "Jon Ander",
-    "position": "ST",
-    "prime_rating": 65,
-    "nationality": "Spain",
-    "club": "santander",
-    "career_years": "2019-2020"
-  },
-  {
     "name": "17 Nacho Monsalve",
     "position": "CB",
     "prime_rating": 66,
@@ -14101,14 +13645,6 @@
     "prime_rating": 67,
     "nationality": "Argentina",
     "club": "ponferradina",
-    "career_years": "2019-2020"
-  },
-  {
-    "name": "T. Datković",
-    "position": "CB",
-    "prime_rating": 65,
-    "nationality": "Croatia",
-    "club": "huesca",
     "career_years": "2019-2020"
   },
   {
@@ -14174,14 +13710,6 @@
     "nationality": "Spain",
     "club": "huesca",
     "career_years": "2020-2021"
-  },
-  {
-    "name": "L. Zidane",
-    "position": "GK",
-    "prime_rating": 67,
-    "nationality": "France",
-    "club": "santander",
-    "career_years": "2019-2020"
   },
   {
     "name": "19 F. Uzoho",
@@ -14400,27 +13928,11 @@
     "career_years": "2020-2022"
   },
   {
-    "name": "20 Bóveda",
-    "position": "RB",
-    "prime_rating": 70,
-    "nationality": "Spain",
-    "club": "deportivo",
-    "career_years": "2020-2022"
-  },
-  {
     "name": "Cifu",
     "position": "RB",
     "prime_rating": 70,
     "nationality": "Spain",
     "club": "elche",
-    "career_years": "2020-2021"
-  },
-  {
-    "name": "20 E. Çolak",
-    "position": "CAM",
-    "prime_rating": 72,
-    "nationality": "Turkey",
-    "club": "deportivo",
     "career_years": "2020-2021"
   },
   {
@@ -14645,14 +14157,6 @@
     "prime_rating": 68,
     "nationality": "Spain",
     "club": "cartagena",
-    "career_years": "2020-2021"
-  },
-  {
-    "name": "20 Vicente Gómez",
-    "position": "CM",
-    "prime_rating": 69,
-    "nationality": "Spain",
-    "club": "deportivo",
     "career_years": "2020-2021"
   },
   {
@@ -14976,14 +14480,6 @@
     "career_years": "2020-2022"
   },
   {
-    "name": "M. Ezzarfani",
-    "position": "CM",
-    "prime_rating": 66,
-    "nationality": "Morocco",
-    "club": "mirandes",
-    "career_years": "2020-2021"
-  },
-  {
     "name": "Isi Ros",
     "position": "CM",
     "prime_rating": 66,
@@ -15174,22 +14670,6 @@
     "nationality": "Spain",
     "club": "huesca",
     "career_years": "2020-2022"
-  },
-  {
-    "name": "Cantero",
-    "position": "GK",
-    "prime_rating": 69,
-    "nationality": "Spain",
-    "club": "lugo",
-    "career_years": "2020-2021"
-  },
-  {
-    "name": "Rubén Miño",
-    "position": "GK",
-    "prime_rating": 68,
-    "nationality": "Spain",
-    "club": "logrones",
-    "career_years": "2020-2021"
   },
   {
     "name": "20 Juan Carlos",
@@ -16288,14 +15768,6 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "Moleiro",
-    "position": "CAM",
-    "prime_rating": 67,
-    "nationality": "Spain",
-    "club": "laspalmas",
-    "career_years": "2021-2022"
-  },
-  {
     "name": "Álex Blesa",
     "position": "CAM",
     "prime_rating": 66,
@@ -16845,14 +16317,6 @@
     "prime_rating": 67,
     "nationality": "Spain",
     "club": "logrones",
-    "career_years": "2021-2022"
-  },
-  {
-    "name": "21 Sergio",
-    "position": "GK",
-    "prime_rating": 73,
-    "nationality": "Spain",
-    "club": "celta",
     "career_years": "2021-2022"
   },
   {

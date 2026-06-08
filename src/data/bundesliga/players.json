@@ -8536,14 +8536,6 @@
     "club": "werder"
   },
   {
-    "name": "Pizarro",
-    "position": "ST",
-    "nationality": "Peru",
-    "career_years": "2008-2012, 2015-2017",
-    "prime_rating": 84,
-    "club": "werder"
-  },
-  {
     "name": "Davy Klaassen",
     "position": "CM",
     "nationality": "Netherlands",
@@ -8644,14 +8636,6 @@
     "position": "CB",
     "nationality": "Netherlands",
     "career_years": "2022-Present",
-    "prime_rating": 80,
-    "club": "union"
-  },
-  {
-    "name": "Rani Khedira",
-    "position": "CDM",
-    "nationality": "Germany",
-    "career_years": "2021-Present",
     "prime_rating": 80,
     "club": "union"
   },
@@ -9024,14 +9008,6 @@
     "club": "koln"
   },
   {
-    "name": "Toni Schumacher",
-    "position": "GK",
-    "nationality": "Germany",
-    "career_years": "1972-1987",
-    "prime_rating": 90,
-    "club": "koln"
-  },
-  {
     "name": "Hans-Peter Briegel",
     "position": "LB",
     "nationality": "Germany",
@@ -9149,14 +9125,6 @@
     "nationality": "Germany",
     "career_years": "1986-1987",
     "prime_rating": 85,
-    "club": "hertha"
-  },
-  {
-    "name": "Marko Pantelić",
-    "position": "ST",
-    "nationality": "Serbia",
-    "career_years": "2005-2009",
-    "prime_rating": 82,
     "club": "hertha"
   },
   {
