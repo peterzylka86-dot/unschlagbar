@@ -3192,14 +3192,6 @@
     "club": "bochum"
   },
   {
-    "prime_rating": 96,
-    "career_years": "1948-1959 (Pre-BL), 1959-1963",
-    "name": "Fritz Walter",
-    "position": "CAM",
-    "nationality": "Germany",
-    "club": "kaiserslautern"
-  },
-  {
     "name": "Ottmar Walter",
     "position": "ST",
     "nationality": "Germany",
@@ -11968,14 +11960,6 @@
     "club": "wattenscheid"
   },
   {
-    "name": "Wolfgang Funkel",
-    "position": "GK",
-    "prime_rating": 70,
-    "career_years": "1990-1994",
-    "nationality": "GER",
-    "club": "wattenscheid"
-  },
-  {
     "name": "Souleyman Sane",
     "position": "CDM",
     "prime_rating": 78,
@@ -12792,14 +12776,6 @@
     "club": "ulm"
   },
   {
-    "name": "Ata Lameck",
-    "position": "CAM",
-    "prime_rating": 70,
-    "career_years": "1998-2000",
-    "nationality": "GER",
-    "club": "ulm"
-  },
-  {
     "name": "Jamilu Collins",
     "position": "RB",
     "prime_rating": 74,
@@ -13094,14 +13070,6 @@
     "career_years": "1997-2000",
     "nationality": "GER",
     "club": "tennisborussia"
-  },
-  {
-    "name": "Sven Mueller",
-    "position": "GK",
-    "prime_rating": 70,
-    "career_years": "2008-2012",
-    "nationality": "GER",
-    "club": "viktoriakoln"
   },
   {
     "name": "Patrick Koronkiewicz",

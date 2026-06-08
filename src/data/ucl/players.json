@@ -6632,14 +6632,6 @@
     "club": "dortmund"
   },
   {
-    "name": "Júlio César",
-    "position": "CB",
-    "nationality": "Brazil",
-    "career_years": "1994-1998",
-    "prime_rating": 83,
-    "club": "dortmund"
-  },
-  {
     "name": "Wolfgang de Beer",
     "position": "GK",
     "nationality": "Germany",
@@ -8150,14 +8142,6 @@
     "nationality": "France",
     "club": "arsenal",
     "career_years": "2016-2017"
-  },
-  {
-    "name": "Marcos Alonso",
-    "position": "LB",
-    "prime_rating": 83,
-    "nationality": "Spain",
-    "club": "chelsea",
-    "career_years": "2018-2022"
   },
   {
     "name": "M. Rojo",
@@ -10781,14 +10765,6 @@
     "prime_rating": 86,
     "career_years": "2001-2006",
     "nationality": "Bulgaria",
-    "club": "bayer"
-  },
-  {
-    "name": "Jorginho",
-    "position": "GK",
-    "prime_rating": 84,
-    "career_years": "2003-2007",
-    "nationality": "Brazil",
     "club": "bayer"
   },
   {
