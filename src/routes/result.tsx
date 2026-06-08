@@ -508,9 +508,16 @@ function ShareBlock() {
       const text = buildShareText(config, slots, matches, config.challengeSeed);
       const result = await shareImage(dataUrl, filename, text, `${league.brandMark}`);
       setStatus(
-        result === "shared" ? "Shared!" : result === "downloaded" ? "Image saved" : "Image failed",
+        result === "shared"
+          ? "Shared!"
+          : result === "copied"
+            ? "Image copied — paste in WhatsApp / X / Slack"
+            : result === "downloaded"
+              ? "Image saved"
+              : "Image failed",
       );
-      setTimeout(() => setStatus(null), 2200);
+      // Slightly longer toast for "copied" so the user sees the paste hint.
+      setTimeout(() => setStatus(null), result === "copied" ? 3500 : 2200);
     } catch {
       setStatus("Image failed");
       setTimeout(() => setStatus(null), 2200);
@@ -649,7 +656,9 @@ function ShareBlock() {
           className="text-foreground"
           style={{
             width: "1080px",
-            height: "1080px",
+            height: "1350px", // 4:5 portrait — Instagram/X-feed/WhatsApp
+            // friendly and fits the XI list + Golden Boot + watermark
+            // without clipping. Square (1080×1080) was too tight.
             background:
               "radial-gradient(circle at 30% 0%, rgba(250,204,21,0.18) 0%, transparent 55%), linear-gradient(135deg, #050505 0%, #0a0a0a 60%, #1a0a14 100%)",
             padding: "64px",

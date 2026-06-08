@@ -185,26 +185,39 @@ export async function shareOrCopy(
 }
 
 /**
- * Native image share — opens the OS share sheet (WhatsApp / X / Messages /
- * Instagram) with the PNG attached. Falls back to download-as-file if the
- * device/browser doesn't support file-share (mostly older desktop).
+ * Smart image share — picks the right delivery channel per platform.
  *
- * User: "I don't want to save it on my mobile but rather share the image
- * via whatsapp or X or something."
+ *   Mobile  (navigator.share + file support) → native share sheet,
+ *                                              WhatsApp is one tap away.
+ *   Desktop (ClipboardItem support)          → copy PNG to clipboard,
+ *                                              user pastes into WhatsApp
+ *                                              Web / X / Slack / Discord.
+ *   Fallback                                 → download as file.
  *
- * @returns "shared"     — opened the share sheet successfully
- *          "downloaded" — fell back to file download
- *          "failed"     — both paths threw; show an error toast
+ * Why this order: the previous "share OR download" flow buried the image
+ * in Downloads on desktop and forced a manual file-attach in WhatsApp
+ * Web. Clipboard paste is two keystrokes (⌘V) into the message box.
+ *
+ * @returns "shared"      — native share sheet opened
+ *          "copied"      — image written to clipboard
+ *          "downloaded"  — fell back to file download
+ *          "failed"      — all three paths threw
  */
 export async function shareImage(
   dataUrl: string,
   filename: string,
   text = "",
   title = "UNSCHLAGBAR",
-): Promise<"shared" | "downloaded" | "failed"> {
+): Promise<"shared" | "copied" | "downloaded" | "failed"> {
+  let blob: Blob;
   try {
-    // Convert the data URL to a File so navigator.share can attach it.
-    const blob = await (await fetch(dataUrl)).blob();
+    blob = await (await fetch(dataUrl)).blob();
+  } catch {
+    return "failed";
+  }
+
+  // Path 1 — Mobile native share with file attached.
+  try {
     const file = new File([blob], filename, { type: "image/png" });
     const nav = navigator as Navigator & {
       canShare?: (d: ShareData) => boolean;
@@ -215,14 +228,39 @@ export async function shareImage(
         await nav.share({ files: [file], title, text });
         return "shared";
       } catch {
-        // User cancelled — treat as silently shared (not a failure)
+        // User cancelled the share sheet. Don't fall through — they
+        // made a deliberate choice. Treat as a successful no-op.
         return "shared";
       }
     }
   } catch {
-    // Fall through to download
+    // Fall through to clipboard
   }
-  // Desktop / unsupported: fall back to download-as-file.
+
+  // Path 2 — Desktop: write PNG to clipboard so user can paste into
+  // WhatsApp Web / X / Slack / Discord with ⌘V. Requires a secure
+  // context (HTTPS) + ClipboardItem support (Chrome 76+, Edge 79+,
+  // Safari 13.1+, Firefox 127+).
+  try {
+    const ClipboardItemCtor = (
+      window as Window & { ClipboardItem?: typeof ClipboardItem }
+    ).ClipboardItem;
+    if (
+      ClipboardItemCtor &&
+      navigator.clipboard &&
+      "write" in navigator.clipboard
+    ) {
+      await navigator.clipboard.write([
+        new ClipboardItemCtor({ "image/png": blob }),
+      ]);
+      return "copied";
+    }
+  } catch {
+    // Permission denied, blob too large, etc. — fall through to download.
+  }
+
+  // Path 3 — Last resort: download as file. Always works but worst UX
+  // because the user has to attach manually.
   try {
     const link = document.createElement("a");
     link.download = filename;

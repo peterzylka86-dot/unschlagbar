@@ -70,7 +70,11 @@ function DailyScreen() {
       foundingPlayer: undefined,
     });
     reset();
-    navigate({ to: "/game", search: { new: true } });
+    // Skip the /game setup screen — every Daily run is locked to the
+    // same config (UCL / 4-3-3 / Normal / squad / prime), so the
+    // league/formation/difficulty pickers would all be dead UI. Go
+    // straight to the wheel.
+    navigate({ to: "/draft" });
   }
 
   return (
