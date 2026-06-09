@@ -230,8 +230,16 @@ function DraftScreen() {
   function playersForCurrentClub(): Player[] {
     if (!currentClub) return [];
     // Single source of truth — same filter as clubHasCompatible.
+    // Sort order:
+    //   1. Verified (Wikipedia-confirmed player↔club) first
+    //   2. Then by rating, high→low
+    // Unverified players are NOT hidden — they still appear, just
+    // below the verified set. This quietly upweights real legends
+    // over LLM-fabricated lookalikes without breaking long-tail rosters.
     return compatiblePlayersForClub(currentClub.id, tier, usedPlayers, slots, pickingForSlot).sort(
-      (a, b) => b.prime_rating - a.prime_rating,
+      (a, b) =>
+        Number(b.verified ?? false) - Number(a.verified ?? false) ||
+        b.prime_rating - a.prime_rating,
     );
   }
 

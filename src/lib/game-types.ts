@@ -29,6 +29,12 @@ export interface Player {
   career_years: string;
   nationality: string;
   club: string;
+  /** Quiet quality signal — true if the (player, club) pairing was
+   *  confirmed against an external source (Wikipedia article mention
+   *  via tools/verify_wikidata.py). Used to upweight verified players
+   *  in the picker so users see them first. Unverified players are
+   *  STILL shown — this is sort order, not a filter. */
+  verified?: boolean;
 }
 
 export interface Slot {
