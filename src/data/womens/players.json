@@ -1069,7 +1069,8 @@
     "prime_rating": 84,
     "career_years": "2018-2026",
     "nationality": "USA",
-    "club": "portland"
+    "club": "portland",
+    "verified": true
   },
   {
     "name": "Becky Sauerbrunn",
@@ -1104,7 +1105,8 @@
     "prime_rating": 84,
     "career_years": "2021-2026",
     "nationality": "USA",
-    "club": "portland"
+    "club": "portland",
+    "verified": true
   },
   {
     "name": "Christine Sinclair",
@@ -1139,7 +1141,8 @@
     "prime_rating": 84,
     "career_years": "2022-2026",
     "nationality": "Canada",
-    "club": "portland"
+    "club": "portland",
+    "verified": true
   },
   {
     "name": "Morgan Weaver",
@@ -1147,7 +1150,8 @@
     "prime_rating": 83,
     "career_years": "2020-2026",
     "nationality": "USA",
-    "club": "portland"
+    "club": "portland",
+    "verified": true
   },
   {
     "name": "Anna Moorhouse",
@@ -1164,7 +1168,8 @@
     "prime_rating": 83,
     "career_years": "2022-2026",
     "nationality": "USA",
-    "club": "orlando"
+    "club": "orlando",
+    "verified": true
   },
   {
     "name": "Kerry Abello",
@@ -1172,7 +1177,8 @@
     "prime_rating": 82,
     "career_years": "2023-2026",
     "nationality": "USA",
-    "club": "orlando"
+    "club": "orlando",
+    "verified": true
   },
   {
     "name": "Rafaelle Souza",
@@ -1222,7 +1228,8 @@
     "prime_rating": 83,
     "career_years": "2023-2026",
     "nationality": "USA",
-    "club": "orlando"
+    "club": "orlando",
+    "verified": true
   },
   {
     "name": "Ally Watt",
@@ -1230,7 +1237,8 @@
     "prime_rating": 82,
     "career_years": "2022-2026",
     "nationality": "USA",
-    "club": "orlando"
+    "club": "orlando",
+    "verified": true
   },
   {
     "name": "Mandy Haught",
@@ -1721,7 +1729,8 @@
     "prime_rating": 82,
     "career_years": "2023-2026",
     "nationality": "USA",
-    "club": "portland"
+    "club": "portland",
+    "verified": true
   },
   {
     "name": "Adriana",
@@ -1737,7 +1746,8 @@
     "prime_rating": 82,
     "career_years": "2024-2026",
     "nationality": "USA",
-    "club": "orlando"
+    "club": "orlando",
+    "verified": true
   },
   {
     "name": "Angelina",
@@ -1753,7 +1763,8 @@
     "prime_rating": 82,
     "career_years": "2024-2026",
     "nationality": "USA",
-    "club": "orlando"
+    "club": "orlando",
+    "verified": true
   },
   {
     "name": "Haley McCutcheon",
@@ -1761,7 +1772,8 @@
     "prime_rating": 81,
     "career_years": "2023-2026",
     "nationality": "USA",
-    "club": "orlando"
+    "club": "orlando",
+    "verified": true
   },
   {
     "name": "Carrie Lawrence",
@@ -1769,7 +1781,8 @@
     "prime_rating": 81,
     "career_years": "2023-2026",
     "nationality": "USA",
-    "club": "orlando"
+    "club": "orlando",
+    "verified": true
   },
   {
     "name": "Midge Purce",

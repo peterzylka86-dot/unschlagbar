@@ -86,7 +86,8 @@
     "prime_rating": 84,
     "career_years": "1999-2009",
     "nationality": "Spain",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "verified": true
   },
   {
     "name": "Jude Bellingham",
@@ -265,7 +266,8 @@
     "prime_rating": 82,
     "career_years": "2010-2017",
     "nationality": "Serbia",
-    "club": "manchestercity"
+    "club": "manchestercity",
+    "verified": true
   },
   {
     "name": "Rodri",
@@ -948,7 +950,8 @@
     "prime_rating": 82,
     "career_years": "2011-2017",
     "nationality": "Italy",
-    "club": "psg"
+    "club": "psg",
+    "verified": true
   },
   {
     "name": "Marquinhos",
@@ -1620,7 +1623,8 @@
     "prime_rating": 84,
     "career_years": "2015-2022",
     "nationality": "Switzerland",
-    "club": "dortmund"
+    "club": "dortmund",
+    "verified": true
   },
   {
     "name": "Gregor Kobel",
@@ -1646,7 +1650,8 @@
     "prime_rating": 83,
     "career_years": "2008-2020",
     "nationality": "Germany",
-    "club": "dortmund"
+    "club": "dortmund",
+    "verified": true
   },
   {
     "name": "Łukasz Piszczek",
@@ -1744,7 +1749,8 @@
     "prime_rating": 82,
     "career_years": "2022-2026",
     "nationality": "Germany",
-    "club": "dortmund"
+    "club": "dortmund",
+    "verified": true
   },
   {
     "name": "Petr Čech",
@@ -2309,7 +2315,8 @@
     "prime_rating": 84,
     "career_years": "2015-2026",
     "nationality": "Hungary",
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "verified": true
   },
   {
     "name": "Dayot Upamecano",
@@ -2335,7 +2342,8 @@
     "prime_rating": 82,
     "career_years": "2021-2026",
     "nationality": "France",
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "verified": true
   },
   {
     "name": "Marcel Sabitzer",
@@ -2343,7 +2351,8 @@
     "prime_rating": 84,
     "career_years": "2014-2021",
     "nationality": "Austria",
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "verified": true
   },
   {
     "name": "Naby Keïta",
@@ -2378,7 +2387,8 @@
     "prime_rating": 83,
     "career_years": "2015-2023",
     "nationality": "Sweden",
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "verified": true
   },
   {
     "name": "Timo Werner",
@@ -2395,7 +2405,8 @@
     "prime_rating": 80,
     "career_years": "2013-2026",
     "nationality": "Denmark",
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "verified": true
   },
   {
     "name": "Lois Openda",
@@ -2403,7 +2414,8 @@
     "prime_rating": 84,
     "career_years": "2023-2026",
     "nationality": "Belgium",
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "verified": true
   },
   {
     "name": "Lukáš Hrádecký",
@@ -2438,7 +2450,8 @@
     "prime_rating": 84,
     "career_years": "2021-2026",
     "nationality": "Ecuador",
-    "club": "bayer"
+    "club": "bayer",
+    "verified": true
   },
   {
     "name": "Alejandro Grimaldo",
@@ -2500,7 +2513,8 @@
     "prime_rating": 81,
     "career_years": "2021-2026",
     "nationality": "Germany",
-    "club": "bayer"
+    "club": "bayer",
+    "verified": true
   },
   {
     "name": "Patrik Schick",
@@ -2526,7 +2540,8 @@
     "prime_rating": 82,
     "career_years": "2006-2018",
     "nationality": "Germany",
-    "club": "bayer"
+    "club": "bayer",
+    "verified": true
   },
   {
     "name": "Alex Meret",
@@ -2570,7 +2585,8 @@
     "prime_rating": 82,
     "career_years": "2022-2026",
     "nationality": "Uruguay",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Stanislav Lobotka",
@@ -2668,7 +2684,8 @@
     "prime_rating": 82,
     "career_years": "2010-2014",
     "nationality": "Slovenia",
-    "club": "benfica"
+    "club": "benfica",
+    "verified": true
   },
   {
     "name": "Anatoliy Trubin",
@@ -2676,7 +2693,8 @@
     "prime_rating": 84,
     "career_years": "2023-2026",
     "nationality": "Ukraine",
-    "club": "benfica"
+    "club": "benfica",
+    "verified": true
   },
   {
     "name": "António Silva",
@@ -2728,7 +2746,8 @@
     "prime_rating": 83,
     "career_years": "2014-2016",
     "nationality": "Portugal",
-    "club": "benfica"
+    "club": "benfica",
+    "verified": true
   },
   {
     "name": "João Félix",
@@ -2745,7 +2764,8 @@
     "prime_rating": 83,
     "career_years": "2023-2024",
     "nationality": "Argentina",
-    "club": "benfica"
+    "club": "benfica",
+    "verified": true
   },
   {
     "name": "Rui Costa",
@@ -2771,7 +2791,8 @@
     "prime_rating": 82,
     "career_years": "1997-2011",
     "nationality": "Portugal",
-    "club": "benfica"
+    "club": "benfica",
+    "verified": true
   },
   {
     "name": "Rafa Silva",
@@ -2779,7 +2800,8 @@
     "prime_rating": 84,
     "career_years": "2016-2024",
     "nationality": "Portugal",
-    "club": "benfica"
+    "club": "benfica",
+    "verified": true
   },
   {
     "name": "Vítor Baía",
@@ -2822,7 +2844,8 @@
     "prime_rating": 82,
     "career_years": "2014-2018",
     "nationality": "Spain",
-    "club": "porto"
+    "club": "porto",
+    "verified": true
   },
   {
     "name": "Deco",
@@ -2891,7 +2914,8 @@
     "prime_rating": 84,
     "career_years": "2022-2026",
     "nationality": "Brazil",
-    "club": "porto"
+    "club": "porto",
+    "verified": true
   },
   {
     "name": "Fernando Gomes",
@@ -2944,7 +2968,8 @@
     "prime_rating": 82,
     "career_years": "2018-2022",
     "nationality": "Netherlands",
-    "club": "ajax"
+    "club": "ajax",
+    "verified": true
   },
   {
     "name": "Edgar Davids",
@@ -3112,7 +3137,8 @@
     "prime_rating": 82,
     "career_years": "2007-2010",
     "nationality": "Netherlands",
-    "club": "psv"
+    "club": "psv",
+    "verified": true
   },
   {
     "name": "Hirving Lozano",
@@ -3120,7 +3146,8 @@
     "prime_rating": 83,
     "career_years": "2017-2019",
     "nationality": "Mexico",
-    "club": "psv"
+    "club": "psv",
+    "verified": true
   },
   {
     "name": "Memphis Depay",
@@ -3128,7 +3155,8 @@
     "prime_rating": 84,
     "career_years": "2011-2015",
     "nationality": "Netherlands",
-    "club": "psv"
+    "club": "psv",
+    "verified": true
   },
   {
     "name": "Joe Hart",
@@ -3136,7 +3164,8 @@
     "prime_rating": 82,
     "career_years": "2021-2023",
     "nationality": "England",
-    "club": "celtic"
+    "club": "celtic",
+    "verified": true
   },
   {
     "name": "Henrik Larsson",
@@ -3207,7 +3236,8 @@
     "prime_rating": 82,
     "career_years": "2001-2009",
     "nationality": "Guinea",
-    "club": "celtic"
+    "club": "celtic",
+    "verified": true
   },
   {
     "name": "Kyogo Furuhashi",
@@ -3224,7 +3254,8 @@
     "prime_rating": 82,
     "career_years": "2022-2026",
     "nationality": "Japan",
-    "club": "celtic"
+    "club": "celtic",
+    "verified": true
   },
   {
     "name": "Fabien Barthez",
@@ -3259,7 +3290,8 @@
     "prime_rating": 82,
     "career_years": "2017-2021",
     "nationality": "France",
-    "club": "marseille"
+    "club": "marseille",
+    "verified": true
   },
   {
     "name": "Steve Mandanda",
@@ -3303,7 +3335,8 @@
     "prime_rating": 82,
     "career_years": "2006-2014",
     "nationality": "France",
-    "club": "marseille"
+    "club": "marseille",
+    "verified": true
   },
   {
     "name": "Dimitri Payet",
@@ -3320,7 +3353,8 @@
     "prime_rating": 83,
     "career_years": "2018-2019",
     "nationality": "Argentina",
-    "club": "marseille"
+    "club": "marseille",
+    "verified": true
   },
   {
     "name": "Fabien Barthez",
@@ -3382,7 +3416,8 @@
     "prime_rating": 82,
     "career_years": "2014-2017",
     "nationality": "France",
-    "club": "monaco"
+    "club": "monaco",
+    "verified": true
   },
   {
     "name": "Wissam Ben Yedder",
@@ -3390,7 +3425,8 @@
     "prime_rating": 83,
     "career_years": "2019-2026",
     "nationality": "France",
-    "club": "monaco"
+    "club": "monaco",
+    "verified": true
   },
   {
     "name": "Aleksandr Golovin",
@@ -3442,7 +3478,8 @@
     "prime_rating": 82,
     "career_years": "1997-2005",
     "nationality": "Italy",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "Gaizka Mendieta",
@@ -3512,7 +3549,8 @@
     "prime_rating": 82,
     "career_years": "1989-2010",
     "nationality": "Norway",
-    "club": "rosenborg"
+    "club": "rosenborg",
+    "verified": true
   },
   {
     "name": "Bent Skammelsrud",
@@ -3520,7 +3558,8 @@
     "prime_rating": 83,
     "career_years": "1991-2001",
     "nationality": "Norway",
-    "club": "rosenborg"
+    "club": "rosenborg",
+    "verified": true
   },
   {
     "name": "Harald Brattbakk",
@@ -3528,7 +3567,8 @@
     "prime_rating": 84,
     "career_years": "1990-1997",
     "nationality": "Norway",
-    "club": "rosenborg"
+    "club": "rosenborg",
+    "verified": true
   },
   {
     "name": "Sigurd Rushfeldt",
@@ -3536,7 +3576,8 @@
     "prime_rating": 80,
     "career_years": "1995-2009",
     "nationality": "Norway",
-    "club": "rosenborg"
+    "club": "rosenborg",
+    "verified": true
   },
   {
     "name": "Erik Hoftun",
@@ -3544,7 +3585,8 @@
     "prime_rating": 80,
     "career_years": "1991-2003",
     "nationality": "Norway",
-    "club": "rosenborg"
+    "club": "rosenborg",
+    "verified": true
   },
   {
     "name": "Vegard Heggem",
@@ -3552,7 +3594,8 @@
     "prime_rating": 81,
     "career_years": "1994-1998",
     "nationality": "Norway",
-    "club": "rosenborg"
+    "club": "rosenborg",
+    "verified": true
   },
   {
     "name": "Stig Inge Bjørnebye",
@@ -3560,7 +3603,8 @@
     "prime_rating": 82,
     "career_years": "1987-1990",
     "nationality": "Norway",
-    "club": "rosenborg"
+    "club": "rosenborg",
+    "verified": true
   },
   {
     "name": "Frode Olsen",
@@ -3576,7 +3620,8 @@
     "prime_rating": 84,
     "career_years": "1998-2000",
     "nationality": "Norway",
-    "club": "rosenborg"
+    "club": "rosenborg",
+    "verified": true
   },
   {
     "name": "Steffen Iversen",
@@ -3584,7 +3629,8 @@
     "prime_rating": 82,
     "career_years": "1995-1996",
     "nationality": "Norway",
-    "club": "rosenborg"
+    "club": "rosenborg",
+    "verified": true
   },
   {
     "name": "Jørgen Strand Larsen",
@@ -3636,7 +3682,8 @@
     "prime_rating": 82,
     "career_years": "1978-1989",
     "nationality": "Romania",
-    "club": "steaua"
+    "club": "steaua",
+    "verified": true
   },
   {
     "name": "Victor Pițurcă",
@@ -3644,7 +3691,8 @@
     "prime_rating": 81,
     "career_years": "1983-1989",
     "nationality": "Romania",
-    "club": "steaua"
+    "club": "steaua",
+    "verified": true
   },
   {
     "name": "Anghel Iordănescu",
@@ -3652,7 +3700,8 @@
     "prime_rating": 80,
     "career_years": "1973-1986",
     "nationality": "Romania",
-    "club": "steaua"
+    "club": "steaua",
+    "verified": true
   },
   {
     "name": "Adrian Bumbescu",
@@ -3660,7 +3709,8 @@
     "prime_rating": 78,
     "career_years": "1983-1991",
     "nationality": "Romania",
-    "club": "steaua"
+    "club": "steaua",
+    "verified": true
   },
   {
     "name": "Ștefan Iovan",
@@ -3668,7 +3718,8 @@
     "prime_rating": 78,
     "career_years": "1982-1990",
     "nationality": "Romania",
-    "club": "steaua"
+    "club": "steaua",
+    "verified": true
   },
   {
     "name": "Dragan Stojković",
@@ -3703,7 +3754,8 @@
     "prime_rating": 83,
     "career_years": "1986-1991",
     "nationality": "Serbia",
-    "club": "crvenazvezda"
+    "club": "crvenazvezda",
+    "verified": true
   },
   {
     "name": "Refik Šabanadžović",
@@ -3711,7 +3763,8 @@
     "prime_rating": 82,
     "career_years": "1988-1992",
     "nationality": "Bosnia",
-    "club": "crvenazvezda"
+    "club": "crvenazvezda",
+    "verified": true
   },
   {
     "name": "Vladimir Jugović",
@@ -3763,7 +3816,8 @@
     "prime_rating": 83,
     "career_years": "1971-1981",
     "nationality": "Northern Ireland",
-    "club": "nottinghamforest"
+    "club": "nottinghamforest",
+    "verified": true
   },
   {
     "name": "Kenny Burns",
@@ -3771,7 +3825,8 @@
     "prime_rating": 84,
     "career_years": "1977-1981",
     "nationality": "Scotland",
-    "club": "nottinghamforest"
+    "club": "nottinghamforest",
+    "verified": true
   },
   {
     "name": "Larry Lloyd",
@@ -3779,7 +3834,8 @@
     "prime_rating": 83,
     "career_years": "1976-1981",
     "nationality": "England",
-    "club": "nottinghamforest"
+    "club": "nottinghamforest",
+    "verified": true
   },
   {
     "name": "Viv Anderson",
@@ -3787,7 +3843,8 @@
     "prime_rating": 84,
     "career_years": "1974-1984",
     "nationality": "England",
-    "club": "nottinghamforest"
+    "club": "nottinghamforest",
+    "verified": true
   },
   {
     "name": "Stuart Pearce",
@@ -3804,7 +3861,8 @@
     "prime_rating": 82,
     "career_years": "1976-1980",
     "nationality": "England",
-    "club": "nottinghamforest"
+    "club": "nottinghamforest",
+    "verified": true
   },
   {
     "name": "Tony Woodcock",
@@ -3812,7 +3870,8 @@
     "prime_rating": 81,
     "career_years": "1976-1979",
     "nationality": "England",
-    "club": "nottinghamforest"
+    "club": "nottinghamforest",
+    "verified": true
   },
   {
     "name": "Manfred Kaltz",
@@ -3838,7 +3897,8 @@
     "prime_rating": 82,
     "career_years": "1980-1987",
     "nationality": "Germany",
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Holger Hieronymus",
@@ -3846,7 +3906,8 @@
     "prime_rating": 82,
     "career_years": "1979-1985",
     "nationality": "Germany",
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Ditmar Jakobs",
@@ -3854,7 +3915,8 @@
     "prime_rating": 82,
     "career_years": "1979-1989",
     "nationality": "Germany",
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Emiliano Martínez",
@@ -3871,7 +3933,8 @@
     "prime_rating": 84,
     "career_years": "2019-2026",
     "nationality": "England",
-    "club": "astonvilla"
+    "club": "astonvilla",
+    "verified": true
   },
   {
     "name": "Pau Torres",
@@ -3888,7 +3951,8 @@
     "prime_rating": 82,
     "career_years": "2022-2026",
     "nationality": "France",
-    "club": "astonvilla"
+    "club": "astonvilla",
+    "verified": true
   },
   {
     "name": "Matty Cash",
@@ -3896,7 +3960,8 @@
     "prime_rating": 82,
     "career_years": "2020-2026",
     "nationality": "Poland",
-    "club": "astonvilla"
+    "club": "astonvilla",
+    "verified": true
   },
   {
     "name": "Boubacar Kamara",
@@ -3904,7 +3969,8 @@
     "prime_rating": 84,
     "career_years": "2022-2026",
     "nationality": "France",
-    "club": "astonvilla"
+    "club": "astonvilla",
+    "verified": true
   },
   {
     "name": "Douglas Luiz",
@@ -3921,7 +3987,8 @@
     "prime_rating": 84,
     "career_years": "2018-2026",
     "nationality": "Scotland",
-    "club": "astonvilla"
+    "club": "astonvilla",
+    "verified": true
   },
   {
     "name": "Morgan Rogers",
@@ -3929,7 +3996,8 @@
     "prime_rating": 82,
     "career_years": "2024-2026",
     "nationality": "England",
-    "club": "astonvilla"
+    "club": "astonvilla",
+    "verified": true
   },
   {
     "name": "Ollie Watkins",
@@ -3946,7 +4014,8 @@
     "prime_rating": 84,
     "career_years": "2021-2026",
     "nationality": "Jamaica",
-    "club": "astonvilla"
+    "club": "astonvilla",
+    "verified": true
   },
   {
     "name": "Peter Withe",
@@ -3954,7 +4023,8 @@
     "prime_rating": 82,
     "career_years": "1980-1985",
     "nationality": "England",
-    "club": "astonvilla"
+    "club": "astonvilla",
+    "verified": true
   },
   {
     "name": "Tony Morley",
@@ -3962,7 +4032,8 @@
     "prime_rating": 80,
     "career_years": "1979-1983",
     "nationality": "England",
-    "club": "astonvilla"
+    "club": "astonvilla",
+    "verified": true
   },
   {
     "name": "Andriy Shevchenko",
@@ -3988,7 +4059,8 @@
     "prime_rating": 84,
     "career_years": "1990-2010",
     "nationality": "Ukraine",
-    "club": "dynamokyiv"
+    "club": "dynamokyiv",
+    "verified": true
   },
   {
     "name": "Anatoliy Demyanenko",
@@ -4022,7 +4094,8 @@
     "prime_rating": 84,
     "career_years": "2006-2017",
     "nationality": "Ukraine",
-    "club": "dynamokyiv"
+    "club": "dynamokyiv",
+    "verified": true
   },
   {
     "name": "Fernando Muslera",
@@ -4066,7 +4139,8 @@
     "prime_rating": 82,
     "career_years": "1989-2005",
     "nationality": "Turkey",
-    "club": "galatasaray"
+    "club": "galatasaray",
+    "verified": true
   },
   {
     "name": "Mauro Icardi",
@@ -4083,7 +4157,8 @@
     "prime_rating": 83,
     "career_years": "2022-2026",
     "nationality": "Uruguay",
-    "club": "galatasaray"
+    "club": "galatasaray",
+    "verified": true
   },
   {
     "name": "Dries Mertens",
@@ -4091,7 +4166,8 @@
     "prime_rating": 83,
     "career_years": "2022-2026",
     "nationality": "Belgium",
-    "club": "galatasaray"
+    "club": "galatasaray",
+    "verified": true
   },
   {
     "name": "Kerem Aktürkoğlu",
@@ -4099,7 +4175,8 @@
     "prime_rating": 82,
     "career_years": "2021-2026",
     "nationality": "Turkey",
-    "club": "galatasaray"
+    "club": "galatasaray",
+    "verified": true
   },
   {
     "name": "Andriy Lunin",
@@ -4107,7 +4184,8 @@
     "prime_rating": 80,
     "career_years": "2018-2026",
     "nationality": "Ukraine",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "verified": true
   },
   {
     "name": "Antonio Rüdiger",
@@ -4124,7 +4202,8 @@
     "prime_rating": 83,
     "career_years": "2019-2026",
     "nationality": "France",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "verified": true
   },
   {
     "name": "Fran García",
@@ -4149,7 +4228,8 @@
     "prime_rating": 84,
     "career_years": "2021-2026",
     "nationality": "France",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "verified": true
   },
   {
     "name": "Federico Valverde",
@@ -4166,7 +4246,8 @@
     "prime_rating": 83,
     "career_years": "2023-2026",
     "nationality": "Turkey",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "verified": true
   },
   {
     "name": "Brahim Díaz",
@@ -4174,7 +4255,8 @@
     "prime_rating": 82,
     "career_years": "2019-2026",
     "nationality": "Spain",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "verified": true
   },
   {
     "name": "Kylian Mbappé",
@@ -4191,7 +4273,8 @@
     "prime_rating": 80,
     "career_years": "2024-2026",
     "nationality": "Brazil",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "verified": true
   },
   {
     "name": "Fabio Cannavaro",
@@ -4296,7 +4379,8 @@
     "prime_rating": 84,
     "career_years": "1986-1997",
     "nationality": "Spain",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "verified": true
   },
   {
     "name": "Bodo Illgner",
@@ -4304,7 +4388,8 @@
     "prime_rating": 84,
     "career_years": "1996-2001",
     "nationality": "Germany",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "verified": true
   },
   {
     "name": "Manolo Sanchís",
@@ -4330,7 +4415,8 @@
     "prime_rating": 84,
     "career_years": "1996-1999",
     "nationality": "Italy",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "verified": true
   },
   {
     "name": "Fernando Redondo",
@@ -4400,7 +4486,8 @@
     "prime_rating": 84,
     "career_years": "1968-1986",
     "nationality": "Spain",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "verified": true
   },
   {
     "name": "Francisco Buyo",
@@ -4408,7 +4495,8 @@
     "prime_rating": 83,
     "career_years": "1986-1997",
     "nationality": "Spain",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "verified": true
   },
   {
     "name": "Camacho",
@@ -4433,7 +4521,8 @@
     "prime_rating": 84,
     "career_years": "1983-1988",
     "nationality": "Spain",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "verified": true
   },
   {
     "name": "Ricardo Gallego",
@@ -4441,7 +4530,8 @@
     "prime_rating": 83,
     "career_years": "1980-1990",
     "nationality": "Spain",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "verified": true
   },
   {
     "name": "Chendo",
@@ -4449,7 +4539,8 @@
     "prime_rating": 83,
     "career_years": "1982-1998",
     "nationality": "Spain",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "verified": true
   },
   {
     "name": "Pirri",
@@ -4466,7 +4557,8 @@
     "prime_rating": 83,
     "career_years": "1968-1984",
     "nationality": "Spain",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "verified": true
   },
   {
     "name": "Jorge Valdano",
@@ -4518,7 +4610,8 @@
     "prime_rating": 84,
     "career_years": "1982-1996",
     "nationality": "Spain",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "verified": true
   },
   {
     "name": "Martín Vázquez",
@@ -4614,7 +4707,8 @@
     "nationality": "Germany",
     "career_years": "1996-2002",
     "prime_rating": 83,
-    "club": "bayern"
+    "club": "bayern",
+    "verified": true
   },
   {
     "name": "Giovane Élber",
@@ -4658,7 +4752,8 @@
     "nationality": "Peru",
     "career_years": "2001-2007, 2012-2015",
     "prime_rating": 84,
-    "club": "bayern"
+    "club": "bayern",
+    "verified": true
   },
   {
     "name": "Hasan Salihamidžić",
@@ -4666,7 +4761,8 @@
     "nationality": "Bosnia",
     "career_years": "1998-2007",
     "prime_rating": 83,
-    "club": "bayern"
+    "club": "bayern",
+    "verified": true
   },
   {
     "name": "Owen Hargreaves",
@@ -4674,7 +4770,8 @@
     "nationality": "England",
     "career_years": "2000-2007",
     "prime_rating": 84,
-    "club": "bayern"
+    "club": "bayern",
+    "verified": true
   },
   {
     "name": "Michael Ballack",
@@ -4718,7 +4815,8 @@
     "nationality": "Germany",
     "career_years": "1998-2005",
     "prime_rating": 84,
-    "club": "bayern"
+    "club": "bayern",
+    "verified": true
   },
   {
     "name": "Ze Roberto",
@@ -4735,7 +4833,8 @@
     "nationality": "France",
     "career_years": "2000-2008",
     "prime_rating": 84,
-    "club": "bayern"
+    "club": "bayern",
+    "verified": true
   },
   {
     "name": "Leon Goretzka",
@@ -4770,7 +4869,8 @@
     "nationality": "Germany",
     "career_years": "2017-2022",
     "prime_rating": 84,
-    "club": "bayern"
+    "club": "bayern",
+    "verified": true
   },
   {
     "name": "Javi Martínez",
@@ -4778,7 +4878,8 @@
     "nationality": "Spain",
     "career_years": "2012-2021",
     "prime_rating": 84,
-    "club": "bayern"
+    "club": "bayern",
+    "verified": true
   },
   {
     "name": "Xabi Alonso",
@@ -4803,7 +4904,8 @@
     "nationality": "Paraguay",
     "career_years": "1999-2007",
     "prime_rating": 82,
-    "club": "bayern"
+    "club": "bayern",
+    "verified": true
   },
   {
     "name": "Hansi Pflügler",
@@ -4811,7 +4913,8 @@
     "nationality": "Germany",
     "career_years": "1982-1992",
     "prime_rating": 81,
-    "club": "bayern"
+    "club": "bayern",
+    "verified": true
   },
   {
     "name": "Iñaki Peña",
@@ -4819,7 +4922,8 @@
     "prime_rating": 78,
     "career_years": "2018-2026",
     "nationality": "Spain",
-    "club": "barcelona"
+    "club": "barcelona",
+    "verified": true
   },
   {
     "name": "Pau Cubarsí",
@@ -4827,7 +4931,8 @@
     "prime_rating": 84,
     "career_years": "2024-2026",
     "nationality": "Spain",
-    "club": "barcelona"
+    "club": "barcelona",
+    "verified": true
   },
   {
     "name": "Iñigo Martínez",
@@ -4835,7 +4940,8 @@
     "prime_rating": 84,
     "career_years": "2023-2026",
     "nationality": "Spain",
-    "club": "barcelona"
+    "club": "barcelona",
+    "verified": true
   },
   {
     "name": "Alejandro Balde",
@@ -4843,7 +4949,8 @@
     "prime_rating": 83,
     "career_years": "2021-2026",
     "nationality": "Spain",
-    "club": "barcelona"
+    "club": "barcelona",
+    "verified": true
   },
   {
     "name": "Gavi",
@@ -4859,7 +4966,8 @@
     "prime_rating": 80,
     "career_years": "2024-2026",
     "nationality": "Spain",
-    "club": "barcelona"
+    "club": "barcelona",
+    "verified": true
   },
   {
     "name": "Raphinha",
@@ -4885,7 +4993,8 @@
     "prime_rating": 81,
     "career_years": "2022-2026",
     "nationality": "Spain",
-    "club": "barcelona"
+    "club": "barcelona",
+    "verified": true
   },
   {
     "name": "Rafael Márquez",
@@ -4965,7 +5074,8 @@
     "prime_rating": 80,
     "career_years": "1997-2000",
     "nationality": "Netherlands",
-    "club": "barcelona"
+    "club": "barcelona",
+    "verified": true
   },
   {
     "name": "Ronald Koeman",
@@ -4999,7 +5109,8 @@
     "prime_rating": 84,
     "career_years": "1990-1998",
     "nationality": "Spain",
-    "club": "barcelona"
+    "club": "barcelona",
+    "verified": true
   },
   {
     "name": "Sergi Barjuán",
@@ -5007,7 +5118,8 @@
     "prime_rating": 84,
     "career_years": "1993-2002",
     "nationality": "Spain",
-    "club": "barcelona"
+    "club": "barcelona",
+    "verified": true
   },
   {
     "name": "Pep Guardiola",
@@ -5077,7 +5189,8 @@
     "prime_rating": 83,
     "career_years": "1961-1976",
     "nationality": "Spain",
-    "club": "barcelona"
+    "club": "barcelona",
+    "verified": true
   },
   {
     "name": "Javier Urruti",
@@ -5102,7 +5215,8 @@
     "prime_rating": 80,
     "career_years": "1974-1981",
     "nationality": "Spain",
-    "club": "barcelona"
+    "club": "barcelona",
+    "verified": true
   },
   {
     "name": "José Ramón Alexanko",
@@ -5161,7 +5275,8 @@
     "prime_rating": 84,
     "career_years": "1984-1988",
     "nationality": "Scotland",
-    "club": "barcelona"
+    "club": "barcelona",
+    "verified": true
   },
   {
     "name": "Hans Krankl",
@@ -5195,7 +5310,8 @@
     "prime_rating": 80,
     "career_years": "1976-1984",
     "nationality": "Spain",
-    "club": "barcelona"
+    "club": "barcelona",
+    "verified": true
   },
   {
     "name": "Lobo Carrasco",
@@ -5203,7 +5319,8 @@
     "prime_rating": 84,
     "career_years": "1978-1989",
     "nationality": "Spain",
-    "club": "barcelona"
+    "club": "barcelona",
+    "verified": true
   },
   {
     "name": "Josep Martínez",
@@ -5211,7 +5328,8 @@
     "prime_rating": 78,
     "career_years": "2024-2026",
     "nationality": "Spain",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Benjamin Pavard",
@@ -5219,7 +5337,8 @@
     "prime_rating": 84,
     "career_years": "2023-2026",
     "nationality": "France",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Francesco Acerbi",
@@ -5227,7 +5346,8 @@
     "prime_rating": 83,
     "career_years": "2022-2026",
     "nationality": "Italy",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Yann Bisseck",
@@ -5235,7 +5355,8 @@
     "prime_rating": 80,
     "career_years": "2023-2026",
     "nationality": "Germany",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Stefan de Vrij",
@@ -5243,7 +5364,8 @@
     "prime_rating": 83,
     "career_years": "2018-2026",
     "nationality": "Netherlands",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Denzel Dumfries",
@@ -5251,7 +5373,8 @@
     "prime_rating": 83,
     "career_years": "2021-2026",
     "nationality": "Netherlands",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Federico Dimarco",
@@ -5277,7 +5400,8 @@
     "prime_rating": 81,
     "career_years": "2022-2026",
     "nationality": "Armenia",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Davide Frattesi",
@@ -5285,7 +5409,8 @@
     "prime_rating": 81,
     "career_years": "2023-2026",
     "nationality": "Italy",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Piotr Zieliński",
@@ -5293,7 +5418,8 @@
     "prime_rating": 82,
     "career_years": "2024-2026",
     "nationality": "Poland",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Marcus Thuram",
@@ -5310,7 +5436,8 @@
     "prime_rating": 81,
     "career_years": "2024-2026",
     "nationality": "Iran",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Marko Arnautović",
@@ -5318,7 +5445,8 @@
     "prime_rating": 78,
     "career_years": "2023-2025",
     "nationality": "Austria",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Walter Samuel",
@@ -5405,7 +5533,8 @@
     "prime_rating": 83,
     "career_years": "2010-2011",
     "nationality": "North Macedonia",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Gianluca Pagliuca",
@@ -5431,7 +5560,8 @@
     "prime_rating": 84,
     "career_years": "1981-1994",
     "nationality": "Italy",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Salvatore Schillaci",
@@ -5519,7 +5649,8 @@
     "prime_rating": 83,
     "career_years": "1992-1996",
     "nationality": "Netherlands",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Dennis Bergkamp",
@@ -5536,7 +5667,8 @@
     "prime_rating": 80,
     "career_years": "1995-1999",
     "nationality": "Italy",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Ivano Bordon",
@@ -5553,7 +5685,8 @@
     "prime_rating": 84,
     "career_years": "1977-1992",
     "nationality": "Italy",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Mauro Bellugi",
@@ -5561,7 +5694,8 @@
     "prime_rating": 83,
     "career_years": "1972-1976",
     "nationality": "Italy",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Sandro Mazzola",
@@ -5605,7 +5739,8 @@
     "prime_rating": 83,
     "career_years": "1982-1984",
     "nationality": "Germany",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Liam Brady",
@@ -5613,7 +5748,8 @@
     "prime_rating": 84,
     "career_years": "1980-1982",
     "nationality": "Ireland",
-    "club": "inter"
+    "club": "inter",
+    "verified": true
   },
   {
     "name": "Marco Sportiello",
@@ -5621,7 +5757,8 @@
     "prime_rating": 78,
     "career_years": "2023-2026",
     "nationality": "Italy",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Fikayo Tomori",
@@ -5629,7 +5766,8 @@
     "prime_rating": 83,
     "career_years": "2021-2026",
     "nationality": "England",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Malick Thiaw",
@@ -5637,7 +5775,8 @@
     "prime_rating": 81,
     "career_years": "2022-2026",
     "nationality": "Germany",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Strahinja Pavlović",
@@ -5645,7 +5784,8 @@
     "prime_rating": 80,
     "career_years": "2024-2026",
     "nationality": "Serbia",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Matteo Gabbia",
@@ -5653,7 +5793,8 @@
     "prime_rating": 78,
     "career_years": "2018-2026",
     "nationality": "Italy",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Emerson Royal",
@@ -5661,7 +5802,8 @@
     "prime_rating": 80,
     "career_years": "2024-2026",
     "nationality": "Brazil",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Davide Calabria",
@@ -5669,7 +5811,8 @@
     "prime_rating": 80,
     "career_years": "2015-2026",
     "nationality": "Italy",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Tijjani Reijnders",
@@ -5686,7 +5829,8 @@
     "prime_rating": 82,
     "career_years": "2024-2026",
     "nationality": "France",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Ismaël Bennacer",
@@ -5694,7 +5838,8 @@
     "prime_rating": 83,
     "career_years": "2019-2026",
     "nationality": "Algeria",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Christian Pulisic",
@@ -5702,7 +5847,8 @@
     "prime_rating": 84,
     "career_years": "2023-2026",
     "nationality": "USA",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Álvaro Morata",
@@ -5710,7 +5856,8 @@
     "prime_rating": 83,
     "career_years": "2024-2026",
     "nationality": "Spain",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Tammy Abraham",
@@ -5718,7 +5865,8 @@
     "prime_rating": 80,
     "career_years": "2024-2026",
     "nationality": "England",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Samuel Chukwueze",
@@ -5726,7 +5874,8 @@
     "prime_rating": 80,
     "career_years": "2023-2026",
     "nationality": "Nigeria",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Thiago Silva",
@@ -5743,7 +5892,8 @@
     "prime_rating": 83,
     "career_years": "2007-2010",
     "nationality": "Italy",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Marek Jankulovski",
@@ -5751,7 +5901,8 @@
     "prime_rating": 83,
     "career_years": "2005-2011",
     "nationality": "Czechia",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Massimo Ambrosini",
@@ -5759,7 +5910,8 @@
     "prime_rating": 83,
     "career_years": "1995-2013",
     "nationality": "Italy",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Rui Costa",
@@ -5821,7 +5973,8 @@
     "prime_rating": 83,
     "career_years": "1983-1996",
     "nationality": "Italy",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Alessandro Costacurta",
@@ -5865,7 +6018,8 @@
     "prime_rating": 84,
     "career_years": "1986-1995",
     "nationality": "Italy",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Zvonimir Boban",
@@ -5882,7 +6036,8 @@
     "prime_rating": 83,
     "career_years": "1989-1997",
     "nationality": "Italy",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Giovanni Galli",
@@ -5890,7 +6045,8 @@
     "prime_rating": 83,
     "career_years": "1986-1990",
     "nationality": "Italy",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Mauro Bellugi",
@@ -5898,7 +6054,8 @@
     "prime_rating": 80,
     "career_years": "1976-1980",
     "nationality": "Italy",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Aldo Maldera",
@@ -5906,7 +6063,8 @@
     "prime_rating": 83,
     "career_years": "1973-1982",
     "nationality": "Italy",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Luther Blissett",
@@ -5914,7 +6072,8 @@
     "prime_rating": 80,
     "career_years": "1983-1984",
     "nationality": "England",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Gianni Rivera",
@@ -5931,7 +6090,8 @@
     "prime_rating": 83,
     "career_years": "1970-1976",
     "nationality": "Italy",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Marco Tardelli",
@@ -5939,7 +6099,8 @@
     "prime_rating": 84,
     "career_years": "1988-1989",
     "nationality": "Italy",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Pietro Paolo Virdis",
@@ -5947,7 +6108,8 @@
     "prime_rating": 84,
     "career_years": "1984-1988",
     "nationality": "Italy",
-    "club": "milan"
+    "club": "milan",
+    "verified": true
   },
   {
     "name": "Michele Di Gregorio",
@@ -5955,7 +6117,8 @@
     "prime_rating": 83,
     "career_years": "2024-2026",
     "nationality": "Italy",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Mattia Perin",
@@ -5963,7 +6126,8 @@
     "prime_rating": 80,
     "career_years": "2018-2026",
     "nationality": "Italy",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Bremer",
@@ -5979,7 +6143,8 @@
     "prime_rating": 82,
     "career_years": "2022-2026",
     "nationality": "Italy",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Lloyd Kelly",
@@ -5987,7 +6152,8 @@
     "prime_rating": 78,
     "career_years": "2025-2026",
     "nationality": "England",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Pierre Kalulu",
@@ -5995,7 +6161,8 @@
     "prime_rating": 81,
     "career_years": "2024-2026",
     "nationality": "France",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Andrea Cambiaso",
@@ -6003,7 +6170,8 @@
     "prime_rating": 83,
     "career_years": "2023-2026",
     "nationality": "Italy",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Juan Cabal",
@@ -6011,7 +6179,8 @@
     "prime_rating": 78,
     "career_years": "2024-2026",
     "nationality": "Colombia",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Manuel Locatelli",
@@ -6019,7 +6188,8 @@
     "prime_rating": 83,
     "career_years": "2021-2026",
     "nationality": "Italy",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Khéphren Thuram",
@@ -6027,7 +6197,8 @@
     "prime_rating": 82,
     "career_years": "2024-2026",
     "nationality": "France",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Douglas Luiz",
@@ -6035,7 +6206,8 @@
     "prime_rating": 83,
     "career_years": "2024-2026",
     "nationality": "Brazil",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Teun Koopmeiners",
@@ -6043,7 +6215,8 @@
     "prime_rating": 84,
     "career_years": "2024-2026",
     "nationality": "Netherlands",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Nicolò Fagioli",
@@ -6051,7 +6224,8 @@
     "prime_rating": 80,
     "career_years": "2022-2026",
     "nationality": "Italy",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Kenan Yıldız",
@@ -6059,7 +6233,8 @@
     "prime_rating": 82,
     "career_years": "2023-2026",
     "nationality": "Turkey",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Francisco Conceição",
@@ -6067,7 +6242,8 @@
     "prime_rating": 81,
     "career_years": "2024-2026",
     "nationality": "Portugal",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Nico González",
@@ -6083,7 +6259,8 @@
     "prime_rating": 83,
     "career_years": "2025-2026",
     "nationality": "France",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Fabio Cannavaro",
@@ -6199,7 +6376,8 @@
     "prime_rating": 83,
     "career_years": "1996-2005",
     "nationality": "Italy",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Paolo Montero",
@@ -6216,7 +6394,8 @@
     "prime_rating": 81,
     "career_years": "1992-1998",
     "nationality": "Italy",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Antonio Conte",
@@ -6242,7 +6421,8 @@
     "prime_rating": 83,
     "career_years": "1994-2005",
     "nationality": "Italy",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Gianluca Vialli",
@@ -6268,7 +6448,8 @@
     "prime_rating": 84,
     "career_years": "1996-1997",
     "nationality": "Croatia",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Christian Vieri",
@@ -6285,7 +6466,8 @@
     "prime_rating": 82,
     "career_years": "1995-2006",
     "nationality": "Italy",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Jürgen Kohler",
@@ -6311,7 +6493,8 @@
     "prime_rating": 83,
     "career_years": "1978-1990",
     "nationality": "Italy",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Antonio Cabrini",
@@ -6346,7 +6529,8 @@
     "prime_rating": 83,
     "career_years": "1976-1979",
     "nationality": "Italy",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Beniamino Vignola",
@@ -6354,7 +6538,8 @@
     "prime_rating": 80,
     "career_years": "1981-1985",
     "nationality": "Italy",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Massimo Bonini",
@@ -6362,7 +6547,8 @@
     "prime_rating": 84,
     "career_years": "1981-1988",
     "nationality": "San Marino",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Liam Brady",
@@ -6370,7 +6556,8 @@
     "prime_rating": 84,
     "career_years": "1980-1982",
     "nationality": "Ireland",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Roberto Bettega",
@@ -6387,7 +6574,8 @@
     "prime_rating": 84,
     "career_years": "1968-1976",
     "nationality": "Italy",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Paolo Rossi",
@@ -6413,7 +6601,8 @@
     "prime_rating": 84,
     "career_years": "1970-1981",
     "nationality": "Italy",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Sandro Salvadore",
@@ -6421,7 +6610,8 @@
     "prime_rating": 83,
     "career_years": "1962-1974",
     "nationality": "Italy",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Aldo Serena",
@@ -6429,7 +6619,8 @@
     "prime_rating": 83,
     "career_years": "1985-1986",
     "nationality": "Italy",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Rui Barros",
@@ -6437,7 +6628,8 @@
     "prime_rating": 82,
     "career_years": "1988-1990",
     "nationality": "Portugal",
-    "club": "juventus"
+    "club": "juventus",
+    "verified": true
   },
   {
     "name": "Juan Musso",
@@ -6445,7 +6637,8 @@
     "prime_rating": 80,
     "career_years": "2023-2026",
     "nationality": "Argentina",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Robin Le Normand",
@@ -6462,7 +6655,8 @@
     "prime_rating": 81,
     "career_years": "2024-2026",
     "nationality": "France",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Nahuel Molina",
@@ -6470,7 +6664,8 @@
     "prime_rating": 83,
     "career_years": "2022-2026",
     "nationality": "Argentina",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "César Azpilicueta",
@@ -6478,7 +6673,8 @@
     "prime_rating": 83,
     "career_years": "2024-2026",
     "nationality": "Spain",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Reinildo Mandava",
@@ -6486,7 +6682,8 @@
     "prime_rating": 80,
     "career_years": "2022-2026",
     "nationality": "Mozambique",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Pablo Barrios",
@@ -6502,7 +6699,8 @@
     "prime_rating": 82,
     "career_years": "2024-2026",
     "nationality": "England",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Antoine Griezmann",
@@ -6519,7 +6717,8 @@
     "prime_rating": 81,
     "career_years": "2023-2026",
     "nationality": "Brazil",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Marcos Llorente",
@@ -6527,7 +6726,8 @@
     "prime_rating": 84,
     "career_years": "2019-2026",
     "nationality": "Spain",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Julián Álvarez",
@@ -6544,7 +6744,8 @@
     "prime_rating": 83,
     "career_years": "2019-2024",
     "nationality": "Spain",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Ángel Correa",
@@ -6552,7 +6753,8 @@
     "prime_rating": 82,
     "career_years": "2014-2026",
     "nationality": "Argentina",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Juanfran",
@@ -6577,7 +6779,8 @@
     "prime_rating": 84,
     "career_years": "2002-2005",
     "nationality": "Argentina",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Demetrio Albertini",
@@ -6602,7 +6805,8 @@
     "prime_rating": 82,
     "career_years": "2007-2010",
     "nationality": "Spain",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Tiago Mendes",
@@ -6610,7 +6814,8 @@
     "prime_rating": 83,
     "career_years": "2010-2017",
     "nationality": "Portugal",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Jorge Resurrección Koke",
@@ -6626,7 +6831,8 @@
     "prime_rating": 84,
     "career_years": "1995-2000",
     "nationality": "Spain",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Diego Simeone",
@@ -6643,7 +6849,8 @@
     "prime_rating": 83,
     "career_years": "1994-1996",
     "nationality": "Argentina",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Kiko Narváez",
@@ -6660,7 +6867,8 @@
     "prime_rating": 83,
     "career_years": "1989-1998",
     "nationality": "Spain",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Donato",
@@ -6676,7 +6884,8 @@
     "prime_rating": 81,
     "career_years": "1985-1995",
     "nationality": "Spain",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Toni Muñoz",
@@ -6701,7 +6910,8 @@
     "prime_rating": 84,
     "career_years": "1997-1999",
     "nationality": "Brazil",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Lyuboslav Penev",
@@ -6709,7 +6919,8 @@
     "prime_rating": 82,
     "career_years": "1989-1995",
     "nationality": "Bulgaria",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Bernd Schuster Atléti",
@@ -6742,7 +6953,8 @@
     "prime_rating": 84,
     "career_years": "1973-1980",
     "nationality": "Spain",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Abel Resino",
@@ -6750,7 +6962,8 @@
     "prime_rating": 84,
     "career_years": "1986-1995",
     "nationality": "Spain",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Tomás",
@@ -6766,7 +6979,8 @@
     "prime_rating": 80,
     "career_years": "1981-1988",
     "nationality": "Spain",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Capón",
@@ -6774,7 +6988,8 @@
     "prime_rating": 79,
     "career_years": "1970-1979",
     "nationality": "Spain",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Marcelino",
@@ -6799,7 +7014,8 @@
     "prime_rating": 82,
     "career_years": "1979-1987",
     "nationality": "Spain",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Rubén Cano",
@@ -6807,7 +7023,8 @@
     "prime_rating": 82,
     "career_years": "1975-1983",
     "nationality": "Argentina",
-    "club": "atletico"
+    "club": "atletico",
+    "verified": true
   },
   {
     "name": "Hugo Cabezas",
@@ -6989,7 +7206,8 @@
     "nationality": "Germany",
     "career_years": "1995-2000",
     "prime_rating": 83,
-    "club": "dortmund"
+    "club": "dortmund",
+    "verified": true
   },
   {
     "name": "Paulo Sousa",
@@ -6997,7 +7215,8 @@
     "nationality": "Portugal",
     "career_years": "1996-1998",
     "prime_rating": 84,
-    "club": "dortmund"
+    "club": "dortmund",
+    "verified": true
   },
   {
     "name": "Wolfgang de Beer",
@@ -7005,7 +7224,8 @@
     "nationality": "Germany",
     "career_years": "1986-2004",
     "prime_rating": 78,
-    "club": "dortmund"
+    "club": "dortmund",
+    "verified": true
   },
   {
     "name": "Márcio Amoroso",
@@ -7013,7 +7233,8 @@
     "nationality": "Brazil",
     "career_years": "2001-2004",
     "prime_rating": 84,
-    "club": "dortmund"
+    "club": "dortmund",
+    "verified": true
   },
   {
     "name": "Sebastian Kehl",
@@ -7021,7 +7242,8 @@
     "nationality": "Germany",
     "career_years": "2002-2015",
     "prime_rating": 84,
-    "club": "dortmund"
+    "club": "dortmund",
+    "verified": true
   },
   {
     "name": "Neven Subotić",
@@ -7029,7 +7251,8 @@
     "nationality": "Serbia",
     "career_years": "2008-2018",
     "prime_rating": 84,
-    "club": "dortmund"
+    "club": "dortmund",
+    "verified": true
   },
   {
     "name": "Nuri Şahin",
@@ -7037,7 +7260,8 @@
     "nationality": "Turkey",
     "career_years": "2005-2011, 2013-2018",
     "prime_rating": 83,
-    "club": "dortmund"
+    "club": "dortmund",
+    "verified": true
   },
   {
     "name": "Shinji Kagawa",
@@ -7054,7 +7278,8 @@
     "nationality": "Paraguay",
     "career_years": "2009-2012",
     "prime_rating": 83,
-    "club": "dortmund"
+    "club": "dortmund",
+    "verified": true
   },
   {
     "name": "Henrikh Mkhitaryan",
@@ -7071,7 +7296,8 @@
     "nationality": "France",
     "career_years": "2016-2017",
     "prime_rating": 84,
-    "club": "dortmund"
+    "club": "dortmund",
+    "verified": true
   },
   {
     "name": "Christian Pulisic",
@@ -7079,7 +7305,8 @@
     "nationality": "USA",
     "career_years": "2016-2019",
     "prime_rating": 83,
-    "club": "dortmund"
+    "club": "dortmund",
+    "verified": true
   },
   {
     "name": "Julian Brandt",
@@ -7087,7 +7314,8 @@
     "nationality": "Germany",
     "career_years": "2019-Present",
     "prime_rating": 84,
-    "club": "dortmund"
+    "club": "dortmund",
+    "verified": true
   },
   {
     "name": "Raphael Guerreiro",
@@ -7095,7 +7323,8 @@
     "prime_rating": 82,
     "career_years": "2016-2023",
     "nationality": "POR",
-    "club": "dortmund"
+    "club": "dortmund",
+    "verified": true
   },
   {
     "position": "RB",
@@ -7103,7 +7332,8 @@
     "nationality": "Germany",
     "prime_rating": 83,
     "career_years": "2014-2024",
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "verified": true
   },
   {
     "position": "CDM",
@@ -7120,7 +7350,8 @@
     "prime_rating": 82,
     "nationality": "Germany",
     "name": "Diego Demme",
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "verified": true
   },
   {
     "position": "LB",
@@ -7128,7 +7359,8 @@
     "name": "Marcel Halstenberg",
     "nationality": "Germany",
     "prime_rating": 84,
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "verified": true
   },
   {
     "position": "CM",
@@ -7136,7 +7368,8 @@
     "nationality": "Mali",
     "prime_rating": 82,
     "career_years": "2018-2023",
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "verified": true
   },
   {
     "position": "RW",
@@ -7153,7 +7386,8 @@
     "prime_rating": 81,
     "name": "Matheus Cunha",
     "position": "ST",
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "verified": true
   },
   {
     "position": "LW",
@@ -7170,7 +7404,8 @@
     "nationality": "France",
     "career_years": "2017-2021",
     "prime_rating": 82,
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "verified": true
   },
   {
     "name": "André Silva",
@@ -7186,7 +7421,8 @@
     "nationality": "Germany",
     "career_years": "2015-2017",
     "prime_rating": 78,
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "verified": true
   },
   {
     "name": "Bruma",
@@ -7202,7 +7438,8 @@
     "nationality": "Slovenia",
     "career_years": "2023-Present",
     "prime_rating": 83,
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "verified": true
   },
   {
     "name": "Janis Blaswich",
@@ -7210,7 +7447,8 @@
     "prime_rating": 76,
     "career_years": "2022-2024",
     "nationality": "GER",
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "verified": true
   },
   {
     "name": "Benjamin Henrichs",
@@ -7218,7 +7456,8 @@
     "prime_rating": 78,
     "career_years": "2020-2025",
     "nationality": "GER",
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "verified": true
   },
   {
     "name": "David Raum",
@@ -7226,7 +7465,8 @@
     "prime_rating": 81,
     "career_years": "2022-2025",
     "nationality": "GER",
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "verified": true
   },
   {
     "name": "Xaver Schlager",
@@ -7234,7 +7474,8 @@
     "prime_rating": 78,
     "career_years": "2022-2025",
     "nationality": "AUT",
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "verified": true
   },
   {
     "name": "Elia Caprile",
@@ -7242,7 +7483,8 @@
     "prime_rating": 78,
     "career_years": "2024-2026",
     "nationality": "Italy",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Alessandro Buongiorno",
@@ -7250,7 +7492,8 @@
     "prime_rating": 84,
     "career_years": "2024-2026",
     "nationality": "Italy",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Juan Jesus",
@@ -7258,7 +7501,8 @@
     "prime_rating": 78,
     "career_years": "2021-2026",
     "nationality": "Brazil",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Leonardo Spinazzola",
@@ -7266,7 +7510,8 @@
     "prime_rating": 80,
     "career_years": "2024-2026",
     "nationality": "Italy",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Scott McTominay",
@@ -7274,7 +7519,8 @@
     "prime_rating": 83,
     "career_years": "2024-2026",
     "nationality": "Scotland",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Matteo Politano",
@@ -7282,7 +7528,8 @@
     "prime_rating": 81,
     "career_years": "2020-2026",
     "nationality": "Italy",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "David Neres",
@@ -7290,7 +7537,8 @@
     "prime_rating": 81,
     "career_years": "2024-2026",
     "nationality": "Brazil",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Giacomo Raspadori",
@@ -7298,7 +7546,8 @@
     "prime_rating": 81,
     "career_years": "2022-2026",
     "nationality": "Italy",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Pepe Reina",
@@ -7315,7 +7564,8 @@
     "prime_rating": 84,
     "career_years": "2013-2019",
     "nationality": "Spain",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Faouzi Ghoulam",
@@ -7323,7 +7573,8 @@
     "prime_rating": 83,
     "career_years": "2014-2022",
     "nationality": "Algeria",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Allan",
@@ -7365,7 +7616,8 @@
     "prime_rating": 82,
     "career_years": "2008-2013",
     "nationality": "Argentina",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Christian Maggio",
@@ -7373,7 +7625,8 @@
     "prime_rating": 82,
     "career_years": "2008-2018",
     "nationality": "Italy",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Giuliano Giuliani",
@@ -7381,7 +7634,8 @@
     "prime_rating": 84,
     "career_years": "1988-1993",
     "nationality": "Italy",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Ciro Ferrara",
@@ -7398,7 +7652,8 @@
     "prime_rating": 78,
     "career_years": "1990-1993",
     "nationality": "Italy",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Bruno Giordano",
@@ -7415,7 +7670,8 @@
     "prime_rating": 83,
     "career_years": "1992-1994",
     "nationality": "Uruguay",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Gianfranco Zola",
@@ -7440,7 +7696,8 @@
     "prime_rating": 82,
     "career_years": "1989-1993",
     "nationality": "Italy",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Salvatore Bagni",
@@ -7448,7 +7705,8 @@
     "prime_rating": 83,
     "career_years": "1984-1988",
     "nationality": "Italy",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Andrea Carnevale",
@@ -7473,7 +7731,8 @@
     "prime_rating": 84,
     "career_years": "1978-1986",
     "nationality": "Italy",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Antonio Juliano",
@@ -7499,7 +7758,8 @@
     "prime_rating": 83,
     "career_years": "1976-1986",
     "nationality": "Italy",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Ottavio Bianchi",
@@ -7507,7 +7767,8 @@
     "prime_rating": 80,
     "career_years": "1972-1978",
     "nationality": "Italy",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Beppe Savoldi",
@@ -7523,7 +7784,8 @@
     "prime_rating": 79,
     "career_years": "1980-1989",
     "nationality": "Italy",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Daniel Bertoni",
@@ -7531,7 +7793,8 @@
     "prime_rating": 84,
     "career_years": "1980-1983",
     "nationality": "Argentina",
-    "club": "napoli"
+    "club": "napoli",
+    "verified": true
   },
   {
     "name": "Stole Dimitrievski",
@@ -7539,7 +7802,8 @@
     "prime_rating": 76,
     "career_years": "2024-2026",
     "nationality": "North Macedonia",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "Cristhian Mosquera",
@@ -7547,7 +7811,8 @@
     "prime_rating": 78,
     "career_years": "2022-2026",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "Mouctar Diakhaby",
@@ -7555,7 +7820,8 @@
     "prime_rating": 80,
     "career_years": "2018-2026",
     "nationality": "France",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "Thierry Correia",
@@ -7563,7 +7829,8 @@
     "prime_rating": 78,
     "career_years": "2019-2026",
     "nationality": "Portugal",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "José Luis Gayà",
@@ -7571,7 +7838,8 @@
     "prime_rating": 83,
     "career_years": "2014-2026",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "Javi Guerra",
@@ -7579,7 +7847,8 @@
     "prime_rating": 81,
     "career_years": "2023-2026",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "Pepelu",
@@ -7587,7 +7856,8 @@
     "prime_rating": 78,
     "career_years": "2023-2026",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "Hugo Duro",
@@ -7595,7 +7865,8 @@
     "prime_rating": 78,
     "career_years": "2021-2026",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "Diego López",
@@ -7603,7 +7874,8 @@
     "prime_rating": 76,
     "career_years": "2023-2026",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "Fran Pérez",
@@ -7619,7 +7891,8 @@
     "prime_rating": 75,
     "career_years": "2024-2026",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "André Almeida",
@@ -7635,7 +7908,8 @@
     "prime_rating": 83,
     "career_years": "2002-2006",
     "nationality": "Argentina",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "Curro Torres",
@@ -7643,7 +7917,8 @@
     "prime_rating": 82,
     "career_years": "1998-2006",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "David Albelda",
@@ -7722,7 +7997,8 @@
     "prime_rating": 83,
     "career_years": "1995-1999",
     "nationality": "Argentina",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "Djukić",
@@ -7738,7 +8014,8 @@
     "prime_rating": 81,
     "career_years": "1989-1994",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "Camarasa",
@@ -7797,7 +8074,8 @@
     "prime_rating": 83,
     "career_years": "1981-1992",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "Pedro Arnal",
@@ -7813,7 +8091,8 @@
     "prime_rating": 84,
     "career_years": "1978-1984",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "Botubot",
@@ -7821,7 +8100,8 @@
     "prime_rating": 81,
     "career_years": "1978-1986",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "Manzanedo",
@@ -7877,7 +8157,8 @@
     "prime_rating": 81,
     "career_years": "1984-1996",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "verified": true
   },
   {
     "name": "Quini",
@@ -7991,7 +8272,8 @@
     "prime_rating": 84,
     "name": "David Jarolím",
     "career_years": "2003–2011",
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "position": "ST",
@@ -8035,7 +8317,8 @@
     "nationality": "Germany",
     "career_years": "1976-1986",
     "prime_rating": 81,
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Jürgen Milewski",
@@ -8043,7 +8326,8 @@
     "nationality": "Germany",
     "career_years": "1979-1985",
     "prime_rating": 81,
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Caspar Memering",
@@ -8051,7 +8335,8 @@
     "nationality": "Germany",
     "career_years": "1973-1984",
     "prime_rating": 80,
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Khalid Boulahrouz",
@@ -8059,7 +8344,8 @@
     "nationality": "Netherlands",
     "career_years": "2004-2006",
     "prime_rating": 82,
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Nigel de Jong",
@@ -8067,7 +8353,8 @@
     "nationality": "Netherlands",
     "career_years": "2006-2009",
     "prime_rating": 83,
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Bastian Reinhardt",
@@ -8075,7 +8362,8 @@
     "nationality": "Germany",
     "career_years": "2002-2008",
     "prime_rating": 80,
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Bernd Hollerbach",
@@ -8083,7 +8371,8 @@
     "nationality": "Germany",
     "career_years": "1994-2000",
     "prime_rating": 78,
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Rodolfo Cardoso",
@@ -8091,7 +8380,8 @@
     "nationality": "Argentina",
     "career_years": "1995-2003",
     "prime_rating": 80,
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Mladen Petrić",
@@ -8099,7 +8389,8 @@
     "nationality": "Croatia",
     "career_years": "2008-2012",
     "prime_rating": 84,
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Heung-min Son",
@@ -8107,7 +8398,8 @@
     "nationality": "South Korea",
     "career_years": "2010-2013",
     "prime_rating": 82,
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Frank Rost",
@@ -8115,7 +8407,8 @@
     "nationality": "Germany",
     "career_years": "2007-2011",
     "prime_rating": 83,
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Marcell Jansen",
@@ -8123,7 +8416,8 @@
     "nationality": "Germany",
     "career_years": "2008-2015",
     "prime_rating": 82,
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Heiko Westermann",
@@ -8131,7 +8425,8 @@
     "nationality": "Germany",
     "career_years": "2010-2015",
     "prime_rating": 82,
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Pierre-Michel Lasogga",
@@ -8139,7 +8434,8 @@
     "nationality": "Germany",
     "career_years": "2013-2018",
     "prime_rating": 80,
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Lewis Holtby",
@@ -8147,7 +8443,8 @@
     "nationality": "Germany",
     "career_years": "2014-2019",
     "prime_rating": 80,
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Aaron Hunt",
@@ -8155,7 +8452,8 @@
     "nationality": "Germany",
     "career_years": "2015-2019",
     "prime_rating": 80,
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Robert Glatzel",
@@ -8163,7 +8461,8 @@
     "prime_rating": 78,
     "career_years": "2022-2024",
     "nationality": "Germany",
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Sebastian Schonlau",
@@ -8171,7 +8470,8 @@
     "prime_rating": 76,
     "career_years": "2021-2024",
     "nationality": "Germany",
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Ludovit Reis",
@@ -8179,7 +8479,8 @@
     "prime_rating": 76,
     "career_years": "2022-2024",
     "nationality": "Netherlands",
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Jonas Meffert",
@@ -8187,7 +8488,8 @@
     "prime_rating": 75,
     "career_years": "2021-2024",
     "nationality": "Germany",
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Daniel Heuer Fernandes",
@@ -8195,7 +8497,8 @@
     "prime_rating": 76,
     "career_years": "2020-2024",
     "nationality": "Portugal",
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Bakery Jatta",
@@ -8203,7 +8506,8 @@
     "prime_rating": 75,
     "career_years": "2016-2024",
     "nationality": "Gambia",
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "Dennis Aogo",
@@ -8211,7 +8515,8 @@
     "prime_rating": 76,
     "career_years": "2008-2014",
     "nationality": "GER",
-    "club": "hamburg"
+    "club": "hamburg",
+    "verified": true
   },
   {
     "name": "P. Pogba",
@@ -8227,7 +8532,8 @@
     "prime_rating": 84,
     "nationality": "Spain",
     "club": "manchesterunited",
-    "career_years": "2016-2019"
+    "career_years": "2016-2019",
+    "verified": true
   },
   {
     "name": "Y. Touré",
@@ -8404,7 +8710,8 @@
     "prime_rating": 84,
     "nationality": "Brazil",
     "club": "chelsea",
-    "career_years": "2016-2019"
+    "career_years": "2016-2019",
+    "verified": true
   },
   {
     "name": "Cesc Fàbregas",
@@ -8429,7 +8736,8 @@
     "prime_rating": 81,
     "nationality": "England",
     "club": "tottenham",
-    "career_years": "2016-2021"
+    "career_years": "2016-2021",
+    "verified": true
   },
   {
     "name": "Azpilicueta",
@@ -8647,7 +8955,8 @@
     "prime_rating": 81,
     "nationality": "Spain",
     "club": "arsenal",
-    "career_years": "2016-2017"
+    "career_years": "2016-2017",
+    "verified": true
   },
   {
     "name": "Nacho Monreal",
@@ -8655,7 +8964,8 @@
     "prime_rating": 80,
     "nationality": "Spain",
     "club": "arsenal",
-    "career_years": "2016-2019"
+    "career_years": "2016-2019",
+    "verified": true
   },
   {
     "name": "A. Oxlade-Chamberlain",
@@ -8671,7 +8981,8 @@
     "prime_rating": 81,
     "nationality": "Spain",
     "club": "manchestercity",
-    "career_years": "2016-2017"
+    "career_years": "2016-2017",
+    "verified": true
   },
   {
     "name": "Juan Mata",
@@ -8712,7 +9023,8 @@
     "prime_rating": 80,
     "nationality": "Spain",
     "club": "arsenal",
-    "career_years": "2016-2021"
+    "career_years": "2016-2021",
+    "verified": true
   },
   {
     "name": "F. Coquelin",
@@ -8800,7 +9112,8 @@
     "prime_rating": 83,
     "nationality": "Brazil",
     "club": "manchestercity",
-    "career_years": "2017-2022"
+    "career_years": "2017-2022",
+    "verified": true
   },
   {
     "name": "M. Özil",
@@ -8880,7 +9193,8 @@
     "prime_rating": 80,
     "nationality": "Brazil",
     "club": "liverpool",
-    "career_years": "2016-2017"
+    "career_years": "2016-2017",
+    "verified": true
   },
   {
     "name": "D. Origi",
@@ -8904,7 +9218,8 @@
     "prime_rating": 80,
     "nationality": "England",
     "club": "manchesterunited",
-    "career_years": "2016-2019"
+    "career_years": "2016-2019",
+    "verified": true
   },
   {
     "name": "L. Koscielny",
@@ -8936,7 +9251,8 @@
     "prime_rating": 79,
     "nationality": "Spain",
     "club": "manchestercity",
-    "career_years": "2016-2017"
+    "career_years": "2016-2017",
+    "verified": true
   },
   {
     "name": "C. Smalling",
@@ -9296,7 +9612,8 @@
     "prime_rating": 81,
     "nationality": "Sweden",
     "club": "manchesterunited",
-    "career_years": "2018-2022"
+    "career_years": "2018-2022",
+    "verified": true
   },
   {
     "name": "Morata",
@@ -9353,7 +9670,8 @@
     "prime_rating": 81,
     "nationality": "Brazil",
     "club": "manchesterunited",
-    "career_years": "2020-2022"
+    "career_years": "2020-2022",
+    "verified": true
   },
   {
     "name": "L. Torreira",
@@ -9377,7 +9695,8 @@
     "prime_rating": 83,
     "nationality": "Brazil",
     "club": "tottenham",
-    "career_years": "2018-2022"
+    "career_years": "2018-2022",
+    "verified": true
   },
   {
     "name": "Jorginho",
@@ -9425,7 +9744,8 @@
     "prime_rating": 79,
     "nationality": "Spain",
     "club": "arsenal",
-    "career_years": "2018-2019"
+    "career_years": "2018-2019",
+    "verified": true
   },
   {
     "name": "H. Winks",
@@ -9457,7 +9777,8 @@
     "prime_rating": 84,
     "nationality": "Greece",
     "club": "arsenal",
-    "career_years": "2018-2021"
+    "career_years": "2018-2021",
+    "verified": true
   },
   {
     "name": "A. Iwobi",
@@ -9555,7 +9876,8 @@
     "prime_rating": 81,
     "nationality": "Brazil",
     "club": "arsenal",
-    "career_years": "2019-2022"
+    "career_years": "2019-2022",
+    "verified": true
   },
   {
     "name": "Dani Ceballos",
@@ -9563,7 +9885,8 @@
     "prime_rating": 81,
     "nationality": "Spain",
     "club": "arsenal",
-    "career_years": "2019-2021"
+    "career_years": "2019-2021",
+    "verified": true
   },
   {
     "name": "P. Scholes",
@@ -9579,7 +9902,8 @@
     "prime_rating": 78,
     "nationality": "Spain",
     "club": "arsenal",
-    "career_years": "2019-2022"
+    "career_years": "2019-2022",
+    "verified": true
   },
   {
     "name": "Emerson",
@@ -9683,7 +10007,8 @@
     "prime_rating": 80,
     "nationality": "Spain",
     "club": "astonvilla",
-    "career_years": "2019-2020"
+    "career_years": "2019-2020",
+    "verified": true
   },
   {
     "name": "T. Heaton",
@@ -9740,7 +10065,8 @@
     "prime_rating": 82,
     "nationality": "Portugal",
     "club": "liverpool",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "verified": true
   },
   {
     "name": "P. Højbjerg",
@@ -9780,7 +10106,8 @@
     "prime_rating": 82,
     "nationality": "Brazil",
     "club": "arsenal",
-    "career_years": "2020-2022"
+    "career_years": "2020-2022",
+    "verified": true
   },
   {
     "name": "K. Tierney",
@@ -9804,7 +10131,8 @@
     "prime_rating": 82,
     "nationality": "Spain",
     "club": "tottenham",
-    "career_years": "2020-2022"
+    "career_years": "2020-2022",
+    "verified": true
   },
   {
     "name": "R. Barkley",
@@ -9836,7 +10164,8 @@
     "prime_rating": 82,
     "nationality": "Spain",
     "club": "manchestercity",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "verified": true
   },
   {
     "name": "L. King",
@@ -9860,7 +10189,8 @@
     "prime_rating": 80,
     "nationality": "England",
     "club": "manchesterunited",
-    "career_years": "2020-2022"
+    "career_years": "2020-2022",
+    "verified": true
   },
   {
     "name": "E. Mendy",
@@ -9876,7 +10206,8 @@
     "prime_rating": 82,
     "nationality": "Brazil",
     "club": "manchesterunited",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "verified": true
   },
   {
     "name": "Saúl",
@@ -9948,7 +10279,8 @@
     "prime_rating": 79,
     "nationality": "Argentina",
     "club": "astonvilla",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "verified": true
   },
   {
     "name": "D. Ings",
@@ -10531,7 +10863,8 @@
     "prime_rating": 84,
     "career_years": "2006-2013",
     "nationality": "Bulgaria",
-    "club": "astonvilla"
+    "club": "astonvilla",
+    "verified": true
   },
   {
     "name": "Gabriel Agbonlahor",
@@ -10539,7 +10872,8 @@
     "prime_rating": 82,
     "career_years": "2006-2018",
     "nationality": "England",
-    "club": "astonvilla"
+    "club": "astonvilla",
+    "verified": true
   },
   {
     "name": "Frank Clark",
@@ -10547,7 +10881,8 @@
     "prime_rating": 83,
     "career_years": "1975-1979",
     "nationality": "England",
-    "club": "nottinghamforest"
+    "club": "nottinghamforest",
+    "verified": true
   },
   {
     "name": "Roy Keane",
@@ -10573,7 +10908,8 @@
     "prime_rating": 84,
     "career_years": "1984-1993",
     "nationality": "England",
-    "club": "nottinghamforest"
+    "club": "nottinghamforest",
+    "verified": true
   },
   {
     "name": "Pierre van Hooijdonk",
@@ -10653,7 +10989,8 @@
     "prime_rating": 82,
     "career_years": "2013-2013",
     "nationality": "England",
-    "club": "psg"
+    "club": "psg",
+    "verified": true
   },
   {
     "name": "Lionel Messi",
@@ -10813,7 +11150,8 @@
     "prime_rating": 84,
     "career_years": "2009-2012",
     "nationality": "Spain",
-    "club": "benfica"
+    "club": "benfica",
+    "verified": true
   },
   {
     "name": "Darwin Núñez",
@@ -10838,7 +11176,8 @@
     "prime_rating": 84,
     "career_years": "2014-2016",
     "nationality": "Brazil",
-    "club": "benfica"
+    "club": "benfica",
+    "verified": true
   },
   {
     "name": "João Moutinho",
@@ -10864,7 +11203,8 @@
     "prime_rating": 84,
     "career_years": "2001-2005",
     "nationality": "Portugal",
-    "club": "porto"
+    "club": "porto",
+    "verified": true
   },
   {
     "name": "Jackson Martínez",
@@ -10942,7 +11282,8 @@
     "prime_rating": 82,
     "career_years": "1992-2003",
     "nationality": "Scotland",
-    "club": "celtic"
+    "club": "celtic",
+    "verified": true
   },
   {
     "name": "Aiden McGeady",
@@ -10950,7 +11291,8 @@
     "prime_rating": 82,
     "career_years": "2004-2010",
     "nationality": "Ireland",
-    "club": "celtic"
+    "club": "celtic",
+    "verified": true
   },
   {
     "name": "Didier Drogba",
@@ -11003,7 +11345,8 @@
     "prime_rating": 84,
     "career_years": "2005-2010",
     "nationality": "Senegal",
-    "club": "marseille"
+    "club": "marseille",
+    "verified": true
   },
   {
     "name": "Thierry Henry",
@@ -11153,7 +11496,8 @@
     "prime_rating": 84,
     "career_years": "2023-2026",
     "nationality": "Germany",
-    "club": "bayer"
+    "club": "bayer",
+    "verified": true
   },
   {
     "name": "Dimitar Berbatov",
@@ -11223,7 +11567,8 @@
     "prime_rating": 84,
     "career_years": "2023-2025",
     "nationality": "Ivory Coast",
-    "club": "galatasaray"
+    "club": "galatasaray",
+    "verified": true
   },
   {
     "name": "Felipe Melo",
@@ -11231,7 +11576,8 @@
     "prime_rating": 84,
     "career_years": "2011-2015",
     "nationality": "Brazil",
-    "club": "galatasaray"
+    "club": "galatasaray",
+    "verified": true
   },
   {
     "name": "Burak Yılmaz",
@@ -11239,7 +11585,8 @@
     "prime_rating": 84,
     "career_years": "2010-2018",
     "nationality": "Turkey",
-    "club": "galatasaray"
+    "club": "galatasaray",
+    "verified": true
   },
   {
     "name": "Ola By Rise",
@@ -11247,7 +11594,8 @@
     "prime_rating": 82,
     "career_years": "1983-1995",
     "nationality": "Norway",
-    "club": "rosenborg"
+    "club": "rosenborg",
+    "verified": true
   },
   {
     "name": "Jahn Ivar Jakobsen",
@@ -11255,7 +11603,8 @@
     "prime_rating": 84,
     "career_years": "1991-2002",
     "nationality": "Norway",
-    "club": "rosenborg"
+    "club": "rosenborg",
+    "verified": true
   },
   {
     "name": "Mike Jensen",
@@ -11263,7 +11612,8 @@
     "prime_rating": 83,
     "career_years": "2014-2018",
     "nationality": "Denmark",
-    "club": "rosenborg"
+    "club": "rosenborg",
+    "verified": true
   },
   {
     "name": "Pål Lydersen",
@@ -11279,7 +11629,8 @@
     "prime_rating": 82,
     "career_years": "2016-2018",
     "nationality": "Norway",
-    "club": "rosenborg"
+    "club": "rosenborg",
+    "verified": true
   },
   {
     "name": "Nicki Bille Nielsen",
@@ -11287,7 +11638,8 @@
     "prime_rating": 82,
     "career_years": "2012-2013",
     "nationality": "Denmark",
-    "club": "rosenborg"
+    "club": "rosenborg",
+    "verified": true
   },
   {
     "name": "Iosif Rotariu",
@@ -11295,7 +11647,8 @@
     "prime_rating": 83,
     "career_years": "1985-1991",
     "nationality": "Romania",
-    "club": "steaua"
+    "club": "steaua",
+    "verified": true
   },
   {
     "name": "Dorinel Munteanu",
@@ -11303,7 +11656,8 @@
     "prime_rating": 84,
     "career_years": "1996-1998",
     "nationality": "Romania",
-    "club": "steaua"
+    "club": "steaua",
+    "verified": true
   },
   {
     "name": "Florin Răducioiu",
@@ -11311,7 +11665,8 @@
     "prime_rating": 84,
     "career_years": "1988-1991",
     "nationality": "Romania",
-    "club": "steaua"
+    "club": "steaua",
+    "verified": true
   },
   {
     "name": "Constantin Gâlcă",
@@ -11319,7 +11674,8 @@
     "prime_rating": 83,
     "career_years": "1990-1996",
     "nationality": "Romania",
-    "club": "steaua"
+    "club": "steaua",
+    "verified": true
   },
   {
     "name": "Robert Prosinečki",
@@ -11354,7 +11710,8 @@
     "prime_rating": 84,
     "career_years": "1974-1980",
     "nationality": "Serbia",
-    "club": "crvenazvezda"
+    "club": "crvenazvezda",
+    "verified": true
   },
   {
     "name": "Nemanja Vidić",
@@ -11415,7 +11772,8 @@
     "prime_rating": 82,
     "career_years": "2007-2014",
     "nationality": "Ukraine",
-    "club": "dynamokyiv"
+    "club": "dynamokyiv",
+    "verified": true
   },
   {
     "name": "Vitaliy Mykolenko",
@@ -11423,7 +11781,8 @@
     "prime_rating": 82,
     "career_years": "2017-2022",
     "nationality": "Ukraine",
-    "club": "dynamokyiv"
+    "club": "dynamokyiv",
+    "verified": true
   },
   {
     "name": "Francisco Gento",
