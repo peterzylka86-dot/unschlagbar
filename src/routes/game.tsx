@@ -55,21 +55,11 @@ function GameSetup() {
   const formation = FORMATIONS[config.formation];
   const league = LEAGUES[config.league];
   const navigate = useNavigate();
-
-  function applyQuickStart() {
-    // Newcomer-friendly defaults: ride the LIVE 2026 moment + simple draft
-    setConfig({
-      league: "worldcup2026",
-      formation: "4-3-3",
-      difficulty: "normal",
-      showRatings: true,
-      draftMode: "squad",
-      ratingMode: "prime",
-      foundingPlayer: undefined,
-    });
-    reset();
-    navigate({ to: "/draft" });
-  }
+  // Customize drawer — closed by default so first-time visitors see
+  // exactly one decision (pick a league) + one action (Start). User
+  // feedback ("zu viele verschiedene Optionen, bin etwas überfordert")
+  // drove this restructure.
+  const [customizeOpen, setCustomizeOpen] = useState(false);
 
   return (
     <div className="min-h-screen px-4 py-10 max-w-3xl mx-auto">
@@ -109,24 +99,6 @@ function GameSetup() {
           </div>
         </div>
       )}
-
-      {/* Quick-start escape hatch — newcomers can skip the 7-section form */}
-      <div className="mt-6 p-4 rounded-xl border border-warning/40 bg-warning/10 flex items-center justify-between gap-3">
-        <div className="min-w-0">
-          <div className="font-display text-warning text-sm uppercase tracking-[0.2em]">
-            ⚡ Quick Start
-          </div>
-          <div className="text-xs text-muted-foreground mt-0.5">
-            LIVE WC 2026 · 4-3-3 · Normal · pick-as-you-go — straight to the wheel.
-          </div>
-        </div>
-        <button
-          onClick={applyQuickStart}
-          className="shrink-0 px-4 py-2 rounded-lg bg-warning text-warning-foreground font-display text-sm tracking-wide hover:brightness-110 transition"
-        >
-          Go →
-        </button>
-      </div>
 
       <Section label="Competition">
         <div className="space-y-5">
@@ -194,142 +166,167 @@ function GameSetup() {
         </div>
       </Section>
 
-      <Section
-        label="Founding Player (Optional)"
-        hint="Anchor your XI around one player you've got in mind. The wheel handles the rest 10."
-      >
-        <FoundingPlayerPicker
-          league={config.league}
-          current={config.foundingPlayer}
-          onPick={(p) => setConfig({ foundingPlayer: p })}
-          onClear={() => setConfig({ foundingPlayer: undefined })}
-        />
-      </Section>
-
-      <Section
-        label="Formation"
-        hint="How your XI lines up. 4-3-3 is the modern classic; 5-4-1 locks the back; 3-5-2 favors midfield."
-      >
-        <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
-          {FORMATION_KEYS.map((k) => (
-            <Chip
-              key={k}
-              active={config.formation === k}
-              onClick={() => setConfig({ formation: k })}
-            >
-              {k}
-            </Chip>
-          ))}
-        </div>
-        <p className="mt-3 text-sm text-muted-foreground text-center">{formation.description}</p>
-      </Section>
-
+      {/* Pitch — visual confirmation of the currently-selected formation.
+          Lives above the Start button so the user sees "this is what
+          I'm about to play with" before committing. Formation can be
+          changed inside Customize below. */}
       <Section label="">
         <Pitch slots={slots} />
       </Section>
 
-      <Section
-        label="Difficulty"
-        hint="Rerolls let you re-spin the wheel when it lands on a bad club. Hard hides ratings — pure gut feel."
-      >
-        <div className="grid grid-cols-3 gap-2">
-          <OptionCard
-            active={config.difficulty === "easy"}
-            title="Easy"
-            sub="3 rerolls available"
-            onClick={() => setConfig({ difficulty: "easy" as Difficulty })}
-          />
-          <OptionCard
-            active={config.difficulty === "normal"}
-            title="Normal"
-            sub="1 reroll available"
-            onClick={() => setConfig({ difficulty: "normal" as Difficulty })}
-          />
-          <OptionCard
-            active={config.difficulty === "hard"}
-            title="Hard"
-            sub="No rerolls · ratings hidden"
-            onClick={() => setConfig({ difficulty: "hard" as Difficulty, showRatings: false })}
-          />
-        </div>
-      </Section>
-
-      <Section
-        label="Show Ratings"
-        hint="Show each player's OVR (0-99) during the draft, or hide them and trust your gut."
-      >
-        <div className="grid grid-cols-2 gap-2">
-          <OptionCard
-            active={config.showRatings}
-            title="On"
-            sub="Player overalls visible"
-            onClick={() => setConfig({ showRatings: true })}
-          />
-          <OptionCard
-            active={!config.showRatings}
-            title="Off"
-            sub="Blind mode — trust your gut"
-            onClick={() => setConfig({ showRatings: false })}
-          />
-        </div>
-      </Section>
-
-      <Section
-        label="Draft Mode"
-        hint="Squad-first is the simplest — pick any player from the wheel's club. Quick gives you 2 per spin."
-      >
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-          <OptionCard
-            active={config.draftMode === "squad"}
-            title="Squad First"
-            sub="Spin a club, pick any player, choose their position"
-            onClick={() => setConfig({ draftMode: "squad" as DraftMode })}
-          />
-          <OptionCard
-            active={config.draftMode === "position"}
-            title="Position First"
-            sub="Pick a slot, then spin for a club to fill it"
-            onClick={() => setConfig({ draftMode: "position" as DraftMode })}
-          />
-          <OptionCard
-            active={config.draftMode === "quick"}
-            title="Quick ⚡"
-            sub="Two players per club — for the impatient"
-            onClick={() => setConfig({ draftMode: "quick" as DraftMode })}
-          />
-        </div>
-      </Section>
-
-      <Section
-        label="Player Ratings"
-        hint="Prime = each player at their career-best year. Career = their rating in the specific season they played."
-      >
-        <div className="grid grid-cols-2 gap-2">
-          <OptionCard
-            active={config.ratingMode === "career"}
-            title="Career Seasons"
-            sub="Players rated as they were that exact season"
-            onClick={() => setConfig({ ratingMode: "career" as RatingMode })}
-          />
-          <OptionCard
-            active={config.ratingMode === "prime"}
-            title="Prime Mode"
-            sub="Every player at their career-best rating"
-            onClick={() => setConfig({ ratingMode: "prime" as RatingMode })}
-          />
-        </div>
-      </Section>
-
-      {/* THE primary CTA — red, bold, single-decisive button on the page. */}
+      {/* THE primary CTA — red, bold, single-decisive button on the page.
+          Above the Customize drawer so the happy path is one tap.  */}
       <button
         onClick={() => {
           reset();
           navigate({ to: "/draft" });
         }}
-        className="mt-10 w-full py-4 rounded-xl bg-primary text-primary-foreground font-display text-xl tracking-wide hover:brightness-110 shadow-[0_18px_40px_-12px] shadow-primary/60 transition"
+        className="mt-8 w-full py-4 rounded-xl bg-primary text-primary-foreground font-display text-xl tracking-wide hover:brightness-110 shadow-[0_18px_40px_-12px] shadow-primary/60 transition"
       >
         {league.kickoffWord} →
       </button>
+
+      {/* Customize drawer — collapsed by default. Power-user options
+          live here: formation, difficulty (incl. ratings-hidden), draft
+          mode, rating mode, founding player. First-time visitors are
+          shielded from the decision-fatigue these options used to
+          cause when they sat above the fold. */}
+      <div className="mt-8">
+        <button
+          onClick={() => setCustomizeOpen((v) => !v)}
+          className="w-full flex items-center justify-between gap-3 px-4 py-3 rounded-lg border border-border bg-card/50 hover:bg-card hover:border-warning/40 transition text-left"
+          aria-expanded={customizeOpen}
+        >
+          <div>
+            <div className="font-display text-sm tracking-[0.18em] uppercase text-foreground/85">
+              ⚙ Customize
+            </div>
+            <div className="text-[11px] text-muted-foreground mt-0.5">
+              Formation, difficulty, draft mode — defaults work great
+            </div>
+          </div>
+          <span
+            className={`text-warning text-lg transition-transform ${
+              customizeOpen ? "rotate-180" : ""
+            }`}
+            aria-hidden
+          >
+            ⌄
+          </span>
+        </button>
+
+        {customizeOpen && (
+          <div className="mt-2 space-y-0">
+            <Section
+              label="Difficulty"
+              hint="Rerolls let you re-spin the wheel when it lands on a bad club. Hard hides ratings — pure gut feel."
+            >
+              <div className="grid grid-cols-3 gap-2">
+                <OptionCard
+                  active={config.difficulty === "easy"}
+                  title="Easy"
+                  sub="3 rerolls · ratings shown"
+                  onClick={() => setConfig({ difficulty: "easy" as Difficulty, showRatings: true })}
+                />
+                <OptionCard
+                  active={config.difficulty === "normal"}
+                  title="Normal"
+                  sub="1 reroll · ratings shown"
+                  onClick={() =>
+                    setConfig({ difficulty: "normal" as Difficulty, showRatings: true })
+                  }
+                />
+                <OptionCard
+                  active={config.difficulty === "hard"}
+                  title="Hard"
+                  sub="No rerolls · ratings hidden"
+                  onClick={() =>
+                    setConfig({ difficulty: "hard" as Difficulty, showRatings: false })
+                  }
+                />
+              </div>
+            </Section>
+
+            <Section
+              label="Formation"
+              hint="How your XI lines up. 4-3-3 is the modern classic; 5-4-1 locks the back; 3-5-2 favors midfield."
+            >
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                {FORMATION_KEYS.map((k) => (
+                  <Chip
+                    key={k}
+                    active={config.formation === k}
+                    onClick={() => setConfig({ formation: k })}
+                  >
+                    {k}
+                  </Chip>
+                ))}
+              </div>
+              <p className="mt-3 text-sm text-muted-foreground text-center">
+                {formation.description}
+              </p>
+            </Section>
+
+            <Section
+              label="Draft Mode"
+              hint="Squad-first is the simplest — pick any player from the wheel's club. Quick gives you 2 per spin."
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <OptionCard
+                  active={config.draftMode === "squad"}
+                  title="Squad First"
+                  sub="Spin a club, pick any player, choose their position"
+                  onClick={() => setConfig({ draftMode: "squad" as DraftMode })}
+                />
+                <OptionCard
+                  active={config.draftMode === "position"}
+                  title="Position First"
+                  sub="Pick a slot, then spin for a club to fill it"
+                  onClick={() => setConfig({ draftMode: "position" as DraftMode })}
+                />
+                <OptionCard
+                  active={config.draftMode === "quick"}
+                  title="Quick ⚡"
+                  sub="Two players per club — for the impatient"
+                  onClick={() => setConfig({ draftMode: "quick" as DraftMode })}
+                />
+              </div>
+            </Section>
+
+            <Section
+              label="Player Ratings"
+              hint="Prime = each player at their career-best year. Career = their rating in the specific season they played."
+            >
+              <div className="grid grid-cols-2 gap-2">
+                <OptionCard
+                  active={config.ratingMode === "career"}
+                  title="Career Seasons"
+                  sub="Players rated as they were that exact season"
+                  onClick={() => setConfig({ ratingMode: "career" as RatingMode })}
+                />
+                <OptionCard
+                  active={config.ratingMode === "prime"}
+                  title="Prime Mode"
+                  sub="Every player at their career-best rating"
+                  onClick={() => setConfig({ ratingMode: "prime" as RatingMode })}
+                />
+              </div>
+            </Section>
+
+            <Section
+              label="Founding Player (Optional)"
+              hint="Anchor your XI around one player you've got in mind. The wheel handles the rest."
+            >
+              <FoundingPlayerPicker
+                league={config.league}
+                current={config.foundingPlayer}
+                onPick={(p) => setConfig({ foundingPlayer: p })}
+                onClear={() => setConfig({ foundingPlayer: undefined })}
+              />
+            </Section>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
