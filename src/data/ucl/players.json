@@ -4128,14 +4128,6 @@
     "club": "realmadrid"
   },
   {
-    "name": "Manolo Sanchís Sr.",
-    "position": "CB",
-    "prime_rating": 81,
-    "career_years": "1964-1971",
-    "nationality": "Spain",
-    "club": "realmadrid"
-  },
-  {
     "name": "Juanito",
     "position": "RW",
     "prime_rating": 87,
@@ -6424,14 +6416,6 @@
     "club": "dortmund"
   },
   {
-    "career_years": "1965-1972",
-    "prime_rating": 88,
-    "position": "ST",
-    "name": "Sigfried Held",
-    "nationality": "Germany",
-    "club": "dortmund"
-  },
-  {
     "position": "GK",
     "prime_rating": 89,
     "career_years": "1959-1968",
@@ -6976,14 +6960,6 @@
     "club": "napoli"
   },
   {
-    "name": "José Altafini",
-    "position": "ST",
-    "prime_rating": 87,
-    "career_years": "1965-1972",
-    "nationality": "Brazil",
-    "club": "napoli"
-  },
-  {
     "name": "Beppe Savoldi",
     "position": "ST",
     "prime_rating": 84,
@@ -7445,14 +7421,6 @@
     "prime_rating": 84,
     "name": "David Jarolím",
     "career_years": "2003–2011",
-    "club": "hamburg"
-  },
-  {
-    "position": "LW",
-    "career_years": "1963–1970",
-    "name": "Gert Dörfel",
-    "nationality": "Germany",
-    "prime_rating": 88,
     "club": "hamburg"
   },
   {
@@ -10296,14 +10264,6 @@
     "club": "celtic"
   },
   {
-    "name": "Bobby Murdoch",
-    "position": "CM",
-    "prime_rating": 88,
-    "career_years": "1959-1973",
-    "nationality": "Scotland",
-    "club": "celtic"
-  },
-  {
     "name": "Bobby Lennox",
     "position": "ST",
     "prime_rating": 86,
@@ -10688,14 +10648,6 @@
     "club": "crvenazvezda"
   },
   {
-    "name": "Dragoslav Šekularac",
-    "position": "CAM",
-    "prime_rating": 88,
-    "career_years": "1955-1966",
-    "nationality": "Serbia",
-    "club": "crvenazvezda"
-  },
-  {
     "name": "Dragan Džajić",
     "position": "LW",
     "prime_rating": 92,
@@ -10708,14 +10660,6 @@
     "position": "ST",
     "prime_rating": 84,
     "career_years": "1974-1980",
-    "nationality": "Serbia",
-    "club": "crvenazvezda"
-  },
-  {
-    "name": "Vladica Popović",
-    "position": "CAM",
-    "prime_rating": 84,
-    "career_years": "1955-1965",
     "nationality": "Serbia",
     "club": "crvenazvezda"
   },
@@ -10740,14 +10684,6 @@
     "position": "CAM",
     "prime_rating": 88,
     "career_years": "1983-1988",
-    "nationality": "Ukraine",
-    "club": "dynamokyiv"
-  },
-  {
-    "name": "Anatoly Byshovets",
-    "position": "ST",
-    "prime_rating": 86,
-    "career_years": "1963-1973",
     "nationality": "Ukraine",
     "club": "dynamokyiv"
   },

@@ -1888,14 +1888,6 @@
     "club": "napoli"
   },
   {
-    "name": "José Altafini",
-    "position": "ST",
-    "prime_rating": 87,
-    "career_years": "1965-1972",
-    "nationality": "Brazil",
-    "club": "napoli"
-  },
-  {
     "name": "Beppe Savoldi",
     "position": "ST",
     "prime_rating": 84,
@@ -2940,14 +2932,6 @@
     "position": "ST",
     "prime_rating": 81,
     "career_years": "1993-1995",
-    "nationality": "Italy",
-    "club": "atalanta"
-  },
-  {
-    "name": "Pierluigi Pizzaballa",
-    "position": "GK",
-    "prime_rating": 83,
-    "career_years": "1961-1971",
     "nationality": "Italy",
     "club": "atalanta"
   },
@@ -4980,14 +4964,6 @@
     "position": "CM",
     "prime_rating": 82,
     "career_years": "1965-1975",
-    "nationality": "Italy",
-    "club": "cagliari"
-  },
-  {
-    "name": "Roberto Boninsegna",
-    "position": "ST",
-    "prime_rating": 83,
-    "career_years": "1965-1969",
     "nationality": "Italy",
     "club": "cagliari"
   },

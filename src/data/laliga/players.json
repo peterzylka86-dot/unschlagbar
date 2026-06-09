@@ -512,14 +512,6 @@
     "club": "realmadrid"
   },
   {
-    "name": "Manolo Sanchís Sr.",
-    "position": "CB",
-    "prime_rating": 81,
-    "career_years": "1964-1971",
-    "nationality": "Spain",
-    "club": "realmadrid"
-  },
-  {
     "name": "Juanito",
     "position": "RW",
     "prime_rating": 87,
@@ -5852,14 +5844,6 @@
     "position": "GK",
     "prime_rating": 80,
     "career_years": "1976-1983",
-    "nationality": "Spain",
-    "club": "zaragoza"
-  },
-  {
-    "name": "Yarza",
-    "position": "GK",
-    "prime_rating": 83,
-    "career_years": "1955-1971",
     "nationality": "Spain",
     "club": "zaragoza"
   },

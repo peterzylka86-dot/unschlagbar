@@ -133,15 +133,6 @@
     "club": "frankfurt"
   },
   {
-    "career_years": "1952-1967",
-    "nationality": "Germany",
-    "position": "CAM",
-    "prime_rating": 89,
-    "name": "Alfred Pfaff",
-    "club": "frankfurt",
-    "verified": true
-  },
-  {
     "position": "ST",
     "nationality": "Serbia",
     "prime_rating": 85,
@@ -149,14 +140,6 @@
     "career_years": "2017-2019",
     "club": "frankfurt",
     "verified": true
-  },
-  {
-    "nationality": "Germany",
-    "position": "CM",
-    "name": "Lutz Eigendorf",
-    "prime_rating": 82,
-    "career_years": "1961-1973",
-    "club": "frankfurt"
   },
   {
     "name": "Uwe Bindewald",
@@ -824,15 +807,6 @@
     "verified": true
   },
   {
-    "career_years": "1965-1972",
-    "prime_rating": 88,
-    "position": "ST",
-    "name": "Sigfried Held",
-    "nationality": "Germany",
-    "club": "dortmund",
-    "verified": true
-  },
-  {
     "position": "GK",
     "prime_rating": 89,
     "career_years": "1959-1968",
@@ -1361,14 +1335,6 @@
     "prime_rating": 87,
     "club": "gladbach",
     "verified": true
-  },
-  {
-    "career_years": "1965-1970",
-    "nationality": "Germany",
-    "name": "Ludwig Müller",
-    "position": "CB",
-    "prime_rating": 85,
-    "club": "gladbach"
   },
   {
     "prime_rating": 84,
@@ -2205,15 +2171,6 @@
     "club": "hamburg"
   },
   {
-    "position": "LW",
-    "career_years": "1963–1970",
-    "name": "Gert Dörfel",
-    "nationality": "Germany",
-    "prime_rating": 88,
-    "club": "hamburg",
-    "verified": true
-  },
-  {
     "position": "ST",
     "name": "Anthony Yeboah",
     "prime_rating": 86,
@@ -2272,15 +2229,6 @@
     "position": "CB",
     "prime_rating": 82,
     "club": "union"
-  },
-  {
-    "prime_rating": 86,
-    "name": "Reinhard Lauck",
-    "nationality": "East Germany",
-    "position": "CM",
-    "career_years": "1966-1973",
-    "club": "union",
-    "verified": true
   },
   {
     "prime_rating": 84,
@@ -2396,14 +2344,6 @@
     "club": "union"
   },
   {
-    "career_years": "1966-1972",
-    "prime_rating": 81,
-    "position": "CB",
-    "nationality": "East Germany",
-    "name": "Ulrich Prüfke",
-    "club": "union"
-  },
-  {
     "career_years": "2018-2021",
     "prime_rating": 80,
     "position": "CM",
@@ -2453,15 +2393,6 @@
     "name": "Olaf Thon",
     "prime_rating": 88,
     "career_years": "1995-2001, 2004-2009",
-    "club": "schalke",
-    "verified": true
-  },
-  {
-    "name": "Ernst Kuzorra",
-    "nationality": "Germany",
-    "position": "CAM",
-    "career_years": "1910-1941",
-    "prime_rating": 94,
     "club": "schalke",
     "verified": true
   },
@@ -2524,15 +2455,6 @@
     "name": "Klaas-Jan Huntelaar",
     "nationality": "Netherlands",
     "position": "ST",
-    "club": "schalke",
-    "verified": true
-  },
-  {
-    "prime_rating": 93,
-    "career_years": "1921-1943",
-    "nationality": "Germany",
-    "name": "Fritz Szepan",
-    "position": "CAM",
     "club": "schalke",
     "verified": true
   },
@@ -2733,14 +2655,6 @@
     "position": "LW",
     "club": "koln",
     "verified": true
-  },
-  {
-    "position": "RW",
-    "career_years": "1963-1967",
-    "nationality": "Germany",
-    "name": "Karl-Heinz Thielen",
-    "prime_rating": 84,
-    "club": "koln"
   },
   {
     "prime_rating": 81,
@@ -2961,15 +2875,6 @@
     "club": "hertha"
   },
   {
-    "nationality": "Germany",
-    "name": "Bernd Patzke",
-    "prime_rating": 85,
-    "career_years": "1965-1971",
-    "position": "CB",
-    "club": "hertha",
-    "verified": true
-  },
-  {
     "prime_rating": 85,
     "name": "Josip Simunic",
     "nationality": "Croatia",
@@ -3061,14 +2966,6 @@
     "nationality": "Bosnia and Herzegovina",
     "position": "ST",
     "career_years": "2014-2019",
-    "club": "hertha"
-  },
-  {
-    "name": "Uwe Kliemann",
-    "prime_rating": 84,
-    "nationality": "Germany",
-    "position": "CB",
-    "career_years": "1963-1965, 1968-1971",
     "club": "hertha"
   },
   {
@@ -3277,14 +3174,6 @@
   },
   {
     "nationality": "Germany",
-    "position": "CM",
-    "prime_rating": 82,
-    "name": "Hans-Jürgen Köper",
-    "career_years": "1962-1972",
-    "club": "bochum"
-  },
-  {
-    "nationality": "Germany",
     "position": "GK",
     "prime_rating": 83,
     "career_years": "1978-1987",
@@ -3387,15 +3276,6 @@
     "prime_rating": 83,
     "position": "CAM",
     "club": "bochum"
-  },
-  {
-    "name": "Ottmar Walter",
-    "position": "ST",
-    "nationality": "Germany",
-    "prime_rating": 91,
-    "career_years": "1949-1959 (Pre-BL), 1959-1963",
-    "club": "kaiserslautern",
-    "verified": true
   },
   {
     "career_years": "1966-1981",
@@ -3525,14 +3405,6 @@
     "nationality": "Germany",
     "position": "CDM",
     "name": "Marco Haber",
-    "club": "kaiserslautern"
-  },
-  {
-    "nationality": "Germany",
-    "name": "Willi Kostrewa",
-    "position": "RB",
-    "career_years": "1963-1970",
-    "prime_rating": 80,
     "club": "kaiserslautern"
   },
   {
@@ -3812,68 +3684,6 @@
     "club": "uerdingen"
   },
   {
-    "career_years": "1963-1970",
-    "prime_rating": 91,
-    "name": "Petar Radenković",
-    "position": "GK",
-    "nationality": "Yugoslavia",
-    "club": "1860",
-    "verified": true
-  },
-  {
-    "career_years": "1959-1970",
-    "position": "ST",
-    "nationality": "Germany",
-    "name": "Rudolf Brunnenmeier",
-    "prime_rating": 92,
-    "club": "1860",
-    "verified": true
-  },
-  {
-    "nationality": "Germany",
-    "position": "ST",
-    "name": "Friedhelm Konietzka",
-    "prime_rating": 88,
-    "career_years": "1962-1968",
-    "club": "1860",
-    "verified": true
-  },
-  {
-    "position": "CB",
-    "nationality": "Germany",
-    "prime_rating": 86,
-    "name": "Hans Reich",
-    "career_years": "1960-1971",
-    "club": "1860",
-    "verified": true
-  },
-  {
-    "prime_rating": 89,
-    "name": "Zeljko Perusic",
-    "position": "CDM",
-    "nationality": "Yugoslavia",
-    "career_years": "1963-1971",
-    "club": "1860",
-    "verified": true
-  },
-  {
-    "position": "RB",
-    "nationality": "Germany",
-    "prime_rating": 87,
-    "name": "Bernd Patzke",
-    "career_years": "1964-1971",
-    "club": "1860",
-    "verified": true
-  },
-  {
-    "name": "Ludwig Leinberger",
-    "prime_rating": 90,
-    "nationality": "Germany",
-    "position": "CM",
-    "career_years": "1919-1934",
-    "club": "1860"
-  },
-  {
     "career_years": "1994-1999",
     "prime_rating": 83,
     "name": "Abderrahim Ouakili",
@@ -3980,59 +3790,11 @@
     "club": "1860"
   },
   {
-    "career_years": "1918-1934",
-    "position": "GK",
-    "nationality": "Germany",
-    "name": "Heiner Stuhlfauth",
-    "prime_rating": 95,
-    "club": "nuernberg"
-  },
-  {
-    "career_years": "1920-1934",
-    "position": "CM",
-    "nationality": "Germany",
-    "prime_rating": 93,
-    "name": "Hans Kalb",
-    "club": "nuernberg"
-  },
-  {
     "career_years": "1957-1969",
     "position": "CAM",
     "nationality": "Germany",
     "name": "Max Morlock",
     "prime_rating": 94,
-    "club": "nuernberg"
-  },
-  {
-    "position": "ST",
-    "career_years": "1961-1969",
-    "name": "Heinz Strehl",
-    "prime_rating": 89,
-    "nationality": "Germany",
-    "club": "nuernberg"
-  },
-  {
-    "name": "Ferdinand Wenauer",
-    "prime_rating": 88,
-    "nationality": "Germany",
-    "position": "CB",
-    "career_years": "1960-1970",
-    "club": "nuernberg"
-  },
-  {
-    "position": "CDM",
-    "career_years": "1962-1969",
-    "name": "Stefan Reisch",
-    "prime_rating": 86,
-    "nationality": "Germany",
-    "club": "nuernberg"
-  },
-  {
-    "position": "ST",
-    "career_years": "1967-1969",
-    "name": "Franz Brungs",
-    "prime_rating": 87,
-    "nationality": "Germany",
     "club": "nuernberg"
   },
   {
@@ -4166,28 +3928,11 @@
     "club": "hannover"
   },
   {
-    "nationality": "Germany",
-    "position": "ST",
-    "name": "Jupp Heynckes",
-    "career_years": "1964-1972",
-    "prime_rating": 87,
-    "club": "hannover",
-    "verified": true
-  },
-  {
     "name": "Jiri Stajner",
     "career_years": "1998-2000, 2002-2004, 2008-2010",
     "prime_rating": 81,
     "nationality": "Czech Republic",
     "position": "RW",
-    "club": "hannover"
-  },
-  {
-    "nationality": "Germany",
-    "position": "LB",
-    "name": "Hans-Josef Hellingrath",
-    "career_years": "1964-1973",
-    "prime_rating": 82,
     "club": "hannover"
   },
   {
@@ -4224,15 +3969,6 @@
     "club": "hannover"
   },
   {
-    "name": "Walter Rodekamp",
-    "career_years": "1963-1969",
-    "prime_rating": 85,
-    "nationality": "Germany",
-    "position": "ST",
-    "club": "hannover",
-    "verified": true
-  },
-  {
     "career_years": "2011-2015",
     "prime_rating": 84,
     "name": "Lars Stindl",
@@ -4246,14 +3982,6 @@
     "career_years": "2002-2014",
     "nationality": "Albania",
     "position": "CDM",
-    "club": "hannover"
-  },
-  {
-    "career_years": "1964-1969",
-    "prime_rating": 83,
-    "name": "Horst Podlasly",
-    "position": "GK",
-    "nationality": "Germany",
     "club": "hannover"
   },
   {
@@ -4294,14 +4022,6 @@
     "career_years": "1965-1968, 1974-1975",
     "nationality": "Germany",
     "position": "LW",
-    "club": "hannover"
-  },
-  {
-    "career_years": "1963-1965",
-    "prime_rating": 84,
-    "name": "Klaus Matischak",
-    "position": "ST",
-    "nationality": "Germany",
     "club": "hannover"
   },
   {
@@ -4370,24 +4090,6 @@
     "career_years": "1972-1977",
     "nationality": "Germany",
     "club": "rotweissessen"
-  },
-  {
-    "nationality": "Germany",
-    "career_years": "1951-1961",
-    "position": "CAM",
-    "prime_rating": 89,
-    "name": "August Gottschalk",
-    "club": "rotweissessen",
-    "verified": true
-  },
-  {
-    "career_years": "1952-1960",
-    "position": "GK",
-    "nationality": "Germany",
-    "name": "Fritz Herkenrath",
-    "prime_rating": 88,
-    "club": "rotweissessen",
-    "verified": true
   },
   {
     "name": "Werner Lorant",
@@ -4523,14 +4225,6 @@
     "club": "karlsruhe"
   },
   {
-    "nationality": "Germany",
-    "name": "Klaus-Peter Jendrosch",
-    "position": "ST",
-    "prime_rating": 79,
-    "career_years": "1963-1966",
-    "club": "karlsruhe"
-  },
-  {
     "position": "LB",
     "prime_rating": 85,
     "career_years": "1992-1998",
@@ -4553,14 +4247,6 @@
     "prime_rating": 81,
     "career_years": "1984-1988",
     "position": "CB",
-    "club": "karlsruhe"
-  },
-  {
-    "nationality": "Germany",
-    "name": "Horst Wild",
-    "career_years": "1963-1968",
-    "prime_rating": 80,
-    "position": "CM",
     "club": "karlsruhe"
   },
   {
@@ -4620,14 +4306,6 @@
     "club": "saarbruecken"
   },
   {
-    "prime_rating": 84,
-    "position": "LW",
-    "name": "Heinz Vollmar",
-    "career_years": "1960-1964",
-    "nationality": "Germany",
-    "club": "saarbruecken"
-  },
-  {
     "nationality": "Germany",
     "name": "Wolfram Wuttke",
     "career_years": "1992-1993",
@@ -4668,108 +4346,12 @@
     "club": "saarbruecken"
   },
   {
-    "career_years": "1960-1966, 1968-1970",
-    "name": "Heinz Rohloff",
-    "nationality": "Germany",
-    "prime_rating": 77,
-    "position": "CB",
-    "club": "tasmania"
-  },
-  {
-    "name": "Wulf-Ingo Usbeck",
-    "nationality": "Germany",
-    "career_years": "1965-1966",
-    "position": "ST",
-    "prime_rating": 76,
-    "club": "tasmania"
-  },
-  {
-    "career_years": "1958-1966",
-    "nationality": "Germany",
-    "name": "Hans-Günter Becker",
-    "prime_rating": 78,
-    "position": "CB",
-    "club": "tasmania"
-  },
-  {
-    "position": "CM",
-    "prime_rating": 74,
-    "nationality": "Germany",
-    "name": "Horst Zeiser",
-    "career_years": "1965-1966",
-    "club": "tasmania"
-  },
-  {
-    "position": "CAM",
-    "prime_rating": 75,
-    "name": "Klaus Konieczka",
-    "nationality": "Germany",
-    "career_years": "1965-1966",
-    "club": "tasmania"
-  },
-  {
-    "prime_rating": 74,
-    "position": "ST",
-    "career_years": "1961-1966",
-    "name": "Wolfgang Neumann",
-    "nationality": "Germany",
-    "club": "tasmania"
-  },
-  {
-    "name": "Heinz Fischer",
-    "nationality": "Germany",
-    "career_years": "1965-1966",
-    "position": "GK",
-    "prime_rating": 72,
-    "club": "tasmania"
-  },
-  {
-    "career_years": "1964-1968",
-    "name": "Bernd Meißner",
-    "nationality": "Germany",
-    "prime_rating": 73,
-    "position": "LW",
-    "club": "tasmania"
-  },
-  {
-    "prime_rating": 72,
-    "position": "LB",
-    "career_years": "1965-1966",
-    "name": "Herbert Finken",
-    "nationality": "Germany",
-    "club": "tasmania"
-  },
-  {
-    "career_years": "1965-1966",
-    "name": "Jürgen Sandmann",
-    "nationality": "Germany",
-    "prime_rating": 71,
-    "position": "RB",
-    "club": "tasmania"
-  },
-  {
-    "position": "RW",
-    "prime_rating": 73,
-    "name": "Erich Puhlmann",
-    "nationality": "Germany",
-    "career_years": "1965-1967",
-    "club": "tasmania"
-  },
-  {
     "nationality": "Germany",
     "name": "Nigel Bier",
     "career_years": "2018-2022",
     "position": "CDM",
     "prime_rating": 70,
     "club": "tasmania"
-  },
-  {
-    "career_years": "1964-1970, 1971-1973",
-    "prime_rating": 84,
-    "position": "CM",
-    "name": "Herbert Pankau",
-    "nationality": "Germany",
-    "club": "hansa"
   },
   {
     "position": "RB",
@@ -5036,14 +4618,6 @@
     "verified": true
   },
   {
-    "nationality": "Germany",
-    "prime_rating": 84,
-    "career_years": "1963-1971",
-    "position": "GK",
-    "name": "Manfred Manglitz",
-    "club": "duisburg"
-  },
-  {
     "career_years": "1991-1998",
     "prime_rating": 79,
     "nationality": "Germany",
@@ -5285,14 +4859,6 @@
     "club": "meidericher"
   },
   {
-    "name": "Manfred Manglitz",
-    "position": "GK",
-    "prime_rating": 79,
-    "nationality": "Germany",
-    "career_years": "1961-1971",
-    "club": "meidericher"
-  },
-  {
     "name": "Detlef Pirsig",
     "position": "CB",
     "prime_rating": 75,
@@ -5325,14 +4891,6 @@
     "club": "meidericher"
   },
   {
-    "position": "CAM",
-    "name": "Werner Krämer",
-    "nationality": "Germany",
-    "prime_rating": 80,
-    "career_years": "1963-1968",
-    "club": "meidericher"
-  },
-  {
     "career_years": "1989-1994",
     "nationality": "Germany",
     "prime_rating": 81,
@@ -5346,14 +4904,6 @@
     "career_years": "2009-2012",
     "position": "CM",
     "name": "Ivica Grlić",
-    "club": "meidericher"
-  },
-  {
-    "name": "Hartmut Heidemann",
-    "position": "CB",
-    "prime_rating": 75,
-    "nationality": "Germany",
-    "career_years": "1963-1969",
     "club": "meidericher"
   },
   {
@@ -5515,49 +5065,6 @@
     "career_years": "1994-1997",
     "position": "ST",
     "club": "stpauli"
-  },
-  {
-    "position": "GK",
-    "career_years": "1965-1971",
-    "prime_rating": 86,
-    "name": "Horst Wolter",
-    "nationality": "Germany",
-    "club": "braunschweig",
-    "verified": true
-  },
-  {
-    "nationality": "Germany",
-    "name": "Joachim Bäse",
-    "position": "CB",
-    "prime_rating": 85,
-    "career_years": "1964-1973",
-    "club": "braunschweig",
-    "verified": true
-  },
-  {
-    "position": "CB",
-    "career_years": "1963-1971",
-    "prime_rating": 83,
-    "name": "Peter Kaack",
-    "nationality": "Germany",
-    "club": "braunschweig"
-  },
-  {
-    "career_years": "1963-1968",
-    "prime_rating": 84,
-    "position": "RW",
-    "name": "Klaus Gerwien",
-    "nationality": "Germany",
-    "club": "braunschweig"
-  },
-  {
-    "prime_rating": 88,
-    "career_years": "1963-1969",
-    "position": "ST",
-    "nationality": "Germany",
-    "name": "Lothar Ulsaß",
-    "club": "braunschweig",
-    "verified": true
   },
   {
     "position": "CAM",
@@ -5847,14 +5354,6 @@
     "club": "offenbach"
   },
   {
-    "name": "Helmut Schmidt",
-    "position": "CM",
-    "nationality": "Germany",
-    "prime_rating": 81,
-    "career_years": "1938-1940, 1952-1959",
-    "club": "offenbach"
-  },
-  {
     "prime_rating": 85,
     "career_years": "1973-1977, 1982-1984",
     "name": "Dieter Müller",
@@ -5905,45 +5404,12 @@
     "club": "offenbach"
   },
   {
-    "position": "RW",
-    "prime_rating": 84,
-    "nationality": "Germany",
-    "name": "Ferdinand Wenessel",
-    "career_years": "1967-1971",
-    "club": "aachen"
-  },
-  {
-    "position": "CM",
-    "prime_rating": 82,
-    "nationality": "Germany",
-    "name": "Herbert Gronen",
-    "career_years": "1960-1971",
-    "club": "aachen"
-  },
-  {
-    "prime_rating": 81,
-    "nationality": "Germany",
-    "position": "CB",
-    "career_years": "1964-1970",
-    "name": "Hansi Klostermann",
-    "club": "aachen"
-  },
-  {
     "position": "ST",
     "nationality": "Netherlands",
     "prime_rating": 83,
     "name": "Erik Meijer",
     "career_years": "2001-2007",
     "club": "aachen"
-  },
-  {
-    "prime_rating": 85,
-    "nationality": "Belgium",
-    "position": "ST",
-    "career_years": "1968-1970",
-    "name": "Roger Claessen",
-    "club": "aachen",
-    "verified": true
   },
   {
     "prime_rating": 80,
@@ -5983,14 +5449,6 @@
     "position": "GK",
     "career_years": "2004-2008",
     "name": "Kristian Nicht",
-    "club": "aachen"
-  },
-  {
-    "career_years": "1967-1971",
-    "name": "Erwin Hermandung",
-    "prime_rating": 81,
-    "nationality": "Germany",
-    "position": "LB",
     "club": "aachen"
   },
   {
@@ -6388,50 +5846,6 @@
     "club": "unterhaching"
   },
   {
-    "career_years": "1950-1965",
-    "nationality": "Germany",
-    "prime_rating": 91,
-    "position": "CB",
-    "name": "Herbert Erhardt",
-    "club": "furth",
-    "verified": true
-  },
-  {
-    "name": "Karl Mai",
-    "career_years": "1949-1959",
-    "nationality": "Germany",
-    "prime_rating": 89,
-    "position": "CDM",
-    "club": "furth",
-    "verified": true
-  },
-  {
-    "nationality": "Germany",
-    "prime_rating": 92,
-    "position": "ST",
-    "career_years": "1920-1934",
-    "name": "Andreas Franz",
-    "club": "furth",
-    "verified": true
-  },
-  {
-    "name": "Leonhard Seiderer",
-    "position": "ST",
-    "nationality": "Germany",
-    "prime_rating": 90,
-    "career_years": "1912-1925",
-    "club": "furth",
-    "verified": true
-  },
-  {
-    "name": "Hans Lohrmann",
-    "career_years": "1914-1927",
-    "prime_rating": 85,
-    "nationality": "Germany",
-    "position": "GK",
-    "club": "furth"
-  },
-  {
     "name": "Rachid Azzouzi",
     "position": "CAM",
     "prime_rating": 81,
@@ -6462,15 +5876,6 @@
     "career_years": "2011-2013",
     "name": "Baba Rahman",
     "club": "furth"
-  },
-  {
-    "name": "Hans Fiederer",
-    "career_years": "1932-1946",
-    "position": "LW",
-    "nationality": "Germany",
-    "prime_rating": 86,
-    "club": "furth",
-    "verified": true
   },
   {
     "position": "ST",
@@ -6873,14 +6278,6 @@
     "club": "blauweiss90"
   },
   {
-    "nationality": "Germany",
-    "prime_rating": 82,
-    "career_years": "1959-1970",
-    "position": "ST",
-    "name": "Rolf Steeb",
-    "club": "stuttgartkickers"
-  },
-  {
     "position": "RW",
     "name": "Karl-Heinz Mrosko",
     "career_years": "1971-1981",
@@ -7043,14 +6440,6 @@
     "club": "wuppertaler"
   },
   {
-    "position": "ST",
-    "name": "Jürgen Kohut",
-    "career_years": "1966-1973",
-    "prime_rating": 78,
-    "nationality": "Germany",
-    "club": "wuppertaler"
-  },
-  {
     "position": "CDM",
     "name": "Christian Broos",
     "career_years": "1992-1994, 2011-2012",
@@ -7164,70 +6553,6 @@
     "club": "tennisborussia"
   },
   {
-    "position": "GK",
-    "name": "Hans-Joachim Spünzen",
-    "nationality": "Germany",
-    "prime_rating": 78,
-    "career_years": "1954-1964",
-    "club": "viktoriakoln"
-  },
-  {
-    "prime_rating": 77,
-    "career_years": "1954-1963",
-    "position": "CB",
-    "name": "Herbert Radecke",
-    "nationality": "Germany",
-    "club": "viktoriakoln"
-  },
-  {
-    "career_years": "1953-1961",
-    "prime_rating": 80,
-    "nationality": "Germany",
-    "position": "RB",
-    "name": "Hans-Günter Schimmöller",
-    "club": "viktoriakoln"
-  },
-  {
-    "prime_rating": 76,
-    "career_years": "1950-1961",
-    "position": "LB",
-    "name": "Helmut Krüger",
-    "nationality": "Germany",
-    "club": "viktoriakoln"
-  },
-  {
-    "prime_rating": 77,
-    "career_years": "1955-1962",
-    "position": "CM",
-    "name": "Werner Nocht",
-    "nationality": "Germany",
-    "club": "viktoriakoln"
-  },
-  {
-    "name": "Bernd Schunke",
-    "position": "CM",
-    "nationality": "Germany",
-    "prime_rating": 78,
-    "career_years": "1956-1963",
-    "club": "viktoriakoln"
-  },
-  {
-    "career_years": "1954-1960",
-    "prime_rating": 79,
-    "nationality": "Germany",
-    "position": "RW",
-    "name": "Klaus Roggensack",
-    "club": "viktoriakoln"
-  },
-  {
-    "prime_rating": 75,
-    "career_years": "1956-1963",
-    "position": "LW",
-    "name": "Dieter Kersten",
-    "nationality": "Germany,position:",
-    "club": "viktoriakoln"
-  },
-  {
     "career_years": "2017-2022",
     "prime_rating": 72,
     "nationality": "Germany",
@@ -7248,14 +6573,6 @@
     "career_years": "2018-2023",
     "position": "CDM",
     "name": "Kappa Kapplan",
-    "nationality": "Germany",
-    "club": "viktoriakoln"
-  },
-  {
-    "prime_rating": 76,
-    "career_years": "1959-1963",
-    "name": "Wolfgang Klopfleisch",
-    "position": "ST",
     "nationality": "Germany",
     "club": "viktoriakoln"
   },
@@ -7337,14 +6654,6 @@
     "name": "Dirk Anders",
     "prime_rating": 79,
     "career_years": "1989-1994",
-    "club": "leipzigvfb"
-  },
-  {
-    "name": "Manfred Geisler",
-    "nationality": "Germany",
-    "position": "CB",
-    "career_years": "1963-1971",
-    "prime_rating": 84,
     "club": "leipzigvfb"
   },
   {
@@ -10121,22 +9430,6 @@
     "club": "nuernberg"
   },
   {
-    "name": "Peter Grosser",
-    "position": "CAM",
-    "nationality": "Germany",
-    "career_years": "1959-1969",
-    "prime_rating": 84,
-    "club": "1860"
-  },
-  {
-    "name": "Hans Rebele",
-    "position": "ST",
-    "nationality": "Germany",
-    "career_years": "1965-1969",
-    "prime_rating": 80,
-    "club": "1860"
-  },
-  {
     "name": "Peter Pacult",
     "position": "ST",
     "nationality": "Austria",
@@ -10732,14 +10025,6 @@
   },
   {
     "club": "saarbruecken",
-    "name": "Helmut Schön",
-    "position": "CM",
-    "nationality": "Germany",
-    "career_years": "1929-1949",
-    "prime_rating": 78
-  },
-  {
-    "club": "saarbruecken",
     "name": "Herbert Martin",
     "position": "ST",
     "nationality": "Germany",
@@ -10769,38 +10054,6 @@
     "nationality": "Germany",
     "career_years": "1968-1981",
     "prime_rating": 75
-  },
-  {
-    "club": "tasmania",
-    "name": "Horst Szymaniak",
-    "position": "CDM",
-    "nationality": "Germany",
-    "career_years": "1955-1968",
-    "prime_rating": 80
-  },
-  {
-    "club": "tasmania",
-    "name": "Karl-Heinz Rumler",
-    "position": "ST",
-    "nationality": "Germany",
-    "career_years": "1962-1968",
-    "prime_rating": 71
-  },
-  {
-    "club": "tasmania",
-    "name": "Helmut Faeder",
-    "position": "CB",
-    "nationality": "Germany",
-    "career_years": "1958-1970",
-    "prime_rating": 70
-  },
-  {
-    "club": "meidericher",
-    "name": "Heinz Höher",
-    "position": "CAM",
-    "nationality": "Germany",
-    "career_years": "1956-1969",
-    "prime_rating": 76
   },
   {
     "club": "bremerhaven",
@@ -11859,14 +11112,6 @@
     "club": "rotweissessen"
   },
   {
-    "name": "Heinz Hornig",
-    "position": "ST",
-    "prime_rating": 74,
-    "career_years": "1968-1973",
-    "nationality": "GER",
-    "club": "rotweissessen"
-  },
-  {
     "name": "Manfred Bockenfeld",
     "position": "LB",
     "prime_rating": 72,
@@ -11905,38 +11150,6 @@
     "career_years": "1975-1982",
     "nationality": "GER",
     "club": "saarbruecken"
-  },
-  {
-    "name": "Werner Olk",
-    "position": "LW",
-    "prime_rating": 72,
-    "career_years": "1962-1966",
-    "nationality": "GER",
-    "club": "saarbruecken"
-  },
-  {
-    "name": "Hans-Joachim Posinski",
-    "position": "GK",
-    "prime_rating": 65,
-    "career_years": "1965-1966",
-    "nationality": "GER",
-    "club": "tasmania"
-  },
-  {
-    "name": "Hans-Guenter Becker",
-    "position": "LB",
-    "prime_rating": 65,
-    "career_years": "1965-1966",
-    "nationality": "GER",
-    "club": "tasmania"
-  },
-  {
-    "name": "Lothar Schwarz",
-    "position": "RW",
-    "prime_rating": 65,
-    "career_years": "1965-1966",
-    "nationality": "GER",
-    "club": "tasmania"
   },
   {
     "name": "Rene Schneider",
@@ -12083,22 +11296,6 @@
     "club": "bielefeld"
   },
   {
-    "name": "Heinz Versteeg",
-    "position": "RB",
-    "prime_rating": 72,
-    "career_years": "1962-1968",
-    "nationality": "GER",
-    "club": "meidericher"
-  },
-  {
-    "name": "Wolfgang Glock",
-    "position": "CAM",
-    "prime_rating": 72,
-    "career_years": "1965-1970",
-    "nationality": "GER",
-    "club": "meidericher"
-  },
-  {
     "name": "Karl-Heinz Granitza",
     "position": "RW",
     "prime_rating": 76,
@@ -12107,26 +11304,10 @@
     "club": "bremerhaven"
   },
   {
-    "name": "Erich Beer",
-    "position": "LW",
-    "prime_rating": 78,
-    "career_years": "1968-1971",
-    "nationality": "GER",
-    "club": "bremerhaven"
-  },
-  {
     "name": "Karl Bruhns",
     "position": "CDM",
     "prime_rating": 72,
     "career_years": "1968-1975",
-    "nationality": "GER",
-    "club": "bremerhaven"
-  },
-  {
-    "name": "Klaus Toppmoeller",
-    "position": "CM",
-    "prime_rating": 74,
-    "career_years": "1968-1972",
     "nationality": "GER",
     "club": "bremerhaven"
   },
@@ -12595,14 +11776,6 @@
     "club": "dynamodresden"
   },
   {
-    "name": "Heinz Honig",
-    "position": "LW",
-    "prime_rating": 70,
-    "career_years": "1962-1965",
-    "nationality": "GER",
-    "club": "meidericher"
-  },
-  {
     "name": "Lothar Skala",
     "position": "CDM",
     "prime_rating": 70,
@@ -12713,38 +11886,6 @@
     "career_years": "1985-1990",
     "nationality": "GER",
     "club": "saarbruecken"
-  },
-  {
-    "name": "Karl Schoesser",
-    "position": "RB",
-    "prime_rating": 65,
-    "career_years": "1965-1966",
-    "nationality": "GER",
-    "club": "tasmania"
-  },
-  {
-    "name": "Hans-Werner Pichotki",
-    "position": "CM",
-    "prime_rating": 65,
-    "career_years": "1965-1966",
-    "nationality": "GER",
-    "club": "tasmania"
-  },
-  {
-    "name": "Rolf-Dieter Birkholz",
-    "position": "CAM",
-    "prime_rating": 65,
-    "career_years": "1965-1966",
-    "nationality": "GER",
-    "club": "tasmania"
-  },
-  {
-    "name": "Helmut Faeder Jr",
-    "position": "LW",
-    "prime_rating": 65,
-    "career_years": "1965-1966",
-    "nationality": "GER",
-    "club": "tasmania"
   },
   {
     "name": "Daniel Ziebig",

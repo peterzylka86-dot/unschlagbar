@@ -48,14 +48,6 @@
     "club": "basel"
   },
   {
-    "name": "Josef Hügi",
-    "position": "ST",
-    "prime_rating": 84,
-    "career_years": "1948-1962",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
     "name": "Jörg Stohler",
     "position": "CM",
     "prime_rating": 84,
@@ -120,14 +112,6 @@
     "club": "basel"
   },
   {
-    "name": "Werner Bopp",
-    "position": "CB",
-    "prime_rating": 84,
-    "career_years": "1944-1960",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
     "name": "Xherdan Shaqiri",
     "position": "CAM",
     "prime_rating": 84,
@@ -144,27 +128,11 @@
     "club": "basel"
   },
   {
-    "name": "Helmut Hauser",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1964-1972",
-    "nationality": "Germany",
-    "club": "basel"
-  },
-  {
     "name": "Ivan Ergić",
     "position": "CM",
     "prime_rating": 82,
     "career_years": "2002-2009",
     "nationality": "Serbia",
-    "club": "basel"
-  },
-  {
-    "name": "Roberto Frigerio",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1958-1968",
-    "nationality": "Switzerland",
     "club": "basel"
   },
   {
@@ -672,14 +640,6 @@
     "club": "grasshopper"
   },
   {
-    "name": "Fredy Bickel",
-    "position": "CAM",
-    "prime_rating": 84,
-    "career_years": "1935-1953",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
     "name": "Marcel Koller",
     "position": "CB",
     "prime_rating": 84,
@@ -1024,14 +984,6 @@
     "club": "grasshopper"
   },
   {
-    "name": "Vittorio Pozzo",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1905-1906",
-    "nationality": "Italy",
-    "club": "grasshopper"
-  },
-  {
     "name": "Caio",
     "position": "ST",
     "prime_rating": 76,
@@ -1224,14 +1176,6 @@
     "club": "lausanne"
   },
   {
-    "name": "Jacques Fatton",
-    "position": "LW",
-    "prime_rating": 78,
-    "career_years": "1958-1960",
-    "nationality": "Switzerland",
-    "club": "lausanne"
-  },
-  {
     "name": "D. Mesbah",
     "position": "LB",
     "prime_rating": 73,
@@ -1318,14 +1262,6 @@
     "nationality": "Costa Rica",
     "club": "lausanne",
     "career_years": "2021-2022"
-  },
-  {
-    "name": "Carlos Lavanchy",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1939-1948",
-    "nationality": "Switzerland",
-    "club": "lugano"
   },
   {
     "name": "Mattia Bottani",
@@ -1470,14 +1406,6 @@
     "nationality": "Hungary",
     "club": "lugano",
     "career_years": "2019-2020"
-  },
-  {
-    "name": "Sirio Vernati",
-    "position": "CB",
-    "prime_rating": 82,
-    "career_years": "1934-1943",
-    "nationality": "Switzerland",
-    "club": "luzern"
   },
   {
     "name": "Hakan Yakin",
@@ -2352,22 +2280,6 @@
     "club": "stgallen"
   },
   {
-    "name": "Charles Wittl",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1903-1910",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
-    "name": "Paul Friberg",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1944-1955",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
     "name": "Iván Zamorano",
     "position": "ST",
     "prime_rating": 78,
@@ -2816,14 +2728,6 @@
     "career_years": "2018-2019"
   },
   {
-    "name": "Eugen Meier",
-    "position": "ST",
-    "prime_rating": 84,
-    "career_years": "1953-1968",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
     "name": "Jakob Brechbühl",
     "position": "CB",
     "prime_rating": 84,
@@ -2840,22 +2744,6 @@
     "club": "youngboys"
   },
   {
-    "name": "Ernst Wechselberger",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1957-1965",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Heinz Schneiter",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1958-1969",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
     "name": "Urs Bamert",
     "position": "CB",
     "prime_rating": 82,
@@ -2864,34 +2752,10 @@
     "club": "youngboys"
   },
   {
-    "name": "Walter Eich",
-    "position": "GK",
-    "prime_rating": 82,
-    "career_years": "1955-1966",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Bert Theunissen",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1963-1966",
-    "nationality": "Netherlands",
-    "club": "youngboys"
-  },
-  {
     "name": "Stéphane Chapuisat",
     "position": "ST",
     "prime_rating": 80,
     "career_years": "2002-2005",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Walter Müller",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1967-1972",
     "nationality": "Switzerland",
     "club": "youngboys"
   },
@@ -3288,27 +3152,11 @@
     "club": "zurich"
   },
   {
-    "name": "Walter Bosshard",
-    "position": "CB",
-    "prime_rating": 84,
-    "career_years": "1932-1946",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
     "name": "Fritz Künzli",
     "position": "ST",
     "prime_rating": 82,
     "career_years": "1966-1976",
     "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Klaus Stürmer",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1959-1965",
-    "nationality": "Germany",
     "club": "zurich"
   },
   {
@@ -3392,27 +3240,11 @@
     "club": "zurich"
   },
   {
-    "name": "Peter Risi",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1970-1973",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
     "name": "Raimondo Ponte",
     "position": "CM",
     "prime_rating": 80,
     "career_years": "1985-1989",
     "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
-    "name": "Timo Konietzka",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1968-1971",
-    "nationality": "Germany",
     "club": "zurich"
   },
   {
@@ -3696,22 +3528,6 @@
     "club": "grasshopper"
   },
   {
-    "name": "Kurt Stettler",
-    "position": "GK",
-    "prime_rating": 80,
-    "career_years": "1962-1965",
-    "nationality": "Switzerland",
-    "club": "basel"
-  },
-  {
-    "name": "Jürgen Sundermann",
-    "position": "CM",
-    "prime_rating": 80,
-    "career_years": "1965-1970",
-    "nationality": "Germany",
-    "club": "basel"
-  },
-  {
     "name": "Maurizio Gaudino",
     "position": "CM",
     "prime_rating": 78,
@@ -3725,14 +3541,6 @@
     "prime_rating": 80,
     "career_years": "1997-2000",
     "nationality": "Germany",
-    "club": "basel"
-  },
-  {
-    "name": "René Bader",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1953-1955",
-    "nationality": "Switzerland",
     "club": "basel"
   },
   {
@@ -3944,22 +3752,6 @@
     "club": "youngboys"
   },
   {
-    "name": "André Daina",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "1969-1972",
-    "nationality": "Switzerland",
-    "club": "youngboys"
-  },
-  {
-    "name": "Hans Gamper",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1896-1897",
-    "nationality": "Switzerland",
-    "club": "zurich"
-  },
-  {
     "name": "Jakob Kuhn",
     "position": "CM",
     "prime_rating": 84,
@@ -4016,34 +3808,10 @@
     "club": "zurich"
   },
   {
-    "name": "André Abegglen",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1929-1935",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Max Abegglen",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1920-1929",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
     "name": "Martin Andermatt",
     "position": "CM",
     "prime_rating": 82,
     "career_years": "1980-1987",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Robert Ballaman",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1956-1965",
     "nationality": "Switzerland",
     "club": "grasshopper"
   },
@@ -4053,22 +3821,6 @@
     "prime_rating": 84,
     "career_years": "1972-1984",
     "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Rolf Blättler",
-    "position": "ST",
-    "prime_rating": 84,
-    "career_years": "1959-1973",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Branislav Vukosavljević",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1958-1965",
-    "nationality": "Yugoslavia",
     "club": "grasshopper"
   },
   {
@@ -4104,22 +3856,6 @@
     "club": "grasshopper"
   },
   {
-    "name": "Ico Hitrec",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1929-1934",
-    "nationality": "Yugoslavia",
-    "club": "grasshopper"
-  },
-  {
-    "name": "René Hüssy",
-    "position": "CM",
-    "prime_rating": 84,
-    "career_years": "1949-1962",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
     "name": "Charly In-Albon",
     "position": "CB",
     "prime_rating": 80,
@@ -4144,14 +3880,6 @@
     "club": "grasshopper"
   },
   {
-    "name": "Severino Minelli",
-    "position": "CB",
-    "prime_rating": 84,
-    "career_years": "1930-1944",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
     "name": "Dieter Müller",
     "position": "ST",
     "prime_rating": 78,
@@ -4160,35 +3888,11 @@
     "club": "grasshopper"
   },
   {
-    "name": "Sirio Vernati",
-    "position": "CB",
-    "prime_rating": 82,
-    "career_years": "1929-1937",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
     "name": "Richard Núñez",
     "position": "ST",
     "prime_rating": 80,
     "career_years": "2003-2006",
     "nationality": "Uruguay",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Kurt Rüegg",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1944-1955",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Hannes Schmidhauser",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1947-1955",
-    "nationality": "Switzerland",
     "club": "grasshopper"
   },
   {
@@ -4204,14 +3908,6 @@
     "position": "CB",
     "prime_rating": 80,
     "career_years": "1991-1996",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Roger Vonlanthen",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "1955-1957",
     "nationality": "Switzerland",
     "club": "grasshopper"
   },
@@ -4264,14 +3960,6 @@
     "club": "grasshopper"
   },
   {
-    "name": "Hans-Peter Friedländer",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1965-1970",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
     "name": "Ivo Frosio",
     "position": "CB",
     "prime_rating": 82,
@@ -4285,30 +3973,6 @@
     "prime_rating": 78,
     "career_years": "2003-2005",
     "nationality": "Romania",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Fritz Wagner",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1960-1965",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Maximilian Schell",
-    "position": "CM",
-    "prime_rating": 80,
-    "career_years": "1949-1954",
-    "nationality": "Switzerland",
-    "club": "grasshopper"
-  },
-  {
-    "name": "Walter Schoeller",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1945-1955",
-    "nationality": "Switzerland",
     "club": "grasshopper"
   },
   {
@@ -4416,14 +4080,6 @@
     "club": "sion"
   },
   {
-    "name": "Norbert Eschmann",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1962-1968",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
     "name": "Sébastien Fournier",
     "position": "CM",
     "prime_rating": 84,
@@ -4464,14 +4120,6 @@
     "club": "sion"
   },
   {
-    "name": "Fernand Luisier",
-    "position": "ST",
-    "prime_rating": 84,
-    "career_years": "1958-1972",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
     "name": "Olivier Monterrubio",
     "position": "LW",
     "prime_rating": 78,
@@ -4501,14 +4149,6 @@
     "prime_rating": 78,
     "career_years": "2004-2005",
     "nationality": "Portugal",
-    "club": "sion"
-  },
-  {
-    "name": "René-Pierre Quentin",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1962-1973",
-    "nationality": "Switzerland",
     "club": "sion"
   },
   {
@@ -4592,14 +4232,6 @@
     "club": "sion"
   },
   {
-    "name": "Pierre-Marie Pittier",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1965-1972",
-    "nationality": "Switzerland",
-    "club": "sion"
-  },
-  {
     "name": "Serge Trinchero",
     "position": "CB",
     "prime_rating": 82,
@@ -4656,82 +4288,10 @@
     "club": "sion"
   },
   {
-    "name": "Karl Rappan",
-    "position": "CM",
-    "prime_rating": 80,
-    "career_years": "1932-1935",
-    "nationality": "Austria",
-    "club": "servette"
-  },
-  {
-    "name": "André Abegglen",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1937-1941",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Georges Aeby",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1934-1942",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Ernest Lörtscher",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1934-1942",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Genia Walaschek",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1937-1948",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Albert Guinchard",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1933-1944",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Jacques Fatton",
-    "position": "ST",
-    "prime_rating": 84,
-    "career_years": "1946-1961",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Péter Pázmándy",
-    "position": "CM",
-    "prime_rating": 84,
-    "career_years": "1956-1969",
-    "nationality": "Hungary",
-    "club": "servette"
-  },
-  {
     "name": "Giuliano Robbiani",
     "position": "ST",
     "prime_rating": 82,
     "career_years": "1972-1980",
-    "nationality": "Switzerland",
-    "club": "servette"
-  },
-  {
-    "name": "Rolf Wüthrich",
-    "position": "CB",
-    "prime_rating": 82,
-    "career_years": "1962-1968",
     "nationality": "Switzerland",
     "club": "servette"
   },
@@ -5304,35 +4864,11 @@
     "club": "stgallen"
   },
   {
-    "name": "Leopold Kielholz",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1929-1935",
-    "nationality": "Switzerland",
-    "club": "stgallen"
-  },
-  {
     "name": "Phil Masinga",
     "position": "ST",
     "prime_rating": 78,
     "career_years": "2001-2003",
     "nationality": "South Africa",
-    "club": "stgallen"
-  },
-  {
-    "name": "Željko Perušić",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "1960-1964",
-    "nationality": "Croatia",
-    "club": "stgallen"
-  },
-  {
-    "name": "Friedrich Rafreider",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1948-1955",
-    "nationality": "Austria",
     "club": "stgallen"
   },
   {
@@ -5384,14 +4920,6 @@
     "club": "stgallen"
   },
   {
-    "name": "Jimmy Townley",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1923-1925",
-    "nationality": "England",
-    "club": "stgallen"
-  },
-  {
     "name": "Armin Veh",
     "position": "CM",
     "prime_rating": 78,
@@ -5405,14 +4933,6 @@
     "prime_rating": 78,
     "career_years": "1995-1996",
     "nationality": "Netherlands",
-    "club": "stgallen"
-  },
-  {
-    "name": "Ferdinand Wesely",
-    "position": "CM",
-    "prime_rating": 80,
-    "career_years": "1950-1955",
-    "nationality": "Austria",
     "club": "stgallen"
   },
   {
@@ -5454,22 +4974,6 @@
     "career_years": "2020-",
     "nationality": "Ghana",
     "club": "stgallen"
-  },
-  {
-    "name": "Max Abegglen",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1929-1932",
-    "nationality": "Switzerland",
-    "club": "lausanne"
-  },
-  {
-    "name": "Charles Antenen",
-    "position": "CM",
-    "prime_rating": 80,
-    "career_years": "1958-1962",
-    "nationality": "Switzerland",
-    "club": "lausanne"
   },
   {
     "name": "Giancarlo Antognoni",
@@ -5552,14 +5056,6 @@
     "club": "lausanne"
   },
   {
-    "name": "Roger Courtois",
-    "position": "ST",
-    "prime_rating": 82,
-    "career_years": "1933-1940",
-    "nationality": "Switzerland",
-    "club": "lausanne"
-  },
-  {
     "name": "Tomas Danilevičius",
     "position": "ST",
     "prime_rating": 78,
@@ -5592,14 +5088,6 @@
     "club": "lausanne"
   },
   {
-    "name": "André Grobéty",
-    "position": "CB",
-    "prime_rating": 84,
-    "career_years": "1953-1968",
-    "nationality": "Switzerland",
-    "club": "lausanne"
-  },
-  {
     "name": "Erich Hänzi",
     "position": "CM",
     "prime_rating": 80,
@@ -5612,14 +5100,6 @@
     "position": "CB",
     "prime_rating": 80,
     "career_years": "1985-1989",
-    "nationality": "Switzerland",
-    "club": "lausanne"
-  },
-  {
-    "name": "Robert Hosp",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1967-1972",
     "nationality": "Switzerland",
     "club": "lausanne"
   },
@@ -5640,34 +5120,10 @@
     "club": "lausanne"
   },
   {
-    "name": "Hans Kämpfer",
-    "position": "CB",
-    "prime_rating": 82,
-    "career_years": "1925-1936",
-    "nationality": "Switzerland",
-    "club": "lausanne"
-  },
-  {
     "name": "Fritz Künzli",
     "position": "ST",
     "prime_rating": 80,
     "career_years": "1974-1979",
-    "nationality": "Switzerland",
-    "club": "lausanne"
-  },
-  {
-    "name": "Jan Lála",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1969-1971",
-    "nationality": "Czechoslovakia",
-    "club": "lausanne"
-  },
-  {
-    "name": "Roger Mathis",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1959-1964",
     "nationality": "Switzerland",
     "club": "lausanne"
   },
@@ -5696,14 +5152,6 @@
     "club": "lausanne"
   },
   {
-    "name": "Richard Dürr",
-    "position": "CM",
-    "prime_rating": 84,
-    "career_years": "1958-1971",
-    "nationality": "Switzerland",
-    "club": "lausanne"
-  },
-  {
     "name": "Christophe Ohrel",
     "position": "CM",
     "prime_rating": 80,
@@ -5728,22 +5176,6 @@
     "club": "lausanne"
   },
   {
-    "name": "Heinz Schneiter",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1969-1971",
-    "nationality": "Switzerland",
-    "club": "lausanne"
-  },
-  {
-    "name": "Ely Tacchella",
-    "position": "CB",
-    "prime_rating": 82,
-    "career_years": "1958-1967",
-    "nationality": "Switzerland",
-    "club": "lausanne"
-  },
-  {
     "name": "Fabio Coltorti",
     "position": "GK",
     "prime_rating": 80,
@@ -5758,22 +5190,6 @@
     "career_years": "1990-1992",
     "nationality": "Switzerland",
     "club": "lausanne"
-  },
-  {
-    "name": "Heinrich Bachmann",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "1907-1909",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Robert Ballaman",
-    "position": "CB",
-    "prime_rating": 78,
-    "career_years": "1963-1964",
-    "nationality": "Switzerland",
-    "club": "winterthur"
   },
   {
     "name": "Patrick Bengondo",
@@ -5792,50 +5208,10 @@
     "club": "winterthur"
   },
   {
-    "name": "Bruno Brizzi",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1955-1959",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Herbert Dimmeler",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1964-1972",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Karl Elsener",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1953-1954, 1959-1961",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
     "name": "Pius Fischbach",
     "position": "ST",
     "prime_rating": 78,
     "career_years": "1973-1975",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Ugo Fontana",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1919-1922",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Gustav Gottenkieny",
-    "position": "ST",
-    "prime_rating": 84,
-    "career_years": "1906-1913, 1918-1920",
     "nationality": "Switzerland",
     "club": "winterthur"
   },
@@ -5872,46 +5248,6 @@
     "club": "winterthur"
   },
   {
-    "name": "Jean Kempf",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "1918-1920",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Karl Koblet",
-    "position": "ST",
-    "prime_rating": 84,
-    "career_years": "1912, 1916-1926",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Harry Koch",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1959-1963",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Timo Konietzka",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1967-1971",
-    "nationality": "Germany",
-    "club": "winterthur"
-  },
-  {
-    "name": "Karl Kuhn",
-    "position": "CM",
-    "prime_rating": 80,
-    "career_years": "1916-1919",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
     "name": "Hans Küng",
     "position": "ST",
     "prime_rating": 82,
@@ -5944,22 +5280,6 @@
     "club": "winterthur"
   },
   {
-    "name": "Bora Milutinović",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1966-1967",
-    "nationality": "Serbia",
-    "club": "winterthur"
-  },
-  {
-    "name": "Heinrich Müller",
-    "position": "ST",
-    "prime_rating": 84,
-    "career_years": "1904-1911, 1912-1917",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
     "name": "Eigil Nielsen",
     "position": "ST",
     "prime_rating": 80,
@@ -5984,26 +5304,10 @@
     "club": "winterthur"
   },
   {
-    "name": "Aldo Pastega",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1950-1954",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
     "name": "Patrik Ramsauer",
     "position": "CM",
     "prime_rating": 84,
     "career_years": "1989-1995, 1996-2002",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Jacques Reich",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "1905-1910",
     "nationality": "Switzerland",
     "club": "winterthur"
   },
@@ -6040,50 +5344,10 @@
     "club": "winterthur"
   },
   {
-    "name": "Ernst Rutschmann",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1967-1971",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Kurt Scheller",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1949-1954, 1959-1960",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Klaus Stürmer",
-    "position": "ST",
-    "prime_rating": 78,
-    "career_years": "1969-1971",
-    "nationality": "Germany",
-    "club": "winterthur"
-  },
-  {
-    "name": "Branislav Vukosavljević",
-    "position": "CM",
-    "prime_rating": 78,
-    "career_years": "1958-1960",
-    "nationality": "Yugoslavia",
-    "club": "winterthur"
-  },
-  {
     "name": "Roger Wehrli",
     "position": "CM",
     "prime_rating": 78,
     "career_years": "1975-1977",
-    "nationality": "Switzerland",
-    "club": "winterthur"
-  },
-  {
-    "name": "Hilmar Zigerlig",
-    "position": "CM",
-    "prime_rating": 82,
-    "career_years": "1966-1972",
     "nationality": "Switzerland",
     "club": "winterthur"
   },
@@ -6492,14 +5756,6 @@
     "position": "CB",
     "prime_rating": 82,
     "career_years": "1985-1990, 1995-1996",
-    "nationality": "Switzerland",
-    "club": "aarau"
-  },
-  {
-    "name": "Alfred Herberth",
-    "position": "ST",
-    "prime_rating": 80,
-    "career_years": "1939-1944",
     "nationality": "Switzerland",
     "club": "aarau"
   },
