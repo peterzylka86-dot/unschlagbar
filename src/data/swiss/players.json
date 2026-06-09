@@ -13,7 +13,8 @@
     "prime_rating": 80,
     "career_years": "1988-1991",
     "nationality": "Switzerland",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Alexander Frei",
@@ -21,7 +22,8 @@
     "prime_rating": 84,
     "career_years": "1997-1998, 2009-2013",
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Benjamin Huggel",
@@ -29,7 +31,8 @@
     "prime_rating": 84,
     "career_years": "1998-2005, 2007-2012",
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Erni Maissen",
@@ -37,7 +40,8 @@
     "prime_rating": 84,
     "career_years": "1975-1991",
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Fabian Frei",
@@ -45,7 +49,8 @@
     "prime_rating": 84,
     "career_years": "2007-2015, 2018-2024",
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Jörg Stohler",
@@ -53,7 +58,8 @@
     "prime_rating": 84,
     "career_years": "1970-1984",
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Karl Odermatt",
@@ -61,7 +67,8 @@
     "prime_rating": 84,
     "career_years": "1963-1976",
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Marco Streller",
@@ -69,7 +76,8 @@
     "prime_rating": 84,
     "career_years": "2000-2004, 2007-2015",
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Massimo Ceccaroni",
@@ -77,7 +85,8 @@
     "prime_rating": 84,
     "career_years": "1987-2002",
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Otto Demarmels",
@@ -85,7 +94,8 @@
     "prime_rating": 84,
     "career_years": "1967-1982",
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Peter Ramseier",
@@ -93,7 +103,8 @@
     "prime_rating": 84,
     "career_years": "1966-1978",
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Taulant Xhaka",
@@ -101,7 +112,8 @@
     "prime_rating": 84,
     "career_years": "2012-2025",
     "nationality": "Albania",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Valentin Stocker",
@@ -109,7 +121,8 @@
     "prime_rating": 84,
     "career_years": "2007-2014, 2018-2022",
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Xherdan Shaqiri",
@@ -117,7 +130,8 @@
     "prime_rating": 84,
     "career_years": "2009-2012, 2024-present",
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Helmut Benthaus",
@@ -125,7 +139,8 @@
     "prime_rating": 82,
     "career_years": "1965-1975",
     "nationality": "Germany",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Ivan Ergić",
@@ -133,7 +148,8 @@
     "prime_rating": 82,
     "career_years": "2002-2009",
     "nationality": "Serbia",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Scott Chipperfield",
@@ -141,7 +157,8 @@
     "prime_rating": 82,
     "career_years": "2001-2012",
     "nationality": "Australia",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Christian Giménez",
@@ -165,7 +182,8 @@
     "prime_rating": 80,
     "career_years": "2007-2010",
     "nationality": "Argentina",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "S. Doumbia",
@@ -637,7 +655,8 @@
     "prime_rating": 84,
     "career_years": "1988-1990, 2002-2004",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Marcel Koller",
@@ -645,7 +664,8 @@
     "prime_rating": 84,
     "career_years": "1983-1997",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Patrick Müller",
@@ -661,7 +681,8 @@
     "prime_rating": 84,
     "career_years": "1999-2005, 2010-2012",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Thomas Bickel",
@@ -669,7 +690,8 @@
     "prime_rating": 84,
     "career_years": "1980-1989, 1996-1999",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Boris Smiljanić",
@@ -677,7 +699,8 @@
     "prime_rating": 82,
     "career_years": "1996-2004",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Christian Gross",
@@ -685,7 +708,8 @@
     "prime_rating": 82,
     "career_years": "1979-1981, 1986-1988",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Claudio Sulser",
@@ -693,7 +717,8 @@
     "prime_rating": 82,
     "career_years": "1976-1984",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Hakan Yakin",
@@ -701,7 +726,8 @@
     "prime_rating": 82,
     "career_years": "1995-2000, 2003-2005",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Johann Vogel",
@@ -717,7 +743,8 @@
     "prime_rating": 82,
     "career_years": "1994-2000",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Patrick De Napoli",
@@ -725,7 +752,8 @@
     "prime_rating": 82,
     "career_years": "1989-1995",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Raimondo Ponte",
@@ -733,7 +761,8 @@
     "prime_rating": 82,
     "career_years": "1979-1985",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Alain Sutter",
@@ -741,7 +770,8 @@
     "prime_rating": 80,
     "career_years": "1986-1991",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Bernt Haas",
@@ -749,7 +779,8 @@
     "prime_rating": 80,
     "career_years": "1996-2001",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Christoph Spycher",
@@ -757,7 +788,8 @@
     "prime_rating": 80,
     "career_years": "2000-2005",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Diego Benaglio",
@@ -765,7 +797,8 @@
     "prime_rating": 80,
     "career_years": "2002-2005",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Izet Hajrović",
@@ -773,7 +806,8 @@
     "prime_rating": 80,
     "career_years": "2009-2013",
     "nationality": "Bosnia and Herzegovina",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Kurt Jara",
@@ -781,7 +815,8 @@
     "prime_rating": 80,
     "career_years": "1980-1983",
     "nationality": "Austria",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Mats Gren",
@@ -789,7 +824,8 @@
     "prime_rating": 80,
     "career_years": "1989-1993",
     "nationality": "Sweden",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Ove Grahn",
@@ -797,7 +833,8 @@
     "prime_rating": 80,
     "career_years": "1971-1975",
     "nationality": "Sweden",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Pajtim Kasami",
@@ -805,7 +842,8 @@
     "prime_rating": 80,
     "career_years": "2008-2011",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Reto Ziegler",
@@ -813,7 +851,8 @@
     "prime_rating": 80,
     "career_years": "2002-2005",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Roman Bürki",
@@ -821,7 +860,8 @@
     "prime_rating": 80,
     "career_years": "2010-2014",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Stephan Lichtsteiner",
@@ -829,7 +869,8 @@
     "prime_rating": 80,
     "career_years": "2002-2005",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Stéphane Grichting",
@@ -837,7 +878,8 @@
     "prime_rating": 80,
     "career_years": "1998-2003",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Wynton Rufer",
@@ -845,7 +887,8 @@
     "prime_rating": 80,
     "career_years": "1985-1988",
     "nationality": "New Zealand",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Blaise Nkufo",
@@ -1269,7 +1312,8 @@
     "prime_rating": 82,
     "career_years": "2014-2022",
     "nationality": "Switzerland",
-    "club": "lugano"
+    "club": "lugano",
+    "verified": true
   },
   {
     "name": "A. Gerndt",
@@ -1413,7 +1457,8 @@
     "prime_rating": 80,
     "career_years": "2008-2012",
     "nationality": "Switzerland",
-    "club": "luzern"
+    "club": "luzern",
+    "verified": true
   },
   {
     "name": "Jürgen Mohr",
@@ -1421,7 +1466,8 @@
     "prime_rating": 80,
     "career_years": "1986-1990",
     "nationality": "Germany",
-    "club": "luzern"
+    "club": "luzern",
+    "verified": true
   },
   {
     "name": "Adrian Knup",
@@ -1629,7 +1675,8 @@
     "prime_rating": 84,
     "career_years": "2010-2013, 2022-2024",
     "nationality": "Switzerland",
-    "club": "servette"
+    "club": "servette",
+    "verified": true
   },
   {
     "name": "Jean-Philippe Karlen",
@@ -1645,7 +1692,8 @@
     "prime_rating": 82,
     "career_years": "1985-1995",
     "nationality": "Switzerland",
-    "club": "servette"
+    "club": "servette",
+    "verified": true
   },
   {
     "name": "Anthony Sauthier",
@@ -1653,7 +1701,8 @@
     "prime_rating": 82,
     "career_years": "2014-2024",
     "nationality": "Switzerland",
-    "club": "servette"
+    "club": "servette",
+    "verified": true
   },
   {
     "name": "Lucien Favre",
@@ -1661,7 +1710,8 @@
     "prime_rating": 82,
     "career_years": "1981-1983, 1991",
     "nationality": "Switzerland",
-    "club": "servette"
+    "club": "servette",
+    "verified": true
   },
   {
     "name": "Alexander Frei",
@@ -1669,7 +1719,8 @@
     "prime_rating": 80,
     "career_years": "1998-2003",
     "nationality": "Switzerland",
-    "club": "servette"
+    "club": "servette",
+    "verified": true
   },
   {
     "name": "David Sesa",
@@ -1677,7 +1728,8 @@
     "prime_rating": 80,
     "career_years": "1992-1996",
     "nationality": "Switzerland",
-    "club": "servette"
+    "club": "servette",
+    "verified": true
   },
   {
     "name": "Kastriot Imeri",
@@ -1685,7 +1737,8 @@
     "prime_rating": 80,
     "career_years": "2018-2022",
     "nationality": "Switzerland",
-    "club": "servette"
+    "club": "servette",
+    "verified": true
   },
   {
     "name": "Marco Grassi",
@@ -1693,7 +1746,8 @@
     "prime_rating": 80,
     "career_years": "1991-1995",
     "nationality": "Switzerland",
-    "club": "servette"
+    "club": "servette",
+    "verified": true
   },
   {
     "name": "Oliver Neuville",
@@ -1701,7 +1755,8 @@
     "prime_rating": 80,
     "career_years": "1996-1999",
     "nationality": "Germany",
-    "club": "servette"
+    "club": "servette",
+    "verified": true
   },
   {
     "name": "Stéphane Henchoz",
@@ -1925,7 +1980,8 @@
     "prime_rating": 82,
     "career_years": "2003-2014",
     "nationality": "Switzerland",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "G. Gattuso",
@@ -2277,7 +2333,8 @@
     "prime_rating": 84,
     "career_years": "1994-2001, 2003-2010",
     "nationality": "Switzerland",
-    "club": "stgallen"
+    "club": "stgallen",
+    "verified": true
   },
   {
     "name": "Iván Zamorano",
@@ -2533,7 +2590,8 @@
     "prime_rating": 80,
     "career_years": "2003-2007",
     "nationality": "Switzerland",
-    "club": "winterthur"
+    "club": "winterthur",
+    "verified": true
   },
   {
     "name": "Andy Egli",
@@ -2541,7 +2599,8 @@
     "prime_rating": 84,
     "career_years": "1979-1983, 1991-1994",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Karl Engel",
@@ -2557,7 +2616,8 @@
     "prime_rating": 82,
     "career_years": "1983-1991",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Robert Lüthi",
@@ -2565,7 +2625,8 @@
     "prime_rating": 82,
     "career_years": "1981-1989",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Don Givens",
@@ -2573,7 +2634,8 @@
     "prime_rating": 80,
     "career_years": "1981-1984",
     "nationality": "Ireland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Heinz Hermann",
@@ -2581,7 +2643,8 @@
     "prime_rating": 80,
     "career_years": "1979-1984",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Mario Gavranović",
@@ -2589,7 +2652,8 @@
     "prime_rating": 80,
     "career_years": "2007-2010",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Stéphane Henchoz",
@@ -2597,7 +2661,8 @@
     "prime_rating": 80,
     "career_years": "1992-1995",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Trifon Ivanov",
@@ -2605,7 +2670,8 @@
     "prime_rating": 80,
     "career_years": "1992-1995",
     "nationality": "Bulgaria",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Uli Stielike",
@@ -2613,7 +2679,8 @@
     "prime_rating": 80,
     "career_years": "1985-1988",
     "nationality": "Germany",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Brown Ideye",
@@ -2733,7 +2800,8 @@
     "prime_rating": 84,
     "career_years": "1965-1977",
     "nationality": "Switzerland",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Dario Zuffi",
@@ -2741,7 +2809,8 @@
     "prime_rating": 82,
     "career_years": "1984-1991",
     "nationality": "Switzerland",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Urs Bamert",
@@ -2749,7 +2818,8 @@
     "prime_rating": 82,
     "career_years": "1981-1989",
     "nationality": "Switzerland",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Stéphane Chapuisat",
@@ -2757,7 +2827,8 @@
     "prime_rating": 80,
     "career_years": "2002-2005",
     "nationality": "Switzerland",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Dieter Brenninger",
@@ -3109,7 +3180,8 @@
     "prime_rating": 84,
     "career_years": "2005-2009, 2017-2018",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Blerim Džemaili",
@@ -3117,7 +3189,8 @@
     "prime_rating": 84,
     "career_years": "2003-2007, 2018-2021",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Daniel Gygax",
@@ -3125,7 +3198,8 @@
     "prime_rating": 84,
     "career_years": "2001-2005, 2011-2014",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Karl Grob",
@@ -3133,7 +3207,8 @@
     "prime_rating": 84,
     "career_years": "1968-1983",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Köbi Kuhn",
@@ -3141,7 +3216,8 @@
     "prime_rating": 84,
     "career_years": "1962-1977",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "René Botteron",
@@ -3149,7 +3225,8 @@
     "prime_rating": 84,
     "career_years": "1972-1979, 1982-1985",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Fritz Künzli",
@@ -3157,7 +3234,8 @@
     "prime_rating": 82,
     "career_years": "1966-1976",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Rosario Martinelli",
@@ -3165,7 +3243,8 @@
     "prime_rating": 82,
     "career_years": "1968-1977",
     "nationality": "Italy",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Werner Leimgruber",
@@ -3173,7 +3252,8 @@
     "prime_rating": 82,
     "career_years": "1970-1979",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Alhassane Keita",
@@ -3181,7 +3261,8 @@
     "prime_rating": 80,
     "career_years": "2007-2010",
     "nationality": "Guinea",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Daniel Jeandupeux",
@@ -3189,7 +3270,8 @@
     "prime_rating": 80,
     "career_years": "1976-1980",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Frédéric Chassot",
@@ -3197,7 +3279,8 @@
     "prime_rating": 80,
     "career_years": "1997-2000",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Hannu Tihinen",
@@ -3205,7 +3288,8 @@
     "prime_rating": 80,
     "career_years": "2005-2010",
     "nationality": "Finland",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Ike Shorunmu",
@@ -3213,7 +3297,8 @@
     "prime_rating": 80,
     "career_years": "1998-2002",
     "nationality": "Nigeria",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Josip Drmić",
@@ -3221,7 +3306,8 @@
     "prime_rating": 80,
     "career_years": "2010-2013",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Jurica Jerković",
@@ -3229,7 +3315,8 @@
     "prime_rating": 80,
     "career_years": "1979-1982",
     "nationality": "Yugoslavia",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Lucien Favre",
@@ -3237,7 +3324,8 @@
     "prime_rating": 80,
     "career_years": "1991-1995",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Raimondo Ponte",
@@ -3245,7 +3333,8 @@
     "prime_rating": 80,
     "career_years": "1985-1989",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Urs Fischer",
@@ -3461,7 +3550,8 @@
     "prime_rating": 86,
     "career_years": "2010-2014",
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Granit Xhaka",
@@ -3469,7 +3559,8 @@
     "prime_rating": 86,
     "career_years": "2010-2012",
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Manuel Akanji",
@@ -3477,7 +3568,8 @@
     "prime_rating": 85,
     "career_years": "2015-2018",
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Breel Embolo",
@@ -3485,7 +3577,8 @@
     "prime_rating": 84,
     "career_years": "2014-2016",
     "nationality": "Switzerland",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Mladen Petric",
@@ -3493,7 +3586,8 @@
     "prime_rating": 85,
     "career_years": "2004-2006",
     "nationality": "Croatia",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Hakan Yakin",
@@ -3501,7 +3595,8 @@
     "prime_rating": 85,
     "career_years": "2008-2010",
     "nationality": "Switzerland",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Roberto Di Matteo",
@@ -3525,7 +3620,8 @@
     "prime_rating": 84,
     "career_years": "2008-2010",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Maurizio Gaudino",
@@ -3541,7 +3637,8 @@
     "prime_rating": 80,
     "career_years": "1997-2000",
     "nationality": "Germany",
-    "club": "basel"
+    "club": "basel",
+    "verified": true
   },
   {
     "name": "Seydou Doumbia",
@@ -3557,7 +3654,8 @@
     "prime_rating": 82,
     "career_years": "2017-2021, 2022-2023",
     "nationality": "Cameroon",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Guillaume Hoarau",
@@ -3565,7 +3663,8 @@
     "prime_rating": 82,
     "career_years": "2014-2020",
     "nationality": "France",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Michel Aebischer",
@@ -3573,7 +3672,8 @@
     "prime_rating": 80,
     "career_years": "2017-2022",
     "nationality": "Switzerland",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Steve von Bergen",
@@ -3581,7 +3681,8 @@
     "prime_rating": 82,
     "career_years": "2012-2019",
     "nationality": "Switzerland",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Raúl Bobadilla",
@@ -3597,7 +3698,8 @@
     "prime_rating": 80,
     "career_years": "2008-2011",
     "nationality": "Bosnia and Herzegovina",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Loris Benito",
@@ -3605,7 +3707,8 @@
     "prime_rating": 80,
     "career_years": "2016-2019",
     "nationality": "Switzerland",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Christian Fassnacht",
@@ -3613,7 +3716,8 @@
     "prime_rating": 82,
     "career_years": "2017-2023",
     "nationality": "Switzerland",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Silvan Hefti",
@@ -3645,7 +3749,8 @@
     "prime_rating": 80,
     "career_years": "2019-2022",
     "nationality": "Switzerland",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Mauro Lustrinelli",
@@ -3669,7 +3774,8 @@
     "prime_rating": 80,
     "career_years": "2017-2020",
     "nationality": "Switzerland",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Ulisses Garcia",
@@ -3677,7 +3783,8 @@
     "prime_rating": 82,
     "career_years": "2018-2024",
     "nationality": "Switzerland",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Emmanuel Mayuka",
@@ -3693,7 +3800,8 @@
     "prime_rating": 80,
     "career_years": "2017-2020",
     "nationality": "Ivory Coast",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Meschack Elia",
@@ -3709,7 +3817,8 @@
     "prime_rating": 80,
     "career_years": "1986-1990",
     "nationality": "Switzerland",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Lars Bohinen",
@@ -3733,7 +3842,8 @@
     "prime_rating": 80,
     "career_years": "2003-2006",
     "nationality": "Finland",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Hans Holmqvist",
@@ -3741,7 +3851,8 @@
     "prime_rating": 80,
     "career_years": "1985-1988",
     "nationality": "Sweden",
-    "club": "youngboys"
+    "club": "youngboys",
+    "verified": true
   },
   {
     "name": "Maurizio Jacobacci",
@@ -3757,7 +3868,8 @@
     "prime_rating": 84,
     "career_years": "1961-1977",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Gökhan Inler",
@@ -3789,7 +3901,8 @@
     "prime_rating": 80,
     "career_years": "1976-1979",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "zurich",
+    "verified": true
   },
   {
     "name": "Abédi Pelé",
@@ -3813,7 +3926,8 @@
     "prime_rating": 82,
     "career_years": "1980-1987",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Roger Berbig",
@@ -3821,7 +3935,8 @@
     "prime_rating": 84,
     "career_years": "1972-1984",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "René Deck",
@@ -3829,7 +3944,8 @@
     "prime_rating": 80,
     "career_years": "1985-1989",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Ruedi Elsener",
@@ -3837,7 +3953,8 @@
     "prime_rating": 82,
     "career_years": "1973-1982",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Heinz Hermann",
@@ -3845,7 +3962,8 @@
     "prime_rating": 84,
     "career_years": "1981-1988, 1995-1996",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Jonny Hey",
@@ -3853,7 +3971,8 @@
     "prime_rating": 82,
     "career_years": "1976-1984",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Charly In-Albon",
@@ -3861,7 +3980,8 @@
     "prime_rating": 80,
     "career_years": "1986-1990",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Giovane Élber",
@@ -3877,7 +3997,8 @@
     "prime_rating": 80,
     "career_years": "1985-1990",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Dieter Müller",
@@ -3893,7 +4014,8 @@
     "prime_rating": 80,
     "career_years": "2003-2006",
     "nationality": "Uruguay",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Kubilay Türkyılmaz",
@@ -3901,7 +4023,8 @@
     "prime_rating": 80,
     "career_years": "1995-1998",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Ramon Vega",
@@ -3909,7 +4032,8 @@
     "prime_rating": 80,
     "career_years": "1991-1996",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Martin Brunner",
@@ -3917,7 +4041,8 @@
     "prime_rating": 82,
     "career_years": "1980-1990",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Nestor Subiat",
@@ -3925,7 +4050,8 @@
     "prime_rating": 80,
     "career_years": "1996-1999",
     "nationality": "Argentina",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Mladen Petrić",
@@ -3933,7 +4059,8 @@
     "prime_rating": 80,
     "career_years": "2001-2005",
     "nationality": "Croatia",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Steven Zuber",
@@ -3941,7 +4068,8 @@
     "prime_rating": 80,
     "career_years": "2011-2014",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Andy Egli",
@@ -3965,7 +4093,8 @@
     "prime_rating": 82,
     "career_years": "1985-1992",
     "nationality": "Switzerland",
-    "club": "grasshopper"
+    "club": "grasshopper",
+    "verified": true
   },
   {
     "name": "Mihai Tararache",
@@ -3997,7 +4126,8 @@
     "prime_rating": 80,
     "career_years": "1990-1994",
     "nationality": "Bosnia and Herzegovina",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Umberto Barberis",
@@ -4005,7 +4135,8 @@
     "prime_rating": 80,
     "career_years": "1981-1984",
     "nationality": "Switzerland",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Valon Behrami",
@@ -4021,7 +4152,8 @@
     "prime_rating": 82,
     "career_years": "1986-1997",
     "nationality": "Switzerland",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Aziz Bouderbala",
@@ -4029,7 +4161,8 @@
     "prime_rating": 80,
     "career_years": "1986-1990",
     "nationality": "Morocco",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Georges Bregy",
@@ -4037,7 +4170,8 @@
     "prime_rating": 80,
     "career_years": "1991-1995",
     "nationality": "Switzerland",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Jean-Paul Brigger",
@@ -4045,7 +4179,8 @@
     "prime_rating": 84,
     "career_years": "1976-1989",
     "nationality": "Switzerland",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Gabriel Calderón",
@@ -4069,7 +4204,8 @@
     "prime_rating": 82,
     "career_years": "1980-1989",
     "nationality": "Switzerland",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Néstor Clausen",
@@ -4077,7 +4213,8 @@
     "prime_rating": 80,
     "career_years": "1989-1994",
     "nationality": "Argentina",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Sébastien Fournier",
@@ -4085,7 +4222,8 @@
     "prime_rating": 84,
     "career_years": "1989-1993, 1998-2001",
     "nationality": "Switzerland",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Alain Gaspoz",
@@ -4093,7 +4231,8 @@
     "prime_rating": 80,
     "career_years": "1990-1994",
     "nationality": "Switzerland",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Alain Geiger",
@@ -4101,7 +4240,8 @@
     "prime_rating": 84,
     "career_years": "1979-1986, 1995-1998",
     "nationality": "Switzerland",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Charly In-Albon",
@@ -4109,7 +4249,8 @@
     "prime_rating": 82,
     "career_years": "1979-1986",
     "nationality": "Switzerland",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Stephan Lehmann",
@@ -4133,7 +4274,8 @@
     "prime_rating": 80,
     "career_years": "1996-2001",
     "nationality": "Switzerland",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Blaise Piffaretti",
@@ -4141,7 +4283,8 @@
     "prime_rating": 84,
     "career_years": "1987-2000",
     "nationality": "Switzerland",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "João Pinto",
@@ -4157,7 +4300,8 @@
     "prime_rating": 84,
     "career_years": "1985-2000",
     "nationality": "Switzerland",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Alberto Regazzoni",
@@ -4165,7 +4309,8 @@
     "prime_rating": 80,
     "career_years": "2008-2011",
     "nationality": "Switzerland",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Alexandre Rey",
@@ -4181,7 +4326,8 @@
     "prime_rating": 80,
     "career_years": "2005-2010",
     "nationality": "Costa Rica",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Patrick Sylvestre",
@@ -4189,7 +4335,8 @@
     "prime_rating": 80,
     "career_years": "1994-1997",
     "nationality": "Switzerland",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Raphael Wicky",
@@ -4213,7 +4360,8 @@
     "prime_rating": 82,
     "career_years": "2001-2009",
     "nationality": "Serbia",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Emile Mpenza",
@@ -4229,7 +4377,8 @@
     "prime_rating": 82,
     "career_years": "2009-2012, 2018-2019",
     "nationality": "Switzerland",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Serge Trinchero",
@@ -4245,7 +4394,8 @@
     "prime_rating": 80,
     "career_years": "2004-2007",
     "nationality": "Burkina Faso",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "Michel Sauthier",
@@ -4253,7 +4403,8 @@
     "prime_rating": 82,
     "career_years": "2003-2014",
     "nationality": "Switzerland",
-    "club": "sion"
+    "club": "sion",
+    "verified": true
   },
   {
     "name": "George Ogăraru",
@@ -4293,7 +4444,8 @@
     "prime_rating": 82,
     "career_years": "1972-1980",
     "nationality": "Switzerland",
-    "club": "servette"
+    "club": "servette",
+    "verified": true
   },
   {
     "name": "Umberto Barberis",
@@ -4301,7 +4453,8 @@
     "prime_rating": 82,
     "career_years": "1978-1980, 1984-1985",
     "nationality": "Switzerland",
-    "club": "servette"
+    "club": "servette",
+    "verified": true
   },
   {
     "name": "Piet Hamberg",
@@ -4309,7 +4462,8 @@
     "prime_rating": 80,
     "career_years": "1970-1975",
     "nationality": "Netherlands",
-    "club": "servette"
+    "club": "servette",
+    "verified": true
   },
   {
     "name": "Michel Decastel",
@@ -4317,7 +4471,8 @@
     "prime_rating": 82,
     "career_years": "1977-1985",
     "nationality": "Switzerland",
-    "club": "servette"
+    "club": "servette",
+    "verified": true
   },
   {
     "name": "Erich Burgener",
@@ -4325,7 +4480,8 @@
     "prime_rating": 80,
     "career_years": "1981-1985",
     "nationality": "Switzerland",
-    "club": "servette"
+    "club": "servette",
+    "verified": true
   },
   {
     "name": "Guy Mathez",
@@ -4333,7 +4489,8 @@
     "prime_rating": 82,
     "career_years": "1973-1979",
     "nationality": "Switzerland",
-    "club": "servette"
+    "club": "servette",
+    "verified": true
   },
   {
     "name": "Marc Schnyder",
@@ -4349,7 +4506,8 @@
     "prime_rating": 80,
     "career_years": "1985-1988",
     "nationality": "North Macedonia",
-    "club": "servette"
+    "club": "servette",
+    "verified": true
   },
   {
     "name": "Gérard Castella",
@@ -4357,7 +4515,8 @@
     "prime_rating": 82,
     "career_years": "1972-1980",
     "nationality": "Switzerland",
-    "club": "servette"
+    "club": "servette",
+    "verified": true
   },
   {
     "name": "Eric Pédat",
@@ -4389,7 +4548,8 @@
     "prime_rating": 82,
     "career_years": "1997-2005",
     "nationality": "Switzerland",
-    "club": "servette"
+    "club": "servette",
+    "verified": true
   },
   {
     "name": "Johan Vonlanthen",
@@ -4413,7 +4573,8 @@
     "prime_rating": 82,
     "career_years": "1990-1997",
     "nationality": "Switzerland",
-    "club": "luzern"
+    "club": "luzern",
+    "verified": true
   },
   {
     "name": "Remo Freuler",
@@ -4429,7 +4590,8 @@
     "prime_rating": 80,
     "career_years": "2012-2016",
     "nationality": "Paraguay",
-    "club": "luzern"
+    "club": "luzern",
+    "verified": true
   },
   {
     "name": "Stephan Lichtsteiner",
@@ -4461,7 +4623,8 @@
     "prime_rating": 80,
     "career_years": "2008-2013",
     "nationality": "Switzerland",
-    "club": "luzern"
+    "club": "luzern",
+    "verified": true
   },
   {
     "name": "Adrian Winter",
@@ -4469,7 +4632,8 @@
     "prime_rating": 80,
     "career_years": "2009-2014",
     "nationality": "Switzerland",
-    "club": "luzern"
+    "club": "luzern",
+    "verified": true
   },
   {
     "name": "Pascal Loretz",
@@ -4533,7 +4697,8 @@
     "prime_rating": 80,
     "career_years": "2018-2022",
     "nationality": "Switzerland",
-    "club": "lugano"
+    "club": "lugano",
+    "verified": true
   },
   {
     "name": "Gaetano Berardi",
@@ -4541,7 +4706,8 @@
     "prime_rating": 84,
     "career_years": "2008-2010, 2022-2023",
     "nationality": "Switzerland",
-    "club": "lugano"
+    "club": "lugano",
+    "verified": true
   },
   {
     "name": "Kubilay Türkyılmaz",
@@ -4549,7 +4715,8 @@
     "prime_rating": 82,
     "career_years": "1992-1994, 1998-2001",
     "nationality": "Switzerland",
-    "club": "lugano"
+    "club": "lugano",
+    "verified": true
   },
   {
     "name": "Ludovic Magnin",
@@ -4557,7 +4724,8 @@
     "prime_rating": 80,
     "career_years": "1998-2001",
     "nationality": "Switzerland",
-    "club": "lugano"
+    "club": "lugano",
+    "verified": true
   },
   {
     "name": "Mohamed Kallon",
@@ -4581,7 +4749,8 @@
     "prime_rating": 82,
     "career_years": "2015-2017, 2024-",
     "nationality": "North Macedonia",
-    "club": "lugano"
+    "club": "lugano",
+    "verified": true
   },
   {
     "name": "Julio Hernán Rossi",
@@ -4645,7 +4814,8 @@
     "prime_rating": 80,
     "career_years": "1972-1975",
     "nationality": "Germany",
-    "club": "lugano"
+    "club": "lugano",
+    "verified": true
   },
   {
     "name": "Ronnie O'Brien",
@@ -4677,7 +4847,8 @@
     "prime_rating": 80,
     "career_years": "1996-1999",
     "nationality": "Switzerland",
-    "club": "lugano"
+    "club": "lugano",
+    "verified": true
   },
   {
     "name": "Renato Bizzozzero",
@@ -4685,7 +4856,8 @@
     "prime_rating": 82,
     "career_years": "1985-1995",
     "nationality": "Switzerland",
-    "club": "lugano"
+    "club": "lugano",
+    "verified": true
   },
   {
     "name": "Eugenio Corrodi",
@@ -4693,7 +4865,8 @@
     "prime_rating": 80,
     "career_years": "1980-1985",
     "nationality": "Switzerland",
-    "club": "lugano"
+    "club": "lugano",
+    "verified": true
   },
   {
     "name": "Christian Gross",
@@ -4709,7 +4882,8 @@
     "prime_rating": 82,
     "career_years": "1969-1980",
     "nationality": "Switzerland",
-    "club": "lugano"
+    "club": "lugano",
+    "verified": true
   },
   {
     "name": "Claudio Sulser",
@@ -4717,7 +4891,8 @@
     "prime_rating": 80,
     "career_years": "1985-1990",
     "nationality": "Switzerland",
-    "club": "lugano"
+    "club": "lugano",
+    "verified": true
   },
   {
     "name": "Dario Zuffi",
@@ -4725,7 +4900,8 @@
     "prime_rating": 80,
     "career_years": "1990-1993",
     "nationality": "Switzerland",
-    "club": "lugano"
+    "club": "lugano",
+    "verified": true
   },
   {
     "name": "Nestor Subiat",
@@ -4733,7 +4909,8 @@
     "prime_rating": 80,
     "career_years": "1991-1995",
     "nationality": "Argentina",
-    "club": "lugano"
+    "club": "lugano",
+    "verified": true
   },
   {
     "name": "Mohamed Kader",
@@ -4757,7 +4934,8 @@
     "prime_rating": 80,
     "career_years": "1985-1988",
     "nationality": "Netherlands",
-    "club": "lugano"
+    "club": "lugano",
+    "verified": true
   },
   {
     "name": "Renato Steffen",
@@ -4781,7 +4959,8 @@
     "prime_rating": 80,
     "career_years": "1999-2002",
     "nationality": "Ghana",
-    "club": "stgallen"
+    "club": "stgallen",
+    "verified": true
   },
   {
     "name": "Tranquillo Barnetta",
@@ -4789,7 +4968,8 @@
     "prime_rating": 84,
     "career_years": "2003-2004, 2016-2019",
     "nationality": "Switzerland",
-    "club": "stgallen"
+    "club": "stgallen",
+    "verified": true
   },
   {
     "name": "Rolf Blättler",
@@ -4797,7 +4977,8 @@
     "prime_rating": 80,
     "career_years": "1973-1977",
     "nationality": "Switzerland",
-    "club": "stgallen"
+    "club": "stgallen",
+    "verified": true
   },
   {
     "name": "Albert Bunjaku",
@@ -4805,7 +4986,8 @@
     "prime_rating": 80,
     "career_years": "2007-2010",
     "nationality": "Switzerland",
-    "club": "stgallen"
+    "club": "stgallen",
+    "verified": true
   },
   {
     "name": "José Saturnino Cardozo",
@@ -4821,7 +5003,8 @@
     "prime_rating": 80,
     "career_years": "1976-1981",
     "nationality": "Austria",
-    "club": "stgallen"
+    "club": "stgallen",
+    "verified": true
   },
   {
     "name": "Leandro Fonseca",
@@ -4829,7 +5012,8 @@
     "prime_rating": 80,
     "career_years": "2003-2008",
     "nationality": "Brazil",
-    "club": "stgallen"
+    "club": "stgallen",
+    "verified": true
   },
   {
     "name": "Mario Frick",
@@ -4845,7 +5029,8 @@
     "prime_rating": 80,
     "career_years": "1998-2001",
     "nationality": "Romania",
-    "club": "stgallen"
+    "club": "stgallen",
+    "verified": true
   },
   {
     "name": "Radosław Gilewicz",
@@ -4861,7 +5046,8 @@
     "prime_rating": 80,
     "career_years": "1978-1982",
     "nationality": "Poland",
-    "club": "stgallen"
+    "club": "stgallen",
+    "verified": true
   },
   {
     "name": "Phil Masinga",
@@ -4877,7 +5063,8 @@
     "prime_rating": 80,
     "career_years": "1999-2003",
     "nationality": "Brazil",
-    "club": "stgallen"
+    "club": "stgallen",
+    "verified": true
   },
   {
     "name": "Hugo Rubio",
@@ -4901,7 +5088,8 @@
     "prime_rating": 80,
     "career_years": "1997-2001",
     "nationality": "Switzerland",
-    "club": "stgallen"
+    "club": "stgallen",
+    "verified": true
   },
   {
     "name": "Alexander Tachie-Mensah",
@@ -4909,7 +5097,8 @@
     "prime_rating": 80,
     "career_years": "1997-2000",
     "nationality": "Ghana",
-    "club": "stgallen"
+    "club": "stgallen",
+    "verified": true
   },
   {
     "name": "Marco Tardelli",
@@ -4941,7 +5130,8 @@
     "prime_rating": 80,
     "career_years": "1996-1999",
     "nationality": "Switzerland",
-    "club": "stgallen"
+    "club": "stgallen",
+    "verified": true
   },
   {
     "name": "Marco Zwyssig",
@@ -4949,7 +5139,8 @@
     "prime_rating": 84,
     "career_years": "1991-1993, 2001-2007",
     "nationality": "Switzerland",
-    "club": "stgallen"
+    "club": "stgallen",
+    "verified": true
   },
   {
     "name": "Cedric Itten",
@@ -4957,7 +5148,8 @@
     "prime_rating": 80,
     "career_years": "2017-2020",
     "nationality": "Switzerland",
-    "club": "stgallen"
+    "club": "stgallen",
+    "verified": true
   },
   {
     "name": "Ermedin Demirović",
@@ -5013,7 +5205,8 @@
     "prime_rating": 82,
     "career_years": "1974-1981",
     "nationality": "Switzerland",
-    "club": "lausanne"
+    "club": "lausanne",
+    "verified": true
   },
   {
     "name": "Lorik Cana",
@@ -5021,7 +5214,8 @@
     "prime_rating": 80,
     "career_years": "1999-2002",
     "nationality": "Albania",
-    "club": "lausanne"
+    "club": "lausanne",
+    "verified": true
   },
   {
     "name": "Fabio Celestini",
@@ -5029,7 +5223,8 @@
     "prime_rating": 80,
     "career_years": "1994-1999",
     "nationality": "Switzerland",
-    "club": "lausanne"
+    "club": "lausanne",
+    "verified": true
   },
   {
     "name": "Stéphane Chapuisat",
@@ -5037,7 +5232,8 @@
     "prime_rating": 84,
     "career_years": "1987-1990, 2005-2006",
     "nationality": "Switzerland",
-    "club": "lausanne"
+    "club": "lausanne",
+    "verified": true
   },
   {
     "name": "Pierre-Albert Chapuisat",
@@ -5045,7 +5241,8 @@
     "prime_rating": 82,
     "career_years": "1979-1986",
     "nationality": "Switzerland",
-    "club": "lausanne"
+    "club": "lausanne",
+    "verified": true
   },
   {
     "name": "Frédéric Chassot",
@@ -5053,7 +5250,8 @@
     "prime_rating": 80,
     "career_years": "1995-1998",
     "nationality": "Switzerland",
-    "club": "lausanne"
+    "club": "lausanne",
+    "verified": true
   },
   {
     "name": "Tomas Danilevičius",
@@ -5069,7 +5267,8 @@
     "prime_rating": 84,
     "career_years": "1979-1981, 1991-1993",
     "nationality": "Switzerland",
-    "club": "lausanne"
+    "club": "lausanne",
+    "verified": true
   },
   {
     "name": "Martin Fink",
@@ -5093,7 +5292,8 @@
     "prime_rating": 80,
     "career_years": "1971-1976",
     "nationality": "Switzerland",
-    "club": "lausanne"
+    "club": "lausanne",
+    "verified": true
   },
   {
     "name": "Dominique Herr",
@@ -5101,7 +5301,8 @@
     "prime_rating": 80,
     "career_years": "1985-1989",
     "nationality": "Switzerland",
-    "club": "lausanne"
+    "club": "lausanne",
+    "verified": true
   },
   {
     "name": "Marc Hottiger",
@@ -5109,7 +5310,8 @@
     "prime_rating": 80,
     "career_years": "1986-1990",
     "nationality": "Switzerland",
-    "club": "lausanne"
+    "club": "lausanne",
+    "verified": true
   },
   {
     "name": "Stefan Huber",
@@ -5117,7 +5319,8 @@
     "prime_rating": 80,
     "career_years": "1986-1991",
     "nationality": "Switzerland",
-    "club": "lausanne"
+    "club": "lausanne",
+    "verified": true
   },
   {
     "name": "Fritz Künzli",
@@ -5125,7 +5328,8 @@
     "prime_rating": 80,
     "career_years": "1974-1979",
     "nationality": "Switzerland",
-    "club": "lausanne"
+    "club": "lausanne",
+    "verified": true
   },
   {
     "name": "Javier Mazzoni",
@@ -5133,7 +5337,8 @@
     "prime_rating": 80,
     "career_years": "1996-1999",
     "nationality": "Argentina",
-    "club": "lausanne"
+    "club": "lausanne",
+    "verified": true
   },
   {
     "name": "Rémo Meyer",
@@ -5149,7 +5354,8 @@
     "prime_rating": 80,
     "career_years": "1999-2002",
     "nationality": "Switzerland",
-    "club": "lausanne"
+    "club": "lausanne",
+    "verified": true
   },
   {
     "name": "Christophe Ohrel",
@@ -5157,7 +5363,8 @@
     "prime_rating": 80,
     "career_years": "1989-1993",
     "nationality": "Switzerland",
-    "club": "lausanne"
+    "club": "lausanne",
+    "verified": true
   },
   {
     "name": "Marko Pantelić",
@@ -5181,7 +5388,8 @@
     "prime_rating": 80,
     "career_years": "2000-2005",
     "nationality": "Switzerland",
-    "club": "lausanne"
+    "club": "lausanne",
+    "verified": true
   },
   {
     "name": "Martin Brunner",
@@ -5197,7 +5405,8 @@
     "prime_rating": 82,
     "career_years": "2005-2006, 2007-2008, 2011-2016",
     "nationality": "Cameroon",
-    "club": "winterthur"
+    "club": "winterthur",
+    "verified": true
   },
   {
     "name": "Rolf Bollmann",
@@ -5221,7 +5430,8 @@
     "prime_rating": 80,
     "career_years": "1972-1976",
     "nationality": "Switzerland",
-    "club": "winterthur"
+    "club": "winterthur",
+    "verified": true
   },
   {
     "name": "Urs Güntensperger",
@@ -5229,7 +5439,8 @@
     "prime_rating": 80,
     "career_years": "1988-1991",
     "nationality": "Switzerland",
-    "club": "winterthur"
+    "club": "winterthur",
+    "verified": true
   },
   {
     "name": "Robert Huber",
@@ -5245,7 +5456,8 @@
     "prime_rating": 82,
     "career_years": "2000-2006",
     "nationality": "Switzerland",
-    "club": "winterthur"
+    "club": "winterthur",
+    "verified": true
   },
   {
     "name": "Hans Küng",
@@ -5261,7 +5473,8 @@
     "prime_rating": 80,
     "career_years": "1973-1976",
     "nationality": "Switzerland",
-    "club": "winterthur"
+    "club": "winterthur",
+    "verified": true
   },
   {
     "name": "Joachim Löw",
@@ -5277,7 +5490,8 @@
     "prime_rating": 82,
     "career_years": "1964-1965, 1967-1975",
     "nationality": "Switzerland",
-    "club": "winterthur"
+    "club": "winterthur",
+    "verified": true
   },
   {
     "name": "Eigil Nielsen",
@@ -5293,7 +5507,8 @@
     "prime_rating": 84,
     "career_years": "1959-1974",
     "nationality": "Switzerland",
-    "club": "winterthur"
+    "club": "winterthur",
+    "verified": true
   },
   {
     "name": "Moshe Ohayon",
@@ -5309,7 +5524,8 @@
     "prime_rating": 84,
     "career_years": "1989-1995, 1996-2002",
     "nationality": "Switzerland",
-    "club": "winterthur"
+    "club": "winterthur",
+    "verified": true
   },
   {
     "name": "Pascal Renfer",
@@ -5317,7 +5533,8 @@
     "prime_rating": 80,
     "career_years": "2001, 2004-2006",
     "nationality": "Switzerland",
-    "club": "winterthur"
+    "club": "winterthur",
+    "verified": true
   },
   {
     "name": "Uwe Rapolder",
@@ -5325,7 +5542,8 @@
     "prime_rating": 80,
     "career_years": "1981-1985",
     "nationality": "Germany",
-    "club": "winterthur"
+    "club": "winterthur",
+    "verified": true
   },
   {
     "name": "Peter Risi",
@@ -5333,7 +5551,8 @@
     "prime_rating": 80,
     "career_years": "1972-1975",
     "nationality": "Switzerland",
-    "club": "winterthur"
+    "club": "winterthur",
+    "verified": true
   },
   {
     "name": "Sepp Roth",
@@ -5341,7 +5560,8 @@
     "prime_rating": 82,
     "career_years": "1981-1984, 1986-1988",
     "nationality": "Switzerland",
-    "club": "winterthur"
+    "club": "winterthur",
+    "verified": true
   },
   {
     "name": "Roger Wehrli",
@@ -5357,7 +5577,8 @@
     "prime_rating": 84,
     "career_years": "1983-1985, 1989-2000",
     "nationality": "Switzerland",
-    "club": "winterthur"
+    "club": "winterthur",
+    "verified": true
   },
   {
     "name": "Stefanos Kapino",
@@ -5661,7 +5882,8 @@
     "prime_rating": 80,
     "career_years": "1994-1998",
     "nationality": "Bulgaria",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Loris Benito",
@@ -5669,7 +5891,8 @@
     "prime_rating": 80,
     "career_years": "2010-2013",
     "nationality": "Switzerland",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Rainer Bieli",
@@ -5677,7 +5900,8 @@
     "prime_rating": 82,
     "career_years": "1976-1983",
     "nationality": "Switzerland",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Arnaud Bühler",
@@ -5693,7 +5917,8 @@
     "prime_rating": 84,
     "career_years": "2008-2014, 2017-2020",
     "nationality": "Switzerland",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Saša Ćirić",
@@ -5717,7 +5942,8 @@
     "prime_rating": 82,
     "career_years": "2001-2008",
     "nationality": "Switzerland",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Roberto Di Matteo",
@@ -5733,7 +5959,8 @@
     "prime_rating": 80,
     "career_years": "2002-2007",
     "nationality": "Switzerland",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Fabrice Ehret",
@@ -5741,7 +5968,8 @@
     "prime_rating": 80,
     "career_years": "2009-2012",
     "nationality": "France",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Shkëlzen Gashi",
@@ -5749,7 +5977,8 @@
     "prime_rating": 80,
     "career_years": "2010-2013",
     "nationality": "Albania",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Alain Gaspoz",
@@ -5757,7 +5986,8 @@
     "prime_rating": 82,
     "career_years": "1985-1990, 1995-1996",
     "nationality": "Switzerland",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Heinz Hermann",
@@ -5765,7 +5995,8 @@
     "prime_rating": 84,
     "career_years": "1979-1981, 1991-1994",
     "nationality": "Switzerland",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Cristian Ianu",
@@ -5773,7 +6004,8 @@
     "prime_rating": 80,
     "career_years": "2008-2012",
     "nationality": "Romania",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Gökhan Inler",
@@ -5781,7 +6013,8 @@
     "prime_rating": 80,
     "career_years": "2003-2006",
     "nationality": "Switzerland",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Luca Iodice",
@@ -5789,7 +6022,8 @@
     "prime_rating": 80,
     "career_years": "2009-2012",
     "nationality": "Switzerland",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Artur Ioniță",
@@ -5805,7 +6039,8 @@
     "prime_rating": 82,
     "career_years": "1990-1998",
     "nationality": "Switzerland",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Ryszard Komornicki",
@@ -5813,7 +6048,8 @@
     "prime_rating": 82,
     "career_years": "1990-1996",
     "nationality": "Poland",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Steven Lang",
@@ -5821,7 +6057,8 @@
     "prime_rating": 80,
     "career_years": "2009-2012",
     "nationality": "Switzerland",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Lars Lunde",
@@ -5845,7 +6082,8 @@
     "prime_rating": 80,
     "career_years": "1971-1974",
     "nationality": "Germany",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Frédéric Page",
@@ -5853,7 +6091,8 @@
     "prime_rating": 80,
     "career_years": "2010-2014",
     "nationality": "Switzerland",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Emanuel Pogatetz",
@@ -5869,7 +6108,8 @@
     "prime_rating": 80,
     "career_years": "1996-1999",
     "nationality": "Brazil",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Wynton Rufer",
@@ -5877,7 +6117,8 @@
     "prime_rating": 80,
     "career_years": "1982-1985",
     "nationality": "New Zealand",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Marco Schneuwly",
@@ -5901,7 +6142,8 @@
     "prime_rating": 80,
     "career_years": "1995-1998",
     "nationality": "Poland",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "René Sutter",
@@ -5909,7 +6151,8 @@
     "prime_rating": 82,
     "career_years": "1985-1992",
     "nationality": "Switzerland",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Harut Wardanjan",
@@ -5949,7 +6192,8 @@
     "prime_rating": 80,
     "career_years": "1989-1994",
     "nationality": "Switzerland",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Elsad Zverotić",
@@ -5957,7 +6201,8 @@
     "prime_rating": 80,
     "career_years": "2006-2009",
     "nationality": "Montenegro",
-    "club": "aarau"
+    "club": "aarau",
+    "verified": true
   },
   {
     "name": "Raúl Bobadilla",
@@ -5973,7 +6218,8 @@
     "prime_rating": 80,
     "career_years": "1989-1994",
     "nationality": "Bulgaria",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Claude Andrey",
@@ -6005,7 +6251,8 @@
     "prime_rating": 80,
     "career_years": "2007-2010",
     "nationality": "DR Congo",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Horst Blankenburg",
@@ -6013,7 +6260,8 @@
     "prime_rating": 80,
     "career_years": "1976-1979",
     "nationality": "Germany",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Christophe Bonvin",
@@ -6021,7 +6269,8 @@
     "prime_rating": 80,
     "career_years": "1997-2001",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "André Titi Buengo",
@@ -6053,7 +6302,8 @@
     "prime_rating": 82,
     "career_years": "1991-1997",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Michel Decastel",
@@ -6061,7 +6311,8 @@
     "prime_rating": 84,
     "career_years": "1972-1977, 1985-1989",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Leandro Fonseca",
@@ -6077,7 +6328,8 @@
     "prime_rating": 82,
     "career_years": "1986-1995",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Gilbert Gress",
@@ -6085,7 +6337,8 @@
     "prime_rating": 82,
     "career_years": "1975-1981",
     "nationality": "France",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Ulrich Guggisberg",
@@ -6093,7 +6346,8 @@
     "prime_rating": 82,
     "career_years": "1995-2001",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Trifon Iwanow",
@@ -6117,7 +6371,8 @@
     "prime_rating": 82,
     "career_years": "1995-2003",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Stephan Keller",
@@ -6125,7 +6380,8 @@
     "prime_rating": 80,
     "career_years": "1986-1990",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Patrick Koch",
@@ -6141,7 +6397,8 @@
     "prime_rating": 80,
     "career_years": "1991-1995",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Peter Küffer",
@@ -6189,7 +6446,8 @@
     "prime_rating": 82,
     "career_years": "1976-1982",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Marco Pascolo",
@@ -6197,7 +6455,8 @@
     "prime_rating": 82,
     "career_years": "1988-1996",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Philippe Perret",
@@ -6205,7 +6464,8 @@
     "prime_rating": 84,
     "career_years": "1981-2000",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Hany Ramzy",
@@ -6213,7 +6473,8 @@
     "prime_rating": 80,
     "career_years": "1990-1993",
     "nationality": "Egypt",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Alexandre Rey",
@@ -6221,7 +6482,8 @@
     "prime_rating": 80,
     "career_years": "1996-2001",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Martin Rueda",
@@ -6229,7 +6491,8 @@
     "prime_rating": 80,
     "career_years": "1989-1993",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Claude Ryf",
@@ -6237,7 +6500,8 @@
     "prime_rating": 82,
     "career_years": "1976-1986",
     "nationality": "Switzerland",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Víctor Sánchez Mata",
@@ -6253,7 +6517,8 @@
     "prime_rating": 80,
     "career_years": "1988-1991",
     "nationality": "Bosnia and Herzegovina",
-    "club": "xamax"
+    "club": "xamax",
+    "verified": true
   },
   {
     "name": "Augustine Simo",
