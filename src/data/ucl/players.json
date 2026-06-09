@@ -11806,5 +11806,26 @@
     "nationality": "Argentina",
     "club": "valencia",
     "verified": true
+  },
+  {
+    "name": "Viktor Gyökeres",
+    "position": "ST",
+    "prime_rating": 87,
+    "career_years": "2025-Present",
+    "nationality": "Sweden",
+    "club": "arsenal",
+    "verified": true
+  },
+  {
+    "name": "Antoine Semenyo",
+    "position": "ST",
+    "altPositions": [
+      "RW"
+    ],
+    "prime_rating": 81,
+    "career_years": "2025-Present",
+    "nationality": "Ghana",
+    "club": "manchestercity",
+    "verified": true
   }
 ]
