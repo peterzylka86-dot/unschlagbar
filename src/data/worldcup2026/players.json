@@ -1535,7 +1535,7 @@
   },
   {
     "name": "Alphonso Davies",
-    "position": "CB",
+    "position": "LB",
     "prime_rating": 88,
     "career_years": "2026",
     "nationality": "Canada",
@@ -3014,7 +3014,7 @@
   {
     "name": "Kevin Rodríguez",
     "position": "ST",
-    "prime_rating": 87,
+    "prime_rating": 74,
     "career_years": "2026",
     "nationality": "Ecuador",
     "club": "ecuador",
@@ -4800,7 +4800,7 @@
   {
     "name": "Rebin Sulaka",
     "position": "CB",
-    "prime_rating": 83,
+    "prime_rating": 71,
     "career_years": "2026",
     "nationality": "Iraq",
     "club": "iraq"
@@ -6728,8 +6728,8 @@
   },
   {
     "name": "José Luis Rodríguez",
-    "position": "CM",
-    "prime_rating": 87,
+    "position": "RW",
+    "prime_rating": 73,
     "career_years": "2026",
     "nationality": "Panama",
     "club": "panama",
@@ -9332,7 +9332,7 @@
   {
     "name": "Khalil Ayari",
     "position": "CM",
-    "prime_rating": 87,
+    "prime_rating": 71,
     "career_years": "2026",
     "nationality": "Tunisia",
     "club": "tunisia",

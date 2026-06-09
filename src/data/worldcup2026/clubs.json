@@ -118,7 +118,7 @@
     "city": "Brasília",
     "color": "#009b3a",
     "founded": 1900,
-    "strength": 94,
+    "strength": 96,
     "era": "current",
     "era_tier": "current",
     "era_tiers": [
@@ -258,7 +258,7 @@
     "city": "Berlin",
     "color": "#000000",
     "founded": 1900,
-    "strength": 93,
+    "strength": 95,
     "era": "current",
     "era_tier": "current",
     "era_tiers": [
@@ -300,7 +300,7 @@
     "city": "Amsterdam",
     "color": "#ff5b00",
     "founded": 1900,
-    "strength": 92,
+    "strength": 94,
     "era": "current",
     "era_tier": "current",
     "era_tiers": [
@@ -426,7 +426,7 @@
     "city": "Madrid",
     "color": "#aa151b",
     "founded": 1900,
-    "strength": 96,
+    "strength": 98,
     "era": "current",
     "era_tier": "current",
     "era_tiers": [
@@ -454,7 +454,7 @@
     "city": "Paris",
     "color": "#0055a4",
     "founded": 1900,
-    "strength": 95,
+    "strength": 97,
     "era": "current",
     "era_tier": "current",
     "era_tiers": [
@@ -524,7 +524,7 @@
     "city": "Buenos Aires",
     "color": "#75aadb",
     "founded": 1900,
-    "strength": 95,
+    "strength": 97,
     "era": "current",
     "era_tier": "current",
     "era_tiers": [
@@ -594,7 +594,7 @@
     "city": "Lisbon",
     "color": "#006600",
     "founded": 1900,
-    "strength": 93,
+    "strength": 95,
     "era": "current",
     "era_tier": "current",
     "era_tiers": [
@@ -636,7 +636,7 @@
     "city": "London",
     "color": "#ce1124",
     "founded": 1900,
-    "strength": 94,
+    "strength": 96,
     "era": "current",
     "era_tier": "current",
     "era_tiers": [

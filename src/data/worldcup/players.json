@@ -8236,7 +8236,7 @@
   },
   {
     "name": "Alphonso Davies",
-    "position": "ST",
+    "position": "LB",
     "prime_rating": 84,
     "career_years": "2022",
     "nationality": "Canada",
@@ -12937,7 +12937,7 @@
   {
     "name": "Kevin Rodríguez",
     "position": "ST",
-    "prime_rating": 87,
+    "prime_rating": 74,
     "career_years": "2022",
     "nationality": "Ecuador",
     "club": "ecuador",
@@ -42144,15 +42144,6 @@
     "position": "ST",
     "prime_rating": 89,
     "career_years": "2010-2022",
-    "nationality": "Uruguay",
-    "club": "uruguay",
-    "verified": true
-  },
-  {
-    "name": "José Luis Rodríguez",
-    "position": "CB",
-    "prime_rating": 87,
-    "career_years": "2022",
     "nationality": "Uruguay",
     "club": "uruguay",
     "verified": true
