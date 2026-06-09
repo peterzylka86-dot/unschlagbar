@@ -110,25 +110,32 @@ function Landing() {
             🌎 WC 2026 LIVE · 🏆 UCL · 🇩🇪 BL · 🇪🇸 LL · 🇮🇹 SA · 🇨🇭 SL · ♀ W
           </p>
 
-          {/* Primary CTA — bigger, solid fill, drop shadow. Quick match is
-              the lower-commitment entry, so it gets first-class treatment.
-              Daily is shown above it as a daily-return hook.
-              GOLAZO is a richer mode for users ready to invest. */}
+          {/* CTA hierarchy — Daily is the hero. Day-4 analytics showed
+              Daily uptake at 6.4% (128 of 2k visitors). It's the only
+              feature that gives users a return-tomorrow reason, so it
+              earns hero placement: solid warning fill, drop shadow, py-5
+              — same energy Kick-off used to have. Kick-off drops to
+              secondary (still red, smaller padding). GOLAZO stays
+              tertiary. */}
           <div className="mt-9 flex flex-col items-stretch gap-3">
-            {/* Daily card — same wheel for everyone today. The genre
-                standard (RoadTo38, 17-0, 82-0+ all ship this). Shows
-                streak when present; greys to "✓ played today" once done. */}
+            {/* Daily — HERO card. Solid warning-gold with drop shadow
+                when not yet played; "Played today" state shows result
+                CTA and dims slightly. Streak badge sits at the right. */}
             <Link
               to="/daily"
-              className="group inline-flex items-center justify-between gap-3 px-5 py-3 rounded-md border-2 border-warning/40 bg-warning/5 text-warning hover:bg-warning/10 hover:-translate-y-0.5 transition"
+              className={`group inline-flex items-center justify-between gap-3 px-6 py-5 rounded-md transition hover:-translate-y-0.5 hover:brightness-110 ${
+                daily?.played
+                  ? "border-2 border-warning/50 bg-warning/15 text-warning"
+                  : "bg-warning text-background font-semibold shadow-[0_18px_40px_-10px] shadow-warning/60 border border-warning/30"
+              }`}
             >
               <div className="flex items-center gap-3">
-                <span className="text-2xl">🗓️</span>
+                <span className="text-3xl">🗓️</span>
                 <div className="text-left">
-                  <div className="font-display text-sm tracking-[0.16em] uppercase">
+                  <div className="font-display text-lg tracking-[0.15em] uppercase leading-tight">
                     Daily Challenge
                   </div>
-                  <div className="text-[10px] tracking-[0.1em] text-muted-foreground normal-case">
+                  <div className="text-[11px] tracking-[0.12em] normal-case opacity-80 mt-0.5">
                     {daily?.played
                       ? "✓ Played today — see your result"
                       : "Same wheel · everyone today"}
@@ -136,22 +143,32 @@ function Landing() {
                 </div>
               </div>
               {daily && daily.streak > 0 && (
-                <div className="flex items-center gap-1 px-2 py-1 rounded-md bg-warning/15 border border-warning/30">
-                  <span className="text-sm">🔥</span>
-                  <span className="font-display text-sm leading-none">{daily.streak}</span>
+                <div
+                  className={`flex items-center gap-1 px-2.5 py-1.5 rounded-md border ${
+                    daily.played
+                      ? "bg-warning/20 border-warning/40"
+                      : "bg-background/15 border-background/25"
+                  }`}
+                >
+                  <span className="text-base">🔥</span>
+                  <span className="font-display text-base leading-none">{daily.streak}</span>
                 </div>
               )}
             </Link>
+            {/* Kick-off — secondary. Quick match for users who don't
+                want today's locked seed. Keeps the red brand fill so
+                it's still obviously a CTA, but smaller padding signals
+                "second choice." */}
             <Link
               to="/game"
               search={{ new: true }}
-              className="group inline-flex flex-col items-center gap-1 px-6 py-5 rounded-md bg-primary text-primary-foreground font-display text-lg tracking-[0.15em] uppercase shadow-[0_18px_40px_-10px] shadow-primary/70 hover:brightness-110 hover:-translate-y-0.5 transition border border-primary-foreground/10"
+              className="group inline-flex flex-col items-center gap-1 px-6 py-4 rounded-md bg-primary text-primary-foreground font-display text-base tracking-[0.15em] uppercase shadow-[0_12px_28px_-12px] shadow-primary/60 hover:brightness-110 hover:-translate-y-0.5 transition border border-primary-foreground/10"
             >
               <span className="flex items-center gap-2">
                 ⚡ Kick-off <span aria-hidden>→</span>
               </span>
               <span className="text-[10px] tracking-[0.18em] normal-case opacity-80">
-                One match · 5–30 min
+                Pick a league · 5–30 min
               </span>
             </Link>
             <Link
