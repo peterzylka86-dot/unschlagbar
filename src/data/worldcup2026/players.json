@@ -9540,12 +9540,15 @@
   },
   {
     "name": "Arda Güler",
-    "position": "ST",
+    "position": "CAM",
     "prime_rating": 89,
     "career_years": "2026",
     "nationality": "Turkey",
     "club": "turkey",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Hakan Çalhanoğlu",
