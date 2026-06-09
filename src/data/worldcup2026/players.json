@@ -4194,7 +4194,10 @@
     "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Ghana",
-    "club": "ghana"
+    "club": "ghana",
+    "altPositions": [
+      "CM"
+    ]
   },
   {
     "name": "Kamaldeen Sulemana",
