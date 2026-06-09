@@ -1,8 +1,8 @@
 [
   {
     "name": "Rayan Aït-Nouri",
-    "position": "CB",
-    "prime_rating": 89,
+    "position": "LB",
+    "prime_rating": 86,
     "career_years": "2026",
     "nationality": "Algeria",
     "club": "algeria",
@@ -19,8 +19,8 @@
   },
   {
     "name": "Ramy Bensebaini",
-    "position": "CB",
-    "prime_rating": 85,
+    "position": "LB",
+    "prime_rating": 83,
     "career_years": "2026",
     "nationality": "Algeria",
     "club": "algeria",
@@ -28,8 +28,8 @@
   },
   {
     "name": "Ibrahim Maza",
-    "position": "CM",
-    "prime_rating": 84,
+    "position": "CAM",
+    "prime_rating": 78,
     "career_years": "2026",
     "nationality": "Algeria",
     "club": "algeria"
@@ -45,14 +45,14 @@
   {
     "name": "Anis Hadj Moussa",
     "position": "RW",
-    "prime_rating": 80,
+    "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Algeria",
     "club": "algeria"
   },
   {
     "name": "Aïssa Mandi",
-    "position": "LB",
+    "position": "CB",
     "prime_rating": 80,
     "career_years": "2026",
     "nationality": "Algeria",
@@ -4173,8 +4173,8 @@
   },
   {
     "name": "Antoine Semenyo",
-    "position": "CM",
-    "prime_rating": 89,
+    "position": "ST",
+    "prime_rating": 81,
     "career_years": "2026",
     "nationality": "Ghana",
     "club": "ghana",
@@ -5217,16 +5217,19 @@
   {
     "name": "Hiroki Itō",
     "position": "CB",
-    "prime_rating": 88,
+    "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Japan",
     "club": "japan",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB"
+    ]
   },
   {
     "name": "Wataru Endo",
     "position": "CDM",
-    "prime_rating": 88,
+    "prime_rating": 84,
     "career_years": "2026",
     "nationality": "Japan",
     "club": "japan",
@@ -8916,7 +8919,7 @@
   },
   {
     "name": "Viktor Gyökeres",
-    "position": "LW",
+    "position": "ST",
     "prime_rating": 87,
     "career_years": "2026",
     "nationality": "Sweden",
