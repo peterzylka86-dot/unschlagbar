@@ -280,7 +280,7 @@
     "club": "basel"
   },
   {
-    "name": "13 A. Frei",
+    "name": "A. Frei",
     "position": "ST",
     "prime_rating": 77,
     "nationality": "Switzerland",
@@ -288,7 +288,7 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "17 M. Delgado",
+    "name": "M. Delgado",
     "position": "CAM",
     "prime_rating": 77,
     "nationality": "Argentina",
@@ -320,7 +320,7 @@
     "career_years": "2016-2017"
   },
   {
-    "name": "21 Jorge",
+    "name": "Jorge",
     "position": "LB",
     "prime_rating": 76,
     "nationality": "Brazil",
@@ -416,7 +416,7 @@
     "career_years": "2017-2021"
   },
   {
-    "name": "16 W. Samuel",
+    "name": "W. Samuel",
     "position": "CB",
     "prime_rating": 74,
     "nationality": "Argentina",
@@ -576,7 +576,7 @@
     "career_years": "2019-2021"
   },
   {
-    "name": "20 Z. Kuzmanović",
+    "name": "Z. Kuzmanović",
     "position": "CM",
     "prime_rating": 69,
     "nationality": "Serbia",
@@ -1096,7 +1096,7 @@
     "career_years": "2018-2019"
   },
   {
-    "name": "19 R. Holzhauser",
+    "name": "R. Holzhauser",
     "position": "CM",
     "prime_rating": 72,
     "nationality": "Austria",
@@ -1150,14 +1150,6 @@
     "nationality": "Austria",
     "club": "grasshopper",
     "career_years": "2017-2018"
-  },
-  {
-    "name": "19 Jeffrén",
-    "position": "CAM",
-    "prime_rating": 69,
-    "nationality": "Venezuela",
-    "club": "grasshopper",
-    "career_years": "2019-2021"
   },
   {
     "name": "E. Bergström",
@@ -1248,7 +1240,7 @@
     "club": "lausanne"
   },
   {
-    "name": "18 D. Mesbah",
+    "name": "D. Mesbah",
     "position": "LB",
     "prime_rating": 73,
     "nationality": "Algeria",
@@ -1392,20 +1384,12 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "18 C. Ledesma",
-    "position": "CM",
-    "prime_rating": 71,
-    "nationality": "Italy",
-    "club": "lugano",
-    "career_years": "2020-2022"
-  },
-  {
     "name": "C. Ledesma",
     "position": "CM",
     "prime_rating": 71,
     "nationality": "Italy",
     "club": "lugano",
-    "career_years": "2017-2018"
+    "career_years": "2020-2022"
   },
   {
     "name": "Carlinhos",
@@ -1456,7 +1440,7 @@
     "career_years": "2018-2019"
   },
   {
-    "name": "20 R. Janga",
+    "name": "R. Janga",
     "position": "ST",
     "prime_rating": 69,
     "nationality": "Curacao",
@@ -1488,7 +1472,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 A. Gerndt",
+    "name": "A. Gerndt",
     "position": "CAM",
     "prime_rating": 68,
     "nationality": "Sweden",
@@ -2032,7 +2016,7 @@
     "club": "sion"
   },
   {
-    "name": "13 G. Gattuso",
+    "name": "G. Gattuso",
     "position": "CDM",
     "prime_rating": 78,
     "nationality": "Italy",
@@ -2160,7 +2144,7 @@
     "career_years": "2016-2017"
   },
   {
-    "name": "20 P. Kasami",
+    "name": "P. Kasami",
     "position": "CM",
     "prime_rating": 73,
     "nationality": "Switzerland",
@@ -2176,7 +2160,7 @@
     "career_years": "2016-2017"
   },
   {
-    "name": "18 K. Constant",
+    "name": "K. Constant",
     "position": "CM",
     "prime_rating": 71,
     "nationality": "Guinea",
@@ -2184,7 +2168,7 @@
     "career_years": "2019-2022"
   },
   {
-    "name": "20 E. Lenjani",
+    "name": "E. Lenjani",
     "position": "CM",
     "prime_rating": 71,
     "nationality": "Albania",
@@ -2192,7 +2176,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 J. Djourou",
+    "name": "J. Djourou",
     "position": "CB",
     "prime_rating": 71,
     "nationality": "Switzerland",
@@ -2200,7 +2184,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 S. Doumbia",
+    "name": "S. Doumbia",
     "position": "ST",
     "prime_rating": 71,
     "nationality": "Ivory Coast",
@@ -2238,14 +2222,6 @@
     "nationality": "Switzerland",
     "club": "sion",
     "career_years": "2021-2022"
-  },
-  {
-    "name": "K. Constant",
-    "position": "CM",
-    "prime_rating": 71,
-    "nationality": "Guinea",
-    "club": "sion",
-    "career_years": "2016-2017"
   },
   {
     "name": "Raphael Rossi",
@@ -2456,14 +2432,6 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "19 T. Barnetta",
-    "position": "CAM",
-    "prime_rating": 71,
-    "nationality": "Switzerland",
-    "club": "stgallen",
-    "career_years": "2021-2022"
-  },
-  {
     "name": "L. Zigi",
     "position": "GK",
     "prime_rating": 70,
@@ -2544,7 +2512,7 @@
     "career_years": "2017-2018"
   },
   {
-    "name": "19 N. Ben Khalifa",
+    "name": "N. Ben Khalifa",
     "position": "CM",
     "prime_rating": 68,
     "nationality": "Switzerland",
@@ -2632,7 +2600,7 @@
     "career_years": "2018-2019"
   },
   {
-    "name": "20 H. Bandé",
+    "name": "H. Bandé",
     "position": "LW",
     "prime_rating": 70,
     "nationality": "Burkina Faso",
@@ -2848,7 +2816,7 @@
     "club": "xamax"
   },
   {
-    "name": "20 R. Nuzzolo",
+    "name": "R. Nuzzolo",
     "position": "RW",
     "prime_rating": 74,
     "nationality": "Switzerland",
@@ -3630,14 +3598,6 @@
     "nationality": "Spain",
     "club": "zurich",
     "career_years": "2021-2022"
-  },
-  {
-    "name": "20 P. Jagne",
-    "position": "LB",
-    "prime_rating": 68,
-    "nationality": "Gambia",
-    "club": "zurich",
-    "career_years": "2020-2021"
   },
   {
     "name": "A. Tosin",

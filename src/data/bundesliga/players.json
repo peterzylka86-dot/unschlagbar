@@ -2097,7 +2097,7 @@
   },
   {
     "career_years": "2011-2015, 2017-2023",
-    "name": "Sebastian Knoche (Sebastian Griesbeck/Knoche era) - Robin Knoche",
+    "name": "Robin Knoche",
     "nationality": "Germany",
     "position": "CB",
     "prime_rating": 82,
@@ -2122,7 +2122,7 @@
   {
     "prime_rating": 82,
     "position": "CDM",
-    "name": "Urs Fischer (Coach Representative) - Rani Khedira",
+    "name": "Rani Khedira",
     "nationality": "Germany",
     "career_years": "2019-2023",
     "club": "union"
@@ -2712,14 +2712,6 @@
     "club": "mainz"
   },
   {
-    "prime_rating": 97,
-    "name": "Marcelinho Paraiba",
-    "nationality": "Brazil",
-    "position": "CAM",
-    "career_years": "1999-2004, 2013-2015",
-    "club": "hertha"
-  },
-  {
     "career_years": "1997-2004",
     "position": "ST",
     "nationality": "Germany",
@@ -2763,7 +2755,7 @@
     "position": "RB",
     "career_years": "1971-1980",
     "prime_rating": 82,
-    "name": "Karl-Heinz Rummenigge (Brother) Michael Rummenigge placeholder? No, Holger Brück",
+    "name": "Holger Brück",
     "nationality": "Germany",
     "club": "hertha"
   },
@@ -2811,7 +2803,7 @@
     "career_years": "2004-2009",
     "position": "ST",
     "nationality": "Serbia",
-    "name": "Panteleimon Kapetanos (No) Marko Pantelic",
+    "name": "Marko Pantelic",
     "prime_rating": 85,
     "club": "hertha"
   },
@@ -5317,14 +5309,6 @@
     "position": "CM",
     "nationality": "Germany",
     "name": "Paul Breitner",
-    "club": "braunschweig"
-  },
-  {
-    "prime_rating": 82,
-    "career_years": "1974-1982",
-    "position": "CM",
-    "nationality": "Germany",
-    "name": "Karl-Heinz Handschuh",
     "club": "braunschweig"
   },
   {
@@ -8608,14 +8592,6 @@
     "club": "union"
   },
   {
-    "name": "Robin Knoche",
-    "position": "CB",
-    "nationality": "Germany",
-    "career_years": "2020-Present",
-    "prime_rating": 81,
-    "club": "union"
-  },
-  {
     "name": "Diogo Leite",
     "position": "CB",
     "nationality": "Portugal",
@@ -9144,11 +9120,11 @@
     "club": "hertha"
   },
   {
-    "name": "Marcelinho",
+    "name": "Marcelinho Paraiba",
     "position": "CAM",
     "nationality": "Brazil",
     "career_years": "2001-2006",
-    "prime_rating": 84,
+    "prime_rating": 87,
     "club": "hertha"
   },
   {
@@ -10840,7 +10816,7 @@
     "prime_rating": 73
   },
   {
-    "club": "braunschweig",
+    "club": "dortmund",
     "name": "Lars Ricken",
     "position": "CAM",
     "nationality": "Germany",

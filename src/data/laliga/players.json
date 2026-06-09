@@ -12272,7 +12272,7 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "19 F. Cartabia",
+    "name": "F. Cartabia",
     "position": "LW",
     "prime_rating": 77,
     "nationality": "Argentina",
@@ -12360,7 +12360,7 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "19 Imanol García",
+    "name": "Imanol García",
     "position": "CM",
     "prime_rating": 67,
     "nationality": "Spain",
@@ -12384,14 +12384,6 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "19 Raphael Guzzo",
-    "position": "CAM",
-    "prime_rating": 69,
-    "nationality": "Portugal",
-    "club": "reus",
-    "career_years": "2019-2020"
-  },
-  {
     "name": "Sabin Merino",
     "position": "ST",
     "prime_rating": 71,
@@ -12400,7 +12392,7 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "19 Juan Muñiz",
+    "name": "Juan Muñiz",
     "position": "CAM",
     "prime_rating": 68,
     "nationality": "Spain",
@@ -12432,7 +12424,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "19 Reyes",
+    "name": "Reyes",
     "position": "CAM",
     "prime_rating": 71,
     "nationality": "Spain",
@@ -12456,7 +12448,7 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "19 Cotán",
+    "name": "Cotán",
     "position": "CM",
     "prime_rating": 69,
     "nationality": "Spain",
@@ -12592,7 +12584,7 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "15 D. Ifrán",
+    "name": "D. Ifrán",
     "position": "ST",
     "prime_rating": 70,
     "nationality": "Uruguay",
@@ -12656,7 +12648,7 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "19 D. Musto",
+    "name": "D. Musto",
     "position": "CDM",
     "prime_rating": 73,
     "nationality": "Argentina",
@@ -12704,15 +12696,7 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "18 Tià Sastre",
-    "position": "CAM",
-    "prime_rating": 66,
-    "nationality": "Spain",
-    "club": "celta",
-    "career_years": "2019-2020"
-  },
-  {
-    "name": "19 Javi Jiménez",
+    "name": "Javi Jiménez",
     "position": "LB",
     "prime_rating": 66,
     "nationality": "Spain",
@@ -12808,14 +12792,6 @@
     "career_years": "2019-2021"
   },
   {
-    "name": "19 Tropi",
-    "position": "CDM",
-    "prime_rating": 66,
-    "nationality": "Spain",
-    "club": "lorca",
-    "career_years": "2019-2020"
-  },
-  {
     "name": "Jordi Mboula",
     "position": "CM",
     "prime_rating": 69,
@@ -12872,14 +12848,6 @@
     "career_years": "2019-2021"
   },
   {
-    "name": "18 I. Díaz",
-    "position": "ST",
-    "prime_rating": 66,
-    "nationality": "Panama",
-    "club": "deportivo",
-    "career_years": "2019-2020"
-  },
-  {
     "name": "Rui Costa",
     "position": "ST",
     "prime_rating": 67,
@@ -12925,14 +12893,6 @@
     "prime_rating": 66,
     "nationality": "Spain",
     "club": "santander",
-    "career_years": "2019-2020"
-  },
-  {
-    "name": "18 S. Díaz",
-    "position": "CAM",
-    "prime_rating": 67,
-    "nationality": "Paraguay",
-    "club": "lugo",
     "career_years": "2019-2020"
   },
   {
@@ -13040,7 +13000,7 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "18 J. Assoubre",
+    "name": "J. Assoubre",
     "position": "CM",
     "prime_rating": 68,
     "nationality": "Ivory Coast",
@@ -13048,7 +13008,7 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "19 J. Dongou Tsafack",
+    "name": "J. Dongou Tsafack",
     "position": "ST",
     "prime_rating": 66,
     "nationality": "Cameroon",
@@ -13088,7 +13048,7 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "19 Bicho",
+    "name": "Bicho",
     "position": "CAM",
     "prime_rating": 67,
     "nationality": "Spain",
@@ -13144,7 +13104,7 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "19 Mayoral",
+    "name": "Mayoral",
     "position": "CM",
     "prime_rating": 65,
     "nationality": "Spain",
@@ -13304,14 +13264,6 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "18 Jair Amador",
-    "position": "CB",
-    "prime_rating": 70,
-    "nationality": "Portugal",
-    "club": "huesca",
-    "career_years": "2019-2020"
-  },
-  {
     "name": "M. Sagnan",
     "position": "CB",
     "prime_rating": 69,
@@ -13341,14 +13293,6 @@
     "prime_rating": 65,
     "nationality": "Spain",
     "club": "elche",
-    "career_years": "2019-2020"
-  },
-  {
-    "name": "17 Nacho Monsalve",
-    "position": "CB",
-    "prime_rating": 66,
-    "nationality": "Spain",
-    "club": "deportivo",
     "career_years": "2019-2020"
   },
   {
@@ -13416,7 +13360,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "19 Bernabé",
+    "name": "Bernabé",
     "position": "GK",
     "prime_rating": 69,
     "nationality": "Spain",
@@ -13440,7 +13384,7 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "19 F. Uzoho",
+    "name": "F. Uzoho",
     "position": "GK",
     "prime_rating": 69,
     "nationality": "Nigeria",
@@ -13461,14 +13405,6 @@
     "prime_rating": 75,
     "nationality": "Argentina",
     "club": "elche",
-    "career_years": "2020-2021"
-  },
-  {
-    "name": "17 A. Emaná",
-    "position": "CAM",
-    "prime_rating": 75,
-    "nationality": "Cameroon",
-    "club": "nastic",
     "career_years": "2020-2021"
   },
   {
@@ -13552,14 +13488,6 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "18 Fernando Navarro",
-    "position": "CB",
-    "prime_rating": 74,
-    "nationality": "Spain",
-    "club": "deportivo",
-    "career_years": "2020-2022"
-  },
-  {
     "name": "Pablo Maffeo",
     "position": "RB",
     "prime_rating": 74,
@@ -13576,7 +13504,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 Keko",
+    "name": "Keko",
     "position": "CM",
     "prime_rating": 70,
     "nationality": "Spain",
@@ -13600,7 +13528,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 L. Crisetig",
+    "name": "L. Crisetig",
     "position": "CM",
     "prime_rating": 73,
     "nationality": "Italy",
@@ -13640,7 +13568,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "17 Marc Crosas",
+    "name": "Marc Crosas",
     "position": "CM",
     "prime_rating": 69,
     "nationality": "Spain",
@@ -13648,7 +13576,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 Abraham",
+    "name": "Abraham",
     "position": "LB",
     "prime_rating": 66,
     "nationality": "Spain",
@@ -13680,7 +13608,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 C. Beauvue",
+    "name": "C. Beauvue",
     "position": "ST",
     "prime_rating": 71,
     "nationality": "France",
@@ -13760,14 +13688,6 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "17 J. Zongo",
-    "position": "ST",
-    "prime_rating": 68,
-    "nationality": "Burkina Faso",
-    "club": "almeria",
-    "career_years": "2020-2022"
-  },
-  {
     "name": "O. Kakabadze",
     "position": "CM",
     "prime_rating": 68,
@@ -13792,7 +13712,7 @@
     "career_years": "2020-2022"
   },
   {
-    "name": "20 Héctor",
+    "name": "Héctor",
     "position": "LB",
     "prime_rating": 68,
     "nationality": "Spain",
@@ -13808,7 +13728,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 Alex Bergantiños",
+    "name": "Alex Bergantiños",
     "position": "CDM",
     "prime_rating": 71,
     "nationality": "Spain",
@@ -13824,7 +13744,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 R. Kitoko",
+    "name": "R. Kitoko",
     "position": "CDM",
     "prime_rating": 65,
     "nationality": "Belgium",
@@ -13856,7 +13776,7 @@
     "career_years": "2020-2022"
   },
   {
-    "name": "20 U. Agbo",
+    "name": "U. Agbo",
     "position": "CB",
     "prime_rating": 68,
     "nationality": "Nigeria",
@@ -13872,7 +13792,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 R. Mazáň",
+    "name": "R. Mazáň",
     "position": "CDM",
     "prime_rating": 66,
     "nationality": "Slovakia",
@@ -13896,14 +13816,6 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "17 Cedrick",
-    "position": "CM",
-    "prime_rating": 69,
-    "nationality": "DR Congo",
-    "club": "murcia",
-    "career_years": "2020-2022"
-  },
-  {
     "name": "Yuri",
     "position": "ST",
     "prime_rating": 71,
@@ -13912,7 +13824,7 @@
     "career_years": "2020-2022"
   },
   {
-    "name": "20 Sergio Gil",
+    "name": "Sergio Gil",
     "position": "CAM",
     "prime_rating": 65,
     "nationality": "Spain",
@@ -13936,20 +13848,12 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 Nico Hidalgo",
+    "name": "Nico Hidalgo",
     "position": "CM",
     "prime_rating": 65,
     "nationality": "Spain",
     "club": "santander",
     "career_years": "2020-2021"
-  },
-  {
-    "name": "19 Diego Capel",
-    "position": "LW",
-    "prime_rating": 67,
-    "nationality": "Spain",
-    "club": "extremadura",
-    "career_years": "2020-2022"
   },
   {
     "name": "Ernesto",
@@ -13960,7 +13864,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 Derik",
+    "name": "Derik",
     "position": "CB",
     "prime_rating": 67,
     "nationality": "Spain",
@@ -13976,7 +13880,7 @@
     "career_years": "2020-2022"
   },
   {
-    "name": "20 A. Nkaka",
+    "name": "A. Nkaka",
     "position": "CDM",
     "prime_rating": 67,
     "nationality": "Belgium",
@@ -13984,7 +13888,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 David Carmona",
+    "name": "David Carmona",
     "position": "RB",
     "prime_rating": 66,
     "nationality": "Spain",
@@ -14008,7 +13912,7 @@
     "career_years": "2020-2022"
   },
   {
-    "name": "20 David Rodríguez",
+    "name": "David Rodríguez",
     "position": "ST",
     "prime_rating": 67,
     "nationality": "Spain",
@@ -14056,7 +13960,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 Salva Ruíz",
+    "name": "Salva Ruíz",
     "position": "LB",
     "prime_rating": 68,
     "nationality": "Spain",
@@ -14064,7 +13968,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 Higinio",
+    "name": "Higinio",
     "position": "ST",
     "prime_rating": 68,
     "nationality": "Spain",
@@ -14088,7 +13992,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 Moha",
+    "name": "Moha",
     "position": "CM",
     "prime_rating": 68,
     "nationality": "Morocco",
@@ -14128,7 +14032,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 Alexis",
+    "name": "Alexis",
     "position": "CB",
     "prime_rating": 69,
     "nationality": "Spain",
@@ -14136,7 +14040,7 @@
     "career_years": "2020-2022"
   },
   {
-    "name": "20 Airam Cabrera",
+    "name": "Airam Cabrera",
     "position": "ST",
     "prime_rating": 65,
     "nationality": "Spain",
@@ -14192,7 +14096,7 @@
     "career_years": "2020-2022"
   },
   {
-    "name": "20 M. Somma",
+    "name": "M. Somma",
     "position": "CB",
     "prime_rating": 70,
     "nationality": "Italy",
@@ -14272,7 +14176,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 Mujaid",
+    "name": "Mujaid",
     "position": "RB",
     "prime_rating": 69,
     "nationality": "Spain",
@@ -14304,7 +14208,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 Jon Ander",
+    "name": "Jon Ander",
     "position": "ST",
     "prime_rating": 65,
     "nationality": "Spain",
@@ -14368,7 +14272,7 @@
     "career_years": "2020-2022"
   },
   {
-    "name": "20 T. Datković",
+    "name": "T. Datković",
     "position": "CB",
     "prime_rating": 65,
     "nationality": "Croatia",
@@ -14384,7 +14288,7 @@
     "career_years": "2020-2022"
   },
   {
-    "name": "20 Juan Carlos",
+    "name": "Juan Carlos",
     "position": "GK",
     "prime_rating": 65,
     "nationality": "Spain",
@@ -14440,7 +14344,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 Dani Giménez",
+    "name": "Dani Giménez",
     "position": "GK",
     "prime_rating": 72,
     "nationality": "Spain",
@@ -14456,7 +14360,7 @@
     "career_years": "2020-2021"
   },
   {
-    "name": "20 L. Zidane",
+    "name": "L. Zidane",
     "position": "GK",
     "prime_rating": 67,
     "nationality": "France",
@@ -14584,7 +14488,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "18 A. Aquilani",
+    "name": "A. Aquilani",
     "position": "CM",
     "prime_rating": 75,
     "nationality": "Italy",
@@ -14592,7 +14496,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "17 Natxo Insa",
+    "name": "Natxo Insa",
     "position": "CM",
     "prime_rating": 73,
     "nationality": "Spain",
@@ -14664,7 +14568,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 E. Rigoni",
+    "name": "E. Rigoni",
     "position": "CM",
     "prime_rating": 75,
     "nationality": "Argentina",
@@ -14720,19 +14624,11 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 Pedro López",
+    "name": "Pedro López",
     "position": "RB",
     "prime_rating": 72,
     "nationality": "Spain",
     "club": "huesca",
-    "career_years": "2021-2022"
-  },
-  {
-    "name": "18 M. Motta",
-    "position": "RB",
-    "prime_rating": 73,
-    "nationality": "Italy",
-    "club": "almeria",
     "career_years": "2021-2022"
   },
   {
@@ -14744,7 +14640,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "15 Cicinho",
+    "name": "Cicinho",
     "position": "RB",
     "prime_rating": 69,
     "nationality": "Brazil",
@@ -14752,7 +14648,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "19 Nano",
+    "name": "Nano",
     "position": "CDM",
     "prime_rating": 66,
     "nationality": "Spain",
@@ -14824,7 +14720,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "20 Iván López",
+    "name": "Iván López",
     "position": "RB",
     "prime_rating": 71,
     "nationality": "Spain",
@@ -14896,7 +14792,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "19 Javi Márquez",
+    "name": "Javi Márquez",
     "position": "CM",
     "prime_rating": 68,
     "nationality": "Spain",
@@ -14912,7 +14808,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 Dani Castellano",
+    "name": "Dani Castellano",
     "position": "LB",
     "prime_rating": 69,
     "nationality": "Spain",
@@ -14920,7 +14816,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 Luisinho",
+    "name": "Luisinho",
     "position": "LB",
     "prime_rating": 72,
     "nationality": "Portugal",
@@ -14928,7 +14824,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 Víctor Rodríguez",
+    "name": "Víctor Rodríguez",
     "position": "CM",
     "prime_rating": 72,
     "nationality": "Spain",
@@ -14960,15 +14856,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "17 L. Madinda",
-    "position": "CDM",
-    "prime_rating": 69,
-    "nationality": "Gabon",
-    "club": "nastic",
-    "career_years": "2021-2022"
-  },
-  {
-    "name": "21 Dani Pacheco",
+    "name": "Dani Pacheco",
     "position": "CM",
     "prime_rating": 69,
     "nationality": "Spain",
@@ -15016,7 +14904,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "16 Soriano",
+    "name": "Soriano",
     "position": "CAM",
     "prime_rating": 72,
     "nationality": "Spain",
@@ -15024,7 +14912,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "18 E. Emenike",
+    "name": "E. Emenike",
     "position": "ST",
     "prime_rating": 74,
     "nationality": "Nigeria",
@@ -15072,7 +14960,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "19 Momo",
+    "name": "Momo",
     "position": "CAM",
     "prime_rating": 68,
     "nationality": "Spain",
@@ -15085,14 +14973,6 @@
     "prime_rating": 73,
     "nationality": "Colombia",
     "club": "elche",
-    "career_years": "2021-2022"
-  },
-  {
-    "name": "20 Alain Oyarzun",
-    "position": "CAM",
-    "prime_rating": 68,
-    "nationality": "Spain",
-    "club": "numancia",
     "career_years": "2021-2022"
   },
   {
@@ -15141,14 +15021,6 @@
     "prime_rating": 65,
     "nationality": "Spain",
     "club": "almeria",
-    "career_years": "2021-2022"
-  },
-  {
-    "name": "21 Toribio",
-    "position": "CDM",
-    "prime_rating": 67,
-    "nationality": "Spain",
-    "club": "alcorcon",
     "career_years": "2021-2022"
   },
   {
@@ -15208,7 +15080,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 Jonathas",
+    "name": "Jonathas",
     "position": "ST",
     "prime_rating": 73,
     "nationality": "Brazil",
@@ -15221,14 +15093,6 @@
     "prime_rating": 67,
     "nationality": "Spain",
     "club": "mirandes",
-    "career_years": "2021-2022"
-  },
-  {
-    "name": "17 David López",
-    "position": "CAM",
-    "prime_rating": 67,
-    "nationality": "Spain",
-    "club": "huesca",
     "career_years": "2021-2022"
   },
   {
@@ -15248,7 +15112,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "19 Samu García",
+    "name": "Samu García",
     "position": "CAM",
     "prime_rating": 71,
     "nationality": "Spain",
@@ -15280,7 +15144,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 S. Srnić",
+    "name": "S. Srnić",
     "position": "CM",
     "prime_rating": 68,
     "nationality": "Serbia",
@@ -15296,19 +15160,11 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 F. Ferreyra",
+    "name": "F. Ferreyra",
     "position": "ST",
     "prime_rating": 72,
     "nationality": "Argentina",
     "club": "celta",
-    "career_years": "2021-2022"
-  },
-  {
-    "name": "21 Dorca",
-    "position": "CDM",
-    "prime_rating": 68,
-    "nationality": "Spain",
-    "club": "alcorcon",
     "career_years": "2021-2022"
   },
   {
@@ -15328,14 +15184,6 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "19 I. Uche",
-    "position": "ST",
-    "prime_rating": 68,
-    "nationality": "Nigeria",
-    "club": "nastic",
-    "career_years": "2021-2022"
-  },
-  {
     "name": "A. Kawaya",
     "position": "CM",
     "prime_rating": 65,
@@ -15344,15 +15192,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "19 Javi Álamo",
-    "position": "CM",
-    "prime_rating": 65,
-    "nationality": "Spain",
-    "club": "extremadura",
-    "career_years": "2021-2022"
-  },
-  {
-    "name": "21 K. Soni",
+    "name": "K. Soni",
     "position": "ST",
     "prime_rating": 66,
     "nationality": "Cameroon",
@@ -15440,7 +15280,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "19 David García",
+    "name": "David García",
     "position": "CB",
     "prime_rating": 71,
     "nationality": "Spain",
@@ -15456,7 +15296,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 Ramón Folch",
+    "name": "Ramón Folch",
     "position": "CDM",
     "prime_rating": 69,
     "nationality": "Spain",
@@ -15480,7 +15320,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 Errasti",
+    "name": "Errasti",
     "position": "CDM",
     "prime_rating": 67,
     "nationality": "Spain",
@@ -15552,7 +15392,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 Jacobo",
+    "name": "Jacobo",
     "position": "CAM",
     "prime_rating": 66,
     "nationality": "Spain",
@@ -15573,14 +15413,6 @@
     "prime_rating": 67,
     "nationality": "Spain",
     "club": "ponferradina",
-    "career_years": "2021-2022"
-  },
-  {
-    "name": "20 Borja Galán",
-    "position": "CM",
-    "prime_rating": 69,
-    "nationality": "Spain",
-    "club": "santander",
     "career_years": "2021-2022"
   },
   {
@@ -15608,7 +15440,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "19 L. Cadamuro",
+    "name": "L. Cadamuro",
     "position": "CB",
     "prime_rating": 68,
     "nationality": "Algeria",
@@ -15624,7 +15456,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 Cristian López",
+    "name": "Cristian López",
     "position": "ST",
     "prime_rating": 65,
     "nationality": "Spain",
@@ -15656,7 +15488,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 Luis Ruiz",
+    "name": "Luis Ruiz",
     "position": "LB",
     "prime_rating": 65,
     "nationality": "Spain",
@@ -15664,7 +15496,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 S. Sosa",
+    "name": "S. Sosa",
     "position": "CAM",
     "prime_rating": 65,
     "nationality": "Venezuela",
@@ -15672,7 +15504,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 M. Ezzarfani",
+    "name": "M. Ezzarfani",
     "position": "CM",
     "prime_rating": 67,
     "nationality": "Morocco",
@@ -15712,7 +15544,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "20 M. García",
+    "name": "M. García",
     "position": "LW",
     "prime_rating": 69,
     "nationality": "Argentina",
@@ -15720,7 +15552,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "17 Lopo",
+    "name": "Lopo",
     "position": "CB",
     "prime_rating": 70,
     "nationality": "Spain",
@@ -15733,14 +15565,6 @@
     "prime_rating": 67,
     "nationality": "Spain",
     "club": "tenerife",
-    "career_years": "2021-2022"
-  },
-  {
-    "name": "21 Mario Barco",
-    "position": "ST",
-    "prime_rating": 66,
-    "nationality": "Spain",
-    "club": "mirandes",
     "career_years": "2021-2022"
   },
   {
@@ -15760,7 +15584,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 Aythami Artiles",
+    "name": "Aythami Artiles",
     "position": "CB",
     "prime_rating": 68,
     "nationality": "Spain",
@@ -15800,14 +15624,6 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "19 B. Sadik",
-    "position": "ST",
-    "prime_rating": 66,
-    "nationality": "Finland",
-    "club": "nastic",
-    "career_years": "2021-2022"
-  },
-  {
     "name": "Simón Moreno",
     "position": "ST",
     "prime_rating": 67,
@@ -15816,7 +15632,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "16 Valerón",
+    "name": "Valerón",
     "position": "CAM",
     "prime_rating": 74,
     "nationality": "Spain",
@@ -15888,7 +15704,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "16 Carlos Cuéllar",
+    "name": "Carlos Cuéllar",
     "position": "CB",
     "prime_rating": 72,
     "nationality": "Spain",
@@ -15928,7 +15744,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 Jordi Escobar",
+    "name": "Jordi Escobar",
     "position": "ST",
     "prime_rating": 65,
     "nationality": "Spain",
@@ -15944,7 +15760,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "09 Miguel",
+    "name": "Miguel",
     "position": "ST",
     "prime_rating": 67,
     "nationality": "Spain",
@@ -15968,19 +15784,11 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 Serantes",
+    "name": "Serantes",
     "position": "GK",
     "prime_rating": 71,
     "nationality": "Spain",
     "club": "tenerife",
-    "career_years": "2021-2022"
-  },
-  {
-    "name": "19 Isaac Becerra",
-    "position": "GK",
-    "prime_rating": 68,
-    "nationality": "Spain",
-    "club": "nastic",
     "career_years": "2021-2022"
   },
   {
@@ -16000,15 +15808,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "19 Javi Varas",
-    "position": "GK",
-    "prime_rating": 70,
-    "nationality": "Spain",
-    "club": "huesca",
-    "career_years": "2021-2022"
-  },
-  {
-    "name": "21 G. Gazzaniga",
+    "name": "G. Gazzaniga",
     "position": "GK",
     "prime_rating": 65,
     "nationality": "Argentina",
@@ -16016,7 +15816,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 Rubén Miño",
+    "name": "Rubén Miño",
     "position": "GK",
     "prime_rating": 67,
     "nationality": "Spain",
@@ -16072,7 +15872,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 L. Chichizola",
+    "name": "L. Chichizola",
     "position": "GK",
     "prime_rating": 71,
     "nationality": "Argentina",
@@ -16088,7 +15888,7 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "21 Dani Giménez",
+    "name": "Dani Giménez",
     "position": "GK",
     "prime_rating": 69,
     "nationality": "Spain",
