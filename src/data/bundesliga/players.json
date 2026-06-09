@@ -2049,7 +2049,7 @@
   },
   {
     "position": "ST",
-    "name": "Yeboah, Anthony",
+    "name": "Anthony Yeboah",
     "prime_rating": 86,
     "nationality": "Ghana",
     "career_years": "1991–1995",
@@ -2885,14 +2885,6 @@
     "prime_rating": 81,
     "name": "Kevin Müller",
     "career_years": "2016-present",
-    "club": "heidenheim"
-  },
-  {
-    "career_years": "2017-present",
-    "name": "Mainka Patrick",
-    "prime_rating": 81,
-    "position": "CB",
-    "nationality": "Germany",
     "club": "heidenheim"
   },
   {
@@ -6708,8 +6700,8 @@
     "position": "LW",
     "prime_rating": 85,
     "nationality": "Germany",
-    "career_years": "1971-1974",
-    "club": "wuppertaler"
+    "career_years": "1972-1978",
+    "club": "dortmund"
   },
   {
     "prime_rating": 81,
@@ -8664,14 +8656,6 @@
     "club": "hamburg"
   },
   {
-    "name": "Anthony Yeboah",
-    "position": "ST",
-    "nationality": "Ghana",
-    "career_years": "1997-2001",
-    "prime_rating": 84,
-    "club": "hamburg"
-  },
-  {
     "name": "Khalid Boulahrouz",
     "position": "CB",
     "nationality": "Netherlands",
@@ -9852,7 +9836,7 @@
     "position": "CB",
     "nationality": "Germany",
     "career_years": "2018-Present",
-    "prime_rating": 80,
+    "prime_rating": 81,
     "club": "heidenheim"
   },
   {
@@ -10840,14 +10824,6 @@
     "club": "dortmund"
   },
   {
-    "name": "Ousmane Dembele",
-    "position": "LW",
-    "prime_rating": 84,
-    "career_years": "2016-2017",
-    "nationality": "FRA",
-    "club": "dortmund"
-  },
-  {
     "name": "Karim Adeyemi",
     "position": "LW",
     "prime_rating": 80,
@@ -10960,14 +10936,6 @@
     "club": "frankfurt"
   },
   {
-    "name": "Chris Fuhrich",
-    "position": "RW",
-    "prime_rating": 78,
-    "career_years": "2021-2025",
-    "nationality": "GER",
-    "club": "stuttgart"
-  },
-  {
     "name": "Sasa Ciric",
     "position": "RB",
     "prime_rating": 72,
@@ -10976,27 +10944,11 @@
     "club": "stuttgart"
   },
   {
-    "name": "Mario Gomez",
-    "position": "LW",
-    "prime_rating": 84,
-    "career_years": "2003-2008",
-    "nationality": "GER",
-    "club": "stuttgart"
-  },
-  {
     "name": "William Kvist",
     "position": "RB",
     "prime_rating": 74,
     "career_years": "2013-2015",
     "nationality": "DEN",
-    "club": "wolfsburg"
-  },
-  {
-    "name": "Ivan Perisic",
-    "position": "RW",
-    "prime_rating": 82,
-    "career_years": "2011-2013",
-    "nationality": "CRO",
     "club": "wolfsburg"
   },
   {
@@ -11061,14 +11013,6 @@
     "prime_rating": 76,
     "career_years": "2018-2023",
     "nationality": "AUT",
-    "club": "hoffenheim"
-  },
-  {
-    "name": "Andrej Kramaric",
-    "position": "RW",
-    "prime_rating": 84,
-    "career_years": "2016-2025",
-    "nationality": "CRO",
     "club": "hoffenheim"
   },
   {
@@ -11148,14 +11092,6 @@
     "position": "CM",
     "prime_rating": 74,
     "career_years": "2023-2025",
-    "nationality": "GER",
-    "club": "augsburg"
-  },
-  {
-    "name": "Andre Hahn",
-    "position": "RW",
-    "prime_rating": 74,
-    "career_years": "2017-2022",
     "nationality": "GER",
     "club": "augsburg"
   },
@@ -11448,14 +11384,6 @@
     "club": "1860"
   },
   {
-    "name": "Davor Suker",
-    "position": "RW",
-    "prime_rating": 80,
-    "career_years": "1999-2000",
-    "nationality": "CRO",
-    "club": "1860"
-  },
-  {
     "name": "Bernhard Trares",
     "position": "LW",
     "prime_rating": 70,
@@ -11728,14 +11656,6 @@
     "club": "dynamodresden"
   },
   {
-    "name": "Torsten Gutschow",
-    "position": "LW",
-    "prime_rating": 78,
-    "career_years": "1988-1995",
-    "nationality": "GER",
-    "club": "dynamodresden"
-  },
-  {
     "name": "Eduard Geyer",
     "position": "LW",
     "prime_rating": 70,
@@ -12000,14 +11920,6 @@
     "club": "ulm"
   },
   {
-    "name": "Uwe Hunemeier",
-    "position": "RB",
-    "prime_rating": 72,
-    "career_years": "2014-2015",
-    "nationality": "GER",
-    "club": "stpaderborn"
-  },
-  {
     "name": "Suat Cakir",
     "position": "LB",
     "prime_rating": 70,
@@ -12156,14 +12068,6 @@
     "position": "LB",
     "prime_rating": 70,
     "career_years": "1988-1991",
-    "nationality": "GER",
-    "club": "stuttgartkickers"
-  },
-  {
-    "name": "Markus Hoerwick",
-    "position": "LB",
-    "prime_rating": 70,
-    "career_years": "1985-1990",
     "nationality": "GER",
     "club": "stuttgartkickers"
   },
@@ -12376,14 +12280,6 @@
     "club": "frankfurt"
   },
   {
-    "name": "Jurgen Klinsmann",
-    "position": "RW",
-    "prime_rating": 90,
-    "career_years": "1984-1989",
-    "nationality": "GER",
-    "club": "stuttgart"
-  },
-  {
     "name": "David Abraham",
     "position": "LW",
     "prime_rating": 76,
@@ -12502,14 +12398,6 @@
     "career_years": "1965-1966",
     "nationality": "GER",
     "club": "tasmania"
-  },
-  {
-    "name": "Branko Jelic",
-    "position": "RW",
-    "prime_rating": 72,
-    "career_years": "2005-2008",
-    "nationality": "SCG",
-    "club": "cottbus"
   },
   {
     "name": "Daniel Ziebig",
@@ -12786,14 +12674,6 @@
   {
     "name": "Sven Mueller",
     "position": "RB",
-    "prime_rating": 70,
-    "career_years": "1999-2003",
-    "nationality": "GER",
-    "club": "unterhaching"
-  },
-  {
-    "name": "Markus Hoerwick",
-    "position": "LB",
     "prime_rating": 70,
     "career_years": "1999-2003",
     "nationality": "GER",
@@ -13126,14 +13006,6 @@
     "career_years": "1990-1995",
     "nationality": "GER",
     "club": "leipzigvfb"
-  },
-  {
-    "name": "Denis Linsmayer",
-    "position": "CAM",
-    "prime_rating": 72,
-    "career_years": "2017-2022",
-    "nationality": "Germany",
-    "club": "sandhausen"
   },
   {
     "name": "Aleksandr Zhirov CAM",

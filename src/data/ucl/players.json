@@ -920,14 +920,6 @@
     "club": "psg"
   },
   {
-    "name": "Kylian Mbappé",
-    "position": "LW",
-    "prime_rating": 94,
-    "career_years": "2017-2024",
-    "nationality": "France",
-    "club": "psg"
-  },
-  {
     "name": "Neymar Jr.",
     "position": "LW",
     "prime_rating": 92,
@@ -2096,14 +2088,6 @@
     "club": "rbleipzig"
   },
   {
-    "name": "Konrad Laimer",
-    "position": "CM",
-    "prime_rating": 83,
-    "career_years": "2017-2023",
-    "nationality": "Austria",
-    "club": "rbleipzig"
-  },
-  {
     "name": "Marcel Sabitzer",
     "position": "CM",
     "prime_rating": 84,
@@ -2968,14 +2952,6 @@
     "club": "marseille"
   },
   {
-    "name": "Chris Waddle",
-    "position": "RW",
-    "prime_rating": 86,
-    "career_years": "1989-1992",
-    "nationality": "England",
-    "club": "marseille"
-  },
-  {
     "name": "Rudi Völler",
     "position": "ST",
     "prime_rating": 85,
@@ -3028,14 +3004,6 @@
     "position": "LW",
     "prime_rating": 88,
     "career_years": "2015-2017",
-    "nationality": "France",
-    "club": "monaco"
-  },
-  {
-    "name": "Thierry Henry",
-    "position": "ST",
-    "prime_rating": 85,
-    "career_years": "1995-1999",
     "nationality": "France",
     "club": "monaco"
   },
@@ -3360,14 +3328,6 @@
     "club": "crvenazvezda"
   },
   {
-    "name": "Robert Prosinečki",
-    "position": "CM",
-    "prime_rating": 88,
-    "career_years": "1987-1991",
-    "nationality": "Croatia",
-    "club": "crvenazvezda"
-  },
-  {
     "name": "Darko Pančev",
     "position": "ST",
     "prime_rating": 87,
@@ -3404,14 +3364,6 @@
     "position": "CM",
     "prime_rating": 85,
     "career_years": "1989-1992",
-    "nationality": "Serbia",
-    "club": "crvenazvezda"
-  },
-  {
-    "name": "Siniša Mihajlović",
-    "position": "CB",
-    "prime_rating": 85,
-    "career_years": "1990-1992",
     "nationality": "Serbia",
     "club": "crvenazvezda"
   },
@@ -3512,22 +3464,6 @@
     "club": "hamburg"
   },
   {
-    "name": "Felix Magath",
-    "position": "CM",
-    "prime_rating": 85,
-    "career_years": "1976-1986",
-    "nationality": "Germany",
-    "club": "hamburg"
-  },
-  {
-    "name": "Kevin Keegan",
-    "position": "ST",
-    "prime_rating": 88,
-    "career_years": "1977-1980",
-    "nationality": "England",
-    "club": "hamburg"
-  },
-  {
     "name": "Horst Hrubesch",
     "position": "ST",
     "prime_rating": 85,
@@ -3556,22 +3492,6 @@
     "position": "CB",
     "prime_rating": 82,
     "career_years": "1979-1989",
-    "nationality": "Germany",
-    "club": "hamburg"
-  },
-  {
-    "name": "Bernd Wehmeyer",
-    "position": "LB",
-    "prime_rating": 78,
-    "career_years": "1973-1986",
-    "nationality": "Germany",
-    "club": "hamburg"
-  },
-  {
-    "name": "Jürgen Milewski",
-    "position": "LW",
-    "prime_rating": 78,
-    "career_years": "1979-1986",
     "nationality": "Germany",
     "club": "hamburg"
   },
@@ -3680,14 +3600,6 @@
     "club": "astonvilla"
   },
   {
-    "name": "Oleg Blokhin",
-    "position": "ST",
-    "prime_rating": 92,
-    "career_years": "1969-1988",
-    "nationality": "Ukraine",
-    "club": "dynamokyiv"
-  },
-  {
     "name": "Andriy Shevchenko",
     "position": "ST",
     "prime_rating": 90,
@@ -3716,14 +3628,6 @@
     "position": "LB",
     "prime_rating": 85,
     "career_years": "1979-1990",
-    "nationality": "Ukraine",
-    "club": "dynamokyiv"
-  },
-  {
-    "name": "Volodymyr Bezsonov",
-    "position": "CDM",
-    "prime_rating": 82,
-    "career_years": "1976-1991",
     "nationality": "Ukraine",
     "club": "dynamokyiv"
   },
@@ -3773,14 +3677,6 @@
     "prime_rating": 86,
     "career_years": "2013-2014",
     "nationality": "Ivory Coast",
-    "club": "galatasaray"
-  },
-  {
-    "name": "Hagi Gheorghe",
-    "position": "CAM",
-    "prime_rating": 89,
-    "career_years": "1996-2001",
-    "nationality": "Romania",
     "club": "galatasaray"
   },
   {
@@ -3885,14 +3781,6 @@
     "prime_rating": 89,
     "career_years": "2018-2026",
     "nationality": "Uruguay",
-    "club": "realmadrid"
-  },
-  {
-    "name": "Jude Bellingham",
-    "position": "CAM",
-    "prime_rating": 91,
-    "career_years": "2023-2026",
-    "nationality": "England",
     "club": "realmadrid"
   },
   {
@@ -4600,14 +4488,6 @@
     "club": "barcelona"
   },
   {
-    "name": "Andrés Iniesta",
-    "position": "CM",
-    "prime_rating": 93,
-    "career_years": "2002-2018",
-    "nationality": "Spain",
-    "club": "barcelona"
-  },
-  {
     "name": "Yaya Touré",
     "position": "CDM",
     "prime_rating": 87,
@@ -4725,14 +4605,6 @@
     "prime_rating": 92,
     "career_years": "1989-1994",
     "nationality": "Denmark",
-    "club": "barcelona"
-  },
-  {
-    "name": "Hristo Stoichkov",
-    "position": "LW",
-    "prime_rating": 92,
-    "career_years": "1990-1995",
-    "nationality": "Bulgaria",
     "club": "barcelona"
   },
   {
@@ -4949,14 +4821,6 @@
     "prime_rating": 85,
     "career_years": "2014-2026",
     "nationality": "Italy",
-    "club": "inter"
-  },
-  {
-    "name": "Hakan Çalhanoğlu",
-    "position": "CDM",
-    "prime_rating": 87,
-    "career_years": "2021-2026",
-    "nationality": "Turkey",
     "club": "inter"
   },
   {
@@ -5400,14 +5264,6 @@
     "club": "milan"
   },
   {
-    "name": "Paolo Maldini",
-    "position": "CB",
-    "prime_rating": 94,
-    "career_years": "1985-2009",
-    "nationality": "Italy",
-    "club": "milan"
-  },
-  {
     "name": "Thiago Silva",
     "position": "CB",
     "prime_rating": 90,
@@ -5508,14 +5364,6 @@
     "position": "RW",
     "prime_rating": 87,
     "career_years": "1986-1996",
-    "nationality": "Italy",
-    "club": "milan"
-  },
-  {
-    "name": "Demetrio Albertini",
-    "position": "CDM",
-    "prime_rating": 88,
-    "career_years": "1988-2002",
     "nationality": "Italy",
     "club": "milan"
   },
@@ -6728,22 +6576,6 @@
     "club": "dortmund"
   },
   {
-    "name": "Ousmane Dembele",
-    "position": "LW",
-    "prime_rating": 84,
-    "career_years": "2016-2017",
-    "nationality": "FRA",
-    "club": "dortmund"
-  },
-  {
-    "name": "Karim Adeyemi",
-    "position": "LW",
-    "prime_rating": 80,
-    "career_years": "2022-2025",
-    "nationality": "GER",
-    "club": "dortmund"
-  },
-  {
     "position": "RB",
     "name": "Lukas Klostermann",
     "nationality": "Germany",
@@ -6968,14 +6800,6 @@
     "club": "napoli"
   },
   {
-    "name": "Marek Hamšík",
-    "position": "CM",
-    "prime_rating": 87,
-    "career_years": "2007-2019",
-    "nationality": "Slovakia",
-    "club": "napoli"
-  },
-  {
     "name": "Allan",
     "position": "CDM",
     "prime_rating": 84,
@@ -7140,14 +6964,6 @@
     "position": "CB",
     "prime_rating": 83,
     "career_years": "1976-1986",
-    "nationality": "Italy",
-    "club": "napoli"
-  },
-  {
-    "name": "Salvatore Bagni",
-    "position": "CDM",
-    "prime_rating": 83,
-    "career_years": "1984-1987",
     "nationality": "Italy",
     "club": "napoli"
   },
@@ -7416,14 +7232,6 @@
     "club": "valencia"
   },
   {
-    "name": "Claudio López",
-    "position": "LW",
-    "prime_rating": 87,
-    "career_years": "1996-2000",
-    "nationality": "Argentina",
-    "club": "valencia"
-  },
-  {
     "name": "Adrian Ilie",
     "position": "ST",
     "prime_rating": 85,
@@ -7437,14 +7245,6 @@
     "prime_rating": 82,
     "career_years": "1989-1995",
     "nationality": "Bulgaria",
-    "club": "valencia"
-  },
-  {
-    "name": "Fernando Gómez Colomer",
-    "position": "CM",
-    "prime_rating": 85,
-    "career_years": "1984-1998",
-    "nationality": "Spain",
     "club": "valencia"
   },
   {
@@ -7657,7 +7457,7 @@
   },
   {
     "position": "ST",
-    "name": "Yeboah, Anthony",
+    "name": "Anthony Yeboah",
     "prime_rating": 86,
     "nationality": "Ghana",
     "career_years": "1991–1995",
@@ -7709,14 +7509,6 @@
     "nationality": "Germany",
     "career_years": "1973-1984",
     "prime_rating": 80,
-    "club": "hamburg"
-  },
-  {
-    "name": "Anthony Yeboah",
-    "position": "ST",
-    "nationality": "Ghana",
-    "career_years": "1997-2001",
-    "prime_rating": 84,
     "club": "hamburg"
   },
   {
@@ -9536,14 +9328,6 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "Cristiano Ronaldo",
-    "position": "ST",
-    "prime_rating": 91,
-    "nationality": "Portugal",
-    "club": "manchesterunited",
-    "career_years": "2021-2022"
-  },
-  {
     "name": "Saúl",
     "position": "CM",
     "prime_rating": 82,
@@ -9744,14 +9528,6 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "Patrick Vieira",
-    "position": "CM",
-    "prime_rating": 92,
-    "career_years": "1996-2005",
-    "nationality": "France",
-    "club": "arsenal"
-  },
-  {
     "name": "Robert Pirès",
     "position": "CAM",
     "prime_rating": 89,
@@ -9877,14 +9653,6 @@
     "prime_rating": 93,
     "career_years": "1992-1997",
     "nationality": "France",
-    "club": "manchesterunited"
-  },
-  {
-    "name": "Roy Keane",
-    "position": "CM",
-    "prime_rating": 92,
-    "career_years": "1993-2005",
-    "nationality": "Ireland",
     "club": "manchesterunited"
   },
   {
@@ -10616,14 +10384,6 @@
     "club": "monaco"
   },
   {
-    "name": "Kylian Mbappé",
-    "position": "ST",
-    "prime_rating": 88,
-    "career_years": "2015-2017",
-    "nationality": "France",
-    "club": "monaco"
-  },
-  {
     "name": "Falcao",
     "position": "ST",
     "prime_rating": 88,
@@ -10660,14 +10420,6 @@
     "position": "LB",
     "prime_rating": 85,
     "career_years": "2013-2017",
-    "nationality": "France",
-    "club": "monaco"
-  },
-  {
-    "name": "Emmanuel Petit",
-    "position": "CM",
-    "prime_rating": 85,
-    "career_years": "1988-1997",
     "nationality": "France",
     "club": "monaco"
   },
@@ -11293,14 +11045,6 @@
     "prime_rating": 88,
     "career_years": "1992-1994",
     "nationality": "Germany",
-    "club": "juventus"
-  },
-  {
-    "name": "Lilian Thuram",
-    "position": "RB",
-    "prime_rating": 90,
-    "career_years": "2001-2006",
-    "nationality": "France",
     "club": "juventus"
   },
   {

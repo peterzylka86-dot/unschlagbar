@@ -5832,14 +5832,6 @@
     "club": "bolivia"
   },
   {
-    "name": "William Ramallo",
-    "position": "LW",
-    "prime_rating": 65,
-    "career_years": "1994",
-    "nationality": "Bolivia",
-    "club": "bolivia"
-  },
-  {
     "name": "Juan Manuel Peña",
     "position": "RB",
     "prime_rating": 64,
@@ -17216,14 +17208,6 @@
     "club": "england"
   },
   {
-    "name": "Gary Stevens",
-    "position": "LB",
-    "prime_rating": 78,
-    "career_years": "1986",
-    "nationality": "England",
-    "club": "england"
-  },
-  {
     "name": "Kerry Dixon",
     "position": "ST",
     "prime_rating": 78,
@@ -24466,14 +24450,6 @@
     "club": "iran"
   },
   {
-    "name": "Ali Karimi",
-    "position": "CAM",
-    "prime_rating": 64,
-    "career_years": "2022",
-    "nationality": "Iran",
-    "club": "iran"
-  },
-  {
     "name": "Hassan Nazari",
     "position": "LB",
     "prime_rating": 63,
@@ -27694,14 +27670,6 @@
     "position": "RW",
     "prime_rating": 84,
     "career_years": "1986",
-    "nationality": "Mexico",
-    "club": "mexico"
-  },
-  {
-    "name": "Javier Hernández",
-    "position": "ST",
-    "prime_rating": 84,
-    "career_years": "2010-2018",
     "nationality": "Mexico",
     "club": "mexico"
   },
@@ -33389,14 +33357,6 @@
     "position": "CM",
     "prime_rating": 72,
     "career_years": "1998",
-    "nationality": "Norway",
-    "club": "norway"
-  },
-  {
-    "name": "Mini Jakobsen",
-    "position": "ST",
-    "prime_rating": 69,
-    "career_years": "1994-1998",
     "nationality": "Norway",
     "club": "norway"
   },
@@ -39103,14 +39063,6 @@
     "position": "CAM",
     "prime_rating": 75,
     "career_years": "2018",
-    "nationality": "Saudi Arabia",
-    "club": "saudiarabia"
-  },
-  {
-    "name": "Hussein Abdulghani",
-    "position": "CB",
-    "prime_rating": 75,
-    "career_years": "1998",
     "nationality": "Saudi Arabia",
     "club": "saudiarabia"
   },
@@ -45603,14 +45555,6 @@
     "club": "spain"
   },
   {
-    "name": "Andoni Goikoetxea",
-    "position": "CB",
-    "prime_rating": 85,
-    "career_years": "1994",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
     "name": "Antonio Betancort",
     "position": "GK",
     "prime_rating": 75,
@@ -46323,14 +46267,6 @@
     "club": "spain"
   },
   {
-    "name": "Manuel Jiménez",
-    "position": "LB",
-    "prime_rating": 67,
-    "career_years": "1990",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
     "name": "Míchel Salgado",
     "position": "RB",
     "prime_rating": 67,
@@ -46479,14 +46415,6 @@
     "position": "CB",
     "prime_rating": 60,
     "career_years": "1966",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "Manuel Sanchís",
-    "position": "LB",
-    "prime_rating": 60,
-    "career_years": "1990",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -46863,14 +46791,6 @@
     "position": "RB",
     "prime_rating": 76,
     "career_years": "1970",
-    "nationality": "Sweden",
-    "club": "sweden"
-  },
-  {
-    "name": "Jan Olsson",
-    "position": "CB",
-    "prime_rating": 76,
-    "career_years": "1974",
     "nationality": "Sweden",
     "club": "sweden"
   },
@@ -47367,14 +47287,6 @@
     "position": "RB",
     "prime_rating": 74,
     "career_years": "1994",
-    "nationality": "Sweden",
-    "club": "sweden"
-  },
-  {
-    "name": "Mikael Nilsson",
-    "position": "CB",
-    "prime_rating": 74,
-    "career_years": "2006",
     "nationality": "Sweden",
     "club": "sweden"
   },

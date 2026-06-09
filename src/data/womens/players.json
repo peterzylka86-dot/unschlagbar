@@ -1000,14 +1000,6 @@
     "club": "kchiefs"
   },
   {
-    "name": "Hailie Mace",
-    "position": "CB",
-    "prime_rating": 81,
-    "career_years": "2022-2026",
-    "nationality": "USA",
-    "club": "kchiefs"
-  },
-  {
     "name": "Lo'eau LaBonta",
     "position": "CM",
     "prime_rating": 82,
@@ -1304,14 +1296,6 @@
     "club": "ngsuper"
   },
   {
-    "name": "Salma Paralluelo",
-    "position": "LW",
-    "prime_rating": 88,
-    "career_years": "2022-2026",
-    "nationality": "Spain",
-    "club": "barcelonafem"
-  },
-  {
     "name": "Mariona Caldentey",
     "position": "CAM",
     "prime_rating": 88,
@@ -1432,22 +1416,6 @@
     "club": "chelseafem"
   },
   {
-    "name": "Caitlin Foord",
-    "position": "ST",
-    "prime_rating": 86,
-    "career_years": "2020-2026",
-    "nationality": "Australia",
-    "club": "arsenalfem"
-  },
-  {
-    "name": "Kim Little",
-    "position": "CAM",
-    "prime_rating": 89,
-    "career_years": "2008-2026",
-    "nationality": "Scotland",
-    "club": "arsenalfem"
-  },
-  {
     "name": "Lia Wälti",
     "position": "CDM",
     "prime_rating": 86,
@@ -1560,14 +1528,6 @@
     "club": "realmadridfem"
   },
   {
-    "name": "Teresa Abelleira",
-    "position": "CDM",
-    "prime_rating": 85,
-    "career_years": "2021-2026",
-    "nationality": "Spain",
-    "club": "realmadridfem"
-  },
-  {
     "name": "Maëlle Lakrar",
     "position": "CB",
     "prime_rating": 84,
@@ -1662,14 +1622,6 @@
     "career_years": "2019-2022",
     "nationality": "Sweden",
     "club": "juventusfem"
-  },
-  {
-    "name": "Manuela Giugliano",
-    "position": "CAM",
-    "prime_rating": 87,
-    "career_years": "2019-2026",
-    "nationality": "Italy",
-    "club": "romafem"
   },
   {
     "name": "Andressa Alves",

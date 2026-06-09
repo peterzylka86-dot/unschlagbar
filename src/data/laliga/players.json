@@ -864,14 +864,6 @@
     "club": "barcelona"
   },
   {
-    "name": "Hristo Stoichkov",
-    "position": "LW",
-    "prime_rating": 92,
-    "career_years": "1990-1995",
-    "nationality": "Bulgaria",
-    "club": "barcelona"
-  },
-  {
     "name": "Rivaldo",
     "position": "CAM",
     "prime_rating": 93,
@@ -2200,14 +2192,6 @@
     "club": "valencia"
   },
   {
-    "name": "Claudio López",
-    "position": "LW",
-    "prime_rating": 87,
-    "career_years": "1996-2000",
-    "nationality": "Argentina",
-    "club": "valencia"
-  },
-  {
     "name": "Adrian Ilie",
     "position": "ST",
     "prime_rating": 85,
@@ -2221,14 +2205,6 @@
     "prime_rating": 82,
     "career_years": "1989-1995",
     "nationality": "Bulgaria",
-    "club": "valencia"
-  },
-  {
-    "name": "Fernando Gómez Colomer",
-    "position": "CM",
-    "prime_rating": 85,
-    "career_years": "1984-1998",
-    "nationality": "Spain",
     "club": "valencia"
   },
   {
@@ -5773,14 +5749,6 @@
     "prime_rating": 85,
     "career_years": "2008-2011",
     "nationality": "Argentina",
-    "club": "zaragoza"
-  },
-  {
-    "name": "Sergio García",
-    "position": "RW",
-    "prime_rating": 83,
-    "career_years": "2007-2009",
-    "nationality": "Spain",
     "club": "zaragoza"
   },
   {
@@ -14789,14 +14757,6 @@
     "prime_rating": 76,
     "nationality": "Spain",
     "club": "ponferradina",
-    "career_years": "2021-2022"
-  },
-  {
-    "name": "Javi Márquez",
-    "position": "CM",
-    "prime_rating": 68,
-    "nationality": "Spain",
-    "club": "nastic",
     "career_years": "2021-2022"
   },
   {

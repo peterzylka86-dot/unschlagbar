@@ -720,14 +720,6 @@
     "club": "milan"
   },
   {
-    "name": "Paolo Maldini",
-    "position": "CB",
-    "prime_rating": 94,
-    "career_years": "1985-2009",
-    "nationality": "Italy",
-    "club": "milan"
-  },
-  {
     "name": "Alessandro Nesta",
     "position": "CB",
     "prime_rating": 91,
@@ -900,14 +892,6 @@
     "position": "RW",
     "prime_rating": 87,
     "career_years": "1986-1996",
-    "nationality": "Italy",
-    "club": "milan"
-  },
-  {
-    "name": "Demetrio Albertini",
-    "position": "CDM",
-    "prime_rating": 88,
-    "career_years": "1988-2002",
     "nationality": "Italy",
     "club": "milan"
   },
@@ -1696,14 +1680,6 @@
     "club": "napoli"
   },
   {
-    "name": "Marek Hamšík",
-    "position": "CM",
-    "prime_rating": 87,
-    "career_years": "2007-2019",
-    "nationality": "Slovakia",
-    "club": "napoli"
-  },
-  {
     "name": "Allan",
     "position": "CDM",
     "prime_rating": 84,
@@ -1901,14 +1877,6 @@
     "prime_rating": 97,
     "career_years": "1984-1991",
     "nationality": "Argentina",
-    "club": "napoli"
-  },
-  {
-    "name": "Salvatore Bagni",
-    "position": "CDM",
-    "prime_rating": 83,
-    "career_years": "1984-1987",
-    "nationality": "Italy",
     "club": "napoli"
   },
   {
@@ -2565,14 +2533,6 @@
     "prime_rating": 91,
     "career_years": "1994-2002",
     "nationality": "Italy",
-    "club": "lazio"
-  },
-  {
-    "name": "Sinisa Mihajlović",
-    "position": "CB",
-    "prime_rating": 85,
-    "career_years": "1998-2004",
-    "nationality": "Yugoslavia",
     "club": "lazio"
   },
   {
@@ -6709,14 +6669,6 @@
     "prime_rating": 92,
     "career_years": "1993-2012",
     "nationality": "Italy",
-    "club": "juventus"
-  },
-  {
-    "name": "Lilian Thuram",
-    "position": "RB",
-    "prime_rating": 90,
-    "career_years": "2001-2006",
-    "nationality": "France",
     "club": "juventus"
   },
   {
@@ -13832,14 +13784,6 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "D. Croce",
-    "position": "CM",
-    "prime_rating": 69,
-    "nationality": "Italy",
-    "club": "cremonese",
-    "career_years": "2021-2022"
-  },
-  {
     "name": "L. Coulibaly",
     "position": "CDM",
     "prime_rating": 73,
@@ -13901,14 +13845,6 @@
     "prime_rating": 71,
     "nationality": "Italy",
     "club": "spezia",
-    "career_years": "2021-2022"
-  },
-  {
-    "name": "V. Dragomir",
-    "position": "CM",
-    "prime_rating": 67,
-    "nationality": "Romania",
-    "club": "perugia",
     "career_years": "2021-2022"
   },
   {
