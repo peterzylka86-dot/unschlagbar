@@ -132,43 +132,182 @@ def normalize_text(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", s)
 
 
+def transliteration_variants(s: str) -> set[str]:
+    """Generate German-transliteration variants of a normalized string.
+
+    Our club IDs use the "ue" form ("nuernberg", "duesseldorf"). The
+    German Wikipedia uses umlaut characters ("Nürnberg", "Düsseldorf")
+    which NFKD-normalize to "nurnberg" / "dusseldorf" (umlaut dropped).
+    Without this expansion, "nuernberg" never matches "nurnberg" in
+    the haystack. Cover both forms here.
+    """
+    variants = {s}
+    # ue↔u, oe↔o, ae↔a, ss↔s
+    for src, dst in (("ue", "u"), ("oe", "o"), ("ae", "a"), ("ss", "s")):
+        if src in s:
+            variants.add(s.replace(src, dst))
+        if dst in s and dst != "s":  # avoid producing "ss" from every "s"
+            pass  # don't expand in the other direction blindly
+    return variants
+
+
 # Map our club IDs to a list of recognizable name fragments that
 # might appear in a Wikipedia article. We strip everything to alnum
 # lowercase before checking, so "Borussia Dortmund" → "borussiadortmund".
 CLUB_ALIASES: dict[str, list[str]] = {
+    # ─── Bundesliga ──────────────────────────────────────────────
     "bayern": ["bayernmunich", "bayernmunchen", "fcbayern"],
     "dortmund": ["dortmund", "bvb", "borussiadortmund"],
     "schalke": ["schalke", "schalke04"],
-    "leverkusen": ["leverkusen", "bayer04"],
-    "hamburg": ["hamburg", "hamburgsv", "hsv"],
-    "werder": ["werder", "werderbremen"],
+    "leverkusen": ["leverkusen", "bayer04", "bayerleverkusen"],
+    "bayer": ["bayer", "leverkusen", "bayer04"],
+    "hamburg": ["hamburg", "hamburgsv", "hsv", "hamburgersv"],
+    "werder": ["werder", "werderbremen", "bremen"],
     "stuttgart": ["vfbstuttgart", "stuttgart"],
     "frankfurt": ["eintrachtfrankfurt", "frankfurt"],
     "monchengladbach": ["monchengladbach", "borussiamonchengladbach", "gladbach"],
-    "koln": ["fckoln", "koln", "cologne"],
-    "wuppertaler": ["wuppertalersv", "wuppertaler"],
+    "koln": ["fckoln", "koln", "cologne", "1fckoln"],
+    "nuernberg": ["nurnberg", "nuernberg", "1fcnurnberg", "club"],
     "braunschweig": ["eintrachtbraunschweig", "braunschweig"],
-    "realmadrid": ["realmadrid"],
-    "barcelona": ["barcelona", "fcbarcelona", "barca"],
+    "wuppertaler": ["wuppertalersv", "wuppertaler"],
+    "kaiserslautern": ["kaiserslautern", "fckkaiserslautern", "fck"],
+    "duesseldorf": ["fortunadusseldorf", "dusseldorf", "fortuna"],
+    "fortunaduesseldorf": ["fortunadusseldorf", "dusseldorf", "fortuna"],
+    "saarbruecken": ["saarbrucken", "1fcsaarbrucken", "saarbruecken"],
+    "wolfsburg": ["wolfsburg", "vflwolfsburg"],
+    "hoffenheim": ["hoffenheim", "1899hoffenheim"],
+    "hertha": ["hertha", "herthabsc", "berlin"],
+    "union": ["unionberlin", "1fcunionberlin", "union"],
+    "bochum": ["bochum", "vflbochum"],
+    "mainz": ["mainz", "mainz05"],
+    "augsburg": ["augsburg", "fcaugsburg"],
+    "freiburg": ["freiburg", "scfreiburg"],
+    "leipzig": ["rbleipzig", "leipzig"],
+    "bielefeld": ["bielefeld", "arminiabielefeld"],
+    "1860": ["1860munich", "1860munchen", "tsv1860", "1860"],
+    "munich1860": ["1860munich", "1860munchen", "tsv1860"],
+    "rotweissessen": ["rotweissessen", "rwe"],
+    "duisburg": ["duisburg", "msvduisburg"],
+    "furth": ["greutherfurth", "spvggfurth", "furth"],
+    "leipzigvfb": ["vfbleipzig", "leipzig"],
+    "dynamodresden": ["dynamodresden", "sgdynamodresden"],
+    "heidenheim": ["heidenheim", "1fcheidenheim"],
+    "darmstadt": ["darmstadt", "sv98", "lilien"],
+    "stpauli": ["stpauli", "fcstpauli"],
+    "hansa": ["hansarostock", "rostock"],
+    "regensburg": ["regensburg", "jahnregensburg"],
+    "paderborn": ["paderborn", "scpaderborn"],
+    "stpaderborn": ["paderborn", "scpaderborn"],
+    "karlsruhe": ["karlsruhe", "kscksc"],
+    # ─── La Liga ─────────────────────────────────────────────────
+    "realmadrid": ["realmadrid", "madrid"],
+    "barcelona": ["barcelona", "fcbarcelona", "barca", "fcb"],
     "valencia": ["valencia", "valenciacf"],
-    "athletic": ["athleticbilbao", "athletic"],
-    "atletico": ["atleticomadrid", "atletico"],
+    "athletic": ["athleticbilbao", "athletic", "bilbao"],
+    "atletico": ["atleticomadrid", "atletico", "atleti"],
     "sevilla": ["sevilla", "sevillafc"],
-    "juventus": ["juventus", "juve"],
-    "milan": ["milan", "acmilan"],
-    "inter": ["inter", "intermilan", "internazionale"],
+    "betis": ["realbetis", "betis"],
+    "realsociedad": ["realsociedad", "lareal"],
+    "espanyol": ["espanyol", "rcdespanyol"],
+    "celta": ["celtavigo", "celta"],
+    "villarreal": ["villarreal", "submarinoamarillo"],
+    "deportivo": ["deportivo", "depor", "deportivolacoruna"],
+    "malaga": ["malagacf", "malaga"],
+    "zaragoza": ["zaragoza", "realzaragoza"],
+    "osasuna": ["osasuna", "caosasuna"],
+    "getafe": ["getafe", "getafecf"],
+    "levante": ["levante", "levanteud"],
+    "mallorca": ["mallorca", "rcdmallorca"],
+    "alaves": ["alaves", "deportivoalaves"],
+    "granada": ["granada", "granadacf"],
+    "almeria": ["almeria", "udalmeria"],
+    "cadiz": ["cadiz", "cadizcf"],
+    "lasalmas": ["udlaspalmas", "laspalmas"],
+    "laspalmas": ["udlaspalmas", "laspalmas"],
+    "rayo": ["rayovallecano", "rayo"],
+    "elche": ["elche", "elchecf"],
+    "tenerife": ["tenerife", "cdtenerife"],
+    "oviedo": ["realoviedo", "oviedo"],
+    "sporting": ["sportinggijon", "sporting"],
+    "sportinggijon": ["sportinggijon", "sporting"],
+    "valladolid": ["valladolid", "realvalladolid"],
+    "santander": ["racingsantander", "santander"],
+    # ─── Serie A ─────────────────────────────────────────────────
+    "juventus": ["juventus", "juve", "juventusfc"],
+    "milan": ["milan", "acmilan", "rossoneri"],
+    "inter": ["inter", "intermilan", "internazionale", "fcinternazionale"],
     "napoli": ["napoli", "sscnapoli"],
     "roma": ["roma", "asroma"],
-    "psg": ["parissaintgermain", "psg"],
-    "manchesterunited": ["manchesterunited", "manunited"],
+    "lazio": ["lazio", "sslazio"],
+    "fiorentina": ["fiorentina", "acffiorentina"],
+    "atalanta": ["atalanta", "atalantabc"],
+    "torino": ["torino", "fctorino", "toro"],
+    "bologna": ["bologna", "bolognafc"],
+    "sampdoria": ["sampdoria", "ucsampdoria"],
+    "genoa": ["genoa", "genoacfc"],
+    "palermo": ["palermo", "palermofc"],
+    "udinese": ["udinese", "udinesecalcio"],
+    "verona": ["hellasverona", "verona"],
+    "cagliari": ["cagliari", "cagliaricalcio"],
+    "lecce": ["lecce", "uslecce"],
+    "empoli": ["empoli", "empolifc"],
+    "salernitana": ["salernitana", "ussalernitana"],
+    "venezia": ["venezia", "veneziafc"],
+    "monza": ["acmonza", "monza"],
+    "como": ["comocalcio", "como"],
+    "parma": ["parma", "parmacalcio"],
+    # ─── UCL extras (English / French / Dutch / etc.) ────────────
+    "manchesterunited": ["manchesterunited", "manunited", "manutd"],
     "manchestercity": ["manchestercity", "mancity"],
-    "liverpool": ["liverpool"],
-    "arsenal": ["arsenal"],
-    "chelsea": ["chelsea"],
-    "ajax": ["ajax"],
-    # National-team clubs (worldcup data)
-    "germany": ["germany", "germannationaltea", "germannational"],
+    "liverpool": ["liverpoolfc", "liverpool"],
+    "arsenal": ["arsenal", "arsenalfc"],
+    "chelsea": ["chelsea", "chelseafc"],
+    "tottenham": ["tottenham", "spurs", "tottenhamhotspur"],
+    "newcastle": ["newcastleunited", "newcastle"],
+    "everton": ["everton", "evertonfc"],
+    "astonvilla": ["astonvilla", "villa"],
+    "westham": ["westhamunited", "westham"],
+    "nottinghamforest": ["nottinghamforest", "forest"],
+    "celtic": ["celticfc", "celtic"],
+    "rangers": ["rangersfc", "rangers"],
+    "psg": ["parissaintgermain", "psg", "paris"],
+    "marseille": ["marseille", "olympiquemarseille", "om"],
+    "lyon": ["lyon", "olympiquelyonnais", "ol"],
+    "monaco": ["monaco", "asmonaco"],
+    "lille": ["lillelosc", "losc", "lille"],
+    "bordeaux": ["bordeaux", "girondinsdebordeaux"],
+    "ajax": ["ajaxamsterdam", "ajax"],
+    "psv": ["psveindhoven", "psv"],
+    "feyenoord": ["feyenoord", "feyenoordrotterdam"],
+    "porto": ["fcporto", "porto"],
+    "benfica": ["benfica", "slbenfica"],
+    "sportingcp": ["sportingcp", "sportinglisbon"],
+    "crvenazvezda": ["redstarbelgrade", "crvenazvezda"],
+    "steaua": ["steauabucharest", "steaua", "fcsb"],
+    "dynamokyiv": ["dynamokyiv", "dynamokiev"],
+    "rosenborg": ["rosenborg", "rosenborgbk"],
+    "galatasaray": ["galatasaray"],
+    "fenerbahce": ["fenerbahce"],
+    "besiktas": ["besiktas"],
+    # ─── Swiss ───────────────────────────────────────────────────
+    "basel": ["fcbasel", "basel"],
+    "youngboys": ["bsc young boys", "youngboys", "bscyoungboys"],
+    "zurich": ["fczurich", "zurich"],
+    "stgallen": ["fcstgallen", "stgallen"],
+    "luzern": ["fcluzern", "luzern", "lucerne"],
+    "servette": ["servettefc", "servette"],
+    "lugano": ["fclugano", "lugano"],
+    "sion": ["fcsion", "sion"],
+    "thun": ["fcthun", "thun"],
+    "lausanne": ["lausannesport", "lausanne"],
+    "winterthur": ["fcwinterthur", "winterthur"],
+    "grasshopper": ["grasshopperclub", "grasshopper", "gc"],
+    "aarau": ["fcaarau", "aarau"],
+    "xamax": ["neuchatelxamax", "xamax"],
+    # ─── National teams (worldcup data) ──────────────────────────
+    "germany": ["germany", "germannational", "germannationalteam"],
     "westgermany": ["westgermany", "germany"],
+    "eastgermany": ["eastgermany", "ddr"],
     "france": ["france", "frenchnational"],
     "brazil": ["brazil", "braziliannational"],
     "argentina": ["argentina", "argentine"],
@@ -177,15 +316,71 @@ CLUB_ALIASES: dict[str, list[str]] = {
     "england": ["england", "english"],
     "portugal": ["portugal", "portuguese"],
     "netherlands": ["netherlands", "dutch", "holland"],
+    "belgium": ["belgium", "belgian"],
+    "uruguay": ["uruguay", "uruguayan"],
+    "mexico": ["mexico", "mexican"],
+    "japan": ["japan", "japanese"],
+    "southkorea": ["southkorea", "korean"],
+    "australia": ["australia", "socceroos"],
+    "usa": ["unitedstates", "usa", "american"],
+    "morocco": ["morocco", "moroccan"],
+    "tunisia": ["tunisia", "tunisian"],
+    "nigeria": ["nigeria", "nigerian"],
+    "cameroon": ["cameroon", "cameroonian"],
+    "senegal": ["senegal", "senegalese"],
+    "ivorycoast": ["ivorycoast", "cotedivoire"],
+    "ghana": ["ghana", "ghanaian"],
+    "egypt": ["egypt", "egyptian"],
+    "sweden": ["sweden", "swedish"],
+    "denmark": ["denmark", "danish"],
+    "norway": ["norway", "norwegian"],
+    "switzerland": ["switzerland", "swiss"],
+    "austria": ["austria", "austrian"],
+    "croatia": ["croatia", "croatian"],
+    "poland": ["poland", "polish"],
+    "hungary": ["hungary", "hungarian", "magyar"],
+    "russia": ["russia", "russian"],
+    "sovietunion": ["sovietunion", "ussr", "soviet"],
+    "yugoslavia": ["yugoslavia", "yugoslavian"],
+    "scotland": ["scotland", "scottish"],
+    "ireland": ["ireland", "irish"],
+    "northernireland": ["northernireland"],
+    "wales": ["wales", "welsh"],
+    "iceland": ["iceland", "icelandic"],
+    "czechrepublic": ["czechrepublic", "czech", "czechia"],
+    "slovakia": ["slovakia", "slovak"],
+    "ukraine": ["ukraine", "ukrainian"],
+    "serbia": ["serbia", "serbian"],
+    "chile": ["chile", "chilean"],
+    "colombia": ["colombia", "colombian"],
+    "peru": ["peru", "peruvian"],
+    "ecuador": ["ecuador", "ecuadorian"],
+    "paraguay": ["paraguay", "paraguayan"],
+    "venezuela": ["venezuela", "venezuelan"],
+    "bolivia": ["bolivia", "bolivian"],
+    "honduras": ["honduras", "honduran"],
+    "panama": ["panama", "panamanian"],
+    "costarica": ["costarica", "costarican"],
+    "jamaica": ["jamaica", "jamaican"],
+    "saudiarabia": ["saudiarabia", "saudi"],
+    "iran": ["iran", "iranian"],
+    "iraq": ["iraq", "iraqi"],
+    "qatar": ["qatar", "qatari"],
+    "newzealand": ["newzealand", "kiwi"],
 }
 
 
 def club_alias_set(club_id: str) -> set[str]:
     """Get the set of recognizable text fragments for matching a club
-    against a Wikipedia article body."""
+    against a Wikipedia article body. Expands German transliterations
+    (ue↔u, oe↔o, ae↔a) so "nuernberg" can match the umlaut-stripped
+    "nurnberg" that appears in normalized Wikipedia text."""
     explicit = CLUB_ALIASES.get(club_id, [])
-    # Fallback: use the raw normalized club ID itself
-    return {normalize_text(a) for a in explicit} | {normalize_text(club_id)}
+    base = {normalize_text(a) for a in explicit} | {normalize_text(club_id)}
+    expanded: set[str] = set()
+    for a in base:
+        expanded |= transliteration_variants(a)
+    return expanded
 
 
 def verify_player(player: dict, extract: str) -> bool:
