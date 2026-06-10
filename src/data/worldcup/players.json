@@ -4004,7 +4004,10 @@
     "career_years": "2014-2022",
     "nationality": "Belgium",
     "club": "belgium",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Koen Casteels",
@@ -4049,7 +4052,10 @@
     "career_years": "2018-2022",
     "nationality": "Belgium",
     "club": "belgium",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Mousa Dembélé",
@@ -5330,7 +5336,10 @@
     "career_years": "2018-2022",
     "nationality": "Brazil",
     "club": "brazil",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CB"
+    ]
   },
   {
     "name": "Ederson",
@@ -8870,7 +8879,10 @@
     "career_years": "2022",
     "nationality": "Canada",
     "club": "canada",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CB"
+    ]
   },
   {
     "name": "Jonathan David",
@@ -11624,7 +11636,10 @@
     "prime_rating": 64,
     "career_years": "2022",
     "nationality": "Costa Rica",
-    "club": "costarica"
+    "club": "costarica",
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Leonel Moreira",
@@ -13932,7 +13947,10 @@
     "career_years": "2022",
     "nationality": "Ecuador",
     "club": "ecuador",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Enner Valencia",
@@ -15010,7 +15028,10 @@
     "career_years": "2018-2022",
     "nationality": "England",
     "club": "england",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CB"
+    ]
   },
   {
     "name": "Marcus Rashford",
@@ -17948,7 +17969,10 @@
     "career_years": "2018-2022",
     "nationality": "Germany",
     "club": "germany",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB"
+    ]
   },
   {
     "name": "Serge Gnabry",
@@ -18950,7 +18974,8 @@
     "nationality": "Ghana",
     "club": "ghana",
     "altPositions": [
-      "RW"
+      "RW",
+      "CAM"
     ],
     "verified": true
   },
@@ -21006,7 +21031,10 @@
     "career_years": "2018-2022",
     "nationality": "Iran",
     "club": "iran",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Sardar Azmoun",
@@ -21015,7 +21043,10 @@
     "career_years": "2018-2022",
     "nationality": "Iran",
     "club": "iran",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Ehsan Hajsafi",
@@ -21042,7 +21073,10 @@
     "career_years": "2014-2022",
     "nationality": "Iran",
     "club": "iran",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Ali Daei",
@@ -23948,7 +23982,10 @@
     "career_years": "2014-2022",
     "nationality": "Japan",
     "club": "japan",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CB"
+    ]
   },
   {
     "name": "Junya Ito",
@@ -24968,7 +25005,10 @@
     "career_years": "2018-2022",
     "nationality": "Mexico",
     "club": "mexico",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CB"
+    ]
   },
   {
     "name": "Guillermo Ochoa",
@@ -25337,7 +25377,10 @@
     "career_years": "2022",
     "nationality": "Mexico",
     "club": "mexico",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Oribe Peralta",
@@ -32677,7 +32720,10 @@
     "career_years": "2022",
     "nationality": "Portugal",
     "club": "portugal",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "William Carvalho",
@@ -35222,7 +35268,10 @@
     "career_years": "2018-2022",
     "nationality": "Saudi Arabia",
     "club": "saudiarabia",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Salman Al-Faraj",
@@ -35231,7 +35280,10 @@
     "career_years": "2018-2022",
     "nationality": "Saudi Arabia",
     "club": "saudiarabia",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Yasser Al-Shahrani",
@@ -36745,7 +36797,10 @@
     "career_years": "2018-2022",
     "nationality": "Senegal",
     "club": "senegal",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CDM"
+    ]
   },
   {
     "name": "Formose Mendy",
@@ -37440,7 +37495,10 @@
     "career_years": "2018-2022",
     "nationality": "Serbia",
     "club": "serbia",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Andrija Živković",
@@ -38692,7 +38750,7 @@
     "club": "southafrica"
   },
   {
-    "name": "Heung-min Son",
+    "name": "Son Heung-min",
     "position": "LW",
     "prime_rating": 89,
     "career_years": "2014-2022",
@@ -38761,7 +38819,7 @@
     "club": "southkorea"
   },
   {
-    "name": "Seung-gyu Kim",
+    "name": "Kim Seung-gyu",
     "position": "GK",
     "prime_rating": 79,
     "career_years": "2014-2022",
@@ -38778,7 +38836,7 @@
     "verified": true
   },
   {
-    "name": "Young-gwon Kim",
+    "name": "Kim Young-gwon",
     "position": "CB",
     "prime_rating": 79,
     "career_years": "2014-2022",
@@ -38827,7 +38885,7 @@
     "club": "southkorea"
   },
   {
-    "name": "Chul Hong",
+    "name": "Hong Chul",
     "position": "RB",
     "prime_rating": 77,
     "career_years": "2018-2022",
@@ -38860,7 +38918,7 @@
     "verified": true
   },
   {
-    "name": "Hee-chan Hwang",
+    "name": "Hwang Hee-chan",
     "position": "LW",
     "prime_rating": 77,
     "career_years": "2018-2022",
@@ -38885,7 +38943,7 @@
     "club": "southkorea"
   },
   {
-    "name": "Jae-sung Lee",
+    "name": "Lee Jae-sung",
     "position": "CM",
     "prime_rating": 77,
     "career_years": "2018-2022",
@@ -39013,7 +39071,7 @@
     "club": "southkorea"
   },
   {
-    "name": "Woo-young Jung",
+    "name": "Jung Woo-young",
     "position": "CDM",
     "prime_rating": 77,
     "career_years": "2018-2022",
@@ -39070,7 +39128,7 @@
     "club": "southkorea"
   },
   {
-    "name": "Hyeon-woo Jo",
+    "name": "Jo Hyeon-woo",
     "position": "GK",
     "prime_rating": 76,
     "career_years": "2018-2022",
@@ -40466,7 +40524,10 @@
     "career_years": "2010-2022",
     "nationality": "Spain",
     "club": "spain",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CB"
+    ]
   },
   {
     "name": "Gerard Piqué",
@@ -44799,7 +44860,10 @@
     "prime_rating": 64,
     "career_years": "2022",
     "nationality": "Tunisia",
-    "club": "tunisia"
+    "club": "tunisia",
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Nader Ghandri",
@@ -45346,7 +45410,8 @@
     "club": "uruguay",
     "altPositions": [
       "RW",
-      "CDM"
+      "CDM",
+      "CAM"
     ],
     "verified": true
   },
@@ -49291,6 +49356,285 @@
     "career_years": "1990-2002",
     "nationality": "Norway",
     "club": "norway",
+    "verified": true
+  },
+  {
+    "name": "Saad Al-Sheeb",
+    "position": "GK",
+    "prime_rating": 74,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Meshaal Barsham",
+    "position": "GK",
+    "prime_rating": 74,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Yousef Hassan",
+    "position": "GK",
+    "prime_rating": 72,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Pedro Miguel",
+    "position": "CB",
+    "prime_rating": 74,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Abdelkarim Hassan",
+    "position": "LB",
+    "prime_rating": 78,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Tarek Salman",
+    "position": "CB",
+    "prime_rating": 74,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Musab Kheder",
+    "position": "CB",
+    "prime_rating": 73,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Homam Ahmed",
+    "position": "LB",
+    "prime_rating": 73,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Bassam Al-Rawi",
+    "position": "CB",
+    "prime_rating": 74,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Boualem Khoukhi",
+    "position": "CB",
+    "prime_rating": 75,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Ismaeel Mohammad",
+    "position": "RB",
+    "prime_rating": 74,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Mohammed Waad",
+    "position": "CM",
+    "prime_rating": 72,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Abdulaziz Hatem",
+    "position": "CM",
+    "prime_rating": 74,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Ali Assadalla",
+    "position": "CM",
+    "prime_rating": 74,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Hassan Al-Haydos",
+    "position": "CAM",
+    "prime_rating": 78,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Karim Boudiaf",
+    "position": "CDM",
+    "prime_rating": 75,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Salem Al-Hajri",
+    "position": "CM",
+    "prime_rating": 72,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Assim Madibo",
+    "position": "CDM",
+    "prime_rating": 74,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Mohammed Muntari",
+    "position": "ST",
+    "prime_rating": 73,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Akram Afif",
+    "position": "LW",
+    "prime_rating": 82,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Almoez Ali",
+    "position": "ST",
+    "prime_rating": 80,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Ahmed Alaaeldin",
+    "position": "RW",
+    "prime_rating": 74,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Khalid Muneer",
+    "position": "CM",
+    "prime_rating": 72,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Mostafa Tarek",
+    "position": "CB",
+    "prime_rating": 71,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Ahmed Suhail",
+    "position": "ST",
+    "prime_rating": 72,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Naïf Al-Hadhrami",
+    "position": "CB",
+    "prime_rating": 72,
+    "career_years": "2022",
+    "nationality": "Qatar",
+    "club": "qatar",
+    "verified": true
+  },
+  {
+    "name": "Antony",
+    "position": "RW",
+    "prime_rating": 82,
+    "career_years": "2022",
+    "nationality": "Brazil",
+    "club": "brazil",
+    "verified": true
+  },
+  {
+    "name": "Saeid Ezatolahi",
+    "position": "CDM",
+    "prime_rating": 75,
+    "career_years": "2018-2022",
+    "nationality": "Iran",
+    "club": "iran",
+    "verified": true
+  },
+  {
+    "name": "Pablo Sarabia",
+    "position": "CAM",
+    "prime_rating": 80,
+    "career_years": "2022",
+    "nationality": "Spain",
+    "club": "spain",
+    "verified": true
+  },
+  {
+    "name": "Sebastián Coates",
+    "position": "CB",
+    "prime_rating": 80,
+    "career_years": "2014-2022",
+    "nationality": "Uruguay",
+    "club": "uruguay",
+    "verified": true
+  },
+  {
+    "name": "Romario Ibarra",
+    "position": "LW",
+    "prime_rating": 74,
+    "career_years": "2014-2022",
+    "nationality": "Ecuador",
+    "club": "ecuador",
     "verified": true
   }
 ]
