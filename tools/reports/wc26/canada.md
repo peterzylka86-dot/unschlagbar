@@ -1,9 +1,7 @@
 # WC26 squad diff — Canada
 
-Wikipedia squad: **26 players** · Our roster: **25 players**
+Wikipedia squad: **26 players** · Our roster: **26 players**
 
-## Missing from our dataset — 1 players (ADD candidates)
+## ✓ Clean — no discrepancies
 
-| Name | Pos | Club |
-|---|---|---|
-| Jayden Nelson | MF | Austin FC |
+Our roster matches the Wikipedia squad.

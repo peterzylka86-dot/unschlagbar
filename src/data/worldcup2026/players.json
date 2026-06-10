@@ -1400,7 +1400,7 @@
     "verified": true
   },
   {
-    "name": "Ederson",
+    "name": "Ederson Moraes",
     "position": "GK",
     "prime_rating": 90,
     "career_years": "2026",
@@ -1546,14 +1546,6 @@
     "nationality": "Brazil",
     "club": "brazil",
     "verified": true
-  },
-  {
-    "name": "Wesley",
-    "position": "CB",
-    "prime_rating": 83,
-    "career_years": "2026",
-    "nationality": "Brazil",
-    "club": "brazil"
   },
   {
     "name": "Lucas Paquetá",
@@ -4270,7 +4262,8 @@
     "nationality": "Germany",
     "club": "germany",
     "altPositions": [
-      "LW"
+      "LW",
+      "CAM"
     ],
     "verified": true
   },
@@ -4388,7 +4381,10 @@
     "career_years": "2026",
     "nationality": "Ghana",
     "club": "ghana",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Iñaki Williams",
@@ -5970,7 +5966,10 @@
     "career_years": "2026",
     "nationality": "Mexico",
     "club": "mexico",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CB"
+    ]
   },
   {
     "name": "Johan Vásquez",
@@ -6455,15 +6454,6 @@
     "verified": true
   },
   {
-    "name": "Jurriën Timber",
-    "position": "LB",
-    "prime_rating": 87,
-    "career_years": "2026",
-    "nationality": "Netherlands",
-    "club": "netherlands",
-    "verified": true
-  },
-  {
     "name": "Bart Verbruggen",
     "position": "GK",
     "prime_rating": 86,
@@ -6885,7 +6875,10 @@
     "career_years": "2026",
     "nationality": "Norway",
     "club": "norway",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Andreas Schjelderup",
@@ -7098,7 +7091,10 @@
     "career_years": "2026",
     "nationality": "Panama",
     "club": "panama",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "CAM"
+    ]
   },
   {
     "name": "Luis Mejía",
@@ -8976,7 +8972,8 @@
     "nationality": "South Korea",
     "club": "southkorea",
     "altPositions": [
-      "LW"
+      "LW",
+      "CAM"
     ],
     "verified": true
   },
@@ -10478,7 +10475,7 @@
     "verified": true
   },
   {
-    "name": "Maximilian Arfsten",
+    "name": "Max Arfsten",
     "position": "LB",
     "prime_rating": 76,
     "career_years": "2026",
@@ -10530,8 +10527,8 @@
   },
   {
     "name": "Emiliano Martínez",
-    "position": "GK",
-    "prime_rating": 89,
+    "position": "CM",
+    "prime_rating": 76,
     "career_years": "2026",
     "nationality": "Uruguay",
     "club": "uruguay",
@@ -10974,5 +10971,47 @@
     "career_years": "2026",
     "nationality": "Uzbekistan",
     "club": "uzbekistan"
+  },
+  {
+    "name": "Éderson Silva",
+    "position": "CM",
+    "prime_rating": 80,
+    "career_years": "2026",
+    "nationality": "Brazil",
+    "club": "brazil",
+    "verified": true
+  },
+  {
+    "name": "Jayden Nelson",
+    "position": "CM",
+    "altPositions": [
+      "LW"
+    ],
+    "prime_rating": 73,
+    "career_years": "2026",
+    "nationality": "Canada",
+    "club": "canada",
+    "verified": true
+  },
+  {
+    "name": "Mohammad Taha",
+    "position": "CB",
+    "prime_rating": 70,
+    "career_years": "2026",
+    "nationality": "Jordan",
+    "club": "jordan",
+    "verified": true
+  },
+  {
+    "name": "Lutsharel Geertruida",
+    "position": "CB",
+    "altPositions": [
+      "RB"
+    ],
+    "prime_rating": 78,
+    "career_years": "2026",
+    "nationality": "Netherlands",
+    "club": "netherlands",
+    "verified": true
   }
 ]
