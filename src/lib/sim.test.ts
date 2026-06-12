@@ -13,6 +13,8 @@ import {
   simulateKnockout,
   computeLeagueTable,
   forecastSeasonPoints,
+  buildSeasonFixtures,
+  simulateOneMatch,
 } from "./sim";
 import type { Club, Slot, Player } from "./game-types";
 
@@ -362,6 +364,53 @@ describe("computeLeagueTable", () => {
     // dominates 80%+ of outcomes. (For an 80-rated user vs 75-83 opps,
     // expect a spread roughly between 1st and 4th.)
     expect(positions.size).toBeGreaterThanOrEqual(3);
+  });
+
+  it("buildSeasonFixtures: deterministic + correct count + home/away balance", () => {
+    const opps = Array.from({ length: 11 }, (_, i) => mockClub(78, i));
+    const a = buildSeasonFixtures(opps, 22, 42);
+    const b = buildSeasonFixtures(opps, 22, 42);
+    expect(a).toHaveLength(22);
+    expect(a.map((f) => `${f.opponent.id}:${f.home}`)).toEqual(
+      b.map((f) => `${f.opponent.id}:${f.home}`),
+    );
+    // Each opponent appears exactly twice (home + away)
+    const counts = new Map<string, number>();
+    a.forEach((f) => counts.set(f.opponent.id, (counts.get(f.opponent.id) ?? 0) + 1));
+    expect([...counts.values()].every((n) => n === 2)).toBe(true);
+  });
+
+  it("buildSeasonFixtures: different seed → different order", () => {
+    const opps = Array.from({ length: 11 }, (_, i) => mockClub(78, i));
+    const a = buildSeasonFixtures(opps, 22, 42).map((f) => f.opponent.id);
+    const b = buildSeasonFixtures(opps, 22, 43).map((f) => f.opponent.id);
+    expect(a).not.toEqual(b);
+  });
+
+  it("simulateOneMatch: deterministic per (seed, matchday)", () => {
+    const f = { opponent: mockClub(80, 1), home: true };
+    const a = simulateOneMatch(f, 5, 85, 42);
+    const b = simulateOneMatch(f, 5, 85, 42);
+    expect(a.ourScore).toBe(b.ourScore);
+    expect(a.theirScore).toBe(b.theirScore);
+    // Different matchday → independent stream (usually different result;
+    // assert the seeds at least differ across MANY matchdays)
+    const results = Array.from({ length: 20 }, (_, md) =>
+      simulateOneMatch(f, md + 1, 85, 42),
+    );
+    const distinct = new Set(results.map((r) => `${r.ourScore}-${r.theirScore}`));
+    expect(distinct.size).toBeGreaterThan(1);
+  });
+
+  it("simulateOneMatch: higher rating wins more over a large sample", () => {
+    const f = { opponent: mockClub(78, 1), home: true };
+    let strongWins = 0;
+    let weakWins = 0;
+    for (let md = 1; md <= 200; md++) {
+      if (simulateOneMatch(f, md, 92, 7).outcome === "W") strongWins++;
+      if (simulateOneMatch(f, md, 68, 7).outcome === "W") weakWins++;
+    }
+    expect(strongWins).toBeGreaterThan(weakWins);
   });
 
   it("forecast: zero opponents → 0", () => {

@@ -100,6 +100,11 @@ export interface CareerState {
   /** Per-season flag — true once the user has answered "keep him" or "let
    *  him go" to the end-of-season star demand. Reset on new season. */
   starDemandResolved: boolean;
+  /** Matchday starting XI — player keys (`club:name`) of the (up to) 11
+   *  starters selected from the squad. null = auto-pick best XI by
+   *  effective rating. Additive field: legacy 11-player saves never set
+   *  it and resolve to "everyone starts" via auto-pick. */
+  startingXI: string[] | null;
 }
 
 const initialCareerState: CareerState = {
@@ -120,6 +125,7 @@ const initialCareerState: CareerState = {
   rerollsNextSeason: 3,
   pendingDeparture: null,
   starDemandResolved: false,
+  startingXI: null,
 };
 
 interface CareerStore extends CareerState {
@@ -154,6 +160,8 @@ interface CareerStore extends CareerState {
   setPendingDeparture: (playerKey: string | null) => void;
   /** Mark the end-of-season star demand as resolved (keep or let go chosen). */
   setStarDemandResolved: (flag: boolean) => void;
+  /** Persist the user's matchday XI selection (player keys). null = auto. */
+  setStartingXI: (keys: string[] | null) => void;
 }
 
 export const useCareer = create<CareerStore>()(
@@ -233,6 +241,8 @@ export const useCareer = create<CareerStore>()(
       setPendingDeparture: (playerKey) => set({ pendingDeparture: playerKey }),
 
       setStarDemandResolved: (flag) => set({ starDemandResolved: flag }),
+
+      setStartingXI: (keys) => set({ startingXI: keys }),
     }),
     {
       name: "unschlagbar:career:v1",
@@ -256,6 +266,7 @@ export const useCareer = create<CareerStore>()(
         rerollsNextSeason: state.rerollsNextSeason,
         pendingDeparture: state.pendingDeparture,
         starDemandResolved: state.starDemandResolved,
+        startingXI: state.startingXI,
       }),
     },
   ),

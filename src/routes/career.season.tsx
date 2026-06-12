@@ -20,7 +20,7 @@ import { useCareer } from "@/lib/career-store";
 import { LEAGUES } from "@/lib/leagues";
 import type { LeagueId } from "@/lib/leagues";
 import { getCareerClubs, getCareerPlayers } from "@/lib/data";
-import { simulateSeason, squadRating, computeLeagueTable } from "@/lib/sim";
+import { buildSeasonFixtures, simulateOneMatch, squadRating, computeLeagueTable } from "@/lib/sim";
 import { isPositionCompatible, playerFitsSlot } from "@/lib/draft-helpers";
 import {
   computeFormDelta,
@@ -30,6 +30,7 @@ import {
   pickAssister,
   simplifyPosition,
 } from "@/lib/career-core";
+import { resolveXI, xiToSlots, canSwapIntoXI, playerKey, effectiveRating } from "@/lib/matchday-xi";
 import type { Club, MatchResult, Player, Slot } from "@/lib/game-types";
 
 export const Route = createFileRoute("/career/season")({
@@ -98,61 +99,34 @@ function CareerSeason() {
     });
   }, [career.rivals, clubs, escalation]);
 
-  // Slots representation for squadRating + scorer-picking
-  const userSlots: Slot[] = useMemo(() => {
-    return career.squad.map((p, i) => ({
-      id: `slot-${i}`,
-      position: p.position,
-      x: 50,
-      y: 50,
-      player: p,
-    }));
-  }, [career.squad]);
+  // ─── Per-matchday simulation (benching) ─────────────────────────────
+  //
+  // Previously the whole season was pre-simulated at mount with ONE
+  // squad rating, then revealed matchday by matchday. With the squad-of-14
+  // bench system, each matchday simulates ON PLAY using the rating of the
+  // CURRENT starting XI — so rotating a hot bench player in genuinely
+  // changes the next result. Fixture list stays precomputed (deterministic
+  // schedule); only the match outcomes are rolled per matchday with a
+  // per-matchday derived seed (stable on re-render / resume).
+  const seasonSeed = useMemo(
+    () => hashString(`${career.startedAt}-s${career.currentSeason}`),
+    [career.startedAt, career.currentSeason],
+  );
+  const fixtures = useMemo(
+    () => buildSeasonFixtures(opponents, MATCHES_PER_SEASON, seasonSeed),
+    [opponents, seasonSeed],
+  );
 
-  const userRating = useMemo(() => squadRating(userSlots), [userSlots]);
-
-  // ─── Simulate the season once on mount ────────────────────────────
   const [matches, setMatches] = useState<MatchWithScorers[]>([]);
-  const [shown, setShown] = useState(0); // index of last revealed match
+  const shown = matches.length;
   const [tableComputed, setTableComputed] = useState(false);
-  const [played, setPlayed] = useState(false);
 
-  useEffect(() => {
-    if (matches.length > 0) return;
-    const seed = hashString(`${career.startedAt}-s${career.currentSeason}`);
-    const raw = simulateSeason(opponents, MATCHES_PER_SEASON, userRating, seed, "normal");
-
-    // Attach scorers using our match-rng so order is reproducible
-    const rand = mulberry32(seed + 1);
-    const enriched: MatchWithScorers[] = raw.map((m) => {
-      const scorers: { name: string; assister?: string }[] = [];
-      const xi = career.squad;
-      for (let g = 0; g < m.ourScore; g++) {
-        const s = pickScorer(xi, null, rand);
-        if (!s) continue;
-        const a = pickAssister(xi, s, rand);
-        scorers.push({ name: s.name, assister: a?.name });
-      }
-      return { ...m, scorers };
-    });
-    setMatches(enriched);
-  }, [matches.length, opponents, userRating, career.squad, career.startedAt, career.currentSeason]);
-
-  // ─── Reveal matchdays one by one (or all at once on "Skip") ───────
-  function playNext() {
-    setShown((s) => Math.min(s + 1, matches.length));
-  }
-  function playAll() {
-    setShown(matches.length);
-    setPlayed(true);
-  }
-
-  // Compute form INCREMENTALLY based on matches revealed so far.
-  // This drives both the live 🔥/❄️ indicators during the season AND the
-  // value persisted to career.form at season end (single source of truth).
+  // Form computed from PLAYED matches — drives both the 🔥/❄️ badges and
+  // the XI auto-pick ranking, so a cold streak genuinely costs a starter
+  // their place if the user (or auto-pick) reacts.
   const liveForm = useMemo(() => {
     const f: Record<string, number> = {};
-    matches.slice(0, shown).forEach((m) => {
+    matches.forEach((m) => {
       career.squad.forEach((p) => {
         const key = `${p.club}:${normalizeName(p.name)}`;
         const current = f[key] ?? 0;
@@ -171,42 +145,117 @@ function CareerSeason() {
       });
     });
     return f;
-  }, [matches, shown, career.squad]);
+  }, [matches, career.squad]);
 
-  // When all matches revealed, persist the final form snapshot to the store
-  // so /career/postseason can read it. Run exactly once per season completion.
+  // The starting XI — stored selection resolved against the live squad
+  // (departed players dropped, holes auto-filled from compatible bench).
+  const xiKeys = useMemo(
+    () => resolveXI(career.squad, career.startingXI, career.formation, liveForm),
+    [career.squad, career.startingXI, career.formation, liveForm],
+  );
+  const xiSlots: Slot[] = useMemo(
+    () => xiToSlots(career.squad, xiKeys, career.formation),
+    [career.squad, xiKeys, career.formation],
+  );
+  const xiPlayers = useMemo(
+    () => xiSlots.map((s) => s.player).filter((p): p is Player => !!p),
+    [xiSlots],
+  );
+
+  // Rating of the SELECTED XI (not the full 14) + a small form kicker:
+  // average XI form in [-2, 2] rounds to a ±2 rating swing. This is what
+  // makes rotation strategic rather than cosmetic.
+  const userRating = useMemo(() => {
+    const base = squadRating(xiSlots);
+    if (xiPlayers.length === 0) return base;
+    const avgForm =
+      xiPlayers.reduce(
+        (sum, p) => sum + (liveForm[`${p.club}:${normalizeName(p.name)}`] ?? 0),
+        0,
+      ) / xiPlayers.length;
+    return base + Math.round(Math.max(-2, Math.min(2, avgForm)));
+  }, [xiSlots, xiPlayers, liveForm]);
+
+  // Stable rating for the AI table jitter — must NOT change with XI
+  // rotation or the rival W/D/L sequences would reshuffle every matchday.
+  const tableSeedRating = useMemo(() => {
+    const fullSlots: Slot[] = career.squad.map((p, i) => ({
+      id: `slot-${i}`,
+      position: p.position,
+      x: 50,
+      y: 50,
+      player: p,
+    }));
+    return squadRating(fullSlots.slice(0, 11));
+  }, [career.squad]);
+
+  // ─── Play matchdays — simulate with the CURRENT XI on each click ────
+  function simulateNext(prev: MatchWithScorers[], rating: number): MatchWithScorers | null {
+    const idx = prev.length;
+    if (idx >= fixtures.length) return null;
+    const m = simulateOneMatch(fixtures[idx], idx + 1, rating, seasonSeed, "normal");
+    // Scorers from the players ON THE PITCH (the XI), not the bench.
+    const rand = mulberry32(seasonSeed + (idx + 1) * 7919);
+    const scorers: { name: string; assister?: string }[] = [];
+    for (let g = 0; g < m.ourScore; g++) {
+      const s = pickScorer(xiPlayers, liveForm, rand);
+      if (!s) continue;
+      const a = pickAssister(xiPlayers, s, rand);
+      scorers.push({ name: s.name, assister: a?.name });
+    }
+    return { ...m, scorers };
+  }
+
+  function playNext() {
+    setMatches((prev) => {
+      const next = simulateNext(prev, userRating);
+      return next ? [...prev, next] : prev;
+    });
+  }
+  function playAll() {
+    // Sim the remaining matchdays with the CURRENT XI (no further
+    // rotation once you hit skip — that's the tradeoff of skipping).
+    setMatches((prev) => {
+      const out = [...prev];
+      while (out.length < fixtures.length) {
+        const next = simulateNext(out, userRating);
+        if (!next) break;
+        out.push(next);
+      }
+      return out;
+    });
+  }
+
+  // When all matchdays are played, persist the final form snapshot to the
+  // store so /career/postseason can read it. Run exactly once.
   useEffect(() => {
-    if (shown < matches.length || matches.length === 0) return;
+    if (shown < MATCHES_PER_SEASON || matches.length === 0) return;
     if (tableComputed) return;
     setTableComputed(true);
     Object.entries(liveForm).forEach(([k, v]) => career.setForm(k, v));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [shown, matches.length]);
 
-  // Live league table — recomputes after every matchday revealed.
+  // Live league table — recomputes after every matchday played.
   const { table, ourPosition } = useMemo(() => {
     if (shown === 0) {
       return { table: [] as ReturnType<typeof computeLeagueTable>["table"], ourPosition: 0 };
     }
-    return computeLeagueTable(matches.slice(0, shown), opponents, userRating, MATCHES_PER_SEASON);
-  }, [shown, matches, opponents, userRating]);
+    return computeLeagueTable(matches, opponents, tableSeedRating, MATCHES_PER_SEASON);
+  }, [shown, matches, opponents, tableSeedRating]);
 
   // ─── Render ───────────────────────────────────────────────────────
   // Career not yet drafted — bail (the redirect runs from the useEffect above).
   if (career.squad.length === 0 || career.rivals.length === 0) return null;
 
-  if (matches.length === 0) {
-    return (
-      <div className="min-h-screen flex items-center justify-center text-muted-foreground">
-        Generating fixtures…
-      </div>
-    );
-  }
-
-  const seasonDone = shown >= matches.length;
-  const wins = matches.slice(0, shown).filter((m) => m.outcome === "W").length;
-  const draws = matches.slice(0, shown).filter((m) => m.outcome === "D").length;
-  const losses = matches.slice(0, shown).filter((m) => m.outcome === "L").length;
+  // Matches accumulate as the user plays — matchday 0 is a valid state
+  // ("season hasn't kicked off"), no loading gate needed since fixtures
+  // are computed synchronously.
+  const seasonDone = shown >= MATCHES_PER_SEASON;
+  const wins = matches.filter((m) => m.outcome === "W").length;
+  const draws = matches.filter((m) => m.outcome === "D").length;
+  const losses = matches.filter((m) => m.outcome === "L").length;
+  const hasBench = career.squad.length > xiKeys.length;
 
   return (
     <div className="min-h-screen px-4 py-8 max-w-4xl mx-auto">
@@ -220,7 +269,7 @@ function CareerSeason() {
         <div className="text-right">
           <div className="font-display text-2xl text-warning">Season {career.currentSeason}</div>
           <div className="text-[10px] text-muted-foreground uppercase tracking-[0.2em]">
-            Matchday {shown} of {matches.length}
+            Matchday {shown} of {MATCHES_PER_SEASON}
           </div>
         </div>
       </header>
@@ -230,7 +279,7 @@ function CareerSeason() {
         <div className="h-2 rounded-full bg-card/60 overflow-hidden border border-border/60">
           <div
             className="h-full bg-gradient-to-r from-warning/80 to-warning transition-all duration-500 ease-out"
-            style={{ width: `${(shown / matches.length) * 100}%` }}
+            style={{ width: `${(shown / MATCHES_PER_SEASON) * 100}%` }}
           />
         </div>
       </div>
@@ -242,6 +291,25 @@ function CareerSeason() {
         <ScoreboardStat label="L" value={losses} accent="text-primary" />
         <ScoreboardStat label="OVR" value={Math.round(userRating)} accent="text-warning" />
       </div>
+
+      {/* Matchday Squad — the benching system. Only shown when the squad
+          actually has a bench (squad of 14); legacy 11-player careers
+          skip it entirely. Collapsed by default to keep the play loop
+          one tap; opens for users who want to rotate. */}
+      {!seasonDone && hasBench && (
+        <MatchdaySquadPanel
+          squad={career.squad}
+          xiKeys={xiKeys}
+          form={liveForm}
+          formation={career.formation}
+          franchiseKey={career.franchisePlayerKey}
+          onSwap={(outKey, inKey) => {
+            if (!canSwapIntoXI(career.squad, xiKeys, outKey, inKey, career.formation)) return;
+            const next = xiKeys.filter((k) => k !== outKey).concat(inKey);
+            career.setStartingXI(next);
+          }}
+        />
+      )}
 
       {/* Mid-season swap window — gates progression until used or skipped.
           Triggers exactly once per season, after MD11. */}
@@ -275,7 +343,6 @@ function CareerSeason() {
           Match feed
         </div>
         {matches
-          .slice(0, shown)
           .slice()
           .reverse()
           .map((m) => (
@@ -292,7 +359,7 @@ function CareerSeason() {
       {shown > 0 && <SquadForm squad={career.squad} form={liveForm} />}
 
       {/* Live league table — updates after every matchday */}
-      {shown > 0 && <LiveTable table={table} matchday={shown} totalMatchdays={matches.length} />}
+      {shown > 0 && <LiveTable table={table} matchday={shown} totalMatchdays={MATCHES_PER_SEASON} />}
 
       {/* End-of-season — next-step CTA (final table already shown live above) */}
       {seasonDone && (
@@ -329,6 +396,135 @@ function mulberry32(seed: number): () => number {
 }
 
 // ─── sub-components ──────────────────────────────────────────────────
+
+/** Matchday squad management — starters vs bench, tap-to-swap.
+ *
+ *  Interaction: tap a bench player → eligible starters highlight → tap
+ *  one to swap. Position legality enforced by canSwapIntoXI (the parent
+ *  validates again before committing — UI and store can't disagree).
+ *  Effective rating shown = prime + form, the same number the auto-pick
+ *  ranks by, so the UI never contradicts the selection logic. */
+function MatchdaySquadPanel({
+  squad,
+  xiKeys,
+  form,
+  formation,
+  franchiseKey,
+  onSwap,
+}: {
+  squad: Player[];
+  xiKeys: string[];
+  form: Record<string, number>;
+  formation: import("@/lib/game-types").FormationKey;
+  franchiseKey: string | null;
+  onSwap: (outKey: string, inKey: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const [pendingIn, setPendingIn] = useState<string | null>(null);
+
+  const xiSet = new Set(xiKeys);
+  const starters = squad.filter((p) => xiSet.has(playerKey(p)));
+  const bench = squad.filter((p) => !xiSet.has(playerKey(p)));
+
+  function formBadge(p: Player) {
+    const f = form[`${p.club}:${normalizeName(p.name)}`] ?? 0;
+    if (f >= 1.5) return "🔥";
+    if (f <= -1.5) return "❄️";
+    return null;
+  }
+
+  function rowFor(p: Player, isStarter: boolean) {
+    const key = playerKey(p);
+    const isFranchise = key === franchiseKey;
+    const eff = Math.round(effectiveRating(p, formKeyedForm(p, form)) * 10) / 10;
+    const isPendingTarget =
+      pendingIn !== null && isStarter && canSwapIntoXI(squad, xiKeys, key, pendingIn, formation);
+    const isPendingSource = pendingIn === key;
+    return (
+      <button
+        key={key}
+        onClick={() => {
+          if (isStarter) {
+            if (isPendingTarget && pendingIn) {
+              onSwap(key, pendingIn);
+              setPendingIn(null);
+            }
+            // Tapping a starter without a pending bench pick: no-op.
+          } else {
+            setPendingIn(isPendingSource ? null : key);
+          }
+        }}
+        className={`w-full flex items-center gap-2 px-2.5 py-1.5 rounded-lg border text-left text-xs transition ${
+          isPendingSource
+            ? "border-warning bg-warning/15 ring-1 ring-warning/50"
+            : isPendingTarget
+              ? "border-success bg-success/10 ring-1 ring-success/40 cursor-pointer"
+              : "border-border/60 bg-background/40"
+        }`}
+      >
+        <span className="font-mono text-[10px] text-warning w-8 shrink-0">{p.position}</span>
+        <span className="flex-1 truncate">
+          {isFranchise && "⭐ "}
+          {p.name}
+          {formBadge(p) && <span className="ml-1">{formBadge(p)}</span>}
+        </span>
+        <span className="font-display text-sm text-warning shrink-0">{eff}</span>
+      </button>
+    );
+  }
+
+  return (
+    <div className="mt-4 rounded-2xl border border-border bg-card/40">
+      <button
+        onClick={() => {
+          setOpen((v) => !v);
+          setPendingIn(null);
+        }}
+        className="w-full flex items-center justify-between px-4 py-3 text-left"
+        aria-expanded={open}
+      >
+        <div className="font-display text-sm tracking-wide text-foreground/90">
+          ⚽ Matchday Squad
+          <span className="ml-2 text-[10px] text-muted-foreground normal-case">
+            {starters.length} start · {bench.length} bench
+          </span>
+        </div>
+        <span className={`text-warning transition-transform ${open ? "rotate-180" : ""}`}>⌄</span>
+      </button>
+      {open && (
+        <div className="px-4 pb-4">
+          <p className="text-[10px] text-muted-foreground mb-3">
+            Tap a bench player, then tap the starter to replace. 🔥 hot / ❄️ cold form counts
+            toward the rating.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-1.5">
+                Starting XI
+              </div>
+              <div className="space-y-1">{starters.map((p) => rowFor(p, true))}</div>
+            </div>
+            <div>
+              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-1.5">
+                Bench
+              </div>
+              <div className="space-y-1">{bench.map((p) => rowFor(p, false))}</div>
+              {bench.length === 0 && (
+                <div className="text-[11px] text-muted-foreground italic">No bench players.</div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/** Adapter: matchday-xi's effectiveRating expects the form map keyed by
+ *  formKey (club:normalized-name) — same map liveForm already uses. */
+function formKeyedForm(_p: Player, form: Record<string, number>): Record<string, number> {
+  return form;
+}
 
 function ScoreboardStat({
   label,

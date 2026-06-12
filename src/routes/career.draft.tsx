@@ -47,7 +47,11 @@ export const Route = createFileRoute("/career/draft")({
 // we fixed yesterday (was capped at 8 by the archetype-slice bug; the
 // buildAIManagers fix recycles archetypes when n > pool, so 11 works).
 const AI_RIVALS_COUNT = 11;
-const SQUAD_SIZE = 11;
+// 14 = 11 starters + 3 bench. The matchday-XI system (src/lib/
+// matchday-xi.ts) auto-picks the best XI and lets the user rotate
+// hot bench players in during the season. Legacy 11-player saves
+// keep working — they just have no bench.
+const SQUAD_SIZE = 14;
 
 // Formation → 4-bucket need table. Read by computeNeed() so the AI rival
 // loop + position-aware spin filtering both honor whatever formation the
@@ -856,7 +860,7 @@ function TacticalPitch({
   return (
     <div className="mt-6">
       <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
-        Your XI ({userManager.squad.length}/{SQUAD_SIZE}) · 4-3-3
+        Your Squad ({userManager.squad.length}/{SQUAD_SIZE}) · 11 start + 3 bench
       </div>
       <div
         className="relative w-full mx-auto rounded-2xl border border-pitch-line/30 bg-pitch-pattern overflow-hidden"

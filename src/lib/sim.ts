@@ -77,6 +77,81 @@ function poisson(lambda: number, seed: { v: number }): number {
   return k - 1;
 }
 
+// ─── Per-matchday simulation (career mode benching) ─────────────────────
+//
+// Quick Match pre-simulates the whole season in one simulateSeason call —
+// that function MUST stay byte-identical (Daily Challenge cohorts share
+// seeds). Career mode instead simulates one match at a time so the user's
+// CURRENT starting XI (after bench rotations) drives each result. These
+// helpers are additive; simulateSeason is untouched.
+
+export interface Fixture {
+  opponent: Club;
+  home: boolean;
+}
+
+/** Build the season fixture list — same cycle + shuffle logic as
+ *  simulateSeason so the schedule "feels" identical, but exposed
+ *  standalone so career mode can simulate match-by-match. */
+export function buildSeasonFixtures(
+  opponents: Club[],
+  totalMatches: number,
+  seedNum: number,
+): Fixture[] {
+  if (opponents.length === 0) return [];
+  const seed = { v: seedNum || 12345 };
+  const order: Fixture[] = [];
+  let i = 0;
+  while (order.length < totalMatches) {
+    const opp = opponents[i % opponents.length];
+    const round = Math.floor(i / opponents.length);
+    const home = ((i % opponents.length) + round) % 2 === 0;
+    order.push({ opponent: opp, home });
+    i++;
+  }
+  for (let k = order.length - 1; k > 0; k--) {
+    const j = Math.floor(rand(seed) * (k + 1));
+    [order[k], order[j]] = [order[j], order[k]];
+  }
+  return order;
+}
+
+/** Simulate ONE match with a per-matchday derived seed. The rating can
+ *  differ per matchday (that's the whole point — bench rotation changes
+ *  the XI). Deterministic for a given (seedNum, matchday) pair, so
+ *  re-rendering or resuming a season never re-rolls played results. */
+export function simulateOneMatch(
+  fixture: Fixture,
+  matchday: number,
+  ourRating: number,
+  seedNum: number,
+  difficulty: "easy" | "normal" | "hard" = "normal",
+): MatchResult {
+  // Mix the season seed with the matchday for a stable per-match stream.
+  // Knuth multiplicative hash on the combination; any well-mixed function
+  // works — it just must not collide across matchdays of one season.
+  const mixed = (Math.imul(seedNum ^ (matchday * 2654435761), 2246822519) >>> 0) || 12345;
+  const seed = { v: mixed };
+  const varianceMul = difficulty === "easy" ? 0.7 : difficulty === "hard" ? 1.3 : 1.0;
+  const homeBoost = fixture.home ? 4 : -1;
+  const diff = ourRating + homeBoost - fixture.opponent.strength;
+  const ourXG = Math.max(0.2, 1.2 + diff * 0.08 + (rand(seed) - 0.5) * 1.0 * varianceMul);
+  const theirXG = Math.max(0.1, 1.1 - diff * 0.06 + (rand(seed) - 0.5) * 0.9 * varianceMul);
+  const ourScore = poisson(ourXG, seed);
+  const theirScore = poisson(theirXG, seed);
+  let outcome: "W" | "D" | "L" = "D";
+  if (ourScore > theirScore) outcome = "W";
+  else if (ourScore < theirScore) outcome = "L";
+  return {
+    matchday,
+    opponent: fixture.opponent,
+    home: fixture.home,
+    ourScore,
+    theirScore,
+    outcome,
+  };
+}
+
 /**
  * forecastSeasonPoints — analytic expected league points for the user's XI
  * against a known fixture list. The "what should this squad achieve?" baseline
