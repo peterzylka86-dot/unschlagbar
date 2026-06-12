@@ -29,6 +29,7 @@ import { getCareerClubs } from "@/lib/data";
 import { FORMATIONS } from "@/lib/formations";
 import { playerFitsSlot } from "@/lib/draft-helpers";
 import { shareOrCopy, shareImage } from "@/lib/share";
+import { newlyUnlocked } from "@/lib/dynasty";
 import type { Player, Position } from "@/lib/game-types";
 
 // A star starts demanding a transfer when their season-form crosses this
@@ -124,9 +125,15 @@ function CareerRecap() {
       const filename = `golazo-season-${latest.season}-${(club?.short ?? "xi").toLowerCase()}.png`;
       const result = await shareImage(dataUrl, filename, shareText, "GOLAZO Career Recap");
       setStatus(
-        result === "shared" ? "Shared!" : result === "downloaded" ? "Image saved" : "Image failed",
+        result === "shared"
+          ? "Shared!"
+          : result === "copied"
+            ? "Image copied — paste in WhatsApp / X / Slack"
+            : result === "downloaded"
+              ? "Image saved"
+              : "Image failed",
       );
-      setTimeout(() => setStatus(null), 2200);
+      setTimeout(() => setStatus(null), result === "copied" ? 3500 : 2200);
     } catch {
       setStatus("Image failed");
       setTimeout(() => setStatus(null), 2200);
@@ -240,9 +247,35 @@ function CareerRecap() {
 
         {/* Footer */}
         <div className="mt-6 pt-4 border-t border-warning/20 text-center text-[10px] tracking-[0.25em] text-muted-foreground uppercase">
-          unschlagbar.com · multi-season legacy
+          unschlagbar.lovable.app · multi-season legacy
         </div>
       </div>
+
+      {/* Newly-unlocked Dynasty Objectives — the celebration moment.
+          Computed by diffing objective status with/without this season.
+          Renders only when something fresh unlocked, so most recaps
+          stay clean and a real unlock feels special. */}
+      {(() => {
+        const fresh = newlyUnlocked(career.seasonHistory);
+        if (fresh.length === 0) return null;
+        return (
+          <div className="mt-6 p-4 rounded-2xl border-2 border-warning bg-warning/15 text-center">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-warning/90 mb-2">
+              🎉 Dynasty Objective{fresh.length > 1 ? "s" : ""} unlocked
+            </div>
+            <div className="flex flex-wrap justify-center gap-2">
+              {fresh.map(({ objective }) => (
+                <span
+                  key={objective.id}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-warning/20 border border-warning/50 text-warning font-display text-sm"
+                >
+                  {objective.icon} {objective.title}
+                </span>
+              ))}
+            </div>
+          </div>
+        );
+      })()}
 
       {/* SHARE ROW (not part of the captured image) */}
       <div className="mt-6 flex justify-center gap-2 flex-wrap">
@@ -306,7 +339,7 @@ function buildRecapText(record: SeasonRecord, clubName: string, leagueName: stri
   }
   lines.push("");
   lines.push(`Tactic: ${record.formation}`);
-  lines.push(`Built on unschlagbar.com`);
+  lines.push(`Play: unschlagbar.lovable.app/career`);
   return lines.join("\n");
 }
 

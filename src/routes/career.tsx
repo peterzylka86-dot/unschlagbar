@@ -14,6 +14,7 @@ import { createFileRoute, Link, Outlet, useRouterState } from "@tanstack/react-r
 import { useCareer } from "@/lib/career-store";
 import { LEAGUES } from "@/lib/leagues";
 import { getCareerClubs } from "@/lib/data";
+import { dynastyStatus } from "@/lib/dynasty";
 
 export const Route = createFileRoute("/career")({
   head: () => ({ meta: [{ title: "GOLAZO · Career Mode" }] }),
@@ -73,6 +74,7 @@ function CareerHub() {
             leagueName={LEAGUES[career.leagueId as never].name}
             currentSeason={career.currentSeason}
             trophies={career.trophies}
+            hasSquad={career.squad.length > 0}
             onAbandon={() => {
               if (confirm("Abandon current career? This wipes your save.")) {
                 career.abandonCareer();
@@ -81,6 +83,14 @@ function CareerHub() {
           />
         ) : (
           <StartCareerCard />
+        )}
+
+        {/* Dynasty Objectives — career-spanning goals. Shown for any
+            career with at least one season played; gives the multi-season
+            grind something to build toward ("win 3 in a row"). Pure
+            derived data from seasonHistory — no store changes. */}
+        {career.seasonHistory.length > 0 && (
+          <DynastyCard history={career.seasonHistory} />
         )}
 
         <HowItWorksCard />
@@ -123,12 +133,14 @@ function ActiveCareerCard({
   leagueName,
   currentSeason,
   trophies,
+  hasSquad,
   onAbandon,
 }: {
   clubName: string;
   leagueName: string;
   currentSeason: number;
   trophies: number;
+  hasSquad: boolean;
   onAbandon: () => void;
 }) {
   return (
@@ -153,19 +165,76 @@ function ActiveCareerCard({
       </div>
 
       <div className="mt-5 flex flex-col sm:flex-row gap-2">
-        <button
-          disabled
-          title="Coming soon — season-flow build in progress"
-          className="flex-1 px-4 py-3 rounded-md bg-warning/40 text-warning-foreground font-display text-base tracking-wide opacity-60 cursor-not-allowed"
+        {/* Previously this was a permanently-disabled "Coming soon" button
+            — leftover scaffolding from before the season flow existed.
+            Career users returning to the hub couldn't continue at all.
+            Route: squad drafted → play the season; no squad yet → draft. */}
+        <Link
+          to={hasSquad ? "/career/season" : "/career/draft"}
+          className="flex-1 px-4 py-3 rounded-md bg-warning text-warning-foreground font-display text-base tracking-wide text-center hover:brightness-110 transition"
         >
           Continue Season {currentSeason} →
-        </button>
+        </Link>
         <button
           onClick={onAbandon}
           className="px-4 py-3 rounded-md border border-muted-foreground/40 text-muted-foreground text-sm hover:bg-muted/30 transition"
         >
           Abandon
         </button>
+      </div>
+    </div>
+  );
+}
+
+function DynastyCard({ history }: { history: import("@/lib/career-store").SeasonRecord[] }) {
+  const statuses = dynastyStatus(history);
+  const unlockedCount = statuses.filter((s) => s.unlocked).length;
+  return (
+    <div className="p-5 rounded-2xl border border-border bg-card/40">
+      <div className="flex items-baseline justify-between mb-3">
+        <div className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+          Dynasty Objectives
+        </div>
+        <div className="text-[11px] font-display text-warning">
+          {unlockedCount} / {statuses.length}
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-2">
+        {statuses.map(({ objective, progress, unlocked }) => (
+          <div
+            key={objective.id}
+            className={`p-3 rounded-lg border transition ${
+              unlocked
+                ? "border-warning/60 bg-warning/10"
+                : "border-border/60 bg-background/40"
+            }`}
+          >
+            <div className="flex items-center gap-2">
+              <span className={`text-base ${unlocked ? "" : "grayscale opacity-50"}`}>
+                {objective.icon}
+              </span>
+              <span
+                className={`font-display text-xs tracking-wide ${
+                  unlocked ? "text-warning" : "text-foreground/70"
+                }`}
+              >
+                {objective.title}
+              </span>
+            </div>
+            <div className="mt-1 text-[10px] text-muted-foreground leading-tight">
+              {objective.description}
+            </div>
+            {/* Progress bar — only for in-progress (not 0, not unlocked) */}
+            {!unlocked && progress > 0 && (
+              <div className="mt-2 h-1 rounded-full bg-border/60 overflow-hidden">
+                <div
+                  className="h-full bg-warning/70 transition-all"
+                  style={{ width: `${Math.round(progress * 100)}%` }}
+                />
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
