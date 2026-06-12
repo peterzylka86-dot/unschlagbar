@@ -40,6 +40,18 @@ function PostSeason() {
   );
   const allClubs = useMemo(() => getCareerClubs(career.foundingClubId), [career.foundingClubId]);
 
+  // Rival turnover — computed ONCE at mount so the transfer-news card can
+  // show what the league did while the user decides their own swaps.
+  // Exclusion uses the squad as it was at window-open; a user swap made
+  // after rivals "signed" their players can in theory collide, but the
+  // pool is ~14k players so the practical risk is nil (and matches the
+  // previous behavior, where rival turnover also didn't see user swaps).
+  const rivalTurnover = useMemo(
+    () => autoTurnoverRivals(career.rivals, allPlayers, career.squad),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  );
+
   // Per-window state
   const [workingSquad, setWorkingSquad] = useState<Player[]>(() => [...career.squad]);
   const [swapsUsed, setSwapsUsed] = useState(0);
@@ -119,11 +131,12 @@ function PostSeason() {
   }
 
   function commitAndContinue() {
-    // AI rivals undergo a small auto-turnover. No /career/draft needed.
-    const refreshedRivals = autoTurnoverRivals(career.rivals, allPlayers, workingSquad);
+    // Rivals were refreshed at mount (rivalTurnover memo) — the same
+    // squads the transfer-news card displayed. Using the precomputed
+    // result keeps "what you read" === "what you face."
     useCareer.setState({
       squad: workingSquad,
-      rivals: refreshedRivals,
+      rivals: rivalTurnover.rivals,
       form: {}, // fresh slate next season
       currentSeason: career.currentSeason + 1,
       midSeasonSwapUsed: false,
@@ -166,6 +179,38 @@ function PostSeason() {
         </p>
       </div>
 
+      {/* 📰 Around the league — what rivals did over the break. The auto-
+          turnover used to run invisibly at continue-time; surfacing the
+          signings makes the world feel alive and telegraphs the rising
+          difficulty (every rival also gains +1 strength next season). */}
+      {rivalTurnover.news.length > 0 && (
+        <div className="mt-4 rounded-2xl border border-border bg-card/40 p-5">
+          <div className="flex items-baseline justify-between mb-3">
+            <div className="font-display text-base text-foreground/90">📰 Around the league</div>
+            <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+              Rivals strengthen for S{career.currentSeason + 1}
+            </div>
+          </div>
+          <ul className="space-y-1.5">
+            {rivalTurnover.news.slice(0, 8).map((n, i) => (
+              <li key={i} className="flex items-center gap-2 text-xs">
+                <span style={{ color: n.color }}>{n.badge}</span>
+                <span className="text-foreground/80 truncate">
+                  <span className="text-foreground">{n.rivalName}</span>
+                  {" sign "}
+                  <span className="text-warning font-medium">{n.inName}</span>
+                  <span className="text-warning/70 font-display ml-1">{n.inRating}</span>
+                  <span className="text-muted-foreground"> — {n.outName} departs</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 text-[10px] text-muted-foreground italic">
+            The league grows stronger every season. Keep up.
+          </p>
+        </div>
+      )}
+
       {/* Stage content */}
       <div className="mt-6">
         {stage === "menu" && (
@@ -205,13 +250,29 @@ function PostSeason() {
   );
 }
 
-// ─── AI rival auto-turnover (unchanged — still useful) ─────────────────
+// ─── AI rival auto-turnover + transfer news ────────────────────────────
 
-function autoTurnoverRivals<R extends { squad: Player[]; archetypeStyle?: string }>(
+export interface TransferNewsItem {
+  rivalName: string;
+  badge: string;
+  color: string;
+  inName: string;
+  inRating: number;
+  outName: string;
+}
+
+/** Each rival replaces its 2 weakest players with stronger pool players.
+ *  Returns BOTH the refreshed rivals AND a news feed of the signings —
+ *  previously this ran invisibly at continue-time; making the world's
+ *  movement visible is the cheap half of "rival escalation" (the other
+ *  half is the per-season strength bump in career.season.tsx). */
+function autoTurnoverRivals<
+  R extends { squad: Player[]; archetypeStyle?: string; archetypeName: string; badge: string; color: string },
+>(
   rivals: R[],
   pool: Player[],
   userSquad: Player[],
-): R[] {
+): { rivals: R[]; news: TransferNewsItem[] } {
   const userKeys = new Set(userSquad.map((p) => `${p.club}:${p.name}`));
   const byBucket: Record<string, Player[]> = { GK: [], DEF: [], MID: [], FWD: [] };
   for (const p of pool) {
@@ -219,7 +280,8 @@ function autoTurnoverRivals<R extends { squad: Player[]; archetypeStyle?: string
     if (byBucket[bucket]) byBucket[bucket].push(p);
   }
   for (const b of Object.values(byBucket)) b.sort((a, b2) => b2.prime_rating - a.prime_rating);
-  return rivals.map((r, idx) => {
+  const news: TransferNewsItem[] = [];
+  const refreshed = rivals.map((r, idx) => {
     if (r.squad.length === 0) return r;
     let squad = [...r.squad];
     for (let swap = 0; swap < 2; swap++) {
@@ -230,12 +292,25 @@ function autoTurnoverRivals<R extends { squad: Player[]; archetypeStyle?: string
       const candidates = (byBucket[bucket] ?? []).filter((p) => !taken.has(`${p.club}:${p.name}`));
       const replacement = candidates[(idx * 7 + swap) % Math.max(1, candidates.length)];
       if (!replacement) break;
+      // Only newsworthy if the incoming player is actually an upgrade —
+      // sidegrade churn would just be noise in the feed.
+      if (replacement.prime_rating > weakest.prime_rating) {
+        news.push({
+          rivalName: r.archetypeName,
+          badge: r.badge,
+          color: r.color,
+          inName: replacement.name,
+          inRating: replacement.prime_rating,
+          outName: weakest.name,
+        });
+      }
       squad = squad
         .filter((p) => `${p.club}:${p.name}` !== `${weakest.club}:${weakest.name}`)
         .concat(replacement);
     }
     return { ...r, squad };
   });
+  return { rivals: refreshed, news };
 }
 
 // ─── Sub-components ───────────────────────────────────────────────────

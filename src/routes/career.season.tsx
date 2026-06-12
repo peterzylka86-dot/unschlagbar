@@ -64,11 +64,20 @@ function CareerSeason() {
   void leagueId; // still referenced for the HUD subtitle below
   const clubs = useMemo(() => getCareerClubs(), []);
 
-  // Build the opponent list: 11 AI rivals × their founding clubs
+  // Build the opponent list: 11 AI rivals × their founding clubs.
+  //
+  // RIVAL ESCALATION: each season beyond the first, every rival gains
+  // +1 strength (capped at +8). Fixes the flat difficulty curve — season
+  // 5 should be harder than season 1 because the league caught up to
+  // you. The bump is announced in the transfer-news card on
+  // /career/postseason so it never feels arbitrary.
+  // NOTE: clubs from the data cache are shared objects — always clone
+  // before bumping, never mutate.
+  const escalation = Math.min(8, Math.max(0, career.currentSeason - 1));
   const opponents = useMemo(() => {
     return career.rivals.map((r) => {
       const club = clubs.find((c) => c.id === r.foundingClubId);
-      if (club) return club;
+      if (club) return { ...club, strength: club.strength + escalation };
       // Fallback (shouldn't happen but be safe)
       return {
         id: r.foundingClubId,
@@ -81,12 +90,13 @@ function CareerSeason() {
           75 +
           Math.floor(
             r.squad.reduce((a, p) => a + p.prime_rating, 0) / Math.max(1, r.squad.length) - 75,
-          ),
+          ) +
+          escalation,
         era: "current" as const,
         era_tier: "current" as const,
       };
     });
-  }, [career.rivals, clubs]);
+  }, [career.rivals, clubs, escalation]);
 
   // Slots representation for squadRating + scorer-picking
   const userSlots: Slot[] = useMemo(() => {
