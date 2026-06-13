@@ -355,12 +355,18 @@ function CareerDraft() {
         }
       }
       const openSlotPositions = slotPositions.filter((_, i) => !filled[i]);
+      // BENCH MODE: once all 11 formation slots are filled, the remaining
+      // picks (rounds 12-14) are bench depth — ANY position is welcome.
+      // Without this, openSlotPositions is empty at 11 players and the
+      // wheel finds no eligible club, freezing the draft. (Bug: draft
+      // stalled at 11 after SQUAD_SIZE went 11→14.)
+      const benchMode = openSlotPositions.length === 0;
       const eligibleClubs = allClubs.filter((c) =>
         allPlayers.some(
           (p) =>
             p.club === c.id &&
             !prev.usedPlayerKeys.has(playerKey(p)) &&
-            openSlotPositions.some((sp) => playerFitsSlot(sp, p)),
+            (benchMode || openSlotPositions.some((sp) => playerFitsSlot(sp, p))),
         ),
       );
       if (eligibleClubs.length === 0) return prev;
@@ -406,10 +412,12 @@ function CareerDraft() {
       }
     }
     const openSlotPositions = slotPositions.filter((_, i) => !filled[i]);
+    // BENCH MODE (rounds 12-14): formation full → any position welcome.
+    const benchMode = openSlotPositions.length === 0;
     // matchesOpenSlot considers the candidate player's primary + alt
     // positions. Mbappé (LW+[ST]) shows up for both LW and ST slots.
     const matchesOpenSlot = (p: Player): boolean =>
-      openSlotPositions.some((slotPos) => playerFitsSlot(slotPos, p));
+      benchMode || openSlotPositions.some((slotPos) => playerFitsSlot(slotPos, p));
 
     const isFirstPick = userManager.squad.length === 0;
     if (isFirstPick) {
@@ -573,6 +581,14 @@ function computeNeed(squad: Player[], formation: string = "4-3-3"): Set<SimplePo
   if (counts.DEF < formationNeed.D) need.add("DEF");
   if (counts.MID < formationNeed.M) need.add("MID");
   if (counts.FWD < formationNeed.F) need.add("FWD");
+  // BENCH DEPTH: once the formation's 11 slots are covered, the remaining
+  // bench picks (rounds 12-14) accept ANY position — return all buckets so
+  // the AI keeps drafting and the pool filter never empties. (Without this
+  // the AI's candidate pool went empty at 11, mirroring the user-side
+  // wheel freeze.)
+  if (need.size === 0) {
+    return new Set<SimplePosition>(["GK", "DEF", "MID", "FWD"]);
+  }
   return need;
 }
 
