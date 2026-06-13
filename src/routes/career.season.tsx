@@ -16,6 +16,7 @@
  */
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useCareer } from "@/lib/career-store";
 import { LEAGUES } from "@/lib/leagues";
 import type { LeagueId } from "@/lib/leagues";
@@ -42,6 +43,45 @@ const MATCHES_PER_SEASON = 22;
 // Mid-season swap window opens AFTER this many matchdays have been played.
 // At MATCHES_PER_SEASON=22, that's after MD11 — halfway through.
 const MID_SEASON_GATE = Math.floor(MATCHES_PER_SEASON / 2);
+
+// ─── Fatigue / stamina (game-design item #6) ────────────────────────────
+// Starting a match accumulates fatigue; resting on the bench recovers it.
+// Fatigue ≤ FATIGUE_FRESH costs nothing; above it, effective rating drops
+// linearly to −FATIGUE_MAX_PENALTY at fatigue 100. This is what makes the
+// 3-man bench MATTER — ride your best XI every game and they're gassed for
+// the run-in; rotate and keep them sharp. Delivers the "rotation dilemma"
+// that item #6 (cup-congestion) was meant to create, integrated cleanly
+// with the benching system instead of a risky league-calendar rewrite.
+const FATIGUE_PER_START = 11; // each start adds this
+const FATIGUE_RECOVERY = 19; // each rested matchday removes this
+const FATIGUE_FRESH = 50; // no penalty at or below this
+const FATIGUE_MAX_PENALTY = 5; // OVR points lost at fatigue 100
+
+/** OVR penalty (≤ 0) for a given fatigue level. 0 when fresh, ramping to
+ *  −FATIGUE_MAX_PENALTY at 100. */
+function fatiguePenalty(fatigue: number): number {
+  if (fatigue <= FATIGUE_FRESH) return 0;
+  const over = (fatigue - FATIGUE_FRESH) / (100 - FATIGUE_FRESH); // 0..1
+  return -over * FATIGUE_MAX_PENALTY;
+}
+
+/** Compute fatigue per player key from the matchday lineups played so far.
+ *  starts × FATIGUE_PER_START − rests × FATIGUE_RECOVERY, clamped [0,100].
+ *  Keyed by `club:name` (squad key), NOT the normalized form key. */
+function computeFatigue(lineups: string[][], squad: Player[]): Record<string, number> {
+  const out: Record<string, number> = {};
+  const played = lineups.length;
+  for (const p of squad) {
+    const key = `${p.club}:${p.name}`;
+    const starts = lineups.reduce((n, xi) => n + (xi.includes(key) ? 1 : 0), 0);
+    const rests = played - starts;
+    out[key] = Math.max(
+      0,
+      Math.min(100, starts * FATIGUE_PER_START - rests * FATIGUE_RECOVERY),
+    );
+  }
+  return out;
+}
 
 interface MatchWithScorers extends MatchResult {
   scorers: { name: string; assister?: string }[];
@@ -118,8 +158,14 @@ function CareerSeason() {
   );
 
   const [matches, setMatches] = useState<MatchWithScorers[]>([]);
+  // Parallel to `matches`: lineups[i] = the XI keys that started matchday i.
+  // Drives the fatigue model — who played vs who rested.
+  const [lineups, setLineups] = useState<string[][]>([]);
   const shown = matches.length;
   const [tableComputed, setTableComputed] = useState(false);
+
+  // Fatigue per squad player (club:name key), derived from lineups played.
+  const fatigue = useMemo(() => computeFatigue(lineups, career.squad), [lineups, career.squad]);
 
   // Form computed from PLAYED matches — drives both the 🔥/❄️ badges and
   // the XI auto-pick ranking, so a cold streak genuinely costs a starter
@@ -147,11 +193,26 @@ function CareerSeason() {
     return f;
   }, [matches, career.squad]);
 
+  // Combined selection adjustment, keyed by FORM key (club:normalized):
+  // form (±2) PLUS fatigue penalty (0..−5). This is the number that drives
+  // BOTH the auto-pick ranking and the displayed effective rating, so a
+  // gassed starter visibly slides and the user is nudged to rest them.
+  // liveForm stays pure (form only) for the 🔥/❄️ badges + store persist.
+  const selectionForm = useMemo(() => {
+    const out: Record<string, number> = {};
+    for (const p of career.squad) {
+      const fk = `${p.club}:${normalizeName(p.name)}`;
+      const sk = `${p.club}:${p.name}`;
+      out[fk] = (liveForm[fk] ?? 0) + fatiguePenalty(fatigue[sk] ?? 0);
+    }
+    return out;
+  }, [career.squad, liveForm, fatigue]);
+
   // The starting XI — stored selection resolved against the live squad
   // (departed players dropped, holes auto-filled from compatible bench).
   const xiKeys = useMemo(
-    () => resolveXI(career.squad, career.startingXI, career.formation, liveForm),
-    [career.squad, career.startingXI, career.formation, liveForm],
+    () => resolveXI(career.squad, career.startingXI, career.formation, selectionForm),
+    [career.squad, career.startingXI, career.formation, selectionForm],
   );
   const xiSlots: Slot[] = useMemo(
     () => xiToSlots(career.squad, xiKeys, career.formation),
@@ -162,19 +223,20 @@ function CareerSeason() {
     [xiSlots],
   );
 
-  // Rating of the SELECTED XI (not the full 14) + a small form kicker:
-  // average XI form in [-2, 2] rounds to a ±2 rating swing. This is what
-  // makes rotation strategic rather than cosmetic.
+  // Rating of the SELECTED XI (not the full 14) + a form/fatigue kicker:
+  // average of (form − fatigue penalty) across the XI, rounded. A fresh
+  // in-form XI plays a few points above its raw OVR; a gassed one plays
+  // below. This is the lever rotation pulls.
   const userRating = useMemo(() => {
     const base = squadRating(xiSlots);
     if (xiPlayers.length === 0) return base;
-    const avgForm =
+    const avgAdj =
       xiPlayers.reduce(
-        (sum, p) => sum + (liveForm[`${p.club}:${normalizeName(p.name)}`] ?? 0),
+        (sum, p) => sum + (selectionForm[`${p.club}:${normalizeName(p.name)}`] ?? 0),
         0,
       ) / xiPlayers.length;
-    return base + Math.round(Math.max(-2, Math.min(2, avgForm)));
-  }, [xiSlots, xiPlayers, liveForm]);
+    return base + Math.round(Math.max(-3, Math.min(2, avgAdj)));
+  }, [xiSlots, xiPlayers, selectionForm]);
 
   // Stable rating for the AI table jitter — must NOT change with XI
   // rotation or the rival W/D/L sequences would reshuffle every matchday.
@@ -207,14 +269,21 @@ function CareerSeason() {
   }
 
   function playNext() {
+    let appended = false;
     setMatches((prev) => {
       const next = simulateNext(prev, userRating);
-      return next ? [...prev, next] : prev;
+      if (!next) return prev;
+      appended = true;
+      return [...prev, next];
     });
+    // Record the lineup that played this matchday (drives fatigue).
+    if (appended) setLineups((prev) => [...prev, xiKeys]);
   }
   function playAll() {
     // Sim the remaining matchdays with the CURRENT XI (no further
     // rotation once you hit skip — that's the tradeoff of skipping).
+    // Note: skipping also freezes fatigue rotation, so the run-in is
+    // played by whoever's on the pitch now — gassed or not.
     setMatches((prev) => {
       const out = [...prev];
       while (out.length < fixtures.length) {
@@ -222,6 +291,11 @@ function CareerSeason() {
         if (!next) break;
         out.push(next);
       }
+      return out;
+    });
+    setLineups((prev) => {
+      const out = [...prev];
+      while (out.length < fixtures.length) out.push(xiKeys);
       return out;
     });
   }
@@ -301,6 +375,8 @@ function CareerSeason() {
           squad={career.squad}
           xiKeys={xiKeys}
           form={liveForm}
+          ratingAdj={selectionForm}
+          fatigue={fatigue}
           formation={career.formation}
           franchiseKey={career.franchisePlayerKey}
           onSwap={(outKey, inKey) => {
@@ -371,7 +447,121 @@ function CareerSeason() {
           liveForm={liveForm}
         />
       )}
+
+      {/* Ceremony overlay — fires once when the season ends in a title or
+          relegation. Champions get a gold confetti burst; relegation gets
+          a somber descent. Purely celebratory punctuation; dismisses to
+          reveal the PostSeasonCTA underneath. */}
+      {seasonDone && (
+        <SeasonCeremony
+          season={career.currentSeason}
+          isChampion={ourPosition === 1}
+          isRelegated={ourPosition >= 11}
+        />
+      )}
     </div>
+  );
+}
+
+/** Full-screen ceremony for title / relegation. Shows once per season
+ *  end (dismiss to continue). Champions: gold confetti + trophy lift.
+ *  Relegation: dimmed, downward drift, "rebuild" framing. Neutral
+ *  finishes get no overlay — undeserved drama cheapens the real ones. */
+function SeasonCeremony({
+  season,
+  isChampion,
+  isRelegated,
+}: {
+  season: number;
+  isChampion: boolean;
+  isRelegated: boolean;
+}) {
+  const [dismissed, setDismissed] = useState(false);
+  if (dismissed || (!isChampion && !isRelegated)) return null;
+
+  // Deterministic-ish confetti layout — index-derived, no Math.random in
+  // render path needed for correctness (this is pure decoration).
+  const confetti = Array.from({ length: 36 }, (_, i) => i);
+  const colors = ["#facc15", "#22c55e", "#ef4444", "#fafafa", "#fbbf24"];
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 z-50 flex items-center justify-center px-4"
+        style={{
+          background: isChampion
+            ? "radial-gradient(circle at 50% 30%, rgba(250,204,21,0.25), rgba(5,5,5,0.96) 70%)"
+            : "radial-gradient(circle at 50% 40%, rgba(40,40,48,0.4), rgba(5,5,5,0.97) 70%)",
+        }}
+        onClick={() => setDismissed(true)}
+      >
+        {/* Champion confetti */}
+        {isChampion &&
+          confetti.map((i) => {
+            const left = (i * 53) % 100;
+            const delay = (i % 12) * 0.12;
+            const drift = (i % 5) - 2;
+            return (
+              <motion.div
+                key={i}
+                className="absolute top-0"
+                style={{
+                  left: `${left}%`,
+                  width: 8,
+                  height: 12,
+                  background: colors[i % colors.length],
+                  borderRadius: 2,
+                }}
+                initial={{ y: -40, opacity: 0, rotate: 0 }}
+                animate={{
+                  y: ["-5vh", "105vh"],
+                  opacity: [0, 1, 1, 0],
+                  rotate: [0, 360 + i * 12],
+                  x: [0, drift * 30],
+                }}
+                transition={{ duration: 2.6 + (i % 4) * 0.4, delay, ease: "easeIn" }}
+              />
+            );
+          })}
+
+        <motion.div
+          initial={{ scale: 0.7, y: 30 }}
+          animate={{ scale: 1, y: 0 }}
+          transition={{ type: "spring", stiffness: 200, damping: 16 }}
+          className="relative text-center"
+        >
+          <div className="text-7xl mb-3">{isChampion ? "🏆" : "📉"}</div>
+          <div
+            className={`font-display text-4xl sm:text-5xl ${
+              isChampion ? "text-warning" : "text-primary"
+            }`}
+          >
+            {isChampion ? "CHAMPIONS" : "RELEGATED"}
+          </div>
+          <div className="mt-2 text-sm text-muted-foreground">
+            {isChampion
+              ? `Season ${season} — you won the league.`
+              : `Season ${season} — a hard year. Rebuild and bounce back.`}
+          </div>
+          <button
+            onClick={() => setDismissed(true)}
+            className={`mt-6 px-6 py-2.5 rounded-md font-display tracking-wide transition ${
+              isChampion
+                ? "bg-warning text-warning-foreground hover:brightness-110"
+                : "border border-muted-foreground/40 text-muted-foreground hover:bg-muted/30"
+            }`}
+          >
+            {isChampion ? "Lift the trophy →" : "Continue →"}
+          </button>
+          <div className="mt-3 text-[10px] text-muted-foreground/60 uppercase tracking-widest">
+            tap anywhere to continue
+          </div>
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
   );
 }
 
@@ -408,13 +598,21 @@ function MatchdaySquadPanel({
   squad,
   xiKeys,
   form,
+  ratingAdj,
+  fatigue,
   formation,
   franchiseKey,
   onSwap,
 }: {
   squad: Player[];
   xiKeys: string[];
+  /** Pure form map (formKey → ±2) for the 🔥/❄️ badge. */
   form: Record<string, number>;
+  /** Combined form+fatigue adjustment (formKey → number) for the
+   *  displayed effective rating — matches what the sim actually uses. */
+  ratingAdj: Record<string, number>;
+  /** Fatigue per squad key (club:name → 0..100) for the stamina bar. */
+  fatigue: Record<string, number>;
   formation: import("@/lib/game-types").FormationKey;
   franchiseKey: string | null;
   onSwap: (outKey: string, inKey: string) => void;
@@ -433,10 +631,18 @@ function MatchdaySquadPanel({
     return null;
   }
 
+  function staminaBadge(p: Player) {
+    const fat = fatigue[`${p.club}:${p.name}`] ?? 0;
+    if (fat >= 80) return { icon: "🪫", tone: "text-primary" };
+    if (fat >= 55) return { icon: "🟡", tone: "text-warning" };
+    return null;
+  }
+
   function rowFor(p: Player, isStarter: boolean) {
     const key = playerKey(p);
     const isFranchise = key === franchiseKey;
-    const eff = Math.round(effectiveRating(p, formKeyedForm(p, form)) * 10) / 10;
+    const eff = Math.round(effectiveRating(p, formKeyedForm(p, ratingAdj)) * 10) / 10;
+    const stamina = staminaBadge(p);
     const isPendingTarget =
       pendingIn !== null && isStarter && canSwapIntoXI(squad, xiKeys, key, pendingIn, formation);
     const isPendingSource = pendingIn === key;
@@ -467,6 +673,11 @@ function MatchdaySquadPanel({
           {isFranchise && "⭐ "}
           {p.name}
           {formBadge(p) && <span className="ml-1">{formBadge(p)}</span>}
+          {stamina && (
+            <span className={`ml-1 ${stamina.tone}`} title="Fatigued — rest to recover">
+              {stamina.icon}
+            </span>
+          )}
         </span>
         <span className="font-display text-sm text-warning shrink-0">{eff}</span>
       </button>
@@ -494,8 +705,8 @@ function MatchdaySquadPanel({
       {open && (
         <div className="px-4 pb-4">
           <p className="text-[10px] text-muted-foreground mb-3">
-            Tap a bench player, then tap the starter to replace. 🔥 hot / ❄️ cold form counts
-            toward the rating.
+            Tap a bench player, then tap the starter to replace. 🔥 hot / ❄️ cold form and
+            🪫 fatigue (rest to recover) both count toward the rating.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
@@ -826,29 +1037,27 @@ function SquadForm({ squad, form }: { squad: Player[]; form: Record<string, numb
 }
 
 /**
- * Mid-season swap window — appears exactly once per season after MD11.
+ * Mid-season window — appears exactly once per season after MD11.
  *
- * Rule: ONE swap, or skip. No escape hatch — once you accept the spin,
- * you must commit to a swap (you can't bail back out). The franchise
- * player can never be swapped out.
+ * BLIND SWAP (game-design item #5): the order is reversed from a normal
+ * transfer. You pick WHO LEAVES first — committing to a hole — and only
+ * THEN does the wheel reveal who arrives. You don't get to choose the
+ * incoming player; the wheel decides. It's a gamble: the replacement is
+ * drawn from a band around the departing player's rating (±10), so it
+ * could be an upgrade or a downgrade. High risk, high drama — on-brand
+ * for a wheel game. Decline before you commit and your squad is safe.
  *
- * Flow: prompt → spinning → picking-in (player to bring in) → picking-out
- * (squad member to send out, franchise excluded) → done (sets midSeasonSwapUsed).
+ * Flow: prompt → picking-out (commit the hole) → spinning → reveal
+ * (forced incoming, already applied) → done.
  */
 function MidSeasonSwapCard() {
-  const career = useCareer();
-  const leagueId = (career.leagueId ?? "ucl") as LeagueId;
   const allPlayers = useMemo(() => getCareerPlayers(), []);
-  const allClubs = useMemo(() => getCareerClubs(), []);
+  const career = useCareer();
 
-  const [stage, setStage] = useState<"prompt" | "spinning" | "picking-in" | "picking-out">(
-    "prompt",
-  );
-  const [spunClub, setSpunClub] = useState<Club | null>(null);
+  const [stage, setStage] = useState<"prompt" | "picking-out" | "spinning" | "reveal">("prompt");
+  const [outgoing, setOutgoing] = useState<{ player: Player; index: number } | null>(null);
   const [incoming, setIncoming] = useState<Player | null>(null);
 
-  // Set of every player already in a squad (user + all rivals). They're
-  // off-limits — we don't tempt the user with players that aren't free.
   const drafted = useMemo(() => {
     const set = new Set<string>();
     career.squad.forEach((p) => set.add(`${p.club}:${p.name}`));
@@ -856,171 +1065,98 @@ function MidSeasonSwapCard() {
     return set;
   }, [career.squad, career.rivals]);
 
-  function spin() {
+  function skip() {
+    career.setMidSeasonSwapUsed(true);
+  }
+
+  // User commits to a hole. Wheel then draws the replacement.
+  function pickOutgoing(player: Player, index: number) {
+    setOutgoing({ player, index });
     setStage("spinning");
-    // 700ms delay for tension; then random club with at least 1 free player.
     setTimeout(() => {
-      const eligibleClubs = allClubs.filter((c) =>
-        allPlayers.some((p) => p.club === c.id && !drafted.has(`${p.club}:${p.name}`)),
+      // Eligible incoming: free players who fit the vacated slot, within
+      // ±10 rating of the departing player (a genuine gamble, not a trap
+      // and not a guaranteed jackpot). Falls back to any compatible free
+      // player if the band is empty.
+      const band = allPlayers.filter(
+        (p) =>
+          !drafted.has(`${p.club}:${p.name}`) &&
+          playerFitsSlot(player.position, p) &&
+          Math.abs(p.prime_rating - player.prime_rating) <= 10,
       );
-      if (eligibleClubs.length === 0) {
-        // Edge case: no clubs have free players. Skip the swap.
+      const fallback = allPlayers.filter(
+        (p) => !drafted.has(`${p.club}:${p.name}`) && playerFitsSlot(player.position, p),
+      );
+      const pool = band.length > 0 ? band : fallback;
+      if (pool.length === 0) {
+        // Nothing to bring in — the gamble fizzles, squad unchanged.
         career.setMidSeasonSwapUsed(true);
         return;
       }
-      const pick = eligibleClubs[Math.floor(Math.random() * eligibleClubs.length)];
-      setSpunClub(pick);
-      setStage("picking-in");
-    }, 700);
-  }
-
-  function pickIncoming(p: Player) {
-    setIncoming(p);
-    setStage("picking-out");
-  }
-
-  function commitSwap(outIndex: number) {
-    if (!incoming) return;
-    career.swapSquadPlayer(outIndex, incoming);
-    career.setMidSeasonSwapUsed(true);
-  }
-
-  function skip() {
-    career.setMidSeasonSwapUsed(true);
+      const pick = pool[Math.floor(Math.random() * pool.length)];
+      // Apply immediately — it's a blind, committed gamble.
+      career.swapSquadPlayer(index, pick);
+      setIncoming(pick);
+      setStage("reveal");
+    }, 1400);
   }
 
   // Stage 1: offer card
   if (stage === "prompt") {
     return (
       <div className="mt-6 rounded-2xl border-2 border-warning bg-warning/10 p-5 text-center">
-        <div className="text-3xl mb-1">🔄</div>
-        <div className="font-display text-xl text-warning mb-1">Mid-Season Window</div>
+        <div className="text-3xl mb-1">🎲</div>
+        <div className="font-display text-xl text-warning mb-1">Mid-Season Gamble</div>
         <p className="text-xs text-muted-foreground max-w-sm mx-auto mb-4">
-          Halfway through the season. ONE swap available — spin for a player and commit to a swap,
-          or pass and keep your squad. No going back once you spin.
+          One blind swap. You choose who <span className="text-warning">leaves</span> — then the
+          wheel decides who arrives. Could be an upgrade. Could be a downgrade. No peeking, no
+          backing out once you commit. Or keep your squad and play it safe.
         </p>
         <div className="flex flex-col sm:flex-row gap-2 justify-center">
           <button
-            onClick={spin}
+            onClick={() => setStage("picking-out")}
             className="px-5 py-2.5 rounded-md bg-warning text-warning-foreground font-display tracking-wide hover:brightness-110 transition"
           >
-            🎰 Spin for a swap
+            🎲 Take the gamble
           </button>
           <button
             onClick={skip}
             className="px-5 py-2.5 rounded-md border border-muted-foreground/40 text-muted-foreground text-sm hover:bg-muted/30 transition"
           >
-            Skip — keep my squad
+            Keep my squad
           </button>
         </div>
       </div>
     );
   }
 
-  // Stage 2: spinning UI
-  if (stage === "spinning") {
-    return (
-      <div className="mt-6 rounded-2xl border-2 border-warning bg-warning/10 p-8 text-center">
-        <div className="text-5xl animate-spin inline-block">🎰</div>
-        <div className="mt-3 text-sm text-muted-foreground">Spinning…</div>
-      </div>
-    );
-  }
-
-  // Stage 3: pick incoming player from spun club.
-  // Filter to positions the user can actually swap into — non-franchise
-  // squad slots whose position is compatible. Avoids dead-end UX where
-  // the user picks a GK but their GK is the franchise player.
-  if (stage === "picking-in" && spunClub) {
-    const swappableSquadPositions = career.squad
-      .filter((p) => `${p.club}:${p.name}` !== career.franchisePlayerKey)
-      .map((p) => p.position);
-    const pool = allPlayers
-      .filter((p) => p.club === spunClub.id && !drafted.has(`${p.club}:${p.name}`))
-      .filter((p) => swappableSquadPositions.some((sp) => playerFitsSlot(sp, p)))
-      .sort((a, b) => b.prime_rating - a.prime_rating)
-      .slice(0, 12); // top-12 by rating to keep the grid scannable
+  // Stage 2: pick who leaves (franchise excluded). This is the commitment.
+  if (stage === "picking-out") {
     return (
       <div className="mt-6 rounded-2xl border-2 border-warning bg-warning/10 p-5">
         <div className="text-center mb-4">
           <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
-            Wheel landed on
-          </div>
-          <div className="font-display text-2xl text-warning">{spunClub.name}</div>
-          <div className="text-xs text-muted-foreground mt-1">
-            Pick the player you want — you'll commit to a swap next.
-          </div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-          {pool.map((p) => (
-            <button
-              key={`in-${p.name}`}
-              onClick={() => pickIncoming(p)}
-              className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-border bg-card text-sm text-left hover:border-warning hover:bg-warning/10 transition"
-            >
-              <div className="min-w-0">
-                <div className="font-medium truncate">{p.name}</div>
-                <div className="text-[10px] text-muted-foreground truncate">
-                  {p.position} · {p.career_years}
-                </div>
-              </div>
-              <span className="shrink-0 font-display text-sm text-warning">{p.prime_rating}</span>
-            </button>
-          ))}
-        </div>
-        {pool.length === 0 && (
-          <p className="text-sm text-muted-foreground italic text-center py-4">
-            No free players at {spunClub.name}. Skipping…
-          </p>
-        )}
-      </div>
-    );
-  }
-
-  // Stage 4: pick which squad member to swap OUT (franchise excluded)
-  if (stage === "picking-out" && incoming) {
-    return (
-      <div className="mt-6 rounded-2xl border-2 border-warning bg-warning/10 p-5">
-        <div className="text-center mb-4">
-          <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
-            Incoming
-          </div>
-          <div className="font-display text-xl text-warning">
-            {incoming.name} <span className="opacity-70">· {incoming.position}</span>
+            Who do you sacrifice?
           </div>
           <div className="text-xs text-muted-foreground mt-1">
-            Who goes out? Same position only — ⭐ Franchise can't be removed.
+            Pick a player to release. The wheel brings in a replacement at the same position — you
+            won't see who until it's done. ⭐ Franchise can't leave.
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
           {career.squad.map((p, i) => {
             const key = `${p.club}:${p.name}`;
             const isFranchise = key === career.franchisePlayerKey;
-            // POSITION-RESTRICTED SWAP: incoming player must fit the slot
-            // the squad member currently fills. playerFitsSlot considers
-            // BOTH the incoming's primary position AND their altPositions
-            // — so Mbappé (LW + [ST]) can swap into either an LW or ST
-            // slot, but Sørloth (ST, no alts) can only enter an ST slot.
-            const samePosition = playerFitsSlot(p.position, incoming);
-            const disabled = isFranchise || !samePosition;
             return (
               <button
                 key={`out-${i}-${p.name}`}
-                disabled={disabled}
-                onClick={() => commitSwap(i)}
-                title={
-                  isFranchise
-                    ? "Franchise player — untouchable"
-                    : !samePosition
-                      ? `Position mismatch — ${incoming.position} can't replace ${p.position}`
-                      : undefined
-                }
+                disabled={isFranchise}
+                onClick={() => pickOutgoing(p, i)}
+                title={isFranchise ? "Franchise player — untouchable" : undefined}
                 className={`flex items-center justify-between gap-2 px-3 py-2 rounded-lg border text-sm text-left transition ${
                   isFranchise
                     ? "border-warning/40 bg-warning/5 opacity-60 cursor-not-allowed"
-                    : !samePosition
-                      ? "border-border bg-card opacity-40 cursor-not-allowed"
-                      : "border-border bg-card hover:border-primary hover:bg-primary/10"
+                    : "border-border bg-card hover:border-primary hover:bg-primary/10"
                 }`}
               >
                 <div className="min-w-0">
@@ -1031,9 +1167,6 @@ function MidSeasonSwapCard() {
                   <div className="text-[10px] text-muted-foreground truncate">
                     {p.position} · {p.career_years}
                     {isFranchise && <span className="text-warning ml-1">· Franchise</span>}
-                    {!isFranchise && !samePosition && (
-                      <span className="text-muted-foreground/60 ml-1">· position mismatch</span>
-                    )}
                   </div>
                 </div>
                 <span className="shrink-0 font-display text-sm text-warning">{p.prime_rating}</span>
@@ -1041,6 +1174,62 @@ function MidSeasonSwapCard() {
             );
           })}
         </div>
+        <button
+          onClick={() => setStage("prompt")}
+          className="mt-3 w-full text-[11px] text-muted-foreground hover:text-warning underline"
+        >
+          ← back
+        </button>
+      </div>
+    );
+  }
+
+  // Stage 3: spinning (the gamble resolves)
+  if (stage === "spinning") {
+    return (
+      <div className="mt-6 rounded-2xl border-2 border-warning bg-warning/10 p-8 text-center">
+        <div className="text-5xl animate-spin inline-block">🎲</div>
+        <div className="mt-3 text-sm text-muted-foreground">
+          {outgoing ? `${outgoing.player.name} packs their bags…` : "Spinning…"}
+        </div>
+      </div>
+    );
+  }
+
+  // Stage 4: reveal — the swap is already applied; show the outcome.
+  if (stage === "reveal" && incoming && outgoing) {
+    const delta = incoming.prime_rating - outgoing.player.prime_rating;
+    const verdict =
+      delta > 2
+        ? { label: "📈 Upgrade!", tone: "text-success" }
+        : delta < -2
+          ? { label: "📉 Downgrade", tone: "text-primary" }
+          : { label: "↔️ Sidegrade", tone: "text-warning" };
+    return (
+      <div className="mt-6 rounded-2xl border-2 border-warning bg-warning/10 p-6 text-center">
+        <div className={`font-display text-lg mb-3 ${verdict.tone}`}>{verdict.label}</div>
+        <div className="flex items-center justify-center gap-4">
+          <div className="text-center opacity-60">
+            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Out</div>
+            <div className="text-sm line-through">{outgoing.player.name}</div>
+            <div className="font-display text-xl text-muted-foreground">
+              {outgoing.player.prime_rating}
+            </div>
+          </div>
+          <div className="text-2xl">→</div>
+          <div className="text-center">
+            <div className="text-[10px] uppercase tracking-widest text-warning">In</div>
+            <div className="font-display text-base text-warning">{incoming.name}</div>
+            <div className="font-display text-2xl text-warning">{incoming.prime_rating}</div>
+            <div className="text-[10px] text-muted-foreground">{incoming.position}</div>
+          </div>
+        </div>
+        <button
+          onClick={() => career.setMidSeasonSwapUsed(true)}
+          className="mt-5 px-6 py-2.5 rounded-md bg-warning text-warning-foreground font-display tracking-wide hover:brightness-110 transition"
+        >
+          {delta >= 0 ? "Get back to it →" : "Live with it →"}
+        </button>
       </div>
     );
   }
