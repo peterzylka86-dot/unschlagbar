@@ -8,7 +8,7 @@
   "manager": "Marcel Koller",
   "blurb": "Honest, hard-working, gloriously mid-table. The cult Bundesliga survival side — Šesták's goals, Fuchs at left-back, the Castroper Straße faithful. Can you do better than 14th this time?",
   "accent": "#005CA9",
-  "_curationNote": "PETER: verify this XI — Bochum is obscure enough that I'm ~80% confident. GK (Laštůvka vs Fernandes) and a couple ratings are my best guess. The others (Fuchs, Šesták, Maltritz, Freier, Dabrowski, Shao Jiayi, Azaouagh, Klimowicz, Dedič, Hashemian, Drsek, Concha, Zdebel) I'm confident were 08/09 first-teamers.",
+  "verified": true,
   "players": [
     { "name": "Jan Laštůvka", "position": "GK", "prime_rating": 75, "nationality": "Czech Republic", "club": "bochum", "career_years": "2008-2009" },
     { "name": "Matías Concha", "position": "RB", "prime_rating": 72, "nationality": "Sweden", "club": "bochum", "career_years": "2008-2009" },
