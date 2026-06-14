@@ -33,6 +33,8 @@ import {
 } from "@/lib/career-core";
 import { resolveXI, xiToSlots, canSwapIntoXI, playerKey, effectiveRating } from "@/lib/matchday-xi";
 import { matchCommentary, boardNote } from "@/lib/commentary";
+import { teamTalk, seasonDiary } from "@/lib/flavour";
+import { Fragment } from "react";
 import type { Club, MatchResult, Player, Slot } from "@/lib/game-types";
 
 export const Route = createFileRoute("/career/season")({
@@ -193,6 +195,27 @@ function CareerSeason() {
     });
     return f;
   }, [matches, career.squad]);
+
+  // Season news diary — back-page headlines, dressing-room mood, and the
+  // daft between-match events, one beat per matchday, woven into the feed.
+  const diaryByMatchday = useMemo(() => {
+    const beats = seasonDiary({
+      season: career.currentSeason,
+      matches: matches.map((m) => ({
+        matchday: m.matchday,
+        ourScore: m.ourScore,
+        theirScore: m.theirScore,
+        outcome: m.outcome,
+        scorers: m.scorers.map((s) => ({ name: s.name })),
+      })),
+      squad: career.squad.map((p) => ({
+        name: p.name,
+        position: p.position,
+        prime_rating: p.prime_rating,
+      })),
+    });
+    return new Map(beats.map((b) => [b.matchday, b]));
+  }, [matches, career.squad, career.currentSeason]);
 
   // Combined selection adjustment, keyed by FORM key (club:normalized):
   // form (±2) PLUS fatigue penalty (0..−5). This is the number that drives
@@ -423,7 +446,21 @@ function CareerSeason() {
           .slice()
           .reverse()
           .map((m) => (
-            <MatchRow key={`md-${m.matchday}`} match={m} />
+            <Fragment key={`md-${m.matchday}`}>
+              <MatchRow
+                match={m}
+                teamTalkLine={teamTalk({
+                  matchday: m.matchday,
+                  totalMatchdays: MATCHES_PER_SEASON,
+                  ourRating: userRating,
+                  oppRating: m.opponent.strength ?? userRating,
+                  home: m.home,
+                })}
+              />
+              {diaryByMatchday.get(m.matchday) && (
+                <DiaryLine beat={diaryByMatchday.get(m.matchday)!} />
+              )}
+            </Fragment>
           ))}
         {shown === 0 && (
           <p className="text-sm text-muted-foreground italic py-6 text-center">
@@ -757,7 +794,30 @@ function ScoreboardStat({
   );
 }
 
-function MatchRow({ match }: { match: MatchWithScorers }) {
+function DiaryLine({ beat }: { beat: import("@/lib/flavour").FlavourBeat }) {
+  // News interstitial between match rows — the back pages / dressing-room /
+  // daft-event ticker. Headlines read louder (uppercase, warning tint);
+  // morale + events sit quieter in muted italic.
+  const isHeadline = beat.kind === "headline";
+  return (
+    <div
+      className={`flex items-start gap-2 py-1.5 px-3 mb-1.5 ${
+        isHeadline ? "text-warning/90" : "text-muted-foreground/80"
+      }`}
+    >
+      <span className="text-[11px] shrink-0">{beat.icon}</span>
+      <span
+        className={`text-[11px] ${
+          isHeadline ? "font-display tracking-wide" : "italic"
+        }`}
+      >
+        {beat.text}
+      </span>
+    </div>
+  );
+}
+
+function MatchRow({ match, teamTalkLine }: { match: MatchWithScorers; teamTalkLine?: string | null }) {
   // Color the entire left edge by outcome for instant scannability —
   // user can run their eye down the match feed and see W/D/L pattern.
   const outcomeAccent =
@@ -804,6 +864,11 @@ function MatchRow({ match }: { match: MatchWithScorers }) {
         {match.outcome}
       </div>
       <div className="flex-1 min-w-0">
+        {teamTalkLine && (
+          <div className="text-[11px] text-warning/70 italic truncate mb-0.5">
+            🎙️ {teamTalkLine}
+          </div>
+        )}
         <div className="flex items-baseline gap-2">
           <span className="text-[11px] text-muted-foreground uppercase tracking-wider">
             {match.home ? "vs" : "@"}
