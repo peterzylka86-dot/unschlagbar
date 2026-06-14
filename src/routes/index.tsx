@@ -183,6 +183,18 @@ function Landing() {
                 →
               </span>
             </Link>
+            <Link
+              to="/classic"
+              className="group inline-flex items-center justify-center gap-2 px-5 py-3 rounded-md text-warning/90 font-display text-sm tracking-[0.18em] uppercase border border-warning/30 bg-transparent hover:bg-warning/10 hover:text-warning transition"
+            >
+              <span>📜 Classic squads</span>
+              <span className="text-[10px] tracking-[0.16em] normal-case opacity-70">
+                · real teams · NEW
+              </span>
+              <span aria-hidden className="opacity-60">
+                →
+              </span>
+            </Link>
           </div>
 
           <div className="mt-8 grid grid-cols-3 gap-2 text-center">
