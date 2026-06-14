@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useGame } from "@/lib/store";
 import { simulateSeason, simulateKnockout, squadRating } from "@/lib/sim";
 import { pickScorer, pickAssister } from "@/lib/career-core";
+import { matchCommentary } from "@/lib/commentary";
 import { ClubBadge } from "@/components/ClubBadge";
 import { getClubs } from "@/lib/data";
 import { LEAGUES } from "@/lib/leagues";
@@ -532,7 +533,7 @@ function MatchCard({
   isStreakBreaker,
   dimmed,
 }: {
-  match: MatchResult;
+  match: MatchResult & { scorers?: { name: string }[] };
   revealed: boolean;
   isStreakBreaker: boolean;
   dimmed: boolean;
@@ -545,6 +546,27 @@ function MatchCard({
         : "border-destructive/40 bg-destructive/5";
   const bar =
     match.outcome === "W" ? "bg-success" : match.outcome === "D" ? "bg-warning" : "bg-destructive";
+
+  // Flavour line (the Anstoss "secret sauce"). Derive hat-trick + top
+  // scorer from this match's goal events, then let the commentary engine
+  // pick a deterministic, situation-appropriate one-liner.
+  const counts = new Map<string, number>();
+  (match.scorers ?? []).forEach((s) => counts.set(s.name, (counts.get(s.name) ?? 0) + 1));
+  let hatTrickScorer: string | undefined;
+  let topScorer: string | undefined;
+  let top = 0;
+  counts.forEach((g, name) => {
+    if (g >= 3 && !hatTrickScorer) hatTrickScorer = name;
+    if (g > top) {
+      top = g;
+      topScorer = name;
+    }
+  });
+  const flavour = matchCommentary(match, {
+    opp: match.opponent.short,
+    hatTrickScorer,
+    topScorer,
+  });
   return (
     <motion.div
       initial={{ opacity: 0, x: -6 }}
@@ -562,7 +584,11 @@ function MatchCard({
           <span className="text-muted-foreground">{match.home ? "vs" : "@"}</span>{" "}
           {match.opponent.short}
         </div>
-        <div className="text-[10px] text-muted-foreground truncate">{match.opponent.name}</div>
+        {revealed && !dimmed && flavour ? (
+          <div className="text-[10px] text-muted-foreground/90 italic truncate">{flavour}</div>
+        ) : (
+          <div className="text-[10px] text-muted-foreground truncate">{match.opponent.name}</div>
+        )}
       </div>
       <div className="font-display text-lg tabular-nums">
         {revealed ? `${match.ourScore}-${match.theirScore}` : "— —"}

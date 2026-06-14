@@ -32,6 +32,7 @@ import {
   simplifyPosition,
 } from "@/lib/career-core";
 import { resolveXI, xiToSlots, canSwapIntoXI, playerKey, effectiveRating } from "@/lib/matchday-xi";
+import { matchCommentary, boardNote } from "@/lib/commentary";
 import type { Club, MatchResult, Player, Slot } from "@/lib/game-types";
 
 export const Route = createFileRoute("/career/season")({
@@ -771,6 +772,27 @@ function MatchRow({ match }: { match: MatchWithScorers }) {
       : match.outcome === "L"
         ? "text-primary"
         : "text-muted-foreground";
+
+  // Flavour line (the Anstoss "secret sauce") — derive hat-trick + top
+  // scorer from this match's goal events, then pick a deterministic,
+  // situation-appropriate one-liner.
+  const counts = new Map<string, number>();
+  match.scorers.forEach((s) => counts.set(s.name, (counts.get(s.name) ?? 0) + 1));
+  let hatTrickScorer: string | undefined;
+  let topScorer: string | undefined;
+  let top = 0;
+  counts.forEach((g, name) => {
+    if (g >= 3 && !hatTrickScorer) hatTrickScorer = name;
+    if (g > top) {
+      top = g;
+      topScorer = name;
+    }
+  });
+  const flavour = matchCommentary(match, {
+    opp: match.opponent.short || match.opponent.name,
+    hatTrickScorer,
+    topScorer,
+  });
   return (
     <div
       className={`flex items-center gap-3 py-2.5 px-3 rounded-lg border border-border border-l-4 ${outcomeAccent} mb-1.5`}
@@ -799,6 +821,11 @@ function MatchRow({ match }: { match: MatchWithScorers }) {
             {match.scorers
               .map((s) => (s.assister ? `${s.name} (${s.assister})` : s.name))
               .join(" · ")}
+          </div>
+        )}
+        {flavour && (
+          <div className="text-[11px] text-muted-foreground/80 italic truncate mt-0.5">
+            {flavour}
           </div>
         )}
       </div>
@@ -935,8 +962,24 @@ function PostSeasonCTA({
     career.setRelegated(isRelegated);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  void userRating;
   void liveForm;
+
+  // Board verdict (commentary engine). Unbeaten = a season with no losses.
+  // Forecast = where this squad "should" finish purely on rating: 1 + the
+  // number of opponents rated above us. Beating it delights the board;
+  // falling short disappoints them.
+  const unbeaten = matches.length > 0 && matches.every((m) => m.outcome !== "L");
+  const expectedPosition = 1 + opponents.filter((o) => o.strength > userRating).length;
+  const beatForecast =
+    ourPosition < expectedPosition ? true : ourPosition > expectedPosition ? false : null;
+  const verdict = boardNote({
+    position: ourPosition,
+    totalTeams: opponents.length + 1,
+    unbeaten,
+    beatForecast,
+    relegated: isRelegated,
+    champion: isChampion,
+  });
 
   return (
     <div className="mt-8 rounded-2xl border-2 border-warning bg-warning/10 p-6 text-center">
@@ -952,6 +995,7 @@ function PostSeasonCTA({
               ? `Relegated · finished ${ourPosition}${ordinal(ourPosition)}`
               : `Finished ${ourPosition}${ordinal(ourPosition)}`}
       </div>
+      <div className="text-sm text-foreground/85 italic mb-3 max-w-sm mx-auto">{verdict}</div>
       {career.pendingDeparture && (
         <div className="text-xs text-primary mb-2">
           🚪 A star will leave at the start of next season.
