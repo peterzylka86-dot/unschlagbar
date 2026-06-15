@@ -27,6 +27,46 @@ function fnv(str: string): number {
   return h >>> 0;
 }
 
+/** Coarse position area for the random draw, so a "surprise me" never hands
+ *  you three of the same. */
+function legendArea(position: string): string {
+  const p = position.toUpperCase();
+  if (p === "GK") return "GK";
+  if (p === "CB" || p === "LB" || p === "RB" || p === "LWB" || p === "RWB") return "DEF";
+  if (p === "CDM" || p === "DM" || p === "CM" || p === "LM" || p === "RM") return "MID";
+  return "ATT"; // CAM / wingers / strikers
+}
+
+/**
+ * Draw 3 legends for the Real-mode reinforcement "Surprise me" — one each
+ * from 3 distinct position areas (so never a useless trio), randomly which
+ * legend and which areas, but biased toward genuine greats (drawn from each
+ * area's top tier). Deterministic by `seed`, so a reroll = a new seed and a
+ * replay reproduces the same draw. Returns up to 3 players.
+ */
+export function pickRandomLegends(pool: Player[], seed: string, count = 3): Player[] {
+  const byArea = new Map<string, Player[]>();
+  for (const p of pool) {
+    const a = legendArea(p.position);
+    (byArea.get(a) ?? byArea.set(a, []).get(a)!).push(p);
+  }
+  // Seeded-shuffle the available areas, then take the first `count`.
+  const areas = [...byArea.keys()].sort(
+    (a, b) => (fnv(`area-${seed}-${a}`) % 1000) - (fnv(`area-${seed}-${b}`) % 1000),
+  );
+  const picked: Player[] = [];
+  for (const area of areas) {
+    if (picked.length >= count) break;
+    const tier = [...byArea.get(area)!]
+      .sort((a, b) => b.prime_rating - a.prime_rating)
+      .slice(0, 24); // the area's elite — the fun is landing a real great
+    if (tier.length === 0) continue;
+    const idx = fnv(`leg-${seed}-${area}`) % tier.length;
+    picked.push(tier[idx]);
+  }
+  return picked;
+}
+
 /**
  * Turn a peak-rated legend into his developing-talent self. A no-op for a
  * player who already carries an `age` (a wonderkid, a carried-over prospect,

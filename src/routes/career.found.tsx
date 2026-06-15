@@ -16,7 +16,7 @@ import { LEAGUES } from "@/lib/leagues";
 import type { LeagueId } from "@/lib/leagues";
 import { getClubs, getCareerPlayers } from "@/lib/data";
 import { startingBalance } from "@/lib/market";
-import { youthifyLegend } from "@/lib/develop-legends";
+import { youthifyLegend, pickRandomLegends } from "@/lib/develop-legends";
 import type { Player } from "@/lib/game-types";
 import {
   realLeagues,
@@ -57,6 +57,7 @@ function FoundingClubPicker() {
   const [reinforceClub, setReinforceClub] = useState<string | null>(null);
   const [legendKeys, setLegendKeys] = useState<string[]>([]);
   const [legendSearch, setLegendSearch] = useState("");
+  const [rerollSeed, setRerollSeed] = useState(0);
   const MAX_LEGENDS = 3;
   const legendsPool = useMemo(
     () => [...getCareerPlayers(null, "legends")].sort((a, b) => b.prime_rating - a.prime_rating),
@@ -110,6 +111,15 @@ function FoundingClubPicker() {
       }));
     commitDraft(squad, rivals);
     navigate({ to: "/career/season" });
+  }
+
+  /** Draw 3 random legends across distinct position areas — the lottery.
+   *  Each press rerolls (new seed) so you can keep spinning for a trio you
+   *  fancy, or hand-pick instead below. */
+  function surpriseMe() {
+    const picks = pickRandomLegends(legendsPool, `${reinforceClub}-${rerollSeed}`, MAX_LEGENDS);
+    setLegendKeys(picks.map((p) => `${p.club}:${p.name}`));
+    setRerollSeed((s) => s + 1);
   }
 
   function toggleLegend(key: string) {
@@ -166,11 +176,24 @@ function FoundingClubPicker() {
           </div>
         )}
 
+        <button
+          onClick={surpriseMe}
+          className="mt-5 w-full px-4 py-3 rounded-md border-2 border-warning bg-warning/10 text-warning font-display tracking-wide hover:bg-warning/20 transition"
+        >
+          🎲 {rerollSeed === 0 ? "Surprise me — 3 random legends" : "Reroll the legends"}
+        </button>
+
+        <div className="mt-4 flex items-center gap-3 text-[10px] uppercase tracking-widest text-muted-foreground">
+          <span className="h-px flex-1 bg-border" />
+          or pick your own
+          <span className="h-px flex-1 bg-border" />
+        </div>
+
         <input
           value={legendSearch}
           onChange={(e) => setLegendSearch(e.target.value)}
           placeholder="Search legends…"
-          className="mt-5 w-full px-3 py-2 rounded-lg border border-border bg-card text-sm"
+          className="mt-3 w-full px-3 py-2 rounded-lg border border-border bg-card text-sm"
         />
 
         <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-1.5 max-h-[24rem] overflow-y-auto">
