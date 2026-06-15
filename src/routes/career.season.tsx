@@ -51,6 +51,11 @@ import { currentInjuries, buildLiveEvents, type LiveEvent } from "@/lib/matchliv
 import { applyRatingEdits, editedRating } from "@/lib/edits";
 import { prizeMoney, feeLabel, sellValue } from "@/lib/market";
 import { seasonEuropeEntry, EURO_META } from "@/lib/europe";
+import {
+  playerSeasonStats,
+  positionAttributes,
+  type PlayerSeasonStats,
+} from "@/lib/player-stats";
 import { squadChemistry } from "@/lib/chemistry";
 import { managerFor } from "@/lib/managers";
 import { pickConversation, type ConvoOption } from "@/lib/conversations";
@@ -628,6 +633,18 @@ function CareerSeason() {
           onAutoPick={() =>
             career.setStartingXI(autoPickXI(availableSquad, career.formation, selectionForm))
           }
+          statsFor={(p) =>
+            playerSeasonStats(
+              p,
+              matches.map((m) => ({
+                ourScore: m.ourScore,
+                theirScore: m.theirScore,
+                scorers: m.scorers,
+              })),
+              lineups,
+              playerKey(p),
+            )
+          }
         />
       )}
 
@@ -1045,6 +1062,7 @@ function MatchdaySquadPanel({
   formation,
   franchiseKey,
   onSwap,
+  statsFor,
 }: {
   /** Selectable (fit) squad — injured players are excluded by the caller. */
   squad: Player[];
@@ -1065,6 +1083,8 @@ function MatchdaySquadPanel({
   onEditRating?: (playerKey: string, rating: number) => void;
   /** Assistant picks the strongest available XI (form + fatigue aware). */
   onAutoPick?: () => void;
+  /** Season stats for a player (derived from played matches + lineups). */
+  statsFor?: (p: Player) => PlayerSeasonStats;
 }) {
   // Open by default — the squad is the thing you act on every matchday, so
   // it stays visible rather than hidden behind a tap.
@@ -1072,6 +1092,7 @@ function MatchdaySquadPanel({
   const [pendingIn, setPendingIn] = useState<string | null>(null);
   const [editMode, setEditMode] = useState(false);
   const [view, setView] = useState<"list" | "pitch">("list");
+  const [detail, setDetail] = useState<Player | null>(null);
 
   const xiSet = new Set(xiKeys);
   const starters = squad.filter((p) => xiSet.has(playerKey(p)));
@@ -1164,6 +1185,20 @@ function MatchdaySquadPanel({
             </span>
           )}
         </span>
+        {!editMode && (
+          <span
+            role="button"
+            tabIndex={0}
+            title="Season stats & attributes"
+            onClick={(e) => {
+              e.stopPropagation();
+              setDetail(p);
+            }}
+            className="shrink-0 w-6 h-6 rounded border border-border/60 text-[11px] leading-6 text-center text-muted-foreground hover:border-warning hover:text-warning select-none"
+          >
+            📊
+          </span>
+        )}
         {editMode && onEditRating ? (
           <span className="flex items-center gap-1 shrink-0">
             <span
@@ -1310,6 +1345,110 @@ function MatchdaySquadPanel({
           )}
         </div>
       )}
+      {detail && (
+        <PlayerDetailModal
+          player={detail}
+          stats={statsFor?.(detail) ?? null}
+          adjustedRating={Math.round(effectiveRating(detail, formKeyedForm(detail, ratingAdj)) * 10) / 10}
+          isFranchise={playerKey(detail) === franchiseKey}
+          onClose={() => setDetail(null)}
+        />
+      )}
+    </div>
+  );
+}
+
+/** Player detail — season stats + a CM/Anstoss-style attribute breakdown. */
+function PlayerDetailModal({
+  player,
+  stats,
+  adjustedRating,
+  isFranchise,
+  onClose,
+}: {
+  player: Player;
+  stats: PlayerSeasonStats | null;
+  adjustedRating: number;
+  isFranchise: boolean;
+  onClose: () => void;
+}) {
+  const attrs = positionAttributes(player);
+  const statTiles: { label: string; value: number }[] = [
+    { label: "Apps", value: stats?.apps ?? 0 },
+    { label: "Goals", value: stats?.goals ?? 0 },
+    { label: "Assists", value: stats?.assists ?? 0 },
+    { label: "Clean sheets", value: stats?.cleanSheets ?? 0 },
+  ];
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70"
+      onClick={onClose}
+    >
+      <div
+        className="w-full max-w-sm rounded-2xl border-2 border-warning bg-card p-5 shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-start justify-between gap-2">
+          <div className="min-w-0">
+            <div className="font-display text-lg text-foreground truncate">
+              {isFranchise && "⭐ "}
+              {player.name}
+            </div>
+            <div className="text-[11px] text-muted-foreground">
+              {player.position} · {player.club}
+              {player.age != null && ` · ${player.age}y`}
+              {player.nationality && ` · ${player.nationality}`}
+            </div>
+          </div>
+          <div className="text-right shrink-0">
+            <div className="font-display text-3xl text-warning leading-none">{adjustedRating}</div>
+            <div className="text-[9px] uppercase tracking-widest text-muted-foreground">overall</div>
+          </div>
+        </div>
+
+        <div className="mt-4 grid grid-cols-4 gap-1.5">
+          {statTiles.map((s) => (
+            <div key={s.label} className="rounded-lg border border-border bg-background/40 py-2 text-center">
+              <div className="font-display text-lg text-foreground tabular-nums">{s.value}</div>
+              <div className="text-[8px] uppercase tracking-wide text-muted-foreground leading-tight">
+                {s.label}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-4 space-y-1.5">
+          {attrs.map((a) => (
+            <div key={a.short} className="flex items-center gap-2">
+              <span className="w-9 font-mono text-[10px] text-muted-foreground shrink-0">{a.short}</span>
+              <div className="flex-1 h-2 rounded-full bg-background/60 overflow-hidden">
+                <div
+                  className="h-full rounded-full"
+                  style={{
+                    width: `${a.value}%`,
+                    background:
+                      a.value >= 85
+                        ? "rgba(34,197,94,0.85)"
+                        : a.value >= 70
+                          ? "rgba(250,204,21,0.85)"
+                          : "rgba(148,163,184,0.7)",
+                  }}
+                />
+              </div>
+              <span className="w-6 text-right font-display text-xs text-foreground tabular-nums">
+                {a.value}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <button
+          onClick={onClose}
+          className="mt-5 w-full px-4 py-2.5 rounded-md border border-border text-sm text-muted-foreground hover:border-foreground/30 transition"
+        >
+          Close
+        </button>
+      </div>
     </div>
   );
 }
