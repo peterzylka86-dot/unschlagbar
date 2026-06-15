@@ -9,11 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SeasonRouteImport } from './routes/season'
-import { Route as ResultRouteImport } from './routes/result'
-import { Route as GameRouteImport } from './routes/game'
-import { Route as DraftRouteImport } from './routes/draft'
-import { Route as DailyRouteImport } from './routes/daily'
 import { Route as CareerRouteImport } from './routes/career'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CareerSeasonRouteImport } from './routes/career.season'
@@ -24,31 +19,6 @@ import { Route as CareerFoundRouteImport } from './routes/career.found'
 import { Route as CareerDraftRouteImport } from './routes/career.draft'
 import { Route as CareerCupRouteImport } from './routes/career.cup'
 
-const SeasonRoute = SeasonRouteImport.update({
-  id: '/season',
-  path: '/season',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ResultRoute = ResultRouteImport.update({
-  id: '/result',
-  path: '/result',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GameRoute = GameRouteImport.update({
-  id: '/game',
-  path: '/game',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DraftRoute = DraftRouteImport.update({
-  id: '/draft',
-  path: '/draft',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DailyRoute = DailyRouteImport.update({
-  id: '/daily',
-  path: '/daily',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CareerRoute = CareerRouteImport.update({
   id: '/career',
   path: '/career',
@@ -98,11 +68,6 @@ const CareerCupRoute = CareerCupRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/career': typeof CareerRouteWithChildren
-  '/daily': typeof DailyRoute
-  '/draft': typeof DraftRoute
-  '/game': typeof GameRoute
-  '/result': typeof ResultRoute
-  '/season': typeof SeasonRoute
   '/career/cup': typeof CareerCupRoute
   '/career/draft': typeof CareerDraftRoute
   '/career/found': typeof CareerFoundRoute
@@ -114,11 +79,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/career': typeof CareerRouteWithChildren
-  '/daily': typeof DailyRoute
-  '/draft': typeof DraftRoute
-  '/game': typeof GameRoute
-  '/result': typeof ResultRoute
-  '/season': typeof SeasonRoute
   '/career/cup': typeof CareerCupRoute
   '/career/draft': typeof CareerDraftRoute
   '/career/found': typeof CareerFoundRoute
@@ -131,11 +91,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/career': typeof CareerRouteWithChildren
-  '/daily': typeof DailyRoute
-  '/draft': typeof DraftRoute
-  '/game': typeof GameRoute
-  '/result': typeof ResultRoute
-  '/season': typeof SeasonRoute
   '/career/cup': typeof CareerCupRoute
   '/career/draft': typeof CareerDraftRoute
   '/career/found': typeof CareerFoundRoute
@@ -149,11 +104,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/career'
-    | '/daily'
-    | '/draft'
-    | '/game'
-    | '/result'
-    | '/season'
     | '/career/cup'
     | '/career/draft'
     | '/career/found'
@@ -165,11 +115,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/career'
-    | '/daily'
-    | '/draft'
-    | '/game'
-    | '/result'
-    | '/season'
     | '/career/cup'
     | '/career/draft'
     | '/career/found'
@@ -181,11 +126,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/career'
-    | '/daily'
-    | '/draft'
-    | '/game'
-    | '/result'
-    | '/season'
     | '/career/cup'
     | '/career/draft'
     | '/career/found'
@@ -198,50 +138,10 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CareerRoute: typeof CareerRouteWithChildren
-  DailyRoute: typeof DailyRoute
-  DraftRoute: typeof DraftRoute
-  GameRoute: typeof GameRoute
-  ResultRoute: typeof ResultRoute
-  SeasonRoute: typeof SeasonRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/season': {
-      id: '/season'
-      path: '/season'
-      fullPath: '/season'
-      preLoaderRoute: typeof SeasonRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/result': {
-      id: '/result'
-      path: '/result'
-      fullPath: '/result'
-      preLoaderRoute: typeof ResultRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/game': {
-      id: '/game'
-      path: '/game'
-      fullPath: '/game'
-      preLoaderRoute: typeof GameRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/draft': {
-      id: '/draft'
-      path: '/draft'
-      fullPath: '/draft'
-      preLoaderRoute: typeof DraftRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/daily': {
-      id: '/daily'
-      path: '/daily'
-      fullPath: '/daily'
-      preLoaderRoute: typeof DailyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/career': {
       id: '/career'
       path: '/career'
@@ -334,11 +234,6 @@ const CareerRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CareerRoute: CareerRouteWithChildren,
-  DailyRoute: DailyRoute,
-  DraftRoute: DraftRoute,
-  GameRoute: GameRoute,
-  ResultRoute: ResultRoute,
-  SeasonRoute: SeasonRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
