@@ -20,7 +20,13 @@ import { useMemo, useState } from "react";
 import { useCareer } from "@/lib/career-store";
 import { getCareerClubs, getCareerPlayers } from "@/lib/data";
 import { pickSpinClub, simplifyPosition } from "@/lib/career-core";
-import { playerFee, sellValue, feeLabel } from "@/lib/market";
+import { sellValue, feeLabel } from "@/lib/market";
+import {
+  clubReputation,
+  signStatus,
+  type SignStatus,
+  MAX_SIGNINGS_PER_WINDOW,
+} from "@/lib/transfers";
 import { playerFitsSlot } from "@/lib/draft-helpers";
 import {
   seasonLottery,
@@ -76,8 +82,9 @@ function PostSeason() {
   const [pendingOutIdx, setPendingOutIdx] = useState<number | null>(null);
   const [spunClub, setSpunClub] = useState<Club | null>(null);
   const [recentClubIds, setRecentClubIds] = useState<string[]>([]);
-  // Real-mode transfer market: money spent so far this window.
+  // Transfer market: money spent + signings made so far this window.
   const [spent, setSpent] = useState(0);
+  const [signingsMade, setSigningsMade] = useState(0);
 
   // ─── Wonderkid BIDDING WAR (the "what would I risk" decision) ─────────
   // Deterministic per (career, season): a legend-prospect surfaces ~10% of
@@ -175,16 +182,39 @@ function PostSeason() {
   const budget = career.balance;
   const remaining = budget - spent;
 
+  // Your club's pulling power — strength + the silverware you've won. Drives
+  // who'll actually agree to join. Grows as you succeed (small-club arc).
+  const clubStr = new Map(allClubs.map((c) => [c.id, c.strength]));
+  const clubStrengthOf = (id: string) => clubStr.get(id) ?? 72;
+  const myStrength = clubStrengthOf(career.foundingClubId ?? "");
+  const leagueTitles = career.seasonHistory.filter((s) => s.finalPosition === 1).length;
+  const euroTitles = career.seasonHistory.filter((s) => s.europeResult === "champion").length;
+  const yourReputation = clubReputation(myStrength, leagueTitles, euroTitles);
+  const signingsLeft = MAX_SIGNINGS_PER_WINDOW - signingsMade;
+
   function buyPlayer(p: Player) {
-    if (playerFee(p.prime_rating, p.age ?? 27) > remaining) return;
     if (draftedKeys.has(`${p.club}:${p.name}`)) return;
-    setSpent((x) => x + playerFee(p.prime_rating, p.age ?? 27));
+    const st = signStatus({
+      rating: p.prime_rating,
+      age: p.age ?? 27,
+      sellingClubStrength: clubStrengthOf(p.club),
+      yourReputation,
+      remainingBudget: remaining,
+      signingsLeft,
+    });
+    if (st.status !== "ok") return;
+    setSpent((x) => x + st.price);
+    setSigningsMade((n) => n + 1);
     setWorkingSquad((s) => [...s, p]);
   }
   function sellPlayer(idx: number) {
     const p = workingSquad[idx];
     if (!p) return;
     setSpent((x) => x - sellValue(p.prime_rating, p.age ?? 27));
+    setWorkingSquad((s) => s.filter((_, i) => i !== idx));
+  }
+  /** Release a player for free — to trim an over-large squad. */
+  function releasePlayer(idx: number) {
     setWorkingSquad((s) => s.filter((_, i) => i !== idx));
   }
   function commitReal() {
@@ -213,8 +243,12 @@ function PostSeason() {
         remaining={remaining}
         squad={workingSquad}
         pool={allPlayers}
+        yourReputation={yourReputation}
+        signingsLeft={signingsLeft}
+        clubStrengthOf={clubStrengthOf}
         onBuy={buyPlayer}
         onSell={sellPlayer}
+        onRelease={releasePlayer}
         onContinue={commitReal}
       />
     );
@@ -507,6 +541,9 @@ function PostSeason() {
           remaining={remaining}
           pool={allPlayers}
           squad={workingSquad}
+          yourReputation={yourReputation}
+          signingsLeft={signingsLeft}
+          clubStrengthOf={clubStrengthOf}
           onBuy={buyPlayer}
           onSell={sellPlayer}
         />
@@ -845,8 +882,12 @@ function RealTransferMarket({
   remaining,
   squad,
   pool,
+  yourReputation,
+  signingsLeft,
+  clubStrengthOf,
   onBuy,
   onSell,
+  onRelease,
   onContinue,
 }: {
   season: number;
@@ -854,8 +895,12 @@ function RealTransferMarket({
   remaining: number;
   squad: Player[];
   pool: Player[];
+  yourReputation: number;
+  signingsLeft: number;
+  clubStrengthOf: (clubId: string) => number;
   onBuy: (p: Player) => void;
   onSell: (idx: number) => void;
+  onRelease: (idx: number) => void;
   onContinue: () => void;
 }) {
   const [posFilter, setPosFilter] = useState<"All" | "GK" | "DEF" | "MID" | "FWD">("All");
@@ -892,15 +937,19 @@ function RealTransferMarket({
           <div className="font-display text-2xl text-warning tabular-nums">{feeLabel(remaining)}</div>
         </div>
         <div className="mt-1 text-[11px] text-muted-foreground">
-          Budget {feeLabel(budget)} · spent {feeLabel(budget - remaining)} · buy any real player,
-          sell to raise funds.
+          Budget {feeLabel(budget)} · spent {feeLabel(budget - remaining)}
+        </div>
+        <div className="mt-1 text-[11px] text-muted-foreground">
+          ⭐ Reputation {yourReputation} · {signingsLeft} signing
+          {signingsLeft === 1 ? "" : "s"} left this window. Big names need a big reputation — win
+          trophies to attract them.
         </div>
       </div>
 
       {/* Your squad — sell to raise funds */}
       <section className="mt-6">
         <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
-          Your squad ({squad.length}) — tap Sell to raise funds
+          Your squad ({squad.length}) — Sell for funds, or Release to trim
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
           {squad
@@ -918,12 +967,21 @@ function RealTransferMarket({
                     {p.age != null ? ` · ${p.age}y` : ""}
                   </div>
                 </div>
-                <button
-                  onClick={() => onSell(i)}
-                  className="shrink-0 text-[11px] px-2 py-1 rounded-md border border-success/40 text-success hover:bg-success/10"
-                >
-                  Sell {feeLabel(sellValue(p.prime_rating, p.age ?? 27))}
-                </button>
+                <div className="flex items-center gap-1 shrink-0">
+                  <button
+                    onClick={() => onSell(i)}
+                    className="text-[11px] px-2 py-1 rounded-md border border-success/40 text-success hover:bg-success/10"
+                  >
+                    Sell {feeLabel(sellValue(p.prime_rating, p.age ?? 27))}
+                  </button>
+                  <button
+                    onClick={() => onRelease(i)}
+                    title="Release for free (trim the squad)"
+                    className="text-[11px] px-2 py-1 rounded-md border border-border text-muted-foreground hover:bg-muted/20"
+                  >
+                    Release
+                  </button>
+                </div>
               </div>
             ))}
         </div>
@@ -951,8 +1009,21 @@ function RealTransferMarket({
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 max-h-[28rem] overflow-y-auto">
           {buyList.map((p) => {
-            const fee = playerFee(p.prime_rating, p.age ?? 27);
-            const affordable = fee <= remaining;
+            const { status, price } = signStatus({
+              rating: p.prime_rating,
+              age: p.age ?? 27,
+              sellingClubStrength: clubStrengthOf(p.club),
+              yourReputation,
+              remainingBudget: remaining,
+              signingsLeft,
+            });
+            const ok = status === "ok";
+            const label: Record<SignStatus, string> = {
+              ok: feeLabel(price),
+              "cant-afford": feeLabel(price),
+              "wont-join": "Won't join",
+              limit: "Limit",
+            };
             return (
               <div
                 key={`buy-${p.club}-${p.name}`}
@@ -963,18 +1034,28 @@ function RealTransferMarket({
                   <div className="text-[10px] text-muted-foreground truncate">
                     {p.position} · {p.prime_rating}
                     {p.age != null ? ` · ${p.age}y` : ""}
+                    {status === "wont-join" && " · rep too low"}
                   </div>
                 </div>
                 <button
-                  disabled={!affordable}
+                  disabled={!ok}
                   onClick={() => onBuy(p)}
+                  title={
+                    status === "wont-join"
+                      ? "Your reputation is too low to attract him"
+                      : status === "cant-afford"
+                        ? "Not enough funds"
+                        : status === "limit"
+                          ? "No signings left this window"
+                          : "Sign"
+                  }
                   className={`shrink-0 text-[11px] px-2 py-1 rounded-md border transition ${
-                    affordable
+                    ok
                       ? "border-warning/50 text-warning hover:bg-warning/10"
                       : "border-border text-muted-foreground/50 cursor-not-allowed"
                   }`}
                 >
-                  {feeLabel(fee)}
+                  {label[status]}
                 </button>
               </div>
             );
@@ -1000,12 +1081,18 @@ function LegendsBuyPanel({
   remaining,
   pool,
   squad,
+  yourReputation,
+  signingsLeft,
+  clubStrengthOf,
   onBuy,
   onSell,
 }: {
   remaining: number;
   pool: Player[];
   squad: Player[];
+  yourReputation: number;
+  signingsLeft: number;
+  clubStrengthOf: (clubId: string) => number;
   onBuy: (p: Player) => void;
   onSell: (idx: number) => void;
 }) {
@@ -1031,7 +1118,9 @@ function LegendsBuyPanel({
       >
         <span className="font-display text-sm tracking-wide text-foreground/90">
           💰 Sign legends
-          <span className="ml-2 text-[10px] text-warning normal-case">{feeLabel(remaining)} kitty</span>
+          <span className="ml-2 text-[10px] text-warning normal-case">
+            {feeLabel(remaining)} · ⭐{yourReputation} · {signingsLeft} left
+          </span>
         </span>
         <span className={`text-warning transition-transform ${open ? "rotate-180" : ""}`}>⌄</span>
       </button>
@@ -1076,8 +1165,17 @@ function LegendsBuyPanel({
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 max-h-72 overflow-y-auto">
             {buyList.map((p) => {
-              const fee = playerFee(p.prime_rating, p.age ?? 27);
-              const ok = fee <= remaining;
+              const { status, price } = signStatus({
+                rating: p.prime_rating,
+                age: p.age ?? 27,
+                sellingClubStrength: clubStrengthOf(p.club),
+                yourReputation,
+                remainingBudget: remaining,
+                signingsLeft,
+              });
+              const ok = status === "ok";
+              const label =
+                status === "wont-join" ? "Won't join" : status === "limit" ? "Limit" : feeLabel(price);
               return (
                 <div
                   key={`lb-${p.club}-${p.name}`}
@@ -1096,7 +1194,7 @@ function LegendsBuyPanel({
                       ok ? "border-warning/50 text-warning hover:bg-warning/10" : "border-border text-muted-foreground/40 cursor-not-allowed"
                     }`}
                   >
-                    {feeLabel(fee)}
+                    {label}
                   </button>
                 </div>
               );
