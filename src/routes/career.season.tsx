@@ -46,6 +46,7 @@ import {
   deriveConfidence,
   type TalkId,
 } from "@/lib/management";
+import { growStep, declineStep, growthTier, WK_DECLINE_START_AGE } from "@/lib/wonderkids";
 import { Fragment } from "react";
 import type { Club, MatchResult, Player, Slot } from "@/lib/game-types";
 
@@ -562,6 +563,7 @@ function CareerSeason() {
           userRating={userRating}
           opponents={opponents}
           liveForm={liveForm}
+          lineups={lineups}
         />
       )}
 
@@ -788,11 +790,19 @@ function MatchdaySquadPanel({
         <span className="font-mono text-[10px] text-warning w-8 shrink-0">{p.position}</span>
         <span className="flex-1 truncate">
           {isFranchise && "⭐ "}
+          {p.wonderkidId && (
+            <span title={`Prospect, age ${p.age} — growing toward ${p.targetRating}`}>✨ </span>
+          )}
           {p.name}
           {formBadge(p) && <span className="ml-1">{formBadge(p)}</span>}
           {stamina && (
             <span className={`ml-1 ${stamina.tone}`} title="Fatigued — rest to recover">
               {stamina.icon}
+            </span>
+          )}
+          {p.wonderkidId && p.targetRating != null && p.prime_rating < p.targetRating && (
+            <span className="ml-1 text-[10px] text-warning/70" title="Current → potential">
+              {p.age}y →{p.targetRating}
             </span>
           )}
         </span>
@@ -1111,12 +1121,14 @@ function PostSeasonCTA({
   userRating,
   opponents,
   liveForm,
+  lineups,
 }: {
   ourPosition: number;
   matches: MatchWithScorers[];
   userRating: number;
   opponents: import("@/lib/game-types").Club[];
   liveForm: Record<string, number>;
+  lineups: string[][];
 }) {
   const career = useCareer();
   const isCupQualifier = ourPosition <= 8;
@@ -1127,6 +1139,29 @@ function PostSeasonCTA({
   useEffect(() => {
     const alreadyRecorded = career.seasonHistory.some((s) => s.season === career.currentSeason);
     if (alreadyRecorded) return;
+
+    // ── Wonderkid growth tick — once per season, here at the boundary
+    // where we have both the squad and the lineups (matchdays started).
+    // A prospect who started ≥70% of games leaps; a benched one barely
+    // moves. Past their peak they age and decline. Exact-prime ceiling.
+    const startsByKey = new Map<string, number>();
+    for (const xi of lineups) for (const k of xi) startsByKey.set(k, (startsByKey.get(k) ?? 0) + 1);
+    const growth: Record<string, { prime_rating: number; age: number }> = {};
+    for (const p of career.squad) {
+      if (!p.wonderkidId || p.targetRating == null || p.age == null) continue;
+      const key = `${p.club}:${p.name}`;
+      const starts = startsByKey.get(key) ?? 0;
+      const nextAge = p.age + 1;
+      let nextRating: number;
+      if (p.age < WK_DECLINE_START_AGE) {
+        const tier = growthTier(starts, lineups.length || MATCHES_PER_SEASON);
+        nextRating = growStep(p.prime_rating, p.targetRating, tier, `${key}-s${career.currentSeason}`);
+      } else {
+        nextRating = declineStep(p.prime_rating, p.age, `${key}-s${career.currentSeason}`);
+      }
+      growth[key] = { prime_rating: nextRating, age: nextAge };
+    }
+    if (Object.keys(growth).length > 0) career.growWonderkids(growth);
     const wins = matches.filter((m) => m.outcome === "W").length;
     const draws = matches.filter((m) => m.outcome === "D").length;
     const losses = matches.filter((m) => m.outcome === "L").length;

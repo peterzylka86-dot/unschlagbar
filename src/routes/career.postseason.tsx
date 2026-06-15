@@ -21,7 +21,14 @@ import { useCareer } from "@/lib/career-store";
 import { getCareerClubs, getCareerPlayers } from "@/lib/data";
 import { pickSpinClub, simplifyPosition } from "@/lib/career-core";
 import { playerFitsSlot } from "@/lib/draft-helpers";
-import type { Club, Player } from "@/lib/game-types";
+import {
+  seasonLottery,
+  rivalClaim,
+  youngRating,
+  WK_START_AGE,
+  type WonderkidIcon,
+} from "@/lib/wonderkids";
+import type { Club, Player, Position } from "@/lib/game-types";
 
 export const Route = createFileRoute("/career/postseason")({
   head: () => ({ meta: [{ title: "Transfer window · GOLAZO" }] }),
@@ -64,6 +71,61 @@ function PostSeason() {
   const [pendingOutIdx, setPendingOutIdx] = useState<number | null>(null);
   const [spunClub, setSpunClub] = useState<Club | null>(null);
   const [recentClubIds, setRecentClubIds] = useState<string[]>([]);
+
+  // ─── Wonderkid lottery (the CM "unearth a legend" loop) ───────────────
+  // Deterministic per (career, season): an icon surfaces ~10% of windows,
+  // drawn from the finite unclaimed pool. Separately, a rival may snap up a
+  // DIFFERENT unclaimed icon (the FOMO — gone for the rest of the career).
+  const careerSeed = career.startedAt ?? "career";
+  const offeredIcon = useMemo(
+    () => seasonLottery(careerSeed, career.currentSeason, career.claimedWonderkidIds),
+    [careerSeed, career.currentSeason, career.claimedWonderkidIds],
+  );
+  const rivalIcon = useMemo(
+    () =>
+      rivalClaim(
+        careerSeed,
+        career.currentSeason,
+        // Protect the icon you're being offered from a rival snipe.
+        offeredIcon ? [...career.claimedWonderkidIds, offeredIcon.id] : career.claimedWonderkidIds,
+        null,
+      ),
+    [careerSeed, career.currentSeason, career.claimedWonderkidIds, offeredIcon],
+  );
+  // wkStage: "offer" (deciding) → "releasing" (choosing who to drop) → "done"
+  const [wkStage, setWkStage] = useState<"offer" | "releasing" | "done">("offer");
+  const [signedName, setSignedName] = useState<string | null>(null);
+  // Icon ids claimed THIS window (yours + the rival's) — merged at commit.
+  const newlyClaimed = useMemo(() => {
+    const ids: string[] = [];
+    if (rivalIcon) ids.push(rivalIcon.id);
+    return ids;
+  }, [rivalIcon]);
+
+  function buildWonderkid(icon: WonderkidIcon): Player {
+    return {
+      name: icon.name,
+      position: icon.position as Position,
+      altPositions: icon.altPositions as Position[] | undefined,
+      prime_rating: youngRating(icon),
+      career_years: "prospect",
+      nationality: icon.nationality,
+      club: career.foundingClubId ?? "free-agent",
+      wonderkidId: icon.id,
+      targetRating: icon.prime,
+      age: WK_START_AGE,
+      verified: true,
+    };
+  }
+
+  function signWonderkid(releaseIdx: number) {
+    if (!offeredIcon) return;
+    const next = [...workingSquad];
+    next[releaseIdx] = buildWonderkid(offeredIcon);
+    setWorkingSquad(next);
+    setSignedName(offeredIcon.name);
+    setWkStage("done");
+  }
 
   // Render guard (after hooks; see LEARNINGS.md L-1)
   if (career.squad.length === 0) {
@@ -134,6 +196,11 @@ function PostSeason() {
     // Rivals were refreshed at mount (rivalTurnover memo) — the same
     // squads the transfer-news card displayed. Using the precomputed
     // result keeps "what you read" === "what you face."
+    // Claimed wonderkids: the rival's grab (always) + the icon you signed
+    // (if any — detected by a prospect now in the working squad).
+    const signedIds = workingSquad
+      .filter((p) => p.wonderkidId && !career.squad.some((s) => s.wonderkidId === p.wonderkidId))
+      .map((p) => p.wonderkidId!);
     useCareer.setState({
       squad: workingSquad,
       rivals: rivalTurnover.rivals,
@@ -143,6 +210,9 @@ function PostSeason() {
       relegatedLastSeason: false, // consumed (relegation flag no longer forces sells)
       pendingDeparture: null,
       starDemandResolved: false,
+      claimedWonderkidIds: Array.from(
+        new Set([...career.claimedWonderkidIds, ...newlyClaimed, ...signedIds]),
+      ),
     });
     navigate({ to: "/career/season" });
   }
@@ -208,6 +278,115 @@ function PostSeason() {
           <p className="mt-3 text-[10px] text-muted-foreground italic">
             The league grows stronger every season. Keep up.
           </p>
+        </div>
+      )}
+
+      {/* ✨ Wonderkid lottery — the legend-prospect (CM "unearth a gem"). */}
+      {offeredIcon && wkStage !== "done" && (
+        <div className="mt-4 rounded-2xl border-2 border-warning bg-gradient-to-br from-warning/15 to-transparent p-5">
+          {wkStage === "offer" ? (
+            <>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-2xl">✨</span>
+                <div className="font-display text-xl text-warning">A wonderkid wants to join</div>
+              </div>
+              <p className="text-sm text-foreground/85">
+                A {WK_START_AGE}-year-old{" "}
+                <span className="font-medium text-warning">{offeredIcon.name}</span> has emerged from{" "}
+                {offeredIcon.historicClub}'s academy — {offeredIcon.nationality}, starting at{" "}
+                <span className="font-display">{youngRating(offeredIcon)}</span>, with the potential
+                to reach <span className="font-display text-warning">{offeredIcon.prime}</span>. Play
+                him and he grows toward greatness. Miss him and he's gone forever.
+              </p>
+              <p className="text-[11px] text-muted-foreground mt-2">
+                Signing him means releasing a squad player. ⭐ Franchise is safe.
+              </p>
+              <div className="mt-4 flex gap-2">
+                <button
+                  onClick={() => setWkStage("releasing")}
+                  className="flex-1 px-4 py-3 rounded-md bg-warning text-warning-foreground font-display tracking-wide hover:brightness-110 transition"
+                >
+                  ✨ Sign {offeredIcon.name} →
+                </button>
+                <button
+                  onClick={() => setWkStage("done")}
+                  className="px-4 py-3 rounded-md border border-muted-foreground/40 text-muted-foreground text-sm hover:bg-muted/20 transition"
+                >
+                  Pass
+                </button>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="flex items-center justify-between mb-2">
+                <div className="font-display text-lg text-warning">
+                  Who makes way for {offeredIcon.name}?
+                </div>
+                <button
+                  onClick={() => setWkStage("offer")}
+                  className="text-[11px] text-muted-foreground hover:text-warning underline"
+                >
+                  back
+                </button>
+              </div>
+              <p className="text-xs text-muted-foreground mb-3">
+                Pick the squad player to release. ⭐ Franchise can't leave.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                {workingSquad.map((p, i) => {
+                  const isFranchise = `${p.club}:${p.name}` === career.franchisePlayerKey;
+                  return (
+                    <button
+                      key={`wk-out-${i}-${p.name}`}
+                      disabled={isFranchise}
+                      onClick={() => signWonderkid(i)}
+                      className={`flex items-center justify-between gap-2 px-3 py-2 rounded-lg border text-sm text-left transition ${
+                        isFranchise
+                          ? "border-warning/40 bg-warning/5 opacity-60 cursor-not-allowed"
+                          : "border-border bg-card hover:border-primary hover:bg-primary/10"
+                      }`}
+                    >
+                      <div className="min-w-0">
+                        <div className="font-medium truncate flex items-center gap-1">
+                          {isFranchise && <span>⭐</span>}
+                          <span className="truncate">{p.name}</span>
+                        </div>
+                        <div className="text-[10px] text-muted-foreground truncate">
+                          {p.position} · {p.career_years}
+                        </div>
+                      </div>
+                      <span className="shrink-0 font-display text-sm text-warning">
+                        {p.prime_rating}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </>
+          )}
+        </div>
+      )}
+
+      {/* Signed confirmation */}
+      {signedName && wkStage === "done" && (
+        <div className="mt-4 rounded-2xl border-2 border-success bg-success/10 p-4 text-center">
+          <div className="font-display text-lg text-success">
+            ✨ {signedName} signs as a prospect!
+          </div>
+          <div className="text-xs text-muted-foreground mt-1">
+            Give him first-team minutes and watch him grow toward his prime.
+          </div>
+        </div>
+      )}
+
+      {/* 😱 Rival FOMO — a legend you'll never get now. */}
+      {rivalIcon && (
+        <div className="mt-3 rounded-xl border border-primary/30 bg-primary/5 px-4 py-2.5 text-xs text-foreground/85">
+          😱{" "}
+          <span className="text-primary font-medium">
+            A rival has signed wonderkid {rivalIcon.name} ({WK_START_AGE})
+          </span>{" "}
+          — gone from the pool for the rest of your career.
         </div>
       )}
 

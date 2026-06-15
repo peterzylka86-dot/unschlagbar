@@ -19,7 +19,7 @@ import { persist, createJSONStorage } from "zustand/middleware";
 import type { Player, FormationKey } from "./game-types";
 
 /** Bump this when a non-backwards-compat change to CareerState ships. */
-export const CAREER_SCHEMA_VERSION = 3;
+export const CAREER_SCHEMA_VERSION = 4;
 
 /** Snapshot of a completed season — written to seasonHistory at the moment
  *  the season is finalized. Used by /career/history (Hall of Fame). */
@@ -105,6 +105,10 @@ export interface CareerState {
    *  effective rating. Additive field: legacy 11-player saves never set
    *  it and resolve to "everyone starts" via auto-pick. */
   startingXI: string[] | null;
+  /** Wonderkid icon ids claimed by ANYONE this career (you or a rival).
+   *  The pool is finite — a claimed legend never reappears. Drives the
+   *  scarcity/FOMO of the wonderkid lottery. See lib/wonderkids.ts. */
+  claimedWonderkidIds: string[];
 }
 
 const initialCareerState: CareerState = {
@@ -126,6 +130,7 @@ const initialCareerState: CareerState = {
   pendingDeparture: null,
   starDemandResolved: false,
   startingXI: null,
+  claimedWonderkidIds: [],
 };
 
 interface CareerStore extends CareerState {
@@ -162,6 +167,12 @@ interface CareerStore extends CareerState {
   setStarDemandResolved: (flag: boolean) => void;
   /** Persist the user's matchday XI selection (player keys). null = auto. */
   setStartingXI: (keys: string[] | null) => void;
+  /** Mark wonderkid icon ids as claimed (you or a rival) — removes them from
+   *  the lottery pool for the rest of the career. Idempotent (dedups). */
+  claimWonderkids: (iconIds: string[]) => void;
+  /** Apply one season's growth/decline to the wonderkids on the squad.
+   *  `updates` keyed by playerKey (`club:name`) → new prime_rating + age. */
+  growWonderkids: (updates: Record<string, { prime_rating: number; age: number }>) => void;
 }
 
 export const useCareer = create<CareerStore>()(
@@ -190,6 +201,7 @@ export const useCareer = create<CareerStore>()(
           rerollsNextSeason: 3,
           pendingDeparture: null,
           starDemandResolved: false,
+          claimedWonderkidIds: [],
         }),
 
       abandonCareer: () => set({ ...initialCareerState }),
@@ -243,6 +255,19 @@ export const useCareer = create<CareerStore>()(
       setStarDemandResolved: (flag) => set({ starDemandResolved: flag }),
 
       setStartingXI: (keys) => set({ startingXI: keys }),
+
+      claimWonderkids: (iconIds) =>
+        set((state) => ({
+          claimedWonderkidIds: Array.from(new Set([...state.claimedWonderkidIds, ...iconIds])),
+        })),
+
+      growWonderkids: (updates) =>
+        set((state) => ({
+          squad: state.squad.map((p) => {
+            const u = updates[`${p.club}:${p.name}`];
+            return u ? { ...p, prime_rating: u.prime_rating, age: u.age } : p;
+          }),
+        })),
     }),
     {
       name: "unschlagbar:career:v1",
@@ -267,6 +292,7 @@ export const useCareer = create<CareerStore>()(
         pendingDeparture: state.pendingDeparture,
         starDemandResolved: state.starDemandResolved,
         startingXI: state.startingXI,
+        claimedWonderkidIds: state.claimedWonderkidIds,
       }),
     },
   ),

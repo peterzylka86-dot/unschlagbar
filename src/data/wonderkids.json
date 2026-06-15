@@ -1,0 +1,17 @@
+{
+  "_note": "Curated legend-prospect pool for the GOLAZO wonderkid lottery. Each icon appears at most once per career (finite shared pool, contested by AI rivals). `prime` is the legend's known peak on our 60-99 scale; the prospect starts at ~64% of it and grows toward it over ~5 seasons of first-team minutes. `historicClub` is flavour only (where they really emerged) — a signed wonderkid joins YOUR club.",
+  "icons": [
+    { "id": "pele", "name": "Pelé", "position": "ST", "altPositions": ["CAM"], "nationality": "Brazil", "historicClub": "Santos", "prime": 96 },
+    { "id": "maradona", "name": "Diego Maradona", "position": "CAM", "altPositions": ["ST"], "nationality": "Argentina", "historicClub": "Argentinos Juniors", "prime": 96 },
+    { "id": "cruyff", "name": "Johan Cruyff", "position": "CAM", "altPositions": ["ST"], "nationality": "Netherlands", "historicClub": "Ajax", "prime": 95 },
+    { "id": "messi", "name": "Lionel Messi", "position": "RW", "altPositions": ["CAM"], "nationality": "Argentina", "historicClub": "Barcelona", "prime": 97 },
+    { "id": "ronaldo-r9", "name": "Ronaldo", "position": "ST", "nationality": "Brazil", "historicClub": "Cruzeiro", "prime": 95 },
+    { "id": "zidane", "name": "Zinedine Zidane", "position": "CAM", "nationality": "France", "historicClub": "Cannes", "prime": 95 },
+    { "id": "ronaldinho", "name": "Ronaldinho", "position": "LW", "altPositions": ["CAM"], "nationality": "Brazil", "historicClub": "Grêmio", "prime": 94 },
+    { "id": "van-basten", "name": "Marco van Basten", "position": "ST", "nationality": "Netherlands", "historicClub": "Ajax", "prime": 94 },
+    { "id": "beckenbauer", "name": "Franz Beckenbauer", "position": "CB", "altPositions": ["CDM"], "nationality": "Germany", "historicClub": "Bayern München", "prime": 94 },
+    { "id": "best", "name": "George Best", "position": "RW", "altPositions": ["LW"], "nationality": "Northern Ireland", "historicClub": "Manchester United", "prime": 93 },
+    { "id": "eusebio", "name": "Eusébio", "position": "ST", "nationality": "Portugal", "historicClub": "Benfica", "prime": 93 },
+    { "id": "garrincha", "name": "Garrincha", "position": "RW", "nationality": "Brazil", "historicClub": "Botafogo", "prime": 92 }
+  ]
+}

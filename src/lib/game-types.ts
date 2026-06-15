@@ -35,6 +35,14 @@ export interface Player {
    *  in the picker so users see them first. Unverified players are
    *  STILL shown — this is sort order, not a filter. */
   verified?: boolean;
+  /** GOLAZO wonderkid state (legend-prospect). Present only on a developing
+   *  prospect signed via the wonderkid lottery. When set, `prime_rating` is
+   *  the player's CURRENT (rising) rating and `targetRating` is the legend's
+   *  historical peak — the growth ceiling. `age` drives the decline curve.
+   *  See lib/wonderkids.ts. */
+  wonderkidId?: string;
+  targetRating?: number;
+  age?: number;
 }
 
 export interface Slot {
