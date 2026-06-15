@@ -24,66 +24,11 @@ function pick<T>(pool: T[], seed: number): T {
 
 const FWD_POSITIONS = new Set(["ST", "CF", "LW", "RW", "SS"]);
 
-// ─── 1 · Pre-match team talk (the gaffer's voice) ───────────────────────
+// (Pre-match team talks moved to lib/management.ts as an interactive
+// DECISION — the gaffer's voice is now a choice the manager makes, not a
+// passive line. This module keeps the ambient season texture below.)
 
-const TALK_RUN_IN = [
-  "This is the run-in. Forty-five minutes of football, a lifetime of regret if we switch off.",
-  "Title business now. No heroics — just do your jobs.",
-  "Every point is a final from here. Heads up, chests out.",
-  "We've come too far to bottle it now. Out you go.",
-];
-
-const TALK_UNDERDOG = [
-  "Nobody fancies us today. Good. Let them be comfortable.",
-  "They've got the names. We've got the legs. Run them ragged.",
-  "Sit in, stay patient, and punish one mistake. That's the plan.",
-  "Make it ugly. Make it horrible. Make it ours.",
-];
-
-const TALK_FAVOURITE = [
-  "Respect them for ten minutes, then put them to bed.",
-  "No complacency. Three goals up is when teams get sloppy. Not us.",
-  "Do it properly and we're home by the hour. Concentrate.",
-  "They'll park the bus. Be patient, the door will open.",
-];
-
-const TALK_DERBY = [
-  "You know what this one means to the people out there. Don't let them down.",
-  "Bragging rights. That's all that matters today.",
-  "Win the duels, win the day. Get stuck in.",
-];
-
-const TALK_GENERIC = [
-  "Same standards as always. Tempo, intensity, no excuses.",
-  "Trust the work we've done. Now go and enjoy it.",
-  "First goal is everything today. Go and get it.",
-  "Keep it tight at the back and the rest takes care of itself.",
-];
-
-/**
- * Gaffer's pre-match line. Returns null for ordinary fixtures so the talk
- * stays special — it fires on the run-in, big mismatches, or ~1-in-4
- * mid-table games.
- */
-export function teamTalk(o: {
-  matchday: number;
-  totalMatchdays: number;
-  ourRating: number;
-  oppRating: number;
-  home: boolean;
-}): string | null {
-  const seed = o.matchday * 17 + (o.home ? 3 : 0);
-  const diff = o.ourRating - o.oppRating;
-  if (o.matchday > o.totalMatchdays - 3) return pick(TALK_RUN_IN, seed);
-  if (diff <= -6) return pick(TALK_UNDERDOG, seed);
-  if (diff >= 8) return pick(TALK_FAVOURITE, seed);
-  // Occasional derby-flavoured or generic talk for the in-between games.
-  if (seed % 5 === 0) return pick(TALK_DERBY, seed);
-  if (seed % 3 === 0) return pick(TALK_GENERIC, seed);
-  return null;
-}
-
-// ─── 2 · Random between-match events (the Anstoss daftness) ─────────────
+// ─── Random between-match events (the Anstoss daftness) ─────────────────
 
 const EVENTS = [
   "{player} reversed the team bus into the chairman's parking space. Twice.",
@@ -120,7 +65,7 @@ export function matchdayEvent(season: number, matchday: number, squadNames: stri
   return line.replace(/\{player\}/g, name);
 }
 
-// ─── 3 · Dressing-room morale (driven by real scorer data) ──────────────
+// ─── Dressing-room morale (driven by real scorer data) ──────────────────
 
 const MORALE_HOT = [
   "{player} can't stop scoring — {n} for the season and counting.",
@@ -134,7 +79,7 @@ const MORALE_COLD = [
   "Whispers that {player} feels misused. The goals haven't come.",
 ];
 
-// ─── 4 · Tabloid back-page headlines ────────────────────────────────────
+// ─── Tabloid back-page headlines ────────────────────────────────────────
 
 const HEADLINE_BIG_WIN = [
   "📰 FOUR! AND THEY WANTED MORE",

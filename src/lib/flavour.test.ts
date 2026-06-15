@@ -1,29 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { teamTalk, matchdayEvent, seasonDiary } from "./flavour";
-
-describe("teamTalk", () => {
-  it("is deterministic for the same facts", () => {
-    const o = { matchday: 4, totalMatchdays: 22, ourRating: 80, oppRating: 78, home: true };
-    expect(teamTalk(o)).toBe(teamTalk(o));
-  });
-
-  it("fires a run-in talk in the final stretch", () => {
-    const line = teamTalk({ matchday: 21, totalMatchdays: 22, ourRating: 80, oppRating: 80, home: true });
-    expect(line).not.toBeNull();
-  });
-
-  it("always speaks to a heavy underdog or heavy favourite", () => {
-    expect(teamTalk({ matchday: 5, totalMatchdays: 22, ourRating: 70, oppRating: 84, home: false })).not.toBeNull();
-    expect(teamTalk({ matchday: 5, totalMatchdays: 22, ourRating: 90, oppRating: 78, home: false })).not.toBeNull();
-  });
-
-  it("never leaves a placeholder token", () => {
-    for (let md = 1; md <= 22; md++) {
-      const line = teamTalk({ matchday: md, totalMatchdays: 22, ourRating: 80, oppRating: 80, home: md % 2 === 0 });
-      if (line) expect(line).not.toMatch(/\{\w+\}/);
-    }
-  });
-});
+import { matchdayEvent, seasonDiary } from "./flavour";
 
 describe("matchdayEvent", () => {
   it("is deterministic", () => {

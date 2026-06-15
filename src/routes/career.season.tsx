@@ -33,7 +33,19 @@ import {
 } from "@/lib/career-core";
 import { resolveXI, xiToSlots, canSwapIntoXI, playerKey, effectiveRating } from "@/lib/matchday-xi";
 import { matchCommentary, boardNote } from "@/lib/commentary";
-import { teamTalk, seasonDiary } from "@/lib/flavour";
+import { seasonDiary } from "@/lib/flavour";
+import {
+  deriveMorale,
+  averageMorale,
+  moraleRatingKick,
+  moraleBadge,
+  MORALE_NEUTRAL,
+  talkEffect,
+  TALK_OPTIONS,
+  boardExpectation,
+  deriveConfidence,
+  type TalkId,
+} from "@/lib/management";
 import { Fragment } from "react";
 import type { Club, MatchResult, Player, Slot } from "@/lib/game-types";
 
@@ -164,6 +176,11 @@ function CareerSeason() {
   // Parallel to `matches`: lineups[i] = the XI keys that started matchday i.
   // Drives the fatigue model — who played vs who rested.
   const [lineups, setLineups] = useState<string[][]>([]);
+  // Parallel to `matches`: talks[i] = the team talk chosen for matchday i,
+  // with its resolved morale delta + feed line. Local state (like lineups)
+  // because the season replays deterministically from the seed — the talk's
+  // rating effect is already baked into the stored match result.
+  const [talks, setTalks] = useState<{ id: TalkId; moraleDelta: number; line: string }[]>([]);
   const shown = matches.length;
   const [tableComputed, setTableComputed] = useState(false);
 
@@ -275,6 +292,30 @@ function CareerSeason() {
     return squadRating(fullSlots.slice(0, 11));
   }, [career.squad]);
 
+  // ─── Management: morale + board (derived, never accumulated) ──────────
+  // Per-player morale from playing time + results + team-talk choices.
+  const morale = useMemo(
+    () =>
+      deriveMorale({
+        squadKeys: career.squad.map((p) => `${p.club}:${p.name}`),
+        matches: matches.map((m) => ({
+          outcome: m.outcome,
+          ourScore: m.ourScore,
+          theirScore: m.theirScore,
+        })),
+        lineups,
+        talkMoraleDeltas: talks.map((t) => t.moraleDelta),
+      }),
+    [career.squad, matches, lineups, talks],
+  );
+  // Dressing-room mood = mean morale across the current XI.
+  const dressingRoom = useMemo(() => averageMorale(morale, xiKeys), [morale, xiKeys]);
+  // The board's pre-season brief, read off raw squad strength vs. the league.
+  const expectation = useMemo(
+    () => boardExpectation(tableSeedRating, opponents.map((o) => o.strength)),
+    [tableSeedRating, opponents],
+  );
+
   // ─── Play matchdays — simulate with the CURRENT XI on each click ────
   function simulateNext(prev: MatchWithScorers[], rating: number): MatchWithScorers | null {
     const idx = prev.length;
@@ -292,26 +333,36 @@ function CareerSeason() {
     return { ...m, scorers };
   }
 
-  function playNext() {
+  // Play the next matchday after the chosen team talk. The talk + squad
+  // morale fold into the rating for THIS match only, so a well-judged talk
+  // (or a backfired one) genuinely swings the result.
+  function playNext(talk: TalkId) {
+    const nextOpp = fixtures[matches.length];
+    const isUnderdog = !!nextOpp && (nextOpp.opponent.strength ?? userRating) > userRating;
+    const effect = talkEffect(talk, dressingRoom, isUnderdog);
+    const rating = userRating + moraleRatingKick(dressingRoom) + effect.ratingDelta;
     let appended = false;
     setMatches((prev) => {
-      const next = simulateNext(prev, userRating);
+      const next = simulateNext(prev, rating);
       if (!next) return prev;
       appended = true;
       return [...prev, next];
     });
-    // Record the lineup that played this matchday (drives fatigue).
-    if (appended) setLineups((prev) => [...prev, xiKeys]);
+    if (appended) {
+      setLineups((prev) => [...prev, xiKeys]);
+      setTalks((prev) => [...prev, { id: talk, moraleDelta: effect.moraleDelta, line: effect.line }]);
+    }
   }
   function playAll() {
-    // Sim the remaining matchdays with the CURRENT XI (no further
-    // rotation once you hit skip — that's the tradeoff of skipping).
-    // Note: skipping also freezes fatigue rotation, so the run-in is
-    // played by whoever's on the pitch now — gassed or not.
+    // Sim the remaining matchdays with the CURRENT XI and a safe "calm"
+    // talk each week (no interactive choice on the bulk skip — the tradeoff
+    // of skipping, same as it freezes rotation + fatigue).
+    const calm = talkEffect("calm", dressingRoom, false);
+    const rating = userRating + moraleRatingKick(dressingRoom) + calm.ratingDelta;
     setMatches((prev) => {
       const out = [...prev];
       while (out.length < fixtures.length) {
-        const next = simulateNext(out, userRating);
+        const next = simulateNext(out, rating);
         if (!next) break;
         out.push(next);
       }
@@ -320,6 +371,12 @@ function CareerSeason() {
     setLineups((prev) => {
       const out = [...prev];
       while (out.length < fixtures.length) out.push(xiKeys);
+      return out;
+    });
+    setTalks((prev) => {
+      const out = [...prev];
+      while (out.length < fixtures.length)
+        out.push({ id: "calm", moraleDelta: calm.moraleDelta, line: calm.line });
       return out;
     });
   }
@@ -341,6 +398,21 @@ function CareerSeason() {
     }
     return computeLeagueTable(matches, opponents, tableSeedRating, MATCHES_PER_SEASON);
   }, [shown, matches, opponents, tableSeedRating]);
+
+  // Board confidence — results vs. the brief. Drives the job-security HUD.
+  const confidence = useMemo(
+    () =>
+      deriveConfidence({
+        matches: matches.map((m) => ({
+          outcome: m.outcome,
+          ourScore: m.ourScore,
+          theirScore: m.theirScore,
+        })),
+        targetPosition: expectation.targetPosition,
+        currentPosition: ourPosition,
+      }),
+    [matches, expectation.targetPosition, ourPosition],
+  );
 
   // ─── Render ───────────────────────────────────────────────────────
   // Career not yet drafted — bail (the redirect runs from the useEffect above).
@@ -390,6 +462,9 @@ function CareerSeason() {
         <ScoreboardStat label="OVR" value={Math.round(userRating)} accent="text-warning" />
       </div>
 
+      {/* Board confidence + dressing-room mood — the job-security HUD. */}
+      <BoardHud confidence={confidence} expectation={expectation} dressingRoom={dressingRoom} seasonDone={seasonDone} />
+
       {/* Matchday Squad — the benching system. Only shown when the squad
           actually has a bench (squad of 14); legacy 11-player careers
           skip it entirely. Collapsed by default to keep the play loop
@@ -417,21 +492,34 @@ function CareerSeason() {
         <MidSeasonSwapCard />
       )}
 
-      {/* Action row — hidden while the mid-season swap window is open */}
+      {/* Team talk — the pre-match decision. Pick a talk and the matchday
+          plays with its effect folded in. Hidden during the swap window. */}
       {!seasonDone && !(shown >= MID_SEASON_GATE && !career.midSeasonSwapUsed) && (
-        <div className="mt-6 flex gap-2">
-          <button
-            onClick={playNext}
-            className="flex-1 px-4 py-3 rounded-md bg-success text-success-foreground font-display tracking-wide hover:brightness-110 transition"
-          >
-            Play matchday {shown + 1} →
-          </button>
+        <div className="mt-6">
+          <div className="text-[11px] uppercase tracking-widest text-muted-foreground mb-2 text-center">
+            🎙️ Team talk · matchday {shown + 1}
+            {fixtures[shown] ? ` · ${fixtures[shown].home ? "vs" : "@"} ${fixtures[shown].opponent.short}` : ""}
+          </div>
+          <div className="grid grid-cols-3 gap-2">
+            {TALK_OPTIONS.map((opt) => (
+              <button
+                key={opt.id}
+                onClick={() => playNext(opt.id)}
+                className="px-2 py-3 rounded-md border border-success/40 bg-success/10 text-success hover:bg-success/20 hover:-translate-y-0.5 transition text-center"
+              >
+                <div className="font-display text-xs tracking-wide">{opt.label}</div>
+                <div className="text-[9px] text-muted-foreground mt-1 normal-case leading-tight">
+                  {opt.hint}
+                </div>
+              </button>
+            ))}
+          </div>
           <button
             onClick={playAll}
-            className="px-4 py-3 rounded-md border border-warning/40 text-warning text-sm hover:bg-warning/10 transition"
-            title="Simulate all remaining matchdays at once"
+            className="mt-2 w-full px-4 py-2 rounded-md border border-warning/40 text-warning text-xs hover:bg-warning/10 transition"
+            title="Simulate all remaining matchdays with calm talks"
           >
-            ⏩ Skip
+            ⏩ Skip the rest (calm talks)
           </button>
         </div>
       )}
@@ -447,16 +535,7 @@ function CareerSeason() {
           .reverse()
           .map((m) => (
             <Fragment key={`md-${m.matchday}`}>
-              <MatchRow
-                match={m}
-                teamTalkLine={teamTalk({
-                  matchday: m.matchday,
-                  totalMatchdays: MATCHES_PER_SEASON,
-                  ourRating: userRating,
-                  oppRating: m.opponent.strength ?? userRating,
-                  home: m.home,
-                })}
-              />
+              <MatchRow match={m} teamTalkLine={talks[m.matchday - 1]?.line ?? null} />
               {diaryByMatchday.get(m.matchday) && (
                 <DiaryLine beat={diaryByMatchday.get(m.matchday)!} />
               )}
@@ -469,8 +548,8 @@ function CareerSeason() {
         )}
       </div>
 
-      {/* Squad form — 🔥 on a run, ❄️ cold streak */}
-      {shown > 0 && <SquadForm squad={career.squad} form={liveForm} />}
+      {/* Squad form — 🔥 on a run, ❄️ cold streak + dressing-room morale */}
+      {shown > 0 && <SquadForm squad={career.squad} form={liveForm} morale={morale} />}
 
       {/* Live league table — updates after every matchday */}
       {shown > 0 && <LiveTable table={table} matchday={shown} totalMatchdays={MATCHES_PER_SEASON} />}
@@ -794,6 +873,64 @@ function ScoreboardStat({
   );
 }
 
+function BoardHud({
+  confidence,
+  expectation,
+  dressingRoom,
+  seasonDone,
+}: {
+  confidence: import("@/lib/management").ConfidenceState;
+  expectation: import("@/lib/management").BoardExpectation;
+  dressingRoom: number;
+  seasonDone: boolean;
+}) {
+  const tone = confidence.tone;
+  const barColor =
+    tone === "adored"
+      ? "bg-success"
+      : tone === "backed"
+        ? "bg-warning"
+        : tone === "pressure"
+          ? "bg-orange-500"
+          : "bg-primary";
+  const textColor =
+    tone === "adored"
+      ? "text-success"
+      : tone === "backed"
+        ? "text-warning"
+        : tone === "pressure"
+          ? "text-orange-400"
+          : "text-primary";
+  const mood = moraleBadge(dressingRoom);
+  return (
+    <div className="mt-4 rounded-xl border border-border bg-card/40 p-3">
+      <div className="flex items-center justify-between text-[11px]">
+        <span className="uppercase tracking-widest text-muted-foreground">Board confidence</span>
+        <span className={`${textColor} font-display tabular-nums`}>
+          {confidence.value}% · {confidence.label}
+        </span>
+      </div>
+      <div className="mt-2 h-2 rounded-full bg-background/60 overflow-hidden border border-border/60">
+        <div
+          className={`h-full ${barColor} transition-all duration-500 ease-out`}
+          style={{ width: `${confidence.value}%` }}
+        />
+      </div>
+      <div className="mt-2 flex items-center justify-between gap-2 text-[10px] text-muted-foreground">
+        <span className="truncate">📋 {expectation.label}</span>
+        <span className="shrink-0">
+          🛋️ {mood.icon} {mood.label}
+        </span>
+      </div>
+      {confidence.threatened && !seasonDone && (
+        <div className="mt-2 text-[11px] text-primary border border-primary/40 bg-primary/10 rounded-md px-2 py-1.5">
+          ⚠️ The board has called a vote of confidence. Turn it around — fast — or you're gone.
+        </div>
+      )}
+    </div>
+  );
+}
+
 function DiaryLine({ beat }: { beat: import("@/lib/flavour").FlavourBeat }) {
   // News interstitial between match rows — the back pages / dressing-room /
   // daft-event ticker. Headlines read louder (uppercase, warning tint);
@@ -1081,7 +1218,15 @@ function PostSeasonCTA({
   );
 }
 
-function SquadForm({ squad, form }: { squad: Player[]; form: Record<string, number> }) {
+function SquadForm({
+  squad,
+  form,
+  morale,
+}: {
+  squad: Player[];
+  form: Record<string, number>;
+  morale: Record<string, number>;
+}) {
   // 🔥 hot streak: form >= +1.5 · ❄️ cold streak: form <= -1.5
   // Threshold chosen empirically — picks up ~top 2-3 / bottom 2-3 over a season.
   const HOT = 1.5;
@@ -1089,12 +1234,45 @@ function SquadForm({ squad, form }: { squad: Player[]; form: Record<string, numb
   const enriched = squad.map((p) => ({
     player: p,
     formVal: form[`${p.club}:${normalizeName(p.name)}`] ?? 0,
+    moraleVal: morale[`${p.club}:${p.name}`] ?? MORALE_NEUTRAL,
   }));
+  // Unsettled = the man-management signal: who's unhappy enough to need
+  // minutes or a kind word. Surfaced so benching has a visible cost.
+  const unsettled = enriched
+    .filter((e) => e.moraleVal < 42)
+    .sort((a, b) => a.moraleVal - b.moraleVal)
+    .slice(0, 5);
   const fire = enriched.filter((e) => e.formVal >= HOT).sort((a, b) => b.formVal - a.formVal);
   const ice = enriched.filter((e) => e.formVal <= COLD).sort((a, b) => a.formVal - b.formVal);
-  if (fire.length === 0 && ice.length === 0) return null;
+  if (fire.length === 0 && ice.length === 0 && unsettled.length === 0) return null;
   return (
-    <div className="mt-6 grid sm:grid-cols-2 gap-3">
+    <>
+    {unsettled.length > 0 && (
+      <div className="mt-6 rounded-xl border border-primary/30 bg-primary/5 p-3">
+        <div className="text-[10px] uppercase tracking-widest text-primary mb-2">
+          🛋️ Unsettled · wanting minutes
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {unsettled.map((e) => {
+            const b = moraleBadge(e.moraleVal);
+            return (
+              <span
+                key={`mor-${e.player.club}-${e.player.name}`}
+                className="inline-flex items-center gap-1 text-xs rounded-full border border-primary/30 px-2 py-0.5"
+                title={`Morale ${Math.round(e.moraleVal)} · ${b.label}`}
+              >
+                <span>{b.icon}</span>
+                <span className="text-muted-foreground text-[10px]">
+                  {simplifyPosition(e.player.position)}
+                </span>
+                <span className="truncate max-w-[8rem]">{e.player.name}</span>
+              </span>
+            );
+          })}
+        </div>
+      </div>
+    )}
+    <div className="mt-3 grid sm:grid-cols-2 gap-3">
       {fire.length > 0 && (
         <div className="rounded-xl border border-success/40 bg-success/5 p-3">
           <div className="text-[10px] uppercase tracking-widest text-success mb-2">🔥 On a run</div>
@@ -1142,6 +1320,7 @@ function SquadForm({ squad, form }: { squad: Player[]; form: Record<string, numb
         </div>
       )}
     </div>
+    </>
   );
 }
 
