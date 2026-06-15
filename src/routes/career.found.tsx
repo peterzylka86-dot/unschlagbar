@@ -16,6 +16,7 @@ import { LEAGUES } from "@/lib/leagues";
 import type { LeagueId } from "@/lib/leagues";
 import { getClubs, getCareerPlayers } from "@/lib/data";
 import { startingBalance } from "@/lib/market";
+import { youthifyLegend } from "@/lib/develop-legends";
 import type { Player } from "@/lib/game-types";
 import {
   realLeagues,
@@ -87,7 +88,13 @@ function FoundingClubPicker() {
     const league = realLeagueOf(reinforceClub);
     const myClub = league?.clubs.find((c) => c.id === reinforceClub);
     setBalance(startingBalance(myClub?.strength ?? 72));
-    const chosen = legendsPool.filter((p) => legendKeys.includes(`${p.club}:${p.name}`));
+    // Signed legends arrive as the great TALENTS they once were — young and
+    // sub-peak, with their legendary rating as the ceiling — so you develop a
+    // teenage Pelé into the real thing rather than parachuting in a finished
+    // superstar. The season ageing then grows them with minutes.
+    const chosen = legendsPool
+      .filter((p) => legendKeys.includes(`${p.club}:${p.name}`))
+      .map(youthifyLegend);
     const squad: Player[] = [...realClubRoster(reinforceClub), ...chosen];
     const rivals = (league?.clubs ?? [])
       .filter((c) => c.id !== reinforceClub)
@@ -135,7 +142,9 @@ function FoundingClubPicker() {
           <p className="mt-2 text-sm text-muted-foreground max-w-md mx-auto">
             Your club, real squad — plus up to{" "}
             <span className="text-warning">{MAX_LEGENDS} all-time greats</span> of your choosing.
-            Take the minnows to the top of the real world. ({legendKeys.length}/{MAX_LEGENDS} picked)
+            They sign as the <span className="text-warning">teenage talents</span> they once were —
+            develop them with minutes until they reach their legendary peak. (
+            {legendKeys.length}/{MAX_LEGENDS} picked)
           </p>
         </header>
 
@@ -150,7 +159,7 @@ function FoundingClubPicker() {
                   onClick={() => toggleLegend(k)}
                   className="inline-flex items-center gap-1 text-xs rounded-full border border-warning/50 bg-warning/15 text-warning px-3 py-1"
                 >
-                  ✨ {p.name} {p.prime_rating} ✕
+                  ✨ {p.name} →{p.prime_rating} ✕
                 </button>
               );
             })}
