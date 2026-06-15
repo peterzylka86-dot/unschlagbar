@@ -51,7 +51,9 @@ const AI_RIVALS_COUNT = 11;
 // matchday-xi.ts) auto-picks the best XI and lets the user rotate
 // hot bench players in during the season. Legacy 11-player saves
 // keep working — they just have no bench.
-const SQUAD_SIZE = 14;
+// 11 starters + 7 bench. A proper rotation pool so squad depth matters as
+// players fatigue, age, and (in Real mode) decline season to season.
+const SQUAD_SIZE = 18;
 
 // Formation → 4-bucket need table. Read by computeNeed() so the AI rival
 // loop + position-aware spin filtering both honor whatever formation the

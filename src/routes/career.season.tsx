@@ -46,7 +46,7 @@ import {
   deriveConfidence,
   type TalkId,
 } from "@/lib/management";
-import { growStep, declineStep, growthTier, WK_DECLINE_START_AGE } from "@/lib/wonderkids";
+import { ageStep, growthTier } from "@/lib/wonderkids";
 import { Fragment } from "react";
 import type { Club, MatchResult, Player, Slot } from "@/lib/game-types";
 
@@ -832,6 +832,15 @@ function MatchdaySquadPanel({
               {p.age}y →{p.targetRating}
             </span>
           )}
+          {!p.wonderkidId && p.age != null && (
+            <span
+              className={`ml-1 text-[10px] ${p.age >= 30 ? "text-primary/70" : "text-muted-foreground"}`}
+              title={p.age >= 30 ? "Declining with age" : "Age"}
+            >
+              {p.age}y
+              {p.age >= 30 ? " ↓" : p.potential && p.prime_rating < p.potential ? " ↑" : ""}
+            </span>
+          )}
         </span>
         <span className="font-display text-sm text-warning shrink-0">{eff}</span>
       </button>
@@ -1223,28 +1232,31 @@ function PostSeasonCTA({
     const alreadyRecorded = career.seasonHistory.some((s) => s.season === career.currentSeason);
     if (alreadyRecorded) return;
 
-    // ── Wonderkid growth tick — once per season, here at the boundary
-    // where we have both the squad and the lineups (matchdays started).
-    // A prospect who started ≥70% of games leaps; a benched one barely
-    // moves. Past their peak they age and decline. Exact-prime ceiling.
+    // ── Ageing tick — once per season, here at the boundary where we have
+    // both the squad and the lineups (matchdays started). EVERY player who
+    // carries an age evolves: a young one who started leaps toward his
+    // ceiling (legend prime for wonderkids, FIFA potential for real
+    // players), tapering near his peak; from 30 he declines. Legends with
+    // no age stay timeless. Minutes drive growth, so playing the kid pays.
     const startsByKey = new Map<string, number>();
     for (const xi of lineups) for (const k of xi) startsByKey.set(k, (startsByKey.get(k) ?? 0) + 1);
     const growth: Record<string, { prime_rating: number; age: number }> = {};
     for (const p of career.squad) {
-      if (!p.wonderkidId || p.targetRating == null || p.age == null) continue;
+      if (p.age == null) continue; // timeless legends — no ageing
       const key = `${p.club}:${p.name}`;
       const starts = startsByKey.get(key) ?? 0;
-      const nextAge = p.age + 1;
-      let nextRating: number;
-      if (p.age < WK_DECLINE_START_AGE) {
-        const tier = growthTier(starts, lineups.length || MATCHES_PER_SEASON);
-        nextRating = growStep(p.prime_rating, p.targetRating, tier, `${key}-s${career.currentSeason}`);
-      } else {
-        nextRating = declineStep(p.prime_rating, p.age, `${key}-s${career.currentSeason}`);
-      }
-      growth[key] = { prime_rating: nextRating, age: nextAge };
+      const tier = growthTier(starts, lineups.length || MATCHES_PER_SEASON);
+      const ceiling = p.targetRating ?? p.potential ?? p.prime_rating;
+      const nextRating = ageStep(
+        p.prime_rating,
+        p.age,
+        ceiling,
+        tier,
+        `${key}-s${career.currentSeason}`,
+      );
+      growth[key] = { prime_rating: nextRating, age: p.age + 1 };
     }
-    if (Object.keys(growth).length > 0) career.growWonderkids(growth);
+    if (Object.keys(growth).length > 0) career.applySquadAgeing(growth);
     const wins = matches.filter((m) => m.outcome === "W").length;
     const draws = matches.filter((m) => m.outcome === "D").length;
     const losses = matches.filter((m) => m.outcome === "L").length;

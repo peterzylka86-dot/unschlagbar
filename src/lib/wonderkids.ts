@@ -102,6 +102,40 @@ export function declineStep(current: number, age: number, seed: string): number 
   return Math.max(WK_RATING_FLOOR, current - (base + variance));
 }
 
+/** Peak-headroom growth a player can gain in a season at a given age. Teens
+ *  rocket; by the mid-20s a player is near his peak and barely moves. */
+function maxGrowthForAge(age: number): number {
+  if (age <= 19) return 8;
+  if (age <= 21) return 6;
+  if (age <= 23) return 4;
+  if (age <= 25) return 2;
+  return 1; // 26-29: marginal gains only
+}
+
+/**
+ * One season of ageing for ANY player who carries an age (real-mode current
+ * players + legend wonderkids). Young players with headroom climb toward
+ * their ceiling — fastest as teens, tapering to nothing near their peak,
+ * and scaled by minutes (a benched kid barely grows). From 30 they decline.
+ * `ceiling` = the player's potential / legend prime. Returns the new rating;
+ * the caller increments the age. Deterministic via `seed`.
+ */
+export function ageStep(
+  current: number,
+  age: number,
+  ceiling: number,
+  tier: GrowthTier,
+  seed: string,
+): number {
+  if (age >= WK_DECLINE_START_AGE) return declineStep(current, age, seed);
+  const gap = ceiling - current;
+  if (gap <= 0) return current; // already at peak ceiling
+  const mult = tier === "starter" ? 1 : tier === "rotation" ? 0.6 : 0.25;
+  const variance = (hash(`age-${seed}`) % 3) - 1; // -1 | 0 | +1
+  const g = Math.round(maxGrowthForAge(age) * mult) + (tier === "starter" ? variance : 0);
+  return current + Math.max(0, Math.min(gap, g));
+}
+
 // ─── Lottery + scarcity (one finite pool, contested by rivals) ───────────
 
 /** Icons still available this career (not yet claimed by you or a rival). */

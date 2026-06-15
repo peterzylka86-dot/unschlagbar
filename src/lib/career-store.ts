@@ -179,9 +179,9 @@ interface CareerStore extends CareerState {
   /** Mark wonderkid icon ids as claimed (you or a rival) — removes them from
    *  the lottery pool for the rest of the career. Idempotent (dedups). */
   claimWonderkids: (iconIds: string[]) => void;
-  /** Apply one season's growth/decline to the wonderkids on the squad.
-   *  `updates` keyed by playerKey (`club:name`) → new prime_rating + age. */
-  growWonderkids: (updates: Record<string, { prime_rating: number; age: number }>) => void;
+  /** Apply one season's ageing (growth/decline) to squad players that carry
+   *  an age. `updates` keyed by playerKey (`club:name`) → new rating + age. */
+  applySquadAgeing: (updates: Record<string, { prime_rating: number; age: number }>) => void;
 }
 
 export const useCareer = create<CareerStore>()(
@@ -272,7 +272,7 @@ export const useCareer = create<CareerStore>()(
           claimedWonderkidIds: Array.from(new Set([...state.claimedWonderkidIds, ...iconIds])),
         })),
 
-      growWonderkids: (updates) =>
+      applySquadAgeing: (updates) =>
         set((state) => ({
           squad: state.squad.map((p) => {
             const u = updates[`${p.club}:${p.name}`];

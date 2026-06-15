@@ -11,6 +11,7 @@ import {
   bidWinChance,
   bidOddsLabel,
   resolveBid,
+  ageStep,
   WK_DECLINE_START_AGE,
   WK_RATING_FLOOR,
 } from "./wonderkids";
@@ -136,6 +137,40 @@ describe("rivalClaim", () => {
     }
     expect(claimed.length).toBeGreaterThan(0);
     expect(unclaimedIcons(claimed).length).toBeLessThan(WONDERKID_ICONS.length);
+  });
+});
+
+describe("ageStep (general player ageing)", () => {
+  it("a teen prospect climbs fast as a starter", () => {
+    let r = 61;
+    for (let s = 1; s <= 6; s++) r = ageStep(r, 16 + s, 96, "starter", `p-${s}`);
+    expect(r).toBeGreaterThan(88); // reaches near-peak in ~5-6 seasons
+    expect(r).toBeLessThanOrEqual(96);
+  });
+
+  it("a near-peak mid-20s player only inches up", () => {
+    const next = ageStep(91, 26, 94, "starter", "x");
+    expect(next).toBeGreaterThanOrEqual(91);
+    expect(next).toBeLessThanOrEqual(93); // not a one-season leap to ceiling
+  });
+
+  it("a benched youngster grows far slower than a starter", () => {
+    const starter = ageStep(70, 18, 90, "starter", "s");
+    const benched = ageStep(70, 18, 90, "bench", "s");
+    expect(starter).toBeGreaterThan(benched);
+  });
+
+  it("never exceeds the ceiling", () => {
+    expect(ageStep(95, 19, 96, "starter", "x")).toBeLessThanOrEqual(96);
+    expect(ageStep(96, 19, 96, "starter", "x")).toBe(96);
+  });
+
+  it("declines past 30", () => {
+    expect(ageStep(90, 33, 95, "starter", "x")).toBeLessThan(90);
+  });
+
+  it("is deterministic", () => {
+    expect(ageStep(70, 20, 90, "starter", "k")).toBe(ageStep(70, 20, 90, "starter", "k"));
   });
 });
 
