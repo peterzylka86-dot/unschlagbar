@@ -34,6 +34,15 @@ function CareerHistory() {
     const relegations = seasons.filter((s) => s.relegated).length;
     const bestPosition =
       seasons.length > 0 ? Math.min(...seasons.map((s) => s.finalPosition)) : null;
+    const europeTitles = seasons.filter((s) => s.europeResult === "champion").length;
+    const mostWins = seasons.reduce((m, s) => Math.max(m, s.wins), 0);
+    // Best single-season golden boot across the whole career.
+    let bestScorer: { name: string; goals: number; season: number } | null = null;
+    for (const s of seasons) {
+      if (s.topScorer && (!bestScorer || s.topScorer.goals > bestScorer.goals)) {
+        bestScorer = { name: s.topScorer.name, goals: s.topScorer.goals, season: s.season };
+      }
+    }
     return {
       totalWins,
       totalDraws,
@@ -44,6 +53,9 @@ function CareerHistory() {
       cupWins,
       relegations,
       bestPosition,
+      europeTitles,
+      mostWins,
+      bestScorer,
     };
   }, [seasons]);
 
@@ -107,6 +119,27 @@ function CareerHistory() {
               <Stat label="Goals for" value={aggregate.totalGF} />
               <Stat label="Goals against" value={aggregate.totalGA} />
             </div>
+          </section>
+
+          {/* Records */}
+          <section className="mt-6">
+            <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
+              Records
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              <Stat label="🌍 Euro titles" value={aggregate.europeTitles} accent="text-warning" />
+              <Stat label="Most wins (season)" value={aggregate.mostWins} accent="text-success" />
+              <Stat
+                label="Golden boot"
+                value={aggregate.bestScorer ? `${aggregate.bestScorer.goals}` : "—"}
+              />
+            </div>
+            {aggregate.bestScorer && (
+              <p className="mt-2 text-[11px] text-muted-foreground">
+                ⚽ Best season: <span className="text-foreground/90">{aggregate.bestScorer.name}</span>{" "}
+                with {aggregate.bestScorer.goals} goals (Season {aggregate.bestScorer.season}).
+              </p>
+            )}
           </section>
 
           {/* Season-by-season */}
