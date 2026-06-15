@@ -34373,21 +34373,6 @@
     ]
   },
   {
-    "name": "Zé Carlos",
-    "position": "RB",
-    "prime_rating": 66,
-    "career_years": "2025-2026",
-    "nationality": "Portugal",
-    "club": "gil-vicente-fc",
-    "verified": true,
-    "age": 23,
-    "altPositions": [
-      "CM",
-      "RW"
-    ],
-    "potential": 74
-  },
-  {
     "name": "T. Touré",
     "position": "LW",
     "prime_rating": 68,
@@ -67481,20 +67466,6 @@
     "potential": 74
   },
   {
-    "name": "N. Ogidi Nwankwo",
-    "position": "CB",
-    "prime_rating": 61,
-    "career_years": "2025-2026",
-    "nationality": "Netherlands",
-    "club": "telstar",
-    "verified": true,
-    "age": 22,
-    "altPositions": [
-      "RB"
-    ],
-    "potential": 69
-  },
-  {
     "name": "G. Offerhaus",
     "position": "CB",
     "prime_rating": 64,
@@ -71138,16 +71109,6 @@
       "LB"
     ],
     "potential": 68
-  },
-  {
-    "name": "I. Sissoko",
-    "position": "ST",
-    "prime_rating": 72,
-    "career_years": "2025-2026",
-    "nationality": "Mali",
-    "club": "vfl-bochum-1848",
-    "verified": true,
-    "age": 29
   },
   {
     "name": "K. Wätjen",

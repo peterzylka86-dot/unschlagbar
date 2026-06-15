@@ -937,9 +937,9 @@
   },
   {
     "name": "Saki Kumagai",
-    "position": "CB",
-    "prime_rating": 86,
-    "career_years": "2024-2026",
+    "position": "CDM",
+    "prime_rating": 87,
+    "career_years": "2021-2024",
     "nationality": "Japan",
     "club": "romafem"
   },
@@ -1128,8 +1128,8 @@
   },
   {
     "name": "Crystal Dunn",
-    "position": "LW",
-    "prime_rating": 87,
+    "position": "LB",
+    "prime_rating": 88,
     "career_years": "2021-2024",
     "nationality": "USA",
     "club": "portland",
@@ -1298,8 +1298,8 @@
   },
   {
     "name": "Crystal Dunn",
-    "position": "LW",
-    "prime_rating": 87,
+    "position": "LB",
+    "prime_rating": 88,
     "career_years": "2024-2026",
     "nationality": "USA",
     "club": "ngsuper"
@@ -1403,14 +1403,6 @@
     "club": "lyonfem"
   },
   {
-    "name": "Lauren James",
-    "position": "CAM",
-    "prime_rating": 88,
-    "career_years": "2021-2026",
-    "nationality": "England",
-    "club": "chelseafem"
-  },
-  {
     "name": "Pernille Harder",
     "position": "CAM",
     "prime_rating": 91,
@@ -1483,14 +1475,6 @@
     "club": "bayernfem"
   },
   {
-    "name": "Pernille Harder",
-    "position": "CAM",
-    "prime_rating": 90,
-    "career_years": "2024-2026",
-    "nationality": "Denmark",
-    "club": "bayernfem"
-  },
-  {
     "name": "Almuth Schult",
     "position": "GK",
     "prime_rating": 90,
@@ -1511,14 +1495,6 @@
     "position": "LB",
     "prime_rating": 84,
     "career_years": "2019-2026",
-    "nationality": "Germany",
-    "club": "wolfsburgfem"
-  },
-  {
-    "name": "Jule Brand",
-    "position": "RW",
-    "prime_rating": 85,
-    "career_years": "2022-2026",
     "nationality": "Germany",
     "club": "wolfsburgfem"
   },
@@ -1659,14 +1635,6 @@
     "club": "romafem"
   },
   {
-    "name": "Saki Kumagai",
-    "position": "CDM",
-    "prime_rating": 87,
-    "career_years": "2021-2024",
-    "nationality": "Japan",
-    "club": "romafem"
-  },
-  {
     "name": "Benedetta Glionna",
     "position": "ST",
     "prime_rating": 82,
@@ -1691,37 +1659,12 @@
     "club": "kchiefs"
   },
   {
-    "name": "Michelle Cooper",
-    "position": "ST",
-    "prime_rating": 83,
-    "career_years": "2023-2026",
-    "nationality": "USA",
-    "club": "kchiefs"
-  },
-  {
-    "name": "Lorena",
-    "position": "CB",
-    "prime_rating": 83,
-    "career_years": "2024-2026",
-    "nationality": "Brazil",
-    "club": "kchiefs"
-  },
-  {
     "name": "Adriana",
     "position": "RW",
     "prime_rating": 83,
     "career_years": "2023-2025",
     "nationality": "Brazil",
     "club": "kchiefs"
-  },
-  {
-    "name": "Crystal Dunn",
-    "position": "LB",
-    "prime_rating": 88,
-    "career_years": "2021-2024",
-    "nationality": "USA",
-    "club": "portland",
-    "verified": true
   },
   {
     "name": "Reyna Reyes",
@@ -1731,31 +1674,6 @@
     "nationality": "USA",
     "club": "portland",
     "verified": true
-  },
-  {
-    "name": "Adriana",
-    "position": "RW",
-    "prime_rating": 84,
-    "career_years": "2022-2024",
-    "nationality": "Brazil",
-    "club": "orlando"
-  },
-  {
-    "name": "Kerry Abello",
-    "position": "LW",
-    "prime_rating": 82,
-    "career_years": "2024-2026",
-    "nationality": "USA",
-    "club": "orlando",
-    "verified": true
-  },
-  {
-    "name": "Angelina",
-    "position": "CM",
-    "prime_rating": 83,
-    "career_years": "2022-2024",
-    "nationality": "Brazil",
-    "club": "orlando"
   },
   {
     "name": "Brittany Wilson",
@@ -1814,14 +1732,6 @@
     "prime_rating": 82,
     "career_years": "2020-2023",
     "nationality": "Japan",
-    "club": "ngsuper"
-  },
-  {
-    "name": "Crystal Dunn",
-    "position": "LB",
-    "prime_rating": 88,
-    "career_years": "2024-2026",
-    "nationality": "USA",
     "club": "ngsuper"
   }
 ]

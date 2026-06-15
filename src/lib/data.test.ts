@@ -279,6 +279,21 @@ describe("GOLAZO career modes (real vs legends)", () => {
     expect(getCareerPlayers(null).length).toBe(getCareerPlayers(null, "legends").length);
   });
 
+  it("has no duplicate club:name entries (legends pool or real)", () => {
+    const dupCount = (players: { club: string; name: string }[]) => {
+      const seen = new Set<string>();
+      let d = 0;
+      for (const p of players) {
+        const k = `${p.club}:${p.name}`;
+        if (seen.has(k)) d++;
+        else seen.add(k);
+      }
+      return d;
+    };
+    expect(dupCount(getCareerPlayers(null, "legends"))).toBe(0);
+    expect(dupCount(getCareerPlayers(null, "real"))).toBe(0);
+  });
+
   it("wide players carry cross-flank alts so side slots fill", () => {
     // After tools/broaden_positions.py: wingers interchange flanks, full-
     // backs cover both sides + their wing. Guards against the alts being

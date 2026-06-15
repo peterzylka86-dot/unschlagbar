@@ -510,17 +510,13 @@
     ]
   },
   {
-    "name": "Paul Breitner",
-    "position": "LB",
-    "prime_rating": 89,
-    "career_years": "1970-1983",
     "nationality": "Germany",
+    "position": "CM",
+    "career_years": "1970-1974, 1978-1983",
+    "name": "Paul Breitner",
+    "prime_rating": 92,
     "club": "bayern",
-    "verified": true,
-    "altPositions": [
-      "RB",
-      "LW"
-    ]
+    "verified": true
   },
   {
     "name": "Bastian Schweinsteiger",
@@ -551,10 +547,10 @@
   },
   {
     "name": "Lothar Matthäus",
-    "position": "CM",
-    "prime_rating": 92,
-    "career_years": "1984-1988, 1992-2000",
+    "prime_rating": 93,
+    "position": "CB",
     "nationality": "Germany",
+    "career_years": "1984-1988, 1992-2000",
     "club": "bayern",
     "verified": true
   },
@@ -1012,8 +1008,8 @@
   },
   {
     "name": "Kenny Dalglish",
-    "position": "CAM",
-    "prime_rating": 92,
+    "position": "ST",
+    "prime_rating": 94,
     "career_years": "1977-1990",
     "nationality": "Scotland",
     "club": "liverpool",
@@ -1638,8 +1634,8 @@
   },
   {
     "name": "Alessandro Del Piero",
-    "position": "CAM",
-    "prime_rating": 92,
+    "position": "ST",
+    "prime_rating": 94,
     "career_years": "1993-2012",
     "nationality": "Italy",
     "club": "juventus",
@@ -2382,8 +2378,8 @@
   },
   {
     "name": "Eric Cantona",
-    "position": "ST",
-    "prime_rating": 91,
+    "position": "CAM",
+    "prime_rating": 93,
     "career_years": "1992-1997",
     "nationality": "France",
     "club": "manchesterunited",
@@ -3868,10 +3864,10 @@
   },
   {
     "name": "Predrag Mijatović",
-    "position": "ST",
-    "prime_rating": 85,
+    "position": "CAM",
+    "prime_rating": 87,
     "career_years": "1993-1996",
-    "nationality": "Montenegro",
+    "nationality": "Yugoslavia",
     "club": "valencia",
     "verified": true
   },
@@ -4806,8 +4802,8 @@
   },
   {
     "name": "Iván Helguera",
-    "position": "CB",
-    "prime_rating": 85,
+    "position": "CDM",
+    "prime_rating": 86,
     "career_years": "1999-2007",
     "nationality": "Spain",
     "club": "realmadrid",
@@ -4837,20 +4833,28 @@
   },
   {
     "name": "Steve McManaman",
-    "position": "CM",
-    "prime_rating": 85,
+    "position": "RW",
+    "prime_rating": 86,
     "career_years": "1999-2003",
     "nationality": "England",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW",
+      "ST"
+    ]
   },
   {
     "name": "Míchel",
-    "position": "CAM",
-    "prime_rating": 88,
+    "position": "RW",
+    "prime_rating": 89,
     "career_years": "1982-1996",
     "nationality": "Spain",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "altPositions": [
+      "LW",
+      "ST"
+    ]
   },
   {
     "name": "Predrag Mijatović",
@@ -5053,24 +5057,6 @@
       "LW",
       "ST"
     ]
-  },
-  {
-    "nationality": "Germany",
-    "position": "CM",
-    "career_years": "1970-1974, 1978-1983",
-    "name": "Paul Breitner",
-    "prime_rating": 92,
-    "club": "bayern",
-    "verified": true
-  },
-  {
-    "name": "Lothar Matthäus",
-    "prime_rating": 93,
-    "position": "CB",
-    "nationality": "Germany",
-    "career_years": "1984-1988, 1992-2000",
-    "club": "bayern",
-    "verified": true
   },
   {
     "prime_rating": 88,
@@ -5501,15 +5487,6 @@
     "prime_rating": 88,
     "career_years": "2004-2008",
     "nationality": "Portugal",
-    "club": "barcelona",
-    "verified": true
-  },
-  {
-    "name": "Ronaldinho",
-    "position": "CAM",
-    "prime_rating": 94,
-    "career_years": "2003-2008",
-    "nationality": "Brazil",
     "club": "barcelona",
     "verified": true
   },
@@ -6927,15 +6904,6 @@
     "verified": true
   },
   {
-    "name": "Alessandro Del Piero",
-    "position": "ST",
-    "prime_rating": 94,
-    "career_years": "1993-2012",
-    "nationality": "Italy",
-    "club": "juventus",
-    "verified": true
-  },
-  {
     "name": "Filippo Inzaghi",
     "position": "ST",
     "prime_rating": 88,
@@ -7323,15 +7291,6 @@
     "prime_rating": 82,
     "career_years": "2024-2026",
     "nationality": "England",
-    "club": "atletico",
-    "verified": true
-  },
-  {
-    "name": "Antoine Griezmann",
-    "position": "CAM",
-    "prime_rating": 88,
-    "career_years": "2014-2026",
-    "nationality": "France",
     "club": "atletico",
     "verified": true
   },
@@ -8827,15 +8786,6 @@
     "prime_rating": 90,
     "career_years": "1996-1997",
     "nationality": "Brazil",
-    "club": "valencia",
-    "verified": true
-  },
-  {
-    "name": "Predrag Mijatović",
-    "position": "CAM",
-    "prime_rating": 87,
-    "career_years": "1993-1996",
-    "nationality": "Yugoslavia",
     "club": "valencia",
     "verified": true
   },
@@ -11439,15 +11389,6 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "Robert Pirès",
-    "position": "CAM",
-    "prime_rating": 89,
-    "career_years": "2000-2006",
-    "nationality": "France",
-    "club": "arsenal",
-    "verified": true
-  },
-  {
     "name": "Freddie Ljungberg",
     "position": "RW",
     "prime_rating": 87,
@@ -11498,15 +11439,6 @@
     "career_years": "2002-2008",
     "nationality": "Brazil",
     "club": "arsenal",
-    "verified": true
-  },
-  {
-    "name": "Kenny Dalglish",
-    "position": "ST",
-    "prime_rating": 94,
-    "career_years": "1977-1990",
-    "nationality": "Scotland",
-    "club": "liverpool",
     "verified": true
   },
   {
@@ -11582,15 +11514,6 @@
     "prime_rating": 93,
     "career_years": "1962-1973",
     "nationality": "Scotland",
-    "club": "manchesterunited",
-    "verified": true
-  },
-  {
-    "name": "Eric Cantona",
-    "position": "CAM",
-    "prime_rating": 93,
-    "career_years": "1992-1997",
-    "nationality": "France",
     "club": "manchesterunited",
     "verified": true
   },
@@ -12322,15 +12245,6 @@
     "club": "porto"
   },
   {
-    "name": "Kenny Dalglish",
-    "position": "ST",
-    "prime_rating": 90,
-    "career_years": "1971-1977",
-    "nationality": "Scotland",
-    "club": "celtic",
-    "verified": true
-  },
-  {
     "name": "Lubo Moravčík",
     "position": "CAM",
     "prime_rating": 86,
@@ -12955,27 +12869,6 @@
     ]
   },
   {
-    "name": "Míchel",
-    "position": "RW",
-    "prime_rating": 89,
-    "career_years": "1982-1996",
-    "nationality": "Spain",
-    "club": "realmadrid",
-    "altPositions": [
-      "LW",
-      "ST"
-    ]
-  },
-  {
-    "name": "Predrag Mijatović",
-    "position": "ST",
-    "prime_rating": 87,
-    "career_years": "1996-1999",
-    "nationality": "Montenegro",
-    "club": "realmadrid",
-    "verified": true
-  },
-  {
     "name": "Michael Owen",
     "position": "ST",
     "prime_rating": 86,
@@ -12983,28 +12876,6 @@
     "nationality": "England",
     "club": "realmadrid",
     "verified": true
-  },
-  {
-    "name": "Iván Helguera",
-    "position": "CDM",
-    "prime_rating": 86,
-    "career_years": "1999-2007",
-    "nationality": "Spain",
-    "club": "realmadrid",
-    "verified": true
-  },
-  {
-    "name": "Steve McManaman",
-    "position": "RW",
-    "prime_rating": 86,
-    "career_years": "1999-2003",
-    "nationality": "England",
-    "club": "realmadrid",
-    "verified": true,
-    "altPositions": [
-      "LW",
-      "ST"
-    ]
   },
   {
     "name": "Wesley Sneijder",

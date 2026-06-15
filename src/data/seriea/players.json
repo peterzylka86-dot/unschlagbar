@@ -3775,8 +3775,8 @@
   },
   {
     "name": "Stevan Jovetić",
-    "position": "ST",
-    "prime_rating": 84,
+    "position": "CAM",
+    "prime_rating": 87,
     "career_years": "2008-2013",
     "nationality": "Montenegro",
     "club": "fiorentina",
@@ -7969,15 +7969,6 @@
     "verified": true
   },
   {
-    "name": "Alessandro Del Piero",
-    "position": "CAM",
-    "prime_rating": 92,
-    "career_years": "1993-2012",
-    "nationality": "Italy",
-    "club": "juventus",
-    "verified": true
-  },
-  {
     "name": "Carlos Tévez",
     "position": "ST",
     "prime_rating": 90,
@@ -8204,15 +8195,6 @@
     "prime_rating": 86,
     "career_years": "1988-1992",
     "nationality": "Italy",
-    "club": "fiorentina",
-    "verified": true
-  },
-  {
-    "name": "Stevan Jovetić",
-    "position": "CAM",
-    "prime_rating": 87,
-    "career_years": "2008-2013",
-    "nationality": "Montenegro",
     "club": "fiorentina",
     "verified": true
   },
@@ -11212,14 +11194,6 @@
     "career_years": "2017-2018"
   },
   {
-    "name": "Rogério",
-    "position": "CM",
-    "prime_rating": 70,
-    "nationality": "Brazil",
-    "club": "sassuolo",
-    "career_years": "2018-2021"
-  },
-  {
     "name": "T. Pachonik",
     "position": "RB",
     "prime_rating": 70,
@@ -14189,18 +14163,6 @@
     "career_years": "2019-2020"
   },
   {
-    "name": "G. Marilungo",
-    "position": "RW",
-    "prime_rating": 70,
-    "nationality": "Italy",
-    "club": "spezia",
-    "career_years": "2019-2020",
-    "altPositions": [
-      "LW",
-      "ST"
-    ]
-  },
-  {
     "name": "M. Carraro",
     "position": "CDM",
     "prime_rating": 67,
@@ -15089,14 +15051,6 @@
     "career_years": "2020-2022"
   },
   {
-    "name": "A. Bussaglia",
-    "position": "CAM",
-    "prime_rating": 65,
-    "nationality": "Italy",
-    "club": "cittadella",
-    "career_years": "2020-2021"
-  },
-  {
     "name": "N. Dalmonte",
     "position": "ST",
     "prime_rating": 66,
@@ -15118,14 +15072,6 @@
     "prime_rating": 71,
     "nationality": "Italy",
     "club": "pisa",
-    "career_years": "2020-2021"
-  },
-  {
-    "name": "L. Jallow",
-    "position": "CM",
-    "prime_rating": 69,
-    "nationality": "Gambia",
-    "club": "salernitana",
     "career_years": "2020-2021"
   },
   {
@@ -15354,18 +15300,6 @@
     "altPositions": [
       "LB",
       "RW"
-    ]
-  },
-  {
-    "name": "S. Bidaoui",
-    "position": "LW",
-    "prime_rating": 66,
-    "nationality": "Morocco",
-    "club": "spezia",
-    "career_years": "2020-2021",
-    "altPositions": [
-      "RW",
-      "ST"
     ]
   },
   {
@@ -15769,14 +15703,6 @@
     "career_years": "2021-2022"
   },
   {
-    "name": "M. Antenucci",
-    "position": "ST",
-    "prime_rating": 75,
-    "nationality": "Italy",
-    "club": "spal",
-    "career_years": "2021-2022"
-  },
-  {
     "name": "A. De Vitis",
     "position": "CM",
     "prime_rating": 66,
@@ -16031,26 +15957,6 @@
       "LB",
       "RW"
     ]
-  },
-  {
-    "name": "N. Citro",
-    "position": "LW",
-    "prime_rating": 66,
-    "nationality": "Italy",
-    "club": "frosinone",
-    "career_years": "2021-2022",
-    "altPositions": [
-      "RW",
-      "ST"
-    ]
-  },
-  {
-    "name": "S. Lo Faso",
-    "position": "CAM",
-    "prime_rating": 65,
-    "nationality": "Italy",
-    "club": "lecce",
-    "career_years": "2021-2022"
   },
   {
     "name": "Simy",

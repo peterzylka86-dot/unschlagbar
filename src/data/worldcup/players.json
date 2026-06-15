@@ -4052,10 +4052,7 @@
     "career_years": "2018-2022",
     "nationality": "Belgium",
     "club": "belgium",
-    "verified": true,
-    "altPositions": [
-      "CAM"
-    ]
+    "verified": true
   },
   {
     "name": "Mousa Dembélé",
@@ -5549,15 +5546,6 @@
     "verified": true
   },
   {
-    "name": "Oscar",
-    "position": "CM",
-    "prime_rating": 84,
-    "career_years": "2014",
-    "nationality": "Brazil",
-    "club": "brazil",
-    "verified": true
-  },
-  {
     "name": "Éder Militão",
     "position": "CB",
     "prime_rating": 84,
@@ -5755,15 +5743,6 @@
     "verified": true
   },
   {
-    "name": "Fred",
-    "position": "LW",
-    "prime_rating": 84,
-    "career_years": "2018-2022",
-    "nationality": "Brazil",
-    "club": "brazil",
-    "verified": true
-  },
-  {
     "name": "Gonçalves",
     "position": "RB",
     "prime_rating": 81,
@@ -5777,15 +5756,6 @@
     "position": "CB",
     "prime_rating": 81,
     "career_years": "1986",
-    "nationality": "Brazil",
-    "club": "brazil",
-    "verified": true
-  },
-  {
-    "name": "Júlio César",
-    "position": "GK",
-    "prime_rating": 81,
-    "career_years": "2006-2014",
     "nationality": "Brazil",
     "club": "brazil",
     "verified": true
@@ -6084,15 +6054,6 @@
     "position": "GK",
     "prime_rating": 78,
     "career_years": "1982",
-    "nationality": "Brazil",
-    "club": "brazil",
-    "verified": true
-  },
-  {
-    "name": "Paulo Sérgio",
-    "position": "CDM",
-    "prime_rating": 78,
-    "career_years": "1994",
     "nationality": "Brazil",
     "club": "brazil",
     "verified": true
@@ -6786,14 +6747,6 @@
     "club": "brazil"
   },
   {
-    "name": "Zé Carlos",
-    "position": "LB",
-    "prime_rating": 72,
-    "career_years": "1998",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
     "name": "Cicinho",
     "position": "RB",
     "prime_rating": 71,
@@ -6945,14 +6898,6 @@
     "position": "GK",
     "prime_rating": 67,
     "career_years": "1974",
-    "nationality": "Brazil",
-    "club": "brazil"
-  },
-  {
-    "name": "Renato",
-    "position": "CM",
-    "prime_rating": 67,
-    "career_years": "1982",
     "nationality": "Brazil",
     "club": "brazil"
   },
@@ -18974,8 +18919,7 @@
     "nationality": "Ghana",
     "club": "ghana",
     "altPositions": [
-      "RW",
-      "CAM"
+      "RW"
     ],
     "verified": true
   },
@@ -21932,11 +21876,12 @@
   },
   {
     "name": "Saeid Ezatolahi",
-    "position": "CAM",
-    "prime_rating": 68,
+    "position": "CDM",
+    "prime_rating": 75,
     "career_years": "2018-2022",
     "nationality": "Iran",
-    "club": "iran"
+    "club": "iran",
+    "verified": true
   },
   {
     "name": "Daniel Davari",
@@ -23982,10 +23927,7 @@
     "career_years": "2014-2022",
     "nationality": "Japan",
     "club": "japan",
-    "verified": true,
-    "altPositions": [
-      "CB"
-    ]
+    "verified": true
   },
   {
     "name": "Junya Ito",
@@ -32924,15 +32866,6 @@
     "verified": true
   },
   {
-    "name": "Beto",
-    "position": "GK",
-    "prime_rating": 79,
-    "career_years": "2010-2018",
-    "nationality": "Portugal",
-    "club": "portugal",
-    "verified": true
-  },
-  {
     "name": "Cédric",
     "position": "RB",
     "prime_rating": 79,
@@ -35280,10 +35213,7 @@
     "career_years": "2018-2022",
     "nationality": "Saudi Arabia",
     "club": "saudiarabia",
-    "verified": true,
-    "altPositions": [
-      "CAM"
-    ]
+    "verified": true
   },
   {
     "name": "Yasser Al-Shahrani",
@@ -36797,10 +36727,7 @@
     "career_years": "2018-2022",
     "nationality": "Senegal",
     "club": "senegal",
-    "verified": true,
-    "altPositions": [
-      "CDM"
-    ]
+    "verified": true
   },
   {
     "name": "Formose Mendy",
@@ -37276,14 +37203,6 @@
     "position": "CM",
     "prime_rating": 70,
     "career_years": "2002",
-    "nationality": "Senegal",
-    "club": "senegal"
-  },
-  {
-    "name": "Moussa N'Diaye",
-    "position": "RB",
-    "prime_rating": 70,
-    "career_years": "2022",
     "nationality": "Senegal",
     "club": "senegal"
   },
@@ -40815,15 +40734,6 @@
     "verified": true
   },
   {
-    "name": "Juanfran",
-    "position": "CB",
-    "prime_rating": 83,
-    "career_years": "2014",
-    "nationality": "Spain",
-    "club": "spain",
-    "verified": true
-  },
-  {
     "name": "Lucas Vázquez",
     "position": "ST",
     "prime_rating": 83,
@@ -41001,15 +40911,6 @@
     "position": "CM",
     "prime_rating": 81,
     "career_years": "1982",
-    "nationality": "Spain",
-    "club": "spain",
-    "verified": true
-  },
-  {
-    "name": "Joaquín",
-    "position": "CAM",
-    "prime_rating": 81,
-    "career_years": "2002-2006",
     "nationality": "Spain",
     "club": "spain",
     "verified": true
@@ -41915,14 +41816,6 @@
     "position": "LW",
     "prime_rating": 67,
     "career_years": "1978-1982",
-    "nationality": "Spain",
-    "club": "spain"
-  },
-  {
-    "name": "Juanito",
-    "position": "RB",
-    "prime_rating": 67,
-    "career_years": "2006",
     "nationality": "Spain",
     "club": "spain"
   },
@@ -49590,51 +49483,6 @@
     "career_years": "2022",
     "nationality": "Qatar",
     "club": "qatar",
-    "verified": true
-  },
-  {
-    "name": "Antony",
-    "position": "RW",
-    "prime_rating": 82,
-    "career_years": "2022",
-    "nationality": "Brazil",
-    "club": "brazil",
-    "verified": true
-  },
-  {
-    "name": "Saeid Ezatolahi",
-    "position": "CDM",
-    "prime_rating": 75,
-    "career_years": "2018-2022",
-    "nationality": "Iran",
-    "club": "iran",
-    "verified": true
-  },
-  {
-    "name": "Pablo Sarabia",
-    "position": "CAM",
-    "prime_rating": 80,
-    "career_years": "2022",
-    "nationality": "Spain",
-    "club": "spain",
-    "verified": true
-  },
-  {
-    "name": "Sebastián Coates",
-    "position": "CB",
-    "prime_rating": 80,
-    "career_years": "2014-2022",
-    "nationality": "Uruguay",
-    "club": "uruguay",
-    "verified": true
-  },
-  {
-    "name": "Romario Ibarra",
-    "position": "LW",
-    "prime_rating": 74,
-    "career_years": "2014-2022",
-    "nationality": "Ecuador",
-    "club": "ecuador",
     "verified": true
   }
 ]
