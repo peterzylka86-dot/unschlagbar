@@ -11,10 +11,11 @@
  * then pick your club within it."
  */
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { LEAGUES } from "@/lib/leagues";
 import type { LeagueId } from "@/lib/leagues";
-import { getClubs } from "@/lib/data";
+import { getClubs, getCareerPlayers } from "@/lib/data";
+import type { Player } from "@/lib/game-types";
 import {
   realLeagues,
   realClubRoster,
@@ -48,6 +49,16 @@ function FoundingClubPicker() {
   const [activeLegends, setActiveLegends] = useState<LeagueId>("ucl");
   const realLgs = realLeagues();
   const [activeReal, setActiveReal] = useState<string>(realLgs[0]?.slug ?? "es1");
+  // Real-mode reinforcement stage: after picking a real club you may sign up
+  // to 3 all-time legends — the "Bochum + young Pelé" fantasy.
+  const [reinforceClub, setReinforceClub] = useState<string | null>(null);
+  const [legendKeys, setLegendKeys] = useState<string[]>([]);
+  const [legendSearch, setLegendSearch] = useState("");
+  const MAX_LEGENDS = 3;
+  const legendsPool = useMemo(
+    () => [...getCareerPlayers(null, "legends")].sort((a, b) => b.prime_rating - a.prime_rating),
+    [],
+  );
 
   const activeLeague = mode === "real" ? activeReal : activeLegends;
   // Strongest clubs first — what most newcomers expect.
@@ -59,27 +70,136 @@ function FoundingClubPicker() {
   function pick(clubId: string) {
     startCareer(clubId, activeLeague, mode);
     if (mode === "real") {
-      // Real mode: no draft — inherit your club's full real roster and face
-      // your ACTUAL league (every other club, with their real squads).
-      const league = realLeagueOf(clubId);
-      const squad = realClubRoster(clubId);
-      const rivals = (league?.clubs ?? [])
-        .filter((c) => c.id !== clubId)
-        .map((c) => ({
-          id: c.id,
-          name: c.name,
-          badge: c.short,
-          color: c.color,
-          archetypeName: c.name,
-          archetypeStyle: "balanced",
-          foundingClubId: c.id,
-          squad: realClubRoster(c.id),
-        }));
-      commitDraft(squad, rivals);
-      navigate({ to: "/career/season" });
+      // Real mode: no draft. Offer the legend-reinforcement step first.
+      setReinforceClub(clubId);
+      setLegendKeys([]);
       return;
     }
     navigate({ to: "/career/draft" });
+  }
+
+  /** Finish a Real career: inherit the club's full roster (+ up to 3 chosen
+   *  legends) and face the actual league. */
+  function startRealCareer() {
+    if (!reinforceClub) return;
+    const league = realLeagueOf(reinforceClub);
+    const chosen = legendsPool.filter((p) => legendKeys.includes(`${p.club}:${p.name}`));
+    const squad: Player[] = [...realClubRoster(reinforceClub), ...chosen];
+    const rivals = (league?.clubs ?? [])
+      .filter((c) => c.id !== reinforceClub)
+      .map((c) => ({
+        id: c.id,
+        name: c.name,
+        badge: c.short,
+        color: c.color,
+        archetypeName: c.name,
+        archetypeStyle: "balanced",
+        foundingClubId: c.id,
+        squad: realClubRoster(c.id),
+      }));
+    commitDraft(squad, rivals);
+    navigate({ to: "/career/season" });
+  }
+
+  function toggleLegend(key: string) {
+    setLegendKeys((prev) =>
+      prev.includes(key)
+        ? prev.filter((k) => k !== key)
+        : prev.length < MAX_LEGENDS
+          ? [...prev, key]
+          : prev,
+    );
+  }
+
+  // ── Real-mode reinforcement stage: add up to 3 legends to your club ──
+  if (reinforceClub) {
+    const q = legendSearch.trim().toLowerCase();
+    const list = (q ? legendsPool.filter((p) => p.name.toLowerCase().includes(q)) : legendsPool).slice(
+      0,
+      60,
+    );
+    return (
+      <div className="min-h-screen px-4 py-10 max-w-3xl mx-auto">
+        <header className="text-center">
+          <button
+            onClick={() => setReinforceClub(null)}
+            className="text-[11px] text-muted-foreground hover:text-warning underline"
+          >
+            ← back to clubs
+          </button>
+          <h1 className="mt-3 font-display text-3xl text-warning">Sign your legends</h1>
+          <p className="mt-2 text-sm text-muted-foreground max-w-md mx-auto">
+            Your club, real squad — plus up to{" "}
+            <span className="text-warning">{MAX_LEGENDS} all-time greats</span> of your choosing.
+            Take the minnows to the top of the real world. ({legendKeys.length}/{MAX_LEGENDS} picked)
+          </p>
+        </header>
+
+        {legendKeys.length > 0 && (
+          <div className="mt-5 flex flex-wrap gap-2 justify-center">
+            {legendKeys.map((k) => {
+              const p = legendsPool.find((x) => `${x.club}:${x.name}` === k);
+              if (!p) return null;
+              return (
+                <button
+                  key={k}
+                  onClick={() => toggleLegend(k)}
+                  className="inline-flex items-center gap-1 text-xs rounded-full border border-warning/50 bg-warning/15 text-warning px-3 py-1"
+                >
+                  ✨ {p.name} {p.prime_rating} ✕
+                </button>
+              );
+            })}
+          </div>
+        )}
+
+        <input
+          value={legendSearch}
+          onChange={(e) => setLegendSearch(e.target.value)}
+          placeholder="Search legends…"
+          className="mt-5 w-full px-3 py-2 rounded-lg border border-border bg-card text-sm"
+        />
+
+        <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-1.5 max-h-[24rem] overflow-y-auto">
+          {list.map((p) => {
+            const k = `${p.club}:${p.name}`;
+            const picked = legendKeys.includes(k);
+            const full = legendKeys.length >= MAX_LEGENDS && !picked;
+            return (
+              <button
+                key={k}
+                disabled={full}
+                onClick={() => toggleLegend(k)}
+                className={`flex items-center justify-between gap-2 px-3 py-2 rounded-lg border text-sm text-left transition ${
+                  picked
+                    ? "border-warning bg-warning/15 text-warning"
+                    : full
+                      ? "border-border bg-card opacity-40 cursor-not-allowed"
+                      : "border-border bg-card hover:border-warning/50"
+                }`}
+              >
+                <span className="min-w-0">
+                  <span className="font-medium truncate">{p.name}</span>
+                  <span className="block text-[10px] text-muted-foreground truncate">
+                    {p.position} · {p.nationality}
+                  </span>
+                </span>
+                <span className="font-display text-warning shrink-0">{p.prime_rating}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        <button
+          onClick={startRealCareer}
+          className="mt-6 w-full px-4 py-3 rounded-md bg-warning text-background font-display tracking-wide hover:brightness-110 transition"
+        >
+          {legendKeys.length > 0
+            ? `Start with ${legendKeys.length} legend${legendKeys.length === 1 ? "" : "s"} →`
+            : "Start with the real squad →"}
+        </button>
+      </div>
+    );
   }
 
   return (

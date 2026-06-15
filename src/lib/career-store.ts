@@ -116,6 +116,9 @@ export interface CareerState {
    *  last window — they start the coming season unsettled (a morale hit).
    *  Replaced each transfer window (a one-season sulk). */
   unsettledKeys: string[];
+  /** User rating overrides (playerKey → new overall). Applied globally
+   *  wherever a player's rating is read, so you can house-rule any rating. */
+  ratingEdits: Record<string, number>;
 }
 
 const initialCareerState: CareerState = {
@@ -140,6 +143,7 @@ const initialCareerState: CareerState = {
   startingXI: null,
   claimedWonderkidIds: [],
   unsettledKeys: [],
+  ratingEdits: {},
 };
 
 interface CareerStore extends CareerState {
@@ -182,6 +186,8 @@ interface CareerStore extends CareerState {
   /** Apply one season's ageing (growth/decline) to squad players that carry
    *  an age. `updates` keyed by playerKey (`club:name`) → new rating + age. */
   applySquadAgeing: (updates: Record<string, { prime_rating: number; age: number }>) => void;
+  /** Set (or clear, with null) a user rating override for a player key. */
+  setRatingEdit: (playerKey: string, rating: number | null) => void;
 }
 
 export const useCareer = create<CareerStore>()(
@@ -213,6 +219,7 @@ export const useCareer = create<CareerStore>()(
           starDemandResolved: false,
           claimedWonderkidIds: [],
           unsettledKeys: [],
+          ratingEdits: {},
         }),
 
       abandonCareer: () => set({ ...initialCareerState }),
@@ -273,12 +280,27 @@ export const useCareer = create<CareerStore>()(
         })),
 
       applySquadAgeing: (updates) =>
-        set((state) => ({
-          squad: state.squad.map((p) => {
-            const u = updates[`${p.club}:${p.name}`];
-            return u ? { ...p, prime_rating: u.prime_rating, age: u.age } : p;
-          }),
-        })),
+        set((state) => {
+          // Aged players' new rating is authoritative — bake in (clear) any
+          // user edit for them so the overlay can't diverge from the curve.
+          const edits = { ...state.ratingEdits };
+          for (const k of Object.keys(updates)) delete edits[k];
+          return {
+            squad: state.squad.map((p) => {
+              const u = updates[`${p.club}:${p.name}`];
+              return u ? { ...p, prime_rating: u.prime_rating, age: u.age } : p;
+            }),
+            ratingEdits: edits,
+          };
+        }),
+
+      setRatingEdit: (playerKey, rating) =>
+        set((state) => {
+          const next = { ...state.ratingEdits };
+          if (rating == null) delete next[playerKey];
+          else next[playerKey] = Math.max(40, Math.min(99, Math.round(rating)));
+          return { ratingEdits: next };
+        }),
     }),
     {
       name: "unschlagbar:career:v1",
@@ -306,6 +328,7 @@ export const useCareer = create<CareerStore>()(
         startingXI: state.startingXI,
         claimedWonderkidIds: state.claimedWonderkidIds,
         unsettledKeys: state.unsettledKeys,
+        ratingEdits: state.ratingEdits,
       }),
     },
   ),

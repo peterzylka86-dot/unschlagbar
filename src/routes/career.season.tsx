@@ -48,6 +48,7 @@ import {
 } from "@/lib/management";
 import { ageStep, growthTier } from "@/lib/wonderkids";
 import { currentInjuries, buildLiveEvents, type LiveEvent } from "@/lib/matchlive";
+import { applyRatingEdits, editedRating } from "@/lib/edits";
 import { Fragment } from "react";
 import type { Club, MatchResult, Player, Slot } from "@/lib/game-types";
 
@@ -216,16 +217,22 @@ function CareerSeason() {
   // past matchday sidelines the player for a few matchdays. Injured players
   // are pulled from the pool that builds the XI, so squad depth bites.
   const injuries = useMemo(() => currentInjuries(lineups, seasonSeed), [lineups, seasonSeed]);
+  // User rating edits overlaid onto the squad — every rating read downstream
+  // (XI, sim, display) sees the edited overall.
+  const editedSquad = useMemo(
+    () => applyRatingEdits(career.squad, career.ratingEdits),
+    [career.squad, career.ratingEdits],
+  );
   const availableSquad = useMemo(
-    () => career.squad.filter((p) => !injuries.has(`${p.club}:${p.name}`)),
-    [career.squad, injuries],
+    () => editedSquad.filter((p) => !injuries.has(`${p.club}:${p.name}`)),
+    [editedSquad, injuries],
   );
   const injuredList = useMemo(
     () =>
-      career.squad
+      editedSquad
         .filter((p) => injuries.has(`${p.club}:${p.name}`))
         .map((p) => ({ player: p, weeks: injuries.get(`${p.club}:${p.name}`)! })),
-    [career.squad, injuries],
+    [editedSquad, injuries],
   );
 
   // Form computed from PLAYED matches — drives both the 🔥/❄️ badges and
@@ -538,6 +545,7 @@ function CareerSeason() {
             const next = xiKeys.filter((k) => k !== outKey).concat(inKey);
             career.setStartingXI(next);
           }}
+          onEditRating={(key, rating) => career.setRatingEdit(key, rating)}
         />
       )}
 
@@ -859,6 +867,7 @@ function MatchdaySquadPanel({
   injured = [],
   xiKeys,
   form,
+  onEditRating,
   ratingAdj,
   fatigue,
   formation,
@@ -880,11 +889,14 @@ function MatchdaySquadPanel({
   formation: import("@/lib/game-types").FormationKey;
   franchiseKey: string | null;
   onSwap: (outKey: string, inKey: string) => void;
+  /** House-rule a player's overall (playerKey → new rating). */
+  onEditRating?: (playerKey: string, rating: number) => void;
 }) {
   // Open by default — the squad is the thing you act on every matchday, so
   // it stays visible rather than hidden behind a tap.
   const [open, setOpen] = useState(true);
   const [pendingIn, setPendingIn] = useState<string | null>(null);
+  const [editMode, setEditMode] = useState(false);
 
   const xiSet = new Set(xiKeys);
   const starters = squad.filter((p) => xiSet.has(playerKey(p)));
@@ -977,7 +989,35 @@ function MatchdaySquadPanel({
             </span>
           )}
         </span>
-        <span className="font-display text-sm text-warning shrink-0">{eff}</span>
+        {editMode && onEditRating ? (
+          <span className="flex items-center gap-1 shrink-0">
+            <span
+              role="button"
+              tabIndex={0}
+              onClick={(e) => {
+                e.stopPropagation();
+                onEditRating(key, p.prime_rating - 1);
+              }}
+              className="w-5 h-5 rounded border border-border text-xs leading-5 text-center hover:bg-muted/30 select-none"
+            >
+              −
+            </span>
+            <span className="font-display text-sm text-warning w-7 text-center">{p.prime_rating}</span>
+            <span
+              role="button"
+              tabIndex={0}
+              onClick={(e) => {
+                e.stopPropagation();
+                onEditRating(key, p.prime_rating + 1);
+              }}
+              className="w-5 h-5 rounded border border-border text-xs leading-5 text-center hover:bg-muted/30 select-none"
+            >
+              +
+            </span>
+          </span>
+        ) : (
+          <span className="font-display text-sm text-warning shrink-0">{eff}</span>
+        )}
       </button>
     );
   }
@@ -1002,10 +1042,25 @@ function MatchdaySquadPanel({
       </button>
       {open && (
         <div className="px-4 pb-4">
-          <p className="text-[10px] text-muted-foreground mb-3">
-            Tap a bench player, then tap the starter to replace. 🔥 hot / ❄️ cold form and
-            🪫 fatigue (rest to recover) both count toward the rating.
-          </p>
+          <div className="flex items-center justify-between mb-3">
+            <p className="text-[10px] text-muted-foreground">
+              {editMode
+                ? "✏️ Edit mode — nudge any player's overall with − / +."
+                : "Tap a bench player, then a starter to swap. 🔥/❄️ form & 🪫 fatigue count."}
+            </p>
+            {onEditRating && (
+              <button
+                onClick={() => setEditMode((v) => !v)}
+                className={`shrink-0 text-[10px] px-2 py-0.5 rounded-md border transition ${
+                  editMode
+                    ? "border-warning bg-warning/15 text-warning"
+                    : "border-border text-muted-foreground hover:border-foreground/30"
+                }`}
+              >
+                {editMode ? "Done" : "✏️ Edit ratings"}
+              </button>
+            )}
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-1.5">
@@ -1408,14 +1463,9 @@ function PostSeasonCTA({
       const key = `${p.club}:${p.name}`;
       const starts = startsByKey.get(key) ?? 0;
       const tier = growthTier(starts, lineups.length || matchesPerSeason);
-      const ceiling = p.targetRating ?? p.potential ?? p.prime_rating;
-      const nextRating = ageStep(
-        p.prime_rating,
-        p.age,
-        ceiling,
-        tier,
-        `${key}-s${career.currentSeason}`,
-      );
+      const base = editedRating(p, career.ratingEdits); // grow from the edited overall
+      const ceiling = p.targetRating ?? p.potential ?? base;
+      const nextRating = ageStep(base, p.age, ceiling, tier, `${key}-s${career.currentSeason}`);
       growth[key] = { prime_rating: nextRating, age: p.age + 1 };
     }
     if (Object.keys(growth).length > 0) career.applySquadAgeing(growth);
