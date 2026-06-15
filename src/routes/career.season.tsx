@@ -56,10 +56,10 @@ export const Route = createFileRoute("/career/season")({
   component: CareerSeason,
 });
 
-const MATCHES_PER_SEASON = 22;
-// Mid-season swap window opens AFTER this many matchdays have been played.
-// At MATCHES_PER_SEASON=22, that's after MD11 — halfway through.
-const MID_SEASON_GATE = Math.floor(MATCHES_PER_SEASON / 2);
+// Legends mode plays a fixed 22-match season vs the 11 drafted rivals.
+// Real mode plays a single round-robin of its actual league (one match per
+// other club), so the length is derived per-career (see matchesPerSeason).
+const LEGENDS_MATCHES_PER_SEASON = 22;
 
 // ─── Fatigue / stamina (game-design item #6) ────────────────────────────
 // Starting a match accumulates fatigue; resting on the bench recovers it.
@@ -131,7 +131,10 @@ function CareerSeason() {
   // /career/postseason so it never feels arbitrary.
   // NOTE: clubs from the data cache are shared objects — always clone
   // before bumping, never mutate.
-  const escalation = Math.min(8, Math.max(0, career.currentSeason - 1));
+  const isReal = career.careerMode === "real";
+  // Real mode faces real clubs — they don't artificially "catch up" each
+  // season the way the 11 drafted legend-rivals do.
+  const escalation = isReal ? 0 : Math.min(8, Math.max(0, career.currentSeason - 1));
   const opponents = useMemo(() => {
     return career.rivals.map((r) => {
       const club = clubs.find((c) => c.id === r.foundingClubId);
@@ -169,9 +172,19 @@ function CareerSeason() {
     () => hashString(`${career.startedAt}-s${career.currentSeason}`),
     [career.startedAt, career.currentSeason],
   );
+  // Season length: real = a single round-robin of the actual league (one
+  // game per other club); legends = the fixed 22. Mid-season swap window
+  // (legends-only) opens at the halfway point. Relegation = bottom 3 of a
+  // real league, bottom 2 of the 12-team legends format.
+  const matchesPerSeason = isReal
+    ? Math.max(1, opponents.length)
+    : LEGENDS_MATCHES_PER_SEASON;
+  const midSeasonGate = Math.floor(matchesPerSeason / 2);
+  const leagueSize = opponents.length + 1;
+  const relegationCutoff = isReal ? leagueSize - 2 : 11;
   const fixtures = useMemo(
-    () => buildSeasonFixtures(opponents, MATCHES_PER_SEASON, seasonSeed),
-    [opponents, seasonSeed],
+    () => buildSeasonFixtures(opponents, matchesPerSeason, seasonSeed),
+    [opponents, matchesPerSeason, seasonSeed],
   );
 
   const [matches, setMatches] = useState<MatchWithScorers[]>([]);
@@ -423,7 +436,7 @@ function CareerSeason() {
   // When all matchdays are played, persist the final form snapshot to the
   // store so /career/postseason can read it. Run exactly once.
   useEffect(() => {
-    if (shown < MATCHES_PER_SEASON || matches.length === 0) return;
+    if (shown < matchesPerSeason || matches.length === 0) return;
     if (tableComputed) return;
     setTableComputed(true);
     Object.entries(liveForm).forEach(([k, v]) => career.setForm(k, v));
@@ -435,7 +448,7 @@ function CareerSeason() {
     if (shown === 0) {
       return { table: [] as ReturnType<typeof computeLeagueTable>["table"], ourPosition: 0 };
     }
-    return computeLeagueTable(matches, opponents, tableSeedRating, MATCHES_PER_SEASON);
+    return computeLeagueTable(matches, opponents, tableSeedRating, matchesPerSeason);
   }, [shown, matches, opponents, tableSeedRating]);
 
   // Board confidence — results vs. the brief. Drives the job-security HUD.
@@ -460,7 +473,7 @@ function CareerSeason() {
   // Matches accumulate as the user plays — matchday 0 is a valid state
   // ("season hasn't kicked off"), no loading gate needed since fixtures
   // are computed synchronously.
-  const seasonDone = shown >= MATCHES_PER_SEASON;
+  const seasonDone = shown >= matchesPerSeason;
   const wins = matches.filter((m) => m.outcome === "W").length;
   const draws = matches.filter((m) => m.outcome === "D").length;
   const losses = matches.filter((m) => m.outcome === "L").length;
@@ -478,7 +491,7 @@ function CareerSeason() {
         <div className="text-right">
           <div className="font-display text-2xl text-warning">Season {career.currentSeason}</div>
           <div className="text-[10px] text-muted-foreground uppercase tracking-[0.2em]">
-            Matchday {shown} of {MATCHES_PER_SEASON}
+            Matchday {shown} of {matchesPerSeason}
           </div>
         </div>
       </header>
@@ -488,7 +501,7 @@ function CareerSeason() {
         <div className="h-2 rounded-full bg-card/60 overflow-hidden border border-border/60">
           <div
             className="h-full bg-gradient-to-r from-warning/80 to-warning transition-all duration-500 ease-out"
-            style={{ width: `${(shown / MATCHES_PER_SEASON) * 100}%` }}
+            style={{ width: `${(shown / matchesPerSeason) * 100}%` }}
           />
         </div>
       </div>
@@ -528,7 +541,7 @@ function CareerSeason() {
 
       {/* Mid-season swap window — gates progression until used or skipped.
           Triggers exactly once per season, after MD11. */}
-      {!seasonDone && shown >= MID_SEASON_GATE && !career.midSeasonSwapUsed && (
+      {!isReal && !seasonDone && shown >= midSeasonGate && !career.midSeasonSwapUsed && (
         <MidSeasonSwapCard />
       )}
 
@@ -543,7 +556,7 @@ function CareerSeason() {
 
       {/* Team talk — the pre-match decision. Pick a talk and the matchday
           plays with its effect folded in. Hidden during the swap window. */}
-      {!seasonDone && !(shown >= MID_SEASON_GATE && !career.midSeasonSwapUsed) && (
+      {!seasonDone && !(!isReal && shown >= midSeasonGate && !career.midSeasonSwapUsed) && (
         <div className="mt-6">
           <div className="text-[11px] uppercase tracking-widest text-muted-foreground mb-2 text-center">
             🎙️ Team talk · matchday {shown + 1}
@@ -601,7 +614,7 @@ function CareerSeason() {
       {shown > 0 && <SquadForm squad={career.squad} form={liveForm} morale={morale} />}
 
       {/* Live league table — updates after every matchday */}
-      {shown > 0 && <LiveTable table={table} matchday={shown} totalMatchdays={MATCHES_PER_SEASON} />}
+      {shown > 0 && <LiveTable table={table} matchday={shown} totalMatchdays={matchesPerSeason} />}
 
       {/* End-of-season — next-step CTA (final table already shown live above) */}
       {seasonDone && (
@@ -612,6 +625,8 @@ function CareerSeason() {
           opponents={opponents}
           liveForm={liveForm}
           lineups={lineups}
+          relegationCutoff={relegationCutoff}
+          matchesPerSeason={matchesPerSeason}
         />
       )}
 
@@ -623,7 +638,7 @@ function CareerSeason() {
         <SeasonCeremony
           season={career.currentSeason}
           isChampion={ourPosition === 1}
-          isRelegated={ourPosition >= 11}
+          isRelegated={ourPosition >= relegationCutoff}
         />
       )}
 
@@ -1355,6 +1370,8 @@ function PostSeasonCTA({
   opponents,
   liveForm,
   lineups,
+  relegationCutoff,
+  matchesPerSeason,
 }: {
   ourPosition: number;
   matches: MatchWithScorers[];
@@ -1362,10 +1379,12 @@ function PostSeasonCTA({
   opponents: import("@/lib/game-types").Club[];
   liveForm: Record<string, number>;
   lineups: string[][];
+  relegationCutoff: number;
+  matchesPerSeason: number;
 }) {
   const career = useCareer();
   const isCupQualifier = ourPosition <= 8;
-  const isRelegated = ourPosition >= 11;
+  const isRelegated = ourPosition >= relegationCutoff;
   const isChampion = ourPosition === 1;
 
   // Record this season into career.seasonHistory exactly once.
@@ -1386,7 +1405,7 @@ function PostSeasonCTA({
       if (p.age == null) continue; // timeless legends — no ageing
       const key = `${p.club}:${p.name}`;
       const starts = startsByKey.get(key) ?? 0;
-      const tier = growthTier(starts, lineups.length || MATCHES_PER_SEASON);
+      const tier = growthTier(starts, lineups.length || matchesPerSeason);
       const ceiling = p.targetRating ?? p.potential ?? p.prime_rating;
       const nextRating = ageStep(
         p.prime_rating,

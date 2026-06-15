@@ -99,3 +99,15 @@ export function realCareerClubs(): Club[] {
 export function realCareerPlayers(): Player[] {
   return REAL_PLAYERS;
 }
+
+/** A club's full real roster (post-transfer-overlay). */
+export function realClubRoster(clubId: string): Player[] {
+  return REAL_PLAYERS.filter((p) => p.club === clubId);
+}
+
+/** The real league a club plays in (with all its clubs). */
+export function realLeagueOf(clubId: string): RealLeague | undefined {
+  const club = REAL_CLUBS.find((c) => c.id === clubId);
+  if (!club) return undefined;
+  return realLeagues().find((l) => l.slug === club.league);
+}

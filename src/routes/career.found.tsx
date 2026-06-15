@@ -15,7 +15,13 @@ import { useState } from "react";
 import { LEAGUES } from "@/lib/leagues";
 import type { LeagueId } from "@/lib/leagues";
 import { getClubs } from "@/lib/data";
-import { realLeagues, REAL_TRANSFERS, REAL_TRANSFERS_AS_OF } from "@/lib/real-data";
+import {
+  realLeagues,
+  realClubRoster,
+  realLeagueOf,
+  REAL_TRANSFERS,
+  REAL_TRANSFERS_AS_OF,
+} from "@/lib/real-data";
 import { useCareer } from "@/lib/career-store";
 
 export const Route = createFileRoute("/career/found")({
@@ -36,6 +42,7 @@ const CAREER_LEAGUES: LeagueId[] = [
 
 function FoundingClubPicker() {
   const startCareer = useCareer((s) => s.startCareer);
+  const commitDraft = useCareer((s) => s.commitDraft);
   const navigate = useNavigate();
   const [mode, setMode] = useState<"real" | "legends">("legends");
   const [activeLegends, setActiveLegends] = useState<LeagueId>("ucl");
@@ -51,6 +58,27 @@ function FoundingClubPicker() {
 
   function pick(clubId: string) {
     startCareer(clubId, activeLeague, mode);
+    if (mode === "real") {
+      // Real mode: no draft — inherit your club's full real roster and face
+      // your ACTUAL league (every other club, with their real squads).
+      const league = realLeagueOf(clubId);
+      const squad = realClubRoster(clubId);
+      const rivals = (league?.clubs ?? [])
+        .filter((c) => c.id !== clubId)
+        .map((c) => ({
+          id: c.id,
+          name: c.name,
+          badge: c.short,
+          color: c.color,
+          archetypeName: c.name,
+          archetypeStyle: "balanced",
+          foundingClubId: c.id,
+          squad: realClubRoster(c.id),
+        }));
+      commitDraft(squad, rivals);
+      navigate({ to: "/career/season" });
+      return;
+    }
     navigate({ to: "/career/draft" });
   }
 

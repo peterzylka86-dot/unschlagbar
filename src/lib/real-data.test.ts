@@ -1,5 +1,12 @@
 import { describe, it, expect } from "vitest";
-import { REAL_CLUBS, REAL_PLAYERS, realLeagues, realLeagueName } from "./real-data";
+import {
+  REAL_CLUBS,
+  REAL_PLAYERS,
+  realLeagues,
+  realLeagueName,
+  realClubRoster,
+  realLeagueOf,
+} from "./real-data";
 
 describe("real-mode data (EA FC 25/26 ingest)", () => {
   it("has the expected leagues with correct top-flight sizes", () => {
@@ -37,6 +44,16 @@ describe("real-mode data (EA FC 25/26 ingest)", () => {
   it("realLeagueName resolves a slug", () => {
     expect(realLeagueName("es1")).toBe("La Liga");
     expect(realLeagueName("nope")).toBeUndefined();
+  });
+
+  it("seeds a full real roster + the real league for Real-mode careers", () => {
+    // Real Madrid is in La Liga (20 clubs) and carries a deep squad.
+    const roster = realClubRoster("real-madrid");
+    expect(roster.length).toBeGreaterThan(18); // full club squad, not a 14-draft
+    expect(roster.every((p) => p.club === "real-madrid")).toBe(true);
+    const league = realLeagueOf("real-madrid");
+    expect(league?.slug).toBe("es1");
+    expect(league?.clubs.length).toBe(20); // the actual league to play
   });
 
   it("applies the summer-2026 transfer overlay", () => {
