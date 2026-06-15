@@ -23,6 +23,18 @@ describe("deriveMorale", () => {
     expect(m["c:A"]).toBe(MORALE_NEUTRAL);
   });
 
+  it("starts a shopped-around (unsettled) player below neutral", () => {
+    const m = deriveMorale({
+      squadKeys: squad,
+      matches: [],
+      lineups: [],
+      talkMoraleDeltas: [],
+      unsettledKeys: ["c:B"],
+    });
+    expect(m["c:B"]).toBeLessThan(m["c:A"]);
+    expect(m["c:B"]).toBeLessThan(42); // shows in the "unsettled" panel
+  });
+
   it("is deterministic", () => {
     const args = { squadKeys: squad, matches: [W(), W()], lineups: [xi, xi], talkMoraleDeltas: [2, 2] };
     expect(deriveMorale(args)).toEqual(deriveMorale(args));

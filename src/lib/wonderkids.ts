@@ -147,3 +147,35 @@ export function rivalClaim(
 export function getIcon(id: string): WonderkidIcon | undefined {
   return WONDERKID_ICONS.find((i) => i.id === id);
 }
+
+// ─── Bidding war (the "what would I risk" decision) ──────────────────────
+// A surfaced wonderkid is contested. You stake a squad player as the
+// makeweight — the bigger the name, the better your odds. Win and he leaves
+// while the kid joins; lose and you keep him, but a player you shopped
+// around comes back unsettled (a morale hit, applied next season).
+
+/** Win probability from the rating of the player you put on the table. */
+export function bidWinChance(offeredRating: number): number {
+  return Math.max(0.1, Math.min(0.9, 0.3 + (offeredRating - 80) / 40));
+}
+
+/** Coarse odds label for the UI. */
+export function bidOddsLabel(offeredRating: number): "long shot" | "even" | "strong" {
+  const c = bidWinChance(offeredRating);
+  return c < 0.4 ? "long shot" : c < 0.65 ? "even" : "strong";
+}
+
+/**
+ * Resolve a contested bid deterministically. The "roll" (how hard rivals
+ * pushed) is fixed per (career, season, kid), so your BID quality decides
+ * whether you clear it — you can't reroll by re-picking the player.
+ */
+export function resolveBid(
+  careerSeed: string,
+  season: number,
+  kidId: string,
+  offeredRating: number,
+): boolean {
+  const roll = rand01(`wk-bid-${careerSeed}-${season}-${kidId}`);
+  return bidWinChance(offeredRating) >= roll;
+}

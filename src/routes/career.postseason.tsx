@@ -23,8 +23,9 @@ import { pickSpinClub, simplifyPosition } from "@/lib/career-core";
 import { playerFitsSlot } from "@/lib/draft-helpers";
 import {
   seasonLottery,
-  rivalClaim,
   youngRating,
+  bidOddsLabel,
+  resolveBid,
   WK_START_AGE,
   type WonderkidIcon,
 } from "@/lib/wonderkids";
@@ -72,35 +73,26 @@ function PostSeason() {
   const [spunClub, setSpunClub] = useState<Club | null>(null);
   const [recentClubIds, setRecentClubIds] = useState<string[]>([]);
 
-  // ─── Wonderkid lottery (the CM "unearth a legend" loop) ───────────────
-  // Deterministic per (career, season): an icon surfaces ~10% of windows,
-  // drawn from the finite unclaimed pool. Separately, a rival may snap up a
-  // DIFFERENT unclaimed icon (the FOMO — gone for the rest of the career).
+  // ─── Wonderkid BIDDING WAR (the "what would I risk" decision) ─────────
+  // Deterministic per (career, season): a legend-prospect surfaces ~10% of
+  // windows, and he's CONTESTED. You stake a squad player to bid — bigger
+  // name, better odds. Win and he joins (your stake leaves); lose and a
+  // rival lands him AND the player you shopped around comes back unsettled.
   const careerSeed = career.startedAt ?? "career";
   const offeredIcon = useMemo(
     () => seasonLottery(careerSeed, career.currentSeason, career.claimedWonderkidIds),
     [careerSeed, career.currentSeason, career.claimedWonderkidIds],
   );
-  const rivalIcon = useMemo(
-    () =>
-      rivalClaim(
-        careerSeed,
-        career.currentSeason,
-        // Protect the icon you're being offered from a rival snipe.
-        offeredIcon ? [...career.claimedWonderkidIds, offeredIcon.id] : career.claimedWonderkidIds,
-        null,
-      ),
-    [careerSeed, career.currentSeason, career.claimedWonderkidIds, offeredIcon],
-  );
-  // wkStage: "offer" (deciding) → "releasing" (choosing who to drop) → "done"
-  const [wkStage, setWkStage] = useState<"offer" | "releasing" | "done">("offer");
-  const [signedName, setSignedName] = useState<string | null>(null);
-  // Icon ids claimed THIS window (yours + the rival's) — merged at commit.
-  const newlyClaimed = useMemo(() => {
-    const ids: string[] = [];
-    if (rivalIcon) ids.push(rivalIcon.id);
-    return ids;
-  }, [rivalIcon]);
+  // Flavour: how many rivals are also circling (deterministic, 2-3).
+  const rivalsChasing = offeredIcon ? 2 + (career.currentSeason % 2) : 0;
+
+  // bidStage: "offer" → "bidding" (pick who to stake) → "resolving" → "done"
+  const [bidStage, setBidStage] = useState<"offer" | "bidding" | "resolving" | "done">("offer");
+  const [bidResult, setBidResult] = useState<"won" | "lost" | "passed" | null>(null);
+  const [bidPlayerName, setBidPlayerName] = useState<string | null>(null);
+  // Persisted-at-commit effects of this window's bid:
+  const [wkClaimId, setWkClaimId] = useState<string | null>(null); // icon claimed (you or rival)
+  const [wkUnsettledKey, setWkUnsettledKey] = useState<string | null>(null); // shopped + lost
 
   function buildWonderkid(icon: WonderkidIcon): Player {
     return {
@@ -118,13 +110,36 @@ function PostSeason() {
     };
   }
 
-  function signWonderkid(releaseIdx: number) {
+  function passOnKid() {
     if (!offeredIcon) return;
-    const next = [...workingSquad];
-    next[releaseIdx] = buildWonderkid(offeredIcon);
-    setWorkingSquad(next);
-    setSignedName(offeredIcon.name);
-    setWkStage("done");
+    setBidResult("passed");
+    setWkClaimId(offeredIcon.id); // a rival takes him — gone for good
+    setBidStage("done");
+  }
+
+  function placeBid(stakeIdx: number) {
+    if (!offeredIcon) return;
+    const stake = workingSquad[stakeIdx];
+    if (!stake) return;
+    const stakeKey = `${stake.club}:${stake.name}`;
+    setBidPlayerName(stake.name);
+    setBidStage("resolving");
+    // Brief tension, then the deterministic result.
+    setTimeout(() => {
+      const won = resolveBid(careerSeed, career.currentSeason, offeredIcon.id, stake.prime_rating);
+      if (won) {
+        const next = [...workingSquad];
+        next[stakeIdx] = buildWonderkid(offeredIcon);
+        setWorkingSquad(next);
+        setBidResult("won");
+      } else {
+        // Rival lands him; the player you shopped around sulks next season.
+        setWkUnsettledKey(stakeKey);
+        setBidResult("lost");
+      }
+      setWkClaimId(offeredIcon.id); // claimed either way — gone from the pool
+      setBidStage("done");
+    }, 900);
   }
 
   // Render guard (after hooks; see LEARNINGS.md L-1)
@@ -196,11 +211,9 @@ function PostSeason() {
     // Rivals were refreshed at mount (rivalTurnover memo) — the same
     // squads the transfer-news card displayed. Using the precomputed
     // result keeps "what you read" === "what you face."
-    // Claimed wonderkids: the rival's grab (always) + the icon you signed
-    // (if any — detected by a prospect now in the working squad).
-    const signedIds = workingSquad
-      .filter((p) => p.wonderkidId && !career.squad.some((s) => s.wonderkidId === p.wonderkidId))
-      .map((p) => p.wonderkidId!);
+    // Wonderkid window outcome: the contested kid is claimed either way
+    // (you on a win, a rival on a loss/pass) → removed from the pool. A
+    // shopped-around player who lost the bid starts next season unsettled.
     useCareer.setState({
       squad: workingSquad,
       rivals: rivalTurnover.rivals,
@@ -210,9 +223,10 @@ function PostSeason() {
       relegatedLastSeason: false, // consumed (relegation flag no longer forces sells)
       pendingDeparture: null,
       starDemandResolved: false,
-      claimedWonderkidIds: Array.from(
-        new Set([...career.claimedWonderkidIds, ...newlyClaimed, ...signedIds]),
-      ),
+      claimedWonderkidIds: wkClaimId
+        ? Array.from(new Set([...career.claimedWonderkidIds, wkClaimId]))
+        : career.claimedWonderkidIds,
+      unsettledKeys: wkUnsettledKey ? [wkUnsettledKey] : [],
     });
     navigate({ to: "/career/season" });
   }
@@ -281,65 +295,79 @@ function PostSeason() {
         </div>
       )}
 
-      {/* ✨ Wonderkid lottery — the legend-prospect (CM "unearth a gem"). */}
-      {offeredIcon && wkStage !== "done" && (
+      {/* ✨ Wonderkid BIDDING WAR — a contested legend-prospect. */}
+      {offeredIcon && (
         <div className="mt-4 rounded-2xl border-2 border-warning bg-gradient-to-br from-warning/15 to-transparent p-5">
-          {wkStage === "offer" ? (
+          {bidStage === "offer" && (
             <>
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-2xl">✨</span>
-                <div className="font-display text-xl text-warning">A wonderkid wants to join</div>
+                <div className="font-display text-xl text-warning">
+                  A wonderkid is on the market
+                </div>
               </div>
               <p className="text-sm text-foreground/85">
                 A {WK_START_AGE}-year-old{" "}
                 <span className="font-medium text-warning">{offeredIcon.name}</span> has emerged from{" "}
-                {offeredIcon.historicClub}'s academy — {offeredIcon.nationality}, starting at{" "}
-                <span className="font-display">{youngRating(offeredIcon)}</span>, with the potential
-                to reach <span className="font-display text-warning">{offeredIcon.prime}</span>. Play
-                him and he grows toward greatness. Miss him and he's gone forever.
+                {offeredIcon.historicClub} — {offeredIcon.nationality}, raw at{" "}
+                <span className="font-display">{youngRating(offeredIcon)}</span> now but with the
+                potential to reach <span className="font-display text-warning">{offeredIcon.prime}</span>.
               </p>
-              <p className="text-[11px] text-muted-foreground mt-2">
-                Signing him means releasing a squad player. ⭐ Franchise is safe.
+              <p className="text-[11px] text-primary mt-2">
+                ⚠️ {rivalsChasing} rival clubs are chasing him too. To win the race you must put a
+                squad player on the table — the bigger the name, the better your odds. Lose the bid
+                and he joins a rival, and the player you shopped around comes back unsettled. ⭐
+                Franchise can't be bid.
               </p>
               <div className="mt-4 flex gap-2">
                 <button
-                  onClick={() => setWkStage("releasing")}
+                  onClick={() => setBidStage("bidding")}
                   className="flex-1 px-4 py-3 rounded-md bg-warning text-warning-foreground font-display tracking-wide hover:brightness-110 transition"
                 >
-                  ✨ Sign {offeredIcon.name} →
+                  💰 Enter the bidding →
                 </button>
                 <button
-                  onClick={() => setWkStage("done")}
+                  onClick={passOnKid}
                   className="px-4 py-3 rounded-md border border-muted-foreground/40 text-muted-foreground text-sm hover:bg-muted/20 transition"
                 >
                   Pass
                 </button>
               </div>
             </>
-          ) : (
+          )}
+
+          {bidStage === "bidding" && (
             <>
               <div className="flex items-center justify-between mb-2">
                 <div className="font-display text-lg text-warning">
-                  Who makes way for {offeredIcon.name}?
+                  Who do you put on the table for {offeredIcon.name}?
                 </div>
                 <button
-                  onClick={() => setWkStage("offer")}
+                  onClick={() => setBidStage("offer")}
                   className="text-[11px] text-muted-foreground hover:text-warning underline"
                 >
                   back
                 </button>
               </div>
               <p className="text-xs text-muted-foreground mb-3">
-                Pick the squad player to release. ⭐ Franchise can't leave.
+                A bigger name swings the deal — but if you lose the race, he comes back unsettled. ⭐
+                Franchise can't be offered.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                 {workingSquad.map((p, i) => {
                   const isFranchise = `${p.club}:${p.name}` === career.franchisePlayerKey;
+                  const odds = bidOddsLabel(p.prime_rating);
+                  const oddsTone =
+                    odds === "strong"
+                      ? "text-success"
+                      : odds === "even"
+                        ? "text-warning"
+                        : "text-primary";
                   return (
                     <button
-                      key={`wk-out-${i}-${p.name}`}
+                      key={`wk-bid-${i}-${p.name}`}
                       disabled={isFranchise}
-                      onClick={() => signWonderkid(i)}
+                      onClick={() => placeBid(i)}
                       className={`flex items-center justify-between gap-2 px-3 py-2 rounded-lg border text-sm text-left transition ${
                         isFranchise
                           ? "border-warning/40 bg-warning/5 opacity-60 cursor-not-allowed"
@@ -352,7 +380,7 @@ function PostSeason() {
                           <span className="truncate">{p.name}</span>
                         </div>
                         <div className="text-[10px] text-muted-foreground truncate">
-                          {p.position} · {p.career_years}
+                          {p.position} · bid: <span className={oddsTone}>{odds}</span>
                         </div>
                       </div>
                       <span className="shrink-0 font-display text-sm text-warning">
@@ -364,29 +392,48 @@ function PostSeason() {
               </div>
             </>
           )}
-        </div>
-      )}
 
-      {/* Signed confirmation */}
-      {signedName && wkStage === "done" && (
-        <div className="mt-4 rounded-2xl border-2 border-success bg-success/10 p-4 text-center">
-          <div className="font-display text-lg text-success">
-            ✨ {signedName} signs as a prospect!
-          </div>
-          <div className="text-xs text-muted-foreground mt-1">
-            Give him first-team minutes and watch him grow toward his prime.
-          </div>
-        </div>
-      )}
+          {bidStage === "resolving" && (
+            <div className="py-6 text-center">
+              <div className="text-5xl animate-pulse inline-block">💰</div>
+              <div className="mt-3 text-sm text-muted-foreground">
+                {offeredIcon.name}'s camp weighs the offers…
+              </div>
+            </div>
+          )}
 
-      {/* 😱 Rival FOMO — a legend you'll never get now. */}
-      {rivalIcon && (
-        <div className="mt-3 rounded-xl border border-primary/30 bg-primary/5 px-4 py-2.5 text-xs text-foreground/85">
-          😱{" "}
-          <span className="text-primary font-medium">
-            A rival has signed wonderkid {rivalIcon.name} ({WK_START_AGE})
-          </span>{" "}
-          — gone from the pool for the rest of your career.
+          {bidStage === "done" && bidResult === "won" && (
+            <div className="text-center py-2">
+              <div className="text-4xl mb-1">✨</div>
+              <div className="font-display text-xl text-success">
+                {offeredIcon.name} chooses YOU!
+              </div>
+              <div className="text-xs text-muted-foreground mt-1">
+                {bidPlayerName} leaves as part of the deal. Give the kid minutes and watch him climb
+                toward {offeredIcon.prime}.
+              </div>
+            </div>
+          )}
+
+          {bidStage === "done" && bidResult === "lost" && (
+            <div className="text-center py-2">
+              <div className="text-4xl mb-1">😱</div>
+              <div className="font-display text-xl text-primary">Outbid! A rival lands {offeredIcon.name}.</div>
+              <div className="text-xs text-muted-foreground mt-1">
+                He's gone for the rest of your career — and {bidPlayerName}, shopped around and going
+                nowhere, starts next season unsettled.
+              </div>
+            </div>
+          )}
+
+          {bidStage === "done" && bidResult === "passed" && (
+            <div className="text-center py-2">
+              <div className="text-3xl mb-1">🤷</div>
+              <div className="font-display text-base text-muted-foreground">
+                You passed on {offeredIcon.name} — a rival snapped him up.
+              </div>
+            </div>
+          )}
         </div>
       )}
 

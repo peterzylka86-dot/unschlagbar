@@ -61,10 +61,14 @@ export function deriveMorale(opts: {
   matches: MoraleMatch[];
   lineups: string[][];
   talkMoraleDeltas: number[];
+  /** Players shopped around in a failed wonderkid bid last window — they
+   *  start the season unsettled (a lingering morale hit). */
+  unsettledKeys?: string[];
 }): Record<string, number> {
   const { squadKeys, matches, lineups, talkMoraleDeltas } = opts;
+  const unsettled = new Set(opts.unsettledKeys ?? []);
   const morale: Record<string, number> = {};
-  for (const k of squadKeys) morale[k] = MORALE_NEUTRAL;
+  for (const k of squadKeys) morale[k] = unsettled.has(k) ? MORALE_NEUTRAL - 20 : MORALE_NEUTRAL;
 
   const n = Math.min(matches.length, lineups.length);
   for (let i = 0; i < n; i++) {

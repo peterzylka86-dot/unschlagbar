@@ -109,6 +109,10 @@ export interface CareerState {
    *  The pool is finite — a claimed legend never reappears. Drives the
    *  scarcity/FOMO of the wonderkid lottery. See lib/wonderkids.ts. */
   claimedWonderkidIds: string[];
+  /** Player keys (`club:name`) shopped around in a FAILED wonderkid bid
+   *  last window — they start the coming season unsettled (a morale hit).
+   *  Replaced each transfer window (a one-season sulk). */
+  unsettledKeys: string[];
 }
 
 const initialCareerState: CareerState = {
@@ -131,6 +135,7 @@ const initialCareerState: CareerState = {
   starDemandResolved: false,
   startingXI: null,
   claimedWonderkidIds: [],
+  unsettledKeys: [],
 };
 
 interface CareerStore extends CareerState {
@@ -202,6 +207,7 @@ export const useCareer = create<CareerStore>()(
           pendingDeparture: null,
           starDemandResolved: false,
           claimedWonderkidIds: [],
+          unsettledKeys: [],
         }),
 
       abandonCareer: () => set({ ...initialCareerState }),
@@ -293,6 +299,7 @@ export const useCareer = create<CareerStore>()(
         starDemandResolved: state.starDemandResolved,
         startingXI: state.startingXI,
         claimedWonderkidIds: state.claimedWonderkidIds,
+        unsettledKeys: state.unsettledKeys,
       }),
     },
   ),

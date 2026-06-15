@@ -8,6 +8,9 @@ import {
   seasonLottery,
   rivalClaim,
   unclaimedIcons,
+  bidWinChance,
+  bidOddsLabel,
+  resolveBid,
   WK_DECLINE_START_AGE,
   WK_RATING_FLOOR,
 } from "./wonderkids";
@@ -133,5 +136,32 @@ describe("rivalClaim", () => {
     }
     expect(claimed.length).toBeGreaterThan(0);
     expect(unclaimedIcons(claimed).length).toBeLessThan(WONDERKID_ICONS.length);
+  });
+});
+
+describe("bidding war", () => {
+  it("bidWinChance rises with the staked player's rating and is clamped", () => {
+    expect(bidWinChance(60)).toBe(0.1);
+    expect(bidWinChance(99)).toBeLessThanOrEqual(0.9);
+    expect(bidWinChance(90)).toBeGreaterThan(bidWinChance(75));
+  });
+
+  it("bidOddsLabel spans long shot → strong", () => {
+    expect(bidOddsLabel(70)).toBe("long shot");
+    expect(bidOddsLabel(95)).toBe("strong");
+  });
+
+  it("resolveBid is deterministic for the same bid", () => {
+    expect(resolveBid("c", 4, "pele", 88)).toBe(resolveBid("c", 4, "pele", 88));
+  });
+
+  it("a marquee stake wins far more often than a fringe stake", () => {
+    let starWins = 0;
+    let scrubWins = 0;
+    for (let s = 1; s <= 100; s++) {
+      if (resolveBid("careerX", s, "pele", 95)) starWins++;
+      if (resolveBid("careerX", s, "pele", 70)) scrubWins++;
+    }
+    expect(starWins).toBeGreaterThan(scrubWins);
   });
 });

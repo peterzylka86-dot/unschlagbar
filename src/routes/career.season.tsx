@@ -306,8 +306,9 @@ function CareerSeason() {
         })),
         lineups,
         talkMoraleDeltas: talks.map((t) => t.moraleDelta),
+        unsettledKeys: career.unsettledKeys,
       }),
-    [career.squad, matches, lineups, talks],
+    [career.squad, matches, lineups, talks, career.unsettledKeys],
   );
   // Dressing-room mood = mean morale across the current XI.
   const dressingRoom = useMemo(() => averageMorale(morale, xiKeys), [morale, xiKeys]);
@@ -491,6 +492,15 @@ function CareerSeason() {
           Triggers exactly once per season, after MD11. */}
       {!seasonDone && shown >= MID_SEASON_GATE && !career.midSeasonSwapUsed && (
         <MidSeasonSwapCard />
+      )}
+
+      {/* Next-match preview — who's up, how strong, and their danger man. */}
+      {!seasonDone && fixtures[shown] && (
+        <NextMatchPreview
+          fixture={fixtures[shown]}
+          rival={career.rivals.find((r) => r.foundingClubId === fixtures[shown].opponent.id) ?? null}
+          ourRating={userRating}
+        />
       )}
 
       {/* Team talk — the pre-match decision. Pick a talk and the matchday
@@ -736,7 +746,9 @@ function MatchdaySquadPanel({
   franchiseKey: string | null;
   onSwap: (outKey: string, inKey: string) => void;
 }) {
-  const [open, setOpen] = useState(false);
+  // Open by default — the squad is the thing you act on every matchday, so
+  // it stays visible rather than hidden behind a tap.
+  const [open, setOpen] = useState(true);
   const [pendingIn, setPendingIn] = useState<string | null>(null);
 
   const xiSet = new Set(xiKeys);
@@ -878,6 +890,62 @@ function ScoreboardStat({
       <div className={`font-display text-2xl ${accent}`}>{value}</div>
       <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-1">
         {label}
+      </div>
+    </div>
+  );
+}
+
+function NextMatchPreview({
+  fixture,
+  rival,
+  ourRating,
+}: {
+  fixture: import("@/lib/sim").Fixture;
+  rival: { archetypeName: string; badge: string; color: string; squad: Player[] } | null;
+  ourRating: number;
+}) {
+  const opp = fixture.opponent;
+  // Their danger man = highest-rated player in the rival's squad.
+  const star = rival && rival.squad.length > 0
+    ? [...rival.squad].sort((a, b) => b.prime_rating - a.prime_rating)[0]
+    : null;
+  // Difficulty read from strength gap.
+  const gap = ourRating - opp.strength;
+  const odds =
+    gap >= 6
+      ? { label: "Favourites", tone: "text-success" }
+      : gap <= -6
+        ? { label: "Underdogs", tone: "text-primary" }
+        : { label: "Even contest", tone: "text-warning" };
+  return (
+    <div className="mt-4 rounded-2xl border border-border bg-card/40 p-4">
+      <div className="flex items-center justify-between gap-3">
+        <div className="min-w-0">
+          <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
+            Next up · {fixture.home ? "Home" : "Away"}
+          </div>
+          <div className="flex items-center gap-2 mt-0.5">
+            <span
+              className="inline-block w-2.5 h-2.5 rounded-full shrink-0"
+              style={{ background: opp.color }}
+            />
+            <span className="font-display text-lg truncate">{opp.name}</span>
+          </div>
+          {star && (
+            <div className="text-[11px] text-muted-foreground mt-0.5 truncate">
+              ⭐ Danger man:{" "}
+              <span className="text-foreground/90">{star.name}</span>{" "}
+              <span className="text-warning font-display">{star.prime_rating}</span>
+            </div>
+          )}
+        </div>
+        <div className="text-right shrink-0">
+          <div className="font-display text-xl text-warning">{Math.round(opp.strength)}</div>
+          <div className="text-[10px] uppercase tracking-wider text-muted-foreground">OVR</div>
+          <div className={`text-[10px] mt-0.5 font-display tracking-wide ${odds.tone}`}>
+            {odds.label}
+          </div>
+        </div>
       </div>
     </div>
   );
