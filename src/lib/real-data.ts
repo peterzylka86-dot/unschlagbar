@@ -15,6 +15,7 @@ import type { Club, Player } from "./game-types";
 import clubsJson from "@/data/real/clubs.json";
 import playersJson from "@/data/real/players.json";
 import transfersJson from "@/data/real/transfers.json";
+import wonderkids26Json from "@/data/real/wonderkids26.json";
 
 export interface RealClub extends Club {
   /** Real-league slug (es1, de1, it2, …). */
@@ -52,7 +53,32 @@ function applyTransfers(players: Player[]): Player[] {
   return out;
 }
 
-export const REAL_PLAYERS = applyTransfers(playersJson as Player[]);
+interface Wonderkid26 {
+  club: string;
+  name: string;
+  potential: number;
+  fmRating: number;
+}
+
+/** The FM26 wonderkid overlay (curated from FMScout's top prospects, matched
+ *  by name + club + age). For each matched player we RAISE his potential to
+ *  the FMScout floor — never lower it — so these acclaimed teens actually
+ *  develop into stars in a Real career (the season ageing reads `potential`
+ *  as the ceiling). Keyed by the snapshot club, so apply BEFORE transfers. */
+function applyWonderkids26(players: Player[]): Player[] {
+  const floor = new Map(
+    (wonderkids26Json as Wonderkid26[]).map((w) => [`${w.club}|${w.name}`, w.potential]),
+  );
+  if (floor.size === 0) return players;
+  return players.map((p) => {
+    const target = floor.get(`${p.club}|${p.name}`);
+    if (target == null) return p;
+    const potential = Math.max(p.potential ?? p.prime_rating, target);
+    return potential === p.potential ? p : { ...p, potential };
+  });
+}
+
+export const REAL_PLAYERS = applyTransfers(applyWonderkids26(playersJson as Player[]));
 
 export interface RealLeague {
   slug: string;

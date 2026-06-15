@@ -64,4 +64,17 @@ describe("real-mode data (EA FC 25/26 ingest)", () => {
     // And they're no longer at their old clubs.
     expect(REAL_PLAYERS.some((p) => p.name === "A. Gordon" && p.club === "newcastle-united")).toBe(false);
   });
+
+  it("layers the FM26 wonderkid potentials onto matched prospects", () => {
+    // Curated from FMScout's top FM26 wonderkids — these should carry at
+    // least the FMScout-floor potential so they develop into stars.
+    const yamal = REAL_PLAYERS.find((p) => p.name === "Pau Cubarsí" && p.club === "fc-barcelona");
+    expect(yamal?.potential).toBeGreaterThanOrEqual(88);
+    const camarda = REAL_PLAYERS.find((p) => p.name === "F. Camarda");
+    expect(camarda?.potential).toBeGreaterThanOrEqual(89);
+    // Never lowered: a boosted player's potential is ≥ his current overall.
+    for (const p of REAL_PLAYERS) {
+      if (p.potential != null) expect(p.potential).toBeGreaterThanOrEqual(p.prime_rating);
+    }
+  });
 });

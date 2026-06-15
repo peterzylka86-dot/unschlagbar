@@ -1,0 +1,308 @@
+[
+{
+"club": "afc-bournemouth",
+"name": "E. Kroupi",
+"potential": 91,
+"fmRating": 91
+},
+{
+"club": "inter",
+"name": "F. Esposito",
+"potential": 89,
+"fmRating": 89
+},
+{
+"club": "lecce",
+"name": "F. Camarda",
+"potential": 89,
+"fmRating": 89
+},
+{
+"club": "fc-barcelona",
+"name": "Pau Cubarsí",
+"potential": 88,
+"fmRating": 88
+},
+{
+"club": "real-madrid",
+"name": "D. Huijsen",
+"potential": 89,
+"fmRating": 88
+},
+{
+"club": "hamburger-sv",
+"name": "L. Vušković",
+"potential": 88,
+"fmRating": 88
+},
+{
+"club": "bologna",
+"name": "S. Castro",
+"potential": 87,
+"fmRating": 87
+},
+{
+"club": "sc-paderborn-07",
+"name": "D. Seimen",
+"potential": 86,
+"fmRating": 86
+},
+{
+"club": "villarreal-cf",
+"name": "W. Kambwala",
+"potential": 85,
+"fmRating": 85
+},
+{
+"club": "stade-rennais-fc",
+"name": "J. Jacquet",
+"potential": 85,
+"fmRating": 85
+},
+{
+"club": "chelsea",
+"name": "Marc Guiu",
+"potential": 85,
+"fmRating": 85
+},
+{
+"club": "brighton-hove-albion",
+"name": "S. Tzimas",
+"potential": 85,
+"fmRating": 85
+},
+{
+"club": "fc-lausanne-sport",
+"name": "G. Diakité",
+"potential": 85,
+"fmRating": 85
+},
+{
+"club": "borussia-dortmund",
+"name": "A. Anselmino",
+"potential": 84,
+"fmRating": 84
+},
+{
+"club": "real-sociedad",
+"name": "Jon Martín",
+"potential": 84,
+"fmRating": 84
+},
+{
+"club": "1-fsv-mainz-05",
+"name": "K. Potulski",
+"potential": 84,
+"fmRating": 84
+},
+{
+"club": "manchester-united",
+"name": "L. Yoro",
+"potential": 86,
+"fmRating": 84
+},
+{
+"club": "fc-augsburg",
+"name": "N. Banks",
+"potential": 84,
+"fmRating": 84
+},
+{
+"club": "rayo-vallecano",
+"name": "N. Mendy",
+"potential": 84,
+"fmRating": 84
+},
+{
+"club": "lecce",
+"name": "Tiago Gabriel",
+"potential": 84,
+"fmRating": 84
+},
+{
+"club": "roma",
+"name": "E. Ferguson",
+"potential": 84,
+"fmRating": 84
+},
+{
+"club": "real-sociedad",
+"name": "O. Óskarsson",
+"potential": 84,
+"fmRating": 84
+},
+{
+"club": "famalicao",
+"name": "Y. Zabiri",
+"potential": 84,
+"fmRating": 84
+},
+{
+"club": "udinese",
+"name": "A. Nunziante",
+"potential": 83,
+"fmRating": 83
+},
+{
+"club": "liverpool",
+"name": "G. Leoni",
+"potential": 83,
+"fmRating": 83
+},
+{
+"club": "fc-andorra",
+"name": "A. Yaakobishvili",
+"potential": 83,
+"fmRating": 83
+},
+{
+"club": "cd-mirandes",
+"name": "G. Petit",
+"potential": 83,
+"fmRating": 83
+},
+{
+"club": "virtus-entella",
+"name": "F. Russo",
+"potential": 83,
+"fmRating": 83
+},
+{
+"club": "as-monaco",
+"name": "G. Ilenikhena",
+"potential": 83,
+"fmRating": 83
+},
+{
+"club": "stade-rennais-fc",
+"name": "M. Meïté",
+"potential": 83,
+"fmRating": 83
+},
+{
+"club": "manchester-united",
+"name": "C. Obi",
+"potential": 84,
+"fmRating": 83
+},
+{
+"club": "fiorentina",
+"name": "T. Martinelli",
+"potential": 82,
+"fmRating": 82
+},
+{
+"club": "brentford",
+"name": "J. Eyestone",
+"potential": 82,
+"fmRating": 82
+},
+{
+"club": "vfb-stuttgart",
+"name": "F. Hellstern",
+"potential": 82,
+"fmRating": 82
+},
+{
+"club": "afc-bournemouth",
+"name": "V. Milosavljević",
+"potential": 84,
+"fmRating": 82
+},
+{
+"club": "tottenham-hotspur",
+"name": "K. Takai",
+"potential": 82,
+"fmRating": 82
+},
+{
+"club": "fc-lorient",
+"name": "A. Faye",
+"potential": 83,
+"fmRating": 82
+},
+{
+"club": "fc-lorient",
+"name": "T. Sanusi",
+"potential": 82,
+"fmRating": 82
+},
+{
+"club": "tsg-1899-hoffenheim",
+"name": "M. Moerstedt",
+"potential": 82,
+"fmRating": 82
+},
+{
+"club": "toulouse-fc",
+"name": "G. Restes",
+"potential": 86,
+"fmRating": 81
+},
+{
+"club": "rc-strasbourg-alsace",
+"name": "M. Penders",
+"potential": 84,
+"fmRating": 81
+},
+{
+"club": "fc-barcelona",
+"name": "D. Kochen",
+"potential": 81,
+"fmRating": 81
+},
+{
+"club": "reggiana",
+"name": "E. Motta",
+"potential": 81,
+"fmRating": 81
+},
+{
+"club": "como",
+"name": "Jacobo Ramón",
+"potential": 81,
+"fmRating": 81
+},
+{
+"club": "fiorentina",
+"name": "P. Comuzzo",
+"potential": 86,
+"fmRating": 81
+},
+{
+"club": "paris-fc",
+"name": "N. Sangui",
+"potential": 81,
+"fmRating": 81
+},
+{
+"club": "sporting-cp",
+"name": "Francisco Silva",
+"potential": 81,
+"fmRating": 81
+},
+{
+"club": "bsc-young-boys",
+"name": "F. Conte",
+"potential": 81,
+"fmRating": 81
+},
+{
+"club": "girona-fc",
+"name": "V. Krapyvtsov",
+"potential": 80,
+"fmRating": 80
+},
+{
+"club": "fc-zurich",
+"name": "S. Huber",
+"potential": 80,
+"fmRating": 80
+},
+{
+"club": "sl-benfica",
+"name": "Diogo Ferreira",
+"potential": 80,
+"fmRating": 80
+}
+]
