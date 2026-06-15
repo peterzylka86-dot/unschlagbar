@@ -12,6 +12,18 @@
     { "id": "beckenbauer", "name": "Franz Beckenbauer", "position": "CB", "altPositions": ["CDM"], "nationality": "Germany", "historicClub": "Bayern München", "prime": 94 },
     { "id": "best", "name": "George Best", "position": "RW", "altPositions": ["LW"], "nationality": "Northern Ireland", "historicClub": "Manchester United", "prime": 93 },
     { "id": "eusebio", "name": "Eusébio", "position": "ST", "nationality": "Portugal", "historicClub": "Benfica", "prime": 93 },
-    { "id": "garrincha", "name": "Garrincha", "position": "RW", "nationality": "Brazil", "historicClub": "Botafogo", "prime": 92 }
+    { "id": "garrincha", "name": "Garrincha", "position": "RW", "nationality": "Brazil", "historicClub": "Botafogo", "prime": 92 },
+    { "id": "di-stefano", "name": "Alfredo Di Stéfano", "position": "ST", "altPositions": ["CAM"], "nationality": "Argentina", "historicClub": "Real Madrid", "prime": 95 },
+    { "id": "puskas", "name": "Ferenc Puskás", "position": "ST", "nationality": "Hungary", "historicClub": "Real Madrid", "prime": 94 },
+    { "id": "yashin", "name": "Lev Yashin", "position": "GK", "nationality": "Soviet Union", "historicClub": "Dynamo Moscow", "prime": 93 },
+    { "id": "maldini", "name": "Paolo Maldini", "position": "LB", "altPositions": ["CB"], "nationality": "Italy", "historicClub": "Milan", "prime": 93 },
+    { "id": "baresi", "name": "Franco Baresi", "position": "CB", "nationality": "Italy", "historicClub": "Milan", "prime": 92 },
+    { "id": "gullit", "name": "Ruud Gullit", "position": "CAM", "altPositions": ["ST"], "nationality": "Netherlands", "historicClub": "Milan", "prime": 92 },
+    { "id": "weah", "name": "George Weah", "position": "ST", "nationality": "Liberia", "historicClub": "Milan", "prime": 91 },
+    { "id": "romario", "name": "Romário", "position": "ST", "nationality": "Brazil", "historicClub": "Barcelona", "prime": 93 },
+    { "id": "zico", "name": "Zico", "position": "CAM", "nationality": "Brazil", "historicClub": "Flamengo", "prime": 92 },
+    { "id": "platini", "name": "Michel Platini", "position": "CAM", "nationality": "France", "historicClub": "Juventus", "prime": 93 },
+    { "id": "gerd-muller", "name": "Gerd Müller", "position": "ST", "nationality": "Germany", "historicClub": "Bayern München", "prime": 93 },
+    { "id": "iniesta", "name": "Andrés Iniesta", "position": "CM", "altPositions": ["CAM"], "nationality": "Spain", "historicClub": "Barcelona", "prime": 91 }
   ]
 }

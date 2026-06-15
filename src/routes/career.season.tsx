@@ -51,6 +51,7 @@ import { currentInjuries, buildLiveEvents, type LiveEvent } from "@/lib/matchliv
 import { applyRatingEdits, editedRating } from "@/lib/edits";
 import { prizeMoney, feeLabel } from "@/lib/market";
 import { qualifyEurope, EURO_META } from "@/lib/europe";
+import { squadChemistry } from "@/lib/chemistry";
 import { Fragment } from "react";
 import type { Club, MatchResult, Player, Slot } from "@/lib/game-types";
 
@@ -318,6 +319,9 @@ function CareerSeason() {
   // average of (form − fatigue penalty) across the XI, rounded. A fresh
   // in-form XI plays a few points above its raw OVR; a gassed one plays
   // below. This is the lever rotation pulls.
+  // Chemistry — a small bonus for a national spine / galáctico core. Rewards
+  // thematic squad-building (Brazilian dream team, the Galácticos).
+  const chemistry = useMemo(() => squadChemistry(xiPlayers), [xiPlayers]);
   const userRating = useMemo(() => {
     const base = squadRating(xiSlots);
     if (xiPlayers.length === 0) return base;
@@ -326,8 +330,8 @@ function CareerSeason() {
         (sum, p) => sum + (selectionForm[`${p.club}:${normalizeName(p.name)}`] ?? 0),
         0,
       ) / xiPlayers.length;
-    return base + Math.round(Math.max(-3, Math.min(2, avgAdj)));
-  }, [xiSlots, xiPlayers, selectionForm]);
+    return base + Math.round(Math.max(-3, Math.min(2, avgAdj))) + chemistry.bonus;
+  }, [xiSlots, xiPlayers, selectionForm, chemistry]);
 
   // Stable rating for the AI table jitter — must NOT change with XI
   // rotation or the rival W/D/L sequences would reshuffle every matchday.
@@ -529,6 +533,12 @@ function CareerSeason() {
         <ScoreboardStat label="L" value={losses} accent="text-primary" />
         <ScoreboardStat label="OVR" value={Math.round(userRating)} accent="text-warning" />
       </div>
+
+      {chemistry.bonus > 0 && (
+        <div className="mt-2 text-center text-[11px] text-success">
+          🤝 Chemistry +{chemistry.bonus} · {chemistry.label}
+        </div>
+      )}
 
       {/* Board confidence + dressing-room mood — the job-security HUD. */}
       <BoardHud confidence={confidence} expectation={expectation} dressingRoom={dressingRoom} seasonDone={seasonDone} />
