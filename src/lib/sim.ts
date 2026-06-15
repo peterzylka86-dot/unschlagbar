@@ -440,12 +440,20 @@ export function computeLeagueTable(
   // MD3 and MD22 — same career, same projected season.
   const seed = { v: (ourRating * 9301) | 0 || 42 };
   const userPlayed = matches.length;
-  const ratio = Math.max(0, Math.min(1, userPlayed / matchesPerTeam));
+
+  // A league is a CLOSED system: across all teams, wins == losses and the
+  // average club takes ~1.4 pts/game. So a club's record must come from its
+  // strength RELATIVE TO THE LEAGUE, not its absolute rating — otherwise a
+  // division of all-lowish-rated clubs (e.g. the Swiss league at ~62-70)
+  // shows everyone losing. Centre the field on the mean and spread from there.
+  const meanStrength =
+    opponents.reduce((a, o) => a + o.strength, 0) / Math.max(1, opponents.length);
 
   const rows: TableRow[] = opponents.map((o) => {
-    const expectedPts = Math.max(0, (o.strength - 60) * (matchesPerTeam / 15.5));
-    const ptsPerMatch = Math.min(3, expectedPts / matchesPerTeam);
-    let drawRate = 0.25;
+    const rel = o.strength - meanStrength;
+    // ~1.45 pts/game baseline, ±0.06 per strength point vs the league mean.
+    const ptsPerMatch = Math.max(0.45, Math.min(2.7, 1.45 + rel * 0.06));
+    let drawRate = 0.26;
     let winRate = Math.max(0, (ptsPerMatch - drawRate) / 3);
     if (winRate === 0) drawRate = Math.min(1, ptsPerMatch);
     if (winRate + drawRate > 1) {
@@ -472,15 +480,12 @@ export function computeLeagueTable(
     const l = slice.filter((x) => x === "L").length;
     const pts = w * 3 + d;
 
-    // GF/GA still scaled proportionally (not in scope for this fix).
-    const gdBase = (o.strength - 75) * 1.6 + (rand(seed) - 0.5) * 12;
-    const fullGF = Math.max(
-      15,
-      Math.round(matchesPerTeam * 1.12 + (o.strength - 75) * 1.2 + (rand(seed) - 0.5) * 10),
-    );
-    const fullGA = Math.max(15, Math.round(fullGF - gdBase));
-    const gf = Math.round(fullGF * ratio);
-    const ga = Math.round(fullGA * ratio);
+    // GF/GA also relative to the league: ~1.35 goals/game baseline, goal
+    // difference driven by strength vs the mean (so it sums ~0 league-wide).
+    const gpg = Math.max(0.4, 1.35 + rel * 0.03);
+    const gapg = Math.max(0.4, 1.35 - rel * 0.03);
+    const gf = Math.max(0, Math.round(gpg * userPlayed + (rand(seed) - 0.5) * 4));
+    const ga = Math.max(0, Math.round(gapg * userPlayed + (rand(seed) - 0.5) * 4));
     return {
       name: o.name,
       short: o.short,

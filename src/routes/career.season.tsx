@@ -31,7 +31,7 @@ import {
   pickAssister,
   simplifyPosition,
 } from "@/lib/career-core";
-import { resolveXI, xiToSlots, canSwapIntoXI, playerKey, effectiveRating } from "@/lib/matchday-xi";
+import { resolveXI, xiToSlots, canSwapIntoXI, playerKey, effectiveRating, autoPickXI } from "@/lib/matchday-xi";
 import { matchCommentary, boardNote } from "@/lib/commentary";
 import { seasonDiary } from "@/lib/flavour";
 import {
@@ -562,6 +562,9 @@ function CareerSeason() {
             career.setStartingXI(next);
           }}
           onEditRating={(key, rating) => career.setRatingEdit(key, rating)}
+          onAutoPick={() =>
+            career.setStartingXI(autoPickXI(availableSquad, career.formation, selectionForm))
+          }
         />
       )}
 
@@ -885,6 +888,7 @@ function MatchdaySquadPanel({
   xiKeys,
   form,
   onEditRating,
+  onAutoPick,
   ratingAdj,
   fatigue,
   formation,
@@ -908,6 +912,8 @@ function MatchdaySquadPanel({
   onSwap: (outKey: string, inKey: string) => void;
   /** House-rule a player's overall (playerKey → new rating). */
   onEditRating?: (playerKey: string, rating: number) => void;
+  /** Assistant picks the strongest available XI (form + fatigue aware). */
+  onAutoPick?: () => void;
 }) {
   // Open by default — the squad is the thing you act on every matchday, so
   // it stays visible rather than hidden behind a tap.
@@ -1065,18 +1071,29 @@ function MatchdaySquadPanel({
                 ? "✏️ Edit mode — nudge any player's overall with − / +."
                 : "Tap a bench player, then a starter to swap. 🔥/❄️ form & 🪫 fatigue count."}
             </p>
-            {onEditRating && (
-              <button
-                onClick={() => setEditMode((v) => !v)}
-                className={`shrink-0 text-[10px] px-2 py-0.5 rounded-md border transition ${
-                  editMode
-                    ? "border-warning bg-warning/15 text-warning"
-                    : "border-border text-muted-foreground hover:border-foreground/30"
-                }`}
-              >
-                {editMode ? "Done" : "✏️ Edit ratings"}
-              </button>
-            )}
+            <div className="flex items-center gap-1.5 shrink-0">
+              {onAutoPick && (
+                <button
+                  onClick={onAutoPick}
+                  title="Assistant picks your strongest available XI"
+                  className="text-[10px] px-2 py-0.5 rounded-md border border-success/40 text-success hover:bg-success/10 transition"
+                >
+                  🎯 Auto-pick XI
+                </button>
+              )}
+              {onEditRating && (
+                <button
+                  onClick={() => setEditMode((v) => !v)}
+                  className={`text-[10px] px-2 py-0.5 rounded-md border transition ${
+                    editMode
+                      ? "border-warning bg-warning/15 text-warning"
+                      : "border-border text-muted-foreground hover:border-foreground/30"
+                  }`}
+                >
+                  {editMode ? "Done" : "✏️ Edit ratings"}
+                </button>
+              )}
+            </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
