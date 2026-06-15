@@ -20,6 +20,7 @@ import { useMemo, useState } from "react";
 import { useCareer } from "@/lib/career-store";
 import { getCareerClubs, getCareerPlayers } from "@/lib/data";
 import { pickSpinClub, simplifyPosition } from "@/lib/career-core";
+import { playerFee, sellValue, seasonTransferBudget, feeLabel } from "@/lib/market";
 import { playerFitsSlot } from "@/lib/draft-helpers";
 import {
   seasonLottery,
@@ -75,6 +76,8 @@ function PostSeason() {
   const [pendingOutIdx, setPendingOutIdx] = useState<number | null>(null);
   const [spunClub, setSpunClub] = useState<Club | null>(null);
   const [recentClubIds, setRecentClubIds] = useState<string[]>([]);
+  // Real-mode transfer market: money spent so far this window.
+  const [spent, setSpent] = useState(0);
 
   // ─── Wonderkid BIDDING WAR (the "what would I risk" decision) ─────────
   // Deterministic per (career, season): a legend-prospect surfaces ~10% of
@@ -164,6 +167,60 @@ function PostSeason() {
 
   const swapsLeft = MAX_SWAPS - swapsUsed;
   const draftedKeys = new Set(workingSquad.map((p) => `${p.club}:${p.name}`));
+
+  // ─── Real mode: an actual transfer market (budget + buy/sell) ─────────
+  const isReal = career.careerMode === "real";
+  const lastSeason = career.seasonHistory[career.seasonHistory.length - 1];
+  const foundingClub = allClubs.find((c) => c.id === career.foundingClubId);
+  const budget = seasonTransferBudget(
+    foundingClub?.strength ?? 75,
+    lastSeason?.totalLeagueClubs ?? career.rivals.length + 1,
+    lastSeason?.finalPosition ?? 10,
+  );
+  const remaining = budget - spent;
+
+  function buyPlayer(p: Player) {
+    if (playerFee(p.prime_rating, p.age ?? 27) > remaining) return;
+    if (draftedKeys.has(`${p.club}:${p.name}`)) return;
+    setSpent((x) => x + playerFee(p.prime_rating, p.age ?? 27));
+    setWorkingSquad((s) => [...s, p]);
+  }
+  function sellPlayer(idx: number) {
+    const p = workingSquad[idx];
+    if (!p) return;
+    setSpent((x) => x - sellValue(p.prime_rating, p.age ?? 27));
+    setWorkingSquad((s) => s.filter((_, i) => i !== idx));
+  }
+  function commitReal() {
+    // The real league persists — no random rival turnover; your squad is
+    // whatever you bought/sold this window.
+    useCareer.setState({
+      squad: workingSquad,
+      rivals: career.rivals,
+      form: {},
+      currentSeason: career.currentSeason + 1,
+      midSeasonSwapUsed: false,
+      relegatedLastSeason: false,
+      pendingDeparture: null,
+      starDemandResolved: false,
+    });
+    navigate({ to: "/career/season" });
+  }
+
+  if (isReal) {
+    return (
+      <RealTransferMarket
+        season={career.currentSeason}
+        budget={budget}
+        remaining={remaining}
+        squad={workingSquad}
+        pool={allPlayers}
+        onBuy={buyPlayer}
+        onSell={sellPlayer}
+        onContinue={commitReal}
+      />
+    );
+  }
 
   function startSwap() {
     setStage("picking-out");
@@ -763,6 +820,164 @@ function PickInCard({
           ))}
         </div>
       )}
+    </div>
+  );
+}
+
+// ─── Real-mode transfer market ──────────────────────────────────────────
+
+/** A proper market for Real mode: a budget (club wealth + prize money),
+ *  buy any real player by fee, sell yours to raise funds. The real league
+ *  persists — no random rival churn. */
+function RealTransferMarket({
+  season,
+  budget,
+  remaining,
+  squad,
+  pool,
+  onBuy,
+  onSell,
+  onContinue,
+}: {
+  season: number;
+  budget: number;
+  remaining: number;
+  squad: Player[];
+  pool: Player[];
+  onBuy: (p: Player) => void;
+  onSell: (idx: number) => void;
+  onContinue: () => void;
+}) {
+  const [posFilter, setPosFilter] = useState<"All" | "GK" | "DEF" | "MID" | "FWD">("All");
+  const squadKeys = new Set(squad.map((p) => `${p.club}:${p.name}`));
+  const buyList = useMemo(
+    () =>
+      pool
+        .filter((p) => !squadKeys.has(`${p.club}:${p.name}`))
+        .filter((p) => posFilter === "All" || simplifyPosition(p.position) === posFilter)
+        .sort((a, b) => b.prime_rating - a.prime_rating)
+        .slice(0, 60),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [pool, posFilter, squad],
+  );
+
+  return (
+    <div className="min-h-screen px-4 py-8 max-w-3xl mx-auto">
+      <header className="flex items-center justify-between gap-3">
+        <Link to="/career" className="text-[11px] text-muted-foreground hover:text-warning underline">
+          ← GOLAZO hub
+        </Link>
+        <div className="text-right">
+          <div className="font-display text-2xl text-warning">Transfer market</div>
+          <div className="text-[10px] text-muted-foreground uppercase tracking-[0.2em]">
+            End of Season {season}
+          </div>
+        </div>
+      </header>
+
+      {/* Budget */}
+      <div className="mt-6 rounded-2xl border-2 border-warning bg-warning/10 p-5">
+        <div className="flex items-center justify-between">
+          <div className="font-display text-xl text-warning">💰 Transfer kitty</div>
+          <div className="font-display text-2xl text-warning tabular-nums">{feeLabel(remaining)}</div>
+        </div>
+        <div className="mt-1 text-[11px] text-muted-foreground">
+          Budget {feeLabel(budget)} · spent {feeLabel(budget - remaining)} · buy any real player,
+          sell to raise funds.
+        </div>
+      </div>
+
+      {/* Your squad — sell to raise funds */}
+      <section className="mt-6">
+        <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
+          Your squad ({squad.length}) — tap Sell to raise funds
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+          {squad
+            .map((p, i) => ({ p, i }))
+            .sort((a, b) => b.p.prime_rating - a.p.prime_rating)
+            .map(({ p, i }) => (
+              <div
+                key={`sell-${i}-${p.name}`}
+                className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-border bg-card text-sm"
+              >
+                <div className="min-w-0">
+                  <div className="font-medium truncate">{p.name}</div>
+                  <div className="text-[10px] text-muted-foreground">
+                    {p.position} · {p.prime_rating}
+                    {p.age != null ? ` · ${p.age}y` : ""}
+                  </div>
+                </div>
+                <button
+                  onClick={() => onSell(i)}
+                  className="shrink-0 text-[11px] px-2 py-1 rounded-md border border-success/40 text-success hover:bg-success/10"
+                >
+                  Sell {feeLabel(sellValue(p.prime_rating, p.age ?? 27))}
+                </button>
+              </div>
+            ))}
+        </div>
+      </section>
+
+      {/* Buy */}
+      <section className="mt-6">
+        <div className="flex items-center justify-between mb-2">
+          <div className="text-xs uppercase tracking-widest text-muted-foreground">Sign players</div>
+          <div className="flex gap-1">
+            {(["All", "GK", "DEF", "MID", "FWD"] as const).map((f) => (
+              <button
+                key={f}
+                onClick={() => setPosFilter(f)}
+                className={`text-[10px] px-2 py-1 rounded-md border transition ${
+                  posFilter === f
+                    ? "border-warning bg-warning/15 text-warning"
+                    : "border-border text-muted-foreground hover:border-foreground/30"
+                }`}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 max-h-[28rem] overflow-y-auto">
+          {buyList.map((p) => {
+            const fee = playerFee(p.prime_rating, p.age ?? 27);
+            const affordable = fee <= remaining;
+            return (
+              <div
+                key={`buy-${p.club}-${p.name}`}
+                className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-border bg-card text-sm"
+              >
+                <div className="min-w-0">
+                  <div className="font-medium truncate">{p.name}</div>
+                  <div className="text-[10px] text-muted-foreground truncate">
+                    {p.position} · {p.prime_rating}
+                    {p.age != null ? ` · ${p.age}y` : ""}
+                  </div>
+                </div>
+                <button
+                  disabled={!affordable}
+                  onClick={() => onBuy(p)}
+                  className={`shrink-0 text-[11px] px-2 py-1 rounded-md border transition ${
+                    affordable
+                      ? "border-warning/50 text-warning hover:bg-warning/10"
+                      : "border-border text-muted-foreground/50 cursor-not-allowed"
+                  }`}
+                >
+                  {feeLabel(fee)}
+                </button>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <button
+        onClick={onContinue}
+        className="mt-6 w-full px-4 py-3 rounded-md border-2 border-warning bg-warning/15 text-warning font-display tracking-wide hover:bg-warning/25 transition"
+      >
+        Continue to Season {season + 1} →
+      </button>
     </div>
   );
 }
