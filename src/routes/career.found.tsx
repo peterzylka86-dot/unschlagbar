@@ -15,6 +15,7 @@ import { useMemo, useState } from "react";
 import { LEAGUES } from "@/lib/leagues";
 import type { LeagueId } from "@/lib/leagues";
 import { getClubs, getCareerPlayers } from "@/lib/data";
+import { startingBalance } from "@/lib/market";
 import type { Player } from "@/lib/game-types";
 import {
   realLeagues,
@@ -44,6 +45,7 @@ const CAREER_LEAGUES: LeagueId[] = [
 function FoundingClubPicker() {
   const startCareer = useCareer((s) => s.startCareer);
   const commitDraft = useCareer((s) => s.commitDraft);
+  const setBalance = useCareer((s) => s.setBalance);
   const navigate = useNavigate();
   const [mode, setMode] = useState<"real" | "legends">("legends");
   const [activeLegends, setActiveLegends] = useState<LeagueId>("ucl");
@@ -83,6 +85,8 @@ function FoundingClubPicker() {
   function startRealCareer() {
     if (!reinforceClub) return;
     const league = realLeagueOf(reinforceClub);
+    const myClub = league?.clubs.find((c) => c.id === reinforceClub);
+    setBalance(startingBalance(myClub?.strength ?? 72));
     const chosen = legendsPool.filter((p) => legendKeys.includes(`${p.club}:${p.name}`));
     const squad: Player[] = [...realClubRoster(reinforceClub), ...chosen];
     const rivals = (league?.clubs ?? [])

@@ -49,6 +49,7 @@ import {
 import { ageStep, growthTier } from "@/lib/wonderkids";
 import { currentInjuries, buildLiveEvents, type LiveEvent } from "@/lib/matchlive";
 import { applyRatingEdits, editedRating } from "@/lib/edits";
+import { prizeMoney, feeLabel } from "@/lib/market";
 import { Fragment } from "react";
 import type { Club, MatchResult, Player, Slot } from "@/lib/game-types";
 
@@ -502,6 +503,11 @@ function CareerSeason() {
           <div className="text-[10px] text-muted-foreground uppercase tracking-[0.2em]">
             Matchday {shown} of {matchesPerSeason}
           </div>
+          {isReal && (
+            <div className="text-[11px] text-warning font-display mt-0.5">
+              💰 {feeLabel(career.balance)}
+            </div>
+          )}
         </div>
       </header>
 
@@ -1469,6 +1475,20 @@ function PostSeasonCTA({
       growth[key] = { prime_rating: nextRating, age: p.age + 1 };
     }
     if (Object.keys(growth).length > 0) career.applySquadAgeing(growth);
+
+    // Bank prize money (Real mode): TV baseline + place money + trophies.
+    // Winning compounds into transfer spending power next window.
+    if (career.careerMode === "real") {
+      career.addBalance(
+        prizeMoney({
+          finishPosition: ourPosition,
+          leagueSize: opponents.length + 1,
+          champion: isChampion,
+          cupResult: "did-not-qualify",
+        }),
+      );
+    }
+
     const wins = matches.filter((m) => m.outcome === "W").length;
     const draws = matches.filter((m) => m.outcome === "D").length;
     const losses = matches.filter((m) => m.outcome === "L").length;

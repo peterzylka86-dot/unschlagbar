@@ -119,6 +119,9 @@ export interface CareerState {
   /** User rating overrides (playerKey → new overall). Applied globally
    *  wherever a player's rating is read, so you can house-rule any rating. */
   ratingEdits: Record<string, number>;
+  /** Club bank balance in €M (Real mode). Grows with prize money for league
+   *  finish + trophies; spent in the transfer market. Winning = more money. */
+  balance: number;
 }
 
 const initialCareerState: CareerState = {
@@ -144,6 +147,7 @@ const initialCareerState: CareerState = {
   claimedWonderkidIds: [],
   unsettledKeys: [],
   ratingEdits: {},
+  balance: 0,
 };
 
 interface CareerStore extends CareerState {
@@ -188,6 +192,10 @@ interface CareerStore extends CareerState {
   applySquadAgeing: (updates: Record<string, { prime_rating: number; age: number }>) => void;
   /** Set (or clear, with null) a user rating override for a player key. */
   setRatingEdit: (playerKey: string, rating: number | null) => void;
+  /** Set the club bank balance (€M). */
+  setBalance: (m: number) => void;
+  /** Add (or subtract) from the club balance (€M). */
+  addBalance: (m: number) => void;
 }
 
 export const useCareer = create<CareerStore>()(
@@ -220,6 +228,7 @@ export const useCareer = create<CareerStore>()(
           claimedWonderkidIds: [],
           unsettledKeys: [],
           ratingEdits: {},
+          balance: 0,
         }),
 
       abandonCareer: () => set({ ...initialCareerState }),
@@ -301,6 +310,9 @@ export const useCareer = create<CareerStore>()(
           else next[playerKey] = Math.max(40, Math.min(99, Math.round(rating)));
           return { ratingEdits: next };
         }),
+
+      setBalance: (m) => set({ balance: Math.round(m) }),
+      addBalance: (m) => set((state) => ({ balance: Math.round(state.balance + m) })),
     }),
     {
       name: "unschlagbar:career:v1",
@@ -329,6 +341,7 @@ export const useCareer = create<CareerStore>()(
         claimedWonderkidIds: state.claimedWonderkidIds,
         unsettledKeys: state.unsettledKeys,
         ratingEdits: state.ratingEdits,
+        balance: state.balance,
       }),
     },
   ),

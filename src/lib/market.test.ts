@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { playerFee, sellValue, seasonTransferBudget } from "./market";
+import { playerFee, sellValue, seasonTransferBudget, startingBalance, prizeMoney } from "./market";
 
 describe("playerFee", () => {
   it("rises steeply with rating", () => {
@@ -35,5 +35,25 @@ describe("seasonTransferBudget", () => {
   });
   it("stays positive for a weak, relegated club", () => {
     expect(seasonTransferBudget(60, 20, 20)).toBeGreaterThan(0);
+  });
+});
+
+describe("startingBalance", () => {
+  it("scales with club wealth and has a floor", () => {
+    expect(startingBalance(85)).toBeGreaterThan(startingBalance(65));
+    expect(startingBalance(40)).toBeGreaterThanOrEqual(15);
+  });
+});
+
+describe("prizeMoney", () => {
+  it("winning the league + cup banks far more than mid-table", () => {
+    const champ = prizeMoney({ finishPosition: 1, leagueSize: 20, champion: true, cupResult: "champion" });
+    const mid = prizeMoney({ finishPosition: 10, leagueSize: 20, champion: false, cupResult: "did-not-qualify" });
+    expect(champ).toBeGreaterThan(mid * 2);
+  });
+  it("pays a baseline even to a relegated club", () => {
+    expect(
+      prizeMoney({ finishPosition: 20, leagueSize: 20, champion: false, cupResult: "did-not-qualify" }),
+    ).toBeGreaterThan(0);
   });
 });

@@ -39,3 +39,33 @@ export function seasonTransferBudget(
 export function feeLabel(m: number): string {
   return `€${m}M`;
 }
+
+/** Starting bank balance for a new Real-mode career, from club wealth. */
+export function startingBalance(clubStrength: number): number {
+  return Math.max(15, Math.round((clubStrength - 56) * 7));
+}
+
+/**
+ * Prize money banked at a season's end: a TV baseline everyone gets, place
+ * money for the league finish, and trophy bonuses — so winning compounds
+ * into real spending power.
+ */
+export function prizeMoney(opts: {
+  finishPosition: number;
+  leagueSize: number;
+  champion: boolean;
+  cupResult: "champion" | "runner-up" | "semi-final" | "quarter-final" | "did-not-qualify";
+}): number {
+  const base = 30;
+  const place = Math.max(0, opts.leagueSize - opts.finishPosition) * 5;
+  const title = opts.champion ? 60 : 0;
+  const cup =
+    opts.cupResult === "champion"
+      ? 40
+      : opts.cupResult === "runner-up"
+        ? 18
+        : opts.cupResult === "semi-final"
+          ? 8
+          : 0;
+  return base + place + title + cup;
+}

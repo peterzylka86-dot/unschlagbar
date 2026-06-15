@@ -20,7 +20,7 @@ import { useMemo, useState } from "react";
 import { useCareer } from "@/lib/career-store";
 import { getCareerClubs, getCareerPlayers } from "@/lib/data";
 import { pickSpinClub, simplifyPosition } from "@/lib/career-core";
-import { playerFee, sellValue, seasonTransferBudget, feeLabel } from "@/lib/market";
+import { playerFee, sellValue, feeLabel } from "@/lib/market";
 import { playerFitsSlot } from "@/lib/draft-helpers";
 import {
   seasonLottery,
@@ -169,14 +169,10 @@ function PostSeason() {
   const draftedKeys = new Set(workingSquad.map((p) => `${p.club}:${p.name}`));
 
   // ─── Real mode: an actual transfer market (budget + buy/sell) ─────────
+  // Budget is the persistent club balance (prize money banked at season
+  // end), so winning literally buys you a better squad.
   const isReal = career.careerMode === "real";
-  const lastSeason = career.seasonHistory[career.seasonHistory.length - 1];
-  const foundingClub = allClubs.find((c) => c.id === career.foundingClubId);
-  const budget = seasonTransferBudget(
-    foundingClub?.strength ?? 75,
-    lastSeason?.totalLeagueClubs ?? career.rivals.length + 1,
-    lastSeason?.finalPosition ?? 10,
-  );
+  const budget = career.balance;
   const remaining = budget - spent;
 
   function buyPlayer(p: Player) {
@@ -193,7 +189,8 @@ function PostSeason() {
   }
   function commitReal() {
     // The real league persists — no random rival turnover; your squad is
-    // whatever you bought/sold this window.
+    // whatever you bought/sold this window. Deduct the net spend from the
+    // bank (selling more than you buy banks the surplus).
     useCareer.setState({
       squad: workingSquad,
       rivals: career.rivals,
@@ -203,6 +200,7 @@ function PostSeason() {
       relegatedLastSeason: false,
       pendingDeparture: null,
       starDemandResolved: false,
+      balance: Math.round(career.balance - spent),
     });
     navigate({ to: "/career/season" });
   }
