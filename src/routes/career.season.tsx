@@ -176,8 +176,10 @@ function CareerSeason() {
   // game per other club); legends = the fixed 22. Mid-season swap window
   // (legends-only) opens at the halfway point. Relegation = bottom 3 of a
   // real league, bottom 2 of the 12-team legends format.
+  // Real mode plays a full home-and-away league season: each other club
+  // twice (La Liga 38, Bundesliga 34). Legends keeps its fixed 22.
   const matchesPerSeason = isReal
-    ? Math.max(1, opponents.length)
+    ? Math.max(1, opponents.length * 2)
     : LEGENDS_MATCHES_PER_SEASON;
   const midSeasonGate = Math.floor(matchesPerSeason / 2);
   const leagueSize = opponents.length + 1;
