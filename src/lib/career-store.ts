@@ -125,6 +125,12 @@ export interface CareerState {
   /** Club bank balance in €M (Real mode). Grows with prize money for league
    *  finish + trophies; spent in the transfer market. Winning = more money. */
   balance: number;
+  /** Lingering morale offset per player (playerKey → ±) from conversations
+   *  and events. Read by the morale system as a base offset. Persists. */
+  playerMoods: Record<string, number>;
+  /** Player keys you've already had a conversation with this season (so the
+   *  same player isn't prompted repeatedly). Reset each season. */
+  convosThisSeason: string[];
 }
 
 const initialCareerState: CareerState = {
@@ -151,6 +157,8 @@ const initialCareerState: CareerState = {
   unsettledKeys: [],
   ratingEdits: {},
   balance: 0,
+  playerMoods: {},
+  convosThisSeason: [],
 };
 
 interface CareerStore extends CareerState {
@@ -199,6 +207,8 @@ interface CareerStore extends CareerState {
   setBalance: (m: number) => void;
   /** Add (or subtract) from the club balance (€M). */
   addBalance: (m: number) => void;
+  /** Resolve a player conversation: apply a mood delta + mark them spoken-to. */
+  resolveConversation: (playerKey: string, delta: number) => void;
 }
 
 export const useCareer = create<CareerStore>()(
@@ -233,6 +243,8 @@ export const useCareer = create<CareerStore>()(
           ratingEdits: {},
           // Base transfer kitty (Real mode overrides this with club wealth).
           balance: 100,
+          playerMoods: {},
+          convosThisSeason: [],
         }),
 
       abandonCareer: () => set({ ...initialCareerState }),
@@ -317,6 +329,17 @@ export const useCareer = create<CareerStore>()(
 
       setBalance: (m) => set({ balance: Math.round(m) }),
       addBalance: (m) => set((state) => ({ balance: Math.round(state.balance + m) })),
+
+      resolveConversation: (playerKey, delta) =>
+        set((state) => ({
+          playerMoods: {
+            ...state.playerMoods,
+            [playerKey]: Math.max(-30, Math.min(30, (state.playerMoods[playerKey] ?? 0) + delta)),
+          },
+          convosThisSeason: state.convosThisSeason.includes(playerKey)
+            ? state.convosThisSeason
+            : [...state.convosThisSeason, playerKey],
+        })),
     }),
     {
       name: "unschlagbar:career:v1",
@@ -346,6 +369,8 @@ export const useCareer = create<CareerStore>()(
         unsettledKeys: state.unsettledKeys,
         ratingEdits: state.ratingEdits,
         balance: state.balance,
+        playerMoods: state.playerMoods,
+        convosThisSeason: state.convosThisSeason,
       }),
     },
   ),

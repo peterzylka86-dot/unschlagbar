@@ -64,11 +64,15 @@ export function deriveMorale(opts: {
   /** Players shopped around in a failed wonderkid bid last window — they
    *  start the season unsettled (a lingering morale hit). */
   unsettledKeys?: string[];
+  /** Lingering per-player mood offset (±) from conversations/events. */
+  moodOffsets?: Record<string, number>;
 }): Record<string, number> {
   const { squadKeys, matches, lineups, talkMoraleDeltas } = opts;
   const unsettled = new Set(opts.unsettledKeys ?? []);
+  const moods = opts.moodOffsets ?? {};
   const morale: Record<string, number> = {};
-  for (const k of squadKeys) morale[k] = unsettled.has(k) ? MORALE_NEUTRAL - 20 : MORALE_NEUTRAL;
+  for (const k of squadKeys)
+    morale[k] = clampMorale((unsettled.has(k) ? MORALE_NEUTRAL - 20 : MORALE_NEUTRAL) + (moods[k] ?? 0));
 
   const n = Math.min(matches.length, lineups.length);
   for (let i = 0; i < n; i++) {

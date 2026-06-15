@@ -53,6 +53,7 @@ import { prizeMoney, feeLabel } from "@/lib/market";
 import { qualifyEurope, EURO_META } from "@/lib/europe";
 import { squadChemistry } from "@/lib/chemistry";
 import { managerFor } from "@/lib/managers";
+import { pickConversation, type ConvoOption } from "@/lib/conversations";
 import { Fragment } from "react";
 import type { Club, MatchResult, Player, Slot } from "@/lib/game-types";
 
@@ -361,11 +362,34 @@ function CareerSeason() {
         lineups,
         talkMoraleDeltas: talks.map((t) => t.moraleDelta),
         unsettledKeys: career.unsettledKeys,
+        moodOffsets: career.playerMoods,
       }),
-    [career.squad, matches, lineups, talks, career.unsettledKeys],
+    [career.squad, matches, lineups, talks, career.unsettledKeys, career.playerMoods],
   );
   // Dressing-room mood = mean morale across the current XI.
   const dressingRoom = useMemo(() => averageMorale(morale, xiKeys), [morale, xiKeys]);
+
+  // Player conversations: the unhappiest squad member (not yet spoken to this
+  // season) knocks on your door. Pin it to a stable card so the reply shows.
+  const convoTarget = useMemo(() => {
+    const talked = new Set(career.convosThisSeason);
+    let worst: { key: string; name: string } | null = null;
+    let worstM = 45; // only those genuinely unhappy come knocking
+    for (const p of career.squad) {
+      const key = `${p.club}:${p.name}`;
+      if (talked.has(key)) continue;
+      const m = morale[key] ?? MORALE_NEUTRAL;
+      if (m < worstM) {
+        worstM = m;
+        worst = { key, name: p.name };
+      }
+    }
+    return worst;
+  }, [career.squad, morale, career.convosThisSeason]);
+  const [convo, setConvo] = useState<{ key: string; name: string } | null>(null);
+  useEffect(() => {
+    if (!convo && convoTarget) setConvo(convoTarget);
+  }, [convo, convoTarget]);
   // The board's pre-season brief, read off raw squad strength vs. the league.
   const expectation = useMemo(
     () => boardExpectation(tableSeedRating, opponents.map((o) => o.strength)),
@@ -541,6 +565,16 @@ function CareerSeason() {
 
       {/* Board confidence + dressing-room mood — the job-security HUD. */}
       <BoardHud confidence={confidence} expectation={expectation} dressingRoom={dressingRoom} seasonDone={seasonDone} />
+
+      {/* A player wants a word — pick your response carefully. */}
+      {!seasonDone && convo && (
+        <ConversationCard
+          player={convo}
+          season={career.currentSeason}
+          onResolve={(delta) => career.resolveConversation(convo.key, delta)}
+          onDismiss={() => setConvo(null)}
+        />
+      )}
 
       {/* Matchday Squad — the benching system. Only shown when the squad
           actually has a bench (squad of 14); legacy 11-player careers
@@ -1229,6 +1263,70 @@ function NextMatchPreview({
   );
 }
 
+function ConversationCard({
+  player,
+  season,
+  onResolve,
+  onDismiss,
+}: {
+  player: { key: string; name: string };
+  season: number;
+  onResolve: (delta: number) => void;
+  onDismiss: () => void;
+}) {
+  const convo = pickConversation(player.key, season);
+  const [chosen, setChosen] = useState<ConvoOption | null>(null);
+  return (
+    <div className="mt-3 rounded-2xl border-2 border-primary/50 bg-primary/5 p-4">
+      <div className="flex items-center gap-2 mb-1">
+        <span className="text-xl">💬</span>
+        <div className="font-display text-base text-primary">{player.name} wants a word</div>
+      </div>
+      <p className="text-sm text-foreground/85">
+        {convo.topic.replace(/\{name\}/g, player.name)}
+      </p>
+      {!chosen ? (
+        <div className="mt-3 space-y-1.5">
+          {convo.options.map((o, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                setChosen(o);
+                onResolve(o.delta);
+              }}
+              className="w-full text-left px-3 py-2 rounded-lg border border-border bg-card text-sm hover:border-primary hover:bg-primary/10 transition"
+            >
+              {o.text}
+            </button>
+          ))}
+        </div>
+      ) : (
+        <div className="mt-3">
+          <p
+            className={`text-sm italic ${
+              chosen.delta > 2 ? "text-success" : chosen.delta < -2 ? "text-primary" : "text-muted-foreground"
+            }`}
+          >
+            {chosen.reply}
+            {chosen.delta !== 0 && (
+              <span className="ml-1 font-display not-italic">
+                ({chosen.delta > 0 ? "+" : ""}
+                {chosen.delta} morale)
+              </span>
+            )}
+          </p>
+          <button
+            onClick={onDismiss}
+            className="mt-3 w-full px-4 py-2 rounded-md bg-primary/80 text-background font-display tracking-wide hover:brightness-110 transition"
+          >
+            Continue →
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function BoardHud({
   confidence,
   expectation,
@@ -1288,24 +1386,31 @@ function BoardHud({
 }
 
 function DiaryLine({ beat }: { beat: import("@/lib/flavour").FlavourBeat }) {
-  // News interstitial between match rows — the back pages / dressing-room /
-  // daft-event ticker. Headlines read louder (uppercase, warning tint);
-  // morale + events sit quieter in muted italic.
-  const isHeadline = beat.kind === "headline";
+  // Headlines render as a little newspaper clipping (the Anstoss back page);
+  // morale + events stay as a quiet italic ticker line.
+  if (beat.kind === "headline") {
+    const headline = beat.text.replace(/^📰\s*/, "");
+    return (
+      <div className="my-1.5 rounded-sm border border-foreground/25 bg-[#efe9dc] text-[#1a1a1a] px-3 py-2 shadow-[2px_2px_0_rgba(0,0,0,0.25)]">
+        <div className="flex items-center justify-between border-b border-foreground/30 pb-0.5 mb-1">
+          <span className="text-[8px] uppercase tracking-[0.25em] font-display">
+            The GOLAZO Gazette
+          </span>
+          <span className="text-[8px] uppercase tracking-widest opacity-70">Back Page</span>
+        </div>
+        <div
+          className="font-display tracking-tight leading-none text-center uppercase"
+          style={{ fontSize: "1.05rem" }}
+        >
+          {headline}
+        </div>
+      </div>
+    );
+  }
   return (
-    <div
-      className={`flex items-start gap-2 py-1.5 px-3 mb-1.5 ${
-        isHeadline ? "text-warning/90" : "text-muted-foreground/80"
-      }`}
-    >
+    <div className="flex items-start gap-2 py-1.5 px-3 mb-1.5 text-muted-foreground/80">
       <span className="text-[11px] shrink-0">{beat.icon}</span>
-      <span
-        className={`text-[11px] ${
-          isHeadline ? "font-display tracking-wide" : "italic"
-        }`}
-      >
-        {beat.text}
-      </span>
+      <span className="text-[11px] italic">{beat.text}</span>
     </div>
   );
 }
