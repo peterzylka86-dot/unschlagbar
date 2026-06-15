@@ -755,6 +755,14 @@ function MatchdaySquadPanel({
   const starters = squad.filter((p) => xiSet.has(playerKey(p)));
   const bench = squad.filter((p) => !xiSet.has(playerKey(p)));
 
+  // Map each starter to the SLOT they're actually filling, so the chip
+  // shows the role (RB) not just their primary position (LB) — otherwise a
+  // versatile player reads as the wrong position and the XI looks broken.
+  const slotByKey = new Map<string, string>();
+  for (const s of xiToSlots(squad, xiKeys, formation)) {
+    if (s.player) slotByKey.set(playerKey(s.player), s.position);
+  }
+
   function formBadge(p: Player) {
     const f = form[`${p.club}:${normalizeName(p.name)}`] ?? 0;
     if (f >= 1.5) return "🔥";
@@ -799,9 +807,16 @@ function MatchdaySquadPanel({
               : "border-border/60 bg-background/40"
         }`}
       >
-        <span className="font-mono text-[10px] text-warning w-8 shrink-0">{p.position}</span>
+        <span className="font-mono text-[10px] text-warning w-8 shrink-0">
+          {isStarter ? (slotByKey.get(key) ?? p.position) : p.position}
+        </span>
         <span className="flex-1 truncate">
           {isFranchise && "⭐ "}
+          {isStarter && (slotByKey.get(key) ?? p.position) !== p.position && (
+            <span className="text-[10px] text-muted-foreground mr-1" title="Natural position">
+              ({p.position})
+            </span>
+          )}
           {p.wonderkidId && (
             <span title={`Prospect, age ${p.age} — growing toward ${p.targetRating}`}>✨ </span>
           )}

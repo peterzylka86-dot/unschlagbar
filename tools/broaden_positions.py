@@ -27,9 +27,9 @@ import json
 import os
 
 ADD = {
-    "LW": ["RW"],
-    "RW": ["LW"],
-    "LB": ["RB", "LW"],
+    "LW": ["RW", "ST"],  # wingers switch flanks AND lead the line (Rashford)
+    "RW": ["LW", "ST"],
+    "LB": ["RB", "LW"],  # two-sided + attacking wing-backs
     "RB": ["LB", "RW"],
 }
 

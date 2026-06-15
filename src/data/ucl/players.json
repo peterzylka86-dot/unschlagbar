@@ -159,7 +159,8 @@
     "club": "realmadrid",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -171,7 +172,8 @@
     "club": "realmadrid",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -183,7 +185,8 @@
     "club": "realmadrid",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -369,7 +372,8 @@
     "club": "manchestercity",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -381,7 +385,8 @@
     "club": "manchestercity",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -393,7 +398,8 @@
     "club": "manchestercity",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -570,7 +576,8 @@
     "club": "bayern",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -582,7 +589,8 @@
     "club": "bayern",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -594,7 +602,8 @@
     "club": "bayern",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -771,7 +780,8 @@
     "club": "barcelona",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -783,7 +793,8 @@
     "club": "barcelona",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -795,7 +806,8 @@
     "club": "barcelona",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -807,7 +819,8 @@
     "club": "barcelona",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -980,7 +993,8 @@
     "club": "liverpool",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -992,7 +1006,8 @@
     "club": "liverpool",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -1040,7 +1055,8 @@
     "club": "liverpool",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -1149,7 +1165,8 @@
     "club": "psg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -1161,7 +1178,8 @@
     "club": "psg",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -1191,7 +1209,8 @@
     "club": "psg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -1510,7 +1529,8 @@
     "club": "milan",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -1880,7 +1900,8 @@
     "club": "dortmund",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -1919,7 +1940,8 @@
     "club": "dortmund",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -2020,7 +2042,8 @@
     "club": "chelsea",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -2086,7 +2109,8 @@
     "club": "arsenal",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -2174,7 +2198,8 @@
     "club": "arsenal",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -2329,7 +2354,8 @@
     "club": "manchesterunited",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -2341,7 +2367,8 @@
     "club": "manchesterunited",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -2371,7 +2398,8 @@
     "club": "manchesterunited",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -2383,7 +2411,8 @@
     "club": "manchesterunited",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -2479,7 +2508,8 @@
     "club": "tottenham",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -2500,7 +2530,8 @@
     "club": "tottenham",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -2861,7 +2892,8 @@
     "club": "napoli",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -2873,7 +2905,8 @@
     "club": "napoli",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -3014,7 +3047,8 @@
     "club": "benfica",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -3053,7 +3087,8 @@
     "club": "benfica",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -3134,7 +3169,8 @@
     "nationality": "Brazil",
     "club": "porto",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -3173,7 +3209,8 @@
     "club": "porto",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -3311,7 +3348,8 @@
     "club": "ajax",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -3322,7 +3360,8 @@
     "nationality": "Brazil",
     "club": "ajax",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -3369,7 +3408,8 @@
     "club": "psv",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -3417,7 +3457,8 @@
     "club": "psv",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -3429,7 +3470,8 @@
     "club": "psv",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -3468,7 +3510,8 @@
     "club": "celtic",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -3651,7 +3694,8 @@
     "club": "monaco",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -3800,7 +3844,8 @@
     "nationality": "Spain",
     "club": "valencia",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -3953,7 +3998,8 @@
     "club": "steaua",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4099,7 +4145,8 @@
     "club": "nottinghamforest",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -4338,7 +4385,8 @@
     "club": "astonvilla",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4359,7 +4407,8 @@
     "club": "astonvilla",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -4428,7 +4477,8 @@
     "club": "dynamokyiv",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4512,7 +4562,8 @@
     "club": "galatasaray",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -4603,7 +4654,8 @@
     "club": "realmadrid",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4668,7 +4720,8 @@
     "club": "realmadrid",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4976,7 +5029,8 @@
     "club": "realmadrid",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4996,7 +5050,8 @@
     "club": "realmadrid",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5057,7 +5112,8 @@
     "club": "bayern",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5077,7 +5133,8 @@
     "club": "bayern",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5143,7 +5200,8 @@
     "club": "bayern",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5244,7 +5302,8 @@
     "club": "bayern",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5256,7 +5315,8 @@
     "club": "bayern",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -5382,7 +5442,8 @@
     "club": "barcelona",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -5461,7 +5522,8 @@
     "club": "barcelona",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -5605,7 +5667,8 @@
     "club": "barcelona",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5698,7 +5761,8 @@
     "nationality": "Spain",
     "club": "barcelona",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -5736,7 +5800,8 @@
     "nationality": "Spain",
     "club": "barcelona",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -5748,7 +5813,8 @@
     "club": "barcelona",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5760,7 +5826,8 @@
     "club": "barcelona",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -6315,7 +6382,8 @@
     "club": "milan",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -6345,7 +6413,8 @@
     "club": "milan",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -6481,7 +6550,8 @@
     "club": "milan",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -6747,7 +6817,8 @@
     "club": "juventus",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -6758,7 +6829,8 @@
     "nationality": "Argentina",
     "club": "juventus",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -6832,7 +6904,8 @@
     "club": "juventus",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7126,7 +7199,8 @@
     "club": "juventus",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7138,7 +7212,8 @@
     "club": "juventus",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7269,7 +7344,8 @@
     "club": "atletico",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -7308,7 +7384,8 @@
     "club": "atletico",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7510,7 +7587,8 @@
     "club": "atletico",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -7595,7 +7673,8 @@
     "club": "atletico",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7631,7 +7710,8 @@
     "nationality": "Spain",
     "club": "atletico",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7756,7 +7836,8 @@
     "club": "dortmund",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -7786,7 +7867,8 @@
     "club": "dortmund",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7897,7 +7979,8 @@
     "club": "dortmund",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7909,7 +7992,8 @@
     "club": "dortmund",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7996,7 +8080,8 @@
     "club": "rbleipzig",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -8017,7 +8102,8 @@
     "club": "rbleipzig",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -8054,7 +8140,8 @@
     "prime_rating": 80,
     "club": "rbleipzig",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -8110,7 +8197,8 @@
     "club": "rbleipzig",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -8171,7 +8259,8 @@
     "club": "napoli",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -8183,7 +8272,8 @@
     "club": "napoli",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -8260,7 +8350,8 @@
     "club": "napoli",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -8461,7 +8552,8 @@
     "club": "napoli",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -8553,7 +8645,8 @@
     "club": "valencia",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -8564,7 +8657,8 @@
     "nationality": "Spain",
     "club": "valencia",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -8576,7 +8670,8 @@
     "club": "valencia",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -8635,7 +8730,8 @@
     "club": "valencia",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -8647,7 +8743,8 @@
     "club": "valencia",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -8862,7 +8959,8 @@
     "nationality": "Spain",
     "club": "valencia",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -8912,7 +9010,8 @@
     "club": "hamburg",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -9126,7 +9225,8 @@
     "club": "hamburg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -9241,7 +9341,8 @@
     "club": "hamburg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -9627,7 +9728,8 @@
     "club": "manchesterunited",
     "career_years": "2018-2022",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -9687,7 +9789,8 @@
     "club": "liverpool",
     "career_years": "2019-2022",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -9786,7 +9889,8 @@
     "club": "manchestercity",
     "career_years": "2018-2020",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -9870,7 +9974,8 @@
     "club": "manchestercity",
     "career_years": "2019-2022",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -10213,7 +10318,8 @@
     "club": "manchesterunited",
     "career_years": "2017-2019",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -10256,7 +10362,8 @@
     "club": "liverpool",
     "career_years": "2019-2022",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -10375,7 +10482,8 @@
     "club": "tottenham",
     "career_years": "2017-2018",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -10550,7 +10658,8 @@
     "career_years": "2018-2022",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -10597,7 +10706,8 @@
     "club": "manchestercity",
     "career_years": "2019-2022",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -10908,7 +11018,8 @@
     "club": "tottenham",
     "career_years": "2020-2021",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -10994,7 +11105,8 @@
     "career_years": "2020-2022",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -11344,7 +11456,8 @@
     "club": "arsenal",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -11356,7 +11469,8 @@
     "club": "arsenal",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -11458,7 +11572,8 @@
     "club": "manchesterunited",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -11605,7 +11720,8 @@
     "club": "tottenham",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -11718,7 +11834,8 @@
     "club": "manchestercity",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -11877,7 +11994,8 @@
     "club": "psg",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -11934,7 +12052,8 @@
     "club": "psg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -11946,7 +12065,8 @@
     "club": "psg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12042,7 +12162,8 @@
     "club": "psv",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -12081,7 +12202,8 @@
     "club": "benfica",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -12256,7 +12378,8 @@
     "club": "celtic",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12277,7 +12400,8 @@
     "club": "marseille",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -12307,7 +12431,8 @@
     "club": "marseille",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12328,7 +12453,8 @@
     "club": "monaco",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -12409,7 +12535,8 @@
     "nationality": "Germany",
     "club": "bayer",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12466,7 +12593,8 @@
     "club": "bayer",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -12487,7 +12615,8 @@
     "club": "bayer",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12561,7 +12690,8 @@
     "club": "galatasaray",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -12706,7 +12836,8 @@
     "club": "crvenazvezda",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -12736,7 +12867,8 @@
     "club": "dynamokyiv",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -12805,7 +12937,8 @@
     "club": "realmadrid",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -12817,7 +12950,8 @@
     "club": "realmadrid",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12828,7 +12962,8 @@
     "nationality": "Spain",
     "club": "realmadrid",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12867,7 +13002,8 @@
     "club": "realmadrid",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12888,7 +13024,8 @@
     "club": "realmadrid",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12900,7 +13037,8 @@
     "club": "realmadrid",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12930,7 +13068,8 @@
     "club": "barcelona",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12991,7 +13130,8 @@
     "club": "barcelona",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {

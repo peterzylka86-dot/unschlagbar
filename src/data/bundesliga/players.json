@@ -17,7 +17,8 @@
     "club": "frankfurt",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -110,7 +111,8 @@
     "club": "frankfurt",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -337,7 +339,8 @@
     "club": "leipzig",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -358,7 +361,8 @@
     "club": "leipzig",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -588,7 +592,8 @@
     "club": "leverkusen",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -644,7 +649,8 @@
     "career_years": "1996-2009",
     "club": "leverkusen",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -713,7 +719,8 @@
     "club": "leverkusen",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -725,7 +732,8 @@
     "club": "leverkusen",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -888,7 +896,8 @@
     "club": "dortmund",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -918,7 +927,8 @@
     "club": "dortmund",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -930,7 +940,8 @@
     "club": "dortmund",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -1045,7 +1056,8 @@
     "club": "bayern",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -1057,7 +1069,8 @@
     "club": "bayern",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -1140,7 +1153,8 @@
     "club": "bayern",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -1276,7 +1290,8 @@
     "club": "wolfsburg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -1328,7 +1343,8 @@
     "club": "wolfsburg",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -1389,7 +1405,8 @@
     "club": "gladbach",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -1455,7 +1472,8 @@
     "club": "gladbach",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -1521,7 +1539,8 @@
     "club": "gladbach",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -1582,7 +1601,8 @@
     "club": "freiburg",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -1643,7 +1663,8 @@
     "club": "freiburg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -1836,7 +1857,8 @@
     "club": "hoffenheim",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -1874,7 +1896,8 @@
     "club": "hoffenheim",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -1962,7 +1985,8 @@
     "club": "augsburg",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -1974,7 +1998,8 @@
     "club": "augsburg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -2004,7 +2029,8 @@
     "club": "augsburg",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -2182,7 +2208,8 @@
     "club": "werder",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -2315,7 +2342,8 @@
     "club": "hamburg",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -2653,7 +2681,8 @@
     "club": "schalke",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -2719,7 +2748,8 @@
     "club": "schalke",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -2776,7 +2806,8 @@
     "club": "schalke",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -2828,7 +2859,8 @@
     "club": "koln",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -2866,7 +2898,8 @@
     "club": "koln",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -2980,7 +3013,8 @@
     "club": "koln",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -3068,7 +3102,8 @@
     "club": "mainz",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -3116,7 +3151,8 @@
     "club": "mainz",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -3128,7 +3164,8 @@
     "club": "mainz",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -3318,7 +3355,8 @@
     "club": "hertha",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -3361,7 +3399,8 @@
     "club": "heidenheim",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -3413,7 +3452,8 @@
     "club": "heidenheim",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -3434,7 +3474,8 @@
     "club": "heidenheim",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -3468,7 +3509,8 @@
     "club": "heidenheim",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -3685,7 +3727,8 @@
     "club": "bochum",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -3835,7 +3878,8 @@
     "club": "kaiserslautern",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -3937,7 +3981,8 @@
     "club": "darmstadt",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4018,7 +4063,8 @@
     "club": "darmstadt",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -4158,7 +4204,8 @@
     "club": "uerdingen",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4237,7 +4284,8 @@
     "club": "1860",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4294,7 +4342,8 @@
     "club": "1860",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -4462,7 +4511,8 @@
     "club": "nuernberg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4505,7 +4555,8 @@
     "club": "hannover",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4544,7 +4595,8 @@
     "club": "hannover",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -4614,7 +4666,8 @@
     "club": "hannover",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -4626,7 +4679,8 @@
     "club": "rotweissessen",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4638,7 +4692,8 @@
     "club": "rotweissessen",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -4966,7 +5021,8 @@
     "club": "saarbruecken",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5186,7 +5242,8 @@
     "club": "cottbus",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -5269,7 +5326,8 @@
     "club": "duisburg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5312,7 +5370,8 @@
     "club": "duisburg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5431,7 +5490,8 @@
     "club": "dynamodresden",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5514,7 +5574,8 @@
     "club": "fortunaduesseldorf",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -5562,7 +5623,8 @@
     "club": "fortunaduesseldorf",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5587,7 +5649,8 @@
     "club": "meidericher",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5740,7 +5803,8 @@
     "club": "stpauli",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -5831,7 +5895,8 @@
     "club": "stpauli",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5963,7 +6028,8 @@
     "club": "bielefeld",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -6093,7 +6159,8 @@
     "career_years": "1978-1981",
     "club": "bremerhaven",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -6124,7 +6191,8 @@
     "career_years": "1977-1979",
     "club": "bremerhaven",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -6136,7 +6204,8 @@
     "club": "offenbach",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -6264,7 +6333,8 @@
     "club": "aachen",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -6583,7 +6653,8 @@
     "club": "stpaderborn",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -6639,7 +6710,8 @@
     "club": "stpaderborn",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -6709,7 +6781,8 @@
     "club": "unterhaching",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -6873,7 +6946,8 @@
     "position": "RW",
     "club": "ingolstadt",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -6920,7 +6994,8 @@
     "club": "ingolstadt",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -7139,7 +7214,8 @@
     "prime_rating": 77,
     "club": "munich1860",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -7255,7 +7331,8 @@
     "prime_rating": 77,
     "club": "blauweiss90",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7266,7 +7343,8 @@
     "nationality": "Germany",
     "club": "stuttgartkickers",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7301,7 +7379,8 @@
     "career_years": "1980-1992, 1994-1995",
     "club": "stuttgartkickers",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7379,7 +7458,8 @@
     "club": "dortmund",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -7407,7 +7487,8 @@
     "name": "Gustav Jung",
     "club": "wuppertaler",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7549,7 +7630,8 @@
     "club": "tennisborussia",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7647,7 +7729,8 @@
     "club": "leipzigvfb",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7724,7 +7807,8 @@
     "club": "bayern",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7790,7 +7874,8 @@
     "club": "bayern",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7900,7 +7985,8 @@
     "club": "bayern",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7912,7 +7998,8 @@
     "club": "bayern",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -7924,7 +8011,8 @@
     "club": "bayern",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -8118,7 +8206,8 @@
     "club": "dortmund",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -8130,7 +8219,8 @@
     "club": "dortmund",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -8223,7 +8313,8 @@
     "club": "leverkusen",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -8244,7 +8335,8 @@
     "club": "leverkusen",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -8340,7 +8432,8 @@
     "prime_rating": 80,
     "club": "leipzig",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -8433,7 +8526,8 @@
     "club": "frankfurt",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -8655,7 +8749,8 @@
     "club": "stuttgart",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -8742,7 +8837,8 @@
     "club": "wolfsburg",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -8772,7 +8868,8 @@
     "club": "wolfsburg",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -8881,7 +8978,8 @@
     "club": "gladbach",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -8990,7 +9088,8 @@
     "club": "freiburg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -9112,7 +9211,8 @@
     "club": "freiburg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -9124,7 +9224,8 @@
     "club": "freiburg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -9641,7 +9742,8 @@
     "club": "hamburg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -9711,7 +9813,8 @@
     "club": "schalke",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -9876,7 +9979,8 @@
     "club": "schalke",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -10025,7 +10129,8 @@
     "club": "koln",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -10073,7 +10178,8 @@
     "club": "hertha",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -10166,7 +10272,8 @@
     "club": "hertha",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -10213,7 +10320,8 @@
     "club": "hertha",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -10270,7 +10378,8 @@
     "club": "kaiserslautern",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -10441,7 +10550,8 @@
     "club": "bochum",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -10542,7 +10652,8 @@
     "club": "stpauli",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -10809,7 +10920,8 @@
     "prime_rating": 77,
     "club": "karlsruhe",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -10950,7 +11062,8 @@
     "club": "heidenheim",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -11100,7 +11213,8 @@
     "prime_rating": 78,
     "club": "cottbus",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -11129,7 +11243,8 @@
     "club": "dynamodresden",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -11150,7 +11265,8 @@
     "club": "fortunaduesseldorf",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -11252,7 +11368,8 @@
     "club": "bielefeld",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -11291,7 +11408,8 @@
     "club": "furth",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -11379,7 +11497,8 @@
     "club": "hamburg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12001,7 +12120,8 @@
     "club": "dortmund",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -12074,7 +12194,8 @@
     "club": "leipzig",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12149,7 +12270,8 @@
     "club": "frankfurt",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12161,7 +12283,8 @@
     "club": "frankfurt",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12292,7 +12415,8 @@
     "club": "hoffenheim",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12391,7 +12515,8 @@
     "club": "augsburg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12428,7 +12553,8 @@
     "nationality": "PAR",
     "club": "werder",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12448,7 +12574,8 @@
     "nationality": "HUN",
     "club": "union",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -12537,7 +12664,8 @@
     "club": "schalke",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -12549,7 +12677,8 @@
     "club": "schalke",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -12669,7 +12798,8 @@
     "nationality": "GER",
     "club": "bochum",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12681,7 +12811,8 @@
     "club": "bochum",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12692,7 +12823,8 @@
     "nationality": "GHA",
     "club": "bochum",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -12743,7 +12875,8 @@
     "nationality": "AUT",
     "club": "darmstadt",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12803,7 +12936,8 @@
     "nationality": "GER",
     "club": "1860",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12814,7 +12948,8 @@
     "nationality": "GER",
     "club": "1860",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -12826,7 +12961,8 @@
     "club": "nuernberg",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -12837,7 +12973,8 @@
     "nationality": "GER",
     "club": "nuernberg",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -12849,7 +12986,8 @@
     "club": "nuernberg",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12860,7 +12998,8 @@
     "nationality": "GER",
     "club": "nuernberg",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12871,7 +13010,8 @@
     "nationality": "GER",
     "club": "hannover",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12882,7 +13022,8 @@
     "nationality": "BRA",
     "club": "hannover",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12893,7 +13034,8 @@
     "nationality": "GER",
     "club": "karlsruhe",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12904,7 +13046,8 @@
     "nationality": "GER",
     "club": "karlsruhe",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -12963,7 +13106,8 @@
     "nationality": "GER",
     "club": "rotweissessen",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12974,7 +13118,8 @@
     "nationality": "GER",
     "club": "rotweissessen",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13029,7 +13174,8 @@
     "nationality": "GER",
     "club": "saarbruecken",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13100,7 +13246,8 @@
     "nationality": "GER",
     "club": "duisburg",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13132,7 +13279,8 @@
     "nationality": "GER",
     "club": "dynamodresden",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13143,7 +13291,8 @@
     "nationality": "GER",
     "club": "stpauli",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13155,7 +13304,8 @@
     "club": "stpauli",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13202,7 +13352,8 @@
     "nationality": "GER",
     "club": "braunschweig",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13249,7 +13400,8 @@
     "nationality": "GER",
     "club": "bremerhaven",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13280,7 +13432,8 @@
     "nationality": "GER",
     "club": "offenbach",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13291,7 +13444,8 @@
     "nationality": "GER",
     "club": "offenbach",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13330,7 +13484,8 @@
     "nationality": "GER",
     "club": "aachen",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13341,7 +13496,8 @@
     "nationality": "GER",
     "club": "aachen",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13369,7 +13525,8 @@
     "nationality": "GER",
     "club": "wattenscheid",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13380,7 +13537,8 @@
     "nationality": "CRO",
     "club": "wattenscheid",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13399,7 +13557,8 @@
     "nationality": "GER",
     "club": "ulm",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13410,7 +13569,8 @@
     "nationality": "SCG",
     "club": "ulm",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13421,7 +13581,8 @@
     "nationality": "GER",
     "club": "ulm",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13432,7 +13593,8 @@
     "nationality": "SUI",
     "club": "ulm",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13467,7 +13629,8 @@
     "nationality": "GER",
     "club": "unterhaching",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13486,7 +13649,8 @@
     "nationality": "GER",
     "club": "furth",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13497,7 +13661,8 @@
     "nationality": "GER",
     "club": "furth",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13517,7 +13682,8 @@
     "nationality": "GER",
     "club": "sandhausen",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13528,7 +13694,8 @@
     "nationality": "GER",
     "club": "sandhausen",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13539,7 +13706,8 @@
     "nationality": "RUS",
     "club": "sandhausen",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13574,7 +13742,8 @@
     "nationality": "GER",
     "club": "munich1860",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13585,7 +13754,8 @@
     "nationality": "GER",
     "club": "munich1860",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13596,7 +13766,8 @@
     "nationality": "GER",
     "club": "blauweiss90",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13607,7 +13778,8 @@
     "nationality": "GER",
     "club": "blauweiss90",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13654,7 +13826,8 @@
     "nationality": "GER",
     "club": "stuttgartkickers",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13665,7 +13838,8 @@
     "nationality": "GER",
     "club": "stuttgartkickers",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13724,7 +13898,8 @@
     "nationality": "GER",
     "club": "tennisborussia",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13735,7 +13910,8 @@
     "nationality": "GER",
     "club": "tennisborussia",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13771,7 +13947,8 @@
     "club": "leipzigvfb",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13782,7 +13959,8 @@
     "nationality": "GER",
     "club": "leipzigvfb",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13794,7 +13972,8 @@
     "club": "union",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13805,7 +13984,8 @@
     "nationality": "GER",
     "club": "union",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13817,7 +13997,8 @@
     "club": "uerdingen",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13828,7 +14009,8 @@
     "nationality": "GER",
     "club": "uerdingen",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13840,7 +14022,8 @@
     "club": "hansa",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13851,7 +14034,8 @@
     "nationality": "POL",
     "club": "hansa",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13863,7 +14047,8 @@
     "club": "hansa",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13907,7 +14092,8 @@
     "nationality": "ARG",
     "club": "hoffenheim",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13918,7 +14104,8 @@
     "nationality": "GER",
     "club": "mainz",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13930,7 +14117,8 @@
     "club": "werder",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13941,7 +14129,8 @@
     "nationality": "FRA",
     "club": "kaiserslautern",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13961,7 +14150,8 @@
     "club": "darmstadt",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13972,7 +14162,8 @@
     "nationality": "CRO",
     "club": "karlsruhe",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -14020,7 +14211,8 @@
     "nationality": "GER",
     "club": "cottbus",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -14067,7 +14259,8 @@
     "nationality": "GER",
     "club": "duisburg",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -14131,7 +14324,8 @@
     "nationality": "AUT",
     "club": "fortunaduesseldorf",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -14183,7 +14377,8 @@
     "nationality": "GER",
     "club": "bielefeld",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -14194,7 +14389,8 @@
     "nationality": "GER",
     "club": "bielefeld",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -14297,7 +14493,8 @@
     "nationality": "GER",
     "club": "wattenscheid",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -14308,7 +14505,8 @@
     "nationality": "GER",
     "club": "wattenscheid",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -14347,7 +14545,8 @@
     "nationality": "COD",
     "club": "stpaderborn",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -14358,7 +14557,8 @@
     "nationality": "GER",
     "club": "stpaderborn",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -14381,7 +14581,8 @@
     "nationality": "BIH",
     "club": "unterhaching",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -14392,7 +14593,8 @@
     "nationality": "GER",
     "club": "unterhaching",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -14456,7 +14658,8 @@
     "club": "ingolstadt",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -14495,7 +14698,8 @@
     "nationality": "GER",
     "club": "munich1860",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -14562,7 +14766,8 @@
     "nationality": "GER",
     "club": "blauweiss90",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -14609,7 +14814,8 @@
     "nationality": "GER",
     "club": "wuppertaler",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -14620,7 +14826,8 @@
     "nationality": "GER",
     "club": "wuppertaler",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -14671,7 +14878,8 @@
     "nationality": "GER",
     "club": "tennisborussia",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -14714,7 +14922,8 @@
     "nationality": "GER",
     "club": "viktoriakoln",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -14725,7 +14934,8 @@
     "nationality": "GER",
     "club": "viktoriakoln",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -14776,7 +14986,8 @@
     "nationality": "GER",
     "club": "leipzigvfb",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {

@@ -141,7 +141,8 @@
     "club": "juventus",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -152,7 +153,8 @@
     "nationality": "Argentina",
     "club": "juventus",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -289,7 +291,8 @@
     "club": "juventus",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -646,7 +649,8 @@
     "club": "juventus",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -658,7 +662,8 @@
     "club": "juventus",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -817,7 +822,8 @@
     "club": "milan",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -829,7 +835,8 @@
     "club": "milan",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -859,7 +866,8 @@
     "club": "milan",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -1088,7 +1096,8 @@
     "club": "milan",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -1938,7 +1947,8 @@
     "club": "napoli",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -1950,7 +1960,8 @@
     "club": "napoli",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -1962,7 +1973,8 @@
     "club": "napoli",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -2048,7 +2060,8 @@
     "club": "napoli",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -2087,7 +2100,8 @@
     "club": "napoli",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -2297,7 +2311,8 @@
     "club": "napoli",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -2407,7 +2422,8 @@
     "club": "roma",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -2674,7 +2690,8 @@
     "club": "roma",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -2890,7 +2907,8 @@
     "club": "lazio",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -2901,7 +2919,8 @@
     "nationality": "Spain",
     "club": "lazio",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -2994,7 +3013,8 @@
     "club": "lazio",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -3006,7 +3026,8 @@
     "club": "lazio",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -3139,7 +3160,8 @@
     "club": "lazio",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -3208,7 +3230,8 @@
     "club": "lazio",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -3376,7 +3399,8 @@
     "club": "atalanta",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -3493,7 +3517,8 @@
     "club": "atalanta",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -3699,7 +3724,8 @@
     "club": "fiorentina",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -3858,7 +3884,8 @@
     "club": "fiorentina",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -3940,7 +3967,8 @@
     "club": "fiorentina",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4113,7 +4141,8 @@
     "club": "bologna",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4125,7 +4154,8 @@
     "club": "bologna",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4494,7 +4524,8 @@
     "nationality": "Italy",
     "club": "torino",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4506,7 +4537,8 @@
     "club": "torino",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4697,7 +4729,8 @@
     "club": "udinese",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4799,7 +4832,8 @@
     "club": "udinese",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -4916,7 +4950,8 @@
     "club": "udinese",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5171,7 +5206,8 @@
     "club": "genoa",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5300,7 +5336,8 @@
     "club": "lecce",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -5330,7 +5367,8 @@
     "club": "lecce",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5481,7 +5519,8 @@
     "club": "verona",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5493,7 +5532,8 @@
     "club": "verona",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -5541,7 +5581,8 @@
     "club": "verona",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5655,7 +5696,8 @@
     "club": "verona",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5755,7 +5797,8 @@
     "club": "cagliari",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -5956,7 +5999,8 @@
     "club": "cagliari",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -6350,7 +6394,8 @@
     "club": "como",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -6496,7 +6541,8 @@
     "club": "parma",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -6633,7 +6679,8 @@
     "club": "parma",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -6707,7 +6754,8 @@
     "club": "parma",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -6998,7 +7046,8 @@
     "club": "sassuolo",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7439,7 +7488,8 @@
     "club": "foggia",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7518,7 +7568,8 @@
     "club": "foggia",
     "verified": true,
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -7579,7 +7630,8 @@
     "nationality": "Italy",
     "club": "padova",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7809,7 +7861,8 @@
     "club": "avellino",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7839,7 +7892,8 @@
     "club": "avellino",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -7866,7 +7920,8 @@
     "nationality": "Italy",
     "club": "avellino",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -8099,7 +8154,8 @@
     "club": "roma",
     "verified": true,
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -8570,7 +8626,8 @@
     "club": "pescara",
     "career_years": "2016-2017",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -8597,7 +8654,8 @@
     "club": "sassuolo",
     "career_years": "2016-2018",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -8608,7 +8666,8 @@
     "club": "novara",
     "career_years": "2016-2018",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -9247,7 +9306,8 @@
     "club": "sassuolo",
     "career_years": "2017-2018",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -9486,7 +9546,8 @@
     "club": "cesena",
     "career_years": "2016-2017",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -9617,7 +9678,8 @@
     "club": "cesena",
     "career_years": "2016-2017",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -9644,7 +9706,8 @@
     "club": "trapani",
     "career_years": "2016-2017",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -9796,7 +9859,8 @@
     "club": "pescara",
     "career_years": "2016-2017",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -9839,7 +9903,8 @@
     "club": "vicenza",
     "career_years": "2016-2017",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -10186,7 +10251,8 @@
     "club": "salernitana",
     "career_years": "2017-2018",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -11021,7 +11087,8 @@
     "club": "cremonese",
     "career_years": "2017-2018",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -11276,7 +11343,8 @@
     "club": "entella",
     "career_years": "2017-2020",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -11435,7 +11503,8 @@
     "club": "pescara",
     "career_years": "2018-2019",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -11526,7 +11595,8 @@
     "club": "cesena",
     "career_years": "2017-2018",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -11601,7 +11671,8 @@
     "club": "salernitana",
     "career_years": "2017-2018",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -11992,7 +12063,8 @@
     "club": "pescara",
     "career_years": "2018-2019",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12311,7 +12383,8 @@
     "club": "perugia",
     "career_years": "2018-2019",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12582,7 +12655,8 @@
     "club": "carpi",
     "career_years": "2018-2019",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12865,7 +12939,8 @@
     "club": "salernitana",
     "career_years": "2018-2020",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -12896,7 +12971,8 @@
     "club": "cittadella",
     "career_years": "2018-2019",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13003,7 +13079,8 @@
     "club": "carpi",
     "career_years": "2018-2019",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13054,7 +13131,8 @@
     "club": "livorno",
     "career_years": "2018-2019",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13121,7 +13199,8 @@
     "club": "spal",
     "career_years": "2018-2019",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13224,7 +13303,8 @@
     "club": "cremonese",
     "career_years": "2018-2019",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13335,7 +13415,8 @@
     "club": "pescara",
     "career_years": "2018-2019",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -13967,7 +14048,8 @@
     "club": "spezia",
     "career_years": "2019-2020",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -13998,7 +14080,8 @@
     "club": "pisa",
     "career_years": "2019-2020",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -14009,7 +14092,8 @@
     "club": "lecce",
     "career_years": "2019-2020",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -14020,7 +14104,8 @@
     "club": "pescara",
     "career_years": "2019-2020",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -14111,7 +14196,8 @@
     "club": "spezia",
     "career_years": "2019-2020",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -14290,7 +14376,8 @@
     "club": "novara",
     "career_years": "2019-2020",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -14321,7 +14408,8 @@
     "club": "cittadella",
     "career_years": "2019-2020",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -14412,7 +14500,8 @@
     "club": "spezia",
     "career_years": "2019-2020",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -14839,7 +14928,8 @@
     "club": "frosinone",
     "career_years": "2020-2021",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -14878,7 +14968,8 @@
     "club": "salernitana",
     "career_years": "2020-2022",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -14921,7 +15012,8 @@
     "club": "spezia",
     "career_years": "2020-2021",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -14944,7 +15036,8 @@
     "club": "trapani",
     "career_years": "2020-2022",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -15271,7 +15364,8 @@
     "club": "spezia",
     "career_years": "2020-2021",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
@@ -15338,7 +15432,8 @@
     "club": "salernitana",
     "career_years": "2020-2021",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -15809,7 +15904,8 @@
     "club": "spezia",
     "career_years": "2021-2022",
     "altPositions": [
-      "LW"
+      "LW",
+      "ST"
     ]
   },
   {
@@ -15944,7 +16040,8 @@
     "club": "frosinone",
     "career_years": "2021-2022",
     "altPositions": [
-      "RW"
+      "RW",
+      "ST"
     ]
   },
   {
