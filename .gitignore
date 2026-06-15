@@ -39,3 +39,4 @@ package-lock.json
 
 # jfjelstul WC dataset cache (downloaded CSVs for tools/build_wc_squads.py)
 tools/.wc_cache/
+data-src/
