@@ -119,7 +119,7 @@ function CareerSeason() {
   // Safe fallback for HUD label; the actual pool is the cross-league super-pool.
   const leagueId = (career.leagueId ?? "ucl") as LeagueId;
   void leagueId; // still referenced for the HUD subtitle below
-  const clubs = useMemo(() => getCareerClubs(), []);
+  const clubs = useMemo(() => getCareerClubs(career.foundingClubId, career.careerMode), [career.foundingClubId, career.careerMode]);
 
   // Build the opponent list: 11 AI rivals × their founding clubs.
   //

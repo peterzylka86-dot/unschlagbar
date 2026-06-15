@@ -126,7 +126,10 @@ function CareerDraft() {
   // GOLAZO super-league pool: elite clubs (strength ≥ 80) across the career
   // leagues, PLUS the user's founding club. Picking GC doesn't trap you in
   // Switzerland and doesn't dilute the draft with Pro-Vercelli-tier clubs.
-  const allClubs = useMemo(() => getCareerClubs(career.foundingClubId), [career.foundingClubId]);
+  const allClubs = useMemo(
+    () => getCareerClubs(career.foundingClubId, career.careerMode),
+    [career.foundingClubId, career.careerMode],
+  );
   const allPlayers = useMemo(
     () => getCareerPlayers(career.foundingClubId, career.careerMode),
     [career.foundingClubId, career.careerMode],

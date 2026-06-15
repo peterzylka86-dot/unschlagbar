@@ -46,7 +46,10 @@ function PostSeason() {
     () => getCareerPlayers(career.foundingClubId, career.careerMode),
     [career.foundingClubId, career.careerMode],
   );
-  const allClubs = useMemo(() => getCareerClubs(career.foundingClubId), [career.foundingClubId]);
+  const allClubs = useMemo(
+    () => getCareerClubs(career.foundingClubId, career.careerMode),
+    [career.foundingClubId, career.careerMode],
+  );
 
   // Rival turnover — computed ONCE at mount so the transfer-news card can
   // show what the league did while the user decides their own swaps.

@@ -15,6 +15,7 @@ import { useState } from "react";
 import { LEAGUES } from "@/lib/leagues";
 import type { LeagueId } from "@/lib/leagues";
 import { getClubs } from "@/lib/data";
+import { realLeagues } from "@/lib/real-data";
 import { useCareer } from "@/lib/career-store";
 
 export const Route = createFileRoute("/career/found")({
@@ -36,12 +37,17 @@ const CAREER_LEAGUES: LeagueId[] = [
 function FoundingClubPicker() {
   const startCareer = useCareer((s) => s.startCareer);
   const navigate = useNavigate();
-  const [activeLeague, setActiveLeague] = useState<LeagueId>("ucl");
   const [mode, setMode] = useState<"real" | "legends">("legends");
+  const [activeLegends, setActiveLegends] = useState<LeagueId>("ucl");
+  const realLgs = realLeagues();
+  const [activeReal, setActiveReal] = useState<string>(realLgs[0]?.slug ?? "es1");
 
-  const clubs = getClubs(activeLeague);
-  // Show the strongest clubs first — they're what most newcomers expect
-  const sortedClubs = [...clubs].sort((a, b) => b.strength - a.strength);
+  const activeLeague = mode === "real" ? activeReal : activeLegends;
+  // Strongest clubs first — what most newcomers expect.
+  const sortedClubs =
+    mode === "real"
+      ? (realLgs.find((l) => l.slug === activeReal)?.clubs ?? [])
+      : [...getClubs(activeLegends)].sort((a, b) => b.strength - a.strength);
 
   function pick(clubId: string) {
     startCareer(clubId, activeLeague, mode);
@@ -94,27 +100,46 @@ function FoundingClubPicker() {
 
       <section className="mt-8">
         <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">League</div>
-        <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
-          {CAREER_LEAGUES.map((lid) => (
-            <button
-              key={lid}
-              onClick={() => setActiveLeague(lid)}
-              className={`p-3 rounded-xl border text-center transition ${
-                activeLeague === lid
-                  ? "border-warning bg-warning/15 text-warning"
-                  : "border-border bg-card hover:border-foreground/30"
-              }`}
-            >
-              <div className="text-lg leading-none">{LEAGUES[lid].flag}</div>
-              <div className="mt-1 text-[11px] font-display">{LEAGUES[lid].name}</div>
-            </button>
-          ))}
-        </div>
+        {mode === "real" ? (
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+            {realLgs.map((lg) => (
+              <button
+                key={lg.slug}
+                onClick={() => setActiveReal(lg.slug)}
+                className={`p-3 rounded-xl border text-center transition ${
+                  activeReal === lg.slug
+                    ? "border-warning bg-warning/15 text-warning"
+                    : "border-border bg-card hover:border-foreground/30"
+                }`}
+              >
+                <div className="text-[11px] font-display leading-tight">{lg.name}</div>
+                <div className="mt-0.5 text-[9px] text-muted-foreground">{lg.country}</div>
+              </button>
+            ))}
+          </div>
+        ) : (
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+            {CAREER_LEAGUES.map((lid) => (
+              <button
+                key={lid}
+                onClick={() => setActiveLegends(lid)}
+                className={`p-3 rounded-xl border text-center transition ${
+                  activeLegends === lid
+                    ? "border-warning bg-warning/15 text-warning"
+                    : "border-border bg-card hover:border-foreground/30"
+                }`}
+              >
+                <div className="text-lg leading-none">{LEAGUES[lid].flag}</div>
+                <div className="mt-1 text-[11px] font-display">{LEAGUES[lid].name}</div>
+              </button>
+            ))}
+          </div>
+        )}
       </section>
 
       <section className="mt-8">
         <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
-          Clubs in {LEAGUES[activeLeague].name} ({sortedClubs.length})
+          {sortedClubs.length} clubs
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
           {sortedClubs.map((club) => (
@@ -126,7 +151,7 @@ function FoundingClubPicker() {
             >
               <div className="font-display text-sm truncate">{club.name}</div>
               <div className="text-[11px] text-muted-foreground mt-0.5 truncate">
-                {club.city} · Strength {club.strength}
+                {club.city ? `${club.city} · ` : ""}Strength {club.strength}
               </div>
             </button>
           ))}

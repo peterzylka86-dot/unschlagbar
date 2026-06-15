@@ -267,12 +267,12 @@ describe("GOLAZO career modes (real vs legends)", () => {
     expect(isCurrentPlayer({ career_years: "" } as never)).toBe(false);
   });
 
-  it("real mode is a non-empty subset of the legends pool", () => {
-    const legends = getCareerPlayers(null, "legends");
+  it("real mode draws a large current-squad pool (EA FC 25/26)", () => {
     const real = getCareerPlayers(null, "real");
-    expect(real.length).toBeGreaterThan(200); // enough to draft current squads
-    expect(real.length).toBeLessThan(legends.length); // strictly fewer than all-time
-    expect(real.every(isCurrentPlayer)).toBe(true);
+    expect(real.length).toBeGreaterThan(2000); // full squads across many leagues
+    expect(real.every((p) => p.career_years === "2025-2026")).toBe(true);
+    // Native multi-positions came through (the alt fix for free).
+    expect(real.some((p) => (p.altPositions?.length ?? 0) > 0)).toBe(true);
   });
 
   it("defaults to the full legends pool", () => {

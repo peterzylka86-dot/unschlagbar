@@ -13,6 +13,7 @@
 import { createFileRoute, Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { useCareer } from "@/lib/career-store";
 import { LEAGUES, type LeagueId } from "@/lib/leagues";
+import { realLeagueName } from "@/lib/real-data";
 import { getCareerClubs } from "@/lib/data";
 import { dynastyStatus } from "@/lib/dynasty";
 
@@ -35,7 +36,9 @@ function CareerHub() {
   if (onChildRoute) return <Outlet />;
 
   const hasActive = career.foundingClubId !== null;
-  const club = hasActive ? getCareerClubs().find((c) => c.id === career.foundingClubId) : null;
+  const club = hasActive
+    ? getCareerClubs(career.foundingClubId, career.careerMode).find((c) => c.id === career.foundingClubId)
+    : null;
 
   return (
     <div className="min-h-screen px-4 py-10 max-w-2xl mx-auto">
@@ -71,7 +74,11 @@ function CareerHub() {
         {hasActive && club ? (
           <ActiveCareerCard
             clubName={club.name}
-            leagueName={LEAGUES[(career.leagueId ?? "ucl") as LeagueId].name}
+            leagueName={
+              career.careerMode === "real"
+                ? (realLeagueName(career.leagueId) ?? "Real")
+                : LEAGUES[(career.leagueId ?? "ucl") as LeagueId].name
+            }
             currentSeason={career.currentSeason}
             trophies={career.trophies}
             hasSquad={career.squad.length > 0}

@@ -48,7 +48,7 @@ interface CupState {
 function CareerCup() {
   const career = useCareer();
   const navigate = useNavigate();
-  const clubs = useMemo(() => getCareerClubs(), []);
+  const clubs = useMemo(() => getCareerClubs(career.foundingClubId, career.careerMode), [career.foundingClubId, career.careerMode]);
 
   // The user's average squad rating drives match outcomes
   const userRating = useMemo(() => {

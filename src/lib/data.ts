@@ -1,6 +1,7 @@
 import { z } from "zod";
 import type { Club, Player } from "./game-types";
 import type { LeagueId } from "./leagues";
+import { realCareerClubs, realCareerPlayers } from "./real-data";
 
 import bundesligaClubs from "@/data/bundesliga/clubs.json";
 import bundesligaPlayers from "@/data/bundesliga/players.json";
@@ -167,8 +168,13 @@ function _allCareerClubs(): Club[] {
   return Array.from(seen.values());
 }
 
-/** Elite-only career pool clubs. Always includes the user's founding club. */
-export function getCareerClubs(foundingClubId?: string | null): Club[] {
+/** Elite-only career pool clubs. Always includes the user's founding club.
+ *  Real mode draws from the full EA FC universe (every real club). */
+export function getCareerClubs(
+  foundingClubId?: string | null,
+  mode: import("./game-types").CareerMode = "legends",
+): Club[] {
+  if (mode === "real") return realCareerClubs();
   const key = foundingClubId ?? "";
   const hit = _careerClubsCache.get(key);
   if (hit) return hit;
@@ -200,6 +206,7 @@ export function getCareerPlayers(
   foundingClubId?: string | null,
   mode: import("./game-types").CareerMode = "legends",
 ): Player[] {
+  if (mode === "real") return realCareerPlayers();
   const key = `${foundingClubId ?? ""}|${mode}`;
   const hit = _careerPlayersCache.get(key);
   if (hit) return hit;
@@ -208,7 +215,6 @@ export function getCareerPlayers(
   for (const lg of CAREER_POOL_LEAGUES) {
     for (const p of DATA[lg].players) {
       if (!clubIds.has(p.club)) continue;
-      if (mode === "real" && !isCurrentPlayer(p)) continue;
       const k = `${p.club}:${p.name}`;
       if (!seen.has(k)) seen.set(k, p);
     }

@@ -48,7 +48,7 @@ function CareerRecap() {
 
   const latest = career.seasonHistory[career.seasonHistory.length - 1] ?? null;
   const leagueId = (latest?.leagueId ?? career.leagueId ?? "ucl") as LeagueId;
-  const clubs = useMemo(() => getCareerClubs(), []);
+  const clubs = useMemo(() => getCareerClubs(career.foundingClubId, career.careerMode), [career.foundingClubId, career.careerMode]);
   const club = useMemo(
     () => clubs.find((c) => c.id === (latest?.foundingClubId ?? career.foundingClubId)) ?? null,
     [clubs, latest, career.foundingClubId],

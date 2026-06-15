@@ -43,6 +43,9 @@ export interface Player {
   wonderkidId?: string;
   targetRating?: number;
   age?: number;
+  /** Real-mode (EA FC) potential ceiling — used by the ageing curve so a
+   *  young current player can still develop toward his peak. */
+  potential?: number;
 }
 
 export interface Slot {
