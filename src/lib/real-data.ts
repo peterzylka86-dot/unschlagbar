@@ -14,6 +14,7 @@
 import type { Club, Player } from "./game-types";
 import clubsJson from "@/data/real/clubs.json";
 import playersJson from "@/data/real/players.json";
+import transfersJson from "@/data/real/transfers.json";
 
 export interface RealClub extends Club {
   /** Real-league slug (es1, de1, it2, …). */
@@ -23,7 +24,35 @@ export interface RealClub extends Club {
 }
 
 export const REAL_CLUBS = clubsJson as RealClub[];
-export const REAL_PLAYERS = playersJson as Player[];
+
+interface TransferMove {
+  name: string;
+  from: string;
+  to: string;
+}
+export const REAL_TRANSFERS = (transfersJson as { transfers: TransferMove[] }).transfers;
+export const REAL_TRANSFERS_AS_OF = (transfersJson as { _asOf: string })._asOf;
+
+/** Layer the curated summer-2026 window on the snapshot: move a matched
+ *  player (by name + current club) to his new club. A destination outside
+ *  our leagues means he left the pool entirely. */
+function applyTransfers(players: Player[]): Player[] {
+  const clubIds = new Set(REAL_CLUBS.map((c) => c.id));
+  const moves = new Map(REAL_TRANSFERS.map((t) => [`${t.from}|${t.name}`, t.to]));
+  const out: Player[] = [];
+  for (const p of players) {
+    const to = moves.get(`${p.club}|${p.name}`);
+    if (to === undefined) {
+      out.push(p);
+    } else if (clubIds.has(to)) {
+      out.push({ ...p, club: to });
+    }
+    // else: moved out of our leagues → dropped.
+  }
+  return out;
+}
+
+export const REAL_PLAYERS = applyTransfers(playersJson as Player[]);
 
 export interface RealLeague {
   slug: string;

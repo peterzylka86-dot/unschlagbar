@@ -38,4 +38,13 @@ describe("real-mode data (EA FC 25/26 ingest)", () => {
     expect(realLeagueName("es1")).toBe("La Liga");
     expect(realLeagueName("nope")).toBeUndefined();
   });
+
+  it("applies the summer-2026 transfer overlay", () => {
+    const at = (name: string) => REAL_PLAYERS.find((p) => p.name === name)?.club;
+    // Marquee confirmed moves should be reflected in the live pool.
+    expect(at("A. Gordon")).toBe("fc-barcelona");
+    expect(at("Marc Cucurella")).toBe("real-madrid");
+    // And they're no longer at their old clubs.
+    expect(REAL_PLAYERS.some((p) => p.name === "A. Gordon" && p.club === "newcastle-united")).toBe(false);
+  });
 });

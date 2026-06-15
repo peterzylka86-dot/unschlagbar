@@ -15,7 +15,7 @@ import { useState } from "react";
 import { LEAGUES } from "@/lib/leagues";
 import type { LeagueId } from "@/lib/leagues";
 import { getClubs } from "@/lib/data";
-import { realLeagues } from "@/lib/real-data";
+import { realLeagues, REAL_TRANSFERS, REAL_TRANSFERS_AS_OF } from "@/lib/real-data";
 import { useCareer } from "@/lib/career-store";
 
 export const Route = createFileRoute("/career/found")({
@@ -96,6 +96,12 @@ function FoundingClubPicker() {
             </button>
           ))}
         </div>
+        {mode === "real" && (
+          <p className="mt-2 text-[10px] text-muted-foreground">
+            📅 25/26 squads + {REAL_TRANSFERS.length} confirmed summer-2026 moves (as of{" "}
+            {REAL_TRANSFERS_AS_OF}). Best-effort — live deals update over time.
+          </p>
+        )}
       </section>
 
       <section className="mt-8">

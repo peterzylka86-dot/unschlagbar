@@ -1,0 +1,16 @@
+{
+  "_note": "Hand-curated marquee summer-2026 transfers layered on top of the EA FC 26 (Sept-2025) snapshot. CONFIRMED/official deals only — best-effort as of the date below; edit freely as more close. A move whose destination club isn't in our leagues drops the player from the pool (left for elsewhere).",
+  "_asOf": "2026-06-15",
+  "_sources": [
+    "sportsmole.co.uk/football/.../premier-league-transfers-2026-every-confirmed-signing-and-sale-in-summer-window",
+    "footballtransfers.com summer-transfer-window-2026"
+  ],
+  "transfers": [
+    { "name": "A. Gordon", "from": "newcastle-united", "to": "fc-barcelona" },
+    { "name": "Marc Cucurella", "from": "chelsea", "to": "real-madrid" },
+    { "name": "D. Malen", "from": "aston-villa", "to": "roma" },
+    { "name": "J. Jacquet", "from": "stade-rennais-fc", "to": "liverpool" },
+    { "name": "A. Robertson", "from": "liverpool", "to": "tottenham-hotspur" },
+    { "name": "R. Jiménez", "from": "fulham-fc", "to": "wolverhampton-wanderers" }
+  ]
+}
