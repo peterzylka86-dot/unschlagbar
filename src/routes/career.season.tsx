@@ -47,6 +47,7 @@ import {
   type TalkId,
 } from "@/lib/management";
 import { ageStep, growthTier } from "@/lib/wonderkids";
+import { currentInjuries, buildLiveEvents, type LiveEvent } from "@/lib/matchlive";
 import { Fragment } from "react";
 import type { Club, MatchResult, Player, Slot } from "@/lib/game-types";
 
@@ -182,11 +183,35 @@ function CareerSeason() {
   // because the season replays deterministically from the seed — the talk's
   // rating effect is already baked into the stored match result.
   const [talks, setTalks] = useState<{ id: TalkId; moraleDelta: number; line: string }[]>([]);
+  // The just-played match, shown live as a running ticker (null = none open).
+  const [liveMatch, setLiveMatch] = useState<{
+    events: LiveEvent[];
+    matchday: number;
+    oppName: string;
+    ourScore: number;
+    theirScore: number;
+  } | null>(null);
   const shown = matches.length;
   const [tableComputed, setTableComputed] = useState(false);
 
   // Fatigue per squad player (club:name key), derived from lineups played.
   const fatigue = useMemo(() => computeFatigue(lineups, career.squad), [lineups, career.squad]);
+
+  // Injuries — derived (replay-safe) from the lineups played: a knock in a
+  // past matchday sidelines the player for a few matchdays. Injured players
+  // are pulled from the pool that builds the XI, so squad depth bites.
+  const injuries = useMemo(() => currentInjuries(lineups, seasonSeed), [lineups, seasonSeed]);
+  const availableSquad = useMemo(
+    () => career.squad.filter((p) => !injuries.has(`${p.club}:${p.name}`)),
+    [career.squad, injuries],
+  );
+  const injuredList = useMemo(
+    () =>
+      career.squad
+        .filter((p) => injuries.has(`${p.club}:${p.name}`))
+        .map((p) => ({ player: p, weeks: injuries.get(`${p.club}:${p.name}`)! })),
+    [career.squad, injuries],
+  );
 
   // Form computed from PLAYED matches — drives both the 🔥/❄️ badges and
   // the XI auto-pick ranking, so a cold streak genuinely costs a starter
@@ -253,8 +278,8 @@ function CareerSeason() {
   // The starting XI — stored selection resolved against the live squad
   // (departed players dropped, holes auto-filled from compatible bench).
   const xiKeys = useMemo(
-    () => resolveXI(career.squad, career.startingXI, career.formation, selectionForm),
-    [career.squad, career.startingXI, career.formation, selectionForm],
+    () => resolveXI(availableSquad, career.startingXI, career.formation, selectionForm),
+    [availableSquad, career.startingXI, career.formation, selectionForm],
   );
   const xiSlots: Slot[] = useMemo(
     () => xiToSlots(career.squad, xiKeys, career.formation),
@@ -340,20 +365,32 @@ function CareerSeason() {
   // (or a backfired one) genuinely swings the result.
   function playNext(talk: TalkId) {
     const nextOpp = fixtures[matches.length];
-    const isUnderdog = !!nextOpp && (nextOpp.opponent.strength ?? userRating) > userRating;
+    if (!nextOpp) return;
+    const isUnderdog = (nextOpp.opponent.strength ?? userRating) > userRating;
     const effect = talkEffect(talk, dressingRoom, isUnderdog);
     const rating = userRating + moraleRatingKick(dressingRoom) + effect.ratingDelta;
-    let appended = false;
-    setMatches((prev) => {
-      const next = simulateNext(prev, rating);
-      if (!next) return prev;
-      appended = true;
-      return [...prev, next];
+    const next = simulateNext(matches, rating);
+    if (!next) return;
+    // Open the live ticker for this match.
+    const keyToName = (k: string) =>
+      career.squad.find((p) => `${p.club}:${p.name}` === k)?.name ?? k.split(":")[1] ?? k;
+    setLiveMatch({
+      events: buildLiveEvents({
+        match: next,
+        oppName: next.opponent.short || next.opponent.name,
+        ourScorers: next.scorers.map((s) => s.name),
+        xiKeys,
+        keyToName,
+        seasonSeed,
+      }),
+      matchday: next.matchday,
+      oppName: next.opponent.short || next.opponent.name,
+      ourScore: next.ourScore,
+      theirScore: next.theirScore,
     });
-    if (appended) {
-      setLineups((prev) => [...prev, xiKeys]);
-      setTalks((prev) => [...prev, { id: talk, moraleDelta: effect.moraleDelta, line: effect.line }]);
-    }
+    setMatches((prev) => [...prev, next]);
+    setLineups((prev) => [...prev, xiKeys]);
+    setTalks((prev) => [...prev, { id: talk, moraleDelta: effect.moraleDelta, line: effect.line }]);
   }
   function playAll() {
     // Sim the remaining matchdays with the CURRENT XI and a safe "calm"
@@ -473,7 +510,8 @@ function CareerSeason() {
           one tap; opens for users who want to rotate. */}
       {!seasonDone && hasBench && (
         <MatchdaySquadPanel
-          squad={career.squad}
+          squad={availableSquad}
+          injured={injuredList}
           xiKeys={xiKeys}
           form={liveForm}
           ratingAdj={selectionForm}
@@ -481,7 +519,7 @@ function CareerSeason() {
           formation={career.formation}
           franchiseKey={career.franchisePlayerKey}
           onSwap={(outKey, inKey) => {
-            if (!canSwapIntoXI(career.squad, xiKeys, outKey, inKey, career.formation)) return;
+            if (!canSwapIntoXI(availableSquad, xiKeys, outKey, inKey, career.formation)) return;
             const next = xiKeys.filter((k) => k !== outKey).concat(inKey);
             career.setStartingXI(next);
           }}
@@ -588,6 +626,82 @@ function CareerSeason() {
           isRelegated={ourPosition >= 11}
         />
       )}
+
+      {/* Live match ticker — plays the just-finished match minute by minute. */}
+      {liveMatch && <LiveMatchModal live={liveMatch} onClose={() => setLiveMatch(null)} />}
+    </div>
+  );
+}
+
+/** The Championship-Manager moment: the played match unfolds as a timed
+ *  ticker. Auto-advances ~1 event/650ms; the running score updates as goals
+ *  land; Skip jumps to full time. Dismiss to return to the feed. */
+function LiveMatchModal({
+  live,
+  onClose,
+}: {
+  live: { events: LiveEvent[]; matchday: number; oppName: string; ourScore: number; theirScore: number };
+  onClose: () => void;
+}) {
+  const [shown, setShown] = useState(1);
+  const done = shown >= live.events.length;
+  useEffect(() => {
+    if (done) return;
+    const t = setTimeout(() => setShown((n) => n + 1), 650);
+    return () => clearTimeout(t);
+  }, [shown, done]);
+
+  // Running score from the goal events revealed so far.
+  const revealed = live.events.slice(0, shown);
+  const us = revealed.filter((e) => e.type === "goal-us").length;
+  const them = revealed.filter((e) => e.type === "goal-them").length;
+
+  const icon = (t: LiveEvent["type"]) =>
+    t === "goal-us" ? "⚽" : t === "goal-them" ? "💥" : t === "yellow" ? "🟨" : t === "red" ? "🟥" : t === "injury" ? "🚑" : t === "ht" ? "⏸️" : t === "ft" ? "🏁" : "🔊";
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-background/90 backdrop-blur-sm">
+      <div className="w-full max-w-md rounded-2xl border border-border bg-card p-5">
+        <div className="text-center">
+          <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+            Matchday {live.matchday} · LIVE
+          </div>
+          <div className="mt-1 font-display text-3xl text-warning tabular-nums">
+            {us} <span className="opacity-50 text-xl">–</span> {them}
+          </div>
+          <div className="text-[11px] text-muted-foreground">vs {live.oppName}</div>
+        </div>
+
+        <div className="mt-4 space-y-1.5 max-h-64 overflow-y-auto">
+          {revealed.map((e, i) => (
+            <div
+              key={i}
+              className={`flex items-start gap-2 text-xs ${
+                e.type === "goal-us"
+                  ? "text-success"
+                  : e.type === "goal-them"
+                    ? "text-primary"
+                    : e.type === "injury"
+                      ? "text-primary/90"
+                      : "text-foreground/80"
+              }`}
+            >
+              <span className="font-mono text-[10px] text-muted-foreground w-7 shrink-0 text-right">
+                {e.type === "ko" ? "" : e.type === "ft" ? "FT" : `${e.minute}'`}
+              </span>
+              <span className="shrink-0">{icon(e.type)}</span>
+              <span>{e.text}</span>
+            </div>
+          ))}
+        </div>
+
+        <button
+          onClick={done ? onClose : () => setShown(live.events.length)}
+          className="mt-4 w-full px-4 py-2.5 rounded-md bg-warning text-warning-foreground font-display tracking-wide hover:brightness-110 transition"
+        >
+          {done ? "Continue →" : "Skip to full time ⏭"}
+        </button>
+      </div>
     </div>
   );
 }
@@ -725,6 +839,7 @@ function mulberry32(seed: number): () => number {
  *  ranks by, so the UI never contradicts the selection logic. */
 function MatchdaySquadPanel({
   squad,
+  injured = [],
   xiKeys,
   form,
   ratingAdj,
@@ -733,7 +848,10 @@ function MatchdaySquadPanel({
   franchiseKey,
   onSwap,
 }: {
+  /** Selectable (fit) squad — injured players are excluded by the caller. */
   squad: Player[];
+  /** Sidelined players + matchdays remaining (informational, unselectable). */
+  injured?: { player: Player; weeks: number }[];
   xiKeys: string[];
   /** Pure form map (formKey → ±2) for the 🔥/❄️ badge. */
   form: Record<string, number>;
@@ -888,6 +1006,29 @@ function MatchdaySquadPanel({
               )}
             </div>
           </div>
+
+          {injured.length > 0 && (
+            <div className="mt-3">
+              <div className="text-[10px] uppercase tracking-[0.18em] text-primary mb-1.5">
+                🚑 Injured
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {injured.map(({ player: p, weeks }) => (
+                  <span
+                    key={`inj-${p.club}-${p.name}`}
+                    className="inline-flex items-center gap-1 text-xs rounded-full border border-primary/30 bg-primary/5 px-2 py-0.5 opacity-90"
+                    title={`Out ${weeks} more match${weeks === 1 ? "" : "es"}`}
+                  >
+                    <span className="text-muted-foreground text-[10px]">
+                      {simplifyPosition(p.position)}
+                    </span>
+                    <span className="truncate max-w-[8rem]">{p.name}</span>
+                    <span className="text-primary font-display">{weeks}wk</span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>
