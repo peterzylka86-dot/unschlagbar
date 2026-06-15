@@ -8,8 +8,9 @@
  *   Conference League (UECL) — 7th, 8-club field.
  *
  * Pure + deterministic helpers; the route plays the bracket with the
- * existing match sim. (v1 is a straight knockout — the 36-team UCL
- * "league phase" is a future refinement.)
+ * existing match sim. The UCL runs its 36-club league phase (8 matchdays,
+ * played one at a time) before the knockout; you're enrolled the season
+ * AFTER you qualify (see seasonEuropeEntry).
  */
 import type { RealClub } from "./real-data";
 import { REAL_CLUBS } from "./real-data";
@@ -43,6 +44,25 @@ export function qualifyEurope(finishPosition: number): EuroComp | null {
   if (finishPosition <= 6) return "el";
   if (finishPosition === 7) return "ecl";
   return null;
+}
+
+/**
+ * The competition you're ENROLLED in for `currentSeason` — earned by LAST
+ * season's league finish (real football: you qualify one year, play the next).
+ * Two consequences fall out of this:
+ *   • Season 1 has no European football — you only just arrived.
+ *   • Win the league this season and you enter the UCL the FOLLOWING season.
+ * Exception — the holder defends: if you WON the Champions League last season
+ * you're back in it regardless of where you finished ("already a participant").
+ */
+export function seasonEuropeEntry(
+  history: { season: number; finalPosition: number; trophies: string[] }[],
+  currentSeason: number,
+): EuroComp | null {
+  const prev = history.find((s) => s.season === currentSeason - 1);
+  if (!prev) return null;
+  if (prev.trophies.some((t) => t === `${EURO_META.ucl.name} Winner`)) return "ucl";
+  return qualifyEurope(prev.finalPosition);
 }
 
 export type EuroRound = "r16" | "qf" | "sf" | "final" | "champion" | "out";

@@ -50,7 +50,7 @@ import { ageStep, growthTier } from "@/lib/wonderkids";
 import { currentInjuries, buildLiveEvents, type LiveEvent } from "@/lib/matchlive";
 import { applyRatingEdits, editedRating } from "@/lib/edits";
 import { prizeMoney, feeLabel, sellValue } from "@/lib/market";
-import { qualifyEurope, EURO_META } from "@/lib/europe";
+import { seasonEuropeEntry, EURO_META } from "@/lib/europe";
 import { squadChemistry } from "@/lib/chemistry";
 import { managerFor } from "@/lib/managers";
 import { pickConversation, type ConvoOption } from "@/lib/conversations";
@@ -1790,9 +1790,10 @@ function PostSeasonCTA({
 }) {
   const career = useCareer();
   const isReal = career.careerMode === "real";
-  // Real mode: your finish qualifies you for a European competition.
-  // Legends mode: the domestic top-8 knockout cup.
-  const euroComp = isReal ? qualifyEurope(ourPosition) : null;
+  // Real mode: the European competition you're enrolled in THIS season was
+  // earned by last season's finish (so season 1 has none, and qualifying now
+  // pays off next season). Legends mode: the domestic top-8 knockout cup.
+  const euroComp = isReal ? seasonEuropeEntry(career.seasonHistory, career.currentSeason) : null;
   const isCupQualifier = !isReal && ourPosition <= 8;
   const isRelegated = ourPosition >= relegationCutoff;
   const isChampion = ourPosition === 1;

@@ -7,7 +7,35 @@ import {
   EURO_META,
   leaguePhaseStandings,
   uclCut,
+  seasonEuropeEntry,
 } from "./europe";
+
+describe("seasonEuropeEntry", () => {
+  const rec = (season: number, finalPosition: number, trophies: string[] = []) => ({
+    season,
+    finalPosition,
+    trophies,
+  });
+
+  it("gives no European football in season 1 — you only just arrived", () => {
+    expect(seasonEuropeEntry([], 1)).toBeNull();
+    expect(seasonEuropeEntry([rec(1, 1)], 1)).toBeNull();
+  });
+
+  it("enrols you based on LAST season's finish, not this one", () => {
+    // Won season 1 → in the UCL for season 2.
+    expect(seasonEuropeEntry([rec(1, 1)], 2)).toBe("ucl");
+    // Finished 6th in season 1 → Europa for season 2.
+    expect(seasonEuropeEntry([rec(1, 6)], 2)).toBe("el");
+    // Mid-table last season → no Europe this season.
+    expect(seasonEuropeEntry([rec(1, 10)], 2)).toBeNull();
+  });
+
+  it("lets the Champions League holder defend even after a poor league finish", () => {
+    const hist = [rec(1, 9, [`${EURO_META.ucl.name} Winner`])];
+    expect(seasonEuropeEntry(hist, 2)).toBe("ucl");
+  });
+});
 
 describe("qualifyEurope", () => {
   it("maps finish to the right competition", () => {

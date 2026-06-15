@@ -1,18 +1,18 @@
 /**
  * /career/europe — continental knockout (Real mode).
  *
- * Qualification comes from the just-finished league position
- * (qualifyEurope): top 4 → Champions League, 5–6 → Europa, 7 → Conference.
- * The field is the strongest clubs across every league; you play a seeded
- * single-elimination bracket. Prize money for how far you go banks into the
- * club balance, and winning adds a trophy. (v1 knockout — the 36-team UCL
- * league phase is a future refinement.)
+ * You're enrolled in the competition you earned LAST season (seasonEuropeEntry):
+ * top 4 → Champions League, 5–6 → Europa, 7 → Conference — so a strong finish
+ * pays off the following year, and season 1 has none. The field is the
+ * strongest clubs across every league. The UCL plays its 36-club league phase
+ * (8 matchdays, one at a time) then a knockout; Europa/Conference are straight
+ * knockouts. Prize money banks into the club balance; winning adds a trophy.
  */
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { useCareer } from "@/lib/career-store";
 import {
-  qualifyEurope,
+  seasonEuropeEntry,
   europeField,
   euroRounds,
   europePrize,
@@ -86,8 +86,10 @@ function CareerEurope() {
   const career = useCareer();
   const navigate = useNavigate();
 
-  const finishPos = career.seasonHistory[career.seasonHistory.length - 1]?.finalPosition ?? 99;
-  const comp: EuroComp | null = qualifyEurope(finishPos);
+  // You play the competition you EARNED LAST SEASON (real qualification
+  // timing), not the one this season's finish just won — that pays off next
+  // season. seasonEuropeEntry encodes the one-year delay + holder-defends.
+  const comp: EuroComp | null = seasonEuropeEntry(career.seasonHistory, career.currentSeason);
   const userRating = useMemo(() => {
     if (career.squad.length === 0) return 75;
     return Math.round(career.squad.reduce((a, p) => a + p.prime_rating, 0) / career.squad.length);
@@ -108,16 +110,22 @@ function CareerEurope() {
   const [alive, setAlive] = useState<string[]>([]);
   const [matches, setMatches] = useState<EuroMatch[]>([]);
   const [roundIdx, setRoundIdx] = useState(0);
-  // UCL only: the 8-game league phase before the knockout.
+  // UCL only: the 8-game league phase before the knockout, now played one
+  // matchday at a time so you actually watch the campaign unfold.
   const [phase, setPhase] = useState<"league" | "knockout">(isUcl ? "league" : "knockout");
-  const [lp, setLp] = useState<{
-    standings: PhaseRow[];
-    userPos: number;
-    cut: UclCut;
-    played: { oppId: string; us: number; them: number }[];
-    advanced: boolean;
-    playoff?: { oppId: string; us: number; them: number; won: boolean };
-  } | null>(null);
+  const [lpGames, setLpGames] = useState<{ oppId: string; us: number; them: number }[]>([]);
+
+  // Your 8 league-phase opponents — a deterministic strength-spread spaced
+  // across the field (so you face a mix, not just the top seeds).
+  const lpOpps = useMemo(() => {
+    if (!isUcl || field.length === 0) return [];
+    const uid = career.foundingClubId ?? "";
+    const others = field.filter((c) => c.id !== uid).sort((a, b) => b.strength - a.strength);
+    const step = Math.max(1, Math.floor(others.length / LEAGUE_PHASE_GAMES));
+    return Array.from({ length: LEAGUE_PHASE_GAMES }, (_, i) =>
+      others[Math.min(i * step, others.length - 1)],
+    );
+  }, [isUcl, field, career.foundingClubId]);
 
   useEffect(() => {
     // EL/ECL seed the knockout straight from the field. UCL waits for the
@@ -131,7 +139,13 @@ function CareerEurope() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 text-muted-foreground gap-3">
         <div className="text-3xl">😕</div>
-        <div>No European place this season — finish top 7 to qualify.</div>
+        <div>
+          No European football this season.
+          <br />
+          <span className="text-xs">
+            Finish top 7 to qualify for next season's competition.
+          </span>
+        </div>
         <Link to="/career/postseason" className="underline text-warning">
           To the transfer market →
         </Link>
@@ -167,50 +181,51 @@ function CareerEurope() {
     };
   }
 
-  function playLeaguePhase() {
+  /** Play the NEXT league-phase matchday (one of the 8). Deterministic by
+   *  opponent, so a replay produces the identical campaign. */
+  function playNextLeagueGame() {
+    const opp = lpOpps[lpGames.length];
+    if (!opp) return;
+    const rand = mulberry32(hashCode(`${career.startedAt}-${career.currentSeason}-lp-${opp.id}`));
+    const diff = userRating - opp.strength;
+    const us = poisson(Math.max(0.2, 1.25 + diff * 0.08 + (rand() - 0.5) * 0.9), rand);
+    const them = poisson(Math.max(0.1, 1.2 - diff * 0.06 + (rand() - 0.5) * 0.9), rand);
+    setLpGames((g) => [...g, { oppId: opp.id, us, them }]);
+  }
+
+  // Once all 8 are played, finalise the 36-club table + where you land.
+  // Top 8 → R16 directly; 9–24 → a one-off playoff; 25+ → out.
+  const lp = useMemo(() => {
+    if (!isUcl || lpGames.length < LEAGUE_PHASE_GAMES) return null;
     const uid = career.foundingClubId ?? "";
-    const others = field.filter((c) => c.id !== uid).sort((a, b) => b.strength - a.strength);
-    const step = Math.max(1, Math.floor(others.length / LEAGUE_PHASE_GAMES));
-    const opps = Array.from({ length: LEAGUE_PHASE_GAMES }, (_, i) => others[Math.min(i * step, others.length - 1)]);
-    const played: { oppId: string; us: number; them: number }[] = [];
     let pts = 0;
     let gd = 0;
-    for (const opp of opps) {
-      const rand = mulberry32(hashCode(`${career.startedAt}-${career.currentSeason}-lp-${opp.id}`));
-      const diff = userRating - opp.strength;
-      const us = poisson(Math.max(0.2, 1.25 + diff * 0.08 + (rand() - 0.5) * 0.9), rand);
-      const them = poisson(Math.max(0.1, 1.2 - diff * 0.06 + (rand() - 0.5) * 0.9), rand);
-      played.push({ oppId: opp.id, us, them });
-      pts += us > them ? 3 : us === them ? 1 : 0;
-      gd += us - them;
+    for (const g of lpGames) {
+      pts += g.us > g.them ? 3 : g.us === g.them ? 1 : 0;
+      gd += g.us - g.them;
     }
-    const standings = leaguePhaseStandings(field, uid, pts, gd, hashCode(`${career.startedAt}-${career.currentSeason}-lp`));
+    const seed = hashCode(`${career.startedAt}-${career.currentSeason}-lp`);
+    const standings = leaguePhaseStandings(field, uid, pts, gd, seed);
     const userPos = standings.find((r) => r.id === uid)?.pos ?? 36;
     const cut = uclCut(userPos);
-
-    // Top 16 form the R16. 1–8 are in directly; 9–16 advance (playoff
-    // abstracted); 17–24 must win an explicit playoff; 25+ are out.
     const r16Ids = standings.slice(0, LEAGUE_PHASE_KNOCKOUT_FIELD).map((r) => r.id);
     let advanced = cut !== "out" && userPos <= 16;
     let playoff: { oppId: string; us: number; them: number; won: boolean } | undefined;
     if (cut === "playoff" && userPos > 16) {
-      const oppId = standings[16]?.id ?? others[0].id; // the seed you'd displace
+      const oppId = standings[16]?.id ?? lpOpps[0]?.id ?? uid; // the seed you'd displace
       const rand = mulberry32(hashCode(`${career.startedAt}-${career.currentSeason}-lp-po`));
-      const diff = userRating - strengthOf(oppId);
-      let us = poisson(Math.max(0.2, 1.2 + diff * 0.08 + (rand() - 0.5) * 0.9), rand);
-      let them = poisson(Math.max(0.1, 1.1 - diff * 0.06 + (rand() - 0.5) * 0.9), rand);
-      if (us === them) (rand() < 0.5 + diff * 0.01 ? us++ : them++);
+      const d = userRating - strengthOf(oppId);
+      let us = poisson(Math.max(0.2, 1.2 + d * 0.08 + (rand() - 0.5) * 0.9), rand);
+      let them = poisson(Math.max(0.1, 1.1 - d * 0.06 + (rand() - 0.5) * 0.9), rand);
+      if (us === them) rand() < 0.5 + d * 0.01 ? us++ : them++;
       const won = us > them;
       playoff = { oppId, us, them, won };
       advanced = won;
       if (won) r16Ids[r16Ids.length - 1] = uid; // take the last R16 seat
     }
-
-    if (advanced) {
-      setAlive(seedOrder(r16Ids));
-    }
-    setLp({ standings, userPos, cut, played, advanced, playoff });
-  }
+    return { standings, userPos, cut, played: lpGames, advanced, playoff, r16Ids };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isUcl, lpGames, field, career.foundingClubId, career.startedAt, career.currentSeason, userRating]);
 
   function playRound() {
     if (done) {
@@ -249,10 +264,15 @@ function CareerEurope() {
       {phase === "league" && (
         <LeaguePhase
           lp={lp}
+          games={lpGames}
+          opps={lpOpps}
           uid={career.foundingClubId ?? ""}
           nameOf={nameOf}
-          onPlay={playLeaguePhase}
-          onEnterKnockout={() => setPhase("knockout")}
+          onPlayNext={playNextLeagueGame}
+          onEnterKnockout={() => {
+            if (lp?.advanced) setAlive(seedOrder(lp.r16Ids));
+            setPhase("knockout");
+          }}
           comp={comp}
         />
       )}
@@ -313,12 +333,15 @@ function CareerEurope() {
   );
 }
 
-/** UCL league phase: play 8 games, see the 36-club table + your finish. */
+/** UCL league phase: play 8 matchdays one at a time, then see the 36-club
+ *  table + your finish. `lp` is null until all 8 games are in. */
 function LeaguePhase({
   lp,
+  games,
+  opps,
   uid,
   nameOf,
-  onPlay,
+  onPlayNext,
   onEnterKnockout,
   comp,
 }: {
@@ -329,26 +352,60 @@ function LeaguePhase({
     played: { oppId: string; us: number; them: number }[];
     advanced: boolean;
     playoff?: { oppId: string; us: number; them: number; won: boolean };
+    r16Ids: string[];
   } | null;
+  games: { oppId: string; us: number; them: number }[];
+  opps: { id: string; strength: number }[];
   uid: string;
   nameOf: (id: string) => string;
-  onPlay: () => void;
+  onPlayNext: () => void;
   onEnterKnockout: () => void;
   comp: EuroComp;
 }) {
+  // Still playing the 8 matchdays — show progress + each result as it lands.
   if (!lp) {
+    const pts = games.reduce((a, g) => a + (g.us > g.them ? 3 : g.us === g.them ? 1 : 0), 0);
+    const next = opps[games.length];
     return (
-      <div className="mt-6 rounded-2xl border-2 border-warning bg-warning/10 p-5 text-center">
-        <div className="font-display text-xl text-warning mb-1">League phase</div>
-        <p className="text-xs text-muted-foreground mb-4">
-          36 clubs, one table. You play 8 matches — finish top 8 to reach the Round of 16 directly,
-          9th–24th into a playoff.
-        </p>
+      <div className="mt-6">
+        <div className="rounded-2xl border-2 border-warning bg-warning/10 p-4 text-center">
+          <div className="font-display text-xl text-warning mb-1">League phase</div>
+          <p className="text-[11px] text-muted-foreground">
+            36 clubs, one table, 8 matches. Top 8 reach the Round of 16 directly; 9th–24th into a
+            playoff.
+          </p>
+          <div className="mt-2 font-display text-2xl text-warning tabular-nums">
+            Matchday {Math.min(games.length + 1, LEAGUE_PHASE_GAMES)} / {LEAGUE_PHASE_GAMES}
+            <span className="text-sm text-muted-foreground ml-2">· {pts} pts</span>
+          </div>
+        </div>
+
+        {games.length > 0 && (
+          <div className="mt-3 space-y-1">
+            {games.map((g, i) => {
+              const tone =
+                g.us > g.them ? "text-success" : g.us === g.them ? "text-muted-foreground" : "text-primary";
+              return (
+                <div
+                  key={i}
+                  className="flex items-center justify-between gap-2 px-3 py-1.5 rounded-lg border border-border bg-card/40 text-sm"
+                >
+                  <span className="font-mono text-[10px] text-muted-foreground w-5">MD{i + 1}</span>
+                  <span className="flex-1 truncate">{nameOf(g.oppId)}</span>
+                  <span className={`font-display tabular-nums ${tone}`}>
+                    {g.us}–{g.them}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
         <button
-          onClick={onPlay}
-          className="w-full px-4 py-3 rounded-md bg-warning text-warning-foreground font-display tracking-wide hover:brightness-110 transition"
+          onClick={onPlayNext}
+          className="mt-4 w-full px-4 py-3 rounded-md bg-warning text-warning-foreground font-display tracking-wide hover:brightness-110 transition"
         >
-          Play the league phase (8 games) →
+          {next ? `Play matchday ${games.length + 1} · vs ${nameOf(next.id)} →` : "…"}
         </button>
       </div>
     );
