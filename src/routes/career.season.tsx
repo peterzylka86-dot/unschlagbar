@@ -1442,8 +1442,11 @@ function SquadForm({
  * (forced incoming, already applied) → done.
  */
 function MidSeasonSwapCard() {
-  const allPlayers = useMemo(() => getCareerPlayers(), []);
   const career = useCareer();
+  const allPlayers = useMemo(
+    () => getCareerPlayers(career.foundingClubId, career.careerMode),
+    [career.foundingClubId, career.careerMode],
+  );
 
   const [stage, setStage] = useState<"prompt" | "picking-out" | "spinning" | "reveal">("prompt");
   const [outgoing, setOutgoing] = useState<{ player: Player; index: number } | null>(null);

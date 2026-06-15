@@ -128,8 +128,8 @@ function CareerDraft() {
   // Switzerland and doesn't dilute the draft with Pro-Vercelli-tier clubs.
   const allClubs = useMemo(() => getCareerClubs(career.foundingClubId), [career.foundingClubId]);
   const allPlayers = useMemo(
-    () => getCareerPlayers(career.foundingClubId),
-    [career.foundingClubId],
+    () => getCareerPlayers(career.foundingClubId, career.careerMode),
+    [career.foundingClubId, career.careerMode],
   );
   const userClub = useMemo(
     () => allClubs.find((c) => c.id === career.foundingClubId) ?? null,

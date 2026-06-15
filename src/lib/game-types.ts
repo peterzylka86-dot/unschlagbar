@@ -62,6 +62,10 @@ export interface Formation {
   slots: Slot[];
 }
 
+/** GOLAZO career flavour: "real" draws from today's players (current
+ *  squads); "legends" draws from the all-time pool. */
+export type CareerMode = "real" | "legends";
+
 export type Difficulty = "easy" | "normal" | "hard";
 export type DraftMode = "squad" | "position" | "quick";
 export type RatingMode = "career" | "prime";

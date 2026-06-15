@@ -178,10 +178,29 @@ export function getCareerClubs(foundingClubId?: string | null): Club[] {
   return out;
 }
 
+/** Earliest end-year that counts a player as "current" for Real mode. */
+export const CURRENT_MIN_END_YEAR = 2021;
+
+/** True if a player is part of today's game — used by GOLAZO "real" mode.
+ *  Reads the end of `career_years` ("2004-2018" → 2018; "2019-present" →
+ *  current). Players with no parseable years are treated as not-current. */
+export function isCurrentPlayer(p: Player): boolean {
+  const s = p.career_years ?? "";
+  if (/present|current|active/i.test(s)) return true;
+  const years = s.match(/\d{4}/g);
+  if (!years) return false;
+  return Math.max(...years.map(Number)) >= CURRENT_MIN_END_YEAR;
+}
+
 /** Elite-only career pool players. Restricted to players whose club is in
- *  the filtered super-pool. The founding club's full roster stays available. */
-export function getCareerPlayers(foundingClubId?: string | null): Player[] {
-  const key = foundingClubId ?? "";
+ *  the filtered super-pool. The founding club's full roster stays available.
+ *  `mode` "real" filters to today's players; "legends" is the full all-time
+ *  pool (default). */
+export function getCareerPlayers(
+  foundingClubId?: string | null,
+  mode: import("./game-types").CareerMode = "legends",
+): Player[] {
+  const key = `${foundingClubId ?? ""}|${mode}`;
   const hit = _careerPlayersCache.get(key);
   if (hit) return hit;
   const clubIds = new Set(getCareerClubs(foundingClubId).map((c) => c.id));
@@ -189,6 +208,7 @@ export function getCareerPlayers(foundingClubId?: string | null): Player[] {
   for (const lg of CAREER_POOL_LEAGUES) {
     for (const p of DATA[lg].players) {
       if (!clubIds.has(p.club)) continue;
+      if (mode === "real" && !isCurrentPlayer(p)) continue;
       const k = `${p.club}:${p.name}`;
       if (!seen.has(k)) seen.set(k, p);
     }

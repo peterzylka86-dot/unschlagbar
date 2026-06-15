@@ -43,8 +43,8 @@ function PostSeason() {
   const navigate = useNavigate();
 
   const allPlayers = useMemo(
-    () => getCareerPlayers(career.foundingClubId),
-    [career.foundingClubId],
+    () => getCareerPlayers(career.foundingClubId, career.careerMode),
+    [career.foundingClubId, career.careerMode],
   );
   const allClubs = useMemo(() => getCareerClubs(career.foundingClubId), [career.foundingClubId]);
 
@@ -79,9 +79,14 @@ function PostSeason() {
   // name, better odds. Win and he joins (your stake leaves); lose and a
   // rival lands him AND the player you shopped around comes back unsettled.
   const careerSeed = career.startedAt ?? "career";
+  // Legend-prospect lottery is a Legends-mode feature only — a 17-year-old
+  // Pelé alongside today's squads would be anachronistic in Real mode.
   const offeredIcon = useMemo(
-    () => seasonLottery(careerSeed, career.currentSeason, career.claimedWonderkidIds),
-    [careerSeed, career.currentSeason, career.claimedWonderkidIds],
+    () =>
+      career.careerMode === "legends"
+        ? seasonLottery(careerSeed, career.currentSeason, career.claimedWonderkidIds)
+        : null,
+    [career.careerMode, careerSeed, career.currentSeason, career.claimedWonderkidIds],
   );
   // Flavour: how many rivals are also circling (deterministic, 2-3).
   const rivalsChasing = offeredIcon ? 2 + (career.currentSeason % 2) : 0;

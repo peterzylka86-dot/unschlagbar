@@ -16,10 +16,10 @@
  */
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import type { Player, FormationKey } from "./game-types";
+import type { Player, FormationKey, CareerMode } from "./game-types";
 
 /** Bump this when a non-backwards-compat change to CareerState ships. */
-export const CAREER_SCHEMA_VERSION = 4;
+export const CAREER_SCHEMA_VERSION = 5;
 
 /** Snapshot of a completed season — written to seasonHistory at the moment
  *  the season is finalized. Used by /career/history (Hall of Fame). */
@@ -65,6 +65,9 @@ export interface CareerState {
   schemaVersion: number;
   /** ISO timestamp when the career was started. */
   startedAt: string | null;
+  /** Real (today's players) vs Legends (all-time pool). Chosen at career
+   *  start, sticky for the whole career. */
+  careerMode: CareerMode;
   /** ID of the founding club (sticky throughout the career). */
   foundingClubId: string | null;
   /** Which league we're playing in (e.g. 'laliga' if Real Madrid is founding). */
@@ -118,6 +121,7 @@ export interface CareerState {
 const initialCareerState: CareerState = {
   schemaVersion: CAREER_SCHEMA_VERSION,
   startedAt: null,
+  careerMode: "legends",
   foundingClubId: null,
   leagueId: null,
   formation: "4-3-3",
@@ -142,7 +146,7 @@ interface CareerStore extends CareerState {
   /** True if a career has been started (founding club picked). */
   hasActiveCareer: () => boolean;
   /** Begin a new career — wipes any existing save. */
-  startCareer: (foundingClubId: string, leagueId: string) => void;
+  startCareer: (foundingClubId: string, leagueId: string, mode?: CareerMode) => void;
   /** Abandon current career and wipe save. */
   abandonCareer: () => void;
   /** Append a player to the permanent squad. */
@@ -187,10 +191,11 @@ export const useCareer = create<CareerStore>()(
 
       hasActiveCareer: () => get().foundingClubId !== null,
 
-      startCareer: (foundingClubId, leagueId) =>
+      startCareer: (foundingClubId, leagueId, mode = "legends") =>
         set({
           schemaVersion: CAREER_SCHEMA_VERSION,
           startedAt: new Date().toISOString(),
+          careerMode: mode,
           foundingClubId,
           leagueId,
           formation: "4-3-3",
@@ -282,6 +287,7 @@ export const useCareer = create<CareerStore>()(
       partialize: (state) => ({
         schemaVersion: state.schemaVersion,
         startedAt: state.startedAt,
+        careerMode: state.careerMode,
         foundingClubId: state.foundingClubId,
         leagueId: state.leagueId,
         formation: state.formation,

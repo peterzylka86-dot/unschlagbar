@@ -37,13 +37,14 @@ function FoundingClubPicker() {
   const startCareer = useCareer((s) => s.startCareer);
   const navigate = useNavigate();
   const [activeLeague, setActiveLeague] = useState<LeagueId>("ucl");
+  const [mode, setMode] = useState<"real" | "legends">("legends");
 
   const clubs = getClubs(activeLeague);
   // Show the strongest clubs first — they're what most newcomers expect
   const sortedClubs = [...clubs].sort((a, b) => b.strength - a.strength);
 
   function pick(clubId: string) {
-    startCareer(clubId, activeLeague);
+    startCareer(clubId, activeLeague, mode);
     navigate({ to: "/career/draft" });
   }
 
@@ -62,6 +63,34 @@ function FoundingClubPicker() {
           rivals you face, and the legends available in your first draft.
         </p>
       </header>
+
+      <section className="mt-8">
+        <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Mode</div>
+        <div className="grid grid-cols-2 gap-2">
+          {([
+            { id: "real", icon: "📅", title: "Real", blurb: "Today's players & current squads" },
+            { id: "legends", icon: "🏆", title: "Legends", blurb: "Six decades of all-time greats + wonderkids" },
+          ] as const).map((m) => (
+            <button
+              key={m.id}
+              onClick={() => setMode(m.id)}
+              className={`p-4 rounded-xl border text-left transition ${
+                mode === m.id
+                  ? "border-warning bg-warning/15"
+                  : "border-border bg-card hover:border-foreground/30"
+              }`}
+            >
+              <div className="flex items-center gap-2">
+                <span className="text-xl">{m.icon}</span>
+                <span className={`font-display text-base ${mode === m.id ? "text-warning" : ""}`}>
+                  {m.title}
+                </span>
+              </div>
+              <div className="text-[11px] text-muted-foreground mt-1">{m.blurb}</div>
+            </button>
+          ))}
+        </div>
+      </section>
 
       <section className="mt-8">
         <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">League</div>

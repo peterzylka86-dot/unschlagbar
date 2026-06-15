@@ -12,6 +12,7 @@ import {
   getPlayers,
   getCareerClubs,
   getCareerPlayers,
+  isCurrentPlayer,
   CAREER_POOL_LEAGUES,
   SUPER_TEAM_STRENGTH,
   _schemas,
@@ -255,5 +256,26 @@ describe("clubSchema", () => {
       strength: 80,
     });
     expect(bad.success).toBe(false);
+  });
+});
+
+describe("GOLAZO career modes (real vs legends)", () => {
+  it("isCurrentPlayer reads the end of career_years", () => {
+    expect(isCurrentPlayer({ career_years: "2019-present" } as never)).toBe(true);
+    expect(isCurrentPlayer({ career_years: "2004-2024" } as never)).toBe(true);
+    expect(isCurrentPlayer({ career_years: "1970-1990" } as never)).toBe(false);
+    expect(isCurrentPlayer({ career_years: "" } as never)).toBe(false);
+  });
+
+  it("real mode is a non-empty subset of the legends pool", () => {
+    const legends = getCareerPlayers(null, "legends");
+    const real = getCareerPlayers(null, "real");
+    expect(real.length).toBeGreaterThan(200); // enough to draft current squads
+    expect(real.length).toBeLessThan(legends.length); // strictly fewer than all-time
+    expect(real.every(isCurrentPlayer)).toBe(true);
+  });
+
+  it("defaults to the full legends pool", () => {
+    expect(getCareerPlayers(null).length).toBe(getCareerPlayers(null, "legends").length);
   });
 });

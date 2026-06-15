@@ -12,7 +12,7 @@
  */
 import { createFileRoute, Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { useCareer } from "@/lib/career-store";
-import { LEAGUES } from "@/lib/leagues";
+import { LEAGUES, type LeagueId } from "@/lib/leagues";
 import { getCareerClubs } from "@/lib/data";
 import { dynastyStatus } from "@/lib/dynasty";
 
@@ -71,7 +71,7 @@ function CareerHub() {
         {hasActive && club ? (
           <ActiveCareerCard
             clubName={club.name}
-            leagueName={LEAGUES[career.leagueId as never].name}
+            leagueName={LEAGUES[(career.leagueId ?? "ucl") as LeagueId].name}
             currentSeason={career.currentSeason}
             trophies={career.trophies}
             hasSquad={career.squad.length > 0}
