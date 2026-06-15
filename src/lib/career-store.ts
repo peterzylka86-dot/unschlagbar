@@ -131,6 +131,9 @@ export interface CareerState {
   /** Player keys you've already had a conversation with this season (so the
    *  same player isn't prompted repeatedly). Reset each season. */
   convosThisSeason: string[];
+  /** True once the mid-season winter transfer window has been handled this
+   *  season (departures resolved). Reset each season. */
+  winterDone: boolean;
 }
 
 const initialCareerState: CareerState = {
@@ -159,6 +162,7 @@ const initialCareerState: CareerState = {
   balance: 0,
   playerMoods: {},
   convosThisSeason: [],
+  winterDone: false,
 };
 
 interface CareerStore extends CareerState {
@@ -209,6 +213,11 @@ interface CareerStore extends CareerState {
   addBalance: (m: number) => void;
   /** Resolve a player conversation: apply a mood delta + mark them spoken-to. */
   resolveConversation: (playerKey: string, delta: number) => void;
+  /** Sell a player mid-season (winter window): remove from squad + XI, bank
+   *  the fee, clear their mood/edit. */
+  sellSquadPlayerNow: (playerKey: string, fee: number) => void;
+  /** Mark the winter window handled for this season. */
+  setWinterDone: (flag: boolean) => void;
 }
 
 export const useCareer = create<CareerStore>()(
@@ -245,6 +254,7 @@ export const useCareer = create<CareerStore>()(
           balance: 100,
           playerMoods: {},
           convosThisSeason: [],
+          winterDone: false,
         }),
 
       abandonCareer: () => set({ ...initialCareerState }),
@@ -340,6 +350,23 @@ export const useCareer = create<CareerStore>()(
             ? state.convosThisSeason
             : [...state.convosThisSeason, playerKey],
         })),
+
+      sellSquadPlayerNow: (playerKey, fee) =>
+        set((state) => {
+          const moods = { ...state.playerMoods };
+          delete moods[playerKey];
+          const edits = { ...state.ratingEdits };
+          delete edits[playerKey];
+          return {
+            squad: state.squad.filter((p) => `${p.club}:${p.name}` !== playerKey),
+            startingXI: state.startingXI?.filter((k) => k !== playerKey) ?? null,
+            balance: Math.round(state.balance + fee),
+            playerMoods: moods,
+            ratingEdits: edits,
+          };
+        }),
+
+      setWinterDone: (flag) => set({ winterDone: flag }),
     }),
     {
       name: "unschlagbar:career:v1",
@@ -371,6 +398,7 @@ export const useCareer = create<CareerStore>()(
         balance: state.balance,
         playerMoods: state.playerMoods,
         convosThisSeason: state.convosThisSeason,
+        winterDone: state.winterDone,
       }),
     },
   ),

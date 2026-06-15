@@ -49,11 +49,13 @@ import {
 import { ageStep, growthTier } from "@/lib/wonderkids";
 import { currentInjuries, buildLiveEvents, type LiveEvent } from "@/lib/matchlive";
 import { applyRatingEdits, editedRating } from "@/lib/edits";
-import { prizeMoney, feeLabel } from "@/lib/market";
+import { prizeMoney, feeLabel, sellValue } from "@/lib/market";
 import { qualifyEurope, EURO_META } from "@/lib/europe";
 import { squadChemistry } from "@/lib/chemistry";
 import { managerFor } from "@/lib/managers";
 import { pickConversation, type ConvoOption } from "@/lib/conversations";
+import { clubReputation } from "@/lib/transfers";
+import { unrestReason, departureFee, UNREST_LABEL, type UnrestReason } from "@/lib/unrest";
 import { Fragment } from "react";
 import type { Club, MatchResult, Player, Slot } from "@/lib/game-types";
 
@@ -390,6 +392,24 @@ function CareerSeason() {
   useEffect(() => {
     if (!convo && convoTarget) setConvo(convoTarget);
   }, [convo, convoTarget]);
+
+  // Squad unrest → the winter window. Your reputation (strength + silverware)
+  // sets the bar a star's ambition is measured against.
+  const reputation = useMemo(() => {
+    const myStrength = clubs.find((c) => c.id === career.foundingClubId)?.strength ?? 72;
+    const titles = career.seasonHistory.filter((s) => s.finalPosition === 1).length;
+    const euros = career.seasonHistory.filter((s) => s.europeResult === "champion").length;
+    return clubReputation(myStrength, titles, euros);
+  }, [clubs, career.foundingClubId, career.seasonHistory]);
+  const unrest = useMemo(() => {
+    const out: { player: Player; key: string; reason: UnrestReason }[] = [];
+    for (const p of career.squad) {
+      const key = `${p.club}:${p.name}`;
+      const reason = unrestReason(p.prime_rating, morale[key] ?? MORALE_NEUTRAL, reputation);
+      if (reason) out.push({ player: p, key, reason });
+    }
+    return out;
+  }, [career.squad, morale, reputation]);
   // The board's pre-season brief, read off raw squad strength vs. the league.
   const expectation = useMemo(
     () => boardExpectation(tableSeedRating, opponents.map((o) => o.strength)),
@@ -514,6 +534,14 @@ function CareerSeason() {
   // ("season hasn't kicked off"), no loading gate needed since fixtures
   // are computed synchronously.
   const seasonDone = shown >= matchesPerSeason;
+  // Winter window: opens once at the midpoint if anyone wants out (after the
+  // legends blind-swap, if any). Blocks the play loop until you decide.
+  const winterOpen =
+    !seasonDone &&
+    shown >= midSeasonGate &&
+    !career.winterDone &&
+    unrest.length > 0 &&
+    (isReal || career.midSeasonSwapUsed);
   const wins = matches.filter((m) => m.outcome === "W").length;
   const draws = matches.filter((m) => m.outcome === "D").length;
   const losses = matches.filter((m) => m.outcome === "L").length;
@@ -608,6 +636,15 @@ function CareerSeason() {
         <MidSeasonSwapCard />
       )}
 
+      {/* ❄️ Winter window — resolve departures (sell or hold). */}
+      {winterOpen && (
+        <WinterWindowCard
+          unrest={unrest}
+          onSell={(key, fee) => career.sellSquadPlayerNow(key, fee)}
+          onClose={() => career.setWinterDone(true)}
+        />
+      )}
+
       {/* Next-match preview — who's up, how strong, and their danger man. */}
       {!seasonDone && fixtures[shown] && (
         <NextMatchPreview
@@ -620,7 +657,7 @@ function CareerSeason() {
 
       {/* Team talk — the pre-match decision. Pick a talk and the matchday
           plays with its effect folded in. Hidden during the swap window. */}
-      {!seasonDone && !(!isReal && shown >= midSeasonGate && !career.midSeasonSwapUsed) && (
+      {!seasonDone && !winterOpen && !(!isReal && shown >= midSeasonGate && !career.midSeasonSwapUsed) && (
         <div className="mt-6">
           <div className="text-[11px] uppercase tracking-widest text-muted-foreground mb-2 text-center">
             🎙️ Team talk · matchday {shown + 1}
@@ -1259,6 +1296,70 @@ function NextMatchPreview({
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+function WinterWindowCard({
+  unrest,
+  onSell,
+  onClose,
+}: {
+  unrest: { player: Player; key: string; reason: UnrestReason }[];
+  onSell: (key: string, fee: number) => void;
+  onClose: () => void;
+}) {
+  // Track which we've kept this session so the row collapses after a choice.
+  const [kept, setKept] = useState<Set<string>>(new Set());
+  const open = unrest.filter((u) => !kept.has(u.key));
+  return (
+    <div className="mt-4 rounded-2xl border-2 border-primary/50 bg-primary/5 p-5">
+      <div className="flex items-center gap-2 mb-1">
+        <span className="text-2xl">❄️</span>
+        <div className="font-display text-xl text-primary">Winter transfer window</div>
+      </div>
+      <p className="text-xs text-muted-foreground mb-3">
+        {open.length} player{open.length === 1 ? "" : "s"} want to move on. Cash in now, or hold and
+        hope the mood turns.
+      </p>
+      <div className="space-y-1.5">
+        {open.map(({ player: p, key, reason }) => {
+          const fee = departureFee(p.prime_rating, p.age ?? 27, reason);
+          return (
+            <div
+              key={key}
+              className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-border bg-card text-sm"
+            >
+              <div className="min-w-0">
+                <div className="font-medium truncate">
+                  {p.name} <span className="text-muted-foreground text-[10px]">{p.position} · {p.prime_rating}</span>
+                </div>
+                <div className="text-[10px] text-primary/80">{UNREST_LABEL[reason]}</div>
+              </div>
+              <div className="flex items-center gap-1 shrink-0">
+                <button
+                  onClick={() => onSell(key, fee)}
+                  className="text-[11px] px-2 py-1 rounded-md border border-success/50 text-success hover:bg-success/10"
+                >
+                  Sell {feeLabel(fee)}
+                </button>
+                <button
+                  onClick={() => setKept((s) => new Set(s).add(key))}
+                  className="text-[11px] px-2 py-1 rounded-md border border-border text-muted-foreground hover:bg-muted/20"
+                >
+                  Hold
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <button
+        onClick={onClose}
+        className="mt-4 w-full px-4 py-2.5 rounded-md bg-primary/80 text-background font-display tracking-wide hover:brightness-110 transition"
+      >
+        Close the window →
+      </button>
     </div>
   );
 }

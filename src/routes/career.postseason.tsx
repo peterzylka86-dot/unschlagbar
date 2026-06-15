@@ -231,6 +231,7 @@ function PostSeason() {
       pendingDeparture: null,
       starDemandResolved: false,
       convosThisSeason: [],
+      winterDone: false,
       balance: Math.round(career.balance - spent),
     });
     navigate({ to: "/career/season" });
@@ -326,6 +327,7 @@ function PostSeason() {
         : career.claimedWonderkidIds,
       unsettledKeys: wkUnsettledKey ? [wkUnsettledKey] : [],
       convosThisSeason: [],
+      winterDone: false,
       balance: Math.round(career.balance - spent), // legends transfer market spend
     });
     navigate({ to: "/career/season" });
