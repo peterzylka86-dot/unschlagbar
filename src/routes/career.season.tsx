@@ -184,11 +184,12 @@ function CareerSeason() {
   // game per other club); legends = the fixed 22. Mid-season swap window
   // (legends-only) opens at the halfway point. Relegation = bottom 3 of a
   // real league, bottom 2 of the 12-team legends format.
-  // Real mode plays a full home-and-away league season: each other club
-  // twice (La Liga 38, Bundesliga 34). Legends keeps its fixed 22.
-  const matchesPerSeason = isReal
-    ? Math.max(1, opponents.length * 2)
-    : LEGENDS_MATCHES_PER_SEASON;
+  // Real mode plays a full home-and-away league season. Big leagues are a
+  // double round-robin (La Liga 38, Bundesliga 34); small leagues add a
+  // third round so they're a proper length too (Swiss 12-club → 33, like
+  // the real championship round). Legends keeps its fixed 22.
+  const rounds = isReal && opponents.length <= 13 ? 3 : 2;
+  const matchesPerSeason = isReal ? Math.max(1, opponents.length * rounds) : LEGENDS_MATCHES_PER_SEASON;
   const midSeasonGate = Math.floor(matchesPerSeason / 2);
   const leagueSize = opponents.length + 1;
   const relegationCutoff = isReal ? leagueSize - 2 : 11;
@@ -953,6 +954,85 @@ function mulberry32(seed: number): () => number {
  *  validates again before committing — UI and store can't disagree).
  *  Effective rating shown = prime + form, the same number the auto-pick
  *  ranks by, so the UI never contradicts the selection logic. */
+/** The tactic overview — the matchday XI laid out on a formation pitch.
+ *  Mirrors the recap's pitch but reads live slots (role per slot) and the
+ *  same form+fatigue-adjusted rating the sim uses. */
+function SquadPitch({
+  slots,
+  franchiseKey,
+  ratingAdj,
+}: {
+  slots: Slot[];
+  franchiseKey: string | null;
+  ratingAdj: Record<string, number>;
+}) {
+  return (
+    <div
+      className="relative w-full rounded-xl overflow-hidden"
+      style={{
+        aspectRatio: "5 / 6",
+        background:
+          "linear-gradient(180deg, rgba(34,197,94,0.18) 0%, rgba(22,101,52,0.25) 50%, rgba(34,197,94,0.18) 100%)",
+        border: "1px solid rgba(250,204,21,0.25)",
+      }}
+    >
+      <div
+        className="absolute left-0 right-0"
+        style={{ top: "50%", height: 1, background: "rgba(255,255,255,0.12)" }}
+      />
+      <div
+        className="absolute rounded-full"
+        style={{ left: "50%", top: "50%", width: 40, height: 40, transform: "translate(-50%, -50%)", border: "1px solid rgba(255,255,255,0.12)" }}
+      />
+      <div
+        className="absolute"
+        style={{ left: "20%", right: "20%", top: 0, height: "12%", border: "1px solid rgba(255,255,255,0.12)", borderTop: "none" }}
+      />
+      <div
+        className="absolute"
+        style={{ left: "20%", right: "20%", bottom: 0, height: "12%", border: "1px solid rgba(255,255,255,0.12)", borderBottom: "none" }}
+      />
+      {slots.map((s, i) => {
+        const p = s.player;
+        const isFranchise = !!p && playerKey(p) === franchiseKey;
+        const eff = p ? Math.round(effectiveRating(p, ratingAdj)) : null;
+        return (
+          <div
+            key={`pitch-${i}`}
+            className="absolute flex flex-col items-center text-center"
+            style={{ left: `${s.x}%`, top: `${s.y}%`, transform: "translate(-50%, -50%)", width: "22%" }}
+          >
+            <div
+              className={`rounded-full font-display flex items-center justify-center mb-1 ${isFranchise ? "border-2" : "border"}`}
+              style={{
+                width: 32,
+                height: 32,
+                borderColor: isFranchise ? "#facc15" : "rgba(250,204,21,0.5)",
+                background: isFranchise ? "rgba(250,204,21,0.25)" : "rgba(10,10,10,0.7)",
+                color: "#facc15",
+                fontSize: 11,
+              }}
+            >
+              {isFranchise ? "⭐" : s.position}
+            </div>
+            <div
+              className="text-[10px] leading-tight px-1 rounded"
+              style={{ background: "rgba(10,10,10,0.65)", color: "#fafafa", maxWidth: "100%", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}
+            >
+              {p ? p.name : "—"}
+            </div>
+            {eff != null && (
+              <div className="text-[9px] font-display" style={{ color: "#facc15" }}>
+                {eff}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 function MatchdaySquadPanel({
   squad,
   injured = [],
@@ -991,6 +1071,7 @@ function MatchdaySquadPanel({
   const [open, setOpen] = useState(true);
   const [pendingIn, setPendingIn] = useState<string | null>(null);
   const [editMode, setEditMode] = useState(false);
+  const [view, setView] = useState<"list" | "pitch">("list");
 
   const xiSet = new Set(xiKeys);
   const starters = squad.filter((p) => xiSet.has(playerKey(p)));
@@ -1143,6 +1224,13 @@ function MatchdaySquadPanel({
                 : "Tap a bench player, then a starter to swap. 🔥/❄️ form & 🪫 fatigue count."}
             </p>
             <div className="flex items-center gap-1.5 shrink-0">
+              <button
+                onClick={() => setView((v) => (v === "list" ? "pitch" : "list"))}
+                title={view === "list" ? "See the formation on a pitch" : "Back to the list"}
+                className="text-[10px] px-2 py-0.5 rounded-md border border-border text-muted-foreground hover:border-foreground/30 transition"
+              >
+                {view === "list" ? "🎽 Pitch" : "☰ List"}
+              </button>
               {onAutoPick && (
                 <button
                   onClick={onAutoPick}
@@ -1166,23 +1254,37 @@ function MatchdaySquadPanel({
               )}
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-1.5">
-                Starting XI
-              </div>
-              <div className="space-y-1">{starters.map((p) => rowFor(p, true))}</div>
+          {view === "pitch" ? (
+            <div className="max-w-[340px] mx-auto">
+              <SquadPitch
+                slots={xiToSlots(squad, xiKeys, formation)}
+                franchiseKey={franchiseKey}
+                ratingAdj={ratingAdj}
+              />
+              <p className="mt-2 text-center text-[10px] text-muted-foreground">
+                {formation} · tap{" "}
+                <span className="text-muted-foreground/80">☰ List</span> to change the XI
+              </p>
             </div>
-            <div>
-              <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-1.5">
-                Bench
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-1.5">
+                  Starting XI
+                </div>
+                <div className="space-y-1">{starters.map((p) => rowFor(p, true))}</div>
               </div>
-              <div className="space-y-1">{bench.map((p) => rowFor(p, false))}</div>
-              {bench.length === 0 && (
-                <div className="text-[11px] text-muted-foreground italic">No bench players.</div>
-              )}
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-1.5">
+                  Bench
+                </div>
+                <div className="space-y-1">{bench.map((p) => rowFor(p, false))}</div>
+                {bench.length === 0 && (
+                  <div className="text-[11px] text-muted-foreground italic">No bench players.</div>
+                )}
+              </div>
             </div>
-          </div>
+          )}
 
           {injured.length > 0 && (
             <div className="mt-3">
