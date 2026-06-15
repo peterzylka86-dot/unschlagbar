@@ -45,6 +45,9 @@ export interface SeasonRecord {
   /** Top scorer for the season — read on the recap screen. Optional so
    *  pre-existing saves don't fail schema validation. */
   topScorer?: { name: string; goals: number };
+  /** European campaign result this season (e.g. "champion", "sf", "out").
+   *  Set once by /career/europe; also used as its idempotency guard. */
+  europeResult?: string;
 }
 
 /** A rival manager snapshot — saved after the draft so the season knows

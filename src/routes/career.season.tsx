@@ -50,6 +50,7 @@ import { ageStep, growthTier } from "@/lib/wonderkids";
 import { currentInjuries, buildLiveEvents, type LiveEvent } from "@/lib/matchlive";
 import { applyRatingEdits, editedRating } from "@/lib/edits";
 import { prizeMoney, feeLabel } from "@/lib/market";
+import { qualifyEurope, EURO_META } from "@/lib/europe";
 import { Fragment } from "react";
 import type { Club, MatchResult, Player, Slot } from "@/lib/game-types";
 
@@ -1446,9 +1447,19 @@ function PostSeasonCTA({
   matchesPerSeason: number;
 }) {
   const career = useCareer();
-  const isCupQualifier = ourPosition <= 8;
+  const isReal = career.careerMode === "real";
+  // Real mode: your finish qualifies you for a European competition.
+  // Legends mode: the domestic top-8 knockout cup.
+  const euroComp = isReal ? qualifyEurope(ourPosition) : null;
+  const isCupQualifier = !isReal && ourPosition <= 8;
   const isRelegated = ourPosition >= relegationCutoff;
   const isChampion = ourPosition === 1;
+  const nextTo = euroComp ? "/career/europe" : isCupQualifier ? "/career/cup" : "/career/recap";
+  const nextLabel = euroComp
+    ? `Enter ${EURO_META[euroComp].name} →`
+    : isCupQualifier
+      ? "Enter cup →"
+      : "Season recap →";
 
   // Record this season into career.seasonHistory exactly once.
   useEffect(() => {
@@ -1566,15 +1577,17 @@ function PostSeasonCTA({
         </div>
       )}
       <div className="text-xs text-muted-foreground mb-5">
-        {isCupQualifier
-          ? "🏆 Cup competition next — top 8 finishers compete in a knockout for the trophy."
-          : "Season recap next: tactic view + shareable image of your super squad."}
+        {euroComp
+          ? `${EURO_META[euroComp].icon} You've qualified for the ${EURO_META[euroComp].name} — a continental knockout vs Europe's best, for prize money and glory.`
+          : isCupQualifier
+            ? "🏆 Cup competition next — top 8 finishers compete in a knockout for the trophy."
+            : "Season recap next: tactic view + shareable image of your super squad."}
       </div>
       <Link
-        to={isCupQualifier ? "/career/cup" : "/career/recap"}
+        to={nextTo}
         className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-warning text-warning-foreground font-display text-base tracking-wide hover:brightness-110 transition"
       >
-        {isCupQualifier ? "Enter cup →" : "Season recap →"}
+        {nextLabel}
       </Link>
     </div>
   );

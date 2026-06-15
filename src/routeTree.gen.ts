@@ -16,6 +16,7 @@ import { Route as CareerRecapRouteImport } from './routes/career.recap'
 import { Route as CareerPostseasonRouteImport } from './routes/career.postseason'
 import { Route as CareerHistoryRouteImport } from './routes/career.history'
 import { Route as CareerFoundRouteImport } from './routes/career.found'
+import { Route as CareerEuropeRouteImport } from './routes/career.europe'
 import { Route as CareerDraftRouteImport } from './routes/career.draft'
 import { Route as CareerCupRouteImport } from './routes/career.cup'
 
@@ -54,6 +55,11 @@ const CareerFoundRoute = CareerFoundRouteImport.update({
   path: '/found',
   getParentRoute: () => CareerRoute,
 } as any)
+const CareerEuropeRoute = CareerEuropeRouteImport.update({
+  id: '/europe',
+  path: '/europe',
+  getParentRoute: () => CareerRoute,
+} as any)
 const CareerDraftRoute = CareerDraftRouteImport.update({
   id: '/draft',
   path: '/draft',
@@ -70,6 +76,7 @@ export interface FileRoutesByFullPath {
   '/career': typeof CareerRouteWithChildren
   '/career/cup': typeof CareerCupRoute
   '/career/draft': typeof CareerDraftRoute
+  '/career/europe': typeof CareerEuropeRoute
   '/career/found': typeof CareerFoundRoute
   '/career/history': typeof CareerHistoryRoute
   '/career/postseason': typeof CareerPostseasonRoute
@@ -81,6 +88,7 @@ export interface FileRoutesByTo {
   '/career': typeof CareerRouteWithChildren
   '/career/cup': typeof CareerCupRoute
   '/career/draft': typeof CareerDraftRoute
+  '/career/europe': typeof CareerEuropeRoute
   '/career/found': typeof CareerFoundRoute
   '/career/history': typeof CareerHistoryRoute
   '/career/postseason': typeof CareerPostseasonRoute
@@ -93,6 +101,7 @@ export interface FileRoutesById {
   '/career': typeof CareerRouteWithChildren
   '/career/cup': typeof CareerCupRoute
   '/career/draft': typeof CareerDraftRoute
+  '/career/europe': typeof CareerEuropeRoute
   '/career/found': typeof CareerFoundRoute
   '/career/history': typeof CareerHistoryRoute
   '/career/postseason': typeof CareerPostseasonRoute
@@ -106,6 +115,7 @@ export interface FileRouteTypes {
     | '/career'
     | '/career/cup'
     | '/career/draft'
+    | '/career/europe'
     | '/career/found'
     | '/career/history'
     | '/career/postseason'
@@ -117,6 +127,7 @@ export interface FileRouteTypes {
     | '/career'
     | '/career/cup'
     | '/career/draft'
+    | '/career/europe'
     | '/career/found'
     | '/career/history'
     | '/career/postseason'
@@ -128,6 +139,7 @@ export interface FileRouteTypes {
     | '/career'
     | '/career/cup'
     | '/career/draft'
+    | '/career/europe'
     | '/career/found'
     | '/career/history'
     | '/career/postseason'
@@ -191,6 +203,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CareerFoundRouteImport
       parentRoute: typeof CareerRoute
     }
+    '/career/europe': {
+      id: '/career/europe'
+      path: '/europe'
+      fullPath: '/career/europe'
+      preLoaderRoute: typeof CareerEuropeRouteImport
+      parentRoute: typeof CareerRoute
+    }
     '/career/draft': {
       id: '/career/draft'
       path: '/draft'
@@ -211,6 +230,7 @@ declare module '@tanstack/react-router' {
 interface CareerRouteChildren {
   CareerCupRoute: typeof CareerCupRoute
   CareerDraftRoute: typeof CareerDraftRoute
+  CareerEuropeRoute: typeof CareerEuropeRoute
   CareerFoundRoute: typeof CareerFoundRoute
   CareerHistoryRoute: typeof CareerHistoryRoute
   CareerPostseasonRoute: typeof CareerPostseasonRoute
@@ -221,6 +241,7 @@ interface CareerRouteChildren {
 const CareerRouteChildren: CareerRouteChildren = {
   CareerCupRoute: CareerCupRoute,
   CareerDraftRoute: CareerDraftRoute,
+  CareerEuropeRoute: CareerEuropeRoute,
   CareerFoundRoute: CareerFoundRoute,
   CareerHistoryRoute: CareerHistoryRoute,
   CareerPostseasonRoute: CareerPostseasonRoute,
