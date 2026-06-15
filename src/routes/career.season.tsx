@@ -52,6 +52,7 @@ import { applyRatingEdits, editedRating } from "@/lib/edits";
 import { prizeMoney, feeLabel } from "@/lib/market";
 import { qualifyEurope, EURO_META } from "@/lib/europe";
 import { squadChemistry } from "@/lib/chemistry";
+import { managerFor } from "@/lib/managers";
 import { Fragment } from "react";
 import type { Club, MatchResult, Player, Slot } from "@/lib/game-types";
 
@@ -508,11 +509,9 @@ function CareerSeason() {
           <div className="text-[10px] text-muted-foreground uppercase tracking-[0.2em]">
             Matchday {shown} of {matchesPerSeason}
           </div>
-          {isReal && (
-            <div className="text-[11px] text-warning font-display mt-0.5">
-              💰 {feeLabel(career.balance)}
-            </div>
-          )}
+          <div className="text-[11px] text-warning font-display mt-0.5">
+            💰 {feeLabel(career.balance)}
+          </div>
         </div>
       </header>
 
@@ -578,6 +577,7 @@ function CareerSeason() {
           fixture={fixtures[shown]}
           rival={career.rivals.find((r) => r.foundingClubId === fixtures[shown].opponent.id) ?? null}
           ourRating={userRating}
+          manager={isReal ? null : managerFor(fixtures[shown].opponent.id)}
         />
       )}
 
@@ -1153,10 +1153,12 @@ function NextMatchPreview({
   fixture,
   rival,
   ourRating,
+  manager,
 }: {
   fixture: import("@/lib/sim").Fixture;
   rival: { archetypeName: string; badge: string; color: string; squad: Player[] } | null;
   ourRating: number;
+  manager: import("@/lib/managers").ManagerPersona | null;
 }) {
   const opp = fixture.opponent;
   // Their danger man = highest-rated player in the rival's squad.
@@ -1190,6 +1192,11 @@ function NextMatchPreview({
               ⭐ Danger man:{" "}
               <span className="text-foreground/90">{star.name}</span>{" "}
               <span className="text-warning font-display">{star.prime_rating}</span>
+            </div>
+          )}
+          {manager && (
+            <div className="text-[11px] text-muted-foreground mt-0.5 truncate" title={manager.quip}>
+              🧥 {manager.name} · <span className="italic">{manager.trait}</span>
             </div>
           )}
         </div>
@@ -1497,18 +1504,16 @@ function PostSeasonCTA({
     }
     if (Object.keys(growth).length > 0) career.applySquadAgeing(growth);
 
-    // Bank prize money (Real mode): TV baseline + place money + trophies.
+    // Bank prize money (both modes): TV baseline + place money + trophies.
     // Winning compounds into transfer spending power next window.
-    if (career.careerMode === "real") {
-      career.addBalance(
-        prizeMoney({
-          finishPosition: ourPosition,
-          leagueSize: opponents.length + 1,
-          champion: isChampion,
-          cupResult: "did-not-qualify",
-        }),
-      );
-    }
+    career.addBalance(
+      prizeMoney({
+        finishPosition: ourPosition,
+        leagueSize: opponents.length + 1,
+        champion: isChampion,
+        cupResult: "did-not-qualify",
+      }),
+    );
 
     const wins = matches.filter((m) => m.outcome === "W").length;
     const draws = matches.filter((m) => m.outcome === "D").length;

@@ -290,6 +290,7 @@ function PostSeason() {
         ? Array.from(new Set([...career.claimedWonderkidIds, wkClaimId]))
         : career.claimedWonderkidIds,
       unsettledKeys: wkUnsettledKey ? [wkUnsettledKey] : [],
+      balance: Math.round(career.balance - spent), // legends transfer market spend
     });
     navigate({ to: "/career/season" });
   }
@@ -498,6 +499,17 @@ function PostSeason() {
             </div>
           )}
         </div>
+      )}
+
+      {/* 💰 Legends transfer market — sign all-time greats with your kitty. */}
+      {stage === "menu" && (
+        <LegendsBuyPanel
+          remaining={remaining}
+          pool={allPlayers}
+          squad={workingSquad}
+          onBuy={buyPlayer}
+          onSell={sellPlayer}
+        />
       )}
 
       {/* Stage content */}
@@ -976,6 +988,122 @@ function RealTransferMarket({
       >
         Continue to Season {season + 1} →
       </button>
+    </div>
+  );
+}
+
+// ─── Legends transfer market panel ──────────────────────────────────────
+
+/** A collapsible buy/sell market for Legends mode, spending the club kitty
+ *  on the all-time pool — alongside the swap window + wonderkid bidding. */
+function LegendsBuyPanel({
+  remaining,
+  pool,
+  squad,
+  onBuy,
+  onSell,
+}: {
+  remaining: number;
+  pool: Player[];
+  squad: Player[];
+  onBuy: (p: Player) => void;
+  onSell: (idx: number) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const [pos, setPos] = useState<"All" | "GK" | "DEF" | "MID" | "FWD">("All");
+  const squadKeys = new Set(squad.map((p) => `${p.club}:${p.name}`));
+  const buyList = useMemo(
+    () =>
+      pool
+        .filter((p) => !squadKeys.has(`${p.club}:${p.name}`))
+        .filter((p) => pos === "All" || simplifyPosition(p.position) === pos)
+        .sort((a, b) => b.prime_rating - a.prime_rating)
+        .slice(0, 40),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [pool, pos, squad],
+  );
+
+  return (
+    <div className="mt-4 rounded-2xl border border-border bg-card/40">
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="w-full flex items-center justify-between px-4 py-3 text-left"
+      >
+        <span className="font-display text-sm tracking-wide text-foreground/90">
+          💰 Sign legends
+          <span className="ml-2 text-[10px] text-warning normal-case">{feeLabel(remaining)} kitty</span>
+        </span>
+        <span className={`text-warning transition-transform ${open ? "rotate-180" : ""}`}>⌄</span>
+      </button>
+      {open && (
+        <div className="px-4 pb-4">
+          {/* Sell */}
+          <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-1.5">
+            Sell to raise funds
+          </div>
+          <div className="flex flex-wrap gap-1.5 mb-3">
+            {squad
+              .map((p, i) => ({ p, i }))
+              .sort((a, b) => b.p.prime_rating - a.p.prime_rating)
+              .slice(0, 8)
+              .map(({ p, i }) => (
+                <button
+                  key={`ls-${i}-${p.name}`}
+                  onClick={() => onSell(i)}
+                  className="text-[11px] px-2 py-1 rounded-md border border-success/40 text-success hover:bg-success/10"
+                  title={`Sell ${p.name}`}
+                >
+                  {p.name} {feeLabel(sellValue(p.prime_rating, p.age ?? 27))}
+                </button>
+              ))}
+          </div>
+          {/* Buy */}
+          <div className="flex items-center justify-between mb-1.5">
+            <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Buy</div>
+            <div className="flex gap-1">
+              {(["All", "GK", "DEF", "MID", "FWD"] as const).map((f) => (
+                <button
+                  key={f}
+                  onClick={() => setPos(f)}
+                  className={`text-[10px] px-2 py-0.5 rounded-md border ${
+                    pos === f ? "border-warning bg-warning/15 text-warning" : "border-border text-muted-foreground"
+                  }`}
+                >
+                  {f}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 max-h-72 overflow-y-auto">
+            {buyList.map((p) => {
+              const fee = playerFee(p.prime_rating, p.age ?? 27);
+              const ok = fee <= remaining;
+              return (
+                <div
+                  key={`lb-${p.club}-${p.name}`}
+                  className="flex items-center justify-between gap-2 px-3 py-1.5 rounded-lg border border-border bg-card text-sm"
+                >
+                  <span className="min-w-0">
+                    <span className="font-medium truncate">{p.name}</span>
+                    <span className="block text-[10px] text-muted-foreground">
+                      {p.position} · {p.prime_rating}
+                    </span>
+                  </span>
+                  <button
+                    disabled={!ok}
+                    onClick={() => onBuy(p)}
+                    className={`shrink-0 text-[11px] px-2 py-1 rounded-md border ${
+                      ok ? "border-warning/50 text-warning hover:bg-warning/10" : "border-border text-muted-foreground/40 cursor-not-allowed"
+                    }`}
+                  >
+                    {feeLabel(fee)}
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

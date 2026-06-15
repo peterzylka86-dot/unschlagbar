@@ -231,7 +231,8 @@ export const useCareer = create<CareerStore>()(
           claimedWonderkidIds: [],
           unsettledKeys: [],
           ratingEdits: {},
-          balance: 0,
+          // Base transfer kitty (Real mode overrides this with club wealth).
+          balance: 100,
         }),
 
       abandonCareer: () => set({ ...initialCareerState }),
