@@ -15,7 +15,10 @@
     "prime_rating": 91,
     "career_years": "1965-1981",
     "club": "frankfurt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "career_years": "1967-1981",
@@ -105,7 +108,10 @@
     "name": "Filip Kostić",
     "prime_rating": 87,
     "club": "frankfurt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "position": "GK",
@@ -258,7 +264,11 @@
     "prime_rating": 83,
     "career_years": "2014-2024",
     "club": "leipzig",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "position": "CDM",
@@ -285,7 +295,11 @@
     "nationality": "Germany",
     "prime_rating": 84,
     "club": "leipzig",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "position": "CM",
@@ -321,7 +335,10 @@
     "name": "Dominik Szoboszlai",
     "career_years": "2020-2023",
     "club": "leipzig",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "career_years": "2018-2021",
@@ -339,7 +356,10 @@
     "nationality": "Netherlands",
     "career_years": "2023-2024",
     "club": "leipzig",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "prime_rating": 91,
@@ -473,7 +493,11 @@
     "name": "Philipp Lahm",
     "nationality": "Germany",
     "club": "stuttgart",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "career_years": "1998-2005",
@@ -500,7 +524,11 @@
     "name": "Arthur Boka",
     "prime_rating": 81,
     "club": "stuttgart",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "career_years": "1977-1983",
@@ -509,7 +537,11 @@
     "name": "Bernd Förster",
     "prime_rating": 86,
     "club": "stuttgart",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "career_years": "1981-1985",
@@ -554,7 +586,10 @@
     "nationality": "Brazil",
     "name": "Zé Roberto",
     "club": "leverkusen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "career_years": "2020-present",
@@ -607,7 +642,10 @@
     "position": "RW",
     "prime_rating": 88,
     "career_years": "1996-2009",
-    "club": "leverkusen"
+    "club": "leverkusen",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "prime_rating": 86,
@@ -660,7 +698,11 @@
     "career_years": "2010-2016",
     "prime_rating": 83,
     "club": "leverkusen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "prime_rating": 86,
@@ -669,7 +711,10 @@
     "nationality": "Brazil",
     "name": "Paulo Sérgio",
     "club": "leverkusen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "career_years": "2017-2023",
@@ -678,7 +723,10 @@
     "nationality": "France",
     "position": "RW",
     "club": "leverkusen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -696,7 +744,11 @@
     "career_years": "1999-2003",
     "prime_rating": 82,
     "club": "leverkusen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "position": "CB",
@@ -741,7 +793,11 @@
     "name": "Stefan Reuter",
     "nationality": "Germany",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "position": "ST",
@@ -777,7 +833,11 @@
     "name": "Dedê",
     "nationality": "Brazil",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "position": "CB",
@@ -795,7 +855,11 @@
     "nationality": "Poland",
     "name": "Łukasz Piszczek",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "career_years": "1992-1999",
@@ -822,7 +886,10 @@
     "nationality": "Germany",
     "name": "Lothar Emmerich",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "position": "GK",
@@ -849,7 +916,10 @@
     "nationality": "England",
     "name": "Jadon Sancho",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "position": "RW",
@@ -858,7 +928,10 @@
     "name": "Jakub Błaszczykowski",
     "nationality": "Poland",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "position": "ST",
@@ -957,7 +1030,11 @@
     "position": "RB",
     "career_years": "2000-2017",
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Arjen Robben",
@@ -966,7 +1043,10 @@
     "position": "RW",
     "career_years": "2009-2019",
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Franck Ribéry",
@@ -975,7 +1055,10 @@
     "nationality": "France",
     "career_years": "2007-2019",
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Bastian Schweinsteiger",
@@ -1002,7 +1085,11 @@
     "position": "LB",
     "nationality": "France",
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "career_years": "1992-2007",
@@ -1038,7 +1125,11 @@
     "prime_rating": 88,
     "name": "David Alaba",
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "prime_rating": 89,
@@ -1047,7 +1138,10 @@
     "nationality": "Germany",
     "position": "RW",
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "prime_rating": 91,
@@ -1119,7 +1213,11 @@
     "career_years": "2007-2014",
     "nationality": "Germany",
     "club": "wolfsburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "position": "CB",
@@ -1163,7 +1261,11 @@
     "name": "Ricardo Rodriguez",
     "position": "LB",
     "prime_rating": 86,
-    "club": "wolfsburg"
+    "club": "wolfsburg",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "career_years": "2011-2017",
@@ -1172,7 +1274,10 @@
     "position": "RW",
     "prime_rating": 82,
     "club": "wolfsburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -1181,7 +1286,11 @@
     "position": "RB",
     "name": "Sascha Riether",
     "club": "wolfsburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "prime_rating": 83,
@@ -1217,7 +1326,10 @@
     "career_years": "2003-2005",
     "nationality": "Bulgaria",
     "club": "wolfsburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "nationality": "Netherlands",
@@ -1235,7 +1347,11 @@
     "prime_rating": 92,
     "nationality": "Germany",
     "club": "gladbach",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "career_years": "1963-1973, 1980-1984",
@@ -1271,7 +1387,10 @@
     "position": "RW",
     "career_years": "1973-1980",
     "club": "gladbach",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "career_years": "1967-1978",
@@ -1334,7 +1453,10 @@
     "nationality": "Germany",
     "career_years": "2009-2012, 2012-2023",
     "club": "gladbach",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "career_years": "2012-2023",
@@ -1397,7 +1519,10 @@
     "position": "LW",
     "nationality": "Germany",
     "club": "gladbach",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Nils Petersen",
@@ -1424,7 +1549,11 @@
     "career_years": "2011-2024",
     "position": "LB",
     "club": "freiburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "prime_rating": 84,
@@ -1451,7 +1580,10 @@
     "career_years": "2015-2024",
     "position": "LW",
     "club": "freiburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "prime_rating": 76,
@@ -1496,7 +1628,11 @@
     "name": "Levan Kobiashvili",
     "nationality": "Georgia",
     "club": "freiburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "position": "RW",
@@ -1505,7 +1641,10 @@
     "name": "Alexander Iashvili",
     "nationality": "Georgia",
     "club": "freiburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "prime_rating": 83,
@@ -1602,7 +1741,11 @@
     "name": "Andreas Beck",
     "nationality": "Germany",
     "position": "RB",
-    "club": "hoffenheim"
+    "club": "hoffenheim",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Sejad Salihovic",
@@ -1691,7 +1834,10 @@
     "career_years": "2010-2017",
     "prime_rating": 84,
     "club": "hoffenheim",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Pavel Kaderabek",
@@ -1700,7 +1846,11 @@
     "position": "RB",
     "nationality": "Czech Republic",
     "club": "hoffenheim",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -1709,7 +1859,11 @@
     "prime_rating": 83,
     "career_years": "2019-2022",
     "club": "hoffenheim",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "position": "LW",
@@ -1718,7 +1872,10 @@
     "career_years": "2017-2019",
     "name": "Serge Gnabry",
     "club": "hoffenheim",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Christoph Baumgartner",
@@ -1781,7 +1938,11 @@
     "career_years": "2012-2020",
     "name": "Paul Verhaegh",
     "club": "augsburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "career_years": "2014-2021",
@@ -1799,7 +1960,10 @@
     "name": "Tobias Werner",
     "career_years": "2011-2016",
     "club": "augsburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Raul Bobadilla",
@@ -1808,7 +1972,10 @@
     "nationality": "Paraguay",
     "prime_rating": 82,
     "club": "augsburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "position": "CB",
@@ -1835,7 +2002,10 @@
     "name": "Caiuby",
     "career_years": "2012-2019",
     "club": "augsburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "prime_rating": 79,
@@ -1888,7 +2058,11 @@
     "name": "Matthias Ostrzolek",
     "career_years": "2012-2016",
     "club": "augsburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "position": "LB",
@@ -1897,7 +2071,11 @@
     "name": "Philipp Max",
     "career_years": "2012-2021",
     "club": "augsburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "prime_rating": 78,
@@ -2002,7 +2180,10 @@
     "name": "Marco Bode",
     "position": "LW",
     "club": "werder",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "position": "ST",
@@ -2029,7 +2210,11 @@
     "position": "RB",
     "name": "Thomas Schaaf",
     "club": "werder",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "prime_rating": 89,
@@ -2128,7 +2313,10 @@
     "name": "Kevin Keegan",
     "position": "LW",
     "club": "hamburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "position": "ST",
@@ -2155,7 +2343,11 @@
     "nationality": "Germany",
     "name": "Manfred Kaltz",
     "club": "hamburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Franz Beckenbauer",
@@ -2290,7 +2482,11 @@
     "nationality": "Austria",
     "position": "RB",
     "club": "union",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "prime_rating": 84,
@@ -2361,7 +2557,11 @@
     "nationality": "East Germany",
     "position": "LB",
     "club": "union",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "career_years": "2018-2021",
@@ -2451,7 +2651,10 @@
     "career_years": "1963-1971, 1973-1981",
     "prime_rating": 91,
     "club": "schalke",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "position": "CB",
@@ -2514,7 +2717,10 @@
     "nationality": "Germany",
     "position": "RW",
     "club": "schalke",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "career_years": "2005-2009, 2011-2014",
@@ -2568,7 +2774,10 @@
     "nationality": "Germany",
     "position": "LW",
     "club": "schalke",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "position": "CB",
@@ -2595,7 +2804,11 @@
     "name": "Levan Kobiashvili",
     "nationality": "Georgia",
     "club": "schalke",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Wolfgang Overath",
@@ -2613,7 +2826,10 @@
     "name": "Hannes Löhr",
     "prime_rating": 89,
     "club": "koln",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Harald \"Toni\" Schumacher",
@@ -2648,7 +2864,10 @@
     "name": "Pierre Littbarski",
     "prime_rating": 91,
     "club": "koln",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "position": "CDM",
@@ -2746,7 +2965,11 @@
     "position": "LB",
     "career_years": "2010-2024",
     "club": "koln",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "prime_rating": 93,
@@ -2755,7 +2978,10 @@
     "career_years": "1948-1963",
     "position": "LW",
     "club": "koln",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "prime_rating": 81,
@@ -2773,7 +2999,11 @@
     "name": "Jürgen Klopp",
     "prime_rating": 77,
     "club": "mainz",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "career_years": "2002-2007, 2018-2023",
@@ -2836,7 +3066,10 @@
     "career_years": "2009-2011",
     "nationality": "Germany",
     "club": "mainz",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "career_years": "1997-2002, 2004-2007",
@@ -2881,7 +3114,10 @@
     "position": "RW",
     "prime_rating": 78,
     "club": "mainz",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "nationality": "Argentina",
@@ -2890,7 +3126,10 @@
     "name": "Pablo de Blasis",
     "prime_rating": 79,
     "club": "mainz",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Christian Fuchs",
@@ -2899,7 +3138,11 @@
     "career_years": "2010-2013",
     "nationality": "Austria",
     "club": "mainz",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "prime_rating": 82,
@@ -2998,7 +3241,11 @@
     "name": "Holger Brück",
     "nationality": "Germany",
     "club": "hertha",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "prime_rating": 85,
@@ -3069,7 +3316,10 @@
     "career_years": "1965-1980",
     "position": "LW",
     "club": "hertha",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "career_years": "2015-2023",
@@ -3078,7 +3328,11 @@
     "name": "Marvin Plattenhardt",
     "prime_rating": 81,
     "club": "hertha",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -3105,7 +3359,10 @@
     "name": "Marc Schnatterer",
     "nationality": "Germany",
     "club": "heidenheim",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -3132,7 +3389,11 @@
     "career_years": "2014-present",
     "name": "Norman Theuerkauf",
     "club": "heidenheim",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -3150,7 +3411,10 @@
     "name": "Robert Leipertz",
     "career_years": "2012-2016",
     "club": "heidenheim",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "prime_rating": 79,
@@ -3168,7 +3432,10 @@
     "position": "LW",
     "nationality": "Germany",
     "club": "heidenheim",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "career_years": "2019-present",
@@ -3177,7 +3444,11 @@
     "prime_rating": 79,
     "nationality": "Germany",
     "club": "heidenheim",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "nationality": "USA",
@@ -3195,7 +3466,10 @@
     "career_years": "2023-present",
     "nationality": "Germany",
     "club": "heidenheim",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -3222,7 +3496,11 @@
     "prime_rating": 76,
     "position": "LB",
     "club": "heidenheim",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -3249,7 +3527,11 @@
     "prime_rating": 78,
     "nationality": "Germany",
     "club": "heidenheim",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "prime_rating": 77,
@@ -3276,7 +3558,11 @@
     "name": "Ata Lameck",
     "nationality": "Germany",
     "club": "bochum",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -3366,7 +3652,11 @@
     "name": "Thomas Stickroth",
     "nationality": "Germany",
     "club": "bochum",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Theofanis Gekas",
@@ -3393,7 +3683,10 @@
     "career_years": "1996-2000, 2004-2005",
     "nationality": "Germany",
     "club": "bochum",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "prime_rating": 82,
@@ -3456,7 +3749,11 @@
     "position": "LB",
     "name": "Andreas Brehme",
     "club": "kaiserslautern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Hans-Peter Briegel",
@@ -3536,7 +3833,10 @@
     "name": "Martin Wagner",
     "position": "LW",
     "club": "kaiserslautern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "position": "GK",
@@ -3635,7 +3935,10 @@
     "prime_rating": 80,
     "career_years": "2014-2017, 2019-2024",
     "club": "darmstadt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "career_years": "2011-2018",
@@ -3662,7 +3965,11 @@
     "prime_rating": 81,
     "name": "Edwin Westenberger",
     "club": "darmstadt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -3687,7 +3994,11 @@
     "position": "LB",
     "nationality": "Germany",
     "career_years": "2014-2024",
-    "club": "darmstadt"
+    "club": "darmstadt",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "career_years": "1976-1979",
@@ -3705,7 +4016,10 @@
     "position": "LW",
     "nationality": "South Korea",
     "club": "darmstadt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "career_years": "1976-1981",
@@ -3811,7 +4125,11 @@
     "name": "Ludger van de Loo",
     "prime_rating": 82,
     "club": "uerdingen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -3838,7 +4156,10 @@
     "position": "RW",
     "career_years": "1990-1996",
     "club": "uerdingen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "nationality": "Netherlands",
@@ -3874,7 +4195,11 @@
     "prime_rating": 80,
     "name": "Werner Buttgereit",
     "club": "uerdingen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "career_years": "1994-1999",
@@ -3910,7 +4235,10 @@
     "position": "RW",
     "career_years": "1994-2004",
     "club": "1860",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "career_years": "1994-2004",
@@ -3964,7 +4292,10 @@
     "position": "LW",
     "nationality": "Germany",
     "club": "1860",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "career_years": "2004-2007",
@@ -4018,7 +4349,11 @@
     "prime_rating": 86,
     "nationality": "Germany",
     "club": "nuernberg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Dieter Eckstein",
@@ -4063,7 +4398,11 @@
     "name": "Javier Pinola",
     "prime_rating": 85,
     "club": "nuernberg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "nationality": "Slovakia",
@@ -4081,7 +4420,11 @@
     "career_years": "2010-2015",
     "position": "RB",
     "club": "nuernberg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "career_years": "2006-2008",
@@ -4117,7 +4460,10 @@
     "career_years": "1991-1993",
     "position": "RW",
     "club": "nuernberg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "position": "CAM",
@@ -4144,7 +4490,11 @@
     "career_years": "2004-2014",
     "prime_rating": 83,
     "club": "hannover",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Jiri Stajner",
@@ -4153,7 +4503,10 @@
     "nationality": "Czech Republic",
     "position": "RW",
     "club": "hannover",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Jan Schlaudraff",
@@ -4189,7 +4542,10 @@
     "prime_rating": 83,
     "name": "Szabolcs Huszti",
     "club": "hannover",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "career_years": "2011-2015",
@@ -4216,7 +4572,11 @@
     "position": "LB",
     "nationality": "Germany",
     "club": "hannover",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "career_years": "2010-2014",
@@ -4252,7 +4612,10 @@
     "nationality": "Germany",
     "position": "LW",
     "club": "hannover",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "career_years": "1951-1963",
@@ -4261,7 +4624,10 @@
     "name": "Helmut Rahn",
     "prime_rating": 95,
     "club": "rotweissessen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "prime_rating": 90,
@@ -4270,7 +4636,10 @@
     "career_years": "1963-1971, 1973-1977",
     "position": "LW",
     "club": "rotweissessen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -4313,7 +4682,11 @@
     "position": "LB",
     "prime_rating": 79,
     "name": "Heinz Stauwe",
-    "club": "rotweissessen"
+    "club": "rotweissessen",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Wolfgang Rausch",
@@ -4322,7 +4695,11 @@
     "career_years": "1972-1977",
     "nationality": "Germany",
     "club": "rotweissessen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Werner Lorant",
@@ -4456,7 +4833,11 @@
     "prime_rating": 80,
     "career_years": "1987-1998",
     "club": "karlsruhe",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "position": "CAM",
@@ -4474,7 +4855,11 @@
     "nationality": "Germany",
     "name": "Michael Tarnat",
     "club": "karlsruhe",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Maik Franz",
@@ -4500,7 +4885,11 @@
     "prime_rating": 79,
     "nationality": "Germany",
     "name": "Thomas Ritter",
-    "club": "karlsruhe"
+    "club": "karlsruhe",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Dieter Ferner",
@@ -4553,7 +4942,11 @@
     "career_years": "1989-1994, 2017-2022",
     "position": "RB",
     "prime_rating": 81,
-    "club": "saarbruecken"
+    "club": "saarbruecken",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -4571,7 +4964,10 @@
     "prime_rating": 82,
     "position": "RW",
     "club": "saarbruecken",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Roland Stegmayer",
@@ -4615,7 +5011,11 @@
     "nationality": "Germany",
     "name": "Gerd Kische",
     "club": "hansa",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -4784,7 +5184,10 @@
     "name": "Franklin Bittencourt",
     "position": "LW",
     "club": "cottbus",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "nationality": "USA",
@@ -4811,7 +5214,11 @@
     "nationality": "Germany",
     "prime_rating": 79,
     "club": "cottbus",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "prime_rating": 91,
@@ -4820,7 +5227,11 @@
     "position": "LB",
     "name": "Bernard Dietz",
     "club": "duisburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Michael Bella",
@@ -4856,7 +5267,10 @@
     "name": "Rudolf Seliger",
     "position": "RW",
     "club": "duisburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "career_years": "2005-2012",
@@ -4874,7 +5288,11 @@
     "nationality": "Serbia",
     "prime_rating": 82,
     "club": "duisburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "career_years": "1993-2000",
@@ -4892,7 +5310,10 @@
     "position": "RW",
     "name": "Helmut Rahn",
     "club": "duisburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "career_years": "1991-1998",
@@ -4901,7 +5322,11 @@
     "name": "Joachim Hopp",
     "position": "LB",
     "club": "duisburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "position": "CAM",
@@ -4973,7 +5398,11 @@
     "name": "Siegmar Wätzlich",
     "position": "LB",
     "club": "dynamodresden",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Stanislaw Tschertschessow",
@@ -5000,7 +5429,10 @@
     "career_years": "1969-1978",
     "nationality": "East Germany",
     "club": "dynamodresden",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "career_years": "1981-1991",
@@ -5080,7 +5512,10 @@
     "prime_rating": 84,
     "position": "LW",
     "club": "fortunaduesseldorf",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -5125,7 +5560,10 @@
     "position": "RW",
     "nationality": "Germany",
     "club": "fortunaduesseldorf",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -5134,7 +5572,11 @@
     "name": "Bernard Dietz",
     "position": "LB",
     "club": "meidericher",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "career_years": "1963-1965",
@@ -5143,7 +5585,10 @@
     "position": "RW",
     "name": "Helmut Rahn",
     "club": "meidericher",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "position": "ST",
@@ -5168,7 +5613,11 @@
     "nationality": "Serbia",
     "position": "RB",
     "name": "Slobodan Komljenović",
-    "club": "meidericher"
+    "club": "meidericher",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "nationality": "Togo",
@@ -5289,7 +5738,10 @@
     "career_years": "2007-2010",
     "position": "LW",
     "club": "stpauli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "prime_rating": 79,
@@ -5298,7 +5750,11 @@
     "career_years": "1977-1979",
     "position": "RB",
     "club": "stpauli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "prime_rating": 78,
@@ -5324,7 +5780,11 @@
     "career_years": "1995-1997",
     "nationality": "Germany",
     "club": "stpauli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Zlatan Bajramovic",
@@ -5369,7 +5829,10 @@
     "prime_rating": 79,
     "name": "Florian Bruns",
     "club": "stpauli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "prime_rating": 82,
@@ -5422,7 +5885,11 @@
     "name": "Ken Reichel",
     "nationality": "Germany",
     "club": "braunschweig",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -5494,7 +5961,10 @@
     "nationality": "Albania",
     "name": "Fatmir Vata",
     "club": "bielefeld",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -5503,7 +5973,11 @@
     "prime_rating": 80,
     "career_years": "1978-1983, 1985-1987",
     "club": "bielefeld",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "career_years": "1980-1984, 1987-1988",
@@ -5588,7 +6062,11 @@
     "prime_rating": 78,
     "career_years": "1979-1981",
     "club": "bremerhaven",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "career_years": "1977-1980",
@@ -5613,7 +6091,10 @@
     "position": "RW",
     "prime_rating": 80,
     "career_years": "1978-1981",
-    "club": "bremerhaven"
+    "club": "bremerhaven",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "career_years": "1977-1981",
@@ -5621,7 +6102,11 @@
     "name": "Hans-Joachim Böhm",
     "position": "RB",
     "prime_rating": 77,
-    "club": "bremerhaven"
+    "club": "bremerhaven",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "prime_rating": 76,
@@ -5637,7 +6122,10 @@
     "nationality": "Germany",
     "name": "Gerd Roggensack",
     "career_years": "1977-1979",
-    "club": "bremerhaven"
+    "club": "bremerhaven",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Siegfried Held",
@@ -5646,7 +6134,10 @@
     "prime_rating": 88,
     "career_years": "1967-1970, 1972-1975, 1976-1979",
     "club": "offenbach",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -5727,7 +6218,11 @@
     "prime_rating": 80,
     "career_years": "1974-1976",
     "club": "offenbach",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Josef Hickersberger",
@@ -5754,7 +6249,11 @@
     "career_years": "1999-2007",
     "name": "Willi Landgraf",
     "club": "aachen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Kai Michalke",
@@ -5763,7 +6262,10 @@
     "prime_rating": 79,
     "nationality": "Germany",
     "club": "aachen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -5817,7 +6319,11 @@
     "nationality": "Poland",
     "name": "Janusz Gora",
     "club": "ulm",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Joachim Stadler",
@@ -5853,7 +6359,11 @@
     "nationality": "Germany",
     "name": "Bernd Maier",
     "club": "ulm",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -5994,7 +6504,11 @@
     "career_years": "1988-1992",
     "prime_rating": 78,
     "club": "wattenscheid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -6010,7 +6524,11 @@
     "position": "LB",
     "prime_rating": 77,
     "career_years": "1987-1995",
-    "club": "wattenscheid"
+    "club": "wattenscheid",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "career_years": "2011-2015, 2017-2021",
@@ -6063,7 +6581,10 @@
     "name": "Moritz Stoppelkamp",
     "position": "RW",
     "club": "stpaderborn",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -6116,7 +6637,10 @@
     "name": "Christopher Antwi-Adjei",
     "position": "LW",
     "club": "stpaderborn",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Gerhard Tremmel",
@@ -6134,7 +6658,11 @@
     "name": "Ralf Bucher",
     "position": "LB",
     "club": "unterhaching",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "career_years": "1998-2001",
@@ -6179,7 +6707,10 @@
     "prime_rating": 80,
     "career_years": "1997-2001",
     "club": "unterhaching",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "nationality": "Albania",
@@ -6257,7 +6788,11 @@
     "career_years": "2011-2013",
     "name": "Baba Rahman",
     "club": "furth",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "position": "ST",
@@ -6336,7 +6871,10 @@
     "name": "Stefan Lex",
     "prime_rating": 77,
     "position": "RW",
-    "club": "ingolstadt"
+    "club": "ingolstadt",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "prime_rating": 77,
@@ -6345,7 +6883,11 @@
     "name": "Tobias Levels",
     "nationality": "Germany",
     "club": "ingolstadt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "position": "LB",
@@ -6354,7 +6896,11 @@
     "nationality": "Austria",
     "career_years": "2015-2017",
     "club": "ingolstadt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Almog Cohen",
@@ -6372,7 +6918,10 @@
     "position": "LW",
     "prime_rating": 79,
     "club": "ingolstadt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "position": "RB",
@@ -6381,7 +6930,11 @@
     "nationality": "Germany",
     "career_years": "2011-2016",
     "club": "ingolstadt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "position": "RB",
@@ -6390,7 +6943,11 @@
     "name": "Julian Schauerte",
     "nationality": "Germany",
     "club": "sandhausen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "prime_rating": 76,
@@ -6434,7 +6991,11 @@
     "prime_rating": 76,
     "position": "LB",
     "club": "sandhausen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "career_years": "2012-2021",
@@ -6508,7 +7069,11 @@
     "prime_rating": 78,
     "nationality": "Germany",
     "career_years": "1984-1988, 1991-1995",
-    "club": "munich1860"
+    "club": "munich1860",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Tom Dooley",
@@ -6572,7 +7137,10 @@
     "career_years": "1989-1990",
     "nationality": "Germany",
     "prime_rating": 77,
-    "club": "munich1860"
+    "club": "munich1860",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "prime_rating": 81,
@@ -6661,7 +7229,11 @@
     "prime_rating": 76,
     "position": "LB",
     "nationality": "Germany",
-    "club": "blauweiss90"
+    "club": "blauweiss90",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -6669,7 +7241,11 @@
     "position": "RB",
     "career_years": "1986-1987",
     "name": "Dirk Schlegel",
-    "club": "blauweiss90"
+    "club": "blauweiss90",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -6677,7 +7253,10 @@
     "career_years": "1983-1991",
     "position": "RW",
     "prime_rating": 77,
-    "club": "blauweiss90"
+    "club": "blauweiss90",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "position": "RW",
@@ -6685,7 +7264,10 @@
     "career_years": "1971-1981",
     "prime_rating": 81,
     "nationality": "Germany",
-    "club": "stuttgartkickers"
+    "club": "stuttgartkickers",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Dieter Finke",
@@ -6717,7 +7299,10 @@
     "nationality": "Germany",
     "prime_rating": 84,
     "career_years": "1980-1992, 1994-1995",
-    "club": "stuttgartkickers"
+    "club": "stuttgartkickers",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "career_years": "1985-1991",
@@ -6792,7 +7377,10 @@
     "nationality": "Germany",
     "career_years": "1972-1978",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "prime_rating": 81,
@@ -6817,7 +7405,10 @@
     "career_years": "1972-1974",
     "position": "RW",
     "name": "Gustav Jung",
-    "club": "wuppertaler"
+    "club": "wuppertaler",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "position": "CM",
@@ -6842,7 +7433,11 @@
     "career_years": "1970-1974",
     "nationality": "Germany",
     "prime_rating": 77,
-    "club": "wuppertaler"
+    "club": "wuppertaler",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "position": "CDM",
@@ -6939,7 +7534,11 @@
     "position": "RB",
     "career_years": "1973-1977",
     "club": "tennisborussia",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "prime_rating": 78,
@@ -6948,7 +7547,10 @@
     "nationality": "Germany",
     "career_years": "1998-2000",
     "club": "tennisborussia",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "career_years": "1997-1999",
@@ -6966,7 +7568,11 @@
     "nationality": "Germany",
     "position": "LB",
     "club": "tennisborussia",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "career_years": "2017-2022",
@@ -7026,7 +7632,11 @@
     "prime_rating": 85,
     "career_years": "1977-1990",
     "club": "leipzigvfb",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -7035,7 +7645,10 @@
     "prime_rating": 87,
     "career_years": "1973-1981",
     "club": "leipzigvfb",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "position": "LB",
@@ -7044,7 +7657,11 @@
     "career_years": "1981-1991",
     "prime_rating": 84,
     "club": "leipzigvfb",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "position": "CB",
@@ -7105,7 +7722,10 @@
     "career_years": "1996-1999",
     "prime_rating": 87,
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Carsten Jancker",
@@ -7168,7 +7788,10 @@
     "career_years": "1998-2007",
     "prime_rating": 83,
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Owen Hargreaves",
@@ -7231,7 +7854,11 @@
     "career_years": "2002-2006, 2007-2009",
     "prime_rating": 87,
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Willy Sagnol",
@@ -7240,7 +7867,11 @@
     "career_years": "2000-2008",
     "prime_rating": 84,
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Joshua Kimmich",
@@ -7267,7 +7898,10 @@
     "career_years": "2017-Present",
     "prime_rating": 87,
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Kingsley Coman",
@@ -7276,7 +7910,10 @@
     "career_years": "2015-Present",
     "prime_rating": 87,
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Leroy Sané",
@@ -7285,7 +7922,10 @@
     "career_years": "2020-Present",
     "prime_rating": 86,
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Niklas Süle",
@@ -7356,7 +7996,11 @@
     "career_years": "1982-1992",
     "prime_rating": 81,
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Heiko Herrlich",
@@ -7472,7 +8116,10 @@
     "career_years": "2016-2017",
     "prime_rating": 84,
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Christian Pulisic",
@@ -7481,7 +8128,10 @@
     "career_years": "2016-2019",
     "prime_rating": 83,
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Jude Bellingham",
@@ -7571,7 +8221,10 @@
     "career_years": "2013-2015",
     "prime_rating": 85,
     "club": "leverkusen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Hakan Çalhanoğlu",
@@ -7589,7 +8242,10 @@
     "career_years": "2011-2024",
     "prime_rating": 83,
     "club": "leverkusen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Sven Bender",
@@ -7643,7 +8299,11 @@
     "career_years": "2023-Present",
     "prime_rating": 87,
     "club": "leverkusen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Ibrahima Konaté",
@@ -7678,7 +8338,10 @@
     "nationality": "Portugal",
     "career_years": "2017-2019",
     "prime_rating": 80,
-    "club": "leipzig"
+    "club": "leipzig",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Lois Openda",
@@ -7768,7 +8431,10 @@
     "career_years": "2016-2019",
     "prime_rating": 82,
     "club": "frankfurt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Kevin-Prince Boateng",
@@ -7840,7 +8506,11 @@
     "career_years": "2022-Present",
     "prime_rating": 78,
     "club": "frankfurt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Junior Dina Ebimbe",
@@ -7983,7 +8653,10 @@
     "career_years": "2021-Present",
     "prime_rating": 82,
     "club": "stuttgart",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Alexander Nübel",
@@ -8010,7 +8683,11 @@
     "career_years": "2023-Present",
     "prime_rating": 82,
     "club": "stuttgart",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Enzo Millot",
@@ -8063,7 +8740,10 @@
     "career_years": "2013-2015",
     "prime_rating": 84,
     "club": "wolfsburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Julian Draxler",
@@ -8090,7 +8770,10 @@
     "career_years": "2017-2021",
     "prime_rating": 80,
     "club": "wolfsburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Lukas Nmecha",
@@ -8196,7 +8879,10 @@
     "career_years": "2014-2019",
     "prime_rating": 83,
     "club": "gladbach",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Raffael",
@@ -8302,7 +8988,10 @@
     "career_years": "1994-1997",
     "prime_rating": 80,
     "club": "freiburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Jonathan Akpoborie",
@@ -8364,7 +9053,11 @@
     "career_years": "2016-2019",
     "prime_rating": 78,
     "club": "freiburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Lucas Höler",
@@ -8417,7 +9110,10 @@
     "career_years": "2018-2024",
     "prime_rating": 80,
     "club": "freiburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Ritsu Doan",
@@ -8426,7 +9122,10 @@
     "career_years": "2022-Present",
     "prime_rating": 81,
     "club": "freiburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Michael Gregoritsch",
@@ -8543,7 +9242,11 @@
     "career_years": "2022-Present",
     "prime_rating": 78,
     "club": "mainz",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Halil Altıntop",
@@ -8614,7 +9317,11 @@
     "nationality": "Brazil",
     "career_years": "2019-Present",
     "prime_rating": 78,
-    "club": "augsburg"
+    "club": "augsburg",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Karl-Heinz Riedle",
@@ -8838,7 +9545,11 @@
     "career_years": "1976-1986",
     "prime_rating": 81,
     "club": "hamburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Holger Hieronymus",
@@ -8928,7 +9639,10 @@
     "career_years": "2010-2013",
     "prime_rating": 82,
     "club": "hamburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Frank Rost",
@@ -8946,7 +9660,11 @@
     "career_years": "2008-2015",
     "prime_rating": 82,
     "club": "hamburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Heiko Westermann",
@@ -8991,7 +9709,10 @@
     "career_years": "1965-1972, 1973-1976",
     "prime_rating": 87,
     "club": "schalke",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Norbert Nigbur",
@@ -9061,7 +9782,11 @@
     "nationality": "Brazil",
     "career_years": "2005-2011",
     "prime_rating": 82,
-    "club": "schalke"
+    "club": "schalke",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Halil Altıntop",
@@ -9149,7 +9874,10 @@
     "career_years": "2014-2016",
     "prime_rating": 84,
     "club": "schalke",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Ralf Fährmann",
@@ -9211,7 +9939,11 @@
     "nationality": "Germany",
     "career_years": "1985-1988",
     "prime_rating": 87,
-    "club": "koln"
+    "club": "koln",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Bernd Schuster",
@@ -9291,7 +10023,10 @@
     "career_years": "2018-Present",
     "prime_rating": 80,
     "club": "koln",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Marvin Schwäbe",
@@ -9336,7 +10071,10 @@
     "career_years": "1986-1987",
     "prime_rating": 85,
     "club": "hertha",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Niko Kovač",
@@ -9426,7 +10164,10 @@
     "career_years": "2007-2010",
     "prime_rating": 77,
     "club": "hertha",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Ondřej Duda",
@@ -9470,7 +10211,10 @@
     "career_years": "2019-2023",
     "prime_rating": 81,
     "club": "hertha",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Lucas Tousart",
@@ -9524,7 +10268,10 @@
     "career_years": "1999-2003",
     "prime_rating": 83,
     "club": "kaiserslautern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Youri Djorkaeff",
@@ -9692,7 +10439,10 @@
     "career_years": "2006-2009",
     "prime_rating": 79,
     "club": "bochum",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Simon Zoller",
@@ -9790,7 +10540,10 @@
     "career_years": "2011-2014",
     "prime_rating": 78,
     "club": "stpauli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Mathias Hain",
@@ -9834,7 +10587,11 @@
     "career_years": "2014-2021",
     "prime_rating": 77,
     "club": "stpauli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Guido Burgstaller",
@@ -9932,7 +10689,11 @@
     "career_years": "1999-2014",
     "prime_rating": 83,
     "club": "hannover",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Sergio Pinto",
@@ -10046,7 +10807,10 @@
     "nationality": "Belarus",
     "career_years": "2010-2012",
     "prime_rating": 77,
-    "club": "karlsruhe"
+    "club": "karlsruhe",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Roberto Pinto",
@@ -10081,7 +10845,11 @@
     "career_years": "2007-2014",
     "prime_rating": 79,
     "club": "nuernberg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Sebastian Kerk",
@@ -10180,7 +10948,10 @@
     "career_years": "2023-Present",
     "prime_rating": 78,
     "club": "heidenheim",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Sandro Sirigu",
@@ -10189,7 +10960,11 @@
     "career_years": "2014-2017",
     "prime_rating": 78,
     "club": "darmstadt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Hamit Altıntop",
@@ -10323,7 +11098,10 @@
     "nationality": "Croatia",
     "career_years": "2008-2010",
     "prime_rating": 78,
-    "club": "cottbus"
+    "club": "cottbus",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Klaus Toppmöller",
@@ -10349,7 +11127,10 @@
     "career_years": "1980-1986",
     "prime_rating": 82,
     "club": "dynamodresden",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Atli Eðvaldsson",
@@ -10367,7 +11148,10 @@
     "career_years": "1976-1982",
     "prime_rating": 80,
     "club": "fortunaduesseldorf",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Andreas Lambertz",
@@ -10466,7 +11250,10 @@
     "career_years": "1998-2002",
     "prime_rating": 81,
     "club": "bielefeld",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Heiko Westermann",
@@ -10502,7 +11289,10 @@
     "career_years": "2010-2014",
     "prime_rating": 78,
     "club": "furth",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Marco Caligiuri",
@@ -10511,7 +11301,11 @@
     "career_years": "2010-2014",
     "prime_rating": 78,
     "club": "furth",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Olivier Occéan",
@@ -10583,7 +11377,10 @@
     "career_years": "2016-2024",
     "nationality": "Gambia",
     "club": "hamburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Jonas Omlin",
@@ -10628,7 +11425,11 @@
     "career_years": "2021-2024",
     "nationality": "Germany",
     "club": "werder",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Niklas Stark",
@@ -10850,7 +11651,11 @@
     "position": "LB",
     "nationality": "Germany",
     "career_years": "1991-2005",
-    "prime_rating": 74
+    "prime_rating": 74,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "club": "ulm",
@@ -10890,7 +11695,11 @@
     "position": "RB",
     "nationality": "Germany",
     "career_years": "2001-2013",
-    "prime_rating": 74
+    "prime_rating": 74,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "club": "ingolstadt",
@@ -11134,7 +11943,11 @@
     "position": "LB",
     "nationality": "Germany",
     "career_years": "2002-2017",
-    "prime_rating": 80
+    "prime_rating": 80,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "club": "cottbus",
@@ -11160,7 +11973,11 @@
     "career_years": "2008-2022",
     "nationality": "GER",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Raphael Guerreiro",
@@ -11169,7 +11986,11 @@
     "career_years": "2016-2023",
     "nationality": "POR",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Karim Adeyemi",
@@ -11178,7 +11999,10 @@
     "career_years": "2022-2025",
     "nationality": "GER",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Jeremie Frimpong",
@@ -11187,7 +12011,11 @@
     "career_years": "2021-2025",
     "nationality": "NED",
     "club": "leverkusen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Daniel Carvajal",
@@ -11196,7 +12024,11 @@
     "career_years": "2012-2013",
     "nationality": "ESP",
     "club": "leverkusen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Janis Blaswich",
@@ -11214,7 +12046,11 @@
     "career_years": "2020-2025",
     "nationality": "GER",
     "club": "leipzig",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "David Raum",
@@ -11223,7 +12059,11 @@
     "career_years": "2022-2025",
     "nationality": "GER",
     "club": "leipzig",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Xaver Schlager",
@@ -11232,7 +12072,10 @@
     "career_years": "2022-2025",
     "nationality": "AUT",
     "club": "leipzig",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Filip Kostic",
@@ -11241,7 +12084,11 @@
     "career_years": "2018-2022",
     "nationality": "SRB",
     "club": "frankfurt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Patrick Ochs",
@@ -11249,7 +12096,11 @@
     "prime_rating": 74,
     "career_years": "2003-2010",
     "nationality": "GER",
-    "club": "frankfurt"
+    "club": "frankfurt",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Caio",
@@ -11257,7 +12108,11 @@
     "prime_rating": 76,
     "career_years": "2001-2005",
     "nationality": "BRA",
-    "club": "frankfurt"
+    "club": "frankfurt",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Timothy Chandler",
@@ -11266,7 +12121,11 @@
     "career_years": "2014-2024",
     "nationality": "USA",
     "club": "frankfurt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Bastian Oczipka",
@@ -11275,7 +12134,11 @@
     "career_years": "2010-2013",
     "nationality": "GER",
     "club": "frankfurt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Ansgar Knauff",
@@ -11284,7 +12147,10 @@
     "career_years": "2022-2025",
     "nationality": "GER",
     "club": "frankfurt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Jesper Lindstrom",
@@ -11293,7 +12159,10 @@
     "career_years": "2021-2023",
     "nationality": "DEN",
     "club": "frankfurt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Sasa Ciric",
@@ -11301,7 +12170,11 @@
     "prime_rating": 72,
     "career_years": "2000-2003",
     "nationality": "MKD",
-    "club": "stuttgart"
+    "club": "stuttgart",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "William Kvist",
@@ -11309,7 +12182,11 @@
     "prime_rating": 74,
     "career_years": "2013-2015",
     "nationality": "DEN",
-    "club": "wolfsburg"
+    "club": "wolfsburg",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Oscar Wendt",
@@ -11318,7 +12195,11 @@
     "career_years": "2011-2020",
     "nationality": "SWE",
     "club": "gladbach",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Ramy Bensebaini",
@@ -11327,7 +12208,11 @@
     "career_years": "2019-2023",
     "nationality": "ALG",
     "club": "gladbach",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Marvin Friedrich",
@@ -11335,7 +12220,11 @@
     "prime_rating": 74,
     "career_years": "2021-2024",
     "nationality": "GER",
-    "club": "gladbach"
+    "club": "gladbach",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Tony Jantschke",
@@ -11344,7 +12233,11 @@
     "career_years": "2009-2024",
     "nationality": "GER",
     "club": "gladbach",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Stefan Lainer",
@@ -11353,7 +12246,11 @@
     "career_years": "2019-2024",
     "nationality": "AUT",
     "club": "gladbach",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Tim Wiese",
@@ -11380,7 +12277,11 @@
     "career_years": "2018-2023",
     "nationality": "AUT",
     "club": "hoffenheim",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Anton Stach",
@@ -11389,7 +12290,10 @@
     "career_years": "2024-2025",
     "nationality": "GER",
     "club": "hoffenheim",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Lukas Kuebler",
@@ -11397,7 +12301,11 @@
     "prime_rating": 74,
     "career_years": "2017-2025",
     "nationality": "GER",
-    "club": "freiburg"
+    "club": "freiburg",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Aaron Caricol",
@@ -11405,7 +12313,11 @@
     "prime_rating": 72,
     "career_years": "2018-2025",
     "nationality": "GER",
-    "club": "mainz"
+    "club": "mainz",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Leandro Barreiro",
@@ -11447,7 +12359,11 @@
     "prime_rating": 72,
     "career_years": "2020-2025",
     "nationality": "POL",
-    "club": "augsburg"
+    "club": "augsburg",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Arne Maier",
@@ -11473,7 +12389,10 @@
     "career_years": "2019-2025",
     "nationality": "SUI",
     "club": "augsburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Clemens Fritz",
@@ -11482,7 +12401,11 @@
     "career_years": "2006-2013",
     "nationality": "GER",
     "club": "werder",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Ludovic Magnin",
@@ -11491,7 +12414,11 @@
     "career_years": "2002-2005",
     "nationality": "SUI",
     "club": "werder",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Nelson Valdez",
@@ -11499,7 +12426,10 @@
     "prime_rating": 74,
     "career_years": "2006-2010",
     "nationality": "PAR",
-    "club": "werder"
+    "club": "werder",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Frank Baumann",
@@ -11516,7 +12446,10 @@
     "prime_rating": 75,
     "career_years": "2022-2025",
     "nationality": "HUN",
-    "club": "union"
+    "club": "union",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Niko Giesselmann",
@@ -11524,7 +12457,11 @@
     "prime_rating": 74,
     "career_years": "2020-2024",
     "nationality": "GER",
-    "club": "union"
+    "club": "union",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Dennis Aogo",
@@ -11533,7 +12470,11 @@
     "career_years": "2008-2014",
     "nationality": "GER",
     "club": "hamburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Atsuto Uchida",
@@ -11542,7 +12483,11 @@
     "career_years": "2010-2015",
     "nationality": "JPN",
     "club": "schalke",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Daniel Caligiuri",
@@ -11551,7 +12496,11 @@
     "career_years": "2017-2020",
     "nationality": "GER",
     "club": "schalke",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Christian Fuchs",
@@ -11560,7 +12509,11 @@
     "career_years": "2011-2015",
     "nationality": "AUT",
     "club": "schalke",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Sead Kolasinac",
@@ -11569,7 +12522,11 @@
     "career_years": "2013-2017",
     "nationality": "BIH",
     "club": "schalke",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Yevhen Konoplyanka",
@@ -11578,7 +12535,10 @@
     "career_years": "2016-2019",
     "nationality": "UKR",
     "club": "schalke",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Vedad Ibisevic",
@@ -11587,7 +12547,10 @@
     "career_years": "2007-2008",
     "nationality": "BIH",
     "club": "schalke",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Benno Schmitz",
@@ -11595,7 +12558,11 @@
     "prime_rating": 74,
     "career_years": "2018-2025",
     "nationality": "GER",
-    "club": "koln"
+    "club": "koln",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Pawel Janas",
@@ -11603,7 +12570,11 @@
     "prime_rating": 72,
     "career_years": "1982-1986",
     "nationality": "POL",
-    "club": "koln"
+    "club": "koln",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Peter Pekarik",
@@ -11612,7 +12583,11 @@
     "career_years": "2012-2023",
     "nationality": "SVK",
     "club": "hertha",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Markus Schroth",
@@ -11620,7 +12595,11 @@
     "prime_rating": 70,
     "career_years": "2000-2003",
     "nationality": "GER",
-    "club": "kaiserslautern"
+    "club": "kaiserslautern",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Marcio Amoroso",
@@ -11628,7 +12607,11 @@
     "prime_rating": 78,
     "career_years": "2003-2004",
     "nationality": "BRA",
-    "club": "kaiserslautern"
+    "club": "kaiserslautern",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Cristian Gamboa",
@@ -11636,7 +12619,11 @@
     "prime_rating": 74,
     "career_years": "2018-2024",
     "nationality": "CRC",
-    "club": "bochum"
+    "club": "bochum",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Mirkan Aydin",
@@ -11644,7 +12631,11 @@
     "prime_rating": 70,
     "career_years": "2017-2020",
     "nationality": "GER",
-    "club": "bochum"
+    "club": "bochum",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Saulo Decarli",
@@ -11652,7 +12643,11 @@
     "prime_rating": 70,
     "career_years": "2018-2021",
     "nationality": "SUI",
-    "club": "bochum"
+    "club": "bochum",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Danilo Soares",
@@ -11660,7 +12655,11 @@
     "prime_rating": 74,
     "career_years": "2017-2024",
     "nationality": "BRA",
-    "club": "bochum"
+    "club": "bochum",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Christian Gross",
@@ -11668,7 +12667,10 @@
     "prime_rating": 74,
     "career_years": "2018-2024",
     "nationality": "GER",
-    "club": "bochum"
+    "club": "bochum",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Takuma Asano",
@@ -11677,7 +12679,10 @@
     "career_years": "2021-2024",
     "nationality": "JPN",
     "club": "bochum",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Gerland Asamoah",
@@ -11685,7 +12690,10 @@
     "prime_rating": 78,
     "career_years": "1996-1999",
     "nationality": "GHA",
-    "club": "bochum"
+    "club": "bochum",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Kevin Mueller",
@@ -11709,7 +12717,11 @@
     "prime_rating": 72,
     "career_years": "2022-2025",
     "nationality": "GER",
-    "club": "heidenheim"
+    "club": "heidenheim",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Lukas Schleimer",
@@ -11717,7 +12729,11 @@
     "prime_rating": 72,
     "career_years": "2022-2024",
     "nationality": "GER",
-    "club": "darmstadt"
+    "club": "darmstadt",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Mathias Honsak",
@@ -11725,7 +12741,10 @@
     "prime_rating": 74,
     "career_years": "2020-2024",
     "nationality": "AUT",
-    "club": "darmstadt"
+    "club": "darmstadt",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Daniel Bierofka",
@@ -11734,7 +12753,11 @@
     "career_years": "2003-2008",
     "nationality": "GER",
     "club": "1860",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Manuel Schaeffler",
@@ -11742,7 +12765,11 @@
     "prime_rating": 70,
     "career_years": "2010-2012",
     "nationality": "GER",
-    "club": "1860"
+    "club": "1860",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Torben Hoffmann",
@@ -11750,7 +12777,11 @@
     "prime_rating": 70,
     "career_years": "2002-2007",
     "nationality": "GER",
-    "club": "1860"
+    "club": "1860",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Vidar Riseth",
@@ -11758,7 +12789,11 @@
     "prime_rating": 72,
     "career_years": "2001-2004",
     "nationality": "NOR",
-    "club": "1860"
+    "club": "1860",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Markus Schroth",
@@ -11766,7 +12801,10 @@
     "prime_rating": 72,
     "career_years": "2003-2007",
     "nationality": "GER",
-    "club": "1860"
+    "club": "1860",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Bernhard Trares",
@@ -11774,7 +12812,10 @@
     "prime_rating": 70,
     "career_years": "1994-1998",
     "nationality": "GER",
-    "club": "1860"
+    "club": "1860",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Tomas Galasek",
@@ -11783,7 +12824,10 @@
     "career_years": "2008-2011",
     "nationality": "CZE",
     "club": "nuernberg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Markus Mendler",
@@ -11791,7 +12835,10 @@
     "prime_rating": 70,
     "career_years": "2013-2018",
     "nationality": "GER",
-    "club": "nuernberg"
+    "club": "nuernberg",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Mehmet Ekici",
@@ -11800,7 +12847,10 @@
     "career_years": "2010-2011",
     "nationality": "TUR",
     "club": "nuernberg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Hans Walitza",
@@ -11808,7 +12858,10 @@
     "prime_rating": 74,
     "career_years": "1972-1978",
     "nationality": "GER",
-    "club": "nuernberg"
+    "club": "nuernberg",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Edgar Prib",
@@ -11816,7 +12869,10 @@
     "prime_rating": 72,
     "career_years": "2013-2019",
     "nationality": "GER",
-    "club": "hannover"
+    "club": "hannover",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Felipe Pires",
@@ -11824,7 +12880,10 @@
     "prime_rating": 70,
     "career_years": "2017-2018",
     "nationality": "BRA",
-    "club": "hannover"
+    "club": "hannover",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Burkhard Reich",
@@ -11832,7 +12891,10 @@
     "prime_rating": 72,
     "career_years": "1991-1998",
     "nationality": "GER",
-    "club": "karlsruhe"
+    "club": "karlsruhe",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Rainer Schuetterle",
@@ -11840,7 +12902,10 @@
     "prime_rating": 72,
     "career_years": "1990-1996",
     "nationality": "GER",
-    "club": "karlsruhe"
+    "club": "karlsruhe",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Stefan Reuter",
@@ -11856,7 +12921,11 @@
     "prime_rating": 70,
     "career_years": "1986-1990",
     "nationality": "BEL",
-    "club": "uerdingen"
+    "club": "uerdingen",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Horst Feilzer",
@@ -11872,7 +12941,11 @@
     "prime_rating": 70,
     "career_years": "1970-1978",
     "nationality": "GER",
-    "club": "rotweissessen"
+    "club": "rotweissessen",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Diethelm Ferner",
@@ -11888,7 +12961,10 @@
     "prime_rating": 74,
     "career_years": "1974-1980",
     "nationality": "GER",
-    "club": "rotweissessen"
+    "club": "rotweissessen",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Klaus Wunder",
@@ -11896,7 +12972,10 @@
     "prime_rating": 74,
     "career_years": "1969-1974",
     "nationality": "GER",
-    "club": "rotweissessen"
+    "club": "rotweissessen",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Manfred Bockenfeld",
@@ -11904,7 +12983,11 @@
     "prime_rating": 72,
     "career_years": "1980-1985",
     "nationality": "GER",
-    "club": "saarbruecken"
+    "club": "saarbruecken",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Karl Ringel",
@@ -11912,7 +12995,11 @@
     "prime_rating": 70,
     "career_years": "1978-1985",
     "nationality": "GER",
-    "club": "saarbruecken"
+    "club": "saarbruecken",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Roland Schwarz",
@@ -11920,7 +13007,11 @@
     "prime_rating": 70,
     "career_years": "1980-1986",
     "nationality": "GER",
-    "club": "saarbruecken"
+    "club": "saarbruecken",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Wolfgang Beiersdorf",
@@ -11936,7 +13027,10 @@
     "prime_rating": 72,
     "career_years": "1975-1982",
     "nationality": "GER",
-    "club": "saarbruecken"
+    "club": "saarbruecken",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Rene Schneider",
@@ -11944,7 +13038,11 @@
     "prime_rating": 72,
     "career_years": "1995-2000",
     "nationality": "GER",
-    "club": "hansa"
+    "club": "hansa",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Andreas Buck",
@@ -11952,7 +13050,11 @@
     "prime_rating": 70,
     "career_years": "1994-1998",
     "nationality": "GER",
-    "club": "hansa"
+    "club": "hansa",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Stefan Beinlich",
@@ -11960,7 +13062,11 @@
     "prime_rating": 72,
     "career_years": "2002-2006",
     "nationality": "GER",
-    "club": "cottbus"
+    "club": "cottbus",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Marcel Heller",
@@ -11968,7 +13074,11 @@
     "prime_rating": 70,
     "career_years": "2010-2013",
     "nationality": "GER",
-    "club": "cottbus"
+    "club": "cottbus",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Klaus Wagner",
@@ -11976,7 +13086,11 @@
     "prime_rating": 70,
     "career_years": "2000-2005",
     "nationality": "GER",
-    "club": "cottbus"
+    "club": "cottbus",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Marcus Marin",
@@ -11984,7 +13098,10 @@
     "prime_rating": 70,
     "career_years": "1990-1995",
     "nationality": "GER",
-    "club": "duisburg"
+    "club": "duisburg",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Michael Tarnat",
@@ -12001,7 +13118,11 @@
     "prime_rating": 72,
     "career_years": "1985-1992",
     "nationality": "GER",
-    "club": "dynamodresden"
+    "club": "dynamodresden",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Eduard Geyer",
@@ -12009,7 +13130,10 @@
     "prime_rating": 70,
     "career_years": "1970-1976",
     "nationality": "GER",
-    "club": "dynamodresden"
+    "club": "dynamodresden",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Andre Trulsen",
@@ -12017,7 +13141,10 @@
     "prime_rating": 72,
     "career_years": "1989-1995",
     "nationality": "GER",
-    "club": "stpauli"
+    "club": "stpauli",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Lukas Daschner",
@@ -12026,7 +13153,10 @@
     "career_years": "2023-2025",
     "nationality": "GER",
     "club": "stpauli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Niko Giesselmann",
@@ -12034,7 +13164,11 @@
     "prime_rating": 72,
     "career_years": "2018-2020",
     "nationality": "GER",
-    "club": "fortunaduesseldorf"
+    "club": "fortunaduesseldorf",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Wolfgang Rolff",
@@ -12042,7 +13176,11 @@
     "prime_rating": 74,
     "career_years": "1985-1989",
     "nationality": "GER",
-    "club": "fortunaduesseldorf"
+    "club": "fortunaduesseldorf",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Hasan Salihamidzic",
@@ -12050,7 +13188,11 @@
     "prime_rating": 78,
     "career_years": "1996-1998",
     "nationality": "BIH",
-    "club": "braunschweig"
+    "club": "braunschweig",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Ronnie Worm",
@@ -12058,7 +13200,10 @@
     "prime_rating": 74,
     "career_years": "1975-1982",
     "nationality": "GER",
-    "club": "braunschweig"
+    "club": "braunschweig",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Sven Schipplock",
@@ -12066,7 +13211,11 @@
     "prime_rating": 70,
     "career_years": "2017-2018",
     "nationality": "GER",
-    "club": "bielefeld"
+    "club": "bielefeld",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Dirk Hupe",
@@ -12074,7 +13223,11 @@
     "prime_rating": 70,
     "career_years": "1995-2000",
     "nationality": "GER",
-    "club": "bielefeld"
+    "club": "bielefeld",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Mike Hanke",
@@ -12082,7 +13235,11 @@
     "prime_rating": 75,
     "career_years": "2014-2015",
     "nationality": "GER",
-    "club": "bielefeld"
+    "club": "bielefeld",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Karl-Heinz Granitza",
@@ -12090,7 +13247,10 @@
     "prime_rating": 76,
     "career_years": "1972-1977",
     "nationality": "GER",
-    "club": "bremerhaven"
+    "club": "bremerhaven",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Karl Bruhns",
@@ -12106,7 +13266,11 @@
     "prime_rating": 72,
     "career_years": "1968-1974",
     "nationality": "GER",
-    "club": "offenbach"
+    "club": "offenbach",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Bernd Lorenz",
@@ -12114,7 +13278,10 @@
     "prime_rating": 72,
     "career_years": "1968-1974",
     "nationality": "GER",
-    "club": "offenbach"
+    "club": "offenbach",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Egon Schmitt",
@@ -12122,7 +13289,10 @@
     "prime_rating": 70,
     "career_years": "1968-1975",
     "nationality": "GER",
-    "club": "offenbach"
+    "club": "offenbach",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Stephan Straub",
@@ -12138,7 +13308,11 @@
     "prime_rating": 70,
     "career_years": "2003-2008",
     "nationality": "GER",
-    "club": "aachen"
+    "club": "aachen",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Marius Ebbers",
@@ -12154,7 +13328,10 @@
     "prime_rating": 70,
     "career_years": "2002-2008",
     "nationality": "GER",
-    "club": "aachen"
+    "club": "aachen",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Reiner Plassmann",
@@ -12162,7 +13339,10 @@
     "prime_rating": 72,
     "career_years": "1975-1980",
     "nationality": "GER",
-    "club": "aachen"
+    "club": "aachen",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Uwe Gospodarek",
@@ -12187,7 +13367,10 @@
     "prime_rating": 70,
     "career_years": "1989-1993",
     "nationality": "GER",
-    "club": "wattenscheid"
+    "club": "wattenscheid",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Tomislav Maric",
@@ -12195,7 +13378,10 @@
     "prime_rating": 74,
     "career_years": "1995-1998",
     "nationality": "CRO",
-    "club": "wattenscheid"
+    "club": "wattenscheid",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Markus Schupp",
@@ -12211,7 +13397,10 @@
     "prime_rating": 70,
     "career_years": "1998-2000",
     "nationality": "GER",
-    "club": "ulm"
+    "club": "ulm",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Sreto Ristic",
@@ -12219,7 +13408,10 @@
     "prime_rating": 72,
     "career_years": "1998-2000",
     "nationality": "SCG",
-    "club": "ulm"
+    "club": "ulm",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Michael Wittwer",
@@ -12227,7 +13419,10 @@
     "prime_rating": 70,
     "career_years": "1998-2000",
     "nationality": "GER",
-    "club": "ulm"
+    "club": "ulm",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Adrian Knup",
@@ -12235,7 +13430,10 @@
     "prime_rating": 75,
     "career_years": "1995-1998",
     "nationality": "SUI",
-    "club": "ulm"
+    "club": "ulm",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Suat Cakir",
@@ -12243,7 +13441,11 @@
     "prime_rating": 70,
     "career_years": "2014-2020",
     "nationality": "GER",
-    "club": "stpaderborn"
+    "club": "stpaderborn",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Mohamed Drager",
@@ -12251,7 +13453,11 @@
     "prime_rating": 72,
     "career_years": "2019-2021",
     "nationality": "TUN",
-    "club": "stpaderborn"
+    "club": "stpaderborn",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Bernhard Trares",
@@ -12259,7 +13465,10 @@
     "prime_rating": 70,
     "career_years": "1998-2002",
     "nationality": "GER",
-    "club": "unterhaching"
+    "club": "unterhaching",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Mario Basler",
@@ -12275,7 +13484,10 @@
     "prime_rating": 72,
     "career_years": "2009-2013",
     "nationality": "GER",
-    "club": "furth"
+    "club": "furth",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Hans-Joerg Butt",
@@ -12283,7 +13495,10 @@
     "prime_rating": 75,
     "career_years": "1989-1990",
     "nationality": "GER",
-    "club": "furth"
+    "club": "furth",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Pascal Gross",
@@ -12300,7 +13515,10 @@
     "prime_rating": 70,
     "career_years": "2015-2019",
     "nationality": "GER",
-    "club": "sandhausen"
+    "club": "sandhausen",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Dennis Diekmeier",
@@ -12308,7 +13526,10 @@
     "prime_rating": 72,
     "career_years": "2018-2023",
     "nationality": "GER",
-    "club": "sandhausen"
+    "club": "sandhausen",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Aleksandr Zhirov",
@@ -12316,7 +13537,10 @@
     "prime_rating": 70,
     "career_years": "2018-2020",
     "nationality": "RUS",
-    "club": "sandhausen"
+    "club": "sandhausen",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Andreas Bruckner",
@@ -12324,7 +13548,11 @@
     "prime_rating": 70,
     "career_years": "1985-1990",
     "nationality": "GER",
-    "club": "munich1860"
+    "club": "munich1860",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Manfred Bockenfeld",
@@ -12332,7 +13560,11 @@
     "prime_rating": 72,
     "career_years": "1988-1990",
     "nationality": "GER",
-    "club": "munich1860"
+    "club": "munich1860",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Andreas Brehme",
@@ -12340,7 +13572,10 @@
     "prime_rating": 84,
     "career_years": "1979-1981",
     "nationality": "GER",
-    "club": "munich1860"
+    "club": "munich1860",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Berthold Schaefer",
@@ -12348,7 +13583,10 @@
     "prime_rating": 70,
     "career_years": "1985-1990",
     "nationality": "GER",
-    "club": "munich1860"
+    "club": "munich1860",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Erich Beer",
@@ -12356,7 +13594,10 @@
     "prime_rating": 75,
     "career_years": "1972-1976",
     "nationality": "GER",
-    "club": "blauweiss90"
+    "club": "blauweiss90",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Karl-Heinz Pflipsen",
@@ -12364,7 +13605,10 @@
     "prime_rating": 70,
     "career_years": "1985-1988",
     "nationality": "GER",
-    "club": "blauweiss90"
+    "club": "blauweiss90",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Joachim Loew",
@@ -12372,7 +13616,11 @@
     "prime_rating": 74,
     "career_years": "1989-1992",
     "nationality": "GER",
-    "club": "stuttgartkickers"
+    "club": "stuttgartkickers",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Helmut Roleder",
@@ -12380,7 +13628,11 @@
     "prime_rating": 72,
     "career_years": "1988-1990",
     "nationality": "GER",
-    "club": "stuttgartkickers"
+    "club": "stuttgartkickers",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Andreas Schmid",
@@ -12388,7 +13640,11 @@
     "prime_rating": 70,
     "career_years": "1988-1991",
     "nationality": "GER",
-    "club": "stuttgartkickers"
+    "club": "stuttgartkickers",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Christian Wueck",
@@ -12396,7 +13652,10 @@
     "prime_rating": 72,
     "career_years": "1992-1995",
     "nationality": "GER",
-    "club": "stuttgartkickers"
+    "club": "stuttgartkickers",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Karl Allgoewer",
@@ -12404,7 +13663,10 @@
     "prime_rating": 75,
     "career_years": "1985-1988",
     "nationality": "GER",
-    "club": "stuttgartkickers"
+    "club": "stuttgartkickers",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Erhard Preuss",
@@ -12412,7 +13674,11 @@
     "prime_rating": 70,
     "career_years": "1970-1975",
     "nationality": "GER",
-    "club": "wuppertaler"
+    "club": "wuppertaler",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Manfred Reichert",
@@ -12420,7 +13686,11 @@
     "prime_rating": 70,
     "career_years": "1970-1975",
     "nationality": "GER",
-    "club": "wuppertaler"
+    "club": "wuppertaler",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Guenter Pröpper",
@@ -12452,7 +13722,10 @@
     "prime_rating": 80,
     "career_years": "1986-1987",
     "nationality": "GER",
-    "club": "tennisborussia"
+    "club": "tennisborussia",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Ronny Nikol",
@@ -12460,7 +13733,10 @@
     "prime_rating": 70,
     "career_years": "1997-2000",
     "nationality": "GER",
-    "club": "tennisborussia"
+    "club": "tennisborussia",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Markus Pazurek",
@@ -12493,7 +13769,10 @@
     "career_years": "1990-1992",
     "nationality": "GER",
     "club": "leipzigvfb",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Matthias Lindner",
@@ -12501,7 +13780,10 @@
     "prime_rating": 70,
     "career_years": "1990-1995",
     "nationality": "GER",
-    "club": "leipzigvfb"
+    "club": "leipzigvfb",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Genki Haraguchi",
@@ -12510,7 +13792,10 @@
     "career_years": "2018-2021",
     "nationality": "JPN",
     "club": "union",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Felix Kroos",
@@ -12518,7 +13803,10 @@
     "prime_rating": 72,
     "career_years": "2017-2021",
     "nationality": "GER",
-    "club": "union"
+    "club": "union",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Wolfram Wuttke",
@@ -12527,7 +13815,10 @@
     "career_years": "1985-1987",
     "nationality": "GER",
     "club": "uerdingen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Friedhelm Funkel Jr",
@@ -12535,7 +13826,10 @@
     "prime_rating": 70,
     "career_years": "1980-1986",
     "nationality": "GER",
-    "club": "uerdingen"
+    "club": "uerdingen",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Oliver Neuville",
@@ -12544,7 +13838,10 @@
     "career_years": "1997-1999",
     "nationality": "GER",
     "club": "hansa",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Tomasz Hajto",
@@ -12552,7 +13849,10 @@
     "prime_rating": 74,
     "career_years": "1998-2001",
     "nationality": "POL",
-    "club": "hansa"
+    "club": "hansa",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Sergej Barbarez",
@@ -12561,7 +13861,10 @@
     "career_years": "1996-1998",
     "nationality": "BIH",
     "club": "hansa",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Hans-Juergen Doerner",
@@ -12602,7 +13905,10 @@
     "prime_rating": 76,
     "career_years": "2011-2015",
     "nationality": "ARG",
-    "club": "hoffenheim"
+    "club": "hoffenheim",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Florian Mueller",
@@ -12610,7 +13916,10 @@
     "prime_rating": 72,
     "career_years": "2020-2021",
     "nationality": "GER",
-    "club": "mainz"
+    "club": "mainz",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Daniel Jensen",
@@ -12619,7 +13928,10 @@
     "career_years": "2004-2010",
     "nationality": "DEN",
     "club": "werder",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Jean-Pierre Papin",
@@ -12627,7 +13939,10 @@
     "prime_rating": 82,
     "career_years": "1995-1996",
     "nationality": "FRA",
-    "club": "kaiserslautern"
+    "club": "kaiserslautern",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Maximilian Thiel",
@@ -12644,7 +13959,10 @@
     "career_years": "2014-2015",
     "nationality": "TUR",
     "club": "darmstadt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Slaven Skeledzic",
@@ -12652,7 +13970,10 @@
     "prime_rating": 70,
     "career_years": "1995-1998",
     "nationality": "CRO",
-    "club": "karlsruhe"
+    "club": "karlsruhe",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Cyril Ngonge",
@@ -12660,7 +13981,11 @@
     "prime_rating": 70,
     "career_years": "2018-2020",
     "nationality": "BEL",
-    "club": "rotweissessen"
+    "club": "rotweissessen",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Ralf Schaten",
@@ -12693,7 +14018,10 @@
     "prime_rating": 70,
     "career_years": "2002-2007",
     "nationality": "GER",
-    "club": "cottbus"
+    "club": "cottbus",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Stefan Klos",
@@ -12709,7 +14037,11 @@
     "prime_rating": 70,
     "career_years": "1992-1996",
     "nationality": "GER",
-    "club": "duisburg"
+    "club": "duisburg",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Andreas Buck",
@@ -12733,7 +14065,10 @@
     "prime_rating": 70,
     "career_years": "1995-2000",
     "nationality": "GER",
-    "club": "duisburg"
+    "club": "duisburg",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Manuel Schaeffler",
@@ -12741,7 +14076,11 @@
     "prime_rating": 72,
     "career_years": "2013-2015",
     "nationality": "GER",
-    "club": "stpauli"
+    "club": "stpauli",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Michael Rensing",
@@ -12758,7 +14097,11 @@
     "prime_rating": 74,
     "career_years": "2013-2017",
     "nationality": "AUT",
-    "club": "fortunaduesseldorf"
+    "club": "fortunaduesseldorf",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Niko Giesselmann Jr",
@@ -12766,7 +14109,11 @@
     "prime_rating": 72,
     "career_years": "2018-2020",
     "nationality": "GER",
-    "club": "fortunaduesseldorf"
+    "club": "fortunaduesseldorf",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Marcel Sobottka",
@@ -12782,7 +14129,10 @@
     "prime_rating": 74,
     "career_years": "2014-2017",
     "nationality": "AUT",
-    "club": "fortunaduesseldorf"
+    "club": "fortunaduesseldorf",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Henning Bommer",
@@ -12790,7 +14140,11 @@
     "prime_rating": 72,
     "career_years": "1976-1985",
     "nationality": "GER",
-    "club": "braunschweig"
+    "club": "braunschweig",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Manuel Hornig",
@@ -12798,7 +14152,11 @@
     "prime_rating": 70,
     "career_years": "2020-2023",
     "nationality": "GER",
-    "club": "bielefeld"
+    "club": "bielefeld",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Stefan Effenberg",
@@ -12823,7 +14181,10 @@
     "prime_rating": 70,
     "career_years": "1995-2000",
     "nationality": "GER",
-    "club": "bielefeld"
+    "club": "bielefeld",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Marcel Heller",
@@ -12831,7 +14192,10 @@
     "prime_rating": 72,
     "career_years": "2005-2009",
     "nationality": "GER",
-    "club": "bielefeld"
+    "club": "bielefeld",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Manfred Pinkall",
@@ -12847,7 +14211,11 @@
     "prime_rating": 65,
     "career_years": "1971-1975",
     "nationality": "GER",
-    "club": "bremerhaven"
+    "club": "bremerhaven",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Wolfgang Sandhowe",
@@ -12855,7 +14223,11 @@
     "prime_rating": 65,
     "career_years": "1971-1975",
     "nationality": "GER",
-    "club": "bremerhaven"
+    "club": "bremerhaven",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Klaus Weiss",
@@ -12871,7 +14243,11 @@
     "prime_rating": 70,
     "career_years": "2003-2008",
     "nationality": "NED",
-    "club": "aachen"
+    "club": "aachen",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Stefan Blank",
@@ -12887,7 +14263,11 @@
     "prime_rating": 70,
     "career_years": "1990-1995",
     "nationality": "GER",
-    "club": "wattenscheid"
+    "club": "wattenscheid",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Andreas Rupp",
@@ -12895,7 +14275,11 @@
     "prime_rating": 70,
     "career_years": "1990-1995",
     "nationality": "GER",
-    "club": "wattenscheid"
+    "club": "wattenscheid",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Christian Wueck",
@@ -12911,7 +14295,10 @@
     "prime_rating": 70,
     "career_years": "1990-1995",
     "nationality": "GER",
-    "club": "wattenscheid"
+    "club": "wattenscheid",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Wolfgang Klein",
@@ -12919,7 +14306,10 @@
     "prime_rating": 70,
     "career_years": "1990-1995",
     "nationality": "GER",
-    "club": "wattenscheid"
+    "club": "wattenscheid",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Heiko Butscher",
@@ -12935,7 +14325,11 @@
     "prime_rating": 74,
     "career_years": "2018-2022",
     "nationality": "NGA",
-    "club": "stpaderborn"
+    "club": "stpaderborn",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Klaus Gjasula",
@@ -12951,7 +14345,10 @@
     "prime_rating": 72,
     "career_years": "2018-2020",
     "nationality": "COD",
-    "club": "stpaderborn"
+    "club": "stpaderborn",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Felix Herzenbruch",
@@ -12959,7 +14356,10 @@
     "prime_rating": 70,
     "career_years": "2018-2022",
     "nationality": "GER",
-    "club": "stpaderborn"
+    "club": "stpaderborn",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Sven Mueller",
@@ -12967,7 +14367,11 @@
     "prime_rating": 70,
     "career_years": "1999-2003",
     "nationality": "GER",
-    "club": "unterhaching"
+    "club": "unterhaching",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Esad Selimovic",
@@ -12975,7 +14379,10 @@
     "prime_rating": 70,
     "career_years": "1999-2003",
     "nationality": "BIH",
-    "club": "unterhaching"
+    "club": "unterhaching",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Markus Berger",
@@ -12983,7 +14390,10 @@
     "prime_rating": 70,
     "career_years": "1999-2003",
     "nationality": "GER",
-    "club": "unterhaching"
+    "club": "unterhaching",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Heinrich Schmidtgal",
@@ -13023,7 +14433,11 @@
     "prime_rating": 74,
     "career_years": "2015-2017",
     "nationality": "COD",
-    "club": "ingolstadt"
+    "club": "ingolstadt",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Romain Bregerie",
@@ -13040,7 +14454,10 @@
     "career_years": "2014-2017",
     "nationality": "PAR",
     "club": "ingolstadt",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Werner Heun",
@@ -13056,7 +14473,11 @@
     "prime_rating": 70,
     "career_years": "1985-1990",
     "nationality": "GER",
-    "club": "munich1860"
+    "club": "munich1860",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Andreas Geipl",
@@ -13072,7 +14493,10 @@
     "prime_rating": 75,
     "career_years": "1985-1989",
     "nationality": "GER",
-    "club": "munich1860"
+    "club": "munich1860",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Karl Anders",
@@ -13088,7 +14512,11 @@
     "prime_rating": 70,
     "career_years": "1985-1988",
     "nationality": "GER",
-    "club": "blauweiss90"
+    "club": "blauweiss90",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Bernd Reimann",
@@ -13096,7 +14524,11 @@
     "prime_rating": 70,
     "career_years": "1985-1988",
     "nationality": "GER",
-    "club": "blauweiss90"
+    "club": "blauweiss90",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Klaus Hilpert",
@@ -13128,7 +14560,10 @@
     "prime_rating": 70,
     "career_years": "1985-1988",
     "nationality": "GER",
-    "club": "blauweiss90"
+    "club": "blauweiss90",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Eike Immel",
@@ -13152,7 +14587,11 @@
     "prime_rating": 70,
     "career_years": "1970-1975",
     "nationality": "GER",
-    "club": "wuppertaler"
+    "club": "wuppertaler",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Helmut Kremers",
@@ -13168,7 +14607,10 @@
     "prime_rating": 72,
     "career_years": "1970-1975",
     "nationality": "GER",
-    "club": "wuppertaler"
+    "club": "wuppertaler",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Erwin Kostedde",
@@ -13176,7 +14618,10 @@
     "prime_rating": 78,
     "career_years": "1970-1975",
     "nationality": "GER",
-    "club": "wuppertaler"
+    "club": "wuppertaler",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Jean Loewenguth",
@@ -13192,7 +14637,11 @@
     "prime_rating": 70,
     "career_years": "1995-1998",
     "nationality": "GER",
-    "club": "tennisborussia"
+    "club": "tennisborussia",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Markus Hahnemann",
@@ -13200,7 +14649,11 @@
     "prime_rating": 70,
     "career_years": "1995-1998",
     "nationality": "GER",
-    "club": "tennisborussia"
+    "club": "tennisborussia",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Ronny Nikol Jr",
@@ -13216,7 +14669,10 @@
     "prime_rating": 72,
     "career_years": "1997-2000",
     "nationality": "GER",
-    "club": "tennisborussia"
+    "club": "tennisborussia",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Patrick Koronkiewicz",
@@ -13224,7 +14680,11 @@
     "prime_rating": 70,
     "career_years": "2018-2023",
     "nationality": "GER",
-    "club": "viktoriakoln"
+    "club": "viktoriakoln",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Lars Dietz",
@@ -13232,7 +14692,11 @@
     "prime_rating": 70,
     "career_years": "2018-2023",
     "nationality": "GER",
-    "club": "viktoriakoln"
+    "club": "viktoriakoln",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Albert Bunjaku",
@@ -13248,7 +14712,10 @@
     "prime_rating": 70,
     "career_years": "2015-2020",
     "nationality": "GER",
-    "club": "viktoriakoln"
+    "club": "viktoriakoln",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Sven Kreyer",
@@ -13256,7 +14723,10 @@
     "prime_rating": 70,
     "career_years": "2018-2022",
     "nationality": "GER",
-    "club": "viktoriakoln"
+    "club": "viktoriakoln",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Perry Braeutigam",
@@ -13272,7 +14742,11 @@
     "prime_rating": 72,
     "career_years": "1992-1995",
     "nationality": "SUI",
-    "club": "leipzigvfb"
+    "club": "leipzigvfb",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Henry Kreth",
@@ -13280,7 +14754,11 @@
     "prime_rating": 70,
     "career_years": "1990-1994",
     "nationality": "GER",
-    "club": "leipzigvfb"
+    "club": "leipzigvfb",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Reiner Kunze",
@@ -13296,7 +14774,10 @@
     "prime_rating": 70,
     "career_years": "1990-1995",
     "nationality": "GER",
-    "club": "leipzigvfb"
+    "club": "leipzigvfb",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Aleksandr Zhirov CAM",

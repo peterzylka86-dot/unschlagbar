@@ -60,7 +60,11 @@
     "career_years": "2007-2022",
     "nationality": "Brazil",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Roberto Carlos",
@@ -69,7 +73,11 @@
     "career_years": "1996-2007",
     "nationality": "Brazil",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Dani Carvajal",
@@ -78,7 +86,11 @@
     "career_years": "2013-2026",
     "nationality": "Spain",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Michel Salgado",
@@ -87,7 +99,11 @@
     "career_years": "1999-2009",
     "nationality": "Spain",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Jude Bellingham",
@@ -141,7 +157,10 @@
     "career_years": "2009-2018",
     "nationality": "Portugal",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Vinícius Júnior",
@@ -150,7 +169,10 @@
     "career_years": "2018-2026",
     "nationality": "Brazil",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Rodrygo",
@@ -159,7 +181,10 @@
     "career_years": "2019-2026",
     "nationality": "Brazil",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Karim Benzema",
@@ -249,7 +274,11 @@
     "career_years": "2023-2026",
     "nationality": "Croatia",
     "club": "manchestercity",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Kyle Walker",
@@ -258,7 +287,11 @@
     "career_years": "2017-2026",
     "nationality": "England",
     "club": "manchestercity",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Aleksandar Kolarov",
@@ -267,7 +300,11 @@
     "career_years": "2010-2017",
     "nationality": "Serbia",
     "club": "manchestercity",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Rodri",
@@ -330,7 +367,10 @@
     "career_years": "2021-2026",
     "nationality": "England",
     "club": "manchestercity",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Riyad Mahrez",
@@ -339,7 +379,10 @@
     "career_years": "2018-2023",
     "nationality": "Algeria",
     "club": "manchestercity",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Raheem Sterling",
@@ -348,7 +391,10 @@
     "career_years": "2015-2022",
     "nationality": "England",
     "club": "manchestercity",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Erling Haaland",
@@ -438,7 +484,11 @@
     "career_years": "2010-2021",
     "nationality": "Austria",
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Philipp Lahm",
@@ -447,7 +497,11 @@
     "career_years": "2003-2017",
     "nationality": "Germany",
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Paul Breitner",
@@ -456,7 +510,11 @@
     "career_years": "1970-1983",
     "nationality": "Germany",
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Bastian Schweinsteiger",
@@ -510,7 +568,10 @@
     "career_years": "2007-2019",
     "nationality": "France",
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Arjen Robben",
@@ -519,7 +580,10 @@
     "career_years": "2009-2019",
     "nationality": "Netherlands",
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Leroy Sané",
@@ -528,7 +592,10 @@
     "career_years": "2020-2026",
     "nationality": "Germany",
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Robert Lewandowski",
@@ -618,7 +685,11 @@
     "career_years": "2022-2026",
     "nationality": "France",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Jordi Alba",
@@ -627,7 +698,11 @@
     "career_years": "2012-2023",
     "nationality": "Spain",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Dani Alves",
@@ -636,7 +711,11 @@
     "career_years": "2008-2016",
     "nationality": "Brazil",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Sergio Busquets",
@@ -690,7 +769,10 @@
     "career_years": "2003-2008",
     "nationality": "Brazil",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Neymar Jr.",
@@ -699,7 +781,10 @@
     "career_years": "2013-2017",
     "nationality": "Brazil",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Lamine Yamal",
@@ -708,7 +793,10 @@
     "career_years": "2023-2026",
     "nationality": "Spain",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Lionel Messi",
@@ -717,7 +805,10 @@
     "career_years": "2004-2021",
     "nationality": "Argentina",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Luis Suárez",
@@ -825,7 +916,11 @@
     "career_years": "2017-2026",
     "nationality": "Scotland",
     "club": "liverpool",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Trent Alexander-Arnold",
@@ -834,7 +929,11 @@
     "career_years": "2016-2025",
     "nationality": "England",
     "club": "liverpool",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Alan Hansen",
@@ -879,7 +978,10 @@
     "career_years": "2016-2022",
     "nationality": "Senegal",
     "club": "liverpool",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Mohamed Salah",
@@ -888,7 +990,10 @@
     "career_years": "2017-2026",
     "nationality": "Egypt",
     "club": "liverpool",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Kenny Dalglish",
@@ -933,7 +1038,10 @@
     "career_years": "1987-1997",
     "nationality": "England",
     "club": "liverpool",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Gianluigi Donnarumma",
@@ -987,7 +1095,11 @@
     "career_years": "2021-2026",
     "nationality": "Morocco",
     "club": "psg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Maxwell",
@@ -995,7 +1107,11 @@
     "prime_rating": 82,
     "career_years": "2012-2017",
     "nationality": "Brazil",
-    "club": "psg"
+    "club": "psg",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Marco Verratti",
@@ -1031,7 +1147,10 @@
     "career_years": "2015-2022",
     "nationality": "Argentina",
     "club": "psg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Neymar Jr.",
@@ -1040,7 +1159,10 @@
     "career_years": "2017-2023",
     "nationality": "Brazil",
     "club": "psg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Zlatan Ibrahimović",
@@ -1067,7 +1189,10 @@
     "career_years": "2023-2026",
     "nationality": "France",
     "club": "psg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Walter Zenga",
@@ -1103,7 +1228,11 @@
     "career_years": "1995-2014",
     "nationality": "Argentina",
     "club": "inter",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Giacinto Facchetti",
@@ -1112,7 +1241,11 @@
     "career_years": "1960-1978",
     "nationality": "Italy",
     "club": "inter",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Marco Materazzi",
@@ -1228,7 +1361,11 @@
     "career_years": "1985-2009",
     "nationality": "Italy",
     "club": "milan",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Franco Baresi",
@@ -1255,7 +1392,11 @@
     "career_years": "2003-2008",
     "nationality": "Brazil",
     "club": "milan",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Theo Hernández",
@@ -1264,7 +1405,11 @@
     "career_years": "2019-2026",
     "nationality": "France",
     "club": "milan",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Andrea Pirlo",
@@ -1363,7 +1508,10 @@
     "career_years": "2019-2026",
     "nationality": "Portugal",
     "club": "milan",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Gianluigi Buffon",
@@ -1426,7 +1574,11 @@
     "career_years": "2015-2024",
     "nationality": "Brazil",
     "club": "juventus",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Pavel Nedvěd",
@@ -1534,7 +1686,11 @@
     "career_years": "2010-2019",
     "nationality": "Brazil",
     "club": "atletico",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Stefan Savić",
@@ -1651,7 +1807,11 @@
     "career_years": "2008-2020",
     "nationality": "Germany",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Łukasz Piszczek",
@@ -1660,7 +1820,11 @@
     "career_years": "2010-2021",
     "nationality": "Poland",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Niklas Süle",
@@ -1714,7 +1878,10 @@
     "career_years": "2017-2021",
     "nationality": "England",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Pierre-Emerick Aubameyang",
@@ -1750,7 +1917,10 @@
     "career_years": "2022-2026",
     "nationality": "Germany",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Petr Čech",
@@ -1777,7 +1947,11 @@
     "career_years": "2006-2014",
     "nationality": "England",
     "club": "chelsea",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Marcel Desailly",
@@ -1795,7 +1969,11 @@
     "career_years": "2018-2026",
     "nationality": "England",
     "club": "chelsea",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Thiago Silva",
@@ -1840,7 +2018,10 @@
     "career_years": "2012-2019",
     "nationality": "Belgium",
     "club": "chelsea",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Cole Palmer",
@@ -1903,7 +2084,10 @@
     "career_years": "2019-2026",
     "nationality": "England",
     "club": "arsenal",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Tony Adams",
@@ -1939,7 +2123,11 @@
     "career_years": "1999-2006",
     "nationality": "England",
     "club": "arsenal",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Patrick Vieira",
@@ -1984,7 +2172,10 @@
     "career_years": "2000-2006",
     "nationality": "France",
     "club": "arsenal",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Thierry Henry",
@@ -2074,7 +2265,11 @@
     "career_years": "1992-2011",
     "nationality": "England",
     "club": "manchesterunited",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Patrice Evra",
@@ -2083,7 +2278,11 @@
     "career_years": "2006-2014",
     "nationality": "France",
     "club": "manchesterunited",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Roy Keane",
@@ -2128,7 +2327,10 @@
     "career_years": "1992-2003",
     "nationality": "England",
     "club": "manchesterunited",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Cristiano Ronaldo",
@@ -2137,7 +2339,10 @@
     "career_years": "2003-2009",
     "nationality": "Portugal",
     "club": "manchesterunited",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Wayne Rooney",
@@ -2164,7 +2369,10 @@
     "career_years": "1991-2014",
     "nationality": "Wales",
     "club": "manchesterunited",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Marcus Rashford",
@@ -2173,7 +2381,10 @@
     "career_years": "2015-2026",
     "nationality": "England",
     "club": "manchesterunited",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Hugo Lloris",
@@ -2208,7 +2419,11 @@
     "prime_rating": 78,
     "career_years": "1992-2003",
     "nationality": "England",
-    "club": "tottenham"
+    "club": "tottenham",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Jan Vertonghen",
@@ -2262,7 +2477,10 @@
     "career_years": "2007-2013",
     "nationality": "Wales",
     "club": "tottenham",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Harry Kane",
@@ -2280,7 +2498,10 @@
     "career_years": "2015-2026",
     "nationality": "South Korea",
     "club": "tottenham",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Teddy Sheringham",
@@ -2460,7 +2681,11 @@
     "career_years": "2023-2026",
     "nationality": "Spain",
     "club": "bayer",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Jeremie Frimpong",
@@ -2469,7 +2694,11 @@
     "career_years": "2021-2026",
     "nationality": "Netherlands",
     "club": "bayer",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Granit Xhaka",
@@ -2559,7 +2788,11 @@
     "career_years": "2019-2026",
     "nationality": "Italy",
     "club": "napoli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Kalidou Koulibaly",
@@ -2586,7 +2819,11 @@
     "career_years": "2022-2026",
     "nationality": "Uruguay",
     "club": "napoli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Stanislav Lobotka",
@@ -2622,7 +2859,10 @@
     "career_years": "2010-2022",
     "nationality": "Italy",
     "club": "napoli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Khvicha Kvaratskhelia",
@@ -2631,7 +2871,10 @@
     "career_years": "2022-2026",
     "nationality": "Georgia",
     "club": "napoli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Dries Mertens",
@@ -2720,7 +2963,11 @@
     "career_years": "2016-2023",
     "nationality": "Spain",
     "club": "benfica",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Enzo Fernández",
@@ -2765,7 +3012,10 @@
     "career_years": "2023-2024",
     "nationality": "Argentina",
     "club": "benfica",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Rui Costa",
@@ -2801,7 +3051,10 @@
     "career_years": "2016-2024",
     "nationality": "Portugal",
     "club": "benfica",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Vítor Baía",
@@ -2879,7 +3132,10 @@
     "prime_rating": 87,
     "career_years": "2008-2012",
     "nationality": "Brazil",
-    "club": "porto"
+    "club": "porto",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Radamel Falcao",
@@ -2915,7 +3171,10 @@
     "career_years": "2022-2026",
     "nationality": "Brazil",
     "club": "porto",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Fernando Gomes",
@@ -3050,7 +3309,10 @@
     "career_years": "1992-1997",
     "nationality": "Netherlands",
     "club": "ajax",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Antony",
@@ -3058,7 +3320,10 @@
     "prime_rating": 82,
     "career_years": "2020-2022",
     "nationality": "Brazil",
-    "club": "ajax"
+    "club": "ajax",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Walter Benítez",
@@ -3102,7 +3367,10 @@
     "career_years": "2002-2004",
     "nationality": "Netherlands",
     "club": "psv",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Phillip Cocu",
@@ -3147,7 +3415,10 @@
     "career_years": "2017-2019",
     "nationality": "Mexico",
     "club": "psv",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Memphis Depay",
@@ -3156,7 +3427,10 @@
     "career_years": "2011-2015",
     "nationality": "Netherlands",
     "club": "psv",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Joe Hart",
@@ -3192,7 +3466,10 @@
     "career_years": "1962-1975",
     "nationality": "Scotland",
     "club": "celtic",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Billy McNeill",
@@ -3372,7 +3649,10 @@
     "career_years": "2015-2017",
     "nationality": "France",
     "club": "monaco",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Emmanuel Petit",
@@ -3479,7 +3759,11 @@
     "career_years": "1997-2005",
     "nationality": "Italy",
     "club": "valencia",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Gaizka Mendieta",
@@ -3514,7 +3798,10 @@
     "prime_rating": 85,
     "career_years": "2006-2011",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "David Villa",
@@ -3595,7 +3882,11 @@
     "career_years": "1994-1998",
     "nationality": "Norway",
     "club": "rosenborg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Stig Inge Bjørnebye",
@@ -3604,7 +3895,11 @@
     "career_years": "1987-1990",
     "nationality": "Norway",
     "club": "rosenborg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Frode Olsen",
@@ -3656,7 +3951,10 @@
     "career_years": "1983-1996",
     "nationality": "Romania",
     "club": "steaua",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Gheorghe Hagi",
@@ -3799,7 +4097,10 @@
     "career_years": "1970-1983",
     "nationality": "Scotland",
     "club": "nottinghamforest",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Trevor Francis",
@@ -3844,7 +4145,11 @@
     "career_years": "1974-1984",
     "nationality": "England",
     "club": "nottinghamforest",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Stuart Pearce",
@@ -3853,7 +4158,11 @@
     "career_years": "1985-1997",
     "nationality": "England",
     "club": "nottinghamforest",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Garry Birtles",
@@ -3880,7 +4189,11 @@
     "career_years": "1971-1991",
     "nationality": "Germany",
     "club": "hamburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Horst Hrubesch",
@@ -3952,7 +4265,11 @@
     "career_years": "2022-2026",
     "nationality": "France",
     "club": "astonvilla",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Matty Cash",
@@ -3961,7 +4278,11 @@
     "career_years": "2020-2026",
     "nationality": "Poland",
     "club": "astonvilla",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Boubacar Kamara",
@@ -4015,7 +4336,10 @@
     "career_years": "2021-2026",
     "nationality": "Jamaica",
     "club": "astonvilla",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Peter Withe",
@@ -4033,7 +4357,10 @@
     "career_years": "1979-1983",
     "nationality": "England",
     "club": "astonvilla",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Andriy Shevchenko",
@@ -4069,7 +4396,11 @@
     "career_years": "1979-1990",
     "nationality": "Ukraine",
     "club": "dynamokyiv",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Igor Belanov",
@@ -4095,7 +4426,10 @@
     "career_years": "2006-2017",
     "nationality": "Ukraine",
     "club": "dynamokyiv",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Fernando Muslera",
@@ -4176,7 +4510,10 @@
     "career_years": "2021-2026",
     "nationality": "Turkey",
     "club": "galatasaray",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Andriy Lunin",
@@ -4203,7 +4540,11 @@
     "career_years": "2019-2026",
     "nationality": "France",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Fran García",
@@ -4211,7 +4552,11 @@
     "prime_rating": 78,
     "career_years": "2023-2026",
     "nationality": "Spain",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Aurélien Tchouaméni",
@@ -4256,7 +4601,10 @@
     "career_years": "2019-2026",
     "nationality": "Spain",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Kylian Mbappé",
@@ -4318,7 +4666,10 @@
     "career_years": "2000-2005",
     "nationality": "Portugal",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "David Beckham",
@@ -4416,7 +4767,11 @@
     "career_years": "1996-1999",
     "nationality": "Italy",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Fernando Redondo",
@@ -4504,7 +4859,11 @@
     "prime_rating": 86,
     "career_years": "1973-1989",
     "nationality": "Spain",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Goyo Benito",
@@ -4540,7 +4899,11 @@
     "career_years": "1982-1998",
     "nationality": "Spain",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Pirri",
@@ -4611,7 +4974,10 @@
     "career_years": "1982-1996",
     "nationality": "Spain",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Martín Vázquez",
@@ -4628,7 +4994,10 @@
     "career_years": "1977-1987",
     "nationality": "Spain",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "nationality": "Germany",
@@ -4655,7 +5024,11 @@
     "position": "LB",
     "nationality": "France",
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "career_years": "1992-2007",
@@ -4682,7 +5055,10 @@
     "nationality": "Germany",
     "position": "RW",
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Sean Dundee",
@@ -4699,7 +5075,10 @@
     "career_years": "1996-1999",
     "prime_rating": 87,
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Carsten Jancker",
@@ -4762,7 +5141,10 @@
     "career_years": "1998-2007",
     "prime_rating": 83,
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Owen Hargreaves",
@@ -4825,7 +5207,11 @@
     "career_years": "2002-2006, 2007-2009",
     "prime_rating": 87,
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Willy Sagnol",
@@ -4834,7 +5220,11 @@
     "career_years": "2000-2008",
     "prime_rating": 84,
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Leon Goretzka",
@@ -4852,7 +5242,10 @@
     "career_years": "2017-Present",
     "prime_rating": 87,
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Kingsley Coman",
@@ -4861,7 +5254,10 @@
     "career_years": "2015-Present",
     "prime_rating": 87,
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Niklas Süle",
@@ -4914,7 +5310,11 @@
     "career_years": "1982-1992",
     "prime_rating": 81,
     "club": "bayern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Iñaki Peña",
@@ -4950,7 +5350,11 @@
     "career_years": "2021-2026",
     "nationality": "Spain",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Gavi",
@@ -4976,7 +5380,10 @@
     "career_years": "2022-2026",
     "nationality": "Brazil",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Dani Olmo",
@@ -5012,7 +5419,11 @@
     "career_years": "2007-2013",
     "nationality": "France",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Yaya Touré",
@@ -5048,7 +5459,10 @@
     "career_years": "2007-2010",
     "nationality": "France",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "David Villa",
@@ -5110,7 +5524,11 @@
     "career_years": "1990-1998",
     "nationality": "Spain",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Sergi Barjuán",
@@ -5119,7 +5537,11 @@
     "career_years": "1993-2002",
     "nationality": "Spain",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Pep Guardiola",
@@ -5181,7 +5603,10 @@
     "career_years": "1995-2000",
     "nationality": "Portugal",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Salvador Sadurní",
@@ -5233,7 +5658,11 @@
     "prime_rating": 78,
     "career_years": "1975-1982",
     "nationality": "Spain",
-    "club": "barcelona"
+    "club": "barcelona",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Juan Manuel Asensi",
@@ -5267,7 +5696,10 @@
     "prime_rating": 87,
     "career_years": "1965-1981",
     "nationality": "Spain",
-    "club": "barcelona"
+    "club": "barcelona",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Steve Archibald",
@@ -5302,7 +5734,10 @@
     "prime_rating": 82,
     "career_years": "1982-1987",
     "nationality": "Spain",
-    "club": "barcelona"
+    "club": "barcelona",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Esteban Vigo",
@@ -5311,7 +5746,10 @@
     "career_years": "1976-1984",
     "nationality": "Spain",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Lobo Carrasco",
@@ -5320,7 +5758,10 @@
     "career_years": "1978-1989",
     "nationality": "Spain",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Josep Martínez",
@@ -5374,7 +5815,11 @@
     "career_years": "2021-2026",
     "nationality": "Netherlands",
     "club": "inter",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Federico Dimarco",
@@ -5383,7 +5828,11 @@
     "career_years": "2014-2026",
     "nationality": "Italy",
     "club": "inter",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Nicolò Barella",
@@ -5472,7 +5921,11 @@
     "prime_rating": 90,
     "career_years": "2006-2012",
     "nationality": "Brazil",
-    "club": "inter"
+    "club": "inter",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Cristian Chivu",
@@ -5588,7 +6041,11 @@
     "career_years": "1988-1992",
     "nationality": "Germany",
     "club": "inter",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Jürgen Klinsmann",
@@ -5803,7 +6260,11 @@
     "career_years": "2024-2026",
     "nationality": "Brazil",
     "club": "milan",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Davide Calabria",
@@ -5812,7 +6273,11 @@
     "career_years": "2015-2026",
     "nationality": "Italy",
     "club": "milan",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Tijjani Reijnders",
@@ -5848,7 +6313,10 @@
     "career_years": "2023-2026",
     "nationality": "USA",
     "club": "milan",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Álvaro Morata",
@@ -5875,7 +6343,10 @@
     "career_years": "2023-2026",
     "nationality": "Nigeria",
     "club": "milan",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Thiago Silva",
@@ -5893,7 +6364,11 @@
     "career_years": "2007-2010",
     "nationality": "Italy",
     "club": "milan",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Marek Jankulovski",
@@ -5902,7 +6377,11 @@
     "career_years": "2005-2011",
     "nationality": "Czechia",
     "club": "milan",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Massimo Ambrosini",
@@ -5956,7 +6435,11 @@
     "career_years": "1980-1997",
     "nationality": "Italy",
     "club": "milan",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Christian Panucci",
@@ -5965,7 +6448,11 @@
     "career_years": "1993-1996",
     "nationality": "Italy",
     "club": "milan",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Filippo Galli",
@@ -5992,7 +6479,10 @@
     "career_years": "1986-1996",
     "nationality": "Italy",
     "club": "milan",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Marcel Desailly",
@@ -6064,7 +6554,11 @@
     "career_years": "1973-1982",
     "nationality": "Italy",
     "club": "milan",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Luther Blissett",
@@ -6171,7 +6665,11 @@
     "career_years": "2023-2026",
     "nationality": "Italy",
     "club": "juventus",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Juan Cabal",
@@ -6180,7 +6678,11 @@
     "career_years": "2024-2026",
     "nationality": "Colombia",
     "club": "juventus",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Manuel Locatelli",
@@ -6243,7 +6745,10 @@
     "career_years": "2024-2026",
     "nationality": "Portugal",
     "club": "juventus",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Nico González",
@@ -6251,7 +6756,10 @@
     "prime_rating": 81,
     "career_years": "2024-2026",
     "nationality": "Argentina",
-    "club": "juventus"
+    "club": "juventus",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Randal Kolo Muani",
@@ -6287,7 +6795,11 @@
     "career_years": "1999-2006",
     "nationality": "Italy",
     "club": "juventus",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Patrice Evra",
@@ -6296,7 +6808,11 @@
     "career_years": "2014-2017",
     "nationality": "France",
     "club": "juventus",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Edgar Davids",
@@ -6314,7 +6830,10 @@
     "career_years": "2002-2010",
     "nationality": "Argentina",
     "club": "juventus",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Andrea Pirlo",
@@ -6395,7 +6914,11 @@
     "career_years": "1992-1998",
     "nationality": "Italy",
     "club": "juventus",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Antonio Conte",
@@ -6467,7 +6990,11 @@
     "career_years": "1995-2006",
     "nationality": "Italy",
     "club": "juventus",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Jürgen Kohler",
@@ -6503,7 +7030,11 @@
     "career_years": "1976-1989",
     "nationality": "Italy",
     "club": "juventus",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Claudio Gentile",
@@ -6593,7 +7124,10 @@
     "career_years": "1982-1985",
     "nationality": "Poland",
     "club": "juventus",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Franco Causio",
@@ -6602,7 +7136,10 @@
     "career_years": "1970-1981",
     "nationality": "Italy",
     "club": "juventus",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Sandro Salvadore",
@@ -6665,7 +7202,11 @@
     "career_years": "2022-2026",
     "nationality": "Argentina",
     "club": "atletico",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "César Azpilicueta",
@@ -6674,7 +7215,11 @@
     "career_years": "2024-2026",
     "nationality": "Spain",
     "club": "atletico",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Reinildo Mandava",
@@ -6683,7 +7228,11 @@
     "career_years": "2022-2026",
     "nationality": "Mozambique",
     "club": "atletico",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Pablo Barrios",
@@ -6718,7 +7267,10 @@
     "career_years": "2023-2026",
     "nationality": "Brazil",
     "club": "atletico",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Marcos Llorente",
@@ -6754,7 +7306,10 @@
     "career_years": "2014-2026",
     "nationality": "Argentina",
     "club": "atletico",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Juanfran",
@@ -6762,7 +7317,11 @@
     "prime_rating": 85,
     "career_years": "2011-2019",
     "nationality": "Spain",
-    "club": "atletico"
+    "club": "atletico",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Gabi",
@@ -6797,7 +7356,11 @@
     "prime_rating": 80,
     "career_years": "2004-2011",
     "nationality": "Spain",
-    "club": "atletico"
+    "club": "atletico",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Luis García",
@@ -6885,7 +7448,11 @@
     "career_years": "1985-1995",
     "nationality": "Spain",
     "club": "atletico",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Toni Muñoz",
@@ -6893,7 +7460,11 @@
     "prime_rating": 80,
     "career_years": "1990-2001",
     "nationality": "Spain",
-    "club": "atletico"
+    "club": "atletico",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Christian Vieri",
@@ -6937,7 +7508,10 @@
     "career_years": "1987-1993",
     "nationality": "Portugal",
     "club": "atletico",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Manolo",
@@ -6989,7 +7563,11 @@
     "career_years": "1970-1979",
     "nationality": "Spain",
     "club": "atletico",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Marcelino",
@@ -7015,7 +7593,10 @@
     "career_years": "1979-1987",
     "nationality": "Spain",
     "club": "atletico",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Rubén Cano",
@@ -7048,7 +7629,10 @@
     "prime_rating": 80,
     "career_years": "1977-1984",
     "nationality": "Spain",
-    "club": "atletico"
+    "club": "atletico",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Leivinha",
@@ -7108,7 +7692,11 @@
     "name": "Stefan Reuter",
     "nationality": "Germany",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Stéphane Chapuisat",
@@ -7126,7 +7714,11 @@
     "name": "Dedê",
     "nationality": "Brazil",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "position": "CB",
@@ -7162,7 +7754,10 @@
     "nationality": "Germany",
     "name": "Lothar Emmerich",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "position": "GK",
@@ -7189,7 +7784,10 @@
     "name": "Jakub Błaszczykowski",
     "nationality": "Poland",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "position": "ST",
@@ -7297,7 +7895,10 @@
     "career_years": "2016-2017",
     "prime_rating": 84,
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Christian Pulisic",
@@ -7306,7 +7907,10 @@
     "career_years": "2016-2019",
     "prime_rating": 83,
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Julian Brandt",
@@ -7324,7 +7928,11 @@
     "career_years": "2016-2023",
     "nationality": "POR",
     "club": "dortmund",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "position": "RB",
@@ -7333,7 +7941,11 @@
     "prime_rating": 83,
     "career_years": "2014-2024",
     "club": "rbleipzig",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "position": "CDM",
@@ -7360,7 +7972,11 @@
     "nationality": "Germany",
     "prime_rating": 84,
     "club": "rbleipzig",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "position": "CM",
@@ -7378,7 +7994,10 @@
     "name": "Dominik Szoboszlai",
     "career_years": "2020-2023",
     "club": "rbleipzig",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "career_years": "2018-2021",
@@ -7396,7 +8015,10 @@
     "nationality": "Netherlands",
     "career_years": "2023-2024",
     "club": "rbleipzig",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Ibrahima Konaté",
@@ -7430,7 +8052,10 @@
     "nationality": "Portugal",
     "career_years": "2017-2019",
     "prime_rating": 80,
-    "club": "rbleipzig"
+    "club": "rbleipzig",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Benjamin Šeško",
@@ -7457,7 +8082,11 @@
     "career_years": "2020-2025",
     "nationality": "GER",
     "club": "rbleipzig",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "David Raum",
@@ -7466,7 +8095,11 @@
     "career_years": "2022-2025",
     "nationality": "GER",
     "club": "rbleipzig",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Xaver Schlager",
@@ -7475,7 +8108,10 @@
     "career_years": "2022-2025",
     "nationality": "AUT",
     "club": "rbleipzig",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Elia Caprile",
@@ -7511,7 +8147,11 @@
     "career_years": "2024-2026",
     "nationality": "Italy",
     "club": "napoli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Scott McTominay",
@@ -7529,7 +8169,10 @@
     "career_years": "2020-2026",
     "nationality": "Italy",
     "club": "napoli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "David Neres",
@@ -7538,7 +8181,10 @@
     "career_years": "2024-2026",
     "nationality": "Brazil",
     "club": "napoli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Giacomo Raspadori",
@@ -7574,7 +8220,11 @@
     "career_years": "2014-2022",
     "nationality": "Algeria",
     "club": "napoli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Allan",
@@ -7608,7 +8258,10 @@
     "career_years": "2007-2012",
     "nationality": "Argentina",
     "club": "napoli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Hugo Campagnaro",
@@ -7626,7 +8279,11 @@
     "career_years": "2008-2018",
     "nationality": "Italy",
     "club": "napoli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Giuliano Giuliani",
@@ -7723,7 +8380,11 @@
     "prime_rating": 80,
     "career_years": "1989-1996",
     "nationality": "Italy",
-    "club": "napoli"
+    "club": "napoli",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Luciano Castellini",
@@ -7785,7 +8446,11 @@
     "career_years": "1980-1989",
     "nationality": "Italy",
     "club": "napoli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Daniel Bertoni",
@@ -7794,7 +8459,10 @@
     "career_years": "1980-1983",
     "nationality": "Argentina",
     "club": "napoli",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Stole Dimitrievski",
@@ -7830,7 +8498,11 @@
     "career_years": "2019-2026",
     "nationality": "Portugal",
     "club": "valencia",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "José Luis Gayà",
@@ -7839,7 +8511,11 @@
     "career_years": "2014-2026",
     "nationality": "Spain",
     "club": "valencia",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Javi Guerra",
@@ -7875,7 +8551,10 @@
     "career_years": "2023-2026",
     "nationality": "Spain",
     "club": "valencia",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Fran Pérez",
@@ -7883,7 +8562,10 @@
     "prime_rating": 75,
     "career_years": "2022-2026",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Sergi Canós",
@@ -7892,7 +8574,10 @@
     "career_years": "2024-2026",
     "nationality": "Spain",
     "club": "valencia",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "André Almeida",
@@ -7918,7 +8603,11 @@
     "career_years": "1998-2006",
     "nationality": "Spain",
     "club": "valencia",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "David Albelda",
@@ -7944,7 +8633,10 @@
     "career_years": "2000-2010",
     "nationality": "Spain",
     "club": "valencia",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Joaquín",
@@ -7953,7 +8645,10 @@
     "career_years": "2006-2011",
     "nationality": "Spain",
     "club": "valencia",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Juan Mata",
@@ -8015,7 +8710,11 @@
     "career_years": "1989-1994",
     "nationality": "Spain",
     "club": "valencia",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Camarasa",
@@ -8066,7 +8765,11 @@
     "prime_rating": 79,
     "career_years": "1995-1998",
     "nationality": "Yugoslavia",
-    "club": "valencia"
+    "club": "valencia",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "José Manuel Sempere",
@@ -8109,7 +8812,11 @@
     "prime_rating": 80,
     "career_years": "1980-1988",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Carrete",
@@ -8117,7 +8824,11 @@
     "prime_rating": 80,
     "career_years": "1971-1981",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Subirats",
@@ -8149,7 +8860,10 @@
     "prime_rating": 80,
     "career_years": "1974-1980",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Fernando Giner",
@@ -8174,7 +8888,11 @@
     "prime_rating": 78,
     "career_years": "1979-1987",
     "nationality": "Spain",
-    "club": "valencia"
+    "club": "valencia",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "position": "ST",
@@ -8192,7 +8910,10 @@
     "name": "Kevin Keegan",
     "position": "LW",
     "club": "hamburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "career_years": "1976–1987",
@@ -8318,7 +9039,11 @@
     "career_years": "1976-1986",
     "prime_rating": 81,
     "club": "hamburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Jürgen Milewski",
@@ -8399,7 +9124,10 @@
     "career_years": "2010-2013",
     "prime_rating": 82,
     "club": "hamburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Frank Rost",
@@ -8417,7 +9145,11 @@
     "career_years": "2008-2015",
     "prime_rating": 82,
     "club": "hamburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Heiko Westermann",
@@ -8507,7 +9239,10 @@
     "career_years": "2016-2024",
     "nationality": "Gambia",
     "club": "hamburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Dennis Aogo",
@@ -8516,7 +9251,11 @@
     "career_years": "2008-2014",
     "nationality": "GER",
     "club": "hamburg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "P. Pogba",
@@ -8549,7 +9288,11 @@
     "prime_rating": 83,
     "nationality": "Ecuador",
     "club": "manchesterunited",
-    "career_years": "2017-2019"
+    "career_years": "2017-2019",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "J. Henderson",
@@ -8645,7 +9388,11 @@
     "prime_rating": 82,
     "nationality": "England",
     "club": "tottenham",
-    "career_years": "2016-2017"
+    "career_years": "2016-2017",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "N. Kanté",
@@ -8737,7 +9484,11 @@
     "nationality": "England",
     "club": "tottenham",
     "career_years": "2016-2021",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Azpilicueta",
@@ -8746,7 +9497,11 @@
     "nationality": "Spain",
     "club": "chelsea",
     "career_years": "2017-2022",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "V. Wanyama",
@@ -8770,7 +9525,11 @@
     "prime_rating": 79,
     "nationality": "England",
     "club": "manchestercity",
-    "career_years": "2017-2019"
+    "career_years": "2017-2019",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "D. Blind",
@@ -8786,7 +9545,11 @@
     "prime_rating": 79,
     "nationality": "France",
     "club": "arsenal",
-    "career_years": "2016-2017"
+    "career_years": "2016-2017",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "M. Rojo",
@@ -8842,7 +9605,11 @@
     "prime_rating": 82,
     "nationality": "England",
     "club": "liverpool",
-    "career_years": "2016-2018"
+    "career_years": "2016-2018",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "C. Eriksen",
@@ -8858,7 +9625,10 @@
     "prime_rating": 84,
     "nationality": "France",
     "club": "manchesterunited",
-    "career_years": "2018-2022"
+    "career_years": "2018-2022",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Willian",
@@ -8915,7 +9685,10 @@
     "prime_rating": 90,
     "nationality": "Senegal",
     "club": "liverpool",
-    "career_years": "2019-2022"
+    "career_years": "2019-2022",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "L. Shaw",
@@ -8923,7 +9696,11 @@
     "prime_rating": 84,
     "nationality": "England",
     "club": "manchesterunited",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "M. Fellaini",
@@ -8947,7 +9724,11 @@
     "prime_rating": 80,
     "nationality": "Italy",
     "club": "manchesterunited",
-    "career_years": "2016-2018"
+    "career_years": "2016-2018",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Lucas Pérez",
@@ -8965,7 +9746,11 @@
     "nationality": "Spain",
     "club": "arsenal",
     "career_years": "2016-2019",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "A. Oxlade-Chamberlain",
@@ -8999,7 +9784,10 @@
     "prime_rating": 86,
     "nationality": "Germany",
     "club": "manchestercity",
-    "career_years": "2018-2020"
+    "career_years": "2018-2020",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "K. Gibbs",
@@ -9007,7 +9795,11 @@
     "prime_rating": 78,
     "nationality": "England",
     "club": "arsenal",
-    "career_years": "2016-2017"
+    "career_years": "2016-2017",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "T. Walcott",
@@ -9024,7 +9816,11 @@
     "nationality": "Spain",
     "club": "arsenal",
     "career_years": "2016-2021",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "F. Coquelin",
@@ -9072,7 +9868,10 @@
     "prime_rating": 88,
     "nationality": "England",
     "club": "manchestercity",
-    "career_years": "2019-2022"
+    "career_years": "2019-2022",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "H. Son",
@@ -9145,7 +9944,11 @@
     "prime_rating": 81,
     "nationality": "Wales",
     "club": "tottenham",
-    "career_years": "2017-2022"
+    "career_years": "2017-2022",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "V. Kompany",
@@ -9185,7 +9988,11 @@
     "prime_rating": 78,
     "nationality": "France",
     "club": "manchestercity",
-    "career_years": "2016-2017"
+    "career_years": "2016-2017",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Lucas Leiva",
@@ -9404,7 +10211,10 @@
     "prime_rating": 88,
     "nationality": "Chile",
     "club": "manchesterunited",
-    "career_years": "2017-2019"
+    "career_years": "2017-2019",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "K. Walker",
@@ -9412,7 +10222,11 @@
     "prime_rating": 85,
     "nationality": "England",
     "club": "manchestercity",
-    "career_years": "2020-2022"
+    "career_years": "2020-2022",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "N. Matić",
@@ -9428,7 +10242,11 @@
     "prime_rating": 79,
     "nationality": "England",
     "club": "manchesterunited",
-    "career_years": "2017-2019"
+    "career_years": "2017-2019",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "M. Salah",
@@ -9436,7 +10254,10 @@
     "prime_rating": 90,
     "nationality": "Egypt",
     "club": "liverpool",
-    "career_years": "2019-2022"
+    "career_years": "2019-2022",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "H. Mkhitaryan",
@@ -9452,7 +10273,11 @@
     "prime_rating": 79,
     "nationality": "Brazil",
     "club": "manchestercity",
-    "career_years": "2017-2019"
+    "career_years": "2017-2019",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "V. Moses",
@@ -9460,7 +10285,11 @@
     "prime_rating": 80,
     "nationality": "Nigeria",
     "club": "chelsea",
-    "career_years": "2017-2021"
+    "career_years": "2017-2021",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "S. Aurier",
@@ -9468,7 +10297,11 @@
     "prime_rating": 81,
     "nationality": "Ivory Coast",
     "club": "tottenham",
-    "career_years": "2017-2022"
+    "career_years": "2017-2022",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "J. Wilshere",
@@ -9492,7 +10325,11 @@
     "prime_rating": 79,
     "nationality": "Italy",
     "club": "chelsea",
-    "career_years": "2017-2019"
+    "career_years": "2017-2019",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "K. Trippier",
@@ -9500,7 +10337,11 @@
     "prime_rating": 81,
     "nationality": "England",
     "club": "tottenham",
-    "career_years": "2018-2019"
+    "career_years": "2018-2019",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "D. Drinkwater",
@@ -9532,7 +10373,10 @@
     "prime_rating": 82,
     "nationality": "Brazil",
     "club": "tottenham",
-    "career_years": "2017-2018"
+    "career_years": "2017-2018",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "V. van Dijk",
@@ -9564,7 +10408,11 @@
     "prime_rating": 87,
     "nationality": "Scotland",
     "club": "liverpool",
-    "career_years": "2020-2022"
+    "career_years": "2020-2022",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "B. Mendy",
@@ -9572,7 +10420,11 @@
     "prime_rating": 81,
     "nationality": "France",
     "club": "manchestercity",
-    "career_years": "2018-2022"
+    "career_years": "2018-2022",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "T. Bakayoko",
@@ -9696,7 +10548,10 @@
     "nationality": "Brazil",
     "club": "tottenham",
     "career_years": "2018-2022",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Jorginho",
@@ -9728,7 +10583,11 @@
     "prime_rating": 87,
     "nationality": "England",
     "club": "liverpool",
-    "career_years": "2020-2022"
+    "career_years": "2020-2022",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "R. Mahrez",
@@ -9736,7 +10595,10 @@
     "prime_rating": 86,
     "nationality": "Algeria",
     "club": "manchestercity",
-    "career_years": "2019-2022"
+    "career_years": "2019-2022",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Denis Suárez",
@@ -9828,7 +10690,11 @@
     "nationality": "Portugal",
     "club": "manchestercity",
     "career_years": "2021-2022",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "G. Lo Celso",
@@ -9911,7 +10777,11 @@
     "prime_rating": 79,
     "nationality": "Italy",
     "club": "chelsea",
-    "career_years": "2020-2021"
+    "career_years": "2020-2021",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "N. Pépé",
@@ -9935,7 +10805,11 @@
     "prime_rating": 83,
     "nationality": "England",
     "club": "manchesterunited",
-    "career_years": "2020-2022"
+    "career_years": "2020-2022",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "O. Ighalo",
@@ -10032,7 +10906,10 @@
     "prime_rating": 83,
     "nationality": "Wales",
     "club": "tottenham",
-    "career_years": "2020-2021"
+    "career_years": "2020-2021",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Thiago",
@@ -10090,7 +10967,11 @@
     "prime_rating": 81,
     "nationality": "Republic of Ireland",
     "club": "tottenham",
-    "career_years": "2020-2022"
+    "career_years": "2020-2022",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "B. Chilwell",
@@ -10098,7 +10979,11 @@
     "prime_rating": 82,
     "nationality": "England",
     "club": "chelsea",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Willian",
@@ -10107,7 +10992,10 @@
     "nationality": "Brazil",
     "club": "arsenal",
     "career_years": "2020-2022",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "K. Tierney",
@@ -10115,7 +11003,11 @@
     "prime_rating": 80,
     "nationality": "Scotland",
     "club": "arsenal",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "T. Werner",
@@ -10132,7 +11024,11 @@
     "nationality": "Spain",
     "club": "tottenham",
     "career_years": "2020-2022",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "R. Barkley",
@@ -10207,7 +11103,11 @@
     "nationality": "Brazil",
     "club": "manchesterunited",
     "career_years": "2021-2022",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Saúl",
@@ -10239,7 +11139,11 @@
     "prime_rating": 81,
     "nationality": "England",
     "club": "chelsea",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "A. Young",
@@ -10247,7 +11151,11 @@
     "prime_rating": 78,
     "nationality": "England",
     "club": "astonvilla",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "E. Cavani",
@@ -10304,7 +11212,11 @@
     "prime_rating": 79,
     "nationality": "Brazil",
     "club": "tottenham",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "J. Grealish",
@@ -10344,7 +11256,11 @@
     "prime_rating": 78,
     "nationality": "England",
     "club": "astonvilla",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "O. Watkins",
@@ -10426,7 +11342,10 @@
     "career_years": "1998-2007",
     "nationality": "Sweden",
     "club": "arsenal",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Marc Overmars",
@@ -10435,7 +11354,10 @@
     "career_years": "1997-2000",
     "nationality": "Netherlands",
     "club": "arsenal",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Emmanuel Petit",
@@ -10534,7 +11456,10 @@
     "career_years": "1963-1974",
     "nationality": "Northern Ireland",
     "club": "manchesterunited",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Denis Law",
@@ -10678,7 +11603,10 @@
     "career_years": "1997-2000",
     "nationality": "France",
     "club": "tottenham",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Robbie Keane",
@@ -10723,7 +11651,11 @@
     "career_years": "2008-2017",
     "nationality": "Argentina",
     "club": "manchestercity",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Mario Balotelli",
@@ -10784,7 +11716,10 @@
     "career_years": "1965-1975",
     "nationality": "England",
     "club": "manchestercity",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Gordon Cowans",
@@ -10882,7 +11817,11 @@
     "career_years": "1975-1979",
     "nationality": "England",
     "club": "nottinghamforest",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Roy Keane",
@@ -10936,7 +11875,10 @@
     "career_years": "2017-2023",
     "nationality": "Brazil",
     "club": "psg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Javier Pastore",
@@ -10990,7 +11932,10 @@
     "career_years": "2013-2013",
     "nationality": "England",
     "club": "psg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Lionel Messi",
@@ -10999,7 +11944,10 @@
     "career_years": "2021-2023",
     "nationality": "Argentina",
     "club": "psg",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Clarence Seedorf",
@@ -11044,7 +11992,11 @@
     "career_years": "1968-1980",
     "nationality": "Netherlands",
     "club": "ajax",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Ronaldo",
@@ -11088,7 +12040,10 @@
     "career_years": "2018-2023",
     "nationality": "Netherlands",
     "club": "psv",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Mateja Kežman",
@@ -11124,7 +12079,10 @@
     "career_years": "2002-2007",
     "nationality": "Portugal",
     "club": "benfica",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "David Luiz",
@@ -11283,7 +12241,11 @@
     "career_years": "1992-2003",
     "nationality": "Scotland",
     "club": "celtic",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Aiden McGeady",
@@ -11292,7 +12254,10 @@
     "career_years": "2004-2010",
     "nationality": "Ireland",
     "club": "celtic",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Didier Drogba",
@@ -11310,7 +12275,10 @@
     "career_years": "1989-1992",
     "nationality": "England",
     "club": "marseille",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Basile Boli",
@@ -11337,7 +12305,10 @@
     "career_years": "2013-2021",
     "nationality": "France",
     "club": "marseille",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Mamadou Niang",
@@ -11355,7 +12326,10 @@
     "career_years": "1994-1999",
     "nationality": "France",
     "club": "monaco",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Falcao",
@@ -11399,7 +12373,11 @@
     "career_years": "2013-2017",
     "nationality": "France",
     "club": "monaco",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Marcelo Gallardo",
@@ -11417,7 +12395,11 @@
     "career_years": "1996-2001",
     "nationality": "France",
     "club": "monaco",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Bernd Schneider",
@@ -11425,7 +12407,10 @@
     "prime_rating": 88,
     "career_years": "1999-2009",
     "nationality": "Germany",
-    "club": "bayer"
+    "club": "bayer",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Lúcio",
@@ -11479,7 +12464,10 @@
     "career_years": "2014-2019",
     "nationality": "Germany",
     "club": "bayer",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Kai Havertz",
@@ -11497,7 +12485,10 @@
     "career_years": "2023-2026",
     "nationality": "Germany",
     "club": "bayer",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Dimitar Berbatov",
@@ -11568,7 +12559,10 @@
     "career_years": "2023-2025",
     "nationality": "Ivory Coast",
     "club": "galatasaray",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Felipe Melo",
@@ -11648,7 +12642,11 @@
     "career_years": "1985-1991",
     "nationality": "Romania",
     "club": "steaua",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Dorinel Munteanu",
@@ -11693,7 +12691,11 @@
     "career_years": "1990-1992",
     "nationality": "Serbia",
     "club": "crvenazvezda",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Dragan Džajić",
@@ -11702,7 +12704,10 @@
     "career_years": "1963-1975",
     "nationality": "Serbia",
     "club": "crvenazvezda",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Dušan Savić",
@@ -11729,7 +12734,10 @@
     "career_years": "1969-1988",
     "nationality": "Ukraine",
     "club": "dynamokyiv",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Oleksandr Zavarov",
@@ -11782,7 +12790,11 @@
     "career_years": "2017-2022",
     "nationality": "Ukraine",
     "club": "dynamokyiv",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Francisco Gento",
@@ -11791,7 +12803,10 @@
     "career_years": "1953-1971",
     "nationality": "Spain",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Raymond Kopa",
@@ -11800,7 +12815,10 @@
     "career_years": "1956-1959",
     "nationality": "France",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Míchel",
@@ -11808,7 +12826,10 @@
     "prime_rating": 89,
     "career_years": "1982-1996",
     "nationality": "Spain",
-    "club": "realmadrid"
+    "club": "realmadrid",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Predrag Mijatović",
@@ -11844,7 +12865,10 @@
     "career_years": "1999-2003",
     "nationality": "England",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Wesley Sneijder",
@@ -11862,7 +12886,10 @@
     "career_years": "2010-2014",
     "nationality": "Argentina",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Gareth Bale",
@@ -11871,7 +12898,10 @@
     "career_years": "2013-2022",
     "nationality": "Wales",
     "club": "realmadrid",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "James Rodríguez",
@@ -11898,7 +12928,10 @@
     "career_years": "1965-1981",
     "nationality": "Spain",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Julio Salinas",
@@ -11943,7 +12976,11 @@
     "career_years": "2006-2008",
     "nationality": "France",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Neymar",
@@ -11952,7 +12989,10 @@
     "career_years": "2013-2017",
     "nationality": "Brazil",
     "club": "barcelona",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Luis Suárez Miramontes",
@@ -11979,7 +13019,11 @@
     "career_years": "1995-1996",
     "nationality": "Brazil",
     "club": "inter",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Paul Ince",

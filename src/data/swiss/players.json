@@ -122,7 +122,10 @@
     "career_years": "2007-2014, 2018-2022",
     "nationality": "Switzerland",
     "club": "basel",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Xherdan Shaqiri",
@@ -158,7 +161,10 @@
     "career_years": "2001-2012",
     "nationality": "Australia",
     "club": "basel",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Christian Giménez",
@@ -233,7 +239,11 @@
     "prime_rating": 78,
     "nationality": "Switzerland",
     "club": "basel",
-    "career_years": "2017-2022"
+    "career_years": "2017-2022",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Murat Yakin",
@@ -317,7 +327,11 @@
     "prime_rating": 76,
     "nationality": "Brazil",
     "club": "basel",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "E. Balanta",
@@ -349,7 +363,11 @@
     "prime_rating": 76,
     "nationality": "Switzerland",
     "club": "basel",
-    "career_years": "2018-2021"
+    "career_years": "2018-2021",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Serey Dié",
@@ -455,7 +473,11 @@
     "prime_rating": 73,
     "nationality": "Ivory Coast",
     "club": "basel",
-    "career_years": "2016-2017"
+    "career_years": "2016-2017",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "T. Xhaka",
@@ -463,7 +485,11 @@
     "prime_rating": 73,
     "nationality": "Albania",
     "club": "basel",
-    "career_years": "2017-2022"
+    "career_years": "2017-2022",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Tomás Tavares",
@@ -471,7 +497,11 @@
     "prime_rating": 73,
     "nationality": "Portugal",
     "club": "basel",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "A. Fransson",
@@ -495,7 +525,11 @@
     "prime_rating": 72,
     "nationality": "Italy",
     "club": "basel",
-    "career_years": "2020-2022"
+    "career_years": "2020-2022",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "E. Cömert",
@@ -543,7 +577,10 @@
     "prime_rating": 70,
     "nationality": "Slovenia",
     "club": "basel",
-    "career_years": "2016-2017"
+    "career_years": "2016-2017",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "D. Oberlin",
@@ -575,7 +612,10 @@
     "prime_rating": 69,
     "nationality": "France",
     "club": "basel",
-    "career_years": "2018-2021"
+    "career_years": "2018-2021",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "B. Riveros",
@@ -583,7 +623,11 @@
     "prime_rating": 69,
     "nationality": "Paraguay",
     "club": "basel",
-    "career_years": "2018-2021"
+    "career_years": "2018-2021",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "D. Callà",
@@ -779,7 +823,10 @@
     "career_years": "1986-1991",
     "nationality": "Switzerland",
     "club": "grasshopper",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Bernt Haas",
@@ -788,7 +835,11 @@
     "career_years": "1996-2001",
     "nationality": "Switzerland",
     "club": "grasshopper",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Christoph Spycher",
@@ -797,7 +848,11 @@
     "career_years": "2000-2005",
     "nationality": "Switzerland",
     "club": "grasshopper",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Diego Benaglio",
@@ -815,7 +870,10 @@
     "career_years": "2009-2013",
     "nationality": "Bosnia and Herzegovina",
     "club": "grasshopper",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Kurt Jara",
@@ -860,7 +918,11 @@
     "career_years": "2002-2005",
     "nationality": "Switzerland",
     "club": "grasshopper",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Roman Bürki",
@@ -878,7 +940,11 @@
     "career_years": "2002-2005",
     "nationality": "Switzerland",
     "club": "grasshopper",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Stéphane Grichting",
@@ -932,7 +998,10 @@
     "career_years": "2002-2004",
     "nationality": "Nigeria",
     "club": "grasshopper",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Franco Navarro",
@@ -1031,7 +1100,11 @@
     "career_years": "2003-2005",
     "nationality": "Poland",
     "club": "grasshopper",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Tosh McKinlay",
@@ -1040,7 +1113,11 @@
     "career_years": "1998-1999",
     "nationality": "Scotland",
     "club": "grasshopper",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Viorel Moldovan",
@@ -1251,7 +1328,11 @@
     "prime_rating": 73,
     "nationality": "Algeria",
     "club": "lausanne",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "C. Puertas",
@@ -1307,7 +1388,11 @@
     "prime_rating": 69,
     "nationality": "Morocco",
     "club": "lausanne",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "L. Marín",
@@ -1380,7 +1465,11 @@
     "prime_rating": 72,
     "nationality": "Switzerland",
     "club": "lugano",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "C. Ledesma",
@@ -1460,7 +1549,11 @@
     "prime_rating": 69,
     "nationality": "Switzerland",
     "club": "lugano",
-    "career_years": "2017-2020"
+    "career_years": "2017-2020",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "R. Ziegler",
@@ -1528,7 +1621,11 @@
     "prime_rating": 74,
     "nationality": "Czech Republic",
     "club": "luzern",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "L. Schaub",
@@ -1584,7 +1681,11 @@
     "prime_rating": 71,
     "nationality": "Austria",
     "club": "luzern",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Ricardo Costa",
@@ -1616,7 +1717,10 @@
     "prime_rating": 70,
     "nationality": "Brazil",
     "club": "luzern",
-    "career_years": "2019-2020"
+    "career_years": "2019-2020",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "C. Schneuwly",
@@ -1632,7 +1736,11 @@
     "prime_rating": 69,
     "nationality": "Switzerland",
     "club": "luzern",
-    "career_years": "2017-2018"
+    "career_years": "2017-2018",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Lucas",
@@ -1705,7 +1813,11 @@
     "career_years": "2010-2013, 2022-2024",
     "nationality": "Switzerland",
     "club": "servette",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Jean-Philippe Karlen",
@@ -1731,7 +1843,11 @@
     "career_years": "2014-2024",
     "nationality": "Switzerland",
     "club": "servette",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Lucien Favre",
@@ -1829,7 +1945,11 @@
     "career_years": "2020-2022",
     "nationality": "France",
     "club": "servette",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Hilton",
@@ -1882,7 +2002,11 @@
     "career_years": "2013-2014",
     "nationality": "Switzerland",
     "club": "servette",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Martin Chivers",
@@ -1900,7 +2024,10 @@
     "career_years": "2000-2001",
     "nationality": "Bulgaria",
     "club": "servette",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Philippe Senderos",
@@ -1935,7 +2062,11 @@
     "prime_rating": 76,
     "nationality": "France",
     "club": "servette",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "M. Stevanović",
@@ -1991,7 +2122,10 @@
     "prime_rating": 68,
     "nationality": "Netherlands",
     "club": "servette",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "D. Douline",
@@ -2112,7 +2246,11 @@
     "prime_rating": 75,
     "nationality": "Ivory Coast",
     "club": "sion",
-    "career_years": "2016-2017"
+    "career_years": "2016-2017",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "G. Bia",
@@ -2280,7 +2418,11 @@
     "prime_rating": 70,
     "nationality": "Switzerland",
     "club": "sion",
-    "career_years": "2020-2021"
+    "career_years": "2020-2021",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "L. Zuffi",
@@ -2296,7 +2438,11 @@
     "prime_rating": 70,
     "nationality": "Brazil",
     "club": "sion",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Serey Dié",
@@ -2336,7 +2482,10 @@
     "prime_rating": 69,
     "nationality": "DR Congo",
     "club": "sion",
-    "career_years": "2016-2017"
+    "career_years": "2016-2017",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "D. Cavaré",
@@ -2385,7 +2534,11 @@
     "career_years": "1994-2001, 2003-2010",
     "nationality": "Switzerland",
     "club": "stgallen",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Iván Zamorano",
@@ -2613,7 +2766,10 @@
     "prime_rating": 70,
     "nationality": "Burkina Faso",
     "club": "thun",
-    "career_years": "2020-2021"
+    "career_years": "2020-2021",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "D. Sorgić",
@@ -2789,7 +2945,10 @@
     "career_years": "2005-2007",
     "nationality": "Nigeria",
     "club": "xamax",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Lajos Détári",
@@ -2850,7 +3009,10 @@
     "prime_rating": 74,
     "nationality": "Switzerland",
     "club": "xamax",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Serey Dié",
@@ -2945,7 +3107,11 @@
     "prime_rating": 77,
     "nationality": "Switzerland",
     "club": "youngboys",
-    "career_years": "2018-2019"
+    "career_years": "2018-2019",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "M. Sulejmani",
@@ -2953,7 +3119,10 @@
     "prime_rating": 77,
     "nationality": "Serbia",
     "club": "youngboys",
-    "career_years": "2019-2022"
+    "career_years": "2019-2022",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "D. von Ballmoos",
@@ -3017,7 +3186,10 @@
     "prime_rating": 74,
     "nationality": "Ivory Coast",
     "club": "youngboys",
-    "career_years": "2018-2019"
+    "career_years": "2018-2019",
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "S. Hefti",
@@ -3025,7 +3197,11 @@
     "prime_rating": 74,
     "nationality": "Switzerland",
     "club": "youngboys",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "S. Sanogo",
@@ -3057,7 +3233,11 @@
     "prime_rating": 73,
     "nationality": "Switzerland",
     "club": "youngboys",
-    "career_years": "2018-2019"
+    "career_years": "2018-2019",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "D. Zakaria",
@@ -3081,7 +3261,11 @@
     "prime_rating": 72,
     "nationality": "France",
     "club": "youngboys",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "J. Siebatcheu",
@@ -3105,7 +3289,11 @@
     "prime_rating": 72,
     "nationality": "Switzerland",
     "club": "youngboys",
-    "career_years": "2020-2022"
+    "career_years": "2020-2022",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "D. Sow",
@@ -3185,7 +3373,11 @@
     "prime_rating": 70,
     "nationality": "Switzerland",
     "club": "youngboys",
-    "career_years": "2019-2020"
+    "career_years": "2019-2020",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "S. Lauper",
@@ -3209,7 +3401,11 @@
     "prime_rating": 69,
     "nationality": "Czech Republic",
     "club": "youngboys",
-    "career_years": "2016-2017"
+    "career_years": "2016-2017",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "M. Frey",
@@ -3269,7 +3465,10 @@
     "career_years": "2001-2005, 2011-2014",
     "nationality": "Switzerland",
     "club": "zurich",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Karl Grob",
@@ -3455,7 +3654,11 @@
     "prime_rating": 72,
     "nationality": "Switzerland",
     "club": "zurich",
-    "career_years": "2018-2020"
+    "career_years": "2018-2020",
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "M. Mahi",
@@ -3527,7 +3730,11 @@
     "prime_rating": 70,
     "nationality": "Gambia",
     "club": "zurich",
-    "career_years": "2018-2019"
+    "career_years": "2018-2019",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Y. Brecher",
@@ -3567,7 +3774,11 @@
     "prime_rating": 69,
     "nationality": "Spain",
     "club": "zurich",
-    "career_years": "2021-2022"
+    "career_years": "2021-2022",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "A. Tosin",
@@ -3607,7 +3818,10 @@
     "prime_rating": 68,
     "nationality": "Switzerland",
     "club": "zurich",
-    "career_years": "2018-2019"
+    "career_years": "2018-2019",
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "V. Janjičić",
@@ -3775,7 +3989,10 @@
     "career_years": "2008-2011",
     "nationality": "Bosnia and Herzegovina",
     "club": "youngboys",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Loris Benito",
@@ -3784,7 +4001,11 @@
     "career_years": "2016-2019",
     "nationality": "Switzerland",
     "club": "youngboys",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Christian Fassnacht",
@@ -3793,7 +4014,10 @@
     "career_years": "2017-2023",
     "nationality": "Switzerland",
     "club": "youngboys",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Silvan Hefti",
@@ -3802,7 +4026,11 @@
     "career_years": "2019-2021",
     "nationality": "Switzerland",
     "club": "youngboys",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Kevin Mbabu",
@@ -3811,7 +4039,11 @@
     "career_years": "2017-2019",
     "nationality": "Switzerland",
     "club": "youngboys",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Cedric Itten",
@@ -3847,7 +4079,11 @@
     "career_years": "2015-2017",
     "nationality": "Switzerland",
     "club": "youngboys",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Jordan Lotomba",
@@ -3856,7 +4092,11 @@
     "career_years": "2017-2020",
     "nationality": "Switzerland",
     "club": "youngboys",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Ulisses Garcia",
@@ -3865,7 +4105,11 @@
     "career_years": "2018-2024",
     "nationality": "Switzerland",
     "club": "youngboys",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Emmanuel Mayuka",
@@ -3892,7 +4136,10 @@
     "career_years": "2019-",
     "nationality": "DR Congo",
     "club": "youngboys",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Georges Bregy",
@@ -3919,7 +4166,10 @@
     "career_years": "1988-1989",
     "nationality": "Sweden",
     "club": "youngboys",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Toni Kallio",
@@ -3972,7 +4222,11 @@
     "prime_rating": 82,
     "career_years": "2002-2012",
     "nationality": "Switzerland",
-    "club": "zurich"
+    "club": "zurich",
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Raffael",
@@ -4160,7 +4414,10 @@
     "career_years": "2011-2014",
     "nationality": "Switzerland",
     "club": "grasshopper",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Andy Egli",
@@ -4258,7 +4515,10 @@
     "career_years": "1986-1990",
     "nationality": "Morocco",
     "club": "sion",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Georges Bregy",
@@ -4366,7 +4626,10 @@
     "career_years": "2009-2011",
     "nationality": "France",
     "club": "sion",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Marco Pascolo",
@@ -4402,7 +4665,11 @@
     "career_years": "1985-2000",
     "nationality": "Switzerland",
     "club": "sion",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Alberto Regazzoni",
@@ -4483,7 +4750,11 @@
     "career_years": "2009-2012, 2018-2019",
     "nationality": "Switzerland",
     "club": "sion",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Serge Trinchero",
@@ -4518,7 +4789,11 @@
     "career_years": "2009-2011",
     "nationality": "Romania",
     "club": "sion",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Ahmed Ouattara",
@@ -4713,7 +4988,11 @@
     "career_years": "2000-2002",
     "nationality": "Switzerland",
     "club": "luzern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Pirmin Schwegler",
@@ -4749,7 +5028,10 @@
     "career_years": "2009-2014",
     "nationality": "Switzerland",
     "club": "luzern",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Pascal Loretz",
@@ -4847,7 +5129,11 @@
     "career_years": "1998-2001",
     "nationality": "Switzerland",
     "club": "lugano",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Mohamed Kallon",
@@ -4874,7 +5160,10 @@
     "career_years": "2015-2017, 2024-",
     "nationality": "North Macedonia",
     "club": "lugano",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Julio Hernán Rossi",
@@ -5080,7 +5369,10 @@
     "career_years": "2024-",
     "nationality": "Switzerland",
     "club": "lugano",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Amir Saipi",
@@ -5464,7 +5756,11 @@
     "career_years": "1986-1990",
     "nationality": "Switzerland",
     "club": "lausanne",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Stefan Huber",
@@ -5834,7 +6130,11 @@
     "career_years": "2024-",
     "nationality": "Serbia",
     "club": "yverdon",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Djibril Diop",
@@ -5851,7 +6151,11 @@
     "career_years": "2020-",
     "nationality": "France",
     "club": "yverdon",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Cristiano Piccini",
@@ -5860,7 +6164,11 @@
     "career_years": "2025-",
     "nationality": "Italy",
     "club": "yverdon",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Anthony Sauthier",
@@ -5869,7 +6177,11 @@
     "career_years": "2022-",
     "nationality": "Switzerland",
     "club": "yverdon",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "Christian Marques",
@@ -5887,7 +6199,11 @@
     "career_years": "2024-",
     "nationality": "Portugal",
     "club": "yverdon",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Magnus Grødem",
@@ -5930,7 +6246,10 @@
     "career_years": "2024-",
     "nationality": "France",
     "club": "yverdon",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RW"
+    ]
   },
   {
     "name": "Mitchy Ntelo",
@@ -5957,7 +6276,10 @@
     "career_years": "2023-",
     "nationality": "Germany",
     "club": "yverdon",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Ahmedin Avdic",
@@ -5992,7 +6314,11 @@
     "career_years": "2023-",
     "nationality": "Germany",
     "club": "thun",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Jan Bamert",
@@ -6082,7 +6408,11 @@
     "career_years": "2010-2013",
     "nationality": "Switzerland",
     "club": "aarau",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Rainer Bieli",
@@ -6126,7 +6456,10 @@
     "career_years": "2003-2005",
     "nationality": "Switzerland",
     "club": "aarau",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Patrick De Napoli",
@@ -6162,7 +6495,11 @@
     "career_years": "2009-2012",
     "nationality": "France",
     "club": "aarau",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Shkëlzen Gashi",
@@ -6252,7 +6589,10 @@
     "career_years": "2009-2012",
     "nationality": "Switzerland",
     "club": "aarau",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LW"
+    ]
   },
   {
     "name": "Lars Lunde",
@@ -6378,7 +6718,11 @@
     "career_years": "2011-2013",
     "nationality": "Switzerland",
     "club": "aarau",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "LB",
+      "RW"
+    ]
   },
   {
     "name": "David Zdrilic",
@@ -6716,7 +7060,11 @@
     "career_years": "1976-1986",
     "nationality": "Switzerland",
     "club": "xamax",
-    "verified": true
+    "verified": true,
+    "altPositions": [
+      "RB",
+      "LW"
+    ]
   },
   {
     "name": "Víctor Sánchez Mata",

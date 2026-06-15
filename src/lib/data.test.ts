@@ -278,4 +278,20 @@ describe("GOLAZO career modes (real vs legends)", () => {
   it("defaults to the full legends pool", () => {
     expect(getCareerPlayers(null).length).toBe(getCareerPlayers(null, "legends").length);
   });
+
+  it("wide players carry cross-flank alts so side slots fill", () => {
+    // After tools/broaden_positions.py: wingers interchange flanks, full-
+    // backs cover both sides + their wing. Guards against the alts being
+    // stripped (which starved LB/RB/LW/RW slots in the draft).
+    const pool = getCareerPlayers(null, "legends");
+    const sample = (pos: string) => pool.filter((p) => p.position === pos);
+    const share = (pos: string, alt: string) => {
+      const ps = sample(pos);
+      return ps.filter((p) => p.altPositions?.includes(alt as never)).length / ps.length;
+    };
+    expect(share("LW", "RW")).toBeGreaterThan(0.9);
+    expect(share("RW", "LW")).toBeGreaterThan(0.9);
+    expect(share("LB", "RB")).toBeGreaterThan(0.9);
+    expect(share("RB", "RW")).toBeGreaterThan(0.9);
+  });
 });
