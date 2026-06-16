@@ -61,7 +61,7 @@ import { managerFor } from "@/lib/managers";
 import { pickConversation, type ConvoOption } from "@/lib/conversations";
 import { clubReputation } from "@/lib/transfers";
 import { unrestReason, departureFee, UNREST_LABEL, type UnrestReason } from "@/lib/unrest";
-import { Fragment } from "react";
+import { Fragment, type ReactNode } from "react";
 import type { Club, MatchResult, Player, Slot } from "@/lib/game-types";
 
 export const Route = createFileRoute("/career/season")({
@@ -112,6 +112,8 @@ function computeFatigue(lineups: string[][], squad: Player[]): Record<string, nu
   }
   return out;
 }
+
+type SeasonTab = "match" | "squad" | "table" | "news";
 
 interface MatchWithScorers extends MatchResult {
   scorers: { name: string; assister?: string }[];
@@ -204,6 +206,10 @@ function CareerSeason() {
   );
 
   const [matches, setMatches] = useState<MatchWithScorers[]>([]);
+  // Which section of the matchday screen is in view. The hierarchy fix: only
+  // ONE tab's worth of content shows at a time, with the Match tab (the next
+  // action) as the default. Interrupts overlay on top regardless of tab.
+  const [tab, setTab] = useState<SeasonTab>("match");
   // Parallel to `matches`: lineups[i] = the XI keys that started matchday i.
   // Drives the fatigue model — who played vs who rested.
   const [lineups, setLineups] = useState<string[][]>([]);
@@ -552,6 +558,11 @@ function CareerSeason() {
   const draws = matches.filter((m) => m.outcome === "D").length;
   const losses = matches.filter((m) => m.outcome === "L").length;
   const hasBench = career.squad.length > xiKeys.length;
+  // Most-recent result, recapped on the Match tab so you see the click you
+  // just made without leaving the focal screen.
+  const latest = matches.length > 0 ? matches[matches.length - 1] : null;
+  // The legends mid-season blind swap blocks play, like the winter window.
+  const swapOpen = !isReal && !seasonDone && shown >= midSeasonGate && !career.midSeasonSwapUsed;
 
   return (
     <div className="min-h-screen px-4 py-8 max-w-4xl mx-auto">
@@ -562,19 +573,32 @@ function CareerSeason() {
         >
           ← GOLAZO hub
         </Link>
-        <div className="text-right">
-          <div className="font-display text-2xl text-warning">Season {career.currentSeason}</div>
-          <div className="text-[10px] text-muted-foreground uppercase tracking-[0.2em]">
-            Matchday {shown} of {matchesPerSeason}
-          </div>
-          <div className="text-[11px] text-warning font-display mt-0.5">
-            💰 {feeLabel(career.balance)}
-          </div>
+        <div className="text-[10px] text-muted-foreground uppercase tracking-[0.2em]">
+          {isReal ? "Real" : "Legends"} · {career.formation}
         </div>
       </header>
 
-      {/* Season progress bar — visual matchday timeline (more readable than raw "3/22") */}
-      <div className="mt-4">
+      {/* ── Tier-1 status strip: season, where you stand, the wallet ── */}
+      <div className="mt-3 flex items-end justify-between gap-3">
+        <div>
+          <div className="font-display text-2xl text-warning leading-none">
+            Season {career.currentSeason}
+          </div>
+          <div className="text-[10px] text-muted-foreground uppercase tracking-[0.2em] mt-1">
+            Matchday {shown} of {matchesPerSeason}
+          </div>
+        </div>
+        <div className="text-right">
+          <div className="font-display text-xl text-foreground leading-none">
+            {shown > 0 ? `${ourPosition}${ordinal(ourPosition)}` : "—"}
+            <span className="text-[10px] text-muted-foreground ml-1">of {leagueSize}</span>
+          </div>
+          <div className="text-[11px] text-warning font-display mt-1">
+            💰 {feeLabel(career.balance)}
+          </div>
+        </div>
+      </div>
+      <div className="mt-2">
         <div className="h-2 rounded-full bg-card/60 overflow-hidden border border-border/60">
           <div
             className="h-full bg-gradient-to-r from-warning/80 to-warning transition-all duration-500 ease-out"
@@ -583,176 +607,244 @@ function CareerSeason() {
         </div>
       </div>
 
-      {/* Scoreboard */}
-      <div className="mt-5 grid grid-cols-4 gap-2 text-center">
-        <ScoreboardStat label="W" value={wins} accent="text-success" />
-        <ScoreboardStat label="D" value={draws} accent="text-muted-foreground" />
-        <ScoreboardStat label="L" value={losses} accent="text-primary" />
-        <ScoreboardStat label="OVR" value={Math.round(userRating)} accent="text-warning" />
-      </div>
-
-      {chemistry.bonus > 0 && (
-        <div className="mt-2 text-center text-[11px] text-success">
-          🤝 Chemistry +{chemistry.bonus} · {chemistry.label}
-        </div>
-      )}
-
-      {/* Board confidence + dressing-room mood — the job-security HUD. */}
-      <BoardHud confidence={confidence} expectation={expectation} dressingRoom={dressingRoom} seasonDone={seasonDone} />
-
-      {/* A player wants a word — pick your response carefully. */}
-      {!seasonDone && convo && (
-        <ConversationCard
-          player={convo}
-          season={career.currentSeason}
-          onResolve={(delta) => career.resolveConversation(convo.key, delta)}
-          onDismiss={() => setConvo(null)}
-        />
-      )}
-
-      {/* Matchday Squad — the benching system. Only shown when the squad
-          actually has a bench (squad of 14); legacy 11-player careers
-          skip it entirely. Collapsed by default to keep the play loop
-          one tap; opens for users who want to rotate. */}
-      {!seasonDone && hasBench && (
-        <MatchdaySquadPanel
-          squad={availableSquad}
-          injured={injuredList}
-          xiKeys={xiKeys}
-          form={liveForm}
-          ratingAdj={selectionForm}
-          fatigue={fatigue}
-          formation={career.formation}
-          franchiseKey={career.franchisePlayerKey}
-          onSwap={(outKey, inKey) => {
-            if (!canSwapIntoXI(availableSquad, xiKeys, outKey, inKey, career.formation)) return;
-            const next = xiKeys.filter((k) => k !== outKey).concat(inKey);
-            career.setStartingXI(next);
-          }}
-          onEditRating={(key, rating) => career.setRatingEdit(key, rating)}
-          onAutoPick={() =>
-            career.setStartingXI(autoPickXI(availableSquad, career.formation, selectionForm))
-          }
-          statsFor={(p) =>
-            playerSeasonStats(
-              p,
-              matches.map((m) => ({
-                ourScore: m.ourScore,
-                theirScore: m.theirScore,
-                scorers: m.scorers,
-              })),
-              lineups,
-              playerKey(p),
-            )
-          }
-        />
-      )}
-
-      {/* Mid-season swap window — gates progression until used or skipped.
-          Triggers exactly once per season, after MD11. */}
-      {!isReal && !seasonDone && shown >= midSeasonGate && !career.midSeasonSwapUsed && (
-        <MidSeasonSwapCard />
-      )}
-
-      {/* ❄️ Winter window — resolve departures (sell or hold). */}
-      {winterOpen && (
-        <WinterWindowCard
-          unrest={unrest}
-          onSell={(key, fee) => career.sellSquadPlayerNow(key, fee)}
-          onClose={() => career.setWinterDone(true)}
-        />
-      )}
-
-      {/* Next-match preview — who's up, how strong, and their danger man. */}
-      {!seasonDone && fixtures[shown] && (
-        <NextMatchPreview
-          fixture={fixtures[shown]}
-          rival={career.rivals.find((r) => r.foundingClubId === fixtures[shown].opponent.id) ?? null}
-          ourRating={userRating}
-          manager={isReal ? null : managerFor(fixtures[shown].opponent.id)}
-        />
-      )}
-
-      {/* Team talk — the pre-match decision. Pick a talk and the matchday
-          plays with its effect folded in. Hidden during the swap window. */}
-      {!seasonDone && !winterOpen && !(!isReal && shown >= midSeasonGate && !career.midSeasonSwapUsed) && (
-        <div className="mt-6">
-          <div className="text-[11px] uppercase tracking-widest text-muted-foreground mb-2 text-center">
-            🎙️ Team talk · matchday {shown + 1}
-            {fixtures[shown] ? ` · ${fixtures[shown].home ? "vs" : "@"} ${fixtures[shown].opponent.short}` : ""}
-          </div>
-          <div className="grid grid-cols-3 gap-2">
-            {TALK_OPTIONS.map((opt) => (
-              <button
-                key={opt.id}
-                onClick={() => playNext(opt.id)}
-                className="px-2 py-3 rounded-md border border-success/40 bg-success/10 text-success hover:bg-success/20 hover:-translate-y-0.5 transition text-center"
-              >
-                <div className="font-display text-xs tracking-wide">{opt.label}</div>
-                <div className="text-[9px] text-muted-foreground mt-1 normal-case leading-tight">
-                  {opt.hint}
-                </div>
-              </button>
-            ))}
-          </div>
+      {/* ── Tab bar — only one section's content shows at a time ── */}
+      <div className="mt-4 grid grid-cols-4 gap-1 rounded-xl border border-border bg-card/40 p-1">
+        {(
+          [
+            ["match", "⚽ Match"],
+            ["squad", "👥 Squad"],
+            ["table", "📊 Table"],
+            ["news", "📰 News"],
+          ] as [SeasonTab, string][]
+        ).map(([id, label]) => (
           <button
-            onClick={playAll}
-            className="mt-2 w-full px-4 py-2 rounded-md border border-warning/40 text-warning text-xs hover:bg-warning/10 transition"
-            title="Simulate all remaining matchdays with calm talks"
+            key={id}
+            onClick={() => setTab(id)}
+            className={`py-2 rounded-lg text-xs font-display tracking-wide transition ${
+              tab === id ? "bg-warning text-background" : "text-muted-foreground hover:text-foreground"
+            }`}
           >
-            ⏩ Skip the rest (calm talks)
+            {label}
           </button>
+        ))}
+      </div>
+
+      {/* Season over: the next-step CTA is the priority, surfaced above tabs. */}
+      {seasonDone && (
+        <div className="mt-5">
+          <PostSeasonCTA
+            ourPosition={ourPosition}
+            matches={matches}
+            userRating={userRating}
+            opponents={opponents}
+            liveForm={liveForm}
+            lineups={lineups}
+            relegationCutoff={relegationCutoff}
+            matchesPerSeason={matchesPerSeason}
+          />
         </div>
       )}
 
-      {/* Match feed (newest first) — surfaces immediately so the player
-          sees the result of the click they just made. Table + form below. */}
-      <div className="mt-6">
-        <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
-          Match feed
-        </div>
-        {matches
-          .slice()
-          .reverse()
-          .map((m) => (
-            <Fragment key={`md-${m.matchday}`}>
-              <MatchRow match={m} teamTalkLine={talks[m.matchday - 1]?.line ?? null} />
-              {diaryByMatchday.get(m.matchday) && (
-                <DiaryLine beat={diaryByMatchday.get(m.matchday)!} />
+      {/* ─────────────── MATCH TAB — the focal next action ─────────────── */}
+      {tab === "match" && (
+        <div className="mt-5 space-y-5">
+          <BoardHud
+            confidence={confidence}
+            expectation={expectation}
+            dressingRoom={dressingRoom}
+            seasonDone={seasonDone}
+          />
+
+          {!seasonDone && (
+            <>
+              {fixtures[shown] && (
+                <NextMatchPreview
+                  fixture={fixtures[shown]}
+                  rival={
+                    career.rivals.find((r) => r.foundingClubId === fixtures[shown].opponent.id) ?? null
+                  }
+                  ourRating={userRating}
+                  manager={isReal ? null : managerFor(fixtures[shown].opponent.id)}
+                />
               )}
-            </Fragment>
-          ))}
-        {shown === 0 && (
-          <p className="text-sm text-muted-foreground italic py-6 text-center">
-            Click "Play matchday 1" to start the season.
-          </p>
-        )}
-      </div>
 
-      {/* Squad form — 🔥 on a run, ❄️ cold streak + dressing-room morale */}
-      {shown > 0 && <SquadForm squad={career.squad} form={liveForm} morale={morale} />}
+              {swapOpen || winterOpen ? (
+                <p className="text-center text-xs text-muted-foreground">
+                  Resolve the window on screen to play on.
+                </p>
+              ) : (
+                <div>
+                  <div className="text-[11px] uppercase tracking-widest text-muted-foreground mb-2 text-center">
+                    🎙️ Team talk · matchday {shown + 1}
+                    {fixtures[shown]
+                      ? ` · ${fixtures[shown].home ? "vs" : "@"} ${fixtures[shown].opponent.short}`
+                      : ""}
+                  </div>
+                  <div className="grid grid-cols-3 gap-2">
+                    {TALK_OPTIONS.map((opt) => (
+                      <button
+                        key={opt.id}
+                        onClick={() => playNext(opt.id)}
+                        className="px-2 py-3 rounded-md border border-success/40 bg-success/10 text-success hover:bg-success/20 hover:-translate-y-0.5 transition text-center"
+                      >
+                        <div className="font-display text-xs tracking-wide">{opt.label}</div>
+                        <div className="text-[9px] text-muted-foreground mt-1 normal-case leading-tight">
+                          {opt.hint}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                  <button
+                    onClick={playAll}
+                    className="mt-2 w-full px-4 py-2 rounded-md border border-warning/40 text-warning text-xs hover:bg-warning/10 transition"
+                    title="Simulate all remaining matchdays with calm talks"
+                  >
+                    ⏩ Skip the rest (calm talks)
+                  </button>
+                </div>
+              )}
 
-      {/* Live league table — updates after every matchday */}
-      {shown > 0 && <LiveTable table={table} matchday={shown} totalMatchdays={matchesPerSeason} />}
+              {latest ? (
+                <div>
+                  <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
+                    Last result
+                  </div>
+                  <MatchRow match={latest} teamTalkLine={talks[latest.matchday - 1]?.line ?? null} />
+                </div>
+              ) : (
+                <p className="text-sm text-muted-foreground italic py-2 text-center">
+                  Pick a team talk to kick off matchday 1.
+                </p>
+              )}
+            </>
+          )}
+        </div>
+      )}
 
-      {/* End-of-season — next-step CTA (final table already shown live above) */}
-      {seasonDone && (
-        <PostSeasonCTA
-          ourPosition={ourPosition}
-          matches={matches}
-          userRating={userRating}
-          opponents={opponents}
-          liveForm={liveForm}
-          lineups={lineups}
-          relegationCutoff={relegationCutoff}
-          matchesPerSeason={matchesPerSeason}
-        />
+      {/* ─────────────────────── SQUAD TAB ─────────────────────── */}
+      {tab === "squad" && (
+        <div className="mt-5">
+          {hasBench ? (
+            <MatchdaySquadPanel
+              squad={availableSquad}
+              injured={injuredList}
+              xiKeys={xiKeys}
+              form={liveForm}
+              ratingAdj={selectionForm}
+              fatigue={fatigue}
+              formation={career.formation}
+              franchiseKey={career.franchisePlayerKey}
+              onSwap={(outKey, inKey) => {
+                if (!canSwapIntoXI(availableSquad, xiKeys, outKey, inKey, career.formation)) return;
+                const next = xiKeys.filter((k) => k !== outKey).concat(inKey);
+                career.setStartingXI(next);
+              }}
+              onEditRating={(key, rating) => career.setRatingEdit(key, rating)}
+              onAutoPick={() =>
+                career.setStartingXI(autoPickXI(availableSquad, career.formation, selectionForm))
+              }
+              statsFor={(p) =>
+                playerSeasonStats(
+                  p,
+                  matches.map((m) => ({
+                    ourScore: m.ourScore,
+                    theirScore: m.theirScore,
+                    scorers: m.scorers,
+                  })),
+                  lineups,
+                  playerKey(p),
+                )
+              }
+            />
+          ) : (
+            <p className="text-sm text-muted-foreground italic py-6 text-center">
+              No bench in this squad — everyone starts.
+            </p>
+          )}
+          {shown > 0 && <SquadForm squad={career.squad} form={liveForm} morale={morale} />}
+        </div>
+      )}
+
+      {/* ─────────────────────── TABLE TAB ─────────────────────── */}
+      {tab === "table" && (
+        <div className="mt-5 space-y-4">
+          <div className="grid grid-cols-4 gap-2 text-center">
+            <ScoreboardStat label="W" value={wins} accent="text-success" />
+            <ScoreboardStat label="D" value={draws} accent="text-muted-foreground" />
+            <ScoreboardStat label="L" value={losses} accent="text-primary" />
+            <ScoreboardStat label="OVR" value={Math.round(userRating)} accent="text-warning" />
+          </div>
+          {chemistry.bonus > 0 && (
+            <div className="text-center text-[11px] text-success">
+              🤝 Chemistry +{chemistry.bonus} · {chemistry.label}
+            </div>
+          )}
+          {shown > 0 ? (
+            <LiveTable table={table} matchday={shown} totalMatchdays={matchesPerSeason} />
+          ) : (
+            <p className="text-sm text-muted-foreground italic py-6 text-center">
+              The table fills in once the season kicks off.
+            </p>
+          )}
+        </div>
+      )}
+
+      {/* ─────────────────────── NEWS TAB ─────────────────────── */}
+      {tab === "news" && (
+        <div className="mt-5">
+          <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
+            📰 The GOLAZO Gazette
+          </div>
+          {matches.length === 0 ? (
+            <p className="text-sm text-muted-foreground italic py-6 text-center">
+              No headlines yet — play a matchday.
+            </p>
+          ) : (
+            matches
+              .slice()
+              .reverse()
+              .map((m) => (
+                <Fragment key={`md-${m.matchday}`}>
+                  <MatchRow match={m} teamTalkLine={talks[m.matchday - 1]?.line ?? null} />
+                  {diaryByMatchday.get(m.matchday) && (
+                    <DiaryLine beat={diaryByMatchday.get(m.matchday)!} />
+                  )}
+                </Fragment>
+              ))
+          )}
+        </div>
+      )}
+
+      {/* ── Interrupts — overlay on top of any tab, blocking when they must ── */}
+      {!seasonDone && convo && (
+        <Overlay onClose={() => setConvo(null)}>
+          <ConversationCard
+            player={convo}
+            season={career.currentSeason}
+            onResolve={(delta) => career.resolveConversation(convo.key, delta)}
+            onDismiss={() => setConvo(null)}
+          />
+        </Overlay>
+      )}
+
+      {swapOpen && (
+        <Overlay>
+          <MidSeasonSwapCard />
+        </Overlay>
+      )}
+
+      {winterOpen && (
+        <Overlay>
+          <WinterWindowCard
+            unrest={unrest}
+            onSell={(key, fee) => career.sellSquadPlayerNow(key, fee)}
+            onClose={() => career.setWinterDone(true)}
+          />
+        </Overlay>
       )}
 
       {/* Ceremony overlay — fires once when the season ends in a title or
-          relegation. Champions get a gold confetti burst; relegation gets
-          a somber descent. Purely celebratory punctuation; dismisses to
-          reveal the PostSeasonCTA underneath. */}
+          relegation. Champions get gold confetti; relegation a somber descent. */}
       {seasonDone && (
         <SeasonCeremony
           season={career.currentSeason}
@@ -763,6 +855,22 @@ function CareerSeason() {
 
       {/* Live match ticker — plays the just-finished match minute by minute. */}
       {liveMatch && <LiveMatchModal live={liveMatch} onClose={() => setLiveMatch(null)} />}
+    </div>
+  );
+}
+
+/** Centered modal overlay for interrupts (conversations, the winter window,
+ *  the mid-season swap) — sits over whichever tab is open. A backdrop press
+ *  closes it only when `onClose` is provided (blocking windows omit it). */
+function Overlay({ onClose, children }: { onClose?: () => void; children: ReactNode }) {
+  return (
+    <div
+      className="fixed inset-0 z-40 flex items-start justify-center overflow-y-auto bg-black/70 p-4 py-10"
+      onClick={onClose}
+    >
+      <div className="w-full max-w-md" onClick={(e) => e.stopPropagation()}>
+        {children}
+      </div>
     </div>
   );
 }
