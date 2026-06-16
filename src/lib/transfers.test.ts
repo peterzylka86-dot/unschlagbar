@@ -35,6 +35,20 @@ describe("playerWillJoin", () => {
     expect(before).toBe(false);
     expect(after).toBe(true);
   });
+  it("a small club CAN sign a young prospect from a strong club, but not its star", () => {
+    // Reputation 72 (a modest side) vs a strong selling club (88):
+    const star = playerWillJoin(72, 88, 90, 27, 90); // finished 90 — no chance
+    const prospect = playerWillJoin(72, 88, 70, 18, 90); // 18yo, ceiling 90 — gettable
+    expect(star).toBe(false);
+    expect(prospect).toBe(true);
+  });
+  it("the prospect path needs real headroom, not just youth", () => {
+    // A young squad player with no ceiling isn't given the prospect discount.
+    const filler = playerWillJoin(72, 86, 80, 20, 80); // 80→80, no upside
+    const wonderkid = playerWillJoin(72, 86, 72, 20, 88); // 72→88, real upside
+    expect(wonderkid).toBe(true);
+    expect(filler).toBe(false);
+  });
 });
 
 describe("signStatus", () => {

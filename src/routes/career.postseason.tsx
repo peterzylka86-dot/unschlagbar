@@ -25,6 +25,7 @@ import { sellValue, feeLabel } from "@/lib/market";
 import {
   clubReputation,
   signStatus,
+  playerWillJoin,
   type SignStatus,
   MAX_SIGNINGS_PER_WINDOW,
 } from "@/lib/transfers";
@@ -198,6 +199,7 @@ function PostSeason() {
     const st = signStatus({
       rating: p.prime_rating,
       age: p.age ?? 27,
+      potential: p.potential,
       sellingClubStrength: clubStrengthOf(p.club),
       yourReputation,
       remainingBudget: remaining,
@@ -917,14 +919,28 @@ function RealTransferMarket({
   const [posFilter, setPosFilter] = useState<"All" | "GK" | "DEF" | "MID" | "FWD">("All");
   const squadKeys = new Set(squad.map((p) => `${p.club}:${p.name}`));
   const buyList = useMemo(
-    () =>
-      pool
+    () => {
+      const eligible = pool
         .filter((p) => !squadKeys.has(`${p.club}:${p.name}`))
-        .filter((p) => posFilter === "All" || simplifyPosition(p.position) === posFilter)
-        .sort((a, b) => b.prime_rating - a.prime_rating)
-        .slice(0, 60),
+        .filter((p) => posFilter === "All" || simplifyPosition(p.position) === posFilter);
+      const joins = (p: Player) =>
+        playerWillJoin(yourReputation, clubStrengthOf(p.club), p.prime_rating, p.age, p.potential);
+      // Surface who you can ACTUALLY sign first, and within that the
+      // highest-ceiling prospects — so a small club's "buy potential" path is
+      // front and centre, not buried under unsignable superstars.
+      return eligible
+        .sort((a, b) => {
+          const ja = joins(a) ? 1 : 0;
+          const jb = joins(b) ? 1 : 0;
+          if (ja !== jb) return jb - ja;
+          if (ja === 1)
+            return (b.potential ?? b.prime_rating) - (a.potential ?? a.prime_rating);
+          return b.prime_rating - a.prime_rating;
+        })
+        .slice(0, 60);
+    },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [pool, posFilter, squad],
+    [pool, posFilter, squad, yourReputation],
   );
 
   return (
@@ -1023,6 +1039,7 @@ function RealTransferMarket({
             const { status, price } = signStatus({
               rating: p.prime_rating,
               age: p.age ?? 27,
+              potential: p.potential,
               sellingClubStrength: clubStrengthOf(p.club),
               yourReputation,
               remainingBudget: remaining,
@@ -1041,7 +1058,14 @@ function RealTransferMarket({
                 className="flex items-center justify-between gap-2 px-3 py-2 rounded-lg border border-border bg-card text-sm"
               >
                 <div className="min-w-0">
-                  <div className="font-medium truncate">{p.name}</div>
+                  <div className="font-medium truncate">
+                    {p.name}
+                    {p.potential != null && p.potential > p.prime_rating + 4 && (
+                      <span className="ml-1 text-[10px] text-success" title={`High ceiling — can grow to ${p.potential}`}>
+                        ✨{p.potential}
+                      </span>
+                    )}
+                  </div>
                   <div className="text-[10px] text-muted-foreground truncate">
                     {p.position} · {p.prime_rating}
                     {p.age != null ? ` · ${p.age}y` : ""}

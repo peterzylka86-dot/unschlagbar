@@ -39,17 +39,33 @@ describe("seasonTransferBudget", () => {
 });
 
 describe("startingBalance", () => {
-  it("scales with club wealth and has a floor", () => {
-    expect(startingBalance(85)).toBeGreaterThan(startingBalance(65));
-    expect(startingBalance(40)).toBeGreaterThanOrEqual(15);
+  it("is steep — small clubs poor, elite clubs rich", () => {
+    expect(startingBalance(94)).toBeGreaterThan(startingBalance(80));
+    expect(startingBalance(80)).toBeGreaterThan(startingBalance(70));
+    // A tiny club has almost nothing (floor 3), never below it.
+    expect(startingBalance(40)).toBeGreaterThanOrEqual(3);
+    expect(startingBalance(40)).toBeLessThan(10);
+  });
+  it("leaves a small club unable to buy a finished superstar", () => {
+    // Bochum-ish (≈70) is nowhere near a peak-90 fee.
+    expect(startingBalance(70)).toBeLessThan(playerFee(90, 26));
   });
 });
 
 describe("prizeMoney", () => {
-  it("winning the league + cup banks far more than mid-table", () => {
+  it("winning the league + cup banks more than mid-table", () => {
     const champ = prizeMoney({ finishPosition: 1, leagueSize: 20, champion: true, cupResult: "champion" });
     const mid = prizeMoney({ finishPosition: 10, leagueSize: 20, champion: false, cupResult: "did-not-qualify" });
-    expect(champ).toBeGreaterThan(mid * 2);
+    expect(champ).toBeGreaterThan(mid);
+  });
+  it("a bigger club draws bigger TV money", () => {
+    const big = prizeMoney({ finishPosition: 5, leagueSize: 20, champion: false, cupResult: "did-not-qualify", clubStrength: 90 });
+    const small = prizeMoney({ finishPosition: 5, leagueSize: 20, champion: false, cupResult: "did-not-qualify", clubStrength: 70 });
+    expect(big).toBeGreaterThan(small);
+  });
+  it("stays modest — a small club's title doesn't bankroll a superstar", () => {
+    const title = prizeMoney({ finishPosition: 1, leagueSize: 18, champion: true, cupResult: "did-not-qualify", clubStrength: 70 });
+    expect(title).toBeLessThan(playerFee(90, 26)); // can't simply buy a peak star
   });
   it("pays a baseline even to a relegated club", () => {
     expect(

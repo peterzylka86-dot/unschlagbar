@@ -2281,6 +2281,7 @@ function PostSeasonCTA({
         leagueSize: opponents.length + 1,
         champion: isChampion,
         cupResult: "did-not-qualify",
+        clubStrength: Math.round(userRating),
       }),
     );
 

@@ -40,32 +40,43 @@ export function feeLabel(m: number): string {
   return `€${m}M`;
 }
 
-/** Starting bank balance for a new Real-mode career, from club wealth. */
+/**
+ * Starting bank for a new Real-mode career. STEEP by club size so the gap is
+ * realistic: a 2.-Bundesliga side (≈70) starts with low-double-digit millions
+ * — nowhere near a superstar fee — while an elite club (≈92) has nine figures.
+ * A small club must shop for POTENTIAL, not finished stars.
+ *   strength 65 → ~€2M · 70 → ~€13M · 80 → ~€60M · 90 → ~€146M · 94 → ~€198M
+ */
 export function startingBalance(clubStrength: number): number {
-  return Math.max(15, Math.round((clubStrength - 56) * 7));
+  return Math.max(3, Math.round(Math.pow(Math.max(0, clubStrength - 60), 2.2) / 12));
 }
 
 /**
- * Prize money banked at a season's end: a TV baseline everyone gets, place
- * money for the league finish, and trophy bonuses — so winning compounds
- * into real spending power.
+ * Prize money banked at a season's end. Deliberately MODEST — a TV share that
+ * scales with club size (small clubs earn little), plus place money and
+ * trophy bonuses. Tuned so a season's reward buys a prospect or two, never a
+ * finished superstar — the bank should feel tight for a small club.
  */
 export function prizeMoney(opts: {
   finishPosition: number;
   leagueSize: number;
   champion: boolean;
   cupResult: "champion" | "runner-up" | "semi-final" | "quarter-final" | "did-not-qualify";
+  /** Club tier proxy — bigger clubs draw bigger TV money. Default mid. */
+  clubStrength?: number;
 }): number {
-  const base = 30;
-  const place = Math.max(0, opts.leagueSize - opts.finishPosition) * 5;
-  const title = opts.champion ? 60 : 0;
+  const tv = Math.max(2, Math.round(((opts.clubStrength ?? 72) - 58) * 0.7));
+  const place = Math.round(Math.max(0, opts.leagueSize - opts.finishPosition) * 0.6);
+  const title = opts.champion ? 10 : 0;
   const cup =
     opts.cupResult === "champion"
-      ? 40
+      ? 12
       : opts.cupResult === "runner-up"
-        ? 18
+        ? 6
         : opts.cupResult === "semi-final"
-          ? 8
-          : 0;
-  return base + place + title + cup;
+          ? 3
+          : opts.cupResult === "quarter-final"
+            ? 1
+            : 0;
+  return tv + place + title + cup;
 }
