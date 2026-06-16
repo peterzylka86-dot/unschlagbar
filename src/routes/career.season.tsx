@@ -237,6 +237,17 @@ function CareerSeason() {
   } | null>(null);
   const shown = matches.length;
   const [tableComputed, setTableComputed] = useState(false);
+  // Halftime shout: when you're level or behind at the break, you decide
+  // whether to gamble on a second-half push. Holds the precomputed base match
+  // until you choose. (See playNext / resolveShout.)
+  const [halftime, setHalftime] = useState<{
+    base: MatchWithScorers;
+    talk: TalkId;
+    effect: ReturnType<typeof talkEffect>;
+    rating: number;
+    htUs: number;
+    htThem: number;
+  } | null>(null);
 
   // Fatigue per squad player (club:name key), derived from lineups played.
   const fatigue = useMemo(() => computeFatigue(lineups, career.squad), [lineups, career.squad]);
@@ -471,15 +482,13 @@ function CareerSeason() {
   // Play the next matchday after the chosen team talk. The talk + squad
   // morale fold into the rating for THIS match only, so a well-judged talk
   // (or a backfired one) genuinely swings the result.
-  function playNext(talk: TalkId) {
-    const nextOpp = fixtures[matches.length];
-    if (!nextOpp) return;
-    const isUnderdog = (nextOpp.opponent.strength ?? userRating) > userRating;
-    const effect = talkEffect(talk, dressingRoom, isUnderdog);
-    const rating = userRating + moraleRatingKick(dressingRoom) + effect.ratingDelta;
-    const next = simulateNext(matches, rating);
-    if (!next) return;
-    // Open the live ticker for this match.
+  /** Roughly how many of a side's goals had come by halftime (deterministic). */
+  function htGoals(goals: number): number {
+    return Math.round(goals * 0.45);
+  }
+
+  /** Open the live ticker for a finished match and commit it to the season. */
+  function commitMatch(next: MatchWithScorers, talk: TalkId, effect: ReturnType<typeof talkEffect>) {
     const keyToName = (k: string) =>
       career.squad.find((p) => `${p.club}:${p.name}` === k)?.name ?? k.split(":")[1] ?? k;
     setLiveMatch({
@@ -499,6 +508,53 @@ function CareerSeason() {
     setMatches((prev) => [...prev, next]);
     setLineups((prev) => [...prev, xiKeys]);
     setTalks((prev) => [...prev, { id: talk, moraleDelta: effect.moraleDelta, line: effect.line }]);
+  }
+
+  function playNext(talk: TalkId) {
+    const nextOpp = fixtures[matches.length];
+    if (!nextOpp) return;
+    const isUnderdog = (nextOpp.opponent.strength ?? userRating) > userRating;
+    const effect = talkEffect(talk, dressingRoom, isUnderdog);
+    const rating = userRating + moraleRatingKick(dressingRoom) + effect.ratingDelta;
+    const next = simulateNext(matches, rating);
+    if (!next) return;
+    // If you're level or behind at the break, pause for a halftime shout
+    // (gamble on a push, or hold). Otherwise the match commits as-is.
+    const htUs = htGoals(next.ourScore);
+    const htThem = htGoals(next.theirScore);
+    if (htUs <= htThem) {
+      setHalftime({ base: next, talk, effect, rating, htUs, htThem });
+      return;
+    }
+    commitMatch(next, talk, effect);
+  }
+
+  /** Resolve the halftime shout: HOLD keeps the base result; GO FOR IT re-rolls
+   *  the SECOND HALF with an attacking bonus (a genuine gamble — it can win it
+   *  or leave you exposed at the back), keeping the first half intact. */
+  function resolveShout(goForIt: boolean) {
+    if (!halftime) return;
+    const { base, talk, effect, rating, htUs, htThem } = halftime;
+    setHalftime(null);
+    if (!goForIt) {
+      commitMatch(base, talk, effect);
+      return;
+    }
+    const idx = matches.length;
+    const HALFTIME_SHOUT_BONUS = 4;
+    const g = simulateOneMatch(fixtures[idx], idx + 1, rating + HALFTIME_SHOUT_BONUS, seasonSeed + 104729, "normal");
+    const us = htUs + Math.max(0, g.ourScore - htGoals(g.ourScore));
+    const them = htThem + Math.max(0, g.theirScore - htGoals(g.theirScore));
+    const rand = mulberry32(seasonSeed + (idx + 1) * 7919 + 31);
+    const scorers: { name: string; assister?: string }[] = [];
+    for (let k = 0; k < us; k++) {
+      const s = pickScorer(xiPlayers, liveForm, rand);
+      if (!s) continue;
+      const a = pickAssister(xiPlayers, s, rand);
+      scorers.push({ name: s.name, assister: a?.name });
+    }
+    const outcome: "W" | "D" | "L" = us > them ? "W" : us < them ? "L" : "D";
+    commitMatch({ ...base, ourScore: us, theirScore: them, scorers, outcome }, talk, effect);
   }
   function playAll() {
     // Skip to the NEXT decision point, not blindly to the season's end: if the
@@ -890,6 +946,44 @@ function CareerSeason() {
             onSell={(key, fee) => career.sellSquadPlayerNow(key, fee)}
             onClose={() => career.setWinterDone(true)}
           />
+        </Overlay>
+      )}
+
+      {/* Halftime shout — level or behind at the break: gamble or hold. */}
+      {halftime && (
+        <Overlay>
+          <div className="rounded-2xl border-2 border-warning bg-card p-5 text-center">
+            <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
+              Halftime · vs {halftime.base.opponent.short || halftime.base.opponent.name}
+            </div>
+            <div className="font-display text-3xl text-warning mt-1">
+              {halftime.htUs}–{halftime.htThem}
+            </div>
+            <p className="text-xs text-muted-foreground mt-2 mb-4">
+              {halftime.htUs < halftime.htThem ? "You're behind." : "It's level."} Throw bodies
+              forward for a second-half push, or hold your shape?
+            </p>
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                onClick={() => resolveShout(true)}
+                className="px-3 py-3 rounded-md border border-primary/50 bg-primary/10 text-primary font-display tracking-wide hover:bg-primary/20 transition"
+              >
+                🔥 Go for it
+                <span className="block text-[9px] text-muted-foreground normal-case mt-0.5">
+                  Attack — reward, but riskier at the back
+                </span>
+              </button>
+              <button
+                onClick={() => resolveShout(false)}
+                className="px-3 py-3 rounded-md border border-border text-foreground/80 font-display tracking-wide hover:bg-muted/20 transition"
+              >
+                🧊 Hold shape
+                <span className="block text-[9px] text-muted-foreground normal-case mt-0.5">
+                  Keep it tight, take what comes
+                </span>
+              </button>
+            </div>
+          </div>
         </Overlay>
       )}
 
