@@ -59,7 +59,11 @@ const EVENTS = [
  */
 export function matchdayEvent(season: number, matchday: number, squadNames: string[]): string | null {
   const seed = season * 101 + matchday * 37;
-  if (seed % 3 !== 0) return null;
+  // Rare filler — the daft events are colour, not news. Keep them occasional
+  // (~1 in 7 matchdays) so the feed reads as special moments, not a weekly
+  // gossip column. The meaningful beats (big results, streaks, milestones)
+  // carry the story.
+  if (seed % 7 !== 0) return null;
   const line = pick(EVENTS, seed);
   const name = squadNames.length ? squadNames[seed % squadNames.length] : "a player";
   return line.replace(/\{player\}/g, name);
@@ -98,6 +102,18 @@ const HEADLINE_BIG_LOSS = [
 const HEADLINE_CLEAN_SHEET = [
   "📰 SHUT THE DOOR, TOOK THE POINTS",
   "📰 THE BACK LINE WAS A FORTRESS",
+];
+
+const HEADLINE_WIN_STREAK = [
+  "📰 {n} ON THE BOUNCE — THEY'RE FLYING",
+  "📰 UNSTOPPABLE: {n} WINS IN A ROW",
+  "📰 BANDWAGON BOARDING NOW — {n} STRAIGHT",
+];
+
+const HEADLINE_SLUMP = [
+  "📰 {n} WITHOUT A WIN — PRESSURE BUILDS",
+  "📰 THE WHEELS ARE WOBBLING: {n} WINLESS",
+  "📰 GAFFER UNDER THE MICROSCOPE AFTER {n}",
 ];
 
 export interface FlavourBeat {
@@ -144,9 +160,20 @@ export function seasonDiary(opts: {
 
   // Iterate in matchday order so running tallies are correct.
   const ordered = [...matches].sort((a, b) => a.matchday - b.matchday);
+  let winStreak = 0;
+  let winlessStreak = 0;
   for (const m of ordered) {
     const margin = m.ourScore - m.theirScore;
     let beat: FlavourBeat | null = null;
+
+    // Track form runs (used for streak headlines below).
+    if (m.outcome === "W") {
+      winStreak += 1;
+      winlessStreak = 0;
+    } else {
+      winStreak = 0;
+      winlessStreak += 1;
+    }
 
     // Priority 1 — headline on a notable result.
     if (m.outcome === "W" && margin >= 3) {
@@ -155,6 +182,24 @@ export function seasonDiary(opts: {
       beat = { matchday: m.matchday, kind: "headline", icon: "📰", text: pick(HEADLINE_BIG_LOSS, m.matchday * 13 + m.theirScore * 5) };
     } else if (m.outcome === "W" && m.theirScore === 0 && margin >= 2) {
       beat = { matchday: m.matchday, kind: "headline", icon: "📰", text: pick(HEADLINE_CLEAN_SHEET, m.matchday * 13) };
+    }
+
+    // Priority 1.5 — a streak crosses a notable threshold (only AT the
+    // threshold, so it fires once per run, not every week of it).
+    if (!beat && (winStreak === 3 || winStreak === 5 || winStreak === 8)) {
+      beat = {
+        matchday: m.matchday,
+        kind: "headline",
+        icon: "📰",
+        text: pick(HEADLINE_WIN_STREAK, m.matchday * 13 + winStreak).replace(/\{n\}/g, String(winStreak)),
+      };
+    } else if (!beat && (winlessStreak === 3 || winlessStreak === 6)) {
+      beat = {
+        matchday: m.matchday,
+        kind: "headline",
+        icon: "📰",
+        text: pick(HEADLINE_SLUMP, m.matchday * 13 + winlessStreak).replace(/\{n\}/g, String(winlessStreak)),
+      };
     }
 
     // Update running goal tallies regardless.

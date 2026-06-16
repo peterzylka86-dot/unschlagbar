@@ -21,11 +21,12 @@ describe("matchdayEvent", () => {
     }
   });
 
-  it("fires on roughly a third of matchdays", () => {
+  it("fires rarely — it's occasional colour, not a weekly column", () => {
     let fires = 0;
     for (let md = 1; md <= 60; md++) if (matchdayEvent(1, md, ["X"])) fires++;
-    expect(fires).toBeGreaterThan(10);
-    expect(fires).toBeLessThan(30);
+    // ~1 in 7 matchdays, so the meaningful beats carry the story.
+    expect(fires).toBeGreaterThan(3);
+    expect(fires).toBeLessThan(15);
   });
 });
 
