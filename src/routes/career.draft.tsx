@@ -281,32 +281,38 @@ function CareerDraft() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [draft, auto]);
 
-  /** Auto-draft: make the USER's pick the way an AI would (best-fit for the
-   *  formation, "balanced" taste), bypassing the wheel. Founding pick still
-   *  sets the franchise. Mirrors processAIPick. */
+  /** Auto-draft the USER's pick by OPEN FORMATION SLOT (the same strict
+   *  slot logic the spin wheel uses) so the XI fills every position — a
+   *  winger, two fullbacks, a keeper, not just the highest-rated CMs/STs.
+   *  Founding pick stays the franchise. Once the XI is full, later rounds are
+   *  bench depth (any position). */
   function processUserAutoPick(user: Manager) {
     setDraft((prev) => {
       if (!prev) return prev;
       const isFirstPick = user.squad.length === 0;
-      const need = computeNeed(user.squad, career.formation);
-      let pool = isFirstPick
-        ? allPlayers.filter(
-            (p) => p.club === user.foundingClubId && !prev.usedPlayerKeys.has(playerKey(p)),
-          )
-        : allPlayers.filter((p) => !prev.usedPlayerKeys.has(playerKey(p)));
-      pool = pool.filter((p) => {
-        const bucket = simplifyPosition(p.position) as SimplePosition;
-        if (bucket === "GK" && !need.has("GK")) return false;
-        if (bucket === "DEF" && !need.has("DEF")) return false;
-        if (bucket === "MID" && !need.has("MID")) return false;
-        if (bucket === "FWD" && !need.has("FWD")) return false;
-        return true;
-      });
-      if (pool.length === 0) return advance({ ...prev, currentClubId: null });
-      pool.sort(
-        (a, b) =>
-          scorePlayerByArchetype(b, "balanced", need) - scorePlayerByArchetype(a, "balanced", need),
+      const slotPositions = FORMATIONS[career.formation].slots.map((s) => s.position);
+      // Which formation slots the current squad already covers.
+      const filled: boolean[] = slotPositions.map(() => false);
+      for (const p of user.squad) {
+        for (let i = 0; i < slotPositions.length; i++) {
+          if (!filled[i] && playerFitsSlot(slotPositions[i], p)) {
+            filled[i] = true;
+            break;
+          }
+        }
+      }
+      const openSlots = slotPositions.filter((_, i) => !filled[i]);
+      const benchMode = openSlots.length === 0; // XI complete → bench depth
+      const usable = (p: Player) =>
+        !prev.usedPlayerKeys.has(playerKey(p)) &&
+        (!isFirstPick || p.club === user.foundingClubId);
+      let pool = allPlayers.filter(
+        (p) => usable(p) && (benchMode || openSlots.some((sp) => playerFitsSlot(sp, p))),
       );
+      // Safety: never strand the pick if no slot-filler is left.
+      if (pool.length === 0) pool = allPlayers.filter(usable);
+      if (pool.length === 0) return advance({ ...prev, currentClubId: null });
+      pool.sort((a, b) => b.prime_rating - a.prime_rating);
       const pick = pool[0];
       if (isFirstPick && !career.franchisePlayerKey) {
         career.setFranchisePlayer(`${pick.club}:${pick.name}`);
