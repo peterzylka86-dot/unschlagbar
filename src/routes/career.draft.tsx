@@ -143,6 +143,10 @@ function CareerDraft() {
 
   // ─── Initialize draft state once on mount ─────────────────────────────
   const [draft, setDraft] = useState<DraftSnapshot | null>(null);
+  // Auto-draft: once on, the user's remaining picks are made by the
+  // assistant (best-fit for the formation) so you don't have to spin all 18
+  // rounds by hand. Your founding pick stays yours.
+  const [auto, setAuto] = useState(false);
 
   useEffect(() => {
     if (draft) return;
@@ -242,13 +246,21 @@ function CareerDraft() {
       return () => clearTimeout(timer);
     }
 
-    if (onClock.isUser) return; // wait for user input
+    if (onClock.isUser) {
+      // Auto-draft: the assistant makes the user's picks too (best-fit),
+      // bypassing the wheel so the rest of the draft completes fast.
+      if (auto) {
+        const timer = setTimeout(() => processUserAutoPick(onClock), 180);
+        return () => clearTimeout(timer);
+      }
+      return; // wait for user input
+    }
 
     // AI pick — run via setTimeout so the UI breathes between AI turns
-    const timer = setTimeout(() => processAIPick(onClock), 350);
+    const timer = setTimeout(() => processAIPick(onClock), auto ? 60 : 350);
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [draft]);
+  }, [draft, auto]);
 
   // Auto-spin on user's turn (rounds 2+) — no manual click required.
   // User feedback: "I don't need to spin every time...but rather just land
@@ -256,6 +268,7 @@ function CareerDraft() {
   // it's already founding-club-only.
   useEffect(() => {
     if (!draft) return;
+    if (auto) return; // auto-draft bypasses the wheel entirely
     if (draft.currentClubId !== null) return; // already landed on a club
     const onClockId = snakePickerId(draft.draftOrder, draft.currentRound, draft.currentPickInRound);
     if (onClockId !== "user") return; // not the user's turn
@@ -266,7 +279,46 @@ function CareerDraft() {
     const timer = setTimeout(() => userSpin(), 250);
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [draft]);
+  }, [draft, auto]);
+
+  /** Auto-draft: make the USER's pick the way an AI would (best-fit for the
+   *  formation, "balanced" taste), bypassing the wheel. Founding pick still
+   *  sets the franchise. Mirrors processAIPick. */
+  function processUserAutoPick(user: Manager) {
+    setDraft((prev) => {
+      if (!prev) return prev;
+      const isFirstPick = user.squad.length === 0;
+      const need = computeNeed(user.squad, career.formation);
+      let pool = isFirstPick
+        ? allPlayers.filter(
+            (p) => p.club === user.foundingClubId && !prev.usedPlayerKeys.has(playerKey(p)),
+          )
+        : allPlayers.filter((p) => !prev.usedPlayerKeys.has(playerKey(p)));
+      pool = pool.filter((p) => {
+        const bucket = simplifyPosition(p.position) as SimplePosition;
+        if (bucket === "GK" && !need.has("GK")) return false;
+        if (bucket === "DEF" && !need.has("DEF")) return false;
+        if (bucket === "MID" && !need.has("MID")) return false;
+        if (bucket === "FWD" && !need.has("FWD")) return false;
+        return true;
+      });
+      if (pool.length === 0) return advance({ ...prev, currentClubId: null });
+      pool.sort(
+        (a, b) =>
+          scorePlayerByArchetype(b, "balanced", need) - scorePlayerByArchetype(a, "balanced", need),
+      );
+      const pick = pool[0];
+      if (isFirstPick && !career.franchisePlayerKey) {
+        career.setFranchisePlayer(`${pick.club}:${pick.name}`);
+      }
+      const newManagers = prev.managers.map((m) =>
+        m.isUser ? { ...m, squad: [...m.squad, pick] } : m,
+      );
+      const newUsed = new Set(prev.usedPlayerKeys);
+      newUsed.add(playerKey(pick));
+      return advance({ ...prev, managers: newManagers, usedPlayerKeys: newUsed, currentClubId: null });
+    });
+  }
 
   function processAIPick(ai: Manager) {
     setDraft((prev) => {
@@ -508,6 +560,22 @@ function CareerDraft() {
       {/* Formation picker — only when no picks made yet (locking after first pick prevents broken squads) */}
       {userManager.squad.length === 0 && (
         <FormationPicker current={career.formation} onChange={career.setFormation} />
+      )}
+
+      {/* Auto-draft the rest — once your founding pick is in, let the
+          assistant fill the remaining slots so you skip 17 manual spins. */}
+      {!draftDone && userManager.squad.length >= 1 && !auto && (
+        <button
+          onClick={() => setAuto(true)}
+          className="mt-4 w-full px-4 py-2.5 rounded-md border border-success/40 bg-success/5 text-success text-sm font-display tracking-wide hover:bg-success/15 transition"
+        >
+          ⚡ Auto-draft the rest (assistant fills best-fit)
+        </button>
+      )}
+      {auto && !draftDone && (
+        <div className="mt-4 w-full px-4 py-2.5 rounded-md border border-success/40 bg-success/10 text-success text-sm font-display tracking-wide text-center">
+          ⚡ Auto-drafting…
+        </div>
       )}
 
       {/* Snake-order strip */}
