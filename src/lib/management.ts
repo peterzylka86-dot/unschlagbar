@@ -171,18 +171,32 @@ export interface BoardExpectation {
 
 /**
  * The board's pre-season brief, read purely off squad strength vs. the
- * league: target finish = 1 + (rivals rated above you). The label frames it.
+ * league: target finish = 1 + (rivals rated above you). The label frames it —
+ * and in a SECOND-TIER league the framing is about PROMOTION, not the title,
+ * so a strong side there is told to "go straight up", not "win the league".
  */
-export function boardExpectation(userRating: number, opponentStrengths: number[]): BoardExpectation {
+export function boardExpectation(
+  userRating: number,
+  opponentStrengths: number[],
+  opts: { secondTier?: boolean } = {},
+): BoardExpectation {
   const above = opponentStrengths.filter((s) => s > userRating).length;
   const targetPosition = 1 + above;
   const total = opponentStrengths.length + 1;
   let label: string;
-  if (targetPosition === 1) label = "Win the league. Nothing less.";
-  else if (targetPosition <= Math.ceil(total * 0.25)) label = "Push for the title and a top finish.";
-  else if (targetPosition <= Math.ceil(total * 0.5)) label = "A solid top-half campaign is expected.";
-  else if (targetPosition < total - 1) label = "Establish the club. Avoid any drama.";
-  else label = "Survival. Keep us up and we'll talk.";
+  if (opts.secondTier) {
+    if (targetPosition <= 2) label = "Go straight up — promotion as champions.";
+    else if (targetPosition <= 3) label = "Win promotion — top three at least.";
+    else if (targetPosition <= Math.ceil(total * 0.5)) label = "Push for the promotion places.";
+    else if (targetPosition < total - 1) label = "Consolidate — a steady mid-table year.";
+    else label = "Don't get dragged into the drop zone.";
+  } else {
+    if (targetPosition === 1) label = "Win the league. Nothing less.";
+    else if (targetPosition <= Math.ceil(total * 0.25)) label = "Push for the title and a top finish.";
+    else if (targetPosition <= Math.ceil(total * 0.5)) label = "A solid top-half campaign is expected.";
+    else if (targetPosition < total - 1) label = "Establish the club. Avoid any drama.";
+    else label = "Survival. Keep us up and we'll talk.";
+  }
   return { targetPosition, label };
 }
 

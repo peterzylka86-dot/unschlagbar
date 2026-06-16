@@ -444,8 +444,11 @@ function CareerSeason() {
   }, [career.squad, morale, reputation]);
   // The board's pre-season brief, read off raw squad strength vs. the league.
   const expectation = useMemo(
-    () => boardExpectation(tableSeedRating, opponents.map((o) => o.strength)),
-    [tableSeedRating, opponents],
+    () =>
+      boardExpectation(tableSeedRating, opponents.map((o) => o.strength), {
+        secondTier: isReal && leagueAbove(career.leagueId) != null,
+      }),
+    [tableSeedRating, opponents, isReal, career.leagueId],
   );
 
   // ─── Play matchdays — simulate with the CURRENT XI on each click ────
@@ -498,14 +501,17 @@ function CareerSeason() {
     setTalks((prev) => [...prev, { id: talk, moraleDelta: effect.moraleDelta, line: effect.line }]);
   }
   function playAll() {
-    // Sim the remaining matchdays with the CURRENT XI and a safe "calm"
-    // talk each week (no interactive choice on the bulk skip — the tradeoff
-    // of skipping, same as it freezes rotation + fatigue).
+    // Skip to the NEXT decision point, not blindly to the season's end: if the
+    // mid-season window (winter window / legends swap) is still ahead, stop
+    // there so it can fire; otherwise run out the season. Keeps the meaningful
+    // interrupts from being skipped past. Uses the current XI + a calm talk
+    // (the tradeoff of skipping — frozen rotation + fatigue).
+    const target = shown < midSeasonGate ? midSeasonGate : fixtures.length;
     const calm = talkEffect("calm", dressingRoom, false);
     const rating = userRating + moraleRatingKick(dressingRoom) + calm.ratingDelta;
     setMatches((prev) => {
       const out = [...prev];
-      while (out.length < fixtures.length) {
+      while (out.length < target) {
         const next = simulateNext(out, rating);
         if (!next) break;
         out.push(next);
@@ -514,12 +520,12 @@ function CareerSeason() {
     });
     setLineups((prev) => {
       const out = [...prev];
-      while (out.length < fixtures.length) out.push(xiKeys);
+      while (out.length < target) out.push(xiKeys);
       return out;
     });
     setTalks((prev) => {
       const out = [...prev];
-      while (out.length < fixtures.length)
+      while (out.length < target)
         out.push({ id: "calm", moraleDelta: calm.moraleDelta, line: calm.line });
       return out;
     });
@@ -729,9 +735,11 @@ function CareerSeason() {
                   <button
                     onClick={playAll}
                     className="mt-2 w-full px-4 py-2 rounded-md border border-warning/40 text-warning text-xs hover:bg-warning/10 transition"
-                    title="Simulate all remaining matchdays with calm talks"
+                    title="Simulate ahead with calm talks, pausing at the next decision"
                   >
-                    ⏩ Skip the rest (calm talks)
+                    {shown < midSeasonGate
+                      ? "⏩ Sim to the mid-season window"
+                      : "⏩ Sim to season's end"}
                   </button>
                 </div>
               )}
@@ -1250,10 +1258,21 @@ function MatchdaySquadPanel({
   const [editMode, setEditMode] = useState(false);
   const [view, setView] = useState<"list" | "pitch">("list");
   const [detail, setDetail] = useState<Player | null>(null);
+  const [benchExpanded, setBenchExpanded] = useState(false);
 
   const xiSet = new Set(xiKeys);
   const starters = squad.filter((p) => xiSet.has(playerKey(p)));
-  const bench = squad.filter((p) => !xiSet.has(playerKey(p)));
+  // Best subs first — a 35-man real roster has a long tail of fringe players,
+  // so the deep bench collapses behind a "show more" to cut the scroll.
+  const bench = squad
+    .filter((p) => !xiSet.has(playerKey(p)))
+    .sort(
+      (a, b) =>
+        effectiveRating(b, formKeyedForm(b, ratingAdj)) -
+        effectiveRating(a, formKeyedForm(a, ratingAdj)),
+    );
+  const BENCH_VISIBLE = 8;
+  const shownBench = benchExpanded ? bench : bench.slice(0, BENCH_VISIBLE);
 
   // Map each starter to the SLOT they're actually filling, so the chip
   // shows the role (RB) not just their primary position (LB) — otherwise a
@@ -1468,9 +1487,19 @@ function MatchdaySquadPanel({
               </div>
               <div>
                 <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-1.5">
-                  Bench
+                  Bench{bench.length > 0 ? ` (${bench.length})` : ""}
                 </div>
-                <div className="space-y-1">{bench.map((p) => rowFor(p, false))}</div>
+                <div className="space-y-1">{shownBench.map((p) => rowFor(p, false))}</div>
+                {bench.length > BENCH_VISIBLE && (
+                  <button
+                    onClick={() => setBenchExpanded((v) => !v)}
+                    className="mt-1.5 w-full text-[11px] text-muted-foreground hover:text-foreground border border-border/60 rounded-md py-1.5 transition"
+                  >
+                    {benchExpanded
+                      ? "Show fewer"
+                      : `Show ${bench.length - BENCH_VISIBLE} more fringe players`}
+                  </button>
+                )}
                 {bench.length === 0 && (
                   <div className="text-[11px] text-muted-foreground italic">No bench players.</div>
                 )}
