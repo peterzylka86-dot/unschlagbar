@@ -60,7 +60,21 @@ function FoundingClubPicker() {
   const [rerollSeed, setRerollSeed] = useState(0);
   const MAX_LEGENDS = 3;
   const legendsPool = useMemo(
-    () => [...getCareerPlayers(null, "legends")].sort((a, b) => b.prime_rating - a.prime_rating),
+    () => {
+      // Sign-a-legend picker: one entry PER PERSON. A legend tied to two pool
+      // clubs (e.g. Cruyff at Ajax AND Barcelona) would otherwise list twice;
+      // keep his best-rated card and drop the rest.
+      const sorted = [...getCareerPlayers(null, "legends")].sort(
+        (a, b) => b.prime_rating - a.prime_rating,
+      );
+      const seen = new Set<string>();
+      return sorted.filter((p) => {
+        const k = p.name.toLowerCase();
+        if (seen.has(k)) return false;
+        seen.add(k);
+        return true;
+      });
+    },
     [],
   );
 
