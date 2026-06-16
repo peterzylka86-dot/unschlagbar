@@ -401,9 +401,20 @@ function CareerSeason() {
     return worst;
   }, [career.squad, morale, career.convosThisSeason]);
   const [convo, setConvo] = useState<{ key: string; name: string } | null>(null);
+  // Don't let the whole dressing room queue up at your door. At most one
+  // player knocks, and only once every few matchdays — after you handle one,
+  // the next unhappy player waits out the cooldown instead of popping up
+  // immediately. (Each player still only knocks once per season.)
+  const CONVO_COOLDOWN = 4;
+  const [convoReadyAt, setConvoReadyAt] = useState(0);
   useEffect(() => {
-    if (!convo && convoTarget) setConvo(convoTarget);
-  }, [convo, convoTarget]);
+    if (!convo && convoTarget && shown >= convoReadyAt) setConvo(convoTarget);
+  }, [convo, convoTarget, shown, convoReadyAt]);
+  /** Close the current conversation and start the cooldown before the next. */
+  function dismissConvo() {
+    setConvo(null);
+    setConvoReadyAt(shown + CONVO_COOLDOWN);
+  }
 
   // Squad unrest → the winter window. Your reputation (strength + silverware)
   // sets the bar a star's ambition is measured against.
@@ -668,6 +679,18 @@ function CareerSeason() {
                 />
               )}
 
+              {hasBench && !swapOpen && !winterOpen && (
+                <button
+                  onClick={() =>
+                    career.setStartingXI(autoPickXI(availableSquad, career.formation, selectionForm))
+                  }
+                  title="Your assistant picks the strongest available XI (form + fatigue aware)"
+                  className="w-full px-4 py-2.5 rounded-md border border-success/40 bg-success/5 text-success text-sm font-display tracking-wide hover:bg-success/15 transition"
+                >
+                  🎯 Auto-pick strongest XI
+                </button>
+              )}
+
               {swapOpen || winterOpen ? (
                 <p className="text-center text-xs text-muted-foreground">
                   Resolve the window on screen to play on.
@@ -817,12 +840,15 @@ function CareerSeason() {
 
       {/* ── Interrupts — overlay on top of any tab, blocking when they must ── */}
       {!seasonDone && convo && (
-        <Overlay onClose={() => setConvo(null)}>
+        <Overlay onClose={dismissConvo}>
           <ConversationCard
             player={convo}
             season={career.currentSeason}
-            onResolve={(delta) => career.resolveConversation(convo.key, delta)}
-            onDismiss={() => setConvo(null)}
+            onResolve={(delta) => {
+              career.resolveConversation(convo.key, delta);
+              setConvoReadyAt(shown + CONVO_COOLDOWN);
+            }}
+            onDismiss={dismissConvo}
           />
         </Overlay>
       )}
@@ -1086,10 +1112,13 @@ function SquadPitch({
   slots,
   franchiseKey,
   ratingAdj,
+  onSelect,
 }: {
   slots: Slot[];
   franchiseKey: string | null;
   ratingAdj: Record<string, number>;
+  /** Tapping a player on the pitch opens his detail/stats sheet. */
+  onSelect?: (p: Player) => void;
 }) {
   return (
     <div
@@ -1124,7 +1153,11 @@ function SquadPitch({
         return (
           <div
             key={`pitch-${i}`}
-            className="absolute flex flex-col items-center text-center"
+            role={p && onSelect ? "button" : undefined}
+            onClick={p && onSelect ? () => onSelect(p) : undefined}
+            className={`absolute flex flex-col items-center text-center ${
+              p && onSelect ? "cursor-pointer" : ""
+            }`}
             style={{ left: `${s.x}%`, top: `${s.y}%`, transform: "translate(-50%, -50%)", width: "22%" }}
           >
             <div
@@ -1403,10 +1436,10 @@ function MatchdaySquadPanel({
                 slots={xiToSlots(squad, xiKeys, formation)}
                 franchiseKey={franchiseKey}
                 ratingAdj={ratingAdj}
+                onSelect={(p) => setDetail(p)}
               />
               <p className="mt-2 text-center text-[10px] text-muted-foreground">
-                {formation} · tap{" "}
-                <span className="text-muted-foreground/80">☰ List</span> to change the XI
+                {formation} · tap a player for stats · ☰ List to change the XI
               </p>
             </div>
           ) : (
@@ -1453,15 +1486,40 @@ function MatchdaySquadPanel({
           )}
         </div>
       )}
-      {detail && (
-        <PlayerDetailModal
-          player={detail}
-          stats={statsFor?.(detail) ?? null}
-          adjustedRating={Math.round(effectiveRating(detail, formKeyedForm(detail, ratingAdj)) * 10) / 10}
-          isFranchise={playerKey(detail) === franchiseKey}
-          onClose={() => setDetail(null)}
-        />
-      )}
+      {detail &&
+        (() => {
+          const dk = playerKey(detail);
+          const detailIsStarter = xiKeys.includes(dk);
+          // Eligible counterparts (position-checked) so you can substitute
+          // straight from the player sheet — including the tactics/pitch view.
+          const opts = (detailIsStarter ? bench : starters)
+            .filter((o) => {
+              const ok = playerKey(o);
+              return detailIsStarter
+                ? canSwapIntoXI(squad, xiKeys, dk, ok, formation)
+                : canSwapIntoXI(squad, xiKeys, ok, dk, formation);
+            })
+            .map((o) => ({
+              key: playerKey(o),
+              label: `${slotByKey.get(playerKey(o)) ?? o.position} · ${o.name} (${o.prime_rating})`,
+            }));
+          return (
+            <PlayerDetailModal
+              player={detail}
+              stats={statsFor?.(detail) ?? null}
+              adjustedRating={Math.round(effectiveRating(detail, formKeyedForm(detail, ratingAdj)) * 10) / 10}
+              isFranchise={dk === franchiseKey}
+              onClose={() => setDetail(null)}
+              swapVerb={detailIsStarter ? "Bring on from the bench" : "Start instead of"}
+              swapOptions={dk === franchiseKey ? [] : opts}
+              onPickSwap={(counterpartKey) => {
+                if (detailIsStarter) onSwap(dk, counterpartKey);
+                else onSwap(counterpartKey, dk);
+                setDetail(null);
+              }}
+            />
+          );
+        })()}
     </div>
   );
 }
@@ -1473,12 +1531,20 @@ function PlayerDetailModal({
   adjustedRating,
   isFranchise,
   onClose,
+  swapVerb,
+  swapOptions = [],
+  onPickSwap,
 }: {
   player: Player;
   stats: PlayerSeasonStats | null;
   adjustedRating: number;
   isFranchise: boolean;
   onClose: () => void;
+  /** "Bring on" (player is a starter) or "Start instead of" (he's a sub). */
+  swapVerb?: string;
+  /** Eligible counterparts to swap with, position-checked by the caller. */
+  swapOptions?: { key: string; label: string }[];
+  onPickSwap?: (counterpartKey: string) => void;
 }) {
   const attrs = positionAttributes(player);
   const statTiles: { label: string; value: number }[] = [
@@ -1549,6 +1615,25 @@ function PlayerDetailModal({
             </div>
           ))}
         </div>
+
+        {onPickSwap && swapOptions.length > 0 && (
+          <div className="mt-4 pt-4 border-t border-border">
+            <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground mb-1.5">
+              {swapVerb ?? "Swap with"}
+            </div>
+            <div className="max-h-40 overflow-y-auto space-y-1">
+              {swapOptions.map((o) => (
+                <button
+                  key={o.key}
+                  onClick={() => onPickSwap(o.key)}
+                  className="w-full text-left text-sm px-3 py-2 rounded-lg border border-border hover:border-success/50 hover:bg-success/10 transition"
+                >
+                  {o.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         <button
           onClick={onClose}
