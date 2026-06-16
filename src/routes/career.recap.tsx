@@ -26,6 +26,7 @@ import type { SeasonRecord } from "@/lib/career-store";
 import { LEAGUES } from "@/lib/leagues";
 import type { LeagueId } from "@/lib/leagues";
 import { getCareerClubs } from "@/lib/data";
+import { realLeagueName } from "@/lib/real-data";
 import { FORMATIONS } from "@/lib/formations";
 import { playerFitsSlot } from "@/lib/draft-helpers";
 import { shareOrCopy, shareImage } from "@/lib/share";
@@ -48,6 +49,13 @@ function CareerRecap() {
 
   const latest = career.seasonHistory[career.seasonHistory.length - 1] ?? null;
   const leagueId = (latest?.leagueId ?? career.leagueId ?? "ucl") as LeagueId;
+  // Real mode uses real-league slugs (de2, es1…) that aren't keys in the
+  // legends LEAGUES map — resolve the display name from the right source so
+  // a real-mode recap doesn't crash on LEAGUES[slug].name.
+  const leagueName =
+    career.careerMode === "real"
+      ? (realLeagueName(leagueId) ?? "League")
+      : (LEAGUES[leagueId]?.name ?? "League");
   const clubs = useMemo(() => getCareerClubs(career.foundingClubId, career.careerMode), [career.foundingClubId, career.careerMode]);
   const club = useMemo(
     () => clubs.find((c) => c.id === (latest?.foundingClubId ?? career.foundingClubId)) ?? null,
@@ -106,7 +114,7 @@ function CareerRecap() {
     );
   }
 
-  const shareText = buildRecapText(latest, club?.name ?? "Your XI", LEAGUES[leagueId].name);
+  const shareText = buildRecapText(latest, club?.name ?? "Your XI", leagueName);
 
   async function onShareText() {
     const r = await shareOrCopy(shareText, "GOLAZO Career Recap");
@@ -172,7 +180,7 @@ function CareerRecap() {
         {/* Club + position */}
         <div className="text-center">
           <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground mb-1">
-            {LEAGUES[leagueId].name}
+            {leagueName}
           </div>
           <div className="font-display text-3xl sm:text-4xl text-warning leading-tight">
             {club?.name ?? "Your XI"}
