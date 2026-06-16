@@ -131,6 +131,44 @@ export function realClubRoster(clubId: string): Player[] {
   return REAL_PLAYERS.filter((p) => p.club === clubId);
 }
 
+/** Rival-manager snapshot shape (structurally matches the career store's
+ *  RivalManagerSave — kept local to avoid a store→data import cycle). */
+export interface RealRival {
+  id: string;
+  name: string;
+  badge: string;
+  color: string;
+  archetypeName: string;
+  archetypeStyle: string;
+  foundingClubId: string;
+  squad: Player[];
+}
+
+/**
+ * Build the AI rivals for a real league — every club except the user's, each
+ * with its real roster. When the user is JOINING from another tier (promoted
+ * or relegated), the weakest club is dropped to keep the division its real
+ * size (the side that swapped places with you).
+ */
+export function buildRealRivals(slug: string, userClubId: string): RealRival[] {
+  const lg = realLeagues().find((l) => l.slug === slug);
+  if (!lg) return [];
+  let clubs = lg.clubs.filter((c) => c.id !== userClubId);
+  if (!lg.clubs.some((c) => c.id === userClubId)) {
+    clubs = [...clubs].sort((a, b) => b.strength - a.strength).slice(0, lg.clubs.length - 1);
+  }
+  return clubs.map((c) => ({
+    id: c.id,
+    name: c.name,
+    badge: c.short,
+    color: c.color,
+    archetypeName: c.name,
+    archetypeStyle: "balanced",
+    foundingClubId: c.id,
+    squad: realClubRoster(c.id),
+  }));
+}
+
 /** The real league a club plays in (with all its clubs). */
 export function realLeagueOf(clubId: string): RealLeague | undefined {
   const club = REAL_CLUBS.find((c) => c.id === clubId);

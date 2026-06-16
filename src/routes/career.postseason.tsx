@@ -19,6 +19,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { useCareer } from "@/lib/career-store";
 import { getCareerClubs, getCareerPlayers } from "@/lib/data";
+import { buildRealRivals } from "@/lib/real-data";
 import { pickSpinClub, simplifyPosition } from "@/lib/career-core";
 import { sellValue, feeLabel } from "@/lib/market";
 import {
@@ -218,16 +219,22 @@ function PostSeason() {
     setWorkingSquad((s) => s.filter((_, i) => i !== idx));
   }
   function commitReal() {
-    // The real league persists — no random rival turnover; your squad is
-    // whatever you bought/sold this window. Deduct the net spend from the
-    // bank (selling more than you buy banks the surplus).
+    // Promotion/relegation: if last season's finish moved your club to a new
+    // division, switch leagues and rebuild the rivals from that division's
+    // clubs (your squad comes with you). Otherwise the league persists.
+    const moveTo = career.pendingLeagueId;
+    const rivals = moveTo
+      ? buildRealRivals(moveTo, career.foundingClubId ?? "")
+      : career.rivals;
     useCareer.setState({
       squad: workingSquad,
-      rivals: career.rivals,
+      rivals,
+      leagueId: moveTo ?? career.leagueId,
+      pendingLeagueId: null,
       form: {},
       currentSeason: career.currentSeason + 1,
       midSeasonSwapUsed: false,
-      relegatedLastSeason: false,
+      relegatedLastSeason: career.seasonHistory[career.seasonHistory.length - 1]?.relegated ?? false,
       pendingDeparture: null,
       starDemandResolved: false,
       convosThisSeason: [],

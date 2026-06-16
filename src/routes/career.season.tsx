@@ -52,6 +52,15 @@ import { applyRatingEdits, editedRating } from "@/lib/edits";
 import { prizeMoney, feeLabel, sellValue } from "@/lib/market";
 import { seasonEuropeEntry, EURO_META } from "@/lib/europe";
 import {
+  promotionOutcome,
+  leagueAbove,
+  leagueBelow,
+  twoLegPlayoff,
+  type PromotionKind,
+  type PlayoffResult,
+} from "@/lib/promotion";
+import { realLeagues, realLeagueName } from "@/lib/real-data";
+import {
   playerSeasonStats,
   positionAttributes,
   type PlayerSeasonStats,
@@ -803,7 +812,14 @@ function CareerSeason() {
             </div>
           )}
           {shown > 0 ? (
-            <LiveTable table={table} matchday={shown} totalMatchdays={matchesPerSeason} />
+            <LiveTable
+              table={table}
+              matchday={shown}
+              totalMatchdays={matchesPerSeason}
+              isReal={isReal}
+              promoteSlug={isReal ? leagueAbove(career.leagueId) : null}
+              relegateSlug={isReal ? leagueBelow(career.leagueId) : null}
+            />
           ) : (
             <p className="text-sm text-muted-foreground italic py-6 text-center">
               The table fills in once the season kicks off.
@@ -2035,10 +2051,19 @@ function LiveTable({
   table,
   matchday,
   totalMatchdays,
+  isReal = false,
+  promoteSlug = null,
+  relegateSlug = null,
 }: {
   table: ReturnType<typeof computeLeagueTable>["table"];
   matchday: number;
   totalMatchdays: number;
+  /** Real mode swaps the legends "top-8 cup" framing for promotion/relegation. */
+  isReal?: boolean;
+  /** Real second tier: a league above exists → top of the table goes up. */
+  promoteSlug?: string | null;
+  /** Real top tier: a league below exists → bottom of the table goes down. */
+  relegateSlug?: string | null;
 }) {
   const isFinal = matchday >= totalMatchdays;
   return (
@@ -2064,17 +2089,46 @@ function LiveTable({
             </tr>
           </thead>
           <tbody>
-            {table.map((row, i) => (
+            {table.map((row, i) => {
+              const pos = i + 1;
+              // Zone for the position (real mode = promotion/relegation,
+              // legends = top-8 cup).
+              const zone = isReal
+                ? promoteSlug
+                  ? pos <= 2
+                    ? "promo"
+                    : pos === 3
+                      ? "playoff"
+                      : null
+                  : relegateSlug
+                    ? pos >= table.length - 1
+                      ? "releg"
+                      : pos === table.length - 2
+                        ? "playoff"
+                        : null
+                    : null
+                : i < 8
+                  ? "cup"
+                  : null;
+              const tag =
+                zone === "promo" ? "↑" : zone === "releg" ? "↓" : zone === "playoff" ? "PO" : zone === "cup" ? "CUP" : null;
+              return (
               <tr
                 key={`${row.name}-${i}`}
                 className={`border-b border-border last:border-b-0 ${
                   row.isUs ? "bg-warning/10 text-warning font-display" : ""
-                } ${i < 8 ? "" : i >= table.length - 2 ? "text-muted-foreground/60" : ""}`}
+                } ${zone === "releg" ? "text-muted-foreground/60" : ""}`}
               >
-                <td className="px-3 py-1.5 text-left tabular-nums">{i + 1}</td>
+                <td className="px-3 py-1.5 text-left tabular-nums">{pos}</td>
                 <td className="px-3 py-1.5 text-left truncate">
                   {row.isUs ? "Your XI" : row.short || row.name}
-                  {i < 8 && <span className="text-[9px] ml-1 opacity-60">CUP</span>}
+                  {tag && (
+                    <span
+                      className={`text-[9px] ml-1 ${zone === "releg" ? "text-primary/70" : zone === "promo" ? "text-success/80" : "opacity-60"}`}
+                    >
+                      {tag}
+                    </span>
+                  )}
                 </td>
                 <td className="px-3 py-1.5 text-center tabular-nums">{row.played}</td>
                 <td className="px-3 py-1.5 text-center tabular-nums">{row.w}</td>
@@ -2085,17 +2139,38 @@ function LiveTable({
                 </td>
                 <td className="px-3 py-1.5 text-center tabular-nums font-display">{row.pts}</td>
               </tr>
-            ))}
+              );
+            })}
           </tbody>
         </table>
       </div>
       <div className="mt-2 text-[10px] text-muted-foreground flex justify-between px-1">
-        <span>
-          <span className="text-warning">CUP</span> = top 8 qualify for knockout
-        </span>
-        <span>
-          <span className="opacity-60">Bottom 2</span> = relegation zone
-        </span>
+        {isReal ? (
+          <>
+            <span>
+              {promoteSlug ? (
+                <>
+                  <span className="text-success">↑</span> top 2 promote · <span className="opacity-70">PO</span> 3rd playoff
+                </>
+              ) : relegateSlug ? (
+                <>
+                  <span className="text-primary">↓</span> bottom 2 down · <span className="opacity-70">PO</span> 16th playoff
+                </>
+              ) : (
+                <span className="opacity-70">Top flight — no promotion or relegation here</span>
+              )}
+            </span>
+          </>
+        ) : (
+          <>
+            <span>
+              <span className="text-warning">CUP</span> = top 8 qualify for knockout
+            </span>
+            <span>
+              <span className="opacity-60">Bottom 2</span> = relegation zone
+            </span>
+          </>
+        )}
       </div>
     </div>
   );
@@ -2127,8 +2202,44 @@ function PostSeasonCTA({
   // pays off next season). Legends mode: the domestic top-8 knockout cup.
   const euroComp = isReal ? seasonEuropeEntry(career.seasonHistory, career.currentSeason) : null;
   const isCupQualifier = !isReal && ourPosition <= 8;
-  const isRelegated = ourPosition >= relegationCutoff;
   const isChampion = ourPosition === 1;
+  const leagueSize = opponents.length + 1;
+
+  // Promotion / relegation (real mode, leagues with a neighbouring tier).
+  // Resolves auto-moves and the two-legged playoff deterministically.
+  const pm = useMemo((): {
+    kind: PromotionKind;
+    oppName: string | null;
+    playoff: PlayoffResult | null;
+    nextLeague: string | null;
+    relegated: boolean;
+  } | null => {
+    if (!isReal) return null;
+    const slug = career.leagueId;
+    const kind = promotionOutcome(slug, ourPosition, leagueSize);
+    if (kind === "safe") return { kind, oppName: null, playoff: null, nextLeague: null, relegated: false };
+    if (kind === "promoted") return { kind, oppName: null, playoff: null, nextLeague: leagueAbove(slug), relegated: false };
+    if (kind === "relegated") return { kind, oppName: null, playoff: null, nextLeague: leagueBelow(slug), relegated: true };
+    // Playoff: opponent is the neighbouring tier's boundary club.
+    const seed = `${career.startedAt}-s${career.currentSeason}-po`;
+    if (kind === "promotion-playoff") {
+      const above = leagueAbove(slug);
+      const lg = realLeagues().find((l) => l.slug === above);
+      const club = lg ? lg.clubs[lg.clubs.length - 3] : null; // 3rd-from-bottom up there
+      const oppStrength = club?.strength ?? userRating - 2;
+      const playoff = twoLegPlayoff(userRating, oppStrength, seed);
+      return { kind, oppName: club?.name ?? "the playoff side", playoff, nextLeague: playoff.won ? above : null, relegated: false };
+    }
+    // relegation-playoff
+    const below = leagueBelow(slug);
+    const lg = realLeagues().find((l) => l.slug === below);
+    const club = lg ? lg.clubs[2] : null; // 3rd-best down there
+    const oppStrength = club?.strength ?? userRating - 2;
+    const playoff = twoLegPlayoff(userRating, oppStrength, seed);
+    return { kind, oppName: club?.name ?? "the playoff side", playoff, nextLeague: playoff.won ? null : below, relegated: !playoff.won };
+  }, [isReal, career.leagueId, ourPosition, leagueSize, userRating, career.startedAt, career.currentSeason]);
+
+  const isRelegated = pm ? pm.relegated : ourPosition >= relegationCutoff;
   const nextTo = euroComp ? "/career/europe" : isCupQualifier ? "/career/cup" : "/career/recap";
   const nextLabel = euroComp
     ? `Enter ${EURO_META[euroComp].name} →`
@@ -2208,6 +2319,9 @@ function PostSeasonCTA({
       endedAt: new Date().toISOString(),
     });
     career.setRelegated(isRelegated);
+    // Promotion/relegation: stash the division your club moves to next season
+    // (consumed + cleared by the postseason commit, which rebuilds rivals).
+    if (pm?.nextLeague) useCareer.setState({ pendingLeagueId: pm.nextLeague });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   void liveForm;
@@ -2244,6 +2358,56 @@ function PostSeasonCTA({
               : `Finished ${ourPosition}${ordinal(ourPosition)}`}
       </div>
       <div className="text-sm text-foreground/85 italic mb-3 max-w-sm mx-auto">{verdict}</div>
+
+      {pm && pm.kind !== "safe" && (
+        <div
+          className={`mb-3 rounded-xl border-2 p-3 text-left ${
+            pm.relegated ? "border-primary/50 bg-primary/5" : "border-success/50 bg-success/5"
+          }`}
+        >
+          {pm.kind === "promoted" && (
+            <div className="text-center text-success font-display">
+              ⬆️ PROMOTED to {realLeagueName(pm.nextLeague) ?? "the division above"}!
+            </div>
+          )}
+          {pm.kind === "relegated" && (
+            <div className="text-center text-primary font-display">
+              ⬇️ Relegated to {realLeagueName(pm.nextLeague) ?? "the division below"}.
+            </div>
+          )}
+          {pm.playoff && (
+            <>
+              <div className="text-[10px] uppercase tracking-widest text-muted-foreground text-center mb-1.5">
+                {pm.kind === "promotion-playoff" ? "Promotion playoff" : "Relegation playoff"} · vs{" "}
+                {pm.oppName}
+              </div>
+              <div className="flex items-center justify-center gap-4 text-sm font-display">
+                <span>
+                  Leg 1 (H) <span className="text-warning">{pm.playoff.leg1[0]}–{pm.playoff.leg1[1]}</span>
+                </span>
+                <span>
+                  Leg 2 (A) <span className="text-warning">{pm.playoff.leg2[0]}–{pm.playoff.leg2[1]}</span>
+                </span>
+              </div>
+              <div className="text-center text-[11px] text-muted-foreground mt-0.5">
+                Aggregate {pm.playoff.aggUs}–{pm.playoff.aggThem}
+              </div>
+              <div
+                className={`text-center font-display mt-1 ${pm.relegated ? "text-primary" : "text-success"}`}
+              >
+                {pm.kind === "promotion-playoff"
+                  ? pm.playoff.won
+                    ? `⬆️ Through — up to ${realLeagueName(pm.nextLeague) ?? "the top flight"}!`
+                    : "Fell short — another year in this division."
+                  : pm.playoff.won
+                    ? "✅ Survived — top-flight football secured!"
+                    : `⬇️ Down to ${realLeagueName(pm.nextLeague) ?? "the division below"}.`}
+              </div>
+            </>
+          )}
+        </div>
+      )}
+
       {career.pendingDeparture && (
         <div className="text-xs text-primary mb-2">
           🚪 A star will leave at the start of next season.

@@ -134,6 +134,10 @@ export interface CareerState {
   /** True once the mid-season winter transfer window has been handled this
    *  season (departures resolved). Reset each season. */
   winterDone: boolean;
+  /** Real mode: the league slug your club moves to NEXT season after a
+   *  promotion/relegation outcome (decided at season end, applied at the
+   *  next-season commit). null = staying in the current division. */
+  pendingLeagueId: string | null;
 }
 
 const initialCareerState: CareerState = {
@@ -163,6 +167,7 @@ const initialCareerState: CareerState = {
   playerMoods: {},
   convosThisSeason: [],
   winterDone: false,
+  pendingLeagueId: null,
 };
 
 interface CareerStore extends CareerState {
@@ -255,6 +260,7 @@ export const useCareer = create<CareerStore>()(
           playerMoods: {},
           convosThisSeason: [],
           winterDone: false,
+          pendingLeagueId: null,
         }),
 
       abandonCareer: () => set({ ...initialCareerState }),
@@ -399,6 +405,7 @@ export const useCareer = create<CareerStore>()(
         playerMoods: state.playerMoods,
         convosThisSeason: state.convosThisSeason,
         winterDone: state.winterDone,
+        pendingLeagueId: state.pendingLeagueId,
       }),
     },
   ),
