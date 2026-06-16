@@ -352,7 +352,7 @@
   {
     "id": "bayer-04-leverkusen",
     "name": "Bayer 04 Leverkusen",
-    "short": "BAY",
+    "short": "LEV",
     "city": "",
     "color": "#3bc62e",
     "founded": 1900,
@@ -380,7 +380,7 @@
   {
     "id": "borussia-dortmund",
     "name": "Borussia Dortmund",
-    "short": "BOR",
+    "short": "BVB",
     "city": "",
     "color": "#c6c32e",
     "founded": 1900,
@@ -394,7 +394,7 @@
   {
     "id": "borussia-monchengladbach",
     "name": "Borussia Mönchengladbach",
-    "short": "BOR",
+    "short": "BMG",
     "city": "",
     "color": "#2e31c6",
     "founded": 1900,
@@ -926,7 +926,7 @@
   {
     "id": "fc-bayern-munchen",
     "name": "FC Bayern München",
-    "short": "BAY",
+    "short": "FCB",
     "city": "",
     "color": "#2e81c6",
     "founded": 1900,
@@ -1626,7 +1626,7 @@
   {
     "id": "manchester-city",
     "name": "Manchester City",
-    "short": "MAN",
+    "short": "MCI",
     "city": "",
     "color": "#2e45c6",
     "founded": 1900,
@@ -1640,7 +1640,7 @@
   {
     "id": "manchester-united",
     "name": "Manchester United",
-    "short": "MAN",
+    "short": "MUN",
     "city": "",
     "color": "#2e96c6",
     "founded": 1900,
@@ -1808,7 +1808,7 @@
   {
     "id": "olympique-lyonnais",
     "name": "Olympique Lyonnais",
-    "short": "OLY",
+    "short": "OL",
     "city": "",
     "color": "#c12ec6",
     "founded": 1900,
@@ -1822,7 +1822,7 @@
   {
     "id": "olympique-de-marseille",
     "name": "Olympique de Marseille",
-    "short": "OLY",
+    "short": "OM",
     "city": "",
     "color": "#c6662e",
     "founded": 1900,
@@ -1892,7 +1892,7 @@
   {
     "id": "paris-fc",
     "name": "Paris FC",
-    "short": "PAR",
+    "short": "PFC",
     "city": "",
     "color": "#2ec698",
     "founded": 1900,
@@ -1906,7 +1906,7 @@
   {
     "id": "paris-saint-germain",
     "name": "Paris Saint-Germain",
-    "short": "PAR",
+    "short": "PSG",
     "city": "",
     "color": "#c62e89",
     "founded": 1900,
@@ -2032,7 +2032,7 @@
   {
     "id": "rcd-espanyol",
     "name": "RCD Espanyol",
-    "short": "RCD",
+    "short": "ESP",
     "city": "",
     "color": "#4cc62e",
     "founded": 1900,
@@ -2046,7 +2046,7 @@
   {
     "id": "rcd-mallorca",
     "name": "RCD Mallorca",
-    "short": "RCD",
+    "short": "MLL",
     "city": "",
     "color": "#2ea2c6",
     "founded": 1900,
@@ -2088,7 +2088,7 @@
   {
     "id": "real-betis-balompie",
     "name": "Real Betis Balompié",
-    "short": "REA",
+    "short": "BET",
     "city": "",
     "color": "#c69d2e",
     "founded": 1900,
@@ -2102,7 +2102,7 @@
   {
     "id": "real-madrid",
     "name": "Real Madrid",
-    "short": "REA",
+    "short": "RMA",
     "city": "",
     "color": "#2ec6b9",
     "founded": 1900,
@@ -2116,7 +2116,7 @@
   {
     "id": "real-oviedo",
     "name": "Real Oviedo",
-    "short": "REA",
+    "short": "OVI",
     "city": "",
     "color": "#c6562e",
     "founded": 1900,
@@ -2130,7 +2130,7 @@
   {
     "id": "real-sociedad",
     "name": "Real Sociedad",
-    "short": "REA",
+    "short": "RSO",
     "city": "",
     "color": "#70c62e",
     "founded": 1900,
@@ -2144,7 +2144,7 @@
   {
     "id": "real-sociedad-de-futbol-b",
     "name": "Real Sociedad de Fútbol B",
-    "short": "REA",
+    "short": "RSB",
     "city": "",
     "color": "#a22ec6",
     "founded": 1900,
@@ -2158,7 +2158,7 @@
   {
     "id": "real-sporting-de-gijon",
     "name": "Real Sporting de Gijón",
-    "short": "REA",
+    "short": "GIJ",
     "city": "",
     "color": "#2ec675",
     "founded": 1900,
@@ -2172,7 +2172,7 @@
   {
     "id": "real-valladolid-cf",
     "name": "Real Valladolid CF",
-    "short": "REA",
+    "short": "VLL",
     "city": "",
     "color": "#c62ea0",
     "founded": 1900,
@@ -2186,7 +2186,7 @@
   {
     "id": "real-zaragoza",
     "name": "Real Zaragoza",
-    "short": "REA",
+    "short": "ZAR",
     "city": "",
     "color": "#2e81c6",
     "founded": 1900,
@@ -2522,7 +2522,7 @@
   {
     "id": "sporting-cp",
     "name": "Sporting CP",
-    "short": "SPO",
+    "short": "SCP",
     "city": "",
     "color": "#c62e96",
     "founded": 1900,
@@ -2536,7 +2536,7 @@
   {
     "id": "sporting-clube-de-braga",
     "name": "Sporting Clube de Braga",
-    "short": "SPO",
+    "short": "BRA",
     "city": "",
     "color": "#2e45c6",
     "founded": 1900,
@@ -2550,7 +2550,7 @@
   {
     "id": "stade-brestois-29",
     "name": "Stade Brestois 29",
-    "short": "STA",
+    "short": "BRE",
     "city": "",
     "color": "#b42ec6",
     "founded": 1900,
@@ -2564,7 +2564,7 @@
   {
     "id": "stade-rennais-fc",
     "name": "Stade Rennais FC",
-    "short": "STA",
+    "short": "REN",
     "city": "",
     "color": "#2ec675",
     "founded": 1900,
