@@ -61,6 +61,15 @@ describe("autoPickXI", () => {
     expect(xi).not.toContain("testclub:GK Two");
   });
 
+  it("honours a custom selection strategy (Rotate/Youth presets)", () => {
+    // A scoreFn that inverts rating should flip the keeper choice — proving
+    // the strategy hook drives selection, not just raw rating.
+    const xi = autoPickXI(squad14(), "4-3-3", {}, (p) => -p.prime_rating);
+    expect(xi).toHaveLength(11);
+    expect(xi).toContain("testclub:GK Two"); // the weaker keeper now starts
+    expect(xi).not.toContain("testclub:GK One");
+  });
+
   it("form flips a selection — hot bench player beats cold starter", () => {
     const squad = squad14();
     // CB Three (78) vs CB Two (85): +2 form on Three, -2 on Two → still

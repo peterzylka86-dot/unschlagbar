@@ -43,12 +43,14 @@ export function autoPickXI(
   squad: Player[],
   formation: FormationKey,
   form: Record<string, number> = {},
+  /** Optional selection strategy — score each player; highest fills slots
+   *  first. Defaults to effective rating ("best XI"). Drives Rotate / Youth. */
+  scoreFn?: (p: Player) => number,
 ): string[] {
+  const score = scoreFn ?? ((p: Player) => effectiveRating(p, form));
   const slots = FORMATIONS[formation].slots.map((s) => ({ ...s }));
   const assigned: (Player | null)[] = slots.map(() => null);
-  const sorted = [...squad].sort(
-    (a, b) => effectiveRating(b, form) - effectiveRating(a, form),
-  );
+  const sorted = [...squad].sort((a, b) => score(b) - score(a));
   for (const p of sorted) {
     for (let i = 0; i < slots.length; i++) {
       if (assigned[i]) continue;

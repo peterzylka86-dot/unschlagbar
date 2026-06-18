@@ -135,8 +135,13 @@ export function buildLiveEvents(opts: {
   const inj = matchInjury(match.matchday, xiKeys, seasonSeed);
   if (inj) {
     const name = keyToName(inj.key);
+    let minute = 20 + (hash(`injmin-${seed}`) % 65);
+    // Consistency: if the injured player scored, his injury must come AFTER
+    // his last goal — never "X injured at 50' … then X scores at 70'".
+    const hisGoals = ev.filter((e) => e.type === "goal-us" && e.text.includes(name)).map((e) => e.minute);
+    if (hisGoals.length) minute = Math.min(89, Math.max(minute, Math.max(...hisGoals) + 2));
     ev.push({
-      minute: 20 + (hash(`injmin-${seed}`) % 65),
+      minute,
       type: "injury",
       text: `${name} goes down injured and can't continue — out ${inj.weeks} match${inj.weeks === 1 ? "" : "es"}.`,
     });

@@ -587,6 +587,21 @@ function CareerSeason() {
     });
   }
 
+  /** Pick the XI by a strategy: the strongest available ("best"), the
+   *  freshest ("rotate" — rests tired legs), or blood the kids ("youth" —
+   *  minutes for prospects, who then develop). */
+  function pickPreset(strategy: "best" | "rotate" | "youth") {
+    const eff = (p: Player) => effectiveRating(p, selectionForm);
+    const fat = (p: Player) => fatigue[`${p.club}:${p.name}`] ?? 0;
+    const scoreFn =
+      strategy === "rotate"
+        ? (p: Player) => effectiveRating(p, liveForm) - fat(p) * 0.35
+        : strategy === "youth"
+          ? (p: Player) => (p.age != null ? Math.max(-24, (23 - p.age) * 4) : -3) + eff(p) * 0.35
+          : eff;
+    career.setStartingXI(autoPickXI(availableSquad, career.formation, selectionForm, scoreFn));
+  }
+
   // When all matchdays are played, persist the final form snapshot to the
   // store so /career/postseason can read it. Run exactly once.
   useEffect(() => {
@@ -751,15 +766,31 @@ function CareerSeason() {
               )}
 
               {hasBench && !swapOpen && !winterOpen && (
-                <button
-                  onClick={() =>
-                    career.setStartingXI(autoPickXI(availableSquad, career.formation, selectionForm))
-                  }
-                  title="Your assistant picks the strongest available XI (form + fatigue aware)"
-                  className="w-full px-4 py-2.5 rounded-md border border-success/40 bg-success/5 text-success text-sm font-display tracking-wide hover:bg-success/15 transition"
-                >
-                  🎯 Auto-pick strongest XI
-                </button>
+                <div>
+                  <div className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1.5 text-center">
+                    🎯 Assistant — pick the XI
+                  </div>
+                  <div className="grid grid-cols-3 gap-2">
+                    {(
+                      [
+                        ["best", "💪 Best XI", "Strongest available"],
+                        ["rotate", "🔄 Rotate", "Rest tired legs"],
+                        ["youth", "🌱 Youth", "Blood the kids"],
+                      ] as const
+                    ).map(([id, label, hint]) => (
+                      <button
+                        key={id}
+                        onClick={() => pickPreset(id)}
+                        className="px-2 py-2.5 rounded-md border border-success/40 bg-success/5 text-success hover:bg-success/15 transition text-center"
+                      >
+                        <div className="font-display text-xs tracking-wide">{label}</div>
+                        <div className="text-[9px] text-muted-foreground normal-case mt-0.5 leading-tight">
+                          {hint}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
               )}
 
               {swapOpen || winterOpen ? (
@@ -836,9 +867,7 @@ function CareerSeason() {
                 career.setStartingXI(next);
               }}
               onEditRating={(key, rating) => career.setRatingEdit(key, rating)}
-              onAutoPick={() =>
-                career.setStartingXI(autoPickXI(availableSquad, career.formation, selectionForm))
-              }
+              onPreset={pickPreset}
               statsFor={(p) =>
                 playerSeasonStats(
                   p,
@@ -1315,7 +1344,7 @@ function MatchdaySquadPanel({
   xiKeys,
   form,
   onEditRating,
-  onAutoPick,
+  onPreset,
   ratingAdj,
   fatigue,
   formation,
@@ -1340,8 +1369,8 @@ function MatchdaySquadPanel({
   onSwap: (outKey: string, inKey: string) => void;
   /** House-rule a player's overall (playerKey → new rating). */
   onEditRating?: (playerKey: string, rating: number) => void;
-  /** Assistant picks the strongest available XI (form + fatigue aware). */
-  onAutoPick?: () => void;
+  /** Assistant XI presets: best XI / rotate (rest tired) / youth (blood kids). */
+  onPreset?: (strategy: "best" | "rotate" | "youth") => void;
   /** Season stats for a player (derived from played matches + lineups). */
   statsFor?: (p: Player) => PlayerSeasonStats;
 }) {
@@ -1536,15 +1565,29 @@ function MatchdaySquadPanel({
               >
                 {view === "list" ? "🎽 Pitch" : "☰ List"}
               </button>
-              {onAutoPick && (
-                <button
-                  onClick={onAutoPick}
-                  title="Assistant picks your strongest available XI"
-                  className="text-[10px] px-2 py-0.5 rounded-md border border-success/40 text-success hover:bg-success/10 transition"
-                >
-                  🎯 Auto-pick XI
-                </button>
-              )}
+              {onPreset &&
+                (
+                  [
+                    ["best", "💪 Best"],
+                    ["rotate", "🔄 Rotate"],
+                    ["youth", "🌱 Youth"],
+                  ] as const
+                ).map(([id, label]) => (
+                  <button
+                    key={id}
+                    onClick={() => onPreset(id)}
+                    title={
+                      id === "best"
+                        ? "Strongest available XI"
+                        : id === "rotate"
+                          ? "Freshest legs — rest the tired"
+                          : "Blood the youngsters for minutes"
+                    }
+                    className="text-[10px] px-2 py-0.5 rounded-md border border-success/40 text-success hover:bg-success/10 transition"
+                  >
+                    {label}
+                  </button>
+                ))}
               {onEditRating && (
                 <button
                   onClick={() => setEditMode((v) => !v)}
@@ -1686,11 +1729,14 @@ function PlayerDetailModal({
   onPickSwap?: (counterpartKey: string) => void;
 }) {
   const attrs = positionAttributes(player);
+  // Clean sheets only mean something for keepers + defenders; for everyone
+  // else show the goal-contribution stats instead.
+  const isDefensive = ["GK", "CB", "LB", "RB", "LWB", "RWB"].includes(player.position.toUpperCase());
   const statTiles: { label: string; value: number }[] = [
     { label: "Apps", value: stats?.apps ?? 0 },
     { label: "Goals", value: stats?.goals ?? 0 },
     { label: "Assists", value: stats?.assists ?? 0 },
-    { label: "Clean sheets", value: stats?.cleanSheets ?? 0 },
+    ...(isDefensive ? [{ label: "Clean sheets", value: stats?.cleanSheets ?? 0 }] : []),
   ];
   return (
     <div
@@ -1719,7 +1765,7 @@ function PlayerDetailModal({
           </div>
         </div>
 
-        <div className="mt-4 grid grid-cols-4 gap-1.5">
+        <div className={`mt-4 grid gap-1.5 ${isDefensive ? "grid-cols-4" : "grid-cols-3"}`}>
           {statTiles.map((s) => (
             <div key={s.label} className="rounded-lg border border-border bg-background/40 py-2 text-center">
               <div className="font-display text-lg text-foreground tabular-nums">{s.value}</div>
