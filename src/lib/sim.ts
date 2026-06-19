@@ -133,10 +133,22 @@ export function simulateOneMatch(
   const mixed = (Math.imul(seedNum ^ (matchday * 2654435761), 2246822519) >>> 0) || 12345;
   const seed = { v: mixed };
   const varianceMul = difficulty === "easy" ? 0.7 : difficulty === "hard" ? 1.3 : 1.0;
-  const homeBoost = fixture.home ? 4 : -1;
+  const homeBoost = fixture.home ? 3 : -1;
   const diff = ourRating + homeBoost - fixture.opponent.strength;
-  const ourXG = Math.max(0.2, 1.2 + diff * 0.08 + (rand(seed) - 0.5) * 1.0 * varianceMul);
-  const theirXG = Math.max(0.1, 1.1 - diff * 0.06 + (rand(seed) - 0.5) * 0.9 * varianceMul);
+  // "Arroganz" (Anstoss): only past a big edge (~+12) does a favourite get
+  // complacent and the underdog raise its game — the canonical upset
+  // generator. Squad quality still clearly pays below that, but a stacked
+  // side drops points often enough (~30%) that an unbeaten season is rare,
+  // not routine. Variance is lifted so single results genuinely swing.
+  const complacency = Math.max(0, diff - 12) * 0.05;
+  const ourXG = Math.max(
+    0.25,
+    1.25 + diff * 0.07 - complacency + (rand(seed) - 0.5) * 1.1 * varianceMul,
+  );
+  const theirXG = Math.max(
+    0.18,
+    1.05 - diff * 0.055 + complacency * 1.2 + (rand(seed) - 0.5) * 1.0 * varianceMul,
+  );
   const ourScore = poisson(ourXG, seed);
   const theirScore = poisson(theirXG, seed);
   let outcome: "W" | "D" | "L" = "D";

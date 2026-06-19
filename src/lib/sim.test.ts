@@ -413,6 +413,26 @@ describe("computeLeagueTable", () => {
     expect(strongWins).toBeGreaterThan(weakWins);
   });
 
+  it("simulateOneMatch: a clear favourite still drops points (no unbeaten cake-walk)", () => {
+    // ~+19 edge (rating 90 + home vs strength 75). Should win most, but
+    // realistically fail to win a meaningful share and lose often enough that
+    // an unbeaten season is rare, not routine.
+    const f = { opponent: mockClub(75, 1), home: true };
+    let win = 0;
+    let loss = 0;
+    const N = 400;
+    for (let md = 1; md <= N; md++) {
+      const o = simulateOneMatch(f, md, 90, 7).outcome;
+      if (o === "W") win++;
+      else if (o === "L") loss++;
+    }
+    const nonWin = (N - win) / N;
+    const lossRate = loss / N;
+    expect(nonWin).toBeGreaterThan(0.18); // not a guaranteed win every week
+    expect(nonWin).toBeLessThan(0.5); // still a clear favourite
+    expect(lossRate).toBeGreaterThan(0.05); // genuine upset risk → unbeaten is rare
+  });
+
   it("forecast: zero opponents → 0", () => {
     expect(forecastSeasonPoints([], 34, 80)).toBe(0);
   });
