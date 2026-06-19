@@ -11,6 +11,10 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { useCareer } from "@/lib/career-store";
+import { resolveXI, playerKey } from "@/lib/matchday-xi";
+import { pickScorer } from "@/lib/career-core";
+import { buildLiveEvents } from "@/lib/matchlive";
+import { LiveMatchModal } from "@/components/LiveMatchModal";
 import {
   seasonEuropeEntry,
   europeField,
@@ -90,10 +94,55 @@ function CareerEurope() {
   // timing), not the one this season's finish just won — that pays off next
   // season. seasonEuropeEntry encodes the one-year delay + holder-defends.
   const comp: EuroComp | null = seasonEuropeEntry(career.seasonHistory, career.currentSeason);
-  const userRating = useMemo(() => {
-    if (career.squad.length === 0) return 75;
-    return Math.round(career.squad.reduce((a, p) => a + p.prime_rating, 0) / career.squad.length);
-  }, [career.squad]);
+  // Your SET XI drives European strength too — bench your stars and you'll
+  // feel it on the continent, just like in the league.
+  const xiPlayers = useMemo(() => {
+    const keys = new Set(resolveXI(career.squad, career.startingXI, career.formation));
+    const xi = career.squad.filter((p) => keys.has(playerKey(p)));
+    return xi.length ? xi : career.squad;
+  }, [career.squad, career.startingXI, career.formation]);
+  const userRating = useMemo(
+    () =>
+      xiPlayers.length === 0
+        ? 75
+        : Math.round(xiPlayers.reduce((a, p) => a + p.prime_rating, 0) / xiPlayers.length),
+    [xiPlayers],
+  );
+
+  // Live-commentary ticker for the user's European matches — same feel as a
+  // league night (built differently was the complaint).
+  const [liveMatch, setLiveMatch] = useState<{
+    events: import("@/lib/matchlive").LiveEvent[];
+    label: string;
+    oppName: string;
+    ourScore: number;
+    theirScore: number;
+  } | null>(null);
+
+  /** Open the live ticker for one of the user's European matches. */
+  function showUserMatch(label: string, oppName: string, us: number, them: number, seedStr: string) {
+    const rand = mulberry32(hashCode(seedStr));
+    const scorers: string[] = [];
+    for (let i = 0; i < us; i++) {
+      const s = pickScorer(xiPlayers, {}, rand);
+      if (s) scorers.push(s.name);
+    }
+    const xiKeys = xiPlayers.map(playerKey);
+    setLiveMatch({
+      events: buildLiveEvents({
+        match: { matchday: 1, ourScore: us, theirScore: them },
+        oppName,
+        ourScorers: scorers,
+        xiKeys,
+        keyToName: (k) => xiPlayers.find((p) => playerKey(p) === k)?.name ?? k.split(":")[1] ?? k,
+        seasonSeed: hashCode(seedStr),
+      }),
+      label,
+      oppName,
+      ourScore: us,
+      theirScore: them,
+    });
+  }
 
   const field = useMemo(
     () => (comp ? europeField(comp, career.foundingClubId ?? "") : []),
@@ -191,6 +240,13 @@ function CareerEurope() {
     const us = poisson(Math.max(0.2, 1.25 + diff * 0.08 + (rand() - 0.5) * 0.9), rand);
     const them = poisson(Math.max(0.1, 1.2 - diff * 0.06 + (rand() - 0.5) * 0.9), rand);
     setLpGames((g) => [...g, { oppId: opp.id, us, them }]);
+    showUserMatch(
+      `Champions League · league phase ${lpGames.length + 1}/${LEAGUE_PHASE_GAMES}`,
+      nameOf(opp.id),
+      us,
+      them,
+      `${career.startedAt}-${career.currentSeason}-lp-${opp.id}`,
+    );
   }
 
   // Once all 8 are played, finalise the 36-club table + where you land.
@@ -240,6 +296,22 @@ function CareerEurope() {
     setMatches((m) => [...m, ...ties]);
     setAlive(ties.map((t) => t.winnerId));
     setRoundIdx((r) => r + 1);
+    // Play the user's tie through the live ticker (the other ties just show
+    // as results below). Our goals = our side of the scoreline.
+    const uid = career.foundingClubId ?? "";
+    const mine = ties.find((t) => t.isUser);
+    if (mine) {
+      const us = mine.homeId === uid ? mine.homeScore : mine.awayScore;
+      const them = mine.homeId === uid ? mine.awayScore : mine.homeScore;
+      const oppId = mine.homeId === uid ? mine.awayId : mine.homeId;
+      showUserMatch(
+        `${EURO_META[comp!].name} · ${ROUND_LABEL[round]}`,
+        nameOf(oppId),
+        us,
+        them,
+        `${career.startedAt}-${career.currentSeason}-eu-${round}-${oppId}`,
+      );
+    }
   }
 
   const currentRoundMatches = matches.filter((m) => m.round === rounds[Math.min(roundIdx, rounds.length) - 1]);
@@ -329,6 +401,8 @@ function CareerEurope() {
             Play {ROUND_LABEL[rounds[roundIdx]]} →
           </button>
         ))}
+
+      {liveMatch && <LiveMatchModal live={liveMatch} onClose={() => setLiveMatch(null)} />}
     </div>
   );
 }
