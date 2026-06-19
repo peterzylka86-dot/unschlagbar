@@ -126,15 +126,21 @@ export function simulateOneMatch(
   ourRating: number,
   seedNum: number,
   difficulty: "easy" | "normal" | "hard" = "normal",
+  /** A special rivalry/derby: form goes out the window — wilder, with the
+   *  rating gap dampened, so the result is genuinely unpredictable. */
+  derby = false,
 ): MatchResult {
   // Mix the season seed with the matchday for a stable per-match stream.
   // Knuth multiplicative hash on the combination; any well-mixed function
   // works — it just must not collide across matchdays of one season.
   const mixed = (Math.imul(seedNum ^ (matchday * 2654435761), 2246822519) >>> 0) || 12345;
   const seed = { v: mixed };
-  const varianceMul = difficulty === "easy" ? 0.7 : difficulty === "hard" ? 1.3 : 1.0;
+  const varianceMul =
+    (difficulty === "easy" ? 0.7 : difficulty === "hard" ? 1.3 : 1.0) * (derby ? 1.4 : 1);
   const homeBoost = fixture.home ? 3 : -1;
-  const diff = ourRating + homeBoost - fixture.opponent.strength;
+  // A derby dampens the rating gap (form goes out the window) — the favourite
+  // is far less certain when it's a grudge match.
+  const diff = (ourRating + homeBoost - fixture.opponent.strength) * (derby ? 0.55 : 1);
   // "Arroganz" (Anstoss): only past a big edge (~+12) does a favourite get
   // complacent and the underdog raise its game — the canonical upset
   // generator. Squad quality still clearly pays below that, but a stacked

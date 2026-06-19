@@ -15,6 +15,7 @@ import { resolveXI, playerKey } from "@/lib/matchday-xi";
 import { pickScorer } from "@/lib/career-core";
 import { buildLiveEvents } from "@/lib/matchlive";
 import { LiveMatchModal } from "@/components/LiveMatchModal";
+import { rivalryFor } from "@/lib/rivalries";
 import {
   seasonEuropeEntry,
   europeField,
@@ -212,9 +213,13 @@ function CareerEurope() {
     const rand = mulberry32(
       hashCode(`${career.startedAt}-${career.currentSeason}-eu-${round}-${homeId}-${awayId}`),
     );
-    const diff = strengthOf(homeId) + 3 - strengthOf(awayId);
-    let hs = poisson(Math.max(0.2, 1.2 + diff * 0.08 + (rand() - 0.5) * 0.9), rand);
-    let as = poisson(Math.max(0.1, 1.1 - diff * 0.06 + (rand() - 0.5) * 0.9), rand);
+    // A continental rivalry (e.g. drawing Real Madrid in the UCL) plays wild:
+    // dampened gap, more variance.
+    const derby = !!rivalryFor(homeId, awayId);
+    const diff = (strengthOf(homeId) + 3 - strengthOf(awayId)) * (derby ? 0.55 : 1);
+    const v = derby ? 1.25 : 0.9;
+    let hs = poisson(Math.max(0.2, 1.2 + diff * 0.08 + (rand() - 0.5) * v), rand);
+    let as = poisson(Math.max(0.1, 1.1 - diff * 0.06 + (rand() - 0.5) * v), rand);
     if (hs === as) {
       if (rand() < 0.5 + Math.max(-0.2, Math.min(0.2, diff * 0.01))) hs++;
       else as++;

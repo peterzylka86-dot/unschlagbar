@@ -52,6 +52,7 @@ import { currentInjuries, buildLiveEvents, type LiveEvent } from "@/lib/matchliv
 import { applyRatingEdits, editedRating } from "@/lib/edits";
 import { prizeMoney, feeLabel, sellValue } from "@/lib/market";
 import { seasonEuropeEntry, EURO_META } from "@/lib/europe";
+import { rivalryFor } from "@/lib/rivalries";
 import {
   promotionOutcome,
   leagueAbove,
@@ -467,7 +468,8 @@ function CareerSeason() {
   function simulateNext(prev: MatchWithScorers[], rating: number): MatchWithScorers | null {
     const idx = prev.length;
     if (idx >= fixtures.length) return null;
-    const m = simulateOneMatch(fixtures[idx], idx + 1, rating, seasonSeed, "normal");
+    const derby = !!rivalryFor(career.foundingClubId, fixtures[idx].opponent.id);
+    const m = simulateOneMatch(fixtures[idx], idx + 1, rating, seasonSeed, "normal", derby);
     // Scorers from the players ON THE PITCH (the XI), not the bench.
     const rand = mulberry32(seasonSeed + (idx + 1) * 7919);
     const scorers: { name: string; assister?: string }[] = [];
@@ -501,7 +503,9 @@ function CareerSeason() {
         keyToName,
         seasonSeed,
       }),
-      label: `Matchday ${next.matchday}`,
+      label: rivalryFor(career.foundingClubId, next.opponent.id)
+        ? `🔥 ${rivalryFor(career.foundingClubId, next.opponent.id)}`
+        : `Matchday ${next.matchday}`,
       oppName: next.opponent.short || next.opponent.name,
       ourScore: next.ourScore,
       theirScore: next.theirScore,
@@ -543,7 +547,8 @@ function CareerSeason() {
     }
     const idx = matches.length;
     const HALFTIME_SHOUT_BONUS = 4;
-    const g = simulateOneMatch(fixtures[idx], idx + 1, rating + HALFTIME_SHOUT_BONUS, seasonSeed + 104729, "normal");
+    const derby = !!rivalryFor(career.foundingClubId, fixtures[idx]?.opponent.id);
+    const g = simulateOneMatch(fixtures[idx], idx + 1, rating + HALFTIME_SHOUT_BONUS, seasonSeed + 104729, "normal", derby);
     const us = htUs + Math.max(0, g.ourScore - htGoals(g.ourScore));
     const them = htThem + Math.max(0, g.theirScore - htGoals(g.theirScore));
     const rand = mulberry32(seasonSeed + (idx + 1) * 7919 + 31);
@@ -763,6 +768,7 @@ function CareerSeason() {
                   }
                   ourRating={userRating}
                   manager={isReal ? null : managerFor(fixtures[shown].opponent.id)}
+                  rivalry={rivalryFor(career.foundingClubId, fixtures[shown].opponent.id)}
                 />
               )}
 
@@ -837,7 +843,11 @@ function CareerSeason() {
                   <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
                     Last result
                   </div>
-                  <MatchRow match={latest} teamTalkLine={talks[latest.matchday - 1]?.line ?? null} />
+                  <MatchRow
+                    match={latest}
+                    teamTalkLine={talks[latest.matchday - 1]?.line ?? null}
+                    rivalry={rivalryFor(career.foundingClubId, latest.opponent.id)}
+                  />
                 </div>
               ) : (
                 <p className="text-sm text-muted-foreground italic py-2 text-center">
@@ -938,7 +948,11 @@ function CareerSeason() {
               .reverse()
               .map((m) => (
                 <Fragment key={`md-${m.matchday}`}>
-                  <MatchRow match={m} teamTalkLine={talks[m.matchday - 1]?.line ?? null} />
+                  <MatchRow
+                    match={m}
+                    teamTalkLine={talks[m.matchday - 1]?.line ?? null}
+                    rivalry={rivalryFor(career.foundingClubId, m.opponent.id)}
+                  />
                   {diaryByMatchday.get(m.matchday) && (
                     <DiaryLine beat={diaryByMatchday.get(m.matchday)!} />
                   )}
@@ -1789,11 +1803,13 @@ function NextMatchPreview({
   rival,
   ourRating,
   manager,
+  rivalry,
 }: {
   fixture: import("@/lib/sim").Fixture;
   rival: { archetypeName: string; badge: string; color: string; squad: Player[] } | null;
   ourRating: number;
   manager: import("@/lib/managers").ManagerPersona | null;
+  rivalry?: string | null;
 }) {
   const opp = fixture.opponent;
   // Their danger man = highest-rated player in the rival's squad.
@@ -1809,7 +1825,16 @@ function NextMatchPreview({
         ? { label: "Underdogs", tone: "text-primary" }
         : { label: "Even contest", tone: "text-warning" };
   return (
-    <div className="mt-4 rounded-2xl border border-border bg-card/40 p-4">
+    <div
+      className={`mt-4 rounded-2xl border bg-card/40 p-4 ${
+        rivalry ? "border-primary/60 ring-1 ring-primary/30" : "border-border"
+      }`}
+    >
+      {rivalry && (
+        <div className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-primary/15 border border-primary/40 px-2.5 py-0.5 text-[11px] font-display text-primary">
+          🔥 {rivalry} — a special one. Form goes out the window.
+        </div>
+      )}
       <div className="flex items-center justify-between gap-3">
         <div className="min-w-0">
           <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
@@ -2063,7 +2088,15 @@ function DiaryLine({ beat }: { beat: import("@/lib/flavour").FlavourBeat }) {
   );
 }
 
-function MatchRow({ match, teamTalkLine }: { match: MatchWithScorers; teamTalkLine?: string | null }) {
+function MatchRow({
+  match,
+  teamTalkLine,
+  rivalry,
+}: {
+  match: MatchWithScorers;
+  teamTalkLine?: string | null;
+  rivalry?: string | null;
+}) {
   // Color the entire left edge by outcome for instant scannability —
   // user can run their eye down the match feed and see W/D/L pattern.
   const outcomeAccent =
@@ -2119,7 +2152,10 @@ function MatchRow({ match, teamTalkLine }: { match: MatchWithScorers; teamTalkLi
           <span className="text-[11px] text-muted-foreground uppercase tracking-wider">
             {match.home ? "vs" : "@"}
           </span>
-          <span className="font-display text-sm truncate flex-1">{match.opponent.name}</span>
+          <span className="font-display text-sm truncate flex-1">
+            {rivalry && <span title={rivalry}>🔥 </span>}
+            {match.opponent.name}
+          </span>
           <span className="font-display text-base tabular-nums shrink-0">
             <span className={outcomeText}>{match.ourScore}</span>
             <span className="opacity-50 mx-0.5">–</span>
