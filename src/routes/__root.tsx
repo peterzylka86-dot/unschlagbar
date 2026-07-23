@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { OnzeFooterLink } from "@/components/OnzePromo";
 
 function NotFoundComponent() {
   return (
@@ -132,6 +133,11 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      {/* Ambient cross-promo on every screen — sits below the page in normal
+          flow, so it never overlaps the full-screen game views or modals. */}
+      <div className="text-center py-3 opacity-80">
+        <OnzeFooterLink />
+      </div>
     </QueryClientProvider>
   );
 }

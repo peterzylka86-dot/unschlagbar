@@ -30,6 +30,7 @@ import { realLeagueName } from "@/lib/real-data";
 import { FORMATIONS } from "@/lib/formations";
 import { playerFitsSlot } from "@/lib/draft-helpers";
 import { shareOrCopy, shareImage } from "@/lib/share";
+import { OnzeCard } from "@/components/OnzePromo";
 import { newlyUnlocked } from "@/lib/dynasty";
 import type { Player, Position } from "@/lib/game-types";
 
@@ -310,6 +311,11 @@ function CareerRecap() {
         >
           Continue to transfer window →
         </Link>
+      </div>
+
+      {/* Cross-promo — a natural beat after sharing your season. */}
+      <div className="mt-6 max-w-md mx-auto">
+        <OnzeCard />
       </div>
     </div>
   );

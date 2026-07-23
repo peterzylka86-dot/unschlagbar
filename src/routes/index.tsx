@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BrandMark, WordMark } from "@/components/BrandMark";
+import { OnzeCard } from "@/components/OnzePromo";
 import { useCareer } from "@/lib/career-store";
 
 export const Route = createFileRoute("/")({
@@ -87,27 +88,7 @@ function Landing() {
           </div>
 
           {/* Cross-promo — send some of the visitor traffic to Onze. */}
-          <a
-            href="https://onzedaily.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mt-7 flex items-center justify-between gap-3 px-4 py-3 rounded-md border border-warning/40 bg-warning/5 hover:bg-warning/10 hover:-translate-y-0.5 transition text-left"
-          >
-            <div className="flex items-center gap-3 min-w-0">
-              <span className="text-2xl shrink-0">⚽</span>
-              <div className="min-w-0">
-                <div className="font-display text-sm tracking-[0.12em] uppercase text-warning leading-tight">
-                  Also from us · ONZE
-                </div>
-                <div className="text-[11px] text-muted-foreground mt-0.5 truncate">
-                  The daily football XI guessing game — a new squad every day
-                </div>
-              </div>
-            </div>
-            <span aria-hidden className="text-[11px] font-display text-warning/80 shrink-0 group-hover:text-warning">
-              onzedaily.com →
-            </span>
-          </a>
+          <OnzeCard className="mt-7" />
 
           <div className="retro-stripes h-1.5 rounded mt-6 opacity-80" />
         </div>

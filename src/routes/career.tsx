@@ -16,6 +16,7 @@ import { LEAGUES, type LeagueId } from "@/lib/leagues";
 import { realLeagueName } from "@/lib/real-data";
 import { getCareerClubs } from "@/lib/data";
 import { dynastyStatus } from "@/lib/dynasty";
+import { OnzeCard } from "@/components/OnzePromo";
 
 export const Route = createFileRoute("/career")({
   head: () => ({ meta: [{ title: "GOLAZO · Career Mode" }] }),
@@ -101,6 +102,8 @@ function CareerHub() {
         )}
 
         <HowItWorksCard />
+
+        <OnzeCard />
       </div>
 
       <footer className="mt-12 text-center text-[11px] text-muted-foreground">
